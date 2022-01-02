@@ -1,1 +1,93 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-content-type-create-js"],{10:function(e,t,n){n("DUCt"),e.exports=n("nse6")},DUCt:function(e,t){var n,o;window,n=window.document,o=/__number__/g,n.querySelectorAll(".ezselection-settings.options").forEach((function(e){var t=function(){return e.querySelectorAll(".ezselection-settings-option-checkbox:checked")},n=function(){var n=!!t().length,o=n?"removeAttribute":"setAttribute";e.querySelector(".ezselection-settings-option-remove")[o]("disabled",n)};e.querySelector(".ezselection-settings-option-list").addEventListener("click",n,!1),e.querySelector(".ezselection-settings-option-add").addEventListener("click",(function(){var t=e.querySelector(".ezselection-settings-option-value-prototype").innerHTML,n=e.querySelector(".ezselection-settings-option-list"),i=parseInt(n.dataset.nextOptionId,10);n.dataset.nextOptionId=i+1,n.insertAdjacentHTML("beforeend",t.replace(o,i))}),!1),e.querySelector(".ezselection-settings-option-remove").addEventListener("click",(function(){t().forEach((function(e){return e.closest(".ezselection-settings-option-value").remove()})),n()}),!1)}))},nse6:function(e,t){var n,o,i,r;window,n=window.document,o=n.querySelectorAll(".ez-card__body-display-toggler"),i=function(e){e.preventDefault(),e.currentTarget.closest(".ez-card--toggle-group").classList.toggle("ez-card--collapsed")},r=function(e){return e.addEventListener("click",i)},o.forEach((function(e){return r(e)})),n.body.addEventListener("ez-initialize-card-toggle-group",(function(e){return r(e.detail.button)}))}},[[10,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-content-type-create-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var togglers = doc.querySelectorAll('.ez-card__body-display-toggler');
+
+  var toggleFieldTypeView = function toggleFieldTypeView(event) {
+    event.preventDefault();
+    event.currentTarget.closest('.ez-card--toggle-group').classList.toggle('ez-card--collapsed');
+  };
+
+  var attachToggleField = function attachToggleField(btn) {
+    return btn.addEventListener('click', toggleFieldTypeView);
+  };
+
+  togglers.forEach(function (btn) {
+    return attachToggleField(btn);
+  });
+  doc.body.addEventListener('ez-initialize-card-toggle-group', function (event) {
+    return attachToggleField(event.detail.button);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js":
+/*!********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var SELECTOR_TEMPLATE = '.ezselection-settings-option-value-prototype';
+  var SELECTOR_OPTION = '.ezselection-settings-option-value';
+  var SELECTOR_OPTIONS_LIST = '.ezselection-settings-option-list';
+  var SELECTOR_BTN_REMOVE = '.ezselection-settings-option-remove';
+  var SELECTOR_BTN_ADD = '.ezselection-settings-option-add';
+  var NUMBER_PLACEHOLDER = /__number__/g;
+  doc.querySelectorAll('.ezselection-settings.options').forEach(function (container) {
+    var findCheckedOptions = function findCheckedOptions() {
+      return container.querySelectorAll('.ezselection-settings-option-checkbox:checked');
+    };
+
+    var toggleDisableState = function toggleDisableState() {
+      var disabledState = !!findCheckedOptions().length;
+      var methodName = disabledState ? 'removeAttribute' : 'setAttribute';
+      container.querySelector(SELECTOR_BTN_REMOVE)[methodName]('disabled', disabledState);
+    };
+
+    var addOption = function addOption() {
+      var template = container.querySelector(SELECTOR_TEMPLATE).innerHTML;
+      var optionsList = container.querySelector(SELECTOR_OPTIONS_LIST);
+      var nextId = parseInt(optionsList.dataset.nextOptionId, 10);
+      optionsList.dataset.nextOptionId = nextId + 1;
+      optionsList.insertAdjacentHTML('beforeend', template.replace(NUMBER_PLACEHOLDER, nextId));
+    };
+
+    var removeOptions = function removeOptions() {
+      findCheckedOptions().forEach(function (element) {
+        return element.closest(SELECTOR_OPTION).remove();
+      });
+      toggleDisableState();
+    };
+
+    container.querySelector(SELECTOR_OPTIONS_LIST).addEventListener('click', toggleDisableState, false);
+    container.querySelector(SELECTOR_BTN_ADD).addEventListener('click', addOption, false);
+    container.querySelector(SELECTOR_BTN_REMOVE).addEventListener('click', removeOptions, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ 3:
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js");
+
+
+/***/ })
+
+},[[3,"runtime"]]]);

@@ -1,1 +1,61 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-modal-location-trash-single-asset-js"],{24:function(t,r,n){t.exports=n("oR39")},oR39:function(t,r){function n(t){return function(t){if(Array.isArray(t))return e(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,r){if(!t)return;if("string"==typeof t)return e(t,r);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return e(t,r)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function e(t,r){(null==r||r>t.length)&&(r=t.length);for(var n=0,e=new Array(r);n<r;n++)e[n]=t[n];return e}var o;window,(o=window.document).querySelectorAll(".ez-toggle-btn-state-radio").forEach((function(t){var r=n(t.querySelectorAll('input[type="radio"]')),e=o.querySelector(t.dataset.toggleButtonId);if(e){var a=function(){var t=r.some((function(t){return t.checked}));e.disabled=!t};a(),r.forEach((function(t){return t.addEventListener("change",a,!1)}))}}))}},[[24,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-modal-location-trash-single-asset-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.radio.toggle.js":
+/*!******************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.radio.toggle.js ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var toggleForms = doc.querySelectorAll('.ez-toggle-btn-state-radio');
+  toggleForms.forEach(function (toggleForm) {
+    var radioInputs = _toConsumableArray(toggleForm.querySelectorAll('input[type="radio"]'));
+
+    var button = doc.querySelector(toggleForm.dataset.toggleButtonId);
+
+    if (!button) {
+      return;
+    }
+
+    var toggleButtonState = function toggleButtonState() {
+      var isAnythingSelected = radioInputs.some(function (el) {
+        return el.checked;
+      });
+      button.disabled = !isAnythingSelected;
+    };
+
+    toggleButtonState();
+    radioInputs.forEach(function (radioInput) {
+      return radioInput.addEventListener('change', toggleButtonState, false);
+    });
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ 19:
+/*!************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.radio.toggle.js ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.radio.toggle.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.radio.toggle.js");
+
+
+/***/ })
+
+},[[19,"runtime"]]]);

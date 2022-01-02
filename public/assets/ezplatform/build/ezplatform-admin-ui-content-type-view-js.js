@@ -1,1 +1,232 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-content-type-view-js"],{13:function(e,t,n){n("XTxE"),n("RvAi"),n("Jxrv"),e.exports=n("rvQw")},Jxrv:function(e,t){var n,r,o,a,i;window,n=window.document,r=n.querySelector(".ez-btn--edit"),o=n.querySelector('.ez-extra-actions--edit.ez-extra-actions--prevent-show [type="radio"]'),a=n.querySelector(".ez-extra-actions--edit").querySelectorAll('.form-check [type="radio"]'),i=function(){n.querySelector(".ez-extra-actions--edit form").submit()},a.forEach((function(e){return e.addEventListener("change",i,!1)})),o&&r.addEventListener("click",(function(){o.checked=!0,i()}),!1)},RvAi:function(e,t){function n(e){return function(e){if(Array.isArray(e))return r(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return r(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var o,a,i,c,s,u,l,d,f,v;o=window,a=window.document,c="ez-extra-actions--hidden",s=n(a.querySelectorAll(".ez-btn--extra-actions")),u=a.querySelector(".ez-context-menu"),l=a.querySelector(".ez-footer"),d=function(){var e=a.querySelector(".ez-extra-actions:not(.ez-extra-actions--hidden)"),t=(l?Math.min(l.getBoundingClientRect().top,o.innerHeight):o.innerHeight)-e.getBoundingClientRect().top-8;e.style.height="".concat(t,"px")},f=function(){clearTimeout(i),i=setTimeout(d,50)},v=function(){o.removeEventListener("scroll",f,!1),o.removeEventListener("resize",f,!1)},s.forEach((function(e){e.addEventListener("click",(function(){var t=a.querySelector('.ez-extra-actions[data-actions="'.concat(e.dataset.actions,'"]'));if(!e.dataset.validate||parseInt(e.dataset.isFormValid,10)){var n,r=(n=t).classList.contains(c)&&!n.classList.contains("ez-extra-actions--prevent-show"),i=r?"add":"remove",l=r?"remove":"add",y=r?"add":"remove",m=t.querySelector(e.dataset.focusElement),p=function n(r){var o=!e.contains(r.target),i=!s.includes(r.target),l=!r.target.closest(".ez-extra-actions"),d=!r.target.closest(".flatpickr-calendar");o&&l&&d&&(e.classList.remove("ez-btn--active-button"),t.classList.add(c),i&&u.classList.remove("ez-context-menu--expanded"),a.body.removeEventListener("click",n,!1),v())};e.classList[i]("ez-btn--active-button"),t.classList[l](c),u.classList[y]("ez-context-menu--expanded"),t.classList.contains(c)?(a.body.removeEventListener("click",p),v()):(a.body.addEventListener("click",p,!1),d(),o.addEventListener("scroll",f,!1),o.addEventListener("resize",f,!1)),m&&m.focus()}}),!1)}))},XTxE:function(e,t){var n,r,o;n=window,r=window.document,o=function(e){n.location=e.currentTarget.value},r.querySelectorAll(".ez-location-language-change").forEach((function(e){e.addEventListener("change",o,!1)}))},rvQw:function(e,t){function n(e){return function(e){if(Array.isArray(e))return r(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return r(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var o;window,(o=window.document).querySelectorAll(".ez-toggle-btn-state").forEach((function(e){var t=n(e.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]')),r=o.querySelector(e.dataset.toggleButtonId);if(r){var a=function(){var e=t.some((function(e){return e.checked}));r.disabled=!e};a(),t.forEach((function(e){return e.addEventListener("change",a,!1)}))}}))}},[[13,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-content-type-view-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js":
+/*!***********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var changeLocationLanguage = function changeLocationLanguage(event) {
+    global.location = event.currentTarget.value;
+  };
+
+  var locationLanguageSwitchers = doc.querySelectorAll('.ez-location-language-change');
+  locationLanguageSwitchers.forEach(function (locationLanguageSwitcher) {
+    locationLanguageSwitcher.addEventListener('change', changeLocationLanguage, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var toggleForms = doc.querySelectorAll('.ez-toggle-btn-state');
+  toggleForms.forEach(function (toggleForm) {
+    var checkboxes = _toConsumableArray(toggleForm.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]'));
+
+    var buttonRemove = doc.querySelector(toggleForm.dataset.toggleButtonId);
+
+    if (!buttonRemove) {
+      return;
+    }
+
+    var toggleButtonState = function toggleButtonState() {
+      var isAnythingSelected = checkboxes.some(function (el) {
+        return el.checked;
+      });
+      buttonRemove.disabled = !isAnythingSelected;
+    };
+
+    toggleButtonState();
+    checkboxes.forEach(function (checkbox) {
+      return checkbox.addEventListener('change', toggleButtonState, false);
+    });
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/contenttype.edit.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/contenttype.edit.js ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var editButton = doc.querySelector('.ez-btn--edit');
+  var languageRadioOption = doc.querySelector('.ez-extra-actions--edit.ez-extra-actions--prevent-show [type="radio"]');
+  var editActions = doc.querySelector('.ez-extra-actions--edit');
+  var btns = editActions.querySelectorAll('.form-check [type="radio"]');
+
+  var changeHandler = function changeHandler() {
+    var form = doc.querySelector('.ez-extra-actions--edit form');
+    form.submit();
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('change', changeHandler, false);
+  });
+
+  if (!languageRadioOption) {
+    return;
+  }
+
+  editButton.addEventListener('click', function () {
+    languageRadioOption.checked = true;
+    changeHandler();
+  }, false);
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var CLASS_HIDDEN = 'ez-extra-actions--hidden';
+  var CLASS_EXPANDED = 'ez-context-menu--expanded';
+  var CLASS_ACTIVE_BUTTON = 'ez-btn--active-button';
+  var CLASS_PREVENT_SHOW = 'ez-extra-actions--prevent-show';
+  var ACTIONS_CONTAINER_MARGIN = 8;
+  var RESIZE_AND_SCROLL_TIMEOUT = 50;
+
+  var btns = _toConsumableArray(doc.querySelectorAll('.ez-btn--extra-actions'));
+
+  var menu = doc.querySelector('.ez-context-menu');
+  var footer = doc.querySelector('.ez-footer');
+  var containerHeightTimeout;
+
+  var haveHiddenPart = function haveHiddenPart(element) {
+    return element.classList.contains(CLASS_HIDDEN) && !element.classList.contains(CLASS_PREVENT_SHOW);
+  };
+
+  var setContainerHeight = function setContainerHeight() {
+    var container = doc.querySelector('.ez-extra-actions:not(.ez-extra-actions--hidden)');
+    var bottomPosition = footer ? Math.min(footer.getBoundingClientRect().top, global.innerHeight) : global.innerHeight;
+    var containerHeight = bottomPosition - container.getBoundingClientRect().top - ACTIONS_CONTAINER_MARGIN;
+    container.style.height = "".concat(containerHeight, "px");
+  };
+
+  var setContainerHeightTimeout = function setContainerHeightTimeout() {
+    clearTimeout(containerHeightTimeout);
+    containerHeightTimeout = setTimeout(setContainerHeight, RESIZE_AND_SCROLL_TIMEOUT);
+  };
+
+  var addContainerHeightListeners = function addContainerHeightListeners() {
+    global.addEventListener('scroll', setContainerHeightTimeout, false);
+    global.addEventListener('resize', setContainerHeightTimeout, false);
+  };
+
+  var removeContainerHeightListeners = function removeContainerHeightListeners() {
+    global.removeEventListener('scroll', setContainerHeightTimeout, false);
+    global.removeEventListener('resize', setContainerHeightTimeout, false);
+  };
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var actions = doc.querySelector(".ez-extra-actions[data-actions=\"".concat(btn.dataset.actions, "\"]"));
+
+      if (btn.dataset.validate && !parseInt(btn.dataset.isFormValid, 10)) {
+        return;
+      }
+
+      var isHidden = haveHiddenPart(actions);
+      var methodNameButton = isHidden ? 'add' : 'remove';
+      var methodNameContainer = isHidden ? 'remove' : 'add';
+      var methodNameMenu = isHidden ? 'add' : 'remove';
+      var focusElement = actions.querySelector(btn.dataset.focusElement);
+
+      var detectClickOutside = function detectClickOutside(event) {
+        var isNotButton = !btn.contains(event.target);
+        var shouldCollapseMenu = !btns.includes(event.target);
+        var isNotExtraActions = !event.target.closest('.ez-extra-actions');
+        var isNotCalendar = !event.target.closest('.flatpickr-calendar');
+
+        if (isNotButton && isNotExtraActions && isNotCalendar) {
+          btn.classList.remove(CLASS_ACTIVE_BUTTON);
+          actions.classList.add(CLASS_HIDDEN);
+
+          if (shouldCollapseMenu) {
+            menu.classList.remove(CLASS_EXPANDED);
+          }
+
+          doc.body.removeEventListener('click', detectClickOutside, false);
+          removeContainerHeightListeners();
+        }
+      };
+
+      btn.classList[methodNameButton](CLASS_ACTIVE_BUTTON);
+      actions.classList[methodNameContainer](CLASS_HIDDEN);
+      menu.classList[methodNameMenu](CLASS_EXPANDED);
+
+      if (!actions.classList.contains(CLASS_HIDDEN)) {
+        doc.body.addEventListener('click', detectClickOutside, false);
+        setContainerHeight();
+        addContainerHeightListeners();
+      } else {
+        doc.body.removeEventListener('click', detectClickOutside);
+        removeContainerHeightListeners();
+      }
+
+      if (focusElement) {
+        focusElement.focus();
+      }
+    }, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ 6:
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/contenttype.edit.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/contenttype.edit.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/contenttype.edit.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js");
+
+
+/***/ })
+
+},[[6,"runtime"]]]);

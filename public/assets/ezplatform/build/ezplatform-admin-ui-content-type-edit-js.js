@@ -1,1 +1,253 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-content-type-edit-js"],{11:function(e,t,n){n("DUCt"),n("nse6"),n("NvwV"),e.exports=n("TJx4")},DUCt:function(e,t){var n,r;window,n=window.document,r=/__number__/g,n.querySelectorAll(".ezselection-settings.options").forEach((function(e){var t=function(){return e.querySelectorAll(".ezselection-settings-option-checkbox:checked")},n=function(){var n=!!t().length,r=n?"removeAttribute":"setAttribute";e.querySelector(".ezselection-settings-option-remove")[r]("disabled",n)};e.querySelector(".ezselection-settings-option-list").addEventListener("click",n,!1),e.querySelector(".ezselection-settings-option-add").addEventListener("click",(function(){var t=e.querySelector(".ezselection-settings-option-value-prototype").innerHTML,n=e.querySelector(".ezselection-settings-option-list"),o=parseInt(n.dataset.nextOptionId,10);n.dataset.nextOptionId=o+1,n.insertAdjacentHTML("beforeend",t.replace(r,o))}),!1),e.querySelector(".ezselection-settings-option-remove").addEventListener("click",(function(){t().forEach((function(e){return e.closest(".ezselection-settings-option-value").remove()})),n()}),!1)}))},NvwV:function(e,t){function n(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var o,c,i,l,a,u,s,d,f,m,g,p,v;window,o=window.document,c=window.eZ,i=window.React,l=window.ReactDOM,a=o.querySelectorAll(".ez-btn--reset-starting-location"),u=o.querySelectorAll(".btn--udw-relation-default-location"),s=o.getElementById("react-udw"),d=function(){return l.unmountComponentAtNode(s)},f=function(e,t){d();var n=t[0].id,r=t[0].ContentInfo.Content.TranslatedName,o=e.closest(".ezobjectrelationlist-settings"),c=e.closest(".ezobjectrelation-settings");p(e.parentNode.querySelector(".ez-btn--reset-starting-location"),!0),o?(o.querySelector(e.dataset.relationRootInputSelector).value=n,o.querySelector(e.dataset.relationSelectedRootNameSelector).innerHTML=r):(c.querySelector(e.dataset.relationRootInputSelector).value=n,c.querySelector(e.dataset.relationSelectedRootNameSelector).innerHTML=r)},m=function(){return d()},g=function(e){e.preventDefault();var t=JSON.parse(e.currentTarget.dataset.udwConfig);l.render(i.createElement(c.modules.UniversalDiscovery,function(e){for(var t=1;t<arguments.length;t++){var o=null!=arguments[t]?arguments[t]:{};t%2?n(Object(o),!0).forEach((function(t){r(e,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(o,t))}))}return e}({onConfirm:f.bind(null,e.currentTarget),onCancel:m,title:e.currentTarget.dataset.universaldiscoveryTitle,multiple:!1},t)),s)},p=function(e,t){t?e.removeAttribute("disabled"):e.setAttribute("disabled",!0)},v=function(e){var t=e.currentTarget,n=t.dataset,r=n.relationRootInputSelector,c=n.relationSelectedRootNameSelector;o.querySelector(r).value="",o.querySelector(c).innerHTML="",p(t,!1)},u.forEach((function(e){return e.addEventListener("click",g,!1)})),a.forEach((function(e){return e.addEventListener("click",v,!1)}))},TJx4:function(e,t){var n,r;window,n=document,r=/__number__/g,n.querySelector(".ez-matrix-settings__columns")&&n.querySelectorAll(".ez-matrix-settings__columns").forEach((function(e){var t=function(e){return e.querySelectorAll("".concat(".ez-matrix-settings__column-checkbox",":checked"))},n=function(e){var n=t(e).length>0,r=n?"removeAttribute":"setAttribute";e.querySelectorAll(".ez-btn--remove-column").forEach((function(e){return e[r]("disabled",!n)}))},o=function(e){var t=e.target.closest(".ez-matrix-settings__columns");n(t)},c=function(e){n(e),e.querySelectorAll(".ez-matrix-settings__column-checkbox").forEach((function(e){e.removeEventListener("click",o,!1),e.addEventListener("click",o,!1)}))};e.querySelector(".ez-btn--add-column").addEventListener("click",(function(e){var t=e.target.closest(".ez-matrix-settings__columns"),n=t.querySelector(".ez-matrix-settings__column-template").innerHTML,o=t.querySelector(".ez-table__body");o.insertAdjacentHTML("beforeend",n.replace(r,o.dataset.nextIndex++)),c(t)}),!1),e.querySelector(".ez-btn--remove-column").addEventListener("click",(function(e){var n=e.target.closest(".ez-matrix-settings__columns");t(n).forEach((function(e){return e.closest(".ez-matrix-settings__column").remove()})),c(n)}),!1),c(e)}))},nse6:function(e,t){var n,r,o,c;window,n=window.document,r=n.querySelectorAll(".ez-card__body-display-toggler"),o=function(e){e.preventDefault(),e.currentTarget.closest(".ez-card--toggle-group").classList.toggle("ez-card--collapsed")},c=function(e){return e.addEventListener("click",o)},r.forEach((function(e){return c(e)})),n.body.addEventListener("ez-initialize-card-toggle-group",(function(e){return c(e.detail.button)}))}},[[11,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-content-type-edit-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var togglers = doc.querySelectorAll('.ez-card__body-display-toggler');
+
+  var toggleFieldTypeView = function toggleFieldTypeView(event) {
+    event.preventDefault();
+    event.currentTarget.closest('.ez-card--toggle-group').classList.toggle('ez-card--collapsed');
+  };
+
+  var attachToggleField = function attachToggleField(btn) {
+    return btn.addEventListener('click', toggleFieldTypeView);
+  };
+
+  togglers.forEach(function (btn) {
+    return attachToggleField(btn);
+  });
+  doc.body.addEventListener('ez-initialize-card-toggle-group', function (event) {
+    return attachToggleField(event.detail.button);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.relation.default.location.js":
+/*!************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.relation.default.location.js ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM) {
+  var SELECTOR_RESET_STARTING_LOCATION_BTN = '.ez-btn--reset-starting-location';
+  var resetStartingLocationBtns = doc.querySelectorAll(SELECTOR_RESET_STARTING_LOCATION_BTN);
+  var udwBtns = doc.querySelectorAll('.btn--udw-relation-default-location');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(btn, items) {
+    closeUDW();
+    var locationId = items[0].id;
+    var locationName = items[0].ContentInfo.Content.TranslatedName;
+    var objectRelationListSettingsWrapper = btn.closest('.ezobjectrelationlist-settings');
+    var objectRelationSettingsWrapper = btn.closest('.ezobjectrelation-settings');
+    toggleResetStartingLocationBtn(btn.parentNode.querySelector(SELECTOR_RESET_STARTING_LOCATION_BTN), true);
+
+    if (objectRelationListSettingsWrapper) {
+      objectRelationListSettingsWrapper.querySelector(btn.dataset.relationRootInputSelector).value = locationId;
+      objectRelationListSettingsWrapper.querySelector(btn.dataset.relationSelectedRootNameSelector).innerHTML = locationName;
+    } else {
+      objectRelationSettingsWrapper.querySelector(btn.dataset.relationRootInputSelector).value = locationId;
+      objectRelationSettingsWrapper.querySelector(btn.dataset.relationSelectedRootNameSelector).innerHTML = locationName;
+    }
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm.bind(null, event.currentTarget),
+      onCancel: onCancel,
+      title: event.currentTarget.dataset.universaldiscoveryTitle,
+      multiple: false
+    }, config)), udwContainer);
+  };
+
+  var toggleResetStartingLocationBtn = function toggleResetStartingLocationBtn(button, isEnabled) {
+    if (isEnabled) {
+      button.removeAttribute('disabled');
+    } else {
+      button.setAttribute('disabled', true);
+    }
+  };
+
+  var resetStartingLocation = function resetStartingLocation(event) {
+    var button = event.currentTarget;
+    var _button$dataset = button.dataset,
+        relationRootInputSelector = _button$dataset.relationRootInputSelector,
+        relationSelectedRootNameSelector = _button$dataset.relationSelectedRootNameSelector;
+    doc.querySelector(relationRootInputSelector).value = '';
+    doc.querySelector(relationSelectedRootNameSelector).innerHTML = '';
+    toggleResetStartingLocationBtn(button, false);
+  };
+
+  udwBtns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+  resetStartingLocationBtns.forEach(function (btn) {
+    return btn.addEventListener('click', resetStartingLocation, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js":
+/*!********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var SELECTOR_TEMPLATE = '.ezselection-settings-option-value-prototype';
+  var SELECTOR_OPTION = '.ezselection-settings-option-value';
+  var SELECTOR_OPTIONS_LIST = '.ezselection-settings-option-list';
+  var SELECTOR_BTN_REMOVE = '.ezselection-settings-option-remove';
+  var SELECTOR_BTN_ADD = '.ezselection-settings-option-add';
+  var NUMBER_PLACEHOLDER = /__number__/g;
+  doc.querySelectorAll('.ezselection-settings.options').forEach(function (container) {
+    var findCheckedOptions = function findCheckedOptions() {
+      return container.querySelectorAll('.ezselection-settings-option-checkbox:checked');
+    };
+
+    var toggleDisableState = function toggleDisableState() {
+      var disabledState = !!findCheckedOptions().length;
+      var methodName = disabledState ? 'removeAttribute' : 'setAttribute';
+      container.querySelector(SELECTOR_BTN_REMOVE)[methodName]('disabled', disabledState);
+    };
+
+    var addOption = function addOption() {
+      var template = container.querySelector(SELECTOR_TEMPLATE).innerHTML;
+      var optionsList = container.querySelector(SELECTOR_OPTIONS_LIST);
+      var nextId = parseInt(optionsList.dataset.nextOptionId, 10);
+      optionsList.dataset.nextOptionId = nextId + 1;
+      optionsList.insertAdjacentHTML('beforeend', template.replace(NUMBER_PLACEHOLDER, nextId));
+    };
+
+    var removeOptions = function removeOptions() {
+      findCheckedOptions().forEach(function (element) {
+        return element.closest(SELECTOR_OPTION).remove();
+      });
+      toggleDisableState();
+    };
+
+    container.querySelector(SELECTOR_OPTIONS_LIST).addEventListener('click', toggleDisableState, false);
+    container.querySelector(SELECTOR_BTN_ADD).addEventListener('click', addOption, false);
+    container.querySelector(SELECTOR_BTN_REMOVE).addEventListener('click', removeOptions, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-matrix-fieldtype/src/bundle/Resources/public/js/scripts/admin.contenttype.matrix.js":
+/*!*************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-matrix-fieldtype/src/bundle/Resources/public/js/scripts/admin.contenttype.matrix.js ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var SELECTOR_SETTINGS_COLUMNS = '.ez-matrix-settings__columns';
+  var SELECTOR_COLUMN = '.ez-matrix-settings__column';
+  var SELECTOR_COLUMNS_CONTAINER = '.ez-table__body';
+  var SELECTOR_COLUMN_CHECKBOX = '.ez-matrix-settings__column-checkbox';
+  var SELECTOR_ADD_COLUMN = '.ez-btn--add-column';
+  var SELECTOR_REMOVE_COLUMN = '.ez-btn--remove-column';
+  var SELECTOR_TEMPLATE = '.ez-matrix-settings__column-template';
+  var NUMBER_PLACEHOLDER = /__number__/g;
+
+  if (!doc.querySelector(SELECTOR_SETTINGS_COLUMNS)) {
+    return;
+  }
+
+  doc.querySelectorAll(SELECTOR_SETTINGS_COLUMNS).forEach(function (container) {
+    var getNextIndex = function getNextIndex(parentNode) {
+      return parentNode.dataset.nextIndex++;
+    };
+
+    var findCheckedColumns = function findCheckedColumns(parentNode) {
+      return parentNode.querySelectorAll("".concat(SELECTOR_COLUMN_CHECKBOX, ":checked"));
+    };
+
+    var updateDisabledState = function updateDisabledState(parentNode) {
+      var isEnabled = findCheckedColumns(parentNode).length > 0;
+      var methodName = isEnabled ? 'removeAttribute' : 'setAttribute';
+      parentNode.querySelectorAll(SELECTOR_REMOVE_COLUMN).forEach(function (btn) {
+        return btn[methodName]('disabled', !isEnabled);
+      });
+    };
+
+    var addItem = function addItem(event) {
+      var settingsNode = event.target.closest(SELECTOR_SETTINGS_COLUMNS);
+      var template = settingsNode.querySelector(SELECTOR_TEMPLATE).innerHTML;
+      var node = settingsNode.querySelector(SELECTOR_COLUMNS_CONTAINER);
+      node.insertAdjacentHTML('beforeend', template.replace(NUMBER_PLACEHOLDER, getNextIndex(node)));
+      initColumns(settingsNode);
+    };
+
+    var removeItems = function removeItems(event) {
+      var settingsNode = event.target.closest(SELECTOR_SETTINGS_COLUMNS);
+      findCheckedColumns(settingsNode).forEach(function (btn) {
+        return btn.closest(SELECTOR_COLUMN).remove();
+      });
+      initColumns(settingsNode);
+    };
+
+    var checkColumn = function checkColumn(event) {
+      var settingsNode = event.target.closest(SELECTOR_SETTINGS_COLUMNS);
+      updateDisabledState(settingsNode);
+    };
+
+    var initColumns = function initColumns(parentNode) {
+      updateDisabledState(parentNode);
+      parentNode.querySelectorAll(SELECTOR_COLUMN_CHECKBOX).forEach(function (btn) {
+        btn.removeEventListener('click', checkColumn, false);
+        btn.addEventListener('click', checkColumn, false);
+      });
+    };
+
+    container.querySelector(SELECTOR_ADD_COLUMN).addEventListener('click', addItem, false);
+    container.querySelector(SELECTOR_REMOVE_COLUMN).addEventListener('click', removeItems, false);
+    initColumns(container);
+  });
+})(window, document);
+
+/***/ }),
+
+/***/ 4:
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.relation.default.location.js ./vendor/ezsystems/ezplatform-matrix-fieldtype/src/bundle/Resources/public/js/scripts/admin.contenttype.matrix.js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.selection.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.card.toggle.group.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.relation.default.location.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.contenttype.relation.default.location.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-matrix-fieldtype/src/bundle/Resources/public/js/scripts/admin.contenttype.matrix.js */"./vendor/ezsystems/ezplatform-matrix-fieldtype/src/bundle/Resources/public/js/scripts/admin.contenttype.matrix.js");
+
+
+/***/ })
+
+},[[4,"runtime"]]]);

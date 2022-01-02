@@ -1,1 +1,7689 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-udw-tabs-js"],{"+bWA":function(e,t,n){"use strict";n.r(t);var r=n("cDcd"),o=n.n(r),a=n("CgFf"),i=n("xI8+"),c=n("AJkD"),s=n("nLu2");function l(e){return function(e){if(Array.isArray(e))return p(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||b(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function d(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){f(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function f(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function m(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||b(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function b(e,t){if(e){if("string"==typeof e)return p(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?p(e,t):void 0}}function p(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var y=function(){var e,t,n,u,f=m(Object(r.useState)(!0),2),b=f[0],p=f[1],y=m(Object(r.useContext)(a.ContentOnTheFlyDataContext),2),v=y[0],h=y[1],g=Object(r.useContext)(a.TabsContext),C=Object(r.useContext)(a.ContentOnTheFlyConfigContext),O=Object(r.useContext)(a.ConfirmContext),w=Object(r.useContext)(a.RestInfoContext),E=m(Object(r.useContext)(a.ActiveTabContext),2),j=(E[0],E[1]),_=m(Object(r.useContext)(a.CreateContentWidgetContext),2),S=(_[0],_[1]),I=m(Object(r.useContext)(a.SelectedLocationsContext),2),T=I[0],x=I[1],L=m(Object(r.useContext)(a.LoadedLocationsMapContext),2),A=L[0],P=L[1],N=m(Object(r.useContext)(a.MultipleConfigContext),2),k=N[0],R=(N[1],t=(e=v).locationId,n=e.languageCode,u=e.contentTypeIdentifier,window.Routing.generate("ezplatform.content_on_the_fly.create",{locationId:t,languageCode:n,contentTypeIdentifier:u})),D=Object(r.createRef)(),z=function(){S(!1),h({}),j(g[0].id)},M=function(){return p(!1)},q=function(){return p(!0)},U=Translator.trans("content_create.cancel.label",{},"universal_discovery_widget"),F=Translator.trans("content_create.confirm.label",{},"universal_discovery_widget"),Z=Object(s.a)({"m-content-create":!0,"m-content-create--footer-visible":b});return Object(r.useEffect)((function(){return window.document.body.addEventListener("ez-udw-hide-footer",M,!1),window.document.body.addEventListener("ez-udw-show-footer",q,!1),function(){window.document.body.removeEventListener("ez-udw-hide-footer",M,!1),window.document.body.removeEventListener("ez-udw-show-footer",q,!1)}})),o.a.createElement("div",{className:Z},o.a.createElement("iframe",{src:R,className:"m-content-create__iframe",ref:D,onLoad:function(){var e=D.current.contentWindow.document.querySelector('meta[name="LocationID"]');e&&Object(i.c)(d(d({},w),{},{id:parseInt(e.content,10)}),(function(e){if(C.autoConfirmAfterPublish){var t=k?[].concat(l(T),[{location:e[0]}]):[{location:e[0]}];O(t)}else{var n=Object(c.a)(A),r=n[n.length-1],o=k?{type:"ADD_SELECTED_LOCATION",location:e[0]}:{type:"REPLACE_SELECTED_LOCATIONS",locations:[{location:e[0]}]};r.subitems=[],r.totalCount=r.totalCount+1,P({type:"SET_LOCATIONS",data:n}),x(o),z()}})),D.current.contentWindow.document.body.addEventListener("ez-udw-opened",M,!1),D.current.contentWindow.document.body.addEventListener("ez-udw-closed",q,!1)}}),o.a.createElement("div",{className:"m-content-create__actions"},o.a.createElement("button",{className:"m-content-create__cancel-button btn btn-gray",onClick:z},U),o.a.createElement("button",{className:"m-content-create__confirm-button btn btn-primary",onClick:function(){var e=D.current.contentWindow.document.body.querySelector('[data-action="publish"]');e&&e.click()}},F)))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.tabs",[{id:"content-create",component:y,label:Translator.trans("content_create.label",{},"universal_discovery_widget"),icon:window.eZ.helpers.icon.getIconPath("search"),isHiddenOnList:!0}],!0),t.default=y},"/A22":function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("CgFf"),s=n("MUfx");function l(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return u(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return u(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var d=function(e){var t=e.location,n=l(Object(r.useContext)(c.SelectedLocationsContext),2),a=n[0],i=n[1],u=a.some((function(e){return e.location.id===t.id}));return o.a.createElement(s.a,{isSelected:u,toggleSelection:function(){var e=u?{type:"REMOVE_SELECTED_LOCATION",id:t.id}:{type:"ADD_SELECTED_LOCATION",location:t};i(e)}})};d.propTypes={location:i.a.object.isRequired},t.a=d},32:function(e,t,n){n("Hzdi"),n("kqHN"),n("eVcW"),n("+bWA"),e.exports=n("PFI1")},"3obH":function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("/A22"),s=n("uHg5"),l=n("nLu2"),u=n("CgFf");function d(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return f(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return f(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function f(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var m=function(e){var t=e.location,n=d(Object(r.useContext)(u.MarkedLocationIdContext),2),a=n[0],i=n[1],f=d(Object(r.useContext)(u.LoadedLocationsMapContext),2),m=f[0],b=f[1],p=Object(r.useContext)(u.ContentTypesMapContext),y=d(Object(r.useContext)(u.SelectedLocationsContext),2),v=(y[0],y[1]),h=d(Object(r.useContext)(u.MultipleConfigContext),2),g=h[0],C=(h[1],Object(r.useContext)(u.ContainersOnlyContext)),O=Object(r.useContext)(u.AllowedContentTypesContext),w=p[t.ContentInfo.Content.ContentType._href],E=w.isContainer,j=C&&!E||O&&!O.includes(w.identifier),_=Object(l.a)({"c-finder-leaf":!0,"c-finder-leaf--marked":!!m.find((function(e){return e.parentLocationId===t.id})),"c-finder-leaf--has-children":!!t.childCount,"c-finder-leaf--not-selectable":j});return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(window.document.querySelector(".c-udw-tab"))}),[]),o.a.createElement("div",{className:_,onClick:function(e){var n=e.nativeEvent.target.closest(".c-toggle-selection-button"),r=t.id===a;n||r||(i(t.id),b({type:"CUT_LOCATIONS",locationId:t.id}),b({type:"UPDATE_LOCATIONS",data:{parentLocationId:t.id,subitems:[]}}),g||j||(v({type:"CLEAR_SELECTED_LOCATIONS"}),v({type:"ADD_SELECTED_LOCATION",location:t})))}},o.a.createElement("span",{className:"c-finder-leaf__name"},o.a.createElement("span",{className:"c-finder-leaf__icon-wrapper"},o.a.createElement(s.a,{extraClasses:"ez-icon--small ez-icon--base-dark",customPath:p[t.ContentInfo.Content.ContentType._href].thumbnail})),o.a.createElement("span",{title:t.ContentInfo.Content.TranslatedName,"data-tooltip-container-selector":".c-udw-tab"},t.ContentInfo.Content.TranslatedName)),!g||j?null:o.a.createElement(c.a,{location:t}))};m.propTypes={location:i.a.object.isRequired};var b=m,p=n("ONuQ");function y(e){return function(e){if(Array.isArray(e))return w(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||O(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function v(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function h(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?v(Object(n),!0).forEach((function(t){g(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):v(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function g(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function C(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||O(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function O(e,t){if(e){if("string"==typeof e)return w(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?w(e,t):void 0}}function w(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var E=function(e){var t=e.locationData,n=e.itemsPerPage,a=C(Object(r.useState)(0),2),i=a[0],c=a[1],d=C(Object(r.useState)(0),2),f=d[0],m=d[1],v=C(Object(r.useContext)(u.LoadedLocationsMapContext),2),g=v[0],O=v[1],w=C(Object(r.useContext)(u.SortingContext),2),E=w[0],j=(w[1],C(Object(r.useContext)(u.SortOrderContext),2)),_=j[0],S=(j[1],Object(r.useContext)(u.ContentTypesMapContext)),I=C(Object(r.useContext)(u.MarkedLocationIdContext),2),T=I[0],x=(I[1],Object(r.useRef)(null)),L=u.SORTING_OPTIONS.find((function(e){return e.sortClause===E})),A=C(Object(p.a)(t,{sortClause:L.sortClause,sortOrder:_},n,i),2),P=A[0],N=A[1],k=t.subitems,R=t.collapsed,D=0,z=0,M=function(e){var r=e.target,o=t.subitems.length>=P.totalCount,a=r.scrollHeight-r.clientHeight-r.scrollTop<200;o||!a||N||c(i+n)},q=function(e){var n=e.clientX,r=z+(n-D);r<50&&(O({type:"UPDATE_LOCATIONS",data:h(h({},t),{},{collapsed:!0})}),r=0,U()),m(r)},U=function e(){window.document.removeEventListener("mousemove",q),window.document.removeEventListener("mouseup",e),window.document.body.classList.remove("ez-is-branch-resizing")},F=function(e){var t=e.nativeEvent;D=t.clientX,z=x.current.getBoundingClientRect().width,window.document.addEventListener("mousemove",q,!1),window.document.addEventListener("mouseup",U,!1),window.document.body.classList.add("ez-is-branch-resizing")},Z=function(){if(N)return o.a.createElement("div",{className:"c-finder-branch__loading-spinner"},o.a.createElement(s.a,{name:"spinner",extraClasses:"ez-icon--medium ez-spin"}))};if(Object(r.useEffect)((function(){if(P.subitems){var e=h(h(h({},t),P),{},{subitems:[].concat(y(t.subitems),y(P.subitems))});O({type:"UPDATE_LOCATIONS",data:e})}}),[P,O,N]),!k.length&&!R&&!N)return null;var W=Object(l.a)({"c-finder-branch":!0,"c-finder-branch--collapsed":R}),V=R?function(){O({type:"UPDATE_LOCATIONS",data:h(h({},t),{},{collapsed:!1})})}:null;return o.a.createElement("div",{className:W,onClick:V,ref:x},function(){if(!R)return null;var e=k.find((function(e){return g.find((function(t){return t.parentLocationId===e.location.id}))||e.location.id===T})),n=e?e.location.ContentInfo.Content.TranslatedName:"",r=t.location?S[t.location.ContentInfo.Content.ContentType._href].thumbnail:window.eZ.helpers.icon.getIconPath("folder");return o.a.createElement("div",{className:"c-finder-branch__info-wrapper"},o.a.createElement("span",{className:"c-finder-branch__icon-wrapper"},o.a.createElement(s.a,{extraClasses:"ez-icon--small ez-icon--primary",customPath:r})),o.a.createElement("span",{className:"c-finder-branch__name"},n))}(),function(){if(R)return null;var e=f||null;return o.a.createElement(r.Fragment,null,o.a.createElement("div",{className:"c-finder-branch__items-wrapper",onScroll:M,style:{width:e}},Z(),k.map((function(e){var t=e.location;return o.a.createElement(b,{key:t.id,location:t})}))),o.a.createElement("div",{className:"c-finder-branch__resize-handler",onMouseDown:F}))}())};E.propTypes={locationData:i.a.shape({parentLocationId:i.a.number.isRequired,subitems:i.a.array.isRequired,location:i.a.object.isRequired,collapsed:i.a.bool}).isRequired,itemsPerPage:i.a.number},E.defaultProps={itemsPerPage:50};var j=E;function _(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return S(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return S(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function S(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var I=function(e){var t=e.itemsPerPage,n=_(Object(r.useContext)(u.LoadedLocationsMapContext),2),a=n[0],i=(n[1],Object(r.useRef)(null));return Object(r.useEffect)((function(){var e=i.current;e.scrollLeft=e.scrollWidth-e.clientWidth})),o.a.createElement("div",{className:"c-finder",ref:i},a.map((function(e){return o.a.createElement(j,{key:e.parentLocationId,itemsPerPage:t,locationData:e})})))};I.propTypes={itemsPerPage:i.a.number},I.defaultProps={itemsPerPage:50};t.a=I},AJkD:function(e,t,n){"use strict";function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}t.a=function e(t){var n;if("object"!==r(t))return t;if(!t)return t;if("[object Array]"===Object.prototype.toString.apply(t)){n=[];for(var o=0;o<t.length;o++)n[o]=e(t[o]);return n}for(var a in n={},t)t.hasOwnProperty(a)&&(n[a]=e(t[a]));return n}},ATD6:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return J}));var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("uHg5");function s(e){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function l(){return(l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e}).apply(this,arguments)}function u(e){return function(e){if(Array.isArray(e))return d(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return d(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return d(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function d(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function f(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function m(e,t){return(m=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function b(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,r=v(e);if(t){var o=v(this).constructor;n=Reflect.construct(r,arguments,o)}else n=r.apply(this,arguments);return p(this,n)}}function p(e,t){if(t&&("object"===s(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return y(e)}function y(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function v(e){return(v=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var h=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&m(e,t)}(i,e);var t,n,r,a=b(i);function i(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,i),(t=a.call(this,e)).toggleExpandedState=t.toggleExpandedState.bind(y(t)),t.cancelLoadingState=t.cancelLoadingState.bind(y(t)),t.loadMoreSubitems=t.loadMoreSubitems.bind(y(t)),t.handleAfterExpandedStateChange=t.handleAfterExpandedStateChange.bind(y(t)),t.sortedActions=t.getSortedActions(),t.state={isExpanded:!!e.subitems.length,isLoading:!1},t}return t=i,(n=[{key:"getSortedActions",value:function(){var e=window.eZ.adminUiConfig.contentTreeWidget.itemActions;return(e?u(e):[]).sort((function(e,t){return t.priority-e.priority}))}},{key:"cancelLoadingState",value:function(){this.setState((function(){return{isLoading:!1}}))}},{key:"toggleExpandedState",value:function(){var e=this,t=this.props,n=t.path,r=t.treeMaxDepth;if(n.split(",").length-1>=r){var o=Translator.trans("expand_item.limit.message",{},"content_tree");window.eZ.helpers.notification.showWarningNotification(o)}else this.setState((function(e){return{isExpanded:!e.isExpanded}}),(function(){var t=e.props;(0,t.afterItemToggle)(t.path,e.state.isExpanded),e.handleAfterExpandedStateChange()}))}},{key:"handleAfterExpandedStateChange",value:function(){this.state.isExpanded&&!this.props.subitems.length&&this.loadMoreSubitems()}},{key:"loadMoreSubitems",value:function(){var e=this,t=this.props,n=t.subitems,r=t.subitemsLimit,o=n.length>=r;if(!this.state.isLoading&&!o){var a=this.props,i=a.path,c=a.locationId,s=a.subitemsLoadLimit,l=a.loadMoreSubitems;this.setState((function(){return{isLoading:!0}}),(function(){return l({path:i,parentLocationId:c,offset:n.length,limit:s},e.cancelLoadingState)}))}}},{key:"checkCanLoadMore",value:function(){var e=this.props,t=e.subitems,n=e.totalSubitemsCount;return t.length<n}},{key:"renderIcon",value:function(){var e=this.props,t=e.contentTypeIdentifier,n=e.selected,r=e.locationId,a={extraClasses:"ez-icon--small ez-icon--".concat(n?"primary":"dark")};return!this.state.isLoading||this.props.subitems.length?a.customPath=1===r?eZ.helpers.contentType.getContentTypeIconUrl("folder"):eZ.helpers.contentType.getContentTypeIconUrl(t)||eZ.helpers.contentType.getContentTypeIconUrl("file"):(a.name="spinner",a.extraClasses="".concat(a.extraClasses," ez-spin")),o.a.createElement("span",{className:"c-list-item__icon"},o.a.createElement(c.a,a))}},{key:"renderLoadMoreBtn",value:function(){var e=this.props,t=e.subitems,n=e.subitemsLimit,r=t.length>=n;if(!this.state.isExpanded||r||!this.checkCanLoadMore()||!t.length)return null;var a=this.state.isLoading,i=Translator.trans("show_more",{},"content_tree"),s=Translator.trans("loading_more",{},"content_tree"),l=a?s:i,u=null;return a&&(u=o.a.createElement(c.a,{name:"spinner",extraClasses:"ez-spin ez-icon--small c-list-item__load-more-btn-spinner"})),o.a.createElement("button",{type:"button",className:"c-list-item__load-more-btn btn ez-btn",onClick:this.loadMoreSubitems},u," ",l)}},{key:"renderSubitemsLimitReachedInfo",value:function(){var e=this.props,t=e.subitems,n=e.subitemsLimit,r=t.length>=n;if(!this.state.isExpanded||!r)return null;var a=Translator.trans("show_more.limit_reached",{},"content_tree");return o.a.createElement("div",{className:"c-list-item__load-more-limit-info"},a)}},{key:"renderItemLabel",value:function(){var e=this,t=this.props,n=t.totalSubitemsCount,r=t.href,a=t.name,i=t.selected,c=t.locationId,s=t.onClick;if(1===c)return null;var u={className:"c-list-item__toggler",onClick:this.toggleExpandedState,hidden:!n,tabIndex:-1};return i&&(u.className="".concat(u.className," ").concat("c-list-item__toggler","--light")),o.a.createElement("div",{className:"c-list-item__label"},o.a.createElement("span",u),o.a.createElement("a",{className:"c-list-item__link",href:r,onClick:s},this.renderIcon()," ",a),this.sortedActions.map((function(t){var n=t.component;return o.a.createElement(n,l({key:t.id},e.props))})))}},{key:"render",value:function(){var e=this.props,t=e.totalSubitemsCount,n=e.children,r=e.isInvisible,a=e.selected,i={className:"c-list-item"};return t&&(i.className="".concat(i.className," ").concat("c-list-item","--has-sub-items")),this.checkCanLoadMore()&&(i.className="".concat(i.className," ").concat("c-list-item","--can-load-more")),this.state.isExpanded&&(i.className="".concat(i.className," ").concat("c-list-item","--is-expanded")),r&&(i.className="".concat(i.className," ").concat("c-list-item","--is-hidden")),a&&(i.className="".concat(i.className," ").concat("c-list-item","--is-selected")),this.props.isRootItem&&(i.className="".concat(i.className," ").concat("c-list-item","--is-root-item")),o.a.createElement("li",i,this.renderItemLabel(),n,this.renderLoadMoreBtn(),this.renderSubitemsLimitReachedInfo())}}])&&f(t.prototype,n),r&&f(t,r),i}(r.Component);h.propTypes={path:i.a.string.isRequired,href:i.a.string.isRequired,contentTypeIdentifier:i.a.string.isRequired,totalSubitemsCount:i.a.number.isRequired,subitems:i.a.array.isRequired,children:i.a.element,hidden:i.a.bool.isRequired,isContainer:i.a.bool.isRequired,selected:i.a.bool.isRequired,locationId:i.a.number.isRequired,name:i.a.string.isRequired,isInvisible:i.a.bool.isRequired,loadMoreSubitems:i.a.func.isRequired,subitemsLimit:i.a.number.isRequired,subitemsLoadLimit:i.a.number,treeMaxDepth:i.a.number.isRequired,afterItemToggle:i.a.func.isRequired,isRootItem:i.a.bool.isRequired,onClick:i.a.func},h.defaultProps={hidden:!1,isRootItem:!1,onClick:function(){}};var g=h;function C(){return(C=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e}).apply(this,arguments)}function O(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function w(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?O(Object(n),!0).forEach((function(t){E(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):O(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function E(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var j=function e(t){var n=t.items,r=t.loadMoreSubitems,a=t.currentLocationId,i=t.path,c=t.subitemsLoadLimit,s=t.subitemsLimit,l=t.treeMaxDepth,u=t.afterItemToggle,d=t.isRoot,f=t.onClickItem,m={loadMoreSubitems:r,subitemsLoadLimit:c,subitemsLimit:s,treeMaxDepth:l,afterItemToggle:u,onClickItem:f},b=w(w({},m),{},{currentLocationId:a}),p=m;return o.a.createElement("ul",{className:"c-list"},n.map((function(t){var r=i&&i.length,c=window.Routing.generate("_ez_content_view",{contentId:t.contentId,locationId:t.locationId}),s="".concat(r?i+",":"").concat(t.locationId),l=t.subitems;return o.a.createElement(g,C({},t,p,{key:t.locationId,selected:t.locationId===a,href:c,isRootItem:d,onClick:f.bind(null,t),path:s}),l.length?o.a.createElement(e,C({path:s,items:l,isRoot:!1},b)):function(){var e=n[0],t=e,r=Translator.trans("no_subitems",{},"content_tree");if(d&&t&&(!e.subitems||!e.subitems.length))return o.a.createElement("div",{className:"c-list__no-items-message"},r)}())})))};j.propTypes={path:i.a.string.isRequired,items:i.a.array.isRequired,loadMoreSubitems:i.a.func.isRequired,currentLocationId:i.a.number.isRequired,subitemsLimit:i.a.number.isRequired,subitemsLoadLimit:i.a.number,treeMaxDepth:i.a.number.isRequired,afterItemToggle:i.a.func.isRequired,isRoot:i.a.bool.isRequired,onClickItem:i.a.func},j.defaultProps={isRoot:!1,onClickItem:function(){}};var _=j;function S(e){return(S="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function I(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function T(e,t){return(T=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function x(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,r=P(e);if(t){var o=P(this).constructor;n=Reflect.construct(r,arguments,o)}else n=r.apply(this,arguments);return L(this,n)}}function L(e,t){if(t&&("object"===S(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return A(e)}function A(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function P(e){return(P=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var N=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&T(e,t)}(i,e);var t,n,r,a=x(i);function i(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,i),(t=a.call(this,e)).changeContainerWidth=t.changeContainerWidth.bind(A(t)),t.addWidthChangeListener=t.addWidthChangeListener.bind(A(t)),t.handleResizeEnd=t.handleResizeEnd.bind(A(t)),t._refTreeContainer=o.a.createRef(),t.scrollTimeout=null,t.scrollPositionRestored=!1,t.state={resizeStartPositionX:0,containerWidth:t.getConfig("width"),resizedContainerWidth:0,isResizing:!1},t}return t=i,(n=[{key:"componentWillUnmount",value:function(){this.clearDocumentResizingListeners()}},{key:"componentDidMount",value:function(){var e=this;this.containerScrollRef.addEventListener("scroll",(function(t){window.clearTimeout(e.scrollTimeout),e.scrollTimeout=window.setTimeout((function(t){e.saveConfig("scrollTop",t)}),50,t.currentTarget.scrollTop)}))}},{key:"componentDidUpdate",value:function(e){this.state.containerWidth!==e.containerWidth&&(this.saveConfig("width",this.state.containerWidth),document.body.dispatchEvent(new CustomEvent("ez-content-tree-resized"))),this.props.items&&this.props.items.length&&!this.scrollPositionRestored&&(this.scrollPositionRestored=!0,this.containerScrollRef.scrollTo(0,this.getConfig("scrollTop")))}},{key:"saveConfig",value:function(e,t){var n=this.props.userId,r=JSON.parse(window.localStorage.getItem("ez-content-tree-state")||"{}");r[n]||(r[n]={}),r[n][e]=t,window.localStorage.setItem("ez-content-tree-state",JSON.stringify(r))}},{key:"getConfig",value:function(e){var t,n=this.props.userId;return null===(t=JSON.parse(window.localStorage.getItem("ez-content-tree-state")||"{}")[n])||void 0===t?void 0:t[e]}},{key:"changeContainerWidth",value:function(e){var t=e.clientX;this.setState((function(e){return{resizedContainerWidth:e.containerWidth+(t-e.resizeStartPositionX)}}))}},{key:"addWidthChangeListener",value:function(e){var t=e.nativeEvent.clientX,n=this._refTreeContainer.current.getBoundingClientRect().width;window.document.addEventListener("mousemove",this.changeContainerWidth,!1),window.document.addEventListener("mouseup",this.handleResizeEnd,!1),window.document.body.classList.add("ez-is-tree-resizing"),this.setState((function(){return{resizeStartPositionX:t,containerWidth:n,isResizing:!0}}))}},{key:"handleResizeEnd",value:function(){this.clearDocumentResizingListeners(),this.setState((function(e){return{resizeStartPositionX:0,containerWidth:e.resizedContainerWidth,isResizing:!1}}))}},{key:"clearDocumentResizingListeners",value:function(){window.document.removeEventListener("mousemove",this.changeContainerWidth),window.document.removeEventListener("mouseup",this.handleResizeEnd),window.document.body.classList.remove("ez-is-tree-resizing")}},{key:"renderCollapseAllBtn",value:function(){var e=Translator.trans("collapse_all",{},"content_tree");return o.a.createElement("div",{tabIndex:-1,className:"m-tree__collapse-all-btn",onClick:this.props.onCollapseAllItems},e)}},{key:"renderList",value:function(){var e=this,t=this.props,n=t.items,r=t.loadMoreSubitems,a=t.currentLocationId,i=t.onClickItem,c=t.subitemsLoadLimit,s={items:n,path:"",loadMoreSubitems:r,currentLocationId:a,subitemsLimit:t.subitemsLimit,subitemsLoadLimit:c,treeMaxDepth:t.treeMaxDepth,afterItemToggle:t.afterItemToggle,isRoot:!0,onClickItem:i};return o.a.createElement("div",{className:"m-tree__scrollable-wrapper",ref:function(t){return e.containerScrollRef=t}},n&&n.length?o.a.createElement(_,s):null)}},{key:"renderLoadingSpinner",value:function(){var e=this.props.items;if(!e||!e.length)return o.a.createElement("div",{className:"m-tree__loading-spinner"},o.a.createElement(c.a,{name:"spinner",extraClasses:"ez-icon--medium ez-spin"}))}},{key:"render",value:function(){var e=this.state,t=e.isResizing,n=e.containerWidth,r=e.resizedContainerWidth,a=t?r:n,i={className:"m-tree",ref:this._refTreeContainer};return a&&(i.style={width:"".concat(a,"px")}),o.a.createElement("div",i,this.renderList(),this.renderLoadingSpinner(),this.renderCollapseAllBtn(),o.a.createElement("div",{className:"m-tree__resize-handler",onMouseDown:this.addWidthChangeListener}))}}])&&I(t.prototype,n),r&&I(t,r),i}(r.Component);N.propTypes={items:i.a.array.isRequired,loadMoreSubitems:i.a.func.isRequired,currentLocationId:i.a.number.isRequired,subitemsLimit:i.a.number.isRequired,subitemsLoadLimit:i.a.number,treeMaxDepth:i.a.number.isRequired,afterItemToggle:i.a.func.isRequired,onCollapseAllItems:i.a.func.isRequired,onClickItem:i.a.func,userId:i.a.number.isRequired};var k=n("iRWG"),R=n("Y1Nf"),D=function(e,t){var n=e.token,r=e.siteaccess,o=e.subtree,a=e.sortClause,i=e.sortOrder,c="/api/ezp/v2/location/tree/load-subtree";a&&i&&(c+="?sortClause=".concat(a,"&sortOrder=").concat(i));var s=new Request(c,{method:"POST",mode:"same-origin",credentials:"same-origin",body:JSON.stringify({LoadSubtreeRequest:{"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequest",nodes:o}}),headers:{Accept:"application/vnd.ez.api.ContentTreeRoot+json","Content-Type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequest+json","X-Siteaccess":r,"X-CSRF-Token":n}});fetch(s).then(k.a).then((function(e){var t=e.ContentTreeRoot.ContentTreeNodeList;return z(t)})).then(t).catch(R.a)},z=function e(t){return t.map((function(t){return M(t),t.subitems=e(t.subitems),t}))},M=function(e){return e.totalSubitemsCount=e.totalChildrenCount,e.subitems=e.children,delete e.totalChildrenCount,delete e.children,delete e.displayLimit,e};function q(e){return(q="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function U(e){return function(e){if(Array.isArray(e))return Z(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||F(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function F(e,t){if(e){if("string"==typeof e)return Z(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?Z(e,t):void 0}}function Z(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function W(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function V(e,t){return(V=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function H(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,r=X(e);if(t){var o=X(this).constructor;n=Reflect.construct(r,arguments,o)}else n=r.apply(this,arguments);return $(this,n)}}function $(e,t){if(t&&("object"===q(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return B(e)}function B(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function X(e){return(X=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var J=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&V(e,t)}(i,e);var t,n,r,a=H(i);function i(e){var t;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,i),(t=a.call(this,e)).setInitialItemsState=t.setInitialItemsState.bind(B(t)),t.loadMoreSubitems=t.loadMoreSubitems.bind(B(t)),t.updateSubtreeAfterItemToggle=t.updateSubtreeAfterItemToggle.bind(B(t)),t.handleCollapseAllItems=t.handleCollapseAllItems.bind(B(t)),t.limitSubitemsInSubtree=t.limitSubitemsInSubtree.bind(B(t)),t.refreshContentTree=t.refreshContentTree.bind(B(t)),t.getLoadSubtreeParams=t.getLoadSubtreeParams.bind(B(t));try{var n=t.readSubtree();t.items=e.preloadedLocations,t.subtree=n||t.generateInitialSubtree(),t.expandCurrentLocationInSubtree(),t.clipTooDeepSubtreeBranches(t.subtree[0],e.treeMaxDepth-1),t.subtree[0].children.forEach(t.limitSubitemsInSubtree),t.saveSubtree()}catch(e){t.items=[],t.subtree=t.generateInitialSubtree(),t.saveSubtree()}return t}return t=i,(n=[{key:"componentDidMount",value:function(){var e=this;if(document.body.addEventListener("ez-content-tree-refresh",this.refreshContentTree,!1),this.items.length)return this.subtree=this.generateSubtree(this.items,!0),void this.saveSubtree();D(this.getLoadSubtreeParams(),(function(t){e.setInitialItemsState(t[0])}))}},{key:"componentDidUpdate",value:function(e){var t=this;e.sort.sortClause===this.props.sort.sortClause&&e.sort.sortOrder===this.props.sort.sortOrder||D(this.getLoadSubtreeParams(),(function(e){t.setInitialItemsState(e[0])}))}},{key:"setInitialItemsState",value:function(e){this.items=[e],this.subtree=this.generateSubtree(this.items,!0),this.saveSubtree(),this.forceUpdate()}},{key:"loadMoreSubitems",value:function(e,t){var n=e.parentLocationId,r=e.offset,o=e.limit,a=e.path;!function(e,t,n){var r=e.siteaccess,o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:50,a=arguments.length>4&&void 0!==arguments[4]?arguments[4]:0,i=new Request("".concat("/api/ezp/v2/location/tree/load-subitems","/").concat(t,"/").concat(o,"/").concat(a),{method:"GET",mode:"same-origin",credentials:"same-origin",headers:{Accept:"application/vnd.ez.api.ContentTreeNode+json","X-Siteaccess":r}});fetch(i).then(k.a).then((function(e){var t=e.ContentTreeNode;return t.children=t.children.map(M),M(t)})).then(n).catch(R.a)}(this.props.restInfo,n,this.updateLocationsStateAfterLoadingMoreItems.bind(this,a,t),o,r)}},{key:"refreshContentTree",value:function(){var e=this;this.items=[],this.forceUpdate(),D(this.getLoadSubtreeParams(),(function(t){e.setInitialItemsState(t[0])}))}},{key:"updateLocationsStateAfterLoadingMoreItems",value:function(e,t,n){var r=this.findItem(this.items,e.split(","));r&&(r.subitems=[].concat(U(r.subitems),U(n.subitems)),this.updateSubtreeAfterLoadMoreItems(e),t(),this.forceUpdate())}},{key:"updateSubtreeAfterLoadMoreItems",value:function(e){var t=this.findItem(this.items,e.split(","));this.updateItemInSubtree(this.subtree[0],t,e.split(",")),this.saveSubtree()}},{key:"updateSubtreeAfterItemToggle",value:function(e,t){var n=this.findItem(this.items,e.split(","));t?this.addItemToSubtree(this.subtree[0],n,e.split(",")):this.removeItemFromSubtree(this.subtree[0],n,e.split(",")),this.saveSubtree(),this.props.afterItemToggle(n,t)}},{key:"addItemToSubtree",value:function(e,t,n){var r=this.findParentSubtree(e,n);if(r){var o=this.props,a=o.subitemsLoadLimit,i=o.subitemsLimit,c=Math.ceil(t.subitems.length/a)*a;r.children.push({"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode",locationId:t.locationId,limit:Math.min(i,c),offset:0,children:[]})}}},{key:"removeItemFromSubtree",value:function(e,t,n){var r=this.findParentSubtree(e,n);if(r){var o=r.children.findIndex((function(e){return e.locationId===t.locationId}));o>-1&&r.children.splice(o,1)}}},{key:"updateItemInSubtree",value:function(e,t,n){var r=this.findParentSubtree(e,n);if(r){var o=r.children.findIndex((function(e){return e.locationId===t.locationId}));o>-1&&(r.children[o].limit=t.subitems.length)}}},{key:"readSubtree",value:function(){var e=this.props.readSubtree;if("function"==typeof e)return e();var t=this.props,n=t.rootLocationId,r=t.userId,o=localStorage.getItem("ez-content-tree-subtrees"),a=o?JSON.parse(o):null,i=a?a[r]:null,c=i?i[n]:null;return c?JSON.parse(c):null}},{key:"saveSubtree",value:function(){var e=this.props,t=e.rootLocationId,n=e.userId,r=localStorage.getItem("ez-content-tree-subtrees"),o=r?JSON.parse(r):{};o[n]||(o[n]={}),o[n][t]=JSON.stringify(this.subtree),localStorage.setItem("ez-content-tree-subtrees",JSON.stringify(o))}},{key:"findParentSubtree",value:function(e,t){if(!(t.length<2))return t.shift(),t.pop(),t.reduce((function(e,t){return e.children.find((function(e){return e.locationId===parseInt(t,10)}))}),e)}},{key:"expandCurrentLocationInSubtree",value:function(){var e=this.props,t=e.rootLocationId,n=e.currentLocationPath.split("/").filter((function(e){return!!e})),r=n.findIndex((function(e){return parseInt(e,10)===t}));if(-1!==r){var o=n.slice(r-n.length+1),a=o.slice(0,o.length-1);this.expandPathInSubtree(this.subtree[0],a)}}},{key:"expandPathInSubtree",value:function(e,t){if(t.length){var n=parseInt(t[0],10),r=e.children.find((function(e){return e.locationId===n}));r||(r={"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode",locationId:n,limit:this.props.subitemsLimit,offset:0,children:[]},e.children.push(r)),t.shift(),this.expandPathInSubtree(r,t)}}},{key:"clipTooDeepSubtreeBranches",value:function(e,t){var n=this;t<=0?e.children=[]:e.children.forEach((function(e){return n.clipTooDeepSubtreeBranches(e,t-1)}))}},{key:"limitSubitemsInSubtree",value:function(e){e.limit=Math.min(this.props.subitemsLimit,e.limit),e.children.forEach(this.limitSubitemsInSubtree)}},{key:"generateInitialSubtree",value:function(){return[{"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode",locationId:this.props.rootLocationId,limit:this.props.subitemsLoadLimit,offset:0,children:[]}]}},{key:"generateSubtree",value:function(e,t){var n,r=[],o=this.props,a=o.subitemsLoadLimit,i=o.subitemsLimit,c=function(e,t){var n="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!n){if(Array.isArray(e)||(n=F(e))||t&&e&&"number"==typeof e.length){n&&(e=n);var r=0,o=function(){};return{s:o,n:function(){return r>=e.length?{done:!0}:{done:!1,value:e[r++]}},e:function(e){throw e},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var a,i=!0,c=!1;return{s:function(){n=n.call(e)},n:function(){var e=n.next();return i=e.done,e},e:function(e){c=!0,a=e},f:function(){try{i||null==n.return||n.return()}finally{if(c)throw a}}}}(e);try{for(c.s();!(n=c.n()).done;){var s=n.value,l=s.subitems.length;if(l||t){var u=l?Math.ceil(l/a)*a:a;r.push({"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode",locationId:s.locationId,limit:Math.min(i,u),offset:0,children:this.generateSubtree(s.subitems,!1)})}}}catch(e){c.e(e)}finally{c.f()}return r}},{key:"findItem",value:function(e,t){var n=1===t.length,r=e.find((function(e){return e.locationId===parseInt(t[0],10)}));return r?n?r:r.hasOwnProperty("subitems")&&Array.isArray(r.subitems)?(t.shift(),this.findItem(r.subitems,t)):null:null}},{key:"getCurrentLocationId",value:function(){var e=this.props.currentLocationPath.split("/").filter((function(e){return!!e})).pop();return parseInt(e,10)}},{key:"handleCollapseAllItems",value:function(){var e=this;this.items=[],this.forceUpdate(),this.subtree=this.generateInitialSubtree(),this.saveSubtree(),D(this.getLoadSubtreeParams(),(function(t){e.setInitialItemsState(t[0])}))}},{key:"getLoadSubtreeParams",value:function(){return{token:this.props.restInfo.token,siteaccess:this.props.restInfo.siteaccess,subtree:this.subtree,sortClause:this.props.sort.sortClause,sortOrder:this.props.sort.sortOrder}}},{key:"render",value:function(){var e=this.props,t=e.onClickItem,n=e.subitemsLimit,r=e.subitemsLoadLimit,a=e.treeMaxDepth,i=e.userId,c={items:this.items,currentLocationId:this.getCurrentLocationId(),subitemsLimit:n,subitemsLoadLimit:r,treeMaxDepth:a,loadMoreSubitems:this.loadMoreSubitems,afterItemToggle:this.updateSubtreeAfterItemToggle,onCollapseAllItems:this.handleCollapseAllItems,onClickItem:t,userId:i};return o.a.createElement(N,c)}}])&&W(t.prototype,n),r&&W(t,r),i}(r.Component);eZ.addConfig("modules.ContentTree",J),J.propTypes={rootLocationId:i.a.number.isRequired,currentLocationPath:i.a.number.isRequired,userId:i.a.number.isRequired,preloadedLocations:i.a.arrayOf(i.a.object),subitemsLimit:i.a.number.isRequired,subitemsLoadLimit:i.a.number.isRequired,treeMaxDepth:i.a.number.isRequired,restInfo:i.a.shape({token:i.a.string.isRequired,siteaccess:i.a.string.isRequired}).isRequired,onClickItem:i.a.func,readSubtree:i.a.func,afterItemToggle:i.a.func,sort:i.a.shape({sortClause:i.a.string,sortOrder:i.a.string})},J.defaultProps={preloadedLocations:[],rootLocationId:window.eZ.adminUiConfig.contentTree.treeRootLocationId,subitemsLimit:window.eZ.adminUiConfig.contentTree.childrenLoadMaxLimit,subitemsLoadLimit:window.eZ.adminUiConfig.contentTree.loadMoreLimit,treeMaxDepth:window.eZ.adminUiConfig.contentTree.treeMaxDepth,afterItemToggle:function(){},sort:{}}},BZDO:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("ATD6"),s=n("xI8+"),l=n("S6d5"),u=n("CgFf");function d(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function f(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?d(Object(n),!0).forEach((function(t){m(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):d(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function m(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function b(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||y(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function p(e){return function(e){if(Array.isArray(e))return v(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||y(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function y(e,t){if(e){if("string"==typeof e)return v(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?v(e,t):void 0}}function v(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var h=function(e){var t=e.itemsPerPage,n=b(Object(r.useContext)(u.LoadedLocationsMapContext),2),a=n[0],i=n[1],d=b(Object(r.useContext)(u.MarkedLocationIdContext),2),m=d[0],y=d[1],v=b(Object(r.useContext)(u.MultipleConfigContext),2),h=v[0],g=(v[1],b(Object(r.useContext)(u.SelectedLocationsContext),2)),C=(g[0],g[1]),O=b(Object(r.useContext)(u.SortOrderContext),2),w=O[0],E=(O[1],b(Object(r.useContext)(u.SortingContext),2)),j=E[0],_=(E[1],Object(r.useContext)(u.AllowedContentTypesContext)),S=Object(r.useContext)(u.ContainersOnlyContext),I=Object(r.useContext)(u.ContentTypesMapContext),T=Object(r.useContext)(u.RestInfoContext),x=Object(r.useContext)(u.RootLocationIdContext),L=Object(r.useMemo)((function(){return Object(l.getLocationData)(a,m)}),[m,a]),A=window.eZ.helpers.user.getId(),P=L&&L.location?L.location.pathString:"/1/",N=a.length>1||1===a.length&&a[0].subitems.length>0,k=null!==m&&N||null===m;return o.a.createElement("div",{className:"c-tree"},k&&o.a.createElement(c.default,{userId:A,currentLocationPath:P,rootLocationId:x,restInfo:T,onClickItem:function(e,t){t.preventDefault(),t.currentTarget.closest(".c-list-item__label").querySelector(".c-list-item__toggler").click()},readSubtree:function(){return function e(n){if(0===n.length)return[];var r=n.shift();return[{children:e(n),limit:t,locationId:r.parentLocationId,offset:0,"_media-type":"application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode"}]}(p(a))},afterItemToggle:function(e){var t=e.locationId;t!==m&&Object(s.f)(f(f({},T),{},{parentLocationId:t,sortClause:j,sortOrder:w,rootLocationId:x}),(function(e){var n=e[e.length-1].location,r=I[n.ContentInfo.Content.ContentType._href],o=r.isContainer,a=S&&!o||_&&!_.includes(r.identifier);y(t),i({type:"SET_LOCATIONS",data:e}),h||a||C({type:"REPLACE_SELECTED_LOCATIONS",locations:[{location:n}]})}))},sort:{sortClause:j,sortOrder:w}}))};h.propTypes={itemsPerPage:i.a.number},h.defaultProps={itemsPerPage:50},t.a=h},CgFf:function(e,t,n){"use strict";n.r(t),n.d(t,"SORTING_OPTIONS",(function(){return I})),n.d(t,"VIEWS",(function(){return T})),n.d(t,"UDWContext",(function(){return A})),n.d(t,"RestInfoContext",(function(){return P})),n.d(t,"AllowRedirectsContext",(function(){return N})),n.d(t,"AllowConfirmationContext",(function(){return k})),n.d(t,"ContentTypesMapContext",(function(){return R})),n.d(t,"ContentTypesInfoMapContext",(function(){return D})),n.d(t,"MultipleConfigContext",(function(){return z})),n.d(t,"ContainersOnlyContext",(function(){return M})),n.d(t,"AllowedContentTypesContext",(function(){return q})),n.d(t,"ActiveTabContext",(function(){return U})),n.d(t,"TabsConfigContext",(function(){return F})),n.d(t,"TabsContext",(function(){return Z})),n.d(t,"TitleContext",(function(){return W})),n.d(t,"CancelContext",(function(){return V})),n.d(t,"ConfirmContext",(function(){return H})),n.d(t,"SortingContext",(function(){return $})),n.d(t,"SortOrderContext",(function(){return B})),n.d(t,"CurrentViewContext",(function(){return X})),n.d(t,"MarkedLocationIdContext",(function(){return J})),n.d(t,"LoadedLocationsMapContext",(function(){return G})),n.d(t,"RootLocationIdContext",(function(){return Y})),n.d(t,"SelectedLocationsContext",(function(){return Q})),n.d(t,"CreateContentWidgetContext",(function(){return K})),n.d(t,"ContentOnTheFlyDataContext",(function(){return ee})),n.d(t,"ContentOnTheFlyConfigContext",(function(){return te})),n.d(t,"EditOnTheFlyDataContext",(function(){return ne}));var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("AJkD"),s=n("nLu2");function l(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||d(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e){return function(e){if(Array.isArray(e))return f(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||d(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function d(e,t){if(e){if("string"==typeof e)return f(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?f(e,t):void 0}}function f(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var m=[{parentLocationId:1,subitems:[]}],b=function(e,t){switch(t.type){case"CUT_LOCATIONS":return function(e,t){var n=e.findIndex((function(e){return e.parentLocationId===t.locationId}));return-1===n?e:e.slice(0,n+1)}(e,t);case"UPDATE_LOCATIONS":return function(e,t){var n=e.findIndex((function(e){return e.parentLocationId===t.data.parentLocationId})),r=u(e);if(-1!==n)return r[n]=t.data,r;var o=e.findIndex((function(e){return e.subitems.find((function(e){return e.location.id===t.data.parentLocationId}))}));return-1!==o&&(r=r.slice(0,o+1)),r.push(t.data),r}(e,t);case"SET_LOCATIONS":return function(e,t){return t.data}(0,t);case"CLEAR_LOCATIONS":return[];default:throw new Error}};function p(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||v(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function y(e){return function(e){if(Array.isArray(e))return h(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||v(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function v(e,t){if(e){if("string"==typeof e)return h(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?h(e,t):void 0}}function h(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var g=[],C=function(e,t){switch(t.type){case"ADD_SELECTED_LOCATION":return[].concat(y(e),[{location:t.location,permissions:t.permissions}]);case"REMOVE_SELECTED_LOCATION":return e.filter((function(e){return e.location.id!==t.id}));case"CLEAR_SELECTED_LOCATIONS":return[];case"REPLACE_SELECTED_LOCATIONS":return t.locations;default:throw new Error}},O=n("xI8+");function w(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function E(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?w(Object(n),!0).forEach((function(t){j(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):w(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function j(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return S(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return S(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function S(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var I=[{label:Translator.trans("sorting.date.label",{},"universal_discovery_widget"),tooltipLabel:Translator.trans("sorting.date.tooltip",{},"universal_discovery_widget"),sortClause:"DatePublished"},{label:Translator.trans("sorting.name.label",{},"universal_discovery_widget"),tooltipLabel:Translator.trans("sorting.name.tooltip",{},"universal_discovery_widget"),sortClause:"ContentName"}],T=[{id:"grid",icon:"view-grid",tooltipLabel:Translator.trans("sorting.grid.view",{},"universal_discovery_widget")},{id:"finder",icon:"panels",tooltipLabel:Translator.trans("sorting.panels.view",{},"universal_discovery_widget")},{id:"tree",icon:"content-tree",tooltipLabel:Translator.trans("sorting.tree.view",{},"universal_discovery_widget")}],x={token:document.querySelector('meta[name="CSRF-Token"]').content,siteaccess:document.querySelector('meta[name="SiteAccess"]').content},L=Object.values(eZ.adminUiConfig.contentTypes).reduce((function(e,t){return t.forEach((function(t){e[t.href]=t})),e}),{}),A=Object(r.createContext)(),P=Object(r.createContext)(),N=Object(r.createContext)(),k=Object(r.createContext)(),R=Object(r.createContext)(),D=Object(r.createContext)(),z=Object(r.createContext)(),M=Object(r.createContext)(),q=Object(r.createContext)(),U=Object(r.createContext)(),F=Object(r.createContext)(),Z=Object(r.createContext)(),W=Object(r.createContext)(),V=Object(r.createContext)(),H=Object(r.createContext)(),$=Object(r.createContext)(),B=Object(r.createContext)(),X=Object(r.createContext)(),J=Object(r.createContext)(),G=Object(r.createContext)(),Y=Object(r.createContext)(),Q=Object(r.createContext)(),K=Object(r.createContext)(),ee=Object(r.createContext)(),te=Object(r.createContext)(),ne=Object(r.createContext)(),re=function(e){var t=window.eZ.adminUiConfig.universalDiscoveryWidget.tabs,n=e.startingLocationId||e.rootLocationId,a=_(Object(r.useState)(e.activeTab),2),i=a[0],u=a[1],d=_(Object(r.useState)(e.activeSortClause),2),f=d[0],y=d[1],v=_(Object(r.useState)(e.activeSortOrder),2),h=v[0],w=v[1],j=_(Object(r.useState)(e.activeView),2),S=j[0],I=j[1],T=_(Object(r.useState)(1!==n?n:null),2),re=T[0],oe=T[1],ae=_(Object(r.useState)(!1),2),ie=ae[0],ce=ae[1],se=_(Object(r.useState)({}),2),le=se[0],ue=se[1],de=_(Object(r.useState)({}),2),fe=de[0],me=de[1],be=_(Object(r.useState)({}),2),pe=be[0],ye=be[1],ve=_(function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:m,t=Object(r.useReducer)(b,e),n=l(t,2),o=n[0],a=n[1];return[o,a]}([{parentLocationId:e.rootLocationId,subitems:[]}]),2),he=ve[0],ge=ve[1],Ce=_(function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:g,t=Object(r.useReducer)(C,e),n=p(t,2),o=n[0],a=n[1];return[o,a]}(),2),Oe=Ce[0],we=Ce[1],Ee=t.find((function(e){return e.id===i})).component,je=Object(s.a)({"m-ud":!0,"m-ud--locations-selected":!!Oe.length&&e.allowConfirmation}),_e=function(e){var t=Object(c.a)(Oe);e.forEach((function(e){var n=t.find((function(t){return t.location.id===e.location.Location.id}));n&&(n.permissions=e.permissions)})),we({type:"REPLACE_SELECTED_LOCATIONS",locations:t})};return Object(r.useEffect)((function(){return Object(O.i)(x,(function(e){var t=e.ContentTypeInfoList.ContentType.reduce((function(e,t){return e[t._href]=t,e}),{});ye(t)})),window.document.body.dispatchEvent(new CustomEvent("ez-udw-opened")),window.eZ.helpers.tooltips.parse(window.document.querySelector(".c-udw-tab")),function(){window.document.body.dispatchEvent(new CustomEvent("ez-udw-closed"))}}),[]),Object(r.useEffect)((function(){e.selectedLocations.length&&Object(O.c)(E(E({},x),{},{id:e.selectedLocations.join(",")}),(function(t){var n=e.selectedLocations.map((function(e){return{location:t.find((function(t){return t.id===parseInt(e,10)}))}}));we({type:"REPLACE_SELECTED_LOCATIONS",locations:n})}))}),[e.selectedLocations]),Object(r.useEffect)((function(){var e=Oe.filter((function(e){return!e.permissions})).map((function(e){return e.location.id})).join(",");e&&Object(O.j)({locationIds:e},_e)}),[Oe]),Object(r.useEffect)((function(){var e=Oe.filter((function(e){return!e.location.ContentInfo.Content.CurrentVersion.Version}));if(e.length){var t=e.map((function(e){return e.location.ContentInfo.Content._id})).join(",");Object(O.h)(E(E({},x),{},{contentId:t}),(function(e){var t=Oe;e.forEach((function(e){var n=t.find((function(t){return t.location.ContentInfo.Content._id===e._id}));n&&(n.location.ContentInfo.Content.CurrentVersion.Version=e.CurrentVersion.Version)})),we({type:"REPLACE_SELECTED_LOCATIONS",locations:t})}))}}),[Oe]),Object(r.useEffect)((function(){return window.document.body.classList.add("ez-scroll-disabled"),function(){window.document.body.classList.remove("ez-scroll-disabled")}})),Object(r.useEffect)((function(){"grid"===S?(he[he.length-1].subitems=[],ge({type:"SET_LOCATIONS",data:he})):("finder"===S||"tree"===S)&&re&&re!==he[he.length-1].parentLocationId&&he[he.length-1].subitems.find((function(e){return e.location.id===re}))&&ge({type:"UPDATE_LOCATIONS",data:{parentLocationId:re,subitems:[]}})}),[S]),Object(r.useEffect)((function(){e.startingLocationId&&1!==e.startingLocationId&&Object(O.f)(E(E({},x),{},{parentLocationId:e.startingLocationId,sortClause:f,sortOrder:h,gridView:"grid"===S,rootLocationId:e.rootLocationId}),(function(t){ge({type:"SET_LOCATIONS",data:t}),oe(e.startingLocationId)}))}),[e.startingLocationId]),Object(r.useEffect)((function(){var e=he.map((function(e){return e.subitems=[],e}));ge({type:"SET_LOCATIONS",data:e})}),[f,h]),o.a.createElement("div",{className:je},o.a.createElement(A.Provider,{value:!0},o.a.createElement(P.Provider,{value:x},o.a.createElement(N.Provider,{value:e.allowRedirects},o.a.createElement(k.Provider,{value:e.allowConfirmation},o.a.createElement(D.Provider,{value:pe},o.a.createElement(R.Provider,{value:L},o.a.createElement(z.Provider,{value:[e.multiple,e.multipleItemsLimit]},o.a.createElement(M.Provider,{value:e.containersOnly},o.a.createElement(q.Provider,{value:e.allowedContentTypes},o.a.createElement(U.Provider,{value:[i,u]},o.a.createElement(Z.Provider,{value:t},o.a.createElement(F.Provider,{value:e.tabsConfig},o.a.createElement(W.Provider,{value:e.title},o.a.createElement(V.Provider,{value:e.onCancel},o.a.createElement(H.Provider,{value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:Oe,n=t.map((function(e){var t=Object(c.a)(e.location),n=t.ContentInfo.Content.ContentType;return t.ContentInfo.Content.ContentTypeInfo=pe[n._href],t}));e.onConfirm(n)}},o.a.createElement($.Provider,{value:[f,y]},o.a.createElement(B.Provider,{value:[h,w]},o.a.createElement(X.Provider,{value:[S,I]},o.a.createElement(J.Provider,{value:[re,oe]},o.a.createElement(G.Provider,{value:[he,ge]},o.a.createElement(Y.Provider,{value:e.rootLocationId},o.a.createElement(Q.Provider,{value:[Oe,we]},o.a.createElement(K.Provider,{value:[ie,ce]},o.a.createElement(ee.Provider,{value:[le,ue]},o.a.createElement(te.Provider,{value:e.contentOnTheFly},o.a.createElement(ne.Provider,{value:[fe,me]},o.a.createElement(Ee,null))))))))))))))))))))))))))))};re.propTypes={onConfirm:i.a.func.isRequired,onCancel:i.a.func.isRequired,title:i.a.string.isRequired,activeTab:i.a.string,rootLocationId:i.a.number,startingLocationId:i.a.number,multiple:i.a.bool,multipleItemsLimit:i.a.number,containersOnly:i.a.bool,allowedContentTypes:i.a.array.isRequired,activeSortClause:i.a.string,activeSortOrder:i.a.string,activeView:i.a.string,contentOnTheFly:i.a.shape({allowedLanguages:i.a.array.isRequired,allowedLocations:i.a.array.isRequired,preselectedLocation:i.a.string.isRequired,preselectedContentType:i.a.string.isRequired,hidden:i.a.bool.isRequired,autoConfirmAfterPublish:i.a.bool.isRequired}).isRequired,tabsConfig:i.a.objectOf(i.a.shape({itemsPerPage:i.a.number.isRequired,priority:i.a.number.isRequired,hidden:i.a.bool.isRequired})).isRequired,selectedLocations:i.a.array,allowRedirects:i.a.bool.isRequired,allowConfirmation:i.a.bool.isRequired},re.defaultProps={activeTab:"browse",rootLocationId:1,startingLocationId:null,multiple:!1,multipleItemsLimit:1,containersOnly:!1,activeSortClause:"date",activeSortOrder:"ascending",activeView:"finder",tabs:window.eZ.adminUiConfig.universalDiscoveryWidget.tabs,selectedLocations:[]},eZ.addConfig("modules.UniversalDiscovery",re);t.default=re},Hzdi:function(e,t,n){"use strict";n.r(t);var r=n("cDcd"),o=n.n(r),a=n("zZ4q"),i=n("MnjE"),c=n("3obH"),s=n("BZDO"),l=n("CgFf");function u(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return d(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return d(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function d(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var f=function(){var e=u(Object(r.useContext)(l.CurrentViewContext),2),t=e[0],n=(e[1],Object(r.useContext)(l.TabsConfigContext)),d={grid:o.a.createElement(i.a,{itemsPerPage:n.browse.itemsPerPage}),finder:o.a.createElement(c.a,{itemsPerPage:n.browse.itemsPerPage}),tree:o.a.createElement(s.a,{itemsPerPage:n.browse.itemsPerPage})};return o.a.createElement("div",{className:"m-browse-tab"},o.a.createElement(a.a,null,d[t]))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.tabs",[{id:"browse",component:f,label:Translator.trans("browse.label",{},"universal_discovery_widget"),icon:window.eZ.helpers.icon.getIconPath("browse")}],!0),t.default=f},MUfx:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("uHg5"),s=n("nLu2"),l=n("CgFf");function u(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return d(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return d(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function d(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var f=function(e){var t=e.isSelected,n=e.toggleSelection,a=Object(r.useRef)(null),i=u(Object(r.useContext)(l.SelectedLocationsContext),2),d=i[0],f=(i[1],u(Object(r.useContext)(l.MultipleConfigContext),2)),m=f[0],b=f[1],p=Translator.trans("browser.add",{},"universal_discovery_widget"),y=Translator.trans("browser.selected",{},"universal_discovery_widget"),v=t?y:p,h=t?"checkmark":"create",g=Object(s.a)({"c-toggle-selection-button":!0,"c-toggle-selection-button--selected":t});return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.hideAll(window.document.querySelector(".c-udw-tab")),a.current.getAttribute("data-original-title")&&a.current.removeAttribute("title"),a.current.setAttribute("data-original-title",v)}),[t]),m&&!t&&d.length>=b&&0!==b?null:o.a.createElement("button",{ref:a,className:g,onClick:n,title:v,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:h,extraClasses:"ez-icon--small"}))};f.propTypes={isSelected:i.a.object.isRequired,toggleSelection:i.a.func.isRequired},t.a=f},MnjE:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("/A22"),s=n("uHg5"),l=n("oOVF"),u=n("nLu2"),d=n("CgFf");function f(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return m(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return m(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function m(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var b=function(e){return e.target.closest(".c-toggle-selection-button")},p=function(e){var t=e.location,n=e.version,a=f(Object(r.useContext)(d.MarkedLocationIdContext),2),i=a[0],s=a[1],m=f(Object(r.useContext)(d.LoadedLocationsMapContext),2),p=(m[0],m[1]),y=Object(r.useContext)(d.ContentTypesMapContext),v=f(Object(r.useContext)(d.SelectedLocationsContext),2),h=(v[0],v[1]),g=f(Object(r.useContext)(d.MultipleConfigContext),2),C=g[0],O=(g[1],Object(r.useContext)(d.ContainersOnlyContext)),w=Object(r.useContext)(d.AllowedContentTypesContext),E=y[t.ContentInfo.Content.ContentType._href],j=E.isContainer,_=O&&!j||w&&!w.includes(E.identifier),S=Object(u.a)({"c-grid-item":!0,"c-grid-item--marked":i===t.id,"c-grid-item--not-selectable":_});return o.a.createElement("div",{className:S,onClick:function(e){var n=e.nativeEvent;b(n)||(s(t.id),C||_||(h({type:"CLEAR_SELECTED_LOCATIONS"}),h({type:"ADD_SELECTED_LOCATION",location:t})))},onDoubleClick:function(e){var n=e.nativeEvent;b(n)||O&&!j||p({type:"UPDATE_LOCATIONS",data:{parentLocationId:t.id,subitems:[]}})}},o.a.createElement("div",{className:"c-grid-item__preview"},o.a.createElement(l.a,{thumbnailData:n.Thumbnail,iconExtraClasses:"ez-icon--extra-large",contentTypeIconPath:y[t.ContentInfo.Content.ContentType._href].thumbnail})),o.a.createElement("div",{className:"c-grid-item__name"},t.ContentInfo.Content.TranslatedName),!C||_?null:o.a.createElement(c.a,{location:t}))};p.propTypes={location:i.a.object.isRequired,version:i.a.object},p.defaultProps={version:{}};var y=p;function v(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return h(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return h(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function h(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var g=function(){var e=v(Object(r.useContext)(d.LoadedLocationsMapContext),2),t=e[0],n=e[1],a=v(Object(r.useState)(!1),2),i=a[0],c=a[1],l=Object(r.useMemo)((function(){return t.reduce((function(e,n,r){return t.length-3<=r?e.visibleItems.push(n):e.hiddenItems.push(n),e}),{visibleItems:[],hiddenItems:[]})}),[t]),f=l.visibleItems,m=l.hiddenItems,b=function(e){var r=t.findIndex((function(t){return t.parentLocationId===e})),o=t.slice(0,r+1);o[o.length-1].subitems=[],n({type:"SET_LOCATIONS",data:o})},p=Object(r.useCallback)((function(){c(!i)}),[c,i]);return Object(r.useEffect)((function(){return i?window.document.body.addEventListener("click",p,!1):window.document.body.removeEventListener("click",p,!1),function(){return window.document.body.removeEventListener("click",p,!1)}}),[i,p]),t.some((function(e){return 1!==e.parentLocationId&&!e.location}))?null:o.a.createElement("div",{className:"c-breadcrumbs"},function(){if(!m.length)return null;var e=Object(u.a)({"c-breadcrumbs__hidden-list":!0,"c-breadcrumbs__hidden-list--visible":i}),t=Object(u.a)({"c-breadcrumbs__hidden-list-toggler":!0,"c-breadcrumbs__hidden-list-toggler--active":i});return o.a.createElement("div",{className:"c-breadcrumbs__hidden-list-wrapper"},o.a.createElement("button",{className:t,onClick:p},o.a.createElement(s.a,{name:"options",extraClasses:"ez-icon--small-medium"})),o.a.createElement("ul",{className:e},m.map((function(e){var t=e.parentLocationId,n=1===t?Translator.trans("breadcrumbs.root_location",{},"universal_discovery_widget"):e.location.ContentInfo.Content.TranslatedName,r=b.bind(void 0,t);return o.a.createElement("li",{key:t,onClick:r,className:"c-breadcrumbs__hidden-list-item"},n)}))))}(),o.a.createElement("div",{className:"c-breadcrumbs__list-wrapper"},o.a.createElement("ul",{className:"c-breadcrumbs__list"},f.map((function(e,t){var n=e.parentLocationId,r=1===n?Translator.trans("breadcrumbs.root_location",{},"universal_discovery_widget"):e.location.ContentInfo.Content.TranslatedName,a=t===f.length-1,i=b.bind(void 0,n),c=Object(u.a)({"c-breadcrumbs__list-item":!0,"c-breadcrumbs__list-item--last":a});return o.a.createElement("li",{key:n,onClick:i,className:c},o.a.createElement("span",{className:"c-breadcrumbs__list-item-text"},r),!a&&o.a.createElement("span",{className:"c-breadcrumbs__list-item-separator"},"/"))})))))},C=n("ONuQ");function O(e){return function(e){if(Array.isArray(e))return I(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||S(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function w(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function E(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?w(Object(n),!0).forEach((function(t){j(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):w(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function j(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||S(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function S(e,t){if(e){if("string"==typeof e)return I(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?I(e,t):void 0}}function I(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var T=function(e){var t=e.itemsPerPage,n=_(Object(r.useState)(0),2),a=n[0],i=n[1],c=_(Object(r.useContext)(d.LoadedLocationsMapContext),2),s=c[0],l=c[1],u=_(Object(r.useContext)(d.SortingContext),2),f=u[0],m=(u[1],_(Object(r.useContext)(d.SortOrderContext),2)),b=m[0],p=(m[1],d.SORTING_OPTIONS.find((function(e){return e.sortClause===f}))),v=s.length?s[s.length-1]:{subitems:[]},h=_(Object(C.a)(v,{sortClause:p.sortClause,sortOrder:b},t,a,!0),2),w=h[0],j=h[1];return Object(r.useEffect)((function(){if(!j&&w.subitems){var e=E(E(E({},v),w),{},{subitems:[].concat(O(v.subitems),O(w.subitems))});i(0),l({type:"UPDATE_LOCATIONS",data:e})}}),[w,l,j]),o.a.createElement("div",{className:"c-grid"},o.a.createElement(g,null),o.a.createElement("div",{className:"c-grid__items-wrapper",onScroll:function(e){var n=e.target,r=v.subitems.length>=w.totalCount,o=n.scrollHeight-n.clientHeight-n.scrollTop<200;r||!o||j||i(a+t)}},v.subitems.map((function(e){return e.version?o.a.createElement(y,{key:e.location.id,location:e.location,version:e.version}):null}))))};T.propTypes={itemsPerPage:i.a.number},T.defaultProps={itemsPerPage:50};t.a=T},MqzM:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("uHg5"),s=n("qM4U"),l=n("xI8+"),u=n("CgFf");function d(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function f(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?d(Object(n),!0).forEach((function(t){m(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):d(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function m(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function b(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return p(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return p(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function p(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var y=function(e){var t=e.version,n=e.location,a=e.isDisabled,i=Object(r.useContext)(u.RestInfoContext),d=Object(r.useContext)(u.AllowRedirectsContext),m=b(Object(r.useContext)(u.EditOnTheFlyDataContext),2),p=(m[0],m[1]),y=b(Object(r.useContext)(u.ActiveTabContext),2),v=(y[0],y[1]),h=Object(r.useContext)(u.ContentTypesMapContext),g=b(Object(r.useState)(!1),2),C=g[0],O=g[1],w=h[n.ContentInfo.Content.ContentType._href],E=window.eZ.adminUiConfig.userContentTypes.includes(w.identifier),j=Translator.trans("meta_preview.edit",{},"universal_discovery_widget");Object(r.useEffect)((function(){O(!1)}),[t]);var _=function(){O(!1)},S=function(e,t,n,r){if(d){var o=E?window.Routing.generate("ezplatform.user.update",{contentId:e,versionNo:t,language:n},!0):window.Routing.generate("ezplatform.content.draft.edit",{contentId:e,versionNo:t,language:n,locationId:r},!0);window.location.href=o}else p({contentId:e,versionNo:t,languageCode:n,locationId:r}),v("content-edit")},I=function(e){var r=n.ContentInfo.Content._id;E?S(r,t.VersionInfo.versionNo,e,n.id):Object(l.b)(f(f({},i),{},{contentId:r}),(function(t){return S(r,t.Version.VersionInfo.versionNo,e,n.id)}))};return o.a.createElement("div",{className:"c-content-edit-button"},o.a.createElement("button",{className:"c-content-edit-button__btn btn btn-icon",disabled:!t||a,onClick:function(){var e=t.VersionInfo.languageCodes.split(",");1===e.length?I(e[0]):O(!0)},"data-tooltip-container-selector":".c-udw-tab",title:j},o.a.createElement(c.a,{name:"edit",extraClasses:"ez-icon--small-medium ez-icon--secondary"})),o.a.createElement(s.a,{hideTranslationSelector:_,selectTranslation:I,version:t,isOpen:C&&t}))};y.propTypes={location:i.a.object.isRequired,version:i.a.object.isRequired,isDisabled:i.a.bool.isRequired},t.a=y},ONuQ:function(e,t,n){"use strict";n.d(t,"a",(function(){return m}));var r=n("cDcd"),o=n("xI8+"),a=n("CgFf");function i(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function c(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?i(Object(n),!0).forEach((function(t){s(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):i(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function s(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function l(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return u(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return u(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var d={dataFetched:!1,data:{}},f=function(e,t){switch(t.type){case"FETCH_START":return d;case"FETCH_END":return{data:t.data,dataFetched:!0};default:throw new Error}},m=function(e,t,n,i){var s=t.sortClause,u=t.sortOrder,m=arguments.length>4&&void 0!==arguments[4]&&arguments[4],b=Object(r.useContext)(a.RestInfoContext),p=Object(r.useReducer)(f,d),y=l(p,2),v=y[0],h=y[1];return Object(r.useEffect)((function(){var t=!1;if(!(!e.parentLocationId||e.collapsed||e.subitems.length>=e.totalCount||e.subitems.length>=n+i))return h({type:"FETCH_START"}),Object(o.d)(c(c({},b),{},{parentLocationId:e.parentLocationId,sortClause:s,sortOrder:u,limit:n,offset:i,gridView:m}),(function(e){t||h({type:"FETCH_END",data:e})})),function(){t=!0};h({type:"FETCH_END",data:{}})}),[b,s,u,e.parentLocationId,e.subitems.length,n,i,m,e.collapsed]),[v.data,!v.dataFetched]}},PFI1:function(e,t,n){"use strict";n.r(t);var r=n("cDcd"),o=n.n(r),a=n("CgFf"),i=n("xI8+"),c=n("AJkD"),s=n("nLu2");function l(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function u(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?l(Object(n),!0).forEach((function(t){d(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):l(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function d(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function f(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return m(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return m(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function m(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var b=function(){var e=f(Object(r.useState)(!0),2),t=e[0],n=e[1],l=Object(r.useContext)(a.RestInfoContext),d=Object(r.useContext)(a.TabsContext),m=f(Object(r.useContext)(a.ActiveTabContext),2),b=(m[0],m[1]),p=f(Object(r.useContext)(a.LoadedLocationsMapContext),2),y=p[0],v=p[1],h=f(Object(r.useContext)(a.SelectedLocationsContext),2),g=h[0],C=h[1],O=f(Object(r.useContext)(a.EditOnTheFlyDataContext),2),w=O[0],E=O[1],j=Translator.trans("content_edit.cancel.label",{},"universal_discovery_widget"),_=Translator.trans("content_edit.confirm.label",{},"universal_discovery_widget"),S=Object(r.useRef)(),I=function(){b(d[0].id),E({})},T=function(){return n(!1)},x=function(){return n(!0)},L=window.Routing.generate("ezplatform.content_on_the_fly.edit",{contentId:w.contentId,versionNo:w.versionNo,languageCode:w.languageCode,locationId:w.locationId},!0),A=Object(s.a)({"c-content-edit":!0,"c-content-edit--footer-visible":t});return Object(r.useEffect)((function(){return window.document.body.addEventListener("ez-udw-hide-footer",T,!1),window.document.body.addEventListener("ez-udw-show-footer",x,!1),function(){window.document.body.removeEventListener("ez-udw-hide-footer",T,!1),window.document.body.removeEventListener("ez-udw-show-footer",x,!1)}})),o.a.createElement("div",{className:A},o.a.createElement("iframe",{src:L,className:"c-content-edit__iframe",ref:S,onLoad:function(){var e=S.current.contentWindow.document.querySelector('meta[name="LocationID"]');e&&function(e){var t=Object(c.a)(y),n=!1;Object(i.d)(u(u({},l),{},{parentLocationId:e}),(function(t){var n=Object(c.a)(g),r=n.findIndex((function(t){return t.location.id===e}));-1!==r&&(n[r].location=t.location,C({type:"REPLACE_SELECTED_LOCATIONS",locations:n})),v({type:"UPDATE_LOCATIONS",data:t})})),t.forEach((function(t){t.subitems.find((function(t){return t.location.id===e}))&&(t.subitems=[],n=!0)})),n&&v({type:"SET_LOCATIONS",data:t}),I()}(parseInt(e.content,10)),S.current.contentWindow.document.body.addEventListener("ez-udw-opened",T,!1),S.current.contentWindow.document.body.addEventListener("ez-udw-closed",x,!1)}}),o.a.createElement("div",{className:"c-content-edit__actions"},o.a.createElement("button",{className:"c-content-edit__cancel-button btn btn-gray",onClick:I},j),o.a.createElement("button",{className:"c-content-edit__confirm-button btn btn-primary",onClick:function(){var e=S.current.contentWindow.document.body.querySelector('[data-action="publish"]');e&&e.click()}},_)))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.tabs",[{id:"content-edit",component:b,label:Translator.trans("content_edit.label",{},"universal_discovery_widget"),isHiddenOnList:!0}],!0),t.default=b},S6d5:function(e,t,n){"use strict";n.r(t),n.d(t,"getLocationData",(function(){return p}));var r=n("cDcd"),o=n.n(r),a=n("uHg5"),i=n("oOVF"),c=(n("qM4U"),n("MqzM")),s=n("xI8+"),l=n("CgFf");function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function d(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){f(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function f(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function m(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return b(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return b(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function b(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var p=function(e,t){return e.find((function(e){return e.parentLocationId===t}))||e.length&&e[e.length-1].subitems.find((function(e){return e.location.id===t}))},y=function(){var e=Object(r.useRef)(null),t=m(Object(r.useContext)(l.MarkedLocationIdContext),2),n=t[0],u=(t[1],m(Object(r.useContext)(l.LoadedLocationsMapContext),2)),f=u[0],b=u[1],y=Object(r.useContext)(l.ContentTypesMapContext),v=Object(r.useContext)(l.RestInfoContext),h=Object(r.useContext)(l.AllowRedirectsContext),g=window.eZ.helpers.timezone.formatShortDateTime,C=Object(r.useMemo)((function(){return p(f,n)}),[n,f]),O=Translator.trans("meta_preview.bookmark",{},"universal_discovery_widget"),w=Translator.trans("meta_preview.preview",{},"universal_discovery_widget");if(Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(e.current)})),!C||!C.location||!C.version||1===n)return null;var E,j,_=C.bookmarked,S=C.location,I=C.version,T=C.permissions,x=_?"bookmark-active":"bookmark",L=function(){window.location.href=window.Routing.generate("_ez_content_view",{contentId:S.ContentInfo.Content._id,locationId:S.id},!0)},A=Translator.trans("meta_preview.last_modified",{},"universal_discovery_widget"),P=Translator.trans("meta_preview.creation_date",{},"universal_discovery_widget"),N=Translator.trans("meta_preview.translations",{},"universal_discovery_widget");return o.a.createElement("div",{className:"c-content-meta-preview",ref:e},o.a.createElement("div",{className:"c-content-meta-preview__preview"},o.a.createElement(i.a,{thumbnailData:I.Thumbnail,iconExtraClasses:"ez-icon--extra-large"})),o.a.createElement("div",{className:"c-content-meta-preview__header"},o.a.createElement("span",{className:"c-content-meta-preview__content-name"},S.ContentInfo.Content.TranslatedName),o.a.createElement("button",{className:"c-content-meta-preview__toggle-bookmark-button btn btn-icon",onClick:function(){(_?s.k:s.a)(d(d({},v),{},{locationId:S.id}),(function(){b({type:"UPDATE_LOCATIONS",data:d(d({},C),{},{bookmarked:!_})})}))},title:O,"data-placement":"left","data-tooltip-container-selector":".c-content-meta-preview"},o.a.createElement(a.a,{name:x,extraClasses:"ez-icon--small ez-icon--secondary"}))),(E=h?o.a.createElement("button",{className:"c-content-meta-preview__preview-button btn btn-icon",onClick:L,"data-tooltip-container-selector":".c-udw-tab",title:w},o.a.createElement(a.a,{name:"view",extraClasses:"ez-icon--small-medium ez-icon--secondary"})):null,j=T&&T.edit.hasAccess,o.a.createElement("div",{className:"c-content-meta-preview__actions"},o.a.createElement(c.a,{location:S,version:I,isDisabled:!j}),E)),o.a.createElement("div",{className:"c-content-meta-preview__info"},o.a.createElement("div",{className:"c-content-meta-preview__content-type-name"},y[S.ContentInfo.Content.ContentType._href].name),o.a.createElement("div",{className:"c-content-meta-preview__details"},o.a.createElement("div",{className:"c-content-meta-preview__details-item"},o.a.createElement("span",null,A),o.a.createElement("span",null,g(new Date(S.ContentInfo.Content.lastModificationDate)))),o.a.createElement("div",{className:"c-content-meta-preview__details-item"},o.a.createElement("span",null,P),o.a.createElement("span",null,g(new Date(S.ContentInfo.Content.publishedDate)))),o.a.createElement("div",{className:"c-content-meta-preview__details-item"},o.a.createElement("span",null,N),o.a.createElement("div",{className:"c-content-meta-preview__translations-wrapper"},I.VersionInfo.languageCodes.split(",").map((function(e){return o.a.createElement("span",{key:e,className:"c-content-meta-preview__translation"},window.eZ.adminUiConfig.languages.mappings[e].name)})))))))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.contentMetaPreview",y),t.default=y},Y1Nf:function(e,t,n){"use strict";n.d(t,"a",(function(){return o}));var r=function(e){var t=new CustomEvent("ez-notify",{detail:e});document.body.dispatchEvent(t)},o=function(e){var t=e instanceof Error?e.message:e;r({message:t,label:"error"})}},cDcd:function(e,t){e.exports=React},eVcW:function(e,t,n){"use strict";n.r(t);var r=n("cDcd"),o=n.n(r),a=n("zZ4q"),i=n("rf6O"),c=n.n(i),s=n("uHg5"),l=n("/A22"),u=n("nLu2"),d=n("xI8+"),f=n("CgFf");function m(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function b(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?m(Object(n),!0).forEach((function(t){p(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):m(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function p(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function y(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return v(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return v(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function v(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var h=function(e){var t=e.location,n=Object(r.useContext)(f.RestInfoContext),a=y(Object(r.useContext)(f.CurrentViewContext),2),i=a[0],c=(a[1],y(Object(r.useContext)(f.SortingContext),2)),m=c[0],p=(c[1],y(Object(r.useContext)(f.SortOrderContext),2)),v=p[0],h=(p[1],y(Object(r.useContext)(f.LoadedLocationsMapContext),2)),g=(h[0],h[1]),C=y(Object(r.useContext)(f.MarkedLocationIdContext),2),O=C[0],w=C[1],E=Object(r.useContext)(f.ContentTypesMapContext),j=y(Object(r.useContext)(f.SelectedLocationsContext),2),_=(j[0],j[1]),S=y(Object(r.useContext)(f.MultipleConfigContext),2),I=S[0],T=(S[1],Object(r.useContext)(f.RootLocationIdContext)),x=window.eZ.helpers.timezone.formatShortDateTime,L=Object(r.useContext)(f.AllowedContentTypesContext),A=E[t.ContentInfo.Content.ContentType._href],P=Object(r.useContext)(f.ContainersOnlyContext),N=A.isContainer,k=P&&!N||L&&!L.includes(A.identifier),R=Object(u.a)({"c-content-table-item":!0,"c-content-table-item--marked":O===t.id,"c-content-table-item--not-selectable":k});return o.a.createElement("tr",{className:R,onClick:function(e){e.nativeEvent.target.closest(".c-toggle-selection-button")||(w(t.id),Object(d.f)(b(b({},n),{},{parentLocationId:t.id,sortClause:m,sortOrder:v,gridView:"grid"===i,rootLocationId:T}),(function(e){g({type:"SET_LOCATIONS",data:e})})),I||k||(_({type:"CLEAR_SELECTED_LOCATIONS"}),_({type:"ADD_SELECTED_LOCATION",location:t})))}},o.a.createElement("td",{className:"c-content-table-item__icon-wrapper"},o.a.createElement(s.a,{extraClasses:"ez-icon--small",customPath:A.thumbnail})),o.a.createElement("td",null,t.ContentInfo.Content.TranslatedName),o.a.createElement("td",null,x(new Date(t.ContentInfo.Content.lastModificationDate))),o.a.createElement("td",null,A.name),o.a.createElement("td",{className:"c-content-table-item__toggle-button-wrapper"},!I||k?null:o.a.createElement(l.a,{location:t})))};h.propTypes={location:c.a.object.isRequired};var g=h,C=n("tw3r"),O=function(e){var t=e.count,n=e.itemsPerPage,a=e.items,i=e.activePageIndex,c=e.title,s=e.onPageChange,l=Object(r.useRef)(null),u=Translator.trans("content_table.name",{},"universal_discovery_widget"),d=Translator.trans("content_table.modified",{},"universal_discovery_widget"),f=Translator.trans("content_table.content_type",{},"universal_discovery_widget");return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(l.current)}),[]),o.a.createElement("div",{className:"c-content-table",ref:l},o.a.createElement("div",{className:"c-content-table__title"},c),o.a.createElement("div",{className:"c-content-table__items"},o.a.createElement("table",{className:"table table-hover"},o.a.createElement("thead",null,o.a.createElement("tr",null,o.a.createElement("th",null),o.a.createElement("th",null,u),o.a.createElement("th",null,d),o.a.createElement("th",null,f),o.a.createElement("th",null))),o.a.createElement("tbody",null,a.map((function(e){return o.a.createElement(g,{key:e.id,location:e})}))))),o.a.createElement("div",{className:"c-content-table__pagination"},o.a.createElement(C.a,{proximity:1,itemsPerPage:n,activePageIndex:i,totalCount:t,onPageChange:s,disabled:!1})))};O.propTypes={count:c.a.number.isRequired,itemsPerPage:c.a.number.isRequired,activePageIndex:c.a.number.isRequired,items:c.a.array.isRequired,title:c.a.string.isRequired,onPageChange:c.a.func.isRequired};var w=O,E=n("faye"),j=n.n(E);function _(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function S(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?_(Object(n),!0).forEach((function(t){I(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):_(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function I(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function T(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return x(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return x(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function x(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var L=function(){var e=window.eZ.adminUiConfig.contentTypes,t=Object(r.useContext)(f.AllowedContentTypesContext),n=T(Object(r.useContext)(X),2),a=n[0],i=n[1],c=T(Object(r.useState)((function(){return Object.keys(e).reduce((function(e,t,n){return S(S({},e),{},I({},t,!!n))}),{})})),2),s=c[0],l=c[1],d=function(e){var t=e.nativeEvent.target.dataset.id;l((function(e){return S(S({},e),{},I({},t,!e[t]))}))},m=function(e){var t=e.nativeEvent.target.dataset.contentTypeIdentifier,n={contentTypeIdentifier:t};n.type=a.includes(t)?"REMOVE_CONTENT_TYPE":"ADD_CONTENT_TYPE",i(n)};return o.a.createElement("div",{className:"ez-content-type-selector c-content-type-selector"},Object.entries(e).map((function(e){var n=T(e,2),r=n[0],i=n[1];if(i.every((function(e){return t&&!t.includes(e.identifier)})))return null;var c=Object(u.a)({"ez-content-type-selector__group":!0,"ez-content-type-selector__group--collapsed":s[r]});return o.a.createElement("div",{key:r,className:c},o.a.createElement("span",{className:"ez-content-type-selector__group-title","data-id":r,onClick:d},r),o.a.createElement("ul",{className:"ez-content-type-selector__list"},i.map((function(e){return t&&!t.includes(e.identifier)?null:o.a.createElement("li",{key:e.identifier,className:"ez-content-type-selector__item"},o.a.createElement("div",{className:"form-check form-check-inline"},o.a.createElement("input",{type:"checkbox",id:"ez-search-content-type-".concat(e.identifier),className:"ez-input ez-input--checkbox",value:e.identifier,"data-content-type-identifier":e.identifier,onChange:m,checked:a.includes(e.identifier)}),o.a.createElement("label",{className:"checkbox-inline form-check-label",htmlFor:"ez-search-content-type-".concat(e.identifier)},e.name)))}))))})))};function A(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function P(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?A(Object(n),!0).forEach((function(t){N(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):A(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function N(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function k(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return R(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return R(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function R(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var D=function(e){var t=e.isCollapsed,n=e.search,a=k(Object(r.useContext)(X),2),i=a[0],c=a[1],l=k(Object(r.useContext)(J),2),m=l[0],b=l[1],p=k(Object(r.useContext)(G),2),y=p[0],v=p[1],h=k(Object(r.useState)(""),2),g=h[0],C=h[1],O=k(Object(r.useState)(!1),2),w=O[0],E=O[1],_=Object(r.useContext)(f.RestInfoContext),S=function(){v(""),C("")},I=Object(u.a)({"c-filters":!0,"ez-filters":!0,"ez-filters--collapsed":t}),T=function(){var e=window.document.createElement("div"),t=JSON.parse(window.document.querySelector("#react-udw").dataset.filterSubtreeUdwConfig),n=function(){j.a.unmountComponentAtNode(e),e.remove()};window.document.body.append(e);var r=P({onConfirm:function(e){var t=e[0].pathString,r=t.split("/").filter((function(e){return e})),o=r.splice(1,r.length-1).join();Object(d.c)(P(P({},_),{},{id:o}),(function(e){var t=e.map((function(e){return e.ContentInfo.Content.TranslatedName})).join(" / ");C(t)})),v(t),n()},onCancel:n,tabs:window.eZ.adminUiConfig.universalDiscoveryWidget.tabs,title:"Browsing content"},t);j.a.render(o.a.createElement(eZ.modules.UniversalDiscovery,r),e)},x=Object(r.useCallback)((function(){return n(0)}),[n]),A=!!i.length||!!m||!!y,N=Translator.trans("filters.content_type",{},"universal_discovery_widget"),R=Translator.trans("filters.section",{},"universal_discovery_widget"),D=Translator.trans("filters.any_section",{},"universal_discovery_widget"),z=Translator.trans("filters.subtree",{},"universal_discovery_widget"),M=Translator.trans("filters.clear",{},"universal_discovery_widget"),q=Translator.trans("filters.apply",{},"universal_discovery_widget");return Object(r.useEffect)((function(){w&&(E(!1),x())}),[w,x]),o.a.createElement("div",{className:I},o.a.createElement("div",{className:"ez-filters__row"},o.a.createElement("div",{className:"ez-filters__item ez-filters__item--content-type"},o.a.createElement("label",{className:"ez-label"},N),o.a.createElement(L,null))),o.a.createElement("div",{className:"ez-filters__row"},o.a.createElement("div",{className:"ez-filters__item ez-filters__item--section"},o.a.createElement("label",{className:"ez-label"},R),o.a.createElement("select",{className:"ez-filters__select form-control",onChange:function(e){var t=e.target.value;b(t)},value:m},o.a.createElement("option",{value:""},D),Object.entries(window.eZ.adminUiConfig.sections).map((function(e){var t=k(e,2),n=t[0],r=t[1];return o.a.createElement("option",{key:n,value:n},r)})))),o.a.createElement("div",{className:"ez-filters__item ez-filters__item--subtree"},o.a.createElement("label",{className:"ez-label"},z,":"),o.a.createElement("div",null,y?null:o.a.createElement("button",{className:"btn btn-secondary ez-btn--udw-select-location",type:"button",onClick:T},"Select content"),g?o.a.createElement("div",{className:"ez-tag"},o.a.createElement("div",{className:"ez-tag__content"},g),o.a.createElement("button",{type:"button",className:"ez-tag__remove-btn",onClick:S},o.a.createElement(s.a,{name:"discard",extraClasses:"ez-icon--small ez-icon--dark"}))):null))),o.a.createElement("div",{className:"ez-filters__btns"},o.a.createElement("button",{type:"submit",className:"btn btn-primary ez-btn-apply",onClick:x,disabled:!A},q),o.a.createElement("button",{className:"ez-btn ez-btn--no-border",onClick:function(){c({type:"CLEAR_CONTENT_TYPES"}),b(""),S(),E(!0)}},M)))};D.propTypes={isCollapsed:c.a.bool.isRequired,search:c.a.func.isRequired};var z=D;function M(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function q(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?M(Object(n),!0).forEach((function(t){U(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):M(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function U(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function F(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return Z(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return Z(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function Z(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var W=function(e,t){switch(t.type){case"SEARCH_START":return{isLoading:!0,data:{}};case"SEARCH_END":return{isLoading:!1,data:t.response};default:throw new Error}};function V(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||$(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function H(e){return function(e){if(Array.isArray(e))return B(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||$(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function $(e,t){if(e){if("string"==typeof e)return B(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?B(e,t):void 0}}function B(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var X=Object(r.createContext)(),J=Object(r.createContext)(),G=Object(r.createContext)(),Y=function(e,t){switch(t.type){case"ADD_CONTENT_TYPE":return[].concat(H(e),[t.contentTypeIdentifier]);case"REMOVE_CONTENT_TYPE":return e.filter((function(e){return e!==t.contentTypeIdentifier}));case"CLEAR_CONTENT_TYPES":return[];default:throw new Error}},Q=Object.values(window.eZ.adminUiConfig.languages.mappings),K=function(e){var t,n,a,i,c,s,l,u,m=e.itemsPerPage,b=Translator.trans("search.filters",{},"universal_discovery_widget"),p=Translator.trans("search.search",{},"universal_discovery_widget"),y=Object(r.useContext)(f.AllowedContentTypesContext),v=V(Object(r.useState)(""),2),h=v[0],g=v[1],C=V(Object(r.useState)(0),2),O=C[0],E=C[1],j=V(Object(r.useState)(!0),2),_=j[0],S=j[1],I=V(Object(r.useReducer)(Y,[]),2),T=I[0],x=I[1],L=V(Object(r.useState)(""),2),A=L[0],P=L[1],N=V(Object(r.useState)(""),2),k=N[0],R=N[1],D=Q.length?Q[0].languageCode:"",M=V(Object(r.useState)(D),2),U=M[0],Z=M[1],$=function(e){return Z(e.target.value)},B=V(function(){var e=Object(r.useContext)(f.RestInfoContext),t=F(Object(r.useReducer)(W,{isLoading:!1,data:{}}),2),n=t[0],o=n.isLoading,a=n.data,i=t[1];return[o,a,Object(r.useCallback)((function(t,n,r,o,a,c,s){var l={FullTextCriterion:"".concat(t,"*")};n&&n.length&&(l.ContentTypeIdentifierCriterion=n),r&&(l.SectionIdentifierCriterion=r),o&&(l.SubtreeCriterion=o),i({type:"SEARCH_START"}),Object(d.e)(q(q({},e),{},{query:l,limit:a,offset:c,languageCode:s}),(function(e){i({type:"SEARCH_END",response:e})}))}),[e,i])]}(),3),K=(B[0],B[1]),ee=B[2],te=function(e){if(h)if(void 0===e||e===O){var t=T.length?H(T):y;ee(h,t,A,k,m,O,U)}else E(e)},ne=function(e){return E(e*m)};return Object(r.useEffect)(te,[O]),o.a.createElement("div",{className:"c-search"},o.a.createElement("div",{className:"c-search__tools-wrapper"},o.a.createElement("div",{className:"c-search__input-wrapper"},o.a.createElement("input",{type:"search",className:"c-search__input form-control",onChange:function(e){var t=e.target.value;return g(t)},onKeyPress:function(e){13===e.charCode&&te(0)},value:h})),Q.length>1?o.a.createElement("div",{className:"c-search__selector-wrapper"},o.a.createElement("select",{className:"form-control c-search__select-language",onChange:$,value:U},Q.map((function(e){return e.enabled?o.a.createElement("option",{key:e.id,value:e.languageCode,onChange:$},e.name):null})))):null,o.a.createElement("button",{className:"c-search__search-btn btn btn-primary",onClick:te.bind(void 0,0)},p),o.a.createElement("div",{className:"c-search__filters-btn-wrapper"},o.a.createElement("button",{className:"c-search__toggle-filters-btn btn btn-secondary",onClick:function(){return S((function(e){return!e}))}},b))),o.a.createElement(X.Provider,{value:[T,x]},o.a.createElement(J.Provider,{value:[A,P]},o.a.createElement(G.Provider,{value:[k,R]},o.a.createElement(z,{isCollapsed:_,search:te})))),(t=Translator.trans("search.search_results",{},"universal_discovery_widget"),n=Translator.trans("search.no_results",{},"universal_discovery_widget"),a=Translator.trans("search.tips",{},"universal_discovery_widget"),i=Translator.trans("search.check_spelling",{},"universal_discovery_widget"),c=Translator.trans("search.different_keywords",{},"universal_discovery_widget"),s=Translator.trans("search.more_general",{},"universal_discovery_widget"),l=Translator.trans("search.fewer_keywords",{},"universal_discovery_widget"),u="".concat(t," (").concat(K.count,")"),K.count?o.a.createElement(w,{count:K.count,items:K.items,itemsPerPage:m,activePageIndex:O?O/m:0,title:u,onPageChange:ne}):K.items?o.a.createElement("div",{className:"c-search__no-results"},o.a.createElement("div",{className:"c-search__no-results-title"},u),o.a.createElement("table",{className:"table table-hover"},o.a.createElement("tbody",null,o.a.createElement("tr",null,o.a.createElement("td",null,o.a.createElement("span",null,"".concat(n,' "').concat(h,'".')))))),o.a.createElement("h6",null,a,":"),o.a.createElement("ul",null,o.a.createElement("li",null,i),o.a.createElement("li",null,c),o.a.createElement("li",null,s),o.a.createElement("li",null,l))):void 0))};K.propTypes={itemsPerPage:c.a.number},K.defaultProps={itemsPerPage:50};var ee=K,te=function(){var e=Object(r.useContext)(f.TabsConfigContext);return o.a.createElement("div",{className:"m-search-tab"},o.a.createElement(a.a,{actionsDisabledMap:{"content-create-button":!0,"sort-switcher":!0,"view-switcher":!0}},o.a.createElement(ee,{itemsPerPage:e.search.itemsPerPage})))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.tabs",[{id:"search",component:te,label:Translator.trans("search.label",{},"universal_discovery_widget"),icon:window.eZ.helpers.icon.getIconPath("search")}],!0);t.default=te},faye:function(e,t){e.exports=ReactDOM},iRWG:function(e,t,n){"use strict";n.d(t,"a",(function(){return o})),n.d(t,"b",(function(){return a}));var r=function(e){if(!e.ok)throw Error(e.statusText);return e},o=function(e){return r(e).json()},a=function(e){return r(e).status}},kqHN:function(e,t,n){"use strict";n.r(t);var r=n("cDcd"),o=n.n(r),a=n("zZ4q"),i=n("rf6O"),c=n.n(i),s=n("uHg5"),l=n("nLu2"),u=n("xI8+"),d=n("CgFf");function f(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function m(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?f(Object(n),!0).forEach((function(t){b(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):f(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function b(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function p(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return y(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return y(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function y(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var v={dataFetched:!1,data:{}},h=function(e,t){switch(t.type){case"FETCH_START":return v;case"FETCH_END":return{data:t.data,dataFetched:!0};default:throw new Error}};function g(e){return function(e){if(Array.isArray(e))return w(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||O(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function C(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||O(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function O(e,t){if(e){if("string"==typeof e)return w(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?w(e,t):void 0}}function w(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var E=function(e){var t=e.setBookmarkedLocationMarked,n=e.itemsPerPage,a=C(Object(r.useState)(0),2),i=a[0],c=a[1],f=C(Object(r.useState)([]),2),b=f[0],y=f[1],O=C(Object(r.useContext)(d.MarkedLocationIdContext),2),w=O[0],E=(O[1],C(Object(r.useContext)(d.LoadedLocationsMapContext),2)),j=(E[0],E[1]),_=C(Object(r.useContext)(d.SelectedLocationsContext),2),S=(_[0],_[1]),I=C(Object(r.useContext)(d.MultipleConfigContext),2),T=I[0],x=(I[1],Object(r.useContext)(d.AllowedContentTypesContext)),L=Object(r.useContext)(d.ContentTypesMapContext),A=Object(r.useContext)(d.ContainersOnlyContext),P=C(function(e,t){var n=Object(r.useContext)(d.RestInfoContext),o=p(Object(r.useReducer)(h,v),2),a=o[0],i=o[1];return Object(r.useEffect)((function(){var r=!1;return i({type:"FETCH_START"}),Object(u.g)(m(m({},n),{},{limit:e,offset:t}),(function(e){r||i({type:"FETCH_END",data:e})})),function(){r=!0}}),[n,e,t]),[a.data,!a.dataFetched]}(n,i),2),N=P[0],k=P[1];return Object(r.useEffect)((function(){k||y((function(e){return[].concat(g(e),g(N.items))}))}),[N.items,k]),b.length?o.a.createElement("div",{className:"c-bookmarks-list",onScroll:function(e){var t=e.target,r=b.length>=N.count,o=t.scrollHeight-t.clientHeight-t.scrollTop<200;r||!o||k||c(i+n)}},b.map((function(e){var n=e.id===w,r=L[e.ContentInfo.Content.ContentType._href],a=r.isContainer,i=A&&!a||x&&!x.includes(r.identifier),c=Object(l.a)({"c-bookmarks-list__item":!0,"c-bookmarks-list__item--marked":n,"c-bookmarks-list__item--not-selectable":i});return o.a.createElement("div",{key:e.id,className:c,onClick:function(){n||(j({type:"CLEAR_LOCATIONS"}),t(e.id),T||i||(S({type:"CLEAR_SELECTED_LOCATIONS"}),S({type:"ADD_SELECTED_LOCATION",location:e})))}},o.a.createElement(s.a,{extraClasses:"ez-icon--small",customPath:r.thumbnail}),o.a.createElement("span",{className:"c-bookmarks-list__item-name"},e.ContentInfo.Content.TranslatedName))})),k?o.a.createElement("div",{className:"c-bookmarks-list__spinner-wrapper"},o.a.createElement(s.a,{name:"spinner",extraClasses:"m-sub-items__spinner ez-icon--medium ez-spin"})):null):null};E.propTypes={setBookmarkedLocationMarked:c.a.func.isRequired,itemsPerPage:c.a.number},E.defaultProps={itemsPerPage:50};var j=E,_=n("MnjE"),S=n("3obH"),I=n("BZDO");function T(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function x(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?T(Object(n),!0).forEach((function(t){L(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):T(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function L(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function A(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return P(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return P(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function P(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var N=function(){var e=Object(r.useContext)(d.RestInfoContext),t=Object(r.useContext)(d.TabsConfigContext),n=A(Object(r.useContext)(d.CurrentViewContext),2),i=n[0],c=(n[1],A(Object(r.useContext)(d.MarkedLocationIdContext),2)),s=c[0],l=c[1],f=A(Object(r.useContext)(d.SortingContext),2),m=f[0],b=(f[1],A(Object(r.useContext)(d.SortOrderContext),2)),p=b[0],y=(b[1],Object(r.useContext)(d.RootLocationIdContext)),v=A(Object(r.useContext)(d.LoadedLocationsMapContext),2),h=(v[0],v[1]),g=A(Object(r.useState)(null),2),C=g[0],O=g[1],w={grid:o.a.createElement(_.a,{itemsPerPage:t.bookmarks.itemsPerPage}),finder:o.a.createElement(S.a,{itemsPerPage:t.bookmarks.itemsPerPage}),tree:o.a.createElement(I.a,{itemsPerPage:t.bookmarks.itemsPerPage})};return Object(r.useEffect)((function(){C&&(l(C),Object(u.f)(x(x({},e),{},{parentLocationId:C,sortClause:m,sortOrder:p,gridView:"grid"===i,rootLocationId:y}),(function(e){h({type:"SET_LOCATIONS",data:e})})))}),[C,i,e,h,l]),Object(r.useEffect)((function(){s!==C&&(h({type:"CUT_LOCATIONS",locationId:s}),O(null))}),[s,O,C,h]),o.a.createElement("div",{className:"m-bookmarks-tab"},o.a.createElement(a.a,null,o.a.createElement(j,{itemsPerPage:t.bookmarks.itemsPerPage,setBookmarkedLocationMarked:O}),s?w[i]:null))};eZ.addConfig("adminUiConfig.universalDiscoveryWidget.tabs",[{id:"bookmarks",component:N,label:Translator.trans("bookmarks.label",{},"universal_discovery_widget"),icon:window.eZ.helpers.icon.getIconPath("bookmark")}],!0);t.default=N},nLu2:function(e,t,n){"use strict";function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return o(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return o(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function o(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}n.d(t,"a",(function(){return a}));var a=function(e){return"[object Object]"!==Object.prototype.toString.call(e)?"":Object.entries(e).reduce((function(e,t){var n=r(t,2),o=n[0],a=n[1];return"".concat(e," ").concat(a?o:"")}),"").trim()}},oOVF:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("uHg5"),s=function(e){var t=e.thumbnailData,n=e.iconExtraClasses,r=e.contentTypeIconPath;return"image/svg+xml"===t.mimeType?o.a.createElement("div",{className:"c-thumbnail"},o.a.createElement(c.a,{extraClasses:n,customPath:t.resource})):o.a.createElement("div",{className:"c-thumbnail"},r?o.a.createElement("div",{className:"c-thumbnail__icon-wrapper"},o.a.createElement(c.a,{extraClasses:"ez-icon--small",customPath:r})):null,o.a.createElement("img",{src:t.resource}))};s.propTypes={thumbnailData:i.a.shape({mimeType:i.a.string.isRequired,resource:i.a.string.isRequired}).isRequired,iconExtraClasses:i.a.string,contentTypeIconPath:i.a.string},s.defaultProps={iconExtraClasses:null,contentTypeIconPath:null},t.a=s},qM4U:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("nLu2"),s=n("uHg5"),l=function(e){var t=e.hideTranslationSelector,n=e.selectTranslation,r=e.version,a=e.isOpen,i=r?r.VersionInfo.languageCodes.split(","):[],l=Translator.trans("meta_preview.edit_translation",{},"universal_discovery_widget"),u=Object(c.a)({"c-translation-selector":!0,"c-translation-selector--hidden":!a});return o.a.createElement("div",{className:u},o.a.createElement("div",{className:"c-translation-selector__header"},o.a.createElement("span",{className:"c-translation-selector__title"},"".concat(l," (").concat(i.length,")")),o.a.createElement("button",{className:"c-translation-selector__close-button btn",onClick:t},o.a.createElement(s.a,{name:"discard",extraClasses:"ez-icon--small"}))),o.a.createElement("div",{className:"c-translation-selector__languages-wrapper"},i.map((function(e){return o.a.createElement("div",{key:e,className:"c-translation-selector__language",onClick:n.bind(void 0,e)},window.eZ.adminUiConfig.languages.mappings[e].name)}))))};l.propTypes={hideTranslationSelector:i.a.func.isRequired,selectTranslation:i.a.func.isRequired,version:i.a.object.isRequired,isOpen:i.a.bool.isRequired},t.a=l},rf6O:function(e,t){e.exports=PropTypes},tw3r:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=function(e){var t=e.label,n=e.disabled,r=e.additionalClasses,a=e.buttonAdditionalClasses,i=e.onPageChange,c=e.pageIndex,s="c-pagination-button page-item ".concat(r);return s=n?"".concat(s," disabled"):s,o.a.createElement("li",{className:s},o.a.createElement("button",{className:"page-link ".concat(a),onClick:function(){!n&&Number.isInteger(c)&&i(c)},type:"button"},t))};c.propTypes={label:i.a.string.isRequired,disabled:i.a.bool,onPageChange:i.a.func,pageIndex:i.a.number.isRequired,additionalClasses:i.a.string,buttonAdditionalClasses:i.a.string},c.defaultProps={disabled:!1,additionalClasses:"",buttonAdditionalClasses:"",onPageChange:function(){}};var s=c,l=function(e){var t=e.totalCount,n=e.itemsPerPage,r=e.proximity,a=e.activePageIndex,i=e.onPageChange,c=e.disabled,l=Math.ceil(t/n);if(l<=1)return null;var u=Translator.trans("pagination.back",{},"sub_items"),d=Translator.trans("pagination.next",{},"sub_items"),f=a-1,m=a+1,b=0===a,p=a+1===l,y=function(e){for(var t=e.proximity,n=e.activePageIndex,r=e.pagesCount,o=e.separator,a=[],i=!1,c=1;c<=r;c++){1===c||c===r||c>=n+1-t&&c<=n+1+t?(a.push(c),i=!1):i||(a.push(o),i=!0)}return a}({proximity:r,activePageIndex:a,pagesCount:l,separator:"..."}).map((function(e,t){if("..."===e)return o.a.createElement(s,{key:"dots-".concat(t),label:"...",disabled:!0});var n=e===a+1?"active":"",r=""+e;return o.a.createElement(s,{key:e,pageIndex:e-1,label:r,additionalClasses:n,onPageChange:i,disabled:c})}));return o.a.createElement("ul",{className:"c-pagination pagination"},o.a.createElement(s,{pageIndex:f,label:u,additionalClasses:"prev",disabled:b||c,onPageChange:i}),y,o.a.createElement(s,{pageIndex:m,label:d,additionalClasses:"next",disabled:p||c,onPageChange:i}))};l.propTypes={proximity:i.a.number.isRequired,itemsPerPage:i.a.number.isRequired,activePageIndex:i.a.number.isRequired,totalCount:i.a.number.isRequired,onPageChange:i.a.func.isRequired,disabled:i.a.bool.isRequired};t.a=l},uHg5:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=function(e){var t=e.customPath?e.customPath:window.eZ.helpers.icon.getIconPath(e.name),n="ez-icon";return e.extraClasses&&(n="".concat(n," ").concat(e.extraClasses)),o.a.createElement("svg",{className:n},o.a.createElement("use",{xlinkHref:t}))};c.propTypes={extraClasses:i.a.string,name:i.a.string,customPath:i.a.string},c.defaultProps={customPath:null,name:null,extraClasses:null},t.a=c},"xI8+":function(e,t,n){"use strict";n.d(t,"d",(function(){return u})),n.d(t,"f",(function(){return d})),n.d(t,"e",(function(){return f})),n.d(t,"c",(function(){return m})),n.d(t,"g",(function(){return b})),n.d(t,"a",(function(){return y})),n.d(t,"k",(function(){return v})),n.d(t,"i",(function(){return h})),n.d(t,"b",(function(){return g})),n.d(t,"h",(function(){return C})),n.d(t,"j",(function(){return O}));var r=n("Y1Nf"),o=n("iRWG");function a(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function i(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?a(Object(n),!0).forEach((function(t){c(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):a(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function c(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var s={Accept:"application/vnd.ez.api.View+json; version=1.1","Content-Type":"application/vnd.ez.api.ViewInput+json; version=1.1"},l=function(e){return e.locations.map((function(t){var n={location:t.Location};if(e.versions){var r=e.versions.find((function(e){return e.Version.VersionInfo.Content._href===t.Location.Content._href}));n.version=r.Version}return n}))},u=function(e,t){var n=e.token,a=e.parentLocationId,i=e.limit,c=void 0===i?50:i,s=e.offset,u=void 0===s?0:s,d=e.sortClause,f=void 0===d?"DatePublished":d,m=e.sortOrder,b=void 0===m?"ascending":m,p=e.gridView,y=void 0!==p&&p?"ezplatform.udw.location_gridview.data":"ezplatform.udw.location.data",v=window.Routing.generate(y,{locationId:a}),h=new Request("".concat(v,"?limit=").concat(c,"&offset=").concat(u,"&sortClause=").concat(f,"&sortOrder=").concat(b),{method:"GET",headers:{"X-CSRF-Token":n},mode:"same-origin",credentials:"same-origin"});fetch(h).then(o.a).then((function(e){var n=e.bookmarked,r=e.location,o=e.permissions,i=e.subitems,c=e.version,s=l(i),u={location:r?r.Location:null,version:c?c.Version:null,totalCount:i.totalCount,subitems:s,bookmarked:n,permissions:o,parentLocationId:a};t(u)})).catch(r.a)},d=function(e,t){var n=e.token,a=e.parentLocationId,i=e.limit,c=void 0===i?50:i,s=e.sortClause,u=void 0===s?"DatePublished":s,d=e.sortOrder,f=void 0===d?"ascending":d,m=e.gridView,b=void 0!==m&&m,p=e.rootLocationId,y=void 0===p?1:p,v=b?"ezplatform.udw.accordion_gridview.data":"ezplatform.udw.accordion.data",h=window.Routing.generate(v,{locationId:a}),g=new Request("".concat(h,"?limit=").concat(c,"&sortClause=").concat(u,"&sortOrder=").concat(f,"&rootLocationId=").concat(y),{method:"GET",headers:{"X-CSRF-Token":n},mode:"same-origin",credentials:"same-origin"});fetch(g).then(o.a).then((function(e){var n=e.breadcrumb.map((function(t){var n=t.Location,r=e.columns[n.id];return{location:n,totalCount:r?r.subitems.totalCount:void 0,subitems:r?l(r.subitems):[],parentLocationId:n.id,collapsed:!e.columns[n.id]}})),r=e.columns[1],o=e.columns[a];r&&n.unshift({totalCount:r?r.subitems.totalCount:void 0,subitems:r?l(r.subitems):[],parentLocationId:1,collapsed:!1}),n.push({location:o.location.Location,version:o.version.Version,totalCount:o?o.subitems.totalCount:void 0,subitems:o?l(o.subitems):[],bookmarked:o.bookmarked,permissions:o.permissions,parentLocationId:a}),t(n)})).catch(r.a)},f=function(e,t){var n=e.token,a=e.siteaccess,c=e.query,l=e.limit,u=void 0===l?50:l,d=e.offset,f=void 0===d?0:d,m=e.languageCode,b=void 0===m?null:m,p=JSON.stringify({ViewInput:{identifier:"udw-locations-by-search-query-".concat(c.FullTextCriterion),public:!1,languageCode:b,useAlwaysAvailable:!0,LocationQuery:{FacetBuilders:{},SortClauses:{},Query:c,limit:u,offset:f}}}),y=new Request("/api/ezp/v2/views",{method:"POST",headers:i(i({},s),{},{"X-Siteaccess":a,"X-CSRF-Token":n}),body:p,mode:"same-origin",credentials:"same-origin"});fetch(y).then(o.a).then((function(e){var n=e.View.Result,r=n.count,o=n.searchHits.searchHit.map((function(e){return e.value.Location}));t({items:o,count:r})})).catch(r.a)},m=function(e,t){var n=e.token,a=e.siteaccess,c=e.id,l=e.limit,u=void 0===l?50:l,d=e.offset,f=void 0===d?0:d,m=JSON.stringify({ViewInput:{identifier:"udw-locations-by-id-".concat(c),public:!1,LocationQuery:{FacetBuilders:{},SortClauses:{SectionIdentifier:"ascending"},Filter:{LocationIdCriterion:c},limit:u,offset:f}}}),b=new Request("/api/ezp/v2/views",{method:"POST",headers:i(i({},s),{},{"X-Siteaccess":a,"X-CSRF-Token":n}),body:m,mode:"same-origin",credentials:"same-origin"});fetch(b).then(o.a).then((function(e){var n=e.View.Result.searchHits.searchHit.map((function(e){return e.value.Location}));t(n)})).catch(r.a)},b=function(e,t){var n=e.token,a=e.siteaccess,i=e.limit,c=e.offset,s=new Request("".concat("/api/ezp/v2/bookmark","?limit=").concat(i,"&offset=").concat(c),{method:"GET",headers:{"X-Siteaccess":a,"X-CSRF-Token":n,Accept:"application/vnd.ez.api.ContentTypeInfoList+json"},mode:"same-origin",credentials:"same-origin"});fetch(s).then(o.a).then((function(e){var n=e.BookmarkList.count,r=e.BookmarkList.items.map((function(e){return e.Location}));t({count:n,items:r})})).catch(r.a)},p=function(e,t,n){var a=e.siteaccess,i=e.token,c=e.locationId,s=new Request("".concat("/api/ezp/v2/bookmark","/").concat(c),{method:n,headers:{"X-Siteaccess":a,"X-CSRF-Token":i},mode:"same-origin",credentials:"same-origin"});fetch(s).then(o.b).then(t).catch(r.a)},y=function(e,t){p(e,t,"POST")},v=function(e,t){p(e,t,"DELETE")},h=function(e,t){var n=e.token,a=e.siteaccess,i=new Request("/api/ezp/v2/content/types",{method:"GET",headers:{Accept:"application/vnd.ez.api.ContentTypeInfoList+json","X-Siteaccess":a,"X-CSRF-Token":n},mode:"same-origin",credentials:"same-origin"});fetch(i).then(o.a).then(t).catch(r.a)},g=function(e,t){var n=e.token,a=e.siteaccess,i=e.contentId,c=new Request("/api/ezp/v2/content/objects/".concat(i,"/currentversion"),{method:"COPY",headers:{Accept:"application/vnd.ez.api.VersionUpdate+json","X-Siteaccess":a,"X-CSRF-Token":n},mode:"same-origin",credentials:"same-origin"});fetch(c).then(o.a).then(t).catch(r.a)},C=function(e,t){var n=e.token,a=e.siteaccess,i=e.contentId,c=e.limit,l=void 0===c?50:c,u=e.offset,d=void 0===u?0:u,f=JSON.stringify({ViewInput:{identifier:"udw-load-content-info-".concat(i),public:!1,ContentQuery:{FacetBuilders:{},SortClauses:{},Filter:{ContentIdCriterion:"".concat(i)},limit:l,offset:d}}}),m=new Request("/api/ezp/v2/views",{method:"POST",headers:Object.assign({},s,{"X-Siteaccess":a,"X-CSRF-Token":n}),body:f,mode:"same-origin",credentials:"same-origin"});fetch(m).then(o.a).then((function(e){var n=e.View.Result.searchHits.searchHit.map((function(e){return e.value.Content}));t(n)})).catch(r.a)},O=function(e,t){var n=e.locationIds,a=window.Routing.generate("ezplatform.udw.locations.data"),i=new Request("".concat(a,"?locationIds=").concat(n),{method:"GET",mode:"same-origin",credentials:"same-origin"});fetch(i).then(o.a).then(t).catch(r.a)}},zZ4q:function(e,t,n){"use strict";var r=n("cDcd"),o=n.n(r),a=n("rf6O"),i=n.n(a),c=n("uHg5"),s=n("CgFf");function l(e){return function(e){if(Array.isArray(e))return u(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return u(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return u(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var d=function(e){var t=e.actionsDisabledMap,n=Object(r.useContext)(s.TitleContext),a=Object(r.useContext)(s.CancelContext),i=Object(r.useMemo)((function(){return l(window.eZ.adminUiConfig.universalDiscoveryWidget.topMenuActions).sort((function(e,t){return t.priority-e.priority}))}),[]),u=Translator.trans("back.label",{},"universal_discovery_widget");return o.a.createElement("div",{className:"c-top-menu"},o.a.createElement("span",{className:"c-top-menu__cancel-btn-wrapper"},o.a.createElement("button",{className:"c-top-menu__cancel-btn btn btn-icon",type:"button",onClick:a,title:u,"data-tooltip-container-selector":".c-top-menu__cancel-btn-wrapper"},o.a.createElement(c.a,{name:"caret-back",extraClasses:"ez-icon--secondary ez-icon--small"}))),o.a.createElement("span",{className:"c-top-menu__title-wrapper"},n),o.a.createElement("div",{className:"c-top-menu__actions-wrapper"},i.map((function(e){var n=e.component;return o.a.createElement(n,{key:e.id,isDisabled:t[e.id]})}))))};d.propTypes={actionsDisabledMap:i.a.object},d.defaultProps={actionsDisabledMap:{"content-create-button":!1,"sort-switcher":!1,"view-switcher":!1}};var f=d,m=n("nLu2");function b(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return p(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return p(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function p(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var y=function(){var e=Object(r.useContext)(s.TabsContext),t=Object(r.useContext)(s.TabsConfigContext),n=b(Object(r.useContext)(s.ActiveTabContext),2),a=n[0],i=n[1],l=Object(r.useMemo)((function(){return e.sort((function(e,n){return t[n.id]&&t[e.id]?t[n.id].priority-t[e.id].priority:0}))}),[e,t]);return o.a.createElement("div",{className:"c-tab-selector"},l.map((function(e){if(e.isHiddenOnList||t[e.id]&&t[e.id].hidden)return null;var n=Object(m.a)({"c-tab-selector__item":!0,"c-tab-selector__item--selected":e.id===a});return o.a.createElement("div",{className:n,key:e.id,onClick:function(){return i(e.id)}},o.a.createElement(c.a,{customPath:e.icon,extraClasses:"ez-icon--small-medium"}),e.label)})))},v=n("oOVF");function h(e){return function(e){if(Array.isArray(e))return O(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||C(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function g(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||C(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function C(e,t){if(e){if("string"==typeof e)return O(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?O(e,t):void 0}}function O(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var w=function(e){var t=e.location,n=e.permissions,a=Object(r.useRef)(null),i=g(Object(r.useContext)(s.SelectedLocationsContext),2),l=(i[0],i[1]),u=Object(r.useContext)(s.ContentTypesMapContext),d=Translator.trans("selected_locations.clear_selection",{},"universal_discovery_widget"),f=Object(r.useMemo)((function(){var e=window.eZ.adminUiConfig.universalDiscoveryWidget.selectedItemActions;return(e?h(e):[]).sort((function(e,t){return t.priority-e.priority}))}),[]),m=t.ContentInfo.Content.CurrentVersion.Version,b=m?m.Thumbnail:{};return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(a.current)}),[]),o.a.createElement("div",{className:"c-selected-locations-item",ref:a},o.a.createElement("div",{className:"c-selected-locations-item__image-wrapper"},o.a.createElement(v.a,{thumbnailData:b})),o.a.createElement("div",{className:"c-selected-locations-item__info"},o.a.createElement("span",{className:"c-selected-locations-item__info-name"},t.ContentInfo.Content.TranslatedName),o.a.createElement("span",{className:"c-selected-locations-item__info-description"},u[t.ContentInfo.Content.ContentType._href].name)),o.a.createElement("div",{className:"c-selected-locations-item__actions-wrapper"},f.map((function(e){var r=e.component;return o.a.createElement(r,{key:e.id,location:t,permissions:n})})),o.a.createElement("button",{type:"button",className:"c-selected-locations-item__remove-button btn btn-icon",onClick:function(){window.eZ.helpers.tooltips.hideAll(a.current),l({type:"REMOVE_SELECTED_LOCATION",id:t.id})},title:d,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:"trash",extraClasses:"ez-icon--small-medium"}))))};w.propTypes={location:i.a.object.isRequired,permissions:i.a.object.isRequired};var E=w;function j(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return _(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return _(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function _(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var S=function(){var e,t=Object(r.useRef)(null),n=Object(r.useRef)(null),a=j(Object(r.useContext)(s.SelectedLocationsContext),2),i=a[0],l=a[1],u=Object(r.useContext)(s.AllowConfirmationContext),d=Object(r.useContext)(s.ConfirmContext),f=j(Object(r.useState)(!1),2),b=f[0],p=f[1],y=Object(m.a)({"c-selected-locations":!0,"c-selected-locations--expanded":b}),v=Translator.trans("selected_locations.expand.sidebar",{},"universal_discovery_widget"),h=Translator.trans("selected_locations.collapse.sidebar",{},"universal_discovery_widget"),g=b?h:v,C=function(){window.eZ.helpers.tooltips.hideAll(t.current),l({type:"CLEAR_SELECTED_LOCATIONS"})},O=function(){p(!b)},w=function(){var e=Translator.trans("selected_locations.selected",{},"universal_discovery_widget");return o.a.createElement("div",{className:"c-selected-locations__selection-counter"},o.a.createElement("span",{className:"c-selected-locations__selection-count"},i.length),o.a.createElement("span",{className:"c-selected-locations__selection-count-label"},e))},_=function(){var e=Translator.trans("selected_locations.confirm_selection",{},"universal_discovery_widget"),t=Translator.trans("selected_locations.clear_all",{},"universal_discovery_widget");return o.a.createElement(r.Fragment,null,o.a.createElement("button",{type:"button",className:"c-selected-locations__confirm-button btn btn-icon",onClick:function(){return d()},title:e,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:"checkmark",extraClasses:"ez-icon--small-medium ez-icon--secondary"})),o.a.createElement("button",{type:"button",className:"c-selected-locations__clear-selection-button btn btn-icon",onClick:C,title:t,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:"trash",extraClasses:"ez-icon--small-medium ez-icon--secondary"})))};return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(t.current),window.eZ.helpers.tooltips.hideAll(),n.current&&(n.current.dataset.originalTitle=g)}),[b]),u?o.a.createElement("div",{className:y,ref:t},o.a.createElement("div",{className:"c-selected-locations__header"},o.a.createElement("div",{className:"c-selected-locations__actions-wrapper"},(e=b?"caret-next":"caret-back",o.a.createElement("button",{ref:n,type:"button",className:"c-selected-locations__toggle-button btn btn-icon",onClick:O,title:g,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:e,extraClasses:"ez-icon--small ez-icon--secondary"}))),!b&&_(),b&&w(),b&&_()),!b&&w()),b?o.a.createElement("div",{className:"c-selected-locations__items-wrapper"},i.map((function(e){return o.a.createElement(E,{key:e.location.id,location:e.location,permissions:e.permissions})}))):null):null};function I(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return T(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return T(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function T(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var x=Object.values(window.eZ.adminUiConfig.languages.mappings),L=Object.entries(window.eZ.adminUiConfig.contentTypes),A=function(){var e=Object(r.useRef)(null),t=I(Object(r.useContext)(s.MarkedLocationIdContext),2),n=t[0],a=(t[1],I(Object(r.useContext)(s.LoadedLocationsMapContext),2)),i=a[0],l=(a[1],Object(r.useContext)(s.ContentOnTheFlyConfigContext)),u=l.allowedLanguages,d=l.preselectedLanguage,f=l.preselectedContentType,b=Object(r.useContext)(s.AllowedContentTypesContext),p=i.find((function(e){return e.parentLocationId===n})),y=x.filter((function(e){var t=!p||!p.permissions||!p.permissions.create.restrictedLanguageCodes.length||p.permissions.create.restrictedLanguageCodes.includes(e.languageCode),n=!u||u.includes(e.languageCode);return t&&n&&e.enabled})),v=I(Object(r.useState)(""),2),h=v[0],g=v[1],C=y.length?y[0].languageCode:"",O=I(Object(r.useState)(d||C),2),w=O[0],E=O[1],j=I(Object(r.useState)(f),2),_=j[0],S=j[1],T=I(Object(r.useContext)(s.ActiveTabContext),2),A=(T[0],T[1]),P=I(Object(r.useContext)(s.CreateContentWidgetContext),2),N=P[0],k=P[1],R=I(Object(r.useContext)(s.ContentOnTheFlyDataContext),2),D=(R[0],R[1]),z=function(){k(!1)},M=function(e){return E(e.target.value)},q=!_||!w||1===n,U=Translator.trans("create_content.label",{},"universal_discovery_widget"),F=Translator.trans("create_content.select_language",{},"universal_discovery_widget"),Z=Translator.trans("create_content.select_content_type",{},"universal_discovery_widget"),W=Translator.trans("create_content.create",{},"universal_discovery_widget"),V=Translator.trans("popup.close.label",{},"universal_discovery_widget"),H=Translator.trans("content_create.cancel.label",{},"universal_discovery_widget"),$=Object(m.a)({"c-content-create":!0,"c-content-create--hidden":!N});return Object(r.useEffect)((function(){window.eZ.helpers.tooltips.parse(e.current)}),[]),o.a.createElement("div",{className:$,ref:e},o.a.createElement("div",{className:"c-content-create__header"},o.a.createElement("div",{className:"c-content-create__header-title"},U),o.a.createElement("button",{type:"button",className:"c-content-create__close-button",onClick:z,title:V,"data-tooltip-container-selector":".c-udw-tab"},o.a.createElement(c.a,{name:"discard",extraClasses:"ez-icon--small"}))),o.a.createElement("div",{className:"c-content-create__language-selector-wrapper"},o.a.createElement("div",{className:"c-content-create__language-selector-label"},F),o.a.createElement("select",{className:"form-control",onChange:M,value:w},y.map((function(e){return e.enabled?o.a.createElement("option",{key:e.id,value:e.languageCode,onChange:M},e.name):null})))),o.a.createElement("div",{className:"c-content-create__select-content-type-wrapper"},o.a.createElement("div",{className:"c-content-create__select-content-type-label"},Z),o.a.createElement("input",{autoFocus:!0,className:"form-control",type:"text",placeholder:"Type to refine",onChange:function(e){var t=e.target.value.toLowerCase();g(t)}}),o.a.createElement("div",{className:"c-content-create__content-type-list"},L.map((function(e){var t=I(e,2),n=t[0],r=t[1],a=r.every((function(e){return h&&!e.name.toLowerCase().includes(h)||p&&p.permissions&&p.permissions.create.restrictedContentTypeIds.length&&!p.permissions.create.restrictedContentTypeIds.includes(e.id.toString())||b&&!b.includes(e.identifier)}));return o.a.createElement("div",{className:"c-content-create__group",key:n},o.a.createElement("div",{className:"c-content-create__group-name",hidden:a},n),r.map((function(e){var t=e.name,n=e.thumbnail,r=e.identifier,a=e.id,i=h&&!t.toLowerCase().includes(h)||p&&p.permissions&&p.permissions.create.restrictedContentTypeIds.length&&!p.permissions.create.restrictedContentTypeIds.includes(a.toString())||b&&!b.includes(r),s=Object(m.a)({"c-content-create__group-item":!0,"c-content-create__group-item--selected":r===_});return o.a.createElement("div",{hidden:i,key:r,className:s,onClick:function(){return S(r)}},o.a.createElement("div",{className:"c-content-create__group-item-icon"},o.a.createElement(c.a,{customPath:n,extraClasses:"ez-icon--small"})),o.a.createElement("div",{className:"c-content-create__group-item-name"},t))})))})))),o.a.createElement("div",{className:"c-content-create__confirm-wrapper"},o.a.createElement("button",{className:"c-content-create__confirm-button btn btn-primary",onClick:function(){D({locationId:n,languageCode:w,contentTypeIdentifier:_}),A("content-create")},disabled:q},W),o.a.createElement("button",{className:"ez-btn ez-btn--no-border",onClick:z},H)))};function P(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,a=[],i=!0,c=!1;try{for(n=n.call(e);!(i=(r=n.next()).done)&&(a.push(r.value),!t||a.length!==t);i=!0);}catch(e){c=!0,o=e}finally{try{i||null==n.return||n.return()}finally{if(c)throw o}}return a}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return N(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return N(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function N(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var k=function(e){var t=e.children,n=e.actionsDisabledMap,a=window.eZ.adminUiConfig.universalDiscoveryWidget.contentMetaPreview,i=P(Object(r.useContext)(s.SelectedLocationsContext),2),c=i[0],l=(i[1],c.length?o.a.createElement(S,null):null);return o.a.createElement("div",{className:"c-udw-tab"},o.a.createElement("div",{className:"c-udw-tab__top-bar"},o.a.createElement(f,{actionsDisabledMap:n})),o.a.createElement("div",{className:"c-udw-tab__left-sidebar"},o.a.createElement(A,null),o.a.createElement(y,null)),o.a.createElement("div",{className:"c-udw-tab__main"},t),o.a.createElement("div",{className:"c-udw-tab__right-sidebar"},a&&o.a.createElement(a,null),l))};k.propTypes={children:i.a.any.isRequired,actionsDisabledMap:i.a.object},k.defaultProps={actionsDisabledMap:{"content-create-button":!1,"sort-switcher":!1,"view-switcher":!1}};t.a=k}},[[32,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-udw-tabs-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js ***!
+  \**************************************************************************************************************/
+/*! exports provided: createCssClassNames */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCssClassNames", function() { return createCssClassNames; });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var createCssClassNames = function createCssClassNames(classes) {
+  if (Object.prototype.toString.call(classes) !== '[object Object]') {
+    return '';
+  }
+
+  return Object.entries(classes).reduce(function (total, _ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        name = _ref2[0],
+        condition = _ref2[1];
+
+    return "".concat(total, " ").concat(condition ? name : '');
+  }, '').trim();
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/deep.clone.helper.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/deep.clone.helper.js ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Clones any object. Faster alternative to `JSON.parse(JSON.stringify)`
+ *
+ * @function deepClone
+ * @param {Any} data
+ * @returns {Any} cloned data
+ */
+var deepClone = function deepClone(data) {
+  var clonedData;
+
+  if (_typeof(data) !== 'object') {
+    return data;
+  }
+
+  if (!data) {
+    return data;
+  }
+
+  if (Object.prototype.toString.apply(data) === '[object Array]') {
+    clonedData = [];
+
+    for (var i = 0; i < data.length; i++) {
+      clonedData[i] = deepClone(data[i]);
+    }
+
+    return clonedData;
+  }
+
+  clonedData = {};
+
+  for (var _i in data) {
+    if (data.hasOwnProperty(_i)) {
+      clonedData[_i] = deepClone(data[_i]);
+    }
+  }
+
+  return clonedData;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (deepClone);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/request.helper.js":
+/*!*************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/request.helper.js ***!
+  \*************************************************************************************************************/
+/*! exports provided: getBasicRequestInit, handleRequestError, handleRequestResponse, handleRequestResponseStatus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBasicRequestInit", function() { return getBasicRequestInit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleRequestError", function() { return handleRequestError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleRequestResponse", function() { return handleRequestResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleRequestResponseStatus", function() { return handleRequestResponseStatus; });
+/**
+ * Returns basic RequestInit object for Request
+ *
+ * @function getBasicRequestInit
+ * @param {Object} restInfo REST config hash containing: token and siteaccess properties
+ * @returns {RequestInit}
+ */
+var getBasicRequestInit = function getBasicRequestInit(_ref) {
+  var token = _ref.token,
+      siteaccess = _ref.siteaccess;
+  return {
+    headers: {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  };
+};
+/**
+ * Handles request error
+ *
+ * @function handleRequestResponse
+ * @param {Response} response
+ * @returns {Response}
+ */
+
+var handleRequestError = function handleRequestError(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+
+  return response;
+};
+/**
+ * Handles request response
+ *
+ * @function handleRequestResponse
+ * @param {Response} response
+ * @returns {Error|Promise}
+ */
+
+var handleRequestResponse = function handleRequestResponse(response) {
+  return handleRequestError(response).json();
+};
+/**
+ * Handles request response; returns status if response is OK
+ *
+ * @function handleRequestResponseStatus
+ * @param {Response} response
+ * @returns {number}
+ */
+
+var handleRequestResponseStatus = function handleRequestResponseStatus(response) {
+  return handleRequestError(response).status;
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js":
+/*!************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Icon = function Icon(props) {
+  var linkHref = props.customPath ? props.customPath : window.eZ.helpers.icon.getIconPath(props.name);
+  var className = 'ez-icon';
+
+  if (props.extraClasses) {
+    className = "".concat(className, " ").concat(props.extraClasses);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
+    xlinkHref: linkHref
+  }));
+};
+
+Icon.propTypes = {
+  extraClasses: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  customPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+Icon.defaultProps = {
+  customPath: null,
+  name: null,
+  extraClasses: null
+};
+/* harmony default export */ __webpack_exports__["default"] = (Icon);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.button.js":
+/*!*******************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.button.js ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var PaginationButton = function PaginationButton(_ref) {
+  var label = _ref.label,
+      disabled = _ref.disabled,
+      additionalClasses = _ref.additionalClasses,
+      buttonAdditionalClasses = _ref.buttonAdditionalClasses,
+      onPageChange = _ref.onPageChange,
+      pageIndex = _ref.pageIndex;
+
+  var handleClick = function handleClick() {
+    if (!disabled && Number.isInteger(pageIndex)) {
+      onPageChange(pageIndex);
+    }
+  };
+
+  var className = "c-pagination-button page-item ".concat(additionalClasses);
+  className = disabled ? "".concat(className, " disabled") : className;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "page-link ".concat(buttonAdditionalClasses),
+    onClick: handleClick,
+    type: "button"
+  }, label));
+};
+
+PaginationButton.propTypes = {
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  disabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  onPageChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  pageIndex: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  additionalClasses: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  buttonAdditionalClasses: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+PaginationButton.defaultProps = {
+  disabled: false,
+  additionalClasses: '',
+  buttonAdditionalClasses: '',
+  onPageChange: function onPageChange() {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (PaginationButton);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.js ***!
+  \************************************************************************************************************/
+/*! exports provided: computePages, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computePages", function() { return computePages; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pagination_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pagination.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.button.js");
+
+
+
+var DOTS = '...';
+/**
+ * Computes array with pagination pages.
+ *
+ * Example 1: [ 1, "...", 5, 6, 7, 8, 9, 10 ] (for: proximity = 2; pagesNumber = 10; activePageIndex = 7)
+ * Example 2: [ 1, "...", 3, 4, 5, 6, 7, "...", 10 ] (for: proximity = 2; pagesNumber = 10; activePageIndex = 5)
+ * Example 3: [ 1, "...", 8, 9, 10, 11, 12, "...", 20 ] (for: proximity = 2; pagesNumber = 20; activePageIndex = 10)
+ *
+ * @param {Object} params
+ * @param {Number} params.proximity
+ * @param {Number} params.activePageIndex
+ * @param {Number} params.pagesCount
+ * @param {String} params.separator
+ *
+ * @returns {Array}
+ */
+
+var computePages = function computePages(_ref) {
+  var proximity = _ref.proximity,
+      activePageIndex = _ref.activePageIndex,
+      pagesCount = _ref.pagesCount,
+      separator = _ref.separator;
+  var pages = [];
+  var wasSeparator = false;
+
+  for (var i = 1; i <= pagesCount; i++) {
+    var isFirstPage = i === 1;
+    var isLastPage = i === pagesCount;
+    var isInRange = i >= activePageIndex + 1 - proximity && i <= activePageIndex + 1 + proximity;
+
+    if (isFirstPage || isLastPage || isInRange) {
+      pages.push(i);
+      wasSeparator = false;
+    } else if (!wasSeparator) {
+      pages.push(separator);
+      wasSeparator = true;
+    }
+  }
+
+  return pages;
+};
+
+var Pagination = function Pagination(_ref2) {
+  var totalCount = _ref2.totalCount,
+      itemsPerPage = _ref2.itemsPerPage,
+      proximity = _ref2.proximity,
+      activePageIndex = _ref2.activePageIndex,
+      onPageChange = _ref2.onPageChange,
+      paginationDisabled = _ref2.disabled;
+  var pagesCount = Math.ceil(totalCount / itemsPerPage);
+
+  if (pagesCount <= 1) {
+    return null;
+  }
+
+  var backLabel = Translator.trans(
+  /*@Desc("Back")*/
+  'pagination.back', {}, 'sub_items');
+  var nextLabel = Translator.trans(
+  /*@Desc("Next")*/
+  'pagination.next', {}, 'sub_items');
+  var previousPage = activePageIndex - 1;
+  var nextPage = activePageIndex + 1;
+  var isFirstPage = activePageIndex === 0;
+  var isLastPage = activePageIndex + 1 === pagesCount;
+  var pages = computePages({
+    proximity: proximity,
+    activePageIndex: activePageIndex,
+    pagesCount: pagesCount,
+    separator: DOTS
+  });
+  var paginationButtons = pages.map(function (page, index) {
+    if (page === DOTS) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pagination_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        key: "dots-".concat(index),
+        label: DOTS,
+        disabled: true
+      });
+    }
+
+    var isCurrentPage = page === activePageIndex + 1;
+    var additionalClasses = isCurrentPage ? 'active' : '';
+    var label = '' + page;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pagination_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: page,
+      pageIndex: page - 1,
+      label: label,
+      additionalClasses: additionalClasses,
+      onPageChange: onPageChange,
+      disabled: paginationDisabled
+    });
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "c-pagination pagination"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pagination_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    pageIndex: previousPage,
+    label: backLabel,
+    additionalClasses: "prev",
+    disabled: isFirstPage || paginationDisabled,
+    onPageChange: onPageChange
+  }), paginationButtons, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pagination_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    pageIndex: nextPage,
+    label: nextLabel,
+    additionalClasses: "next",
+    disabled: isLastPage || paginationDisabled,
+    onPageChange: onPageChange
+  }));
+};
+
+Pagination.propTypes = {
+  proximity: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  activePageIndex: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  totalCount: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  onPageChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  disabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Pagination);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/services/notification.service.js":
+/*!********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/services/notification.service.js ***!
+  \********************************************************************************************************************/
+/*! exports provided: NOTIFICATION_INFO_LABEL, NOTIFICATION_SUCCESS_LABEL, NOTIFICATION_WARNING_LABEL, NOTIFICATION_ERROR_LABEL, showNotification, showInfoNotification, showSuccessNotification, showWarningNotification, showErrorNotification */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOTIFICATION_INFO_LABEL", function() { return NOTIFICATION_INFO_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOTIFICATION_SUCCESS_LABEL", function() { return NOTIFICATION_SUCCESS_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOTIFICATION_WARNING_LABEL", function() { return NOTIFICATION_WARNING_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NOTIFICATION_ERROR_LABEL", function() { return NOTIFICATION_ERROR_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showNotification", function() { return showNotification; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showInfoNotification", function() { return showInfoNotification; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showSuccessNotification", function() { return showSuccessNotification; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showWarningNotification", function() { return showWarningNotification; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showErrorNotification", function() { return showErrorNotification; });
+var NOTIFICATION_INFO_LABEL = 'info';
+var NOTIFICATION_SUCCESS_LABEL = 'success';
+var NOTIFICATION_WARNING_LABEL = 'warning';
+var NOTIFICATION_ERROR_LABEL = 'error';
+/**
+ * Dispatches notification event
+ *
+ * @method showNotification
+ * @param {{message: string, label: string}} detail
+ */
+
+var showNotification = function showNotification(detail) {
+  var event = new CustomEvent('ez-notify', {
+    detail: detail
+  });
+  document.body.dispatchEvent(event);
+};
+/**
+ * Dispatches info notification event
+ *
+ * @method showInfoNotification
+ * @param {String} message
+ */
+
+var showInfoNotification = function showInfoNotification(message) {
+  showNotification({
+    message: message,
+    label: NOTIFICATION_INFO_LABEL
+  });
+};
+/**
+ * Dispatches success notification event
+ *
+ * @method showSuccessNotification
+ * @param {String} message
+ */
+
+var showSuccessNotification = function showSuccessNotification(message) {
+  showNotification({
+    message: message,
+    label: NOTIFICATION_SUCCESS_LABEL
+  });
+};
+/**
+ * Dispatches warning notification event
+ *
+ * @method showWarningNotification
+ * @param {String} message
+ */
+
+var showWarningNotification = function showWarningNotification(message) {
+  showNotification({
+    message: message,
+    label: NOTIFICATION_WARNING_LABEL
+  });
+};
+/**
+ * Dispatches error notification event
+ *
+ * @method showErrorNotification
+ * @param {(string|Error)} error
+ */
+
+var showErrorNotification = function showErrorNotification(error) {
+  var isErrorObj = error instanceof Error;
+  var message = isErrorObj ? error.message : error;
+  showNotification({
+    message: message,
+    label: NOTIFICATION_ERROR_LABEL
+  });
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/thumbnail/thumbnail.js":
+/*!**********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/thumbnail/thumbnail.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+
+
+
+
+var Thumbnail = function Thumbnail(_ref) {
+  var thumbnailData = _ref.thumbnailData,
+      iconExtraClasses = _ref.iconExtraClasses,
+      contentTypeIconPath = _ref.contentTypeIconPath;
+
+  var renderContentTypeIcon = function renderContentTypeIcon() {
+    if (!contentTypeIconPath) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-thumbnail__icon-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      extraClasses: "ez-icon--small",
+      customPath: contentTypeIconPath
+    }));
+  };
+
+  if (thumbnailData.mimeType === 'image/svg+xml') {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-thumbnail"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      extraClasses: iconExtraClasses,
+      customPath: thumbnailData.resource
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-thumbnail"
+  }, renderContentTypeIcon(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: thumbnailData.resource
+  }));
+};
+
+Thumbnail.propTypes = {
+  thumbnailData: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    mimeType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    resource: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  iconExtraClasses: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  contentTypeIconPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+Thumbnail.defaultProps = {
+  iconExtraClasses: null,
+  contentTypeIconPath: null
+};
+/* harmony default export */ __webpack_exports__["default"] = (Thumbnail);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/content-tree/content.tree.js":
+/*!*********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/content-tree/content.tree.js ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ContentTree; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../list/list.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list/list.component.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var CLASS_IS_TREE_RESIZING = 'ez-is-tree-resizing';
+
+var ContentTree = /*#__PURE__*/function (_Component) {
+  _inherits(ContentTree, _Component);
+
+  var _super = _createSuper(ContentTree);
+
+  function ContentTree(props) {
+    var _this;
+
+    _classCallCheck(this, ContentTree);
+
+    _this = _super.call(this, props);
+    _this.changeContainerWidth = _this.changeContainerWidth.bind(_assertThisInitialized(_this));
+    _this.addWidthChangeListener = _this.addWidthChangeListener.bind(_assertThisInitialized(_this));
+    _this.handleResizeEnd = _this.handleResizeEnd.bind(_assertThisInitialized(_this));
+    _this._refTreeContainer = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.scrollTimeout = null;
+    _this.scrollPositionRestored = false;
+    _this.state = {
+      resizeStartPositionX: 0,
+      containerWidth: _this.getConfig('width'),
+      resizedContainerWidth: 0,
+      isResizing: false
+    };
+    return _this;
+  }
+
+  _createClass(ContentTree, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.clearDocumentResizingListeners();
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.containerScrollRef.addEventListener('scroll', function (event) {
+        window.clearTimeout(_this2.scrollTimeout);
+        _this2.scrollTimeout = window.setTimeout(function (scrollTop) {
+          _this2.saveConfig('scrollTop', scrollTop);
+        }, 50, event.currentTarget.scrollTop);
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevState) {
+      if (this.state.containerWidth !== prevState.containerWidth) {
+        this.saveConfig('width', this.state.containerWidth);
+        document.body.dispatchEvent(new CustomEvent('ez-content-tree-resized'));
+      }
+
+      if (this.props.items && this.props.items.length && !this.scrollPositionRestored) {
+        this.scrollPositionRestored = true;
+        this.containerScrollRef.scrollTo(0, this.getConfig('scrollTop'));
+      }
+    }
+  }, {
+    key: "saveConfig",
+    value: function saveConfig(id, value) {
+      var userId = this.props.userId;
+      var data = JSON.parse(window.localStorage.getItem('ez-content-tree-state') || '{}');
+
+      if (!data[userId]) {
+        data[userId] = {};
+      }
+
+      data[userId][id] = value;
+      window.localStorage.setItem('ez-content-tree-state', JSON.stringify(data));
+    }
+  }, {
+    key: "getConfig",
+    value: function getConfig(id) {
+      var _data$userId;
+
+      var userId = this.props.userId;
+      var data = JSON.parse(window.localStorage.getItem('ez-content-tree-state') || '{}');
+      return (_data$userId = data[userId]) === null || _data$userId === void 0 ? void 0 : _data$userId[id];
+    }
+  }, {
+    key: "changeContainerWidth",
+    value: function changeContainerWidth(_ref) {
+      var clientX = _ref.clientX;
+      var currentPositionX = clientX;
+      this.setState(function (state) {
+        return {
+          resizedContainerWidth: state.containerWidth + (currentPositionX - state.resizeStartPositionX)
+        };
+      });
+    }
+  }, {
+    key: "addWidthChangeListener",
+    value: function addWidthChangeListener(_ref2) {
+      var nativeEvent = _ref2.nativeEvent;
+      var resizeStartPositionX = nativeEvent.clientX;
+
+      var containerWidth = this._refTreeContainer.current.getBoundingClientRect().width;
+
+      window.document.addEventListener('mousemove', this.changeContainerWidth, false);
+      window.document.addEventListener('mouseup', this.handleResizeEnd, false);
+      window.document.body.classList.add(CLASS_IS_TREE_RESIZING);
+      this.setState(function () {
+        return {
+          resizeStartPositionX: resizeStartPositionX,
+          containerWidth: containerWidth,
+          isResizing: true
+        };
+      });
+    }
+  }, {
+    key: "handleResizeEnd",
+    value: function handleResizeEnd() {
+      this.clearDocumentResizingListeners();
+      this.setState(function (state) {
+        return {
+          resizeStartPositionX: 0,
+          containerWidth: state.resizedContainerWidth,
+          isResizing: false
+        };
+      });
+    }
+  }, {
+    key: "clearDocumentResizingListeners",
+    value: function clearDocumentResizingListeners() {
+      window.document.removeEventListener('mousemove', this.changeContainerWidth);
+      window.document.removeEventListener('mouseup', this.handleResizeEnd);
+      window.document.body.classList.remove(CLASS_IS_TREE_RESIZING);
+    }
+  }, {
+    key: "renderCollapseAllBtn",
+    value: function renderCollapseAllBtn() {
+      var collapseAllLabel = Translator.trans(
+      /*@Desc("Collapse all")*/
+      'collapse_all', {}, 'content_tree');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        tabIndex: -1,
+        className: "m-tree__collapse-all-btn",
+        onClick: this.props.onCollapseAllItems
+      }, collapseAllLabel);
+    }
+  }, {
+    key: "renderList",
+    value: function renderList() {
+      var _this3 = this;
+
+      var _this$props = this.props,
+          items = _this$props.items,
+          loadMoreSubitems = _this$props.loadMoreSubitems,
+          currentLocationId = _this$props.currentLocationId,
+          onClickItem = _this$props.onClickItem,
+          subitemsLoadLimit = _this$props.subitemsLoadLimit,
+          subitemsLimit = _this$props.subitemsLimit,
+          treeMaxDepth = _this$props.treeMaxDepth,
+          afterItemToggle = _this$props.afterItemToggle;
+      var attrs = {
+        items: items,
+        path: '',
+        loadMoreSubitems: loadMoreSubitems,
+        currentLocationId: currentLocationId,
+        subitemsLimit: subitemsLimit,
+        subitemsLoadLimit: subitemsLoadLimit,
+        treeMaxDepth: treeMaxDepth,
+        afterItemToggle: afterItemToggle,
+        isRoot: true,
+        onClickItem: onClickItem
+      };
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-tree__scrollable-wrapper",
+        ref: function ref(_ref3) {
+          return _this3.containerScrollRef = _ref3;
+        }
+      }, !items || !items.length ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_list_list_component__WEBPACK_IMPORTED_MODULE_2__["default"], attrs));
+    }
+  }, {
+    key: "renderLoadingSpinner",
+    value: function renderLoadingSpinner() {
+      var items = this.props.items;
+
+      if (items && items.length) {
+        return;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-tree__loading-spinner"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: "spinner",
+        extraClasses: "ez-icon--medium ez-spin"
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          isResizing = _this$state.isResizing,
+          containerWidth = _this$state.containerWidth,
+          resizedContainerWidth = _this$state.resizedContainerWidth;
+      var width = isResizing ? resizedContainerWidth : containerWidth;
+      var containerAttrs = {
+        className: 'm-tree',
+        ref: this._refTreeContainer
+      };
+
+      if (width) {
+        containerAttrs.style = {
+          width: "".concat(width, "px")
+        };
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", containerAttrs, this.renderList(), this.renderLoadingSpinner(), this.renderCollapseAllBtn(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-tree__resize-handler",
+        onMouseDown: this.addWidthChangeListener
+      }));
+    }
+  }]);
+
+  return ContentTree;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+ContentTree.propTypes = {
+  items: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+  loadMoreSubitems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  currentLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLoadLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  treeMaxDepth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  afterItemToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onCollapseAllItems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onClickItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  userId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list-item/list.item.component.js":
+/*!*************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list-item/list.item.component.js ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var ListItem = /*#__PURE__*/function (_Component) {
+  _inherits(ListItem, _Component);
+
+  var _super = _createSuper(ListItem);
+
+  function ListItem(props) {
+    var _this;
+
+    _classCallCheck(this, ListItem);
+
+    _this = _super.call(this, props);
+    _this.toggleExpandedState = _this.toggleExpandedState.bind(_assertThisInitialized(_this));
+    _this.cancelLoadingState = _this.cancelLoadingState.bind(_assertThisInitialized(_this));
+    _this.loadMoreSubitems = _this.loadMoreSubitems.bind(_assertThisInitialized(_this));
+    _this.handleAfterExpandedStateChange = _this.handleAfterExpandedStateChange.bind(_assertThisInitialized(_this));
+    _this.sortedActions = _this.getSortedActions();
+    _this.state = {
+      isExpanded: !!props.subitems.length,
+      isLoading: false
+    };
+    return _this;
+  }
+
+  _createClass(ListItem, [{
+    key: "getSortedActions",
+    value: function getSortedActions() {
+      var itemActions = window.eZ.adminUiConfig.contentTreeWidget.itemActions;
+      var actions = itemActions ? _toConsumableArray(itemActions) : [];
+      return actions.sort(function (actionA, actionB) {
+        return actionB.priority - actionA.priority;
+      });
+    }
+  }, {
+    key: "cancelLoadingState",
+    value: function cancelLoadingState() {
+      this.setState(function () {
+        return {
+          isLoading: false
+        };
+      });
+    }
+  }, {
+    key: "toggleExpandedState",
+    value: function toggleExpandedState() {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          path = _this$props.path,
+          treeMaxDepth = _this$props.treeMaxDepth;
+      var currentDepth = path.split(',').length - 1;
+
+      if (currentDepth >= treeMaxDepth) {
+        var notificationMessage = Translator.trans(
+        /*@Desc("Cannot load sub-items for this Location because you reached max tree depth.")*/
+        'expand_item.limit.message', {}, 'content_tree');
+        window.eZ.helpers.notification.showWarningNotification(notificationMessage);
+        return;
+      }
+
+      this.setState(function (state) {
+        return {
+          isExpanded: !state.isExpanded
+        };
+      }, function () {
+        var _this2$props = _this2.props,
+            afterItemToggle = _this2$props.afterItemToggle,
+            path = _this2$props.path;
+        afterItemToggle(path, _this2.state.isExpanded);
+
+        _this2.handleAfterExpandedStateChange();
+      });
+    }
+  }, {
+    key: "handleAfterExpandedStateChange",
+    value: function handleAfterExpandedStateChange() {
+      var loadInitialItems = this.state.isExpanded && !this.props.subitems.length;
+
+      if (loadInitialItems) {
+        this.loadMoreSubitems();
+      }
+    }
+  }, {
+    key: "loadMoreSubitems",
+    value: function loadMoreSubitems() {
+      var _this3 = this;
+
+      var _this$props2 = this.props,
+          subitems = _this$props2.subitems,
+          subitemsLimit = _this$props2.subitemsLimit;
+      var subitemsLimitReached = subitems.length >= subitemsLimit;
+
+      if (this.state.isLoading || subitemsLimitReached) {
+        return;
+      }
+
+      var _this$props3 = this.props,
+          path = _this$props3.path,
+          locationId = _this$props3.locationId,
+          subitemsLoadLimit = _this$props3.subitemsLoadLimit,
+          loadMoreSubitems = _this$props3.loadMoreSubitems;
+      this.setState(function () {
+        return {
+          isLoading: true
+        };
+      }, function () {
+        return loadMoreSubitems({
+          path: path,
+          parentLocationId: locationId,
+          offset: subitems.length,
+          limit: subitemsLoadLimit
+        }, _this3.cancelLoadingState);
+      });
+    }
+  }, {
+    key: "checkCanLoadMore",
+    value: function checkCanLoadMore() {
+      var _this$props4 = this.props,
+          subitems = _this$props4.subitems,
+          totalSubitemsCount = _this$props4.totalSubitemsCount;
+      return subitems.length < totalSubitemsCount;
+    }
+  }, {
+    key: "renderIcon",
+    value: function renderIcon() {
+      var _this$props5 = this.props,
+          contentTypeIdentifier = _this$props5.contentTypeIdentifier,
+          selected = _this$props5.selected,
+          locationId = _this$props5.locationId;
+      var iconAttrs = {
+        extraClasses: "ez-icon--small ez-icon--".concat(selected ? 'primary' : 'dark')
+      };
+
+      if (!this.state.isLoading || this.props.subitems.length) {
+        if (locationId === 1) {
+          iconAttrs.customPath = eZ.helpers.contentType.getContentTypeIconUrl('folder');
+        } else {
+          iconAttrs.customPath = eZ.helpers.contentType.getContentTypeIconUrl(contentTypeIdentifier) || eZ.helpers.contentType.getContentTypeIconUrl('file');
+        }
+      } else {
+        iconAttrs.name = 'spinner';
+        iconAttrs.extraClasses = "".concat(iconAttrs.extraClasses, " ez-spin");
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "c-list-item__icon"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], iconAttrs));
+    }
+  }, {
+    key: "renderLoadMoreBtn",
+    value: function renderLoadMoreBtn() {
+      var _this$props6 = this.props,
+          subitems = _this$props6.subitems,
+          subitemsLimit = _this$props6.subitemsLimit;
+      var subitemsLimitReached = subitems.length >= subitemsLimit;
+
+      if (!this.state.isExpanded || subitemsLimitReached || !this.checkCanLoadMore() || !subitems.length) {
+        return null;
+      }
+
+      var isLoading = this.state.isLoading;
+      var showMoreLabel = Translator.trans(
+      /*@Desc("Show more")*/
+      'show_more', {}, 'content_tree');
+      var loadingMoreLabel = Translator.trans(
+      /*@Desc("Loading more...")*/
+      'loading_more', {}, 'content_tree');
+      var btnLabel = isLoading ? loadingMoreLabel : showMoreLabel;
+      var loadingSpinner = null;
+
+      if (isLoading) {
+        loadingSpinner = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          name: "spinner",
+          extraClasses: "ez-spin ez-icon--small c-list-item__load-more-btn-spinner"
+        });
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "c-list-item__load-more-btn btn ez-btn",
+        onClick: this.loadMoreSubitems
+      }, loadingSpinner, " ", btnLabel);
+    }
+  }, {
+    key: "renderSubitemsLimitReachedInfo",
+    value: function renderSubitemsLimitReachedInfo() {
+      var _this$props7 = this.props,
+          subitems = _this$props7.subitems,
+          subitemsLimit = _this$props7.subitemsLimit;
+      var subitemsLimitReached = subitems.length >= subitemsLimit;
+
+      if (!this.state.isExpanded || !subitemsLimitReached) {
+        return null;
+      }
+
+      var message = Translator.trans(
+      /*@Desc("Loading limit reached")*/
+      'show_more.limit_reached', {}, 'content_tree');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-list-item__load-more-limit-info"
+      }, message);
+    }
+  }, {
+    key: "renderItemLabel",
+    value: function renderItemLabel() {
+      var _this4 = this;
+
+      var _this$props8 = this.props,
+          totalSubitemsCount = _this$props8.totalSubitemsCount,
+          href = _this$props8.href,
+          name = _this$props8.name,
+          selected = _this$props8.selected,
+          locationId = _this$props8.locationId,
+          onClick = _this$props8.onClick;
+
+      if (locationId === 1) {
+        return null;
+      }
+
+      var togglerClassName = 'c-list-item__toggler';
+      var togglerAttrs = {
+        className: togglerClassName,
+        onClick: this.toggleExpandedState,
+        hidden: !totalSubitemsCount,
+        tabIndex: -1
+      };
+
+      if (selected) {
+        togglerAttrs.className = "".concat(togglerAttrs.className, " ").concat(togglerClassName, "--light");
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-list-item__label"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", togglerAttrs), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "c-list-item__link",
+        href: href,
+        onClick: onClick
+      }, this.renderIcon(), " ", name), this.sortedActions.map(function (action) {
+        var Component = action.component;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, _extends({
+          key: action.id
+        }, _this4.props));
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props9 = this.props,
+          totalSubitemsCount = _this$props9.totalSubitemsCount,
+          children = _this$props9.children,
+          isInvisible = _this$props9.isInvisible,
+          selected = _this$props9.selected;
+      var itemClassName = 'c-list-item';
+      var itemAttrs = {
+        className: itemClassName
+      };
+
+      if (totalSubitemsCount) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--has-sub-items");
+      }
+
+      if (this.checkCanLoadMore()) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--can-load-more");
+      }
+
+      if (this.state.isExpanded) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--is-expanded");
+      }
+
+      if (isInvisible) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--is-hidden");
+      }
+
+      if (selected) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--is-selected");
+      }
+
+      if (this.props.isRootItem) {
+        itemAttrs.className = "".concat(itemAttrs.className, " ").concat(itemClassName, "--is-root-item");
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", itemAttrs, this.renderItemLabel(), children, this.renderLoadMoreBtn(), this.renderSubitemsLimitReachedInfo());
+    }
+  }]);
+
+  return ListItem;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+ListItem.propTypes = {
+  path: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  href: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  contentTypeIdentifier: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  totalSubitemsCount: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.element,
+  hidden: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  isContainer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  selected: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  locationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  isInvisible: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  loadMoreSubitems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  subitemsLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLoadLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  treeMaxDepth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  afterItemToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  isRootItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+ListItem.defaultProps = {
+  hidden: false,
+  isRootItem: false,
+  onClick: function onClick() {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (ListItem);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list/list.component.js":
+/*!***************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list/list.component.js ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _list_item_list_item_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../list-item/list.item.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/list-item/list.item.component.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var List = function List(_ref) {
+  var items = _ref.items,
+      loadMoreSubitems = _ref.loadMoreSubitems,
+      currentLocationId = _ref.currentLocationId,
+      path = _ref.path,
+      subitemsLoadLimit = _ref.subitemsLoadLimit,
+      subitemsLimit = _ref.subitemsLimit,
+      treeMaxDepth = _ref.treeMaxDepth,
+      afterItemToggle = _ref.afterItemToggle,
+      isRoot = _ref.isRoot,
+      onClickItem = _ref.onClickItem;
+  var commonAttrs = {
+    loadMoreSubitems: loadMoreSubitems,
+    subitemsLoadLimit: subitemsLoadLimit,
+    subitemsLimit: subitemsLimit,
+    treeMaxDepth: treeMaxDepth,
+    afterItemToggle: afterItemToggle,
+    onClickItem: onClickItem
+  };
+
+  var listAttrs = _objectSpread(_objectSpread({}, commonAttrs), {}, {
+    currentLocationId: currentLocationId
+  });
+
+  var listItemAttrs = commonAttrs;
+
+  var renderNoSubitemMessage = function renderNoSubitemMessage() {
+    var rootLocation = items[0];
+    var isRootLoaded = rootLocation;
+    var noSubitemsMessage = Translator.trans(
+    /*@Desc("This Location has no sub-items")*/
+    'no_subitems', {}, 'content_tree');
+
+    if (!isRoot || !isRootLoaded || rootLocation.subitems && rootLocation.subitems.length) {
+      return;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-list__no-items-message"
+    }, noSubitemsMessage);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "c-list"
+  }, items.map(function (item) {
+    var hasPreviousPath = path && path.length;
+    var locationHref = window.Routing.generate('_ez_content_view', {
+      contentId: item.contentId,
+      locationId: item.locationId
+    });
+    var itemPath = "".concat(hasPreviousPath ? path + ',' : '').concat(item.locationId);
+    var subitems = item.subitems;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, item, listItemAttrs, {
+      key: item.locationId,
+      selected: item.locationId === currentLocationId,
+      href: locationHref,
+      isRootItem: isRoot,
+      onClick: onClickItem.bind(null, item),
+      path: itemPath
+    }), subitems.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(List, _extends({
+      path: itemPath,
+      items: subitems,
+      isRoot: false
+    }, listAttrs)) : renderNoSubitemMessage());
+  }));
+};
+
+List.propTypes = {
+  path: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  items: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+  loadMoreSubitems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  currentLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLoadLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  treeMaxDepth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  afterItemToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  isRoot: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  onClickItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+List.defaultProps = {
+  isRoot: false,
+  onClickItem: function onClickItem() {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (List);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/content.tree.module.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/content.tree.module.js ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ContentTreeModule; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_content_tree_content_tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/content-tree/content.tree */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/components/content-tree/content.tree.js");
+/* harmony import */ var _services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/content.tree.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/services/content.tree.service.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var KEY_CONTENT_TREE_SUBTREE = 'ez-content-tree-subtrees';
+
+var ContentTreeModule = /*#__PURE__*/function (_Component) {
+  _inherits(ContentTreeModule, _Component);
+
+  var _super = _createSuper(ContentTreeModule);
+
+  function ContentTreeModule(props) {
+    var _this;
+
+    _classCallCheck(this, ContentTreeModule);
+
+    _this = _super.call(this, props);
+    _this.setInitialItemsState = _this.setInitialItemsState.bind(_assertThisInitialized(_this));
+    _this.loadMoreSubitems = _this.loadMoreSubitems.bind(_assertThisInitialized(_this));
+    _this.updateSubtreeAfterItemToggle = _this.updateSubtreeAfterItemToggle.bind(_assertThisInitialized(_this));
+    _this.handleCollapseAllItems = _this.handleCollapseAllItems.bind(_assertThisInitialized(_this));
+    _this.limitSubitemsInSubtree = _this.limitSubitemsInSubtree.bind(_assertThisInitialized(_this));
+    _this.refreshContentTree = _this.refreshContentTree.bind(_assertThisInitialized(_this));
+    _this.getLoadSubtreeParams = _this.getLoadSubtreeParams.bind(_assertThisInitialized(_this));
+
+    try {
+      var savedSubtree = _this.readSubtree();
+
+      _this.items = props.preloadedLocations;
+      _this.subtree = savedSubtree ? savedSubtree : _this.generateInitialSubtree();
+
+      _this.expandCurrentLocationInSubtree();
+
+      _this.clipTooDeepSubtreeBranches(_this.subtree[0], props.treeMaxDepth - 1);
+
+      _this.subtree[0].children.forEach(_this.limitSubitemsInSubtree);
+
+      _this.saveSubtree();
+    } catch (error) {
+      _this.items = [];
+      _this.subtree = _this.generateInitialSubtree();
+
+      _this.saveSubtree();
+    }
+
+    return _this;
+  }
+
+  _createClass(ContentTreeModule, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      document.body.addEventListener('ez-content-tree-refresh', this.refreshContentTree, false);
+
+      if (this.items.length) {
+        this.subtree = this.generateSubtree(this.items, true);
+        this.saveSubtree();
+        return;
+      }
+
+      Object(_services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__["loadSubtree"])(this.getLoadSubtreeParams(), function (loadedSubtree) {
+        _this2.setInitialItemsState(loadedSubtree[0]);
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var _this3 = this;
+
+      if (prevProps.sort.sortClause !== this.props.sort.sortClause || prevProps.sort.sortOrder !== this.props.sort.sortOrder) {
+        Object(_services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__["loadSubtree"])(this.getLoadSubtreeParams(), function (loadedSubtree) {
+          _this3.setInitialItemsState(loadedSubtree[0]);
+        });
+      }
+    }
+  }, {
+    key: "setInitialItemsState",
+    value: function setInitialItemsState(location) {
+      this.items = [location];
+      this.subtree = this.generateSubtree(this.items, true);
+      this.saveSubtree();
+      this.forceUpdate();
+    }
+  }, {
+    key: "loadMoreSubitems",
+    value: function loadMoreSubitems(_ref, successCallback) {
+      var parentLocationId = _ref.parentLocationId,
+          offset = _ref.offset,
+          limit = _ref.limit,
+          path = _ref.path;
+      Object(_services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__["loadLocationItems"])(this.props.restInfo, parentLocationId, this.updateLocationsStateAfterLoadingMoreItems.bind(this, path, successCallback), limit, offset);
+    }
+  }, {
+    key: "refreshContentTree",
+    value: function refreshContentTree() {
+      var _this4 = this;
+
+      this.items = [];
+      this.forceUpdate();
+      Object(_services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__["loadSubtree"])(this.getLoadSubtreeParams(), function (loadedSubtree) {
+        _this4.setInitialItemsState(loadedSubtree[0]);
+      });
+    }
+  }, {
+    key: "updateLocationsStateAfterLoadingMoreItems",
+    value: function updateLocationsStateAfterLoadingMoreItems(path, successCallback, location) {
+      var item = this.findItem(this.items, path.split(','));
+
+      if (!item) {
+        return;
+      }
+
+      item.subitems = [].concat(_toConsumableArray(item.subitems), _toConsumableArray(location.subitems));
+      this.updateSubtreeAfterLoadMoreItems(path);
+      successCallback();
+      this.forceUpdate();
+    }
+  }, {
+    key: "updateSubtreeAfterLoadMoreItems",
+    value: function updateSubtreeAfterLoadMoreItems(path) {
+      var item = this.findItem(this.items, path.split(','));
+      this.updateItemInSubtree(this.subtree[0], item, path.split(','));
+      this.saveSubtree();
+    }
+  }, {
+    key: "updateSubtreeAfterItemToggle",
+    value: function updateSubtreeAfterItemToggle(path, isExpanded) {
+      var item = this.findItem(this.items, path.split(','));
+
+      if (isExpanded) {
+        this.addItemToSubtree(this.subtree[0], item, path.split(','));
+      } else {
+        this.removeItemFromSubtree(this.subtree[0], item, path.split(','));
+      }
+
+      this.saveSubtree();
+      this.props.afterItemToggle(item, isExpanded);
+    }
+  }, {
+    key: "addItemToSubtree",
+    value: function addItemToSubtree(subtree, item, path) {
+      var parentSubtree = this.findParentSubtree(subtree, path);
+
+      if (!parentSubtree) {
+        return;
+      }
+
+      var _this$props = this.props,
+          subitemsLoadLimit = _this$props.subitemsLoadLimit,
+          subitemsLimit = _this$props.subitemsLimit;
+      var limit = Math.ceil(item.subitems.length / subitemsLoadLimit) * subitemsLoadLimit;
+      parentSubtree.children.push({
+        '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode',
+        locationId: item.locationId,
+        limit: Math.min(subitemsLimit, limit),
+        offset: 0,
+        children: []
+      });
+    }
+  }, {
+    key: "removeItemFromSubtree",
+    value: function removeItemFromSubtree(subtree, item, path) {
+      var parentSubtree = this.findParentSubtree(subtree, path);
+
+      if (!parentSubtree) {
+        return;
+      }
+
+      var index = parentSubtree.children.findIndex(function (element) {
+        return element.locationId === item.locationId;
+      });
+
+      if (index > -1) {
+        parentSubtree.children.splice(index, 1);
+      }
+    }
+  }, {
+    key: "updateItemInSubtree",
+    value: function updateItemInSubtree(subtree, item, path) {
+      var parentSubtree = this.findParentSubtree(subtree, path);
+
+      if (!parentSubtree) {
+        return;
+      }
+
+      var index = parentSubtree.children.findIndex(function (element) {
+        return element.locationId === item.locationId;
+      });
+
+      if (index > -1) {
+        parentSubtree.children[index].limit = item.subitems.length;
+      }
+    }
+  }, {
+    key: "readSubtree",
+    value: function readSubtree() {
+      var readSubtree = this.props.readSubtree;
+
+      if (typeof readSubtree === 'function') {
+        return readSubtree();
+      }
+
+      var _this$props2 = this.props,
+          rootLocationId = _this$props2.rootLocationId,
+          userId = _this$props2.userId;
+      var savedSubtrees = localStorage.getItem(KEY_CONTENT_TREE_SUBTREE);
+      var subtrees = savedSubtrees ? JSON.parse(savedSubtrees) : null;
+      var userSubtrees = subtrees ? subtrees[userId] : null;
+      var savedSubtree = userSubtrees ? userSubtrees[rootLocationId] : null;
+      var subtree = savedSubtree ? JSON.parse(savedSubtree) : null;
+      return subtree;
+    }
+  }, {
+    key: "saveSubtree",
+    value: function saveSubtree() {
+      var _this$props3 = this.props,
+          rootLocationId = _this$props3.rootLocationId,
+          userId = _this$props3.userId;
+      var savedSubtreesStringified = localStorage.getItem(KEY_CONTENT_TREE_SUBTREE);
+      var subtrees = savedSubtreesStringified ? JSON.parse(savedSubtreesStringified) : {};
+
+      if (!subtrees[userId]) {
+        subtrees[userId] = {};
+      }
+
+      subtrees[userId][rootLocationId] = JSON.stringify(this.subtree);
+      localStorage.setItem(KEY_CONTENT_TREE_SUBTREE, JSON.stringify(subtrees));
+    }
+  }, {
+    key: "findParentSubtree",
+    value: function findParentSubtree(subtree, path) {
+      if (path.length < 2) {
+        return;
+      }
+
+      path.shift();
+      path.pop();
+      return path.reduce(function (subtreeChild, locationId) {
+        return subtreeChild.children.find(function (element) {
+          return element.locationId === parseInt(locationId, 10);
+        });
+      }, subtree);
+    }
+  }, {
+    key: "expandCurrentLocationInSubtree",
+    value: function expandCurrentLocationInSubtree() {
+      var _this$props4 = this.props,
+          rootLocationId = _this$props4.rootLocationId,
+          currentLocationPath = _this$props4.currentLocationPath;
+      var path = currentLocationPath.split('/').filter(function (id) {
+        return !!id;
+      });
+      var rootLocationIdIndex = path.findIndex(function (element) {
+        return parseInt(element, 10) === rootLocationId;
+      });
+
+      if (rootLocationIdIndex === -1) {
+        return;
+      }
+
+      var pathStartingAfterRootLocation = path.slice(rootLocationIdIndex - path.length + 1);
+      var pathWithoutLeaf = pathStartingAfterRootLocation.slice(0, pathStartingAfterRootLocation.length - 1);
+      this.expandPathInSubtree(this.subtree[0], pathWithoutLeaf);
+    }
+  }, {
+    key: "expandPathInSubtree",
+    value: function expandPathInSubtree(subtree, path) {
+      if (!path.length) {
+        return;
+      }
+
+      var locationId = parseInt(path[0], 10);
+      var nextSubtree = subtree.children.find(function (element) {
+        return element.locationId === locationId;
+      });
+
+      if (!nextSubtree) {
+        nextSubtree = {
+          '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode',
+          locationId: locationId,
+          limit: this.props.subitemsLimit,
+          offset: 0,
+          children: []
+        };
+        subtree.children.push(nextSubtree);
+      }
+
+      path.shift();
+      this.expandPathInSubtree(nextSubtree, path);
+    }
+  }, {
+    key: "clipTooDeepSubtreeBranches",
+    value: function clipTooDeepSubtreeBranches(subtree, maxDepth) {
+      var _this5 = this;
+
+      if (maxDepth <= 0) {
+        subtree.children = [];
+        return;
+      }
+
+      subtree.children.forEach(function (subtreeChild) {
+        return _this5.clipTooDeepSubtreeBranches(subtreeChild, maxDepth - 1);
+      });
+    }
+  }, {
+    key: "limitSubitemsInSubtree",
+    value: function limitSubitemsInSubtree(subtree) {
+      subtree.limit = Math.min(this.props.subitemsLimit, subtree.limit);
+      subtree.children.forEach(this.limitSubitemsInSubtree);
+    }
+  }, {
+    key: "generateInitialSubtree",
+    value: function generateInitialSubtree() {
+      return [{
+        '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode',
+        locationId: this.props.rootLocationId,
+        limit: this.props.subitemsLoadLimit,
+        offset: 0,
+        children: []
+      }];
+    }
+  }, {
+    key: "generateSubtree",
+    value: function generateSubtree(items, isRoot) {
+      var itemsWithoutLeafs = [];
+      var _this$props5 = this.props,
+          subitemsLoadLimit = _this$props5.subitemsLoadLimit,
+          subitemsLimit = _this$props5.subitemsLimit;
+
+      var _iterator = _createForOfIteratorHelper(items),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var item = _step.value;
+          var subitemsCount = item.subitems.length;
+          var isLeaf = !subitemsCount;
+
+          if (!isLeaf || isRoot) {
+            var limit = subitemsCount ? Math.ceil(subitemsCount / subitemsLoadLimit) * subitemsLoadLimit : subitemsLoadLimit;
+            itemsWithoutLeafs.push({
+              '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode',
+              locationId: item.locationId,
+              limit: Math.min(subitemsLimit, limit),
+              offset: 0,
+              children: this.generateSubtree(item.subitems, false)
+            });
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return itemsWithoutLeafs;
+    }
+  }, {
+    key: "findItem",
+    value: function findItem(items, path) {
+      var isLast = path.length === 1;
+      var item = items.find(function (element) {
+        return element.locationId === parseInt(path[0], 10);
+      });
+
+      if (!item) {
+        return null;
+      }
+
+      if (isLast) {
+        return item;
+      }
+
+      if (!(item.hasOwnProperty('subitems') && Array.isArray(item.subitems))) {
+        return null;
+      }
+
+      path.shift();
+      return this.findItem(item.subitems, path);
+    }
+  }, {
+    key: "getCurrentLocationId",
+    value: function getCurrentLocationId() {
+      var currentLocationIdString = this.props.currentLocationPath.split('/').filter(function (id) {
+        return !!id;
+      }).pop();
+      return parseInt(currentLocationIdString, 10);
+    }
+  }, {
+    key: "handleCollapseAllItems",
+    value: function handleCollapseAllItems() {
+      var _this6 = this;
+
+      this.items = [];
+      this.forceUpdate();
+      this.subtree = this.generateInitialSubtree();
+      this.saveSubtree();
+      Object(_services_content_tree_service__WEBPACK_IMPORTED_MODULE_3__["loadSubtree"])(this.getLoadSubtreeParams(), function (loadedSubtree) {
+        _this6.setInitialItemsState(loadedSubtree[0]);
+      });
+    }
+  }, {
+    key: "getLoadSubtreeParams",
+    value: function getLoadSubtreeParams() {
+      return {
+        token: this.props.restInfo.token,
+        siteaccess: this.props.restInfo.siteaccess,
+        subtree: this.subtree,
+        sortClause: this.props.sort.sortClause,
+        sortOrder: this.props.sort.sortOrder
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props6 = this.props,
+          onClickItem = _this$props6.onClickItem,
+          subitemsLimit = _this$props6.subitemsLimit,
+          subitemsLoadLimit = _this$props6.subitemsLoadLimit,
+          treeMaxDepth = _this$props6.treeMaxDepth,
+          userId = _this$props6.userId;
+      var attrs = {
+        items: this.items,
+        currentLocationId: this.getCurrentLocationId(),
+        subitemsLimit: subitemsLimit,
+        subitemsLoadLimit: subitemsLoadLimit,
+        treeMaxDepth: treeMaxDepth,
+        loadMoreSubitems: this.loadMoreSubitems,
+        afterItemToggle: this.updateSubtreeAfterItemToggle,
+        onCollapseAllItems: this.handleCollapseAllItems,
+        onClickItem: onClickItem,
+        userId: userId
+      };
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_content_tree_content_tree__WEBPACK_IMPORTED_MODULE_2__["default"], attrs);
+    }
+  }]);
+
+  return ContentTreeModule;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+eZ.addConfig('modules.ContentTree', ContentTreeModule);
+ContentTreeModule.propTypes = {
+  rootLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  currentLocationPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  userId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  preloadedLocations: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),
+  subitemsLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  subitemsLoadLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  treeMaxDepth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  restInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    token: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    siteaccess: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  onClickItem: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  readSubtree: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  afterItemToggle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  sort: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    sortClause: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    sortOrder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  })
+};
+ContentTreeModule.defaultProps = {
+  preloadedLocations: [],
+  rootLocationId: window.eZ.adminUiConfig.contentTree.treeRootLocationId,
+  subitemsLimit: window.eZ.adminUiConfig.contentTree.childrenLoadMaxLimit,
+  subitemsLoadLimit: window.eZ.adminUiConfig.contentTree.loadMoreLimit,
+  treeMaxDepth: window.eZ.adminUiConfig.contentTree.treeMaxDepth,
+  afterItemToggle: function afterItemToggle() {},
+  sort: {}
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/services/content.tree.service.js":
+/*!**************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/services/content.tree.service.js ***!
+  \**************************************************************************************************************************/
+/*! exports provided: loadLocationItems, loadSubtree */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadLocationItems", function() { return loadLocationItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadSubtree", function() { return loadSubtree; });
+/* harmony import */ var _common_helpers_request_helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/helpers/request.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/request.helper.js");
+/* harmony import */ var _common_services_notification_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common/services/notification.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/services/notification.service.js");
+
+
+var ENDPOINT_LOAD_SUBITEMS = '/api/ezp/v2/location/tree/load-subitems';
+var ENDPOINT_LOAD_SUBTREE = '/api/ezp/v2/location/tree/load-subtree';
+var loadLocationItems = function loadLocationItems(_ref, parentLocationId, callback) {
+  var siteaccess = _ref.siteaccess;
+  var limit = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 50;
+  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+  var request = new Request("".concat(ENDPOINT_LOAD_SUBITEMS, "/").concat(parentLocationId, "/").concat(limit, "/").concat(offset), {
+    method: 'GET',
+    mode: 'same-origin',
+    credentials: 'same-origin',
+    headers: {
+      Accept: 'application/vnd.ez.api.ContentTreeNode+json',
+      'X-Siteaccess': siteaccess
+    }
+  });
+  fetch(request).then(_common_helpers_request_helper__WEBPACK_IMPORTED_MODULE_0__["handleRequestResponse"]).then(function (data) {
+    var location = data.ContentTreeNode;
+    location.children = location.children.map(mapChildrenToSubitems);
+    return mapChildrenToSubitems(location);
+  }).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_1__["showErrorNotification"]);
+};
+var loadSubtree = function loadSubtree(_ref2, callback) {
+  var token = _ref2.token,
+      siteaccess = _ref2.siteaccess,
+      subtree = _ref2.subtree,
+      sortClause = _ref2.sortClause,
+      sortOrder = _ref2.sortOrder;
+  var path = ENDPOINT_LOAD_SUBTREE;
+
+  if (sortClause && sortOrder) {
+    path += "?sortClause=".concat(sortClause, "&sortOrder=").concat(sortOrder);
+  }
+
+  var request = new Request(path, {
+    method: 'POST',
+    mode: 'same-origin',
+    credentials: 'same-origin',
+    body: JSON.stringify({
+      LoadSubtreeRequest: {
+        '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequest',
+        nodes: subtree
+      }
+    }),
+    headers: {
+      Accept: 'application/vnd.ez.api.ContentTreeRoot+json',
+      'Content-Type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequest+json',
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    }
+  });
+  fetch(request).then(_common_helpers_request_helper__WEBPACK_IMPORTED_MODULE_0__["handleRequestResponse"]).then(function (data) {
+    var loadedSubtree = data.ContentTreeRoot.ContentTreeNodeList;
+    return mapChildrenToSubitemsDeep(loadedSubtree);
+  }).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_1__["showErrorNotification"]);
+};
+
+var mapChildrenToSubitemsDeep = function mapChildrenToSubitemsDeep(tree) {
+  return tree.map(function (subtree) {
+    mapChildrenToSubitems(subtree);
+    subtree.subitems = mapChildrenToSubitemsDeep(subtree.subitems);
+    return subtree;
+  });
+};
+
+var mapChildrenToSubitems = function mapChildrenToSubitems(location) {
+  location.totalSubitemsCount = location.totalChildrenCount;
+  location.subitems = location.children;
+  delete location.totalChildrenCount;
+  delete location.children;
+  delete location.displayLimit;
+  return location;
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/bookmarks.tab.module.js":
+/*!************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/bookmarks.tab.module.js ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_tab_tab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tab/tab */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab/tab.js");
+/* harmony import */ var _components_bookmarks_list_bookmarks_list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/bookmarks-list/bookmarks.list */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/bookmarks-list/bookmarks.list.js");
+/* harmony import */ var _components_grid_view_grid_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/grid-view/grid.view */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.js");
+/* harmony import */ var _components_finder_finder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/finder/finder */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.js");
+/* harmony import */ var _components_tree_view_tree_view__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/tree-view/tree.view */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tree-view/tree.view.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var BookmarksTabModule = function BookmarksTabModule() {
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RestInfoContext"]);
+  var tabsConfig = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["TabsConfigContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["CurrentViewContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      currentView = _useContext2[0],
+      setCurrentView = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MarkedLocationIdContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      markedLocationId = _useContext4[0],
+      setMarkedLocationId = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortingContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      sorting = _useContext6[0],
+      setSorting = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortOrderContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      sortOrder = _useContext8[0],
+      setSortOrder = _useContext8[1];
+
+  var rootLocationId = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RootLocationIdContext"]);
+
+  var _useContext9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["LoadedLocationsMapContext"]),
+      _useContext10 = _slicedToArray(_useContext9, 2),
+      loadedLocationsMap = _useContext10[0],
+      dispatchLoadedLocationsAction = _useContext10[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      bookmarkedLocationMarked = _useState2[0],
+      setBookmarkedLocationMarked = _useState2[1];
+
+  var views = {
+    grid: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_grid_view_grid_view__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      itemsPerPage: tabsConfig.bookmarks.itemsPerPage
+    }),
+    finder: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_finder_finder__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      itemsPerPage: tabsConfig.bookmarks.itemsPerPage
+    }),
+    tree: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_tree_view_tree_view__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      itemsPerPage: tabsConfig.bookmarks.itemsPerPage
+    })
+  };
+
+  var renderBrowseLocations = function renderBrowseLocations() {
+    if (!markedLocationId) {
+      return null;
+    }
+
+    return views[currentView];
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!bookmarkedLocationMarked) {
+      return;
+    }
+
+    setMarkedLocationId(bookmarkedLocationMarked);
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_7__["loadAccordionData"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: bookmarkedLocationMarked,
+      sortClause: sorting,
+      sortOrder: sortOrder,
+      gridView: currentView === 'grid',
+      rootLocationId: rootLocationId
+    }), function (locationsMap) {
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: locationsMap
+      });
+    });
+  }, [bookmarkedLocationMarked, currentView, restInfo, dispatchLoadedLocationsAction, setMarkedLocationId]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (markedLocationId !== bookmarkedLocationMarked) {
+      dispatchLoadedLocationsAction({
+        type: 'CUT_LOCATIONS',
+        locationId: markedLocationId
+      });
+      setBookmarkedLocationMarked(null);
+    }
+  }, [markedLocationId, setBookmarkedLocationMarked, bookmarkedLocationMarked, dispatchLoadedLocationsAction]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-bookmarks-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_tab_tab__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_bookmarks_list_bookmarks_list__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    itemsPerPage: tabsConfig.bookmarks.itemsPerPage,
+    setBookmarkedLocationMarked: setBookmarkedLocationMarked
+  }), renderBrowseLocations()));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.tabs', [{
+  id: 'bookmarks',
+  component: BookmarksTabModule,
+  label: Translator.trans(
+  /*@Desc("Bookmarks")*/
+  'bookmarks.label', {}, 'universal_discovery_widget'),
+  icon: window.eZ.helpers.icon.getIconPath('bookmark')
+}], true);
+/* harmony default export */ __webpack_exports__["default"] = (BookmarksTabModule);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/browse.tab.module.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/browse.tab.module.js ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_tab_tab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tab/tab */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab/tab.js");
+/* harmony import */ var _components_grid_view_grid_view__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/grid-view/grid.view */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.js");
+/* harmony import */ var _components_finder_finder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/finder/finder */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.js");
+/* harmony import */ var _components_tree_view_tree_view__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/tree-view/tree.view */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tree-view/tree.view.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var BrowseTabModule = function BrowseTabModule() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["CurrentViewContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      currentView = _useContext2[0],
+      setCurrentView = _useContext2[1];
+
+  var tabsConfig = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["TabsConfigContext"]);
+  var views = {
+    grid: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_grid_view_grid_view__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      itemsPerPage: tabsConfig.browse.itemsPerPage
+    }),
+    finder: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_finder_finder__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      itemsPerPage: tabsConfig.browse.itemsPerPage
+    }),
+    tree: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_tree_view_tree_view__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      itemsPerPage: tabsConfig.browse.itemsPerPage
+    })
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-browse-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_tab_tab__WEBPACK_IMPORTED_MODULE_1__["default"], null, views[currentView]));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.tabs', [{
+  id: 'browse',
+  component: BrowseTabModule,
+  label: Translator.trans(
+  /*@Desc("Browse")*/
+  'browse.label', {}, 'universal_discovery_widget'),
+  icon: window.eZ.helpers.icon.getIconPath('browse')
+}], true);
+/* harmony default export */ __webpack_exports__["default"] = (BrowseTabModule);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/bookmarks-list/bookmarks.list.js":
+/*!********************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/bookmarks-list/bookmarks.list.js ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _hooks_useLoadBookmarksFetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/useLoadBookmarksFetch */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadBookmarksFetch.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var SCROLL_OFFSET = 200;
+
+var BookmarksList = function BookmarksList(_ref) {
+  var setBookmarkedLocationMarked = _ref.setBookmarkedLocationMarked,
+      itemsPerPage = _ref.itemsPerPage;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      offset = _useState2[0],
+      setOffset = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      bookmarks = _useState4[0],
+      setBookmarks = _useState4[1];
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MarkedLocationIdContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      markedLocationId = _useContext2[0],
+      setMarkedLocationId = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SelectedLocationsContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      selectedLocations = _useContext6[0],
+      dispatchSelectedLocationsAction = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MultipleConfigContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      multiple = _useContext8[0],
+      multipleItemsLimit = _useContext8[1];
+
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["AllowedContentTypesContext"]);
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContentTypesMapContext"]);
+  var containersOnly = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContainersOnlyContext"]);
+
+  var _useLoadBookmarksFetc = Object(_hooks_useLoadBookmarksFetch__WEBPACK_IMPORTED_MODULE_4__["useLoadBookmarksFetch"])(itemsPerPage, offset),
+      _useLoadBookmarksFetc2 = _slicedToArray(_useLoadBookmarksFetc, 2),
+      data = _useLoadBookmarksFetc2[0],
+      isLoading = _useLoadBookmarksFetc2[1];
+
+  var loadMore = function loadMore(_ref2) {
+    var target = _ref2.target;
+    var areAllItemsLoaded = bookmarks.length >= data.count;
+    var isOffsetReached = target.scrollHeight - target.clientHeight - target.scrollTop < SCROLL_OFFSET;
+
+    if (areAllItemsLoaded || !isOffsetReached || isLoading) {
+      return;
+    }
+
+    setOffset(offset + itemsPerPage);
+  };
+
+  var renderLoadingSpinner = function renderLoadingSpinner() {
+    if (!isLoading) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-bookmarks-list__spinner-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      name: "spinner",
+      extraClasses: "m-sub-items__spinner ez-icon--medium ez-spin"
+    }));
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (isLoading) {
+      return;
+    }
+
+    setBookmarks(function (prevState) {
+      return [].concat(_toConsumableArray(prevState), _toConsumableArray(data.items));
+    });
+  }, [data.items, isLoading]);
+
+  if (!bookmarks.length) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-bookmarks-list",
+    onScroll: loadMore
+  }, bookmarks.map(function (bookmark) {
+    var isMarked = bookmark.id === markedLocationId;
+    var contentTypeInfo = contentTypesMap[bookmark.ContentInfo.Content.ContentType._href];
+    var isContainer = contentTypeInfo.isContainer;
+    var isNotSelectable = containersOnly && !isContainer || allowedContentTypes && !allowedContentTypes.includes(contentTypeInfo.identifier);
+    var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__["createCssClassNames"])({
+      'c-bookmarks-list__item': true,
+      'c-bookmarks-list__item--marked': isMarked,
+      'c-bookmarks-list__item--not-selectable': isNotSelectable
+    });
+
+    var markLocation = function markLocation() {
+      if (isMarked) {
+        return;
+      }
+
+      dispatchLoadedLocationsAction({
+        type: 'CLEAR_LOCATIONS'
+      });
+      setBookmarkedLocationMarked(bookmark.id);
+
+      if (!multiple && !isNotSelectable) {
+        dispatchSelectedLocationsAction({
+          type: 'CLEAR_SELECTED_LOCATIONS'
+        });
+        dispatchSelectedLocationsAction({
+          type: 'ADD_SELECTED_LOCATION',
+          location: bookmark
+        });
+      }
+    };
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: bookmark.id,
+      className: className,
+      onClick: markLocation
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      extraClasses: "ez-icon--small",
+      customPath: contentTypeInfo.thumbnail
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-bookmarks-list__item-name"
+    }, bookmark.ContentInfo.Content.TranslatedName));
+  }), renderLoadingSpinner());
+};
+
+BookmarksList.propTypes = {
+  setBookmarkedLocationMarked: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+BookmarksList.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (BookmarksList);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/breadcrumbs/breadcrumbs.js":
+/*!**************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/breadcrumbs/breadcrumbs.js ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+var _this = undefined;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var Breadcrumbs = function Breadcrumbs() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["LoadedLocationsMapContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      loadedLocationsMap = _useContext2[0],
+      dispatchLoadedLocationsAction = _useContext2[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      hiddenListVisible = _useState2[0],
+      setHiddenListVisible = _useState2[1];
+
+  var _useMemo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return loadedLocationsMap.reduce(function (splittedItems, loadedLocation, index) {
+      if (loadedLocationsMap.length - 3 <= index) {
+        splittedItems.visibleItems.push(loadedLocation);
+      } else {
+        splittedItems.hiddenItems.push(loadedLocation);
+      }
+
+      return splittedItems;
+    }, {
+      visibleItems: [],
+      hiddenItems: []
+    });
+  }, [loadedLocationsMap]),
+      visibleItems = _useMemo.visibleItems,
+      hiddenItems = _useMemo.hiddenItems;
+
+  var goToLocation = function goToLocation(locationId) {
+    var itemIndex = loadedLocationsMap.findIndex(function (data) {
+      return data.parentLocationId === locationId;
+    });
+    var updatedLoadedLocations = loadedLocationsMap.slice(0, itemIndex + 1);
+    updatedLoadedLocations[updatedLoadedLocations.length - 1].subitems = [];
+    dispatchLoadedLocationsAction({
+      type: 'SET_LOCATIONS',
+      data: updatedLoadedLocations
+    });
+  };
+
+  var toggleHiddenListVisible = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
+    setHiddenListVisible(!hiddenListVisible);
+  }, [setHiddenListVisible, hiddenListVisible]);
+
+  var renderHiddenList = function renderHiddenList() {
+    if (!hiddenItems.length) {
+      return null;
+    }
+
+    var hiddenListClassNames = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+      'c-breadcrumbs__hidden-list': true,
+      'c-breadcrumbs__hidden-list--visible': hiddenListVisible
+    });
+    var toggleClassNames = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+      'c-breadcrumbs__hidden-list-toggler': true,
+      'c-breadcrumbs__hidden-list-toggler--active': hiddenListVisible
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-breadcrumbs__hidden-list-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: toggleClassNames,
+      onClick: toggleHiddenListVisible
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: "options",
+      extraClasses: "ez-icon--small-medium"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: hiddenListClassNames
+    }, hiddenItems.map(function (item) {
+      var locationId = item.parentLocationId;
+      var locationName = locationId === 1 ? Translator.trans(
+      /*@Desc("Root Location")*/
+      'breadcrumbs.root_location', {}, 'universal_discovery_widget') : item.location.ContentInfo.Content.TranslatedName;
+      var onClickHandler = goToLocation.bind(_this, locationId);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: locationId,
+        onClick: onClickHandler,
+        className: "c-breadcrumbs__hidden-list-item"
+      }, locationName);
+    })));
+  };
+
+  var renderSeparator = function renderSeparator() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-breadcrumbs__list-item-separator"
+    }, "/");
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (hiddenListVisible) {
+      window.document.body.addEventListener('click', toggleHiddenListVisible, false);
+    } else {
+      window.document.body.removeEventListener('click', toggleHiddenListVisible, false);
+    }
+
+    return function () {
+      return window.document.body.removeEventListener('click', toggleHiddenListVisible, false);
+    };
+  }, [hiddenListVisible, toggleHiddenListVisible]);
+
+  if (loadedLocationsMap.some(function (loadedLocation) {
+    return loadedLocation.parentLocationId !== 1 && !loadedLocation.location;
+  })) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-breadcrumbs"
+  }, renderHiddenList(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-breadcrumbs__list-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "c-breadcrumbs__list"
+  }, visibleItems.map(function (item, index) {
+    var locationId = item.parentLocationId;
+    var locationName = locationId === 1 ? Translator.trans(
+    /*@Desc("Root Location")*/
+    'breadcrumbs.root_location', {}, 'universal_discovery_widget') : item.location.ContentInfo.Content.TranslatedName;
+    var isLast = index === visibleItems.length - 1;
+    var onClickHandler = goToLocation.bind(_this, locationId);
+    var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+      'c-breadcrumbs__list-item': true,
+      'c-breadcrumbs__list-item--last': isLast
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: locationId,
+      onClick: onClickHandler,
+      className: className
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-breadcrumbs__list-item-text"
+    }, locationName), !isLast && renderSeparator());
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Breadcrumbs);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-create-widget/content.create.widget.js":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-create-widget/content.create.widget.js ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+var languages = Object.values(window.eZ.adminUiConfig.languages.mappings);
+var contentTypes = Object.entries(window.eZ.adminUiConfig.contentTypes);
+
+var ContentCreateWidget = function ContentCreateWidget() {
+  var refContentTree = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["MarkedLocationIdContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      markedLocationId = _useContext2[0],
+      setMarkedLocationId = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["ContentOnTheFlyConfigContext"]),
+      allowedLanguages = _useContext5.allowedLanguages,
+      preselectedLanguage = _useContext5.preselectedLanguage,
+      preselectedContentType = _useContext5.preselectedContentType;
+
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["AllowedContentTypesContext"]);
+  var selectedLocation = loadedLocationsMap.find(function (loadedLocation) {
+    return loadedLocation.parentLocationId === markedLocationId;
+  });
+  var filteredLanguages = languages.filter(function (language) {
+    var userHasPermission = !selectedLocation || !selectedLocation.permissions || !selectedLocation.permissions.create.restrictedLanguageCodes.length || selectedLocation.permissions.create.restrictedLanguageCodes.includes(language.languageCode);
+    var isAllowedLanguage = !allowedLanguages || allowedLanguages.includes(language.languageCode);
+    return userHasPermission && isAllowedLanguage && language.enabled;
+  });
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      filterQuery = _useState2[0],
+      setFilterQuery = _useState2[1];
+
+  var firstLanguageCode = filteredLanguages.length ? filteredLanguages[0].languageCode : '';
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(preselectedLanguage || firstLanguageCode),
+      _useState4 = _slicedToArray(_useState3, 2),
+      selectedLanguage = _useState4[0],
+      setSelectedLanguage = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(preselectedContentType),
+      _useState6 = _slicedToArray(_useState5, 2),
+      selectedContentType = _useState6[0],
+      setSelectedContentType = _useState6[1];
+
+  var _useContext6 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["ActiveTabContext"]),
+      _useContext7 = _slicedToArray(_useContext6, 2),
+      activeTab = _useContext7[0],
+      setActiveTab = _useContext7[1];
+
+  var _useContext8 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["CreateContentWidgetContext"]),
+      _useContext9 = _slicedToArray(_useContext8, 2),
+      createContentVisible = _useContext9[0],
+      setCreateContentVisible = _useContext9[1];
+
+  var _useContext10 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["ContentOnTheFlyDataContext"]),
+      _useContext11 = _slicedToArray(_useContext10, 2),
+      contentOnTheFlyData = _useContext11[0],
+      setContentOnTheFlyData = _useContext11[1];
+
+  var close = function close() {
+    setCreateContentVisible(false);
+  };
+
+  var updateFilterQuery = function updateFilterQuery(event) {
+    var query = event.target.value.toLowerCase();
+    setFilterQuery(query);
+  };
+
+  var updateSelectedLanguage = function updateSelectedLanguage(event) {
+    return setSelectedLanguage(event.target.value);
+  };
+
+  var isConfirmDisabled = !selectedContentType || !selectedLanguage || markedLocationId === 1;
+
+  var createContent = function createContent() {
+    setContentOnTheFlyData({
+      locationId: markedLocationId,
+      languageCode: selectedLanguage,
+      contentTypeIdentifier: selectedContentType
+    });
+    setActiveTab('content-create');
+  };
+
+  var createContentLabel = Translator.trans(
+  /*@Desc("Create new content")*/
+  'create_content.label', {}, 'universal_discovery_widget');
+  var selectLanguageLabel = Translator.trans(
+  /*@Desc("Select a language")*/
+  'create_content.select_language', {}, 'universal_discovery_widget');
+  var selectContentType = Translator.trans(
+  /*@Desc("Select a Content Type")*/
+  'create_content.select_content_type', {}, 'universal_discovery_widget');
+  var createLabel = Translator.trans(
+  /*@Desc("Create")*/
+  'create_content.create', {}, 'universal_discovery_widget');
+  var closeLabel = Translator.trans(
+  /*@Desc("Close")*/
+  'popup.close.label', {}, 'universal_discovery_widget');
+  var cancelLabel = Translator.trans(
+  /*@Desc("Cancel")*/
+  'content_create.cancel.label', {}, 'universal_discovery_widget');
+  var widgetClassName = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+    'c-content-create': true,
+    'c-content-create--hidden': !createContentVisible
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(refContentTree.current);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: widgetClassName,
+    ref: refContentTree
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__header-title"
+  }, createContentLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "c-content-create__close-button",
+    onClick: close,
+    title: closeLabel,
+    "data-tooltip-container-selector": ".c-udw-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    name: "discard",
+    extraClasses: "ez-icon--small"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__language-selector-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__language-selector-label"
+  }, selectLanguageLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    className: "form-control",
+    onChange: updateSelectedLanguage,
+    value: selectedLanguage
+  }, filteredLanguages.map(function (language) {
+    if (!language.enabled) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      key: language.id,
+      value: language.languageCode,
+      onChange: updateSelectedLanguage
+    }, language.name);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__select-content-type-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__select-content-type-label"
+  }, selectContentType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    autoFocus: true,
+    className: "form-control",
+    type: "text",
+    placeholder: "Type to refine",
+    onChange: updateFilterQuery
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__content-type-list"
+  }, contentTypes.map(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        groupName = _ref2[0],
+        groupItems = _ref2[1];
+
+    var isHidden = groupItems.every(function (groupItem) {
+      return filterQuery && !groupItem.name.toLowerCase().includes(filterQuery) || selectedLocation && selectedLocation.permissions && selectedLocation.permissions.create.restrictedContentTypeIds.length && !selectedLocation.permissions.create.restrictedContentTypeIds.includes(groupItem.id.toString()) || allowedContentTypes && !allowedContentTypes.includes(groupItem.identifier);
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-content-create__group",
+      key: groupName
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-content-create__group-name",
+      hidden: isHidden
+    }, groupName), groupItems.map(function (_ref3) {
+      var name = _ref3.name,
+          thumbnail = _ref3.thumbnail,
+          identifier = _ref3.identifier,
+          id = _ref3.id;
+      var isHidden = filterQuery && !name.toLowerCase().includes(filterQuery) || selectedLocation && selectedLocation.permissions && selectedLocation.permissions.create.restrictedContentTypeIds.length && !selectedLocation.permissions.create.restrictedContentTypeIds.includes(id.toString()) || allowedContentTypes && !allowedContentTypes.includes(identifier);
+      var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+        'c-content-create__group-item': true,
+        'c-content-create__group-item--selected': identifier === selectedContentType
+      });
+
+      var updateSelectedContentType = function updateSelectedContentType() {
+        return setSelectedContentType(identifier);
+      };
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        hidden: isHidden,
+        key: identifier,
+        className: className,
+        onClick: updateSelectedContentType
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-content-create__group-item-icon"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        customPath: thumbnail,
+        extraClasses: "ez-icon--small"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-content-create__group-item-name"
+      }, name));
+    }));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-create__confirm-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-content-create__confirm-button btn btn-primary",
+    onClick: createContent,
+    disabled: isConfirmDisabled
+  }, createLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "ez-btn ez-btn--no-border",
+    onClick: close
+  }, cancelLabel)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ContentCreateWidget);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-edit-button/content.edit.button.js":
+/*!******************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-edit-button/content.edit.button.js ***!
+  \******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _translation_selector_translation_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../translation-selector/translation.selector */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/translation-selector/translation.selector.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../..//services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../..//universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var ContentEditButton = function ContentEditButton(_ref) {
+  var version = _ref.version,
+      location = _ref.location,
+      isDisabled = _ref.isDisabled;
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["RestInfoContext"]);
+  var allowRedirects = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["AllowRedirectsContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["EditOnTheFlyDataContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      editOnTheFlyData = _useContext2[0],
+      setEditOnTheFlyData = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ActiveTabContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      activeTab = _useContext4[0],
+      setActiveTab = _useContext4[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContentTypesMapContext"]);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isTranslationSelectorVisible = _useState2[0],
+      setIsTranslationSelectorVisible = _useState2[1];
+
+  var contentTypeInfo = contentTypesMap[location.ContentInfo.Content.ContentType._href];
+  var isUserContentType = window.eZ.adminUiConfig.userContentTypes.includes(contentTypeInfo.identifier);
+  var editLabel = Translator.trans(
+  /*@Desc("Edit")*/
+  'meta_preview.edit', {}, 'universal_discovery_widget');
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setIsTranslationSelectorVisible(false);
+  }, [version]);
+
+  var hideTranslationSelector = function hideTranslationSelector() {
+    setIsTranslationSelectorVisible(false);
+  };
+
+  var toggleTranslationSelectorVisibility = function toggleTranslationSelectorVisibility() {
+    var languageCodes = version.VersionInfo.languageCodes.split(',');
+
+    if (languageCodes.length === 1) {
+      editContent(languageCodes[0]);
+    } else {
+      setIsTranslationSelectorVisible(true);
+    }
+  };
+
+  var redirectToContentEdit = function redirectToContentEdit(contentId, versionNo, language, locationId) {
+    if (allowRedirects) {
+      var href = isUserContentType ? window.Routing.generate('ezplatform.user.update', {
+        contentId: contentId,
+        versionNo: versionNo,
+        language: language
+      }, true) : window.Routing.generate('ezplatform.content.draft.edit', {
+        contentId: contentId,
+        versionNo: versionNo,
+        language: language,
+        locationId: locationId
+      }, true);
+      window.location.href = href;
+      return;
+    }
+
+    setEditOnTheFlyData({
+      contentId: contentId,
+      versionNo: versionNo,
+      languageCode: language,
+      locationId: locationId
+    });
+    setActiveTab('content-edit');
+  };
+
+  var editContent = function editContent(languageCode) {
+    var contentId = location.ContentInfo.Content._id;
+
+    if (isUserContentType) {
+      redirectToContentEdit(contentId, version.VersionInfo.versionNo, languageCode, location.id);
+      return;
+    }
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_4__["createDraft"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      contentId: contentId
+    }), function (response) {
+      return redirectToContentEdit(contentId, response.Version.VersionInfo.versionNo, languageCode, location.id);
+    });
+  };
+
+  var renderTranslationSelector = function renderTranslationSelector() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translation_selector_translation_selector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      hideTranslationSelector: hideTranslationSelector,
+      selectTranslation: editContent,
+      version: version,
+      isOpen: isTranslationSelectorVisible && version
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-edit-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-content-edit-button__btn btn btn-icon",
+    disabled: !version || isDisabled,
+    onClick: toggleTranslationSelectorVisibility,
+    "data-tooltip-container-selector": ".c-udw-tab",
+    title: editLabel
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "edit",
+    extraClasses: "ez-icon--small-medium ez-icon--secondary"
+  })), renderTranslationSelector());
+};
+
+ContentEditButton.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  version: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  isDisabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (ContentEditButton);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.item.js":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.item.js ***!
+  \***********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toggle-selection-button/toggle.selection.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/toggle-selection-button/toggle.selection.button.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+var ContentTableItem = function ContentTableItem(_ref) {
+  var location = _ref.location;
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RestInfoContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["CurrentViewContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      currentView = _useContext2[0],
+      setCurrentView = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortingContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      sorting = _useContext4[0],
+      setSorting = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortOrderContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      sortOrder = _useContext6[0],
+      setSortOrder = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["LoadedLocationsMapContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      loadedLocationsMap = _useContext8[0],
+      dispatchLoadedLocationsAction = _useContext8[1];
+
+  var _useContext9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MarkedLocationIdContext"]),
+      _useContext10 = _slicedToArray(_useContext9, 2),
+      markedLocationId = _useContext10[0],
+      setMarkedLocationId = _useContext10[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContentTypesMapContext"]);
+
+  var _useContext11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SelectedLocationsContext"]),
+      _useContext12 = _slicedToArray(_useContext11, 2),
+      selectedLocations = _useContext12[0],
+      dispatchSelectedLocationsAction = _useContext12[1];
+
+  var _useContext13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MultipleConfigContext"]),
+      _useContext14 = _slicedToArray(_useContext13, 2),
+      multiple = _useContext14[0],
+      multipleItemsLimit = _useContext14[1];
+
+  var rootLocationId = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RootLocationIdContext"]);
+  var formatShortDateTime = window.eZ.helpers.timezone.formatShortDateTime;
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["AllowedContentTypesContext"]);
+  var contentTypeInfo = contentTypesMap[location.ContentInfo.Content.ContentType._href];
+  var containersOnly = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContainersOnlyContext"]);
+  var isContainer = contentTypeInfo.isContainer;
+  var isNotSelectable = containersOnly && !isContainer || allowedContentTypes && !allowedContentTypes.includes(contentTypeInfo.identifier);
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__["createCssClassNames"])({
+    'c-content-table-item': true,
+    'c-content-table-item--marked': markedLocationId === location.id,
+    'c-content-table-item--not-selectable': isNotSelectable
+  });
+
+  var markLocation = function markLocation(_ref2) {
+    var nativeEvent = _ref2.nativeEvent;
+    var isSelectionButtonClicked = nativeEvent.target.closest('.c-toggle-selection-button');
+
+    if (isSelectionButtonClicked) {
+      return;
+    }
+
+    setMarkedLocationId(location.id);
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__["loadAccordionData"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: location.id,
+      sortClause: sorting,
+      sortOrder: sortOrder,
+      gridView: currentView === 'grid',
+      rootLocationId: rootLocationId
+    }), function (locationsMap) {
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: locationsMap
+      });
+    });
+
+    if (!multiple && !isNotSelectable) {
+      dispatchSelectedLocationsAction({
+        type: 'CLEAR_SELECTED_LOCATIONS'
+      });
+      dispatchSelectedLocationsAction({
+        type: 'ADD_SELECTED_LOCATION',
+        location: location
+      });
+    }
+  };
+
+  var renderToggleSelectionButton = function renderToggleSelectionButton() {
+    if (!multiple || isNotSelectable) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      location: location
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+    className: className,
+    onClick: markLocation
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "c-content-table-item__icon-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    extraClasses: "ez-icon--small",
+    customPath: contentTypeInfo.thumbnail
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, location.ContentInfo.Content.TranslatedName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, formatShortDateTime(new Date(location.ContentInfo.Content.lastModificationDate))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, contentTypeInfo.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "c-content-table-item__toggle-button-wrapper"
+  }, renderToggleSelectionButton()));
+};
+
+ContentTableItem.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (ContentTableItem);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.js":
+/*!******************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.js ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _content_table_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content.table.item */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.item.js");
+/* harmony import */ var _common_pagination_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/pagination/pagination */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/pagination/pagination.js");
+
+
+
+
+
+var ContentTable = function ContentTable(_ref) {
+  var count = _ref.count,
+      itemsPerPage = _ref.itemsPerPage,
+      items = _ref.items,
+      activePageIndex = _ref.activePageIndex,
+      title = _ref.title,
+      onPageChange = _ref.onPageChange;
+  var refContentTable = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var nameLabel = Translator.trans(
+  /*@Desc("Name")*/
+  'content_table.name', {}, 'universal_discovery_widget');
+  var modifiedLabel = Translator.trans(
+  /*@Desc("Modified")*/
+  'content_table.modified', {}, 'universal_discovery_widget');
+  var contentTypeLabel = Translator.trans(
+  /*@Desc("Content Type")*/
+  'content_table.content_type', {}, 'universal_discovery_widget');
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(refContentTable.current);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-table",
+    ref: refContentTable
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-table__title"
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-table__items"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, nameLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, modifiedLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, contentTypeLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, items.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_table_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: item.id,
+      location: item
+    });
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-table__pagination"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_pagination_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    proximity: 1,
+    itemsPerPage: itemsPerPage,
+    activePageIndex: activePageIndex,
+    totalCount: count,
+    onPageChange: onPageChange,
+    disabled: false
+  })));
+};
+
+ContentTable.propTypes = {
+  count: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  activePageIndex: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  items: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  onPageChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (ContentTable);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-type-selector/content.type.selector.js":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-type-selector/content.type.selector.js ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../search/search */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/search/search.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var ContentTypeSelector = function ContentTypeSelector() {
+  var contentTypesMap = window.eZ.adminUiConfig.contentTypes;
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["AllowedContentTypesContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_search_search__WEBPACK_IMPORTED_MODULE_2__["SelectedContentTypesContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedContentTypes = _useContext2[0],
+      dispatchSelectedContentTypesAction = _useContext2[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(function () {
+    return Object.keys(contentTypesMap).reduce(function (collapsedGroups, contentTypeGroup, index) {
+      return _objectSpread(_objectSpread({}, collapsedGroups), {}, _defineProperty({}, contentTypeGroup, !!index));
+    }, {});
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      collapsedGroups = _useState2[0],
+      setCollapsedGroups = _useState2[1];
+
+  var toggleCollapsed = function toggleCollapsed(_ref) {
+    var nativeEvent = _ref.nativeEvent;
+    var contentTypeGroup = nativeEvent.target.dataset.id;
+    setCollapsedGroups(function (prevState) {
+      return _objectSpread(_objectSpread({}, prevState), {}, _defineProperty({}, contentTypeGroup, !prevState[contentTypeGroup]));
+    });
+  };
+
+  var handleContentTypeSelect = function handleContentTypeSelect(_ref2) {
+    var nativeEvent = _ref2.nativeEvent;
+    var contentTypeIdentifier = nativeEvent.target.dataset.contentTypeIdentifier;
+    var action = {
+      contentTypeIdentifier: contentTypeIdentifier
+    };
+    action.type = selectedContentTypes.includes(contentTypeIdentifier) ? 'REMOVE_CONTENT_TYPE' : 'ADD_CONTENT_TYPE';
+    dispatchSelectedContentTypesAction(action);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-content-type-selector c-content-type-selector"
+  }, Object.entries(contentTypesMap).map(function (_ref3) {
+    var _ref4 = _slicedToArray(_ref3, 2),
+        contentTypeGroup = _ref4[0],
+        contentTypes = _ref4[1];
+
+    var isHidden = contentTypes.every(function (contentType) {
+      return allowedContentTypes && !allowedContentTypes.includes(contentType.identifier);
+    });
+
+    if (isHidden) {
+      return null;
+    }
+
+    var groupSelectorClassName = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_1__["createCssClassNames"])({
+      'ez-content-type-selector__group': true,
+      'ez-content-type-selector__group--collapsed': collapsedGroups[contentTypeGroup]
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: contentTypeGroup,
+      className: groupSelectorClassName
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "ez-content-type-selector__group-title",
+      "data-id": contentTypeGroup,
+      onClick: toggleCollapsed
+    }, contentTypeGroup), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "ez-content-type-selector__list"
+    }, contentTypes.map(function (contentType) {
+      var isHidden = allowedContentTypes && !allowedContentTypes.includes(contentType.identifier);
+
+      if (isHidden) {
+        return null;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: contentType.identifier,
+        className: "ez-content-type-selector__item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-check form-check-inline"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        id: "ez-search-content-type-".concat(contentType.identifier),
+        className: "ez-input ez-input--checkbox",
+        value: contentType.identifier,
+        "data-content-type-identifier": contentType.identifier,
+        onChange: handleContentTypeSelect,
+        checked: selectedContentTypes.includes(contentType.identifier)
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "checkbox-inline form-check-label",
+        htmlFor: "ez-search-content-type-".concat(contentType.identifier)
+      }, contentType.name)));
+    })));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ContentTypeSelector);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/filters/filters.js":
+/*!******************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/filters/filters.js ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../search/search */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/search/search.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+/* harmony import */ var _content_type_selector_content_type_selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../content-type-selector/content.type.selector */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-type-selector/content.type.selector.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Filters = function Filters(_ref) {
+  var isCollapsed = _ref.isCollapsed,
+      search = _ref.search;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_search_search__WEBPACK_IMPORTED_MODULE_4__["SelectedContentTypesContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedContentTypes = _useContext2[0],
+      dispatchSelectedContentTypesAction = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_search_search__WEBPACK_IMPORTED_MODULE_4__["SelectedSectionContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      selectedSection = _useContext4[0],
+      setSelectedSection = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_search_search__WEBPACK_IMPORTED_MODULE_4__["SelectedSubtreeContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      selectedSubtree = _useContext6[0],
+      setSelectedSubtree = _useContext6[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      subtreeBreadcrumbs = _useState2[0],
+      setSubtreeBreadcrumbs = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      filtersCleared = _useState4[0],
+      setFiltersCleared = _useState4[1];
+
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RestInfoContext"]);
+
+  var clearFilters = function clearFilters() {
+    dispatchSelectedContentTypesAction({
+      type: 'CLEAR_CONTENT_TYPES'
+    });
+    setSelectedSection('');
+    clearSelectedSubree();
+    setFiltersCleared(true);
+  };
+
+  var clearSelectedSubree = function clearSelectedSubree() {
+    setSelectedSubtree('');
+    setSubtreeBreadcrumbs('');
+  };
+
+  var wrapperClassName = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__["createCssClassNames"])({
+    'c-filters': true,
+    'ez-filters': true,
+    'ez-filters--collapsed': isCollapsed
+  });
+
+  var updateSection = function updateSection(event) {
+    var value = event.target.value;
+    setSelectedSection(value);
+  };
+
+  var openUdw = function openUdw() {
+    var udwContainer = window.document.createElement('div');
+    var config = JSON.parse(window.document.querySelector('#react-udw').dataset.filterSubtreeUdwConfig);
+
+    var closeUDW = function closeUDW() {
+      react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(udwContainer);
+      udwContainer.remove();
+    };
+
+    var onConfirm = function onConfirm(items) {
+      var pathString = items[0].pathString;
+      var pathArray = pathString.split('/').filter(function (val) {
+        return val;
+      });
+      var id = pathArray.splice(1, pathArray.length - 1).join();
+      Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__["findLocationsById"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+        id: id
+      }), function (locations) {
+        var breadcrumbs = locations.map(function (location) {
+          return location.ContentInfo.Content.TranslatedName;
+        }).join(' / ');
+        setSubtreeBreadcrumbs(breadcrumbs);
+      });
+      setSelectedSubtree(pathString);
+      closeUDW();
+    };
+
+    window.document.body.append(udwContainer);
+
+    var mergedConfig = _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: closeUDW,
+      tabs: window.eZ.adminUiConfig.universalDiscoveryWidget.tabs,
+      title: 'Browsing content'
+    }, config);
+
+    react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(eZ.modules.UniversalDiscovery, mergedConfig), udwContainer);
+  };
+
+  var makeSearch = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function () {
+    return search(0);
+  }, [search]);
+  var isApplyButtonEnabled = !!selectedContentTypes.length || !!selectedSection || !!selectedSubtree;
+
+  var renderSelectContentButton = function renderSelectContentButton() {
+    if (selectedSubtree) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "btn btn-secondary ez-btn--udw-select-location",
+      type: "button",
+      onClick: openUdw
+    }, "Select content");
+  };
+
+  var renderSubtreeBreadcrumbs = function renderSubtreeBreadcrumbs() {
+    if (!subtreeBreadcrumbs) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "ez-tag"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "ez-tag__content"
+    }, subtreeBreadcrumbs), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "ez-tag__remove-btn",
+      onClick: clearSelectedSubree
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      name: "discard",
+      extraClasses: "ez-icon--small ez-icon--dark"
+    })));
+  };
+
+  var contentTypeLabel = Translator.trans(
+  /*@Desc("Content Type")*/
+  'filters.content_type', {}, 'universal_discovery_widget');
+  var sectionLabel = Translator.trans(
+  /*@Desc("Section")*/
+  'filters.section', {}, 'universal_discovery_widget');
+  var anySectionLabel = Translator.trans(
+  /*@Desc("Any section")*/
+  'filters.any_section', {}, 'universal_discovery_widget');
+  var subtreeLabel = Translator.trans(
+  /*@Desc("Subtree")*/
+  'filters.subtree', {}, 'universal_discovery_widget');
+  var clearLabel = Translator.trans(
+  /*@Desc("Clear")*/
+  'filters.clear', {}, 'universal_discovery_widget');
+  var applyLabel = Translator.trans(
+  /*@Desc("Apply")*/
+  'filters.apply', {}, 'universal_discovery_widget');
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (filtersCleared) {
+      setFiltersCleared(false);
+      makeSearch();
+    }
+  }, [filtersCleared, makeSearch]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: wrapperClassName
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__item ez-filters__item--content-type"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "ez-label"
+  }, contentTypeLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_type_selector_content_type_selector__WEBPACK_IMPORTED_MODULE_7__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__item ez-filters__item--section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "ez-label"
+  }, sectionLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    className: "ez-filters__select form-control",
+    onChange: updateSection,
+    value: selectedSection
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ''
+  }, anySectionLabel), Object.entries(window.eZ.adminUiConfig.sections).map(function (_ref2) {
+    var _ref3 = _slicedToArray(_ref2, 2),
+        sectionIdentifier = _ref3[0],
+        sectionName = _ref3[1];
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      key: sectionIdentifier,
+      value: sectionIdentifier
+    }, sectionName);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__item ez-filters__item--subtree"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "ez-label"
+  }, subtreeLabel, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, renderSelectContentButton(), renderSubtreeBreadcrumbs()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ez-filters__btns"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit",
+    className: "btn btn-primary ez-btn-apply",
+    onClick: makeSearch,
+    disabled: !isApplyButtonEnabled
+  }, applyLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "ez-btn ez-btn--no-border",
+    onClick: clearFilters
+  }, clearLabel)));
+};
+
+Filters.propTypes = {
+  isCollapsed: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired,
+  search: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Filters);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.branch.js":
+/*!***********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.branch.js ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _finder_leaf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./finder.leaf */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.leaf.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _hooks_useFindLocationsByParentLocationIdFetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/useFindLocationsByParentLocationIdFetch */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useFindLocationsByParentLocationIdFetch.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var CLASS_IS_BRANCH_RESIZING = 'ez-is-branch-resizing';
+var SCROLL_OFFSET = 200;
+
+var FinderBranch = function FinderBranch(_ref) {
+  var locationData = _ref.locationData,
+      itemsPerPage = _ref.itemsPerPage;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      offset = _useState2[0],
+      setOffset = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      branchWidth = _useState4[0],
+      setBranchWidth = _useState4[1];
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["LoadedLocationsMapContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      loadedLocationsMap = _useContext2[0],
+      dispatchLoadedLocationsAction = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortingContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      sorting = _useContext4[0],
+      setSorting = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SortOrderContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      sortOrder = _useContext6[0],
+      setSortOrder = _useContext6[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContentTypesMapContext"]);
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MarkedLocationIdContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      markedLocationId = _useContext8[0],
+      setMarkedLocationId = _useContext8[1];
+
+  var branchRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var sortingOptions = _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SORTING_OPTIONS"].find(function (option) {
+    return option.sortClause === sorting;
+  });
+
+  var _useFindLocationsByPa = Object(_hooks_useFindLocationsByParentLocationIdFetch__WEBPACK_IMPORTED_MODULE_5__["useFindLocationsByParentLocationIdFetch"])(locationData, {
+    sortClause: sortingOptions.sortClause,
+    sortOrder: sortOrder
+  }, itemsPerPage, offset),
+      _useFindLocationsByPa2 = _slicedToArray(_useFindLocationsByPa, 2),
+      loadedLocations = _useFindLocationsByPa2[0],
+      isLoading = _useFindLocationsByPa2[1];
+
+  var subitems = locationData.subitems,
+      collapsed = locationData.collapsed;
+  var resizeStartPositionX = 0;
+  var branchCurrentWidth = 0;
+
+  var loadMore = function loadMore(_ref2) {
+    var target = _ref2.target;
+    var areAllItemsLoaded = locationData.subitems.length >= loadedLocations.totalCount;
+    var isOffsetReached = target.scrollHeight - target.clientHeight - target.scrollTop < SCROLL_OFFSET;
+
+    if (areAllItemsLoaded || !isOffsetReached || isLoading) {
+      return;
+    }
+
+    setOffset(offset + itemsPerPage);
+  };
+
+  var expandBranch = function expandBranch() {
+    dispatchLoadedLocationsAction({
+      type: 'UPDATE_LOCATIONS',
+      data: _objectSpread(_objectSpread({}, locationData), {}, {
+        collapsed: false
+      })
+    });
+  };
+
+  var changeBranchWidth = function changeBranchWidth(_ref3) {
+    var clientX = _ref3.clientX;
+    var newBranchWidth = branchCurrentWidth + (clientX - resizeStartPositionX);
+
+    if (newBranchWidth < 50) {
+      dispatchLoadedLocationsAction({
+        type: 'UPDATE_LOCATIONS',
+        data: _objectSpread(_objectSpread({}, locationData), {}, {
+          collapsed: true
+        })
+      });
+      newBranchWidth = 0;
+      removeResizeListeners();
+    }
+
+    setBranchWidth(newBranchWidth);
+  };
+
+  var removeResizeListeners = function removeResizeListeners() {
+    window.document.removeEventListener('mousemove', changeBranchWidth);
+    window.document.removeEventListener('mouseup', removeResizeListeners);
+    window.document.body.classList.remove(CLASS_IS_BRANCH_RESIZING);
+  };
+
+  var addResizeListeners = function addResizeListeners(_ref4) {
+    var nativeEvent = _ref4.nativeEvent;
+    resizeStartPositionX = nativeEvent.clientX;
+    branchCurrentWidth = branchRef.current.getBoundingClientRect().width;
+    window.document.addEventListener('mousemove', changeBranchWidth, false);
+    window.document.addEventListener('mouseup', removeResizeListeners, false);
+    window.document.body.classList.add(CLASS_IS_BRANCH_RESIZING);
+  };
+
+  var renderCollapsedBranch = function renderCollapsedBranch() {
+    if (!collapsed) {
+      return null;
+    }
+
+    var selectedLocation = subitems.find(function (subitem) {
+      return loadedLocationsMap.find(function (loadedLocation) {
+        return loadedLocation.parentLocationId === subitem.location.id;
+      }) || subitem.location.id === markedLocationId;
+    });
+    var contentName = selectedLocation ? selectedLocation.location.ContentInfo.Content.TranslatedName : '';
+    var iconPath = locationData.location ? contentTypesMap[locationData.location.ContentInfo.Content.ContentType._href].thumbnail : window.eZ.helpers.icon.getIconPath('folder');
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-finder-branch__info-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-finder-branch__icon-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      extraClasses: "ez-icon--small ez-icon--primary",
+      customPath: iconPath
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-finder-branch__name"
+    }, contentName));
+  };
+
+  var renderDragHandler = function renderDragHandler() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-finder-branch__resize-handler",
+      onMouseDown: addResizeListeners
+    });
+  };
+
+  var renderSubitems = function renderSubitems() {
+    if (collapsed) {
+      return null;
+    }
+
+    var width = branchWidth ? branchWidth : null;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-finder-branch__items-wrapper",
+      onScroll: loadMore,
+      style: {
+        width: width
+      }
+    }, renderLoadingSpinner(), subitems.map(function (_ref5) {
+      var location = _ref5.location;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_finder_leaf__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        key: location.id,
+        location: location
+      });
+    })), renderDragHandler());
+  };
+
+  var renderLoadingSpinner = function renderLoadingSpinner() {
+    if (!isLoading) {
+      return;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-finder-branch__loading-spinner"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      name: "spinner",
+      extraClasses: "ez-icon--medium ez-spin"
+    }));
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (loadedLocations.subitems) {
+      var data = _objectSpread(_objectSpread(_objectSpread({}, locationData), loadedLocations), {}, {
+        subitems: [].concat(_toConsumableArray(locationData.subitems), _toConsumableArray(loadedLocations.subitems))
+      });
+
+      dispatchLoadedLocationsAction({
+        type: 'UPDATE_LOCATIONS',
+        data: data
+      });
+    }
+  }, [loadedLocations, dispatchLoadedLocationsAction, isLoading]);
+
+  if (!subitems.length && !collapsed && !isLoading) {
+    return null;
+  }
+
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__["createCssClassNames"])({
+    'c-finder-branch': true,
+    'c-finder-branch--collapsed': collapsed
+  });
+  var onClick = collapsed ? expandBranch : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className,
+    onClick: onClick,
+    ref: branchRef
+  }, renderCollapsedBranch(), renderSubitems());
+};
+
+FinderBranch.propTypes = {
+  locationData: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    parentLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    subitems: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+    collapsed: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+  }).isRequired,
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+FinderBranch.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (FinderBranch);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.js":
+/*!****************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.js ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _finder_branch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./finder.branch */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.branch.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var Finder = function Finder(_ref) {
+  var itemsPerPage = _ref.itemsPerPage;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["LoadedLocationsMapContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      loadedLocationsMap = _useContext2[0],
+      dispatchLoadedLocationsAction = _useContext2[1];
+
+  var finderRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var container = finderRef.current;
+    container.scrollLeft = container.scrollWidth - container.clientWidth;
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-finder",
+    ref: finderRef
+  }, loadedLocationsMap.map(function (loadedLocation) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_finder_branch__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: loadedLocation.parentLocationId,
+      itemsPerPage: itemsPerPage,
+      locationData: loadedLocation
+    });
+  }));
+};
+
+Finder.propTypes = {
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+Finder.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (Finder);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.leaf.js":
+/*!*********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/finder/finder.leaf.js ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toggle-selection-button/toggle.selection.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/toggle-selection-button/toggle.selection.button.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var FinderLeaf = function FinderLeaf(_ref) {
+  var location = _ref.location;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MarkedLocationIdContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      markedLocationId = _useContext2[0],
+      setMarkedLocationId = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContentTypesMapContext"]);
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SelectedLocationsContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      selectedLocations = _useContext6[0],
+      dispatchSelectedLocationsAction = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MultipleConfigContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      multiple = _useContext8[0],
+      multipleItemsLimit = _useContext8[1];
+
+  var containersOnly = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContainersOnlyContext"]);
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["AllowedContentTypesContext"]);
+  var contentTypeInfo = contentTypesMap[location.ContentInfo.Content.ContentType._href];
+  var isContainer = contentTypeInfo.isContainer;
+  var isNotSelectable = containersOnly && !isContainer || allowedContentTypes && !allowedContentTypes.includes(contentTypeInfo.identifier);
+
+  var markLocation = function markLocation(_ref2) {
+    var nativeEvent = _ref2.nativeEvent;
+    var isSelectionButtonClicked = nativeEvent.target.closest('.c-toggle-selection-button');
+    var isMarkedLocationClicked = location.id === markedLocationId;
+
+    if (isSelectionButtonClicked || isMarkedLocationClicked) {
+      return;
+    }
+
+    setMarkedLocationId(location.id);
+    dispatchLoadedLocationsAction({
+      type: 'CUT_LOCATIONS',
+      locationId: location.id
+    });
+    dispatchLoadedLocationsAction({
+      type: 'UPDATE_LOCATIONS',
+      data: {
+        parentLocationId: location.id,
+        subitems: []
+      }
+    });
+
+    if (!multiple && !isNotSelectable) {
+      dispatchSelectedLocationsAction({
+        type: 'CLEAR_SELECTED_LOCATIONS'
+      });
+      dispatchSelectedLocationsAction({
+        type: 'ADD_SELECTED_LOCATION',
+        location: location
+      });
+    }
+  };
+
+  var renderToggleSelectionButton = function renderToggleSelectionButton() {
+    if (!multiple || isNotSelectable) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      location: location
+    });
+  };
+
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__["createCssClassNames"])({
+    'c-finder-leaf': true,
+    'c-finder-leaf--marked': !!loadedLocationsMap.find(function (loadedLocation) {
+      return loadedLocation.parentLocationId === location.id;
+    }),
+    'c-finder-leaf--has-children': !!location.childCount,
+    'c-finder-leaf--not-selectable': isNotSelectable
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(window.document.querySelector('.c-udw-tab'));
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className,
+    onClick: markLocation
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-finder-leaf__name"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-finder-leaf__icon-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    extraClasses: "ez-icon--small ez-icon--base-dark",
+    customPath: contentTypesMap[location.ContentInfo.Content.ContentType._href].thumbnail
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    title: location.ContentInfo.Content.TranslatedName,
+    "data-tooltip-container-selector": ".c-udw-tab"
+  }, location.ContentInfo.Content.TranslatedName)), renderToggleSelectionButton());
+};
+
+FinderLeaf.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (FinderLeaf);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.item.js":
+/*!***************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.item.js ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toggle-selection-button/toggle.selection.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/toggle-selection-button/toggle.selection.button.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../common/thumbnail/thumbnail */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/thumbnail/thumbnail.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+var isSelectionButtonClicked = function isSelectionButtonClicked(event) {
+  return event.target.closest('.c-toggle-selection-button');
+};
+
+var GridViewItem = function GridViewItem(_ref) {
+  var location = _ref.location,
+      version = _ref.version;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MarkedLocationIdContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      markedLocationId = _useContext2[0],
+      setMarkedLocationId = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContentTypesMapContext"]);
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SelectedLocationsContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      selectedLocations = _useContext6[0],
+      dispatchSelectedLocationsAction = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MultipleConfigContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      multiple = _useContext8[0],
+      multipleItemsLimit = _useContext8[1];
+
+  var containersOnly = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContainersOnlyContext"]);
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["AllowedContentTypesContext"]);
+  var contentTypeInfo = contentTypesMap[location.ContentInfo.Content.ContentType._href];
+  var isContainer = contentTypeInfo.isContainer;
+  var isNotSelectable = containersOnly && !isContainer || allowedContentTypes && !allowedContentTypes.includes(contentTypeInfo.identifier);
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_5__["createCssClassNames"])({
+    'c-grid-item': true,
+    'c-grid-item--marked': markedLocationId === location.id,
+    'c-grid-item--not-selectable': isNotSelectable
+  });
+
+  var markLocation = function markLocation(_ref2) {
+    var nativeEvent = _ref2.nativeEvent;
+
+    if (isSelectionButtonClicked(nativeEvent)) {
+      return;
+    }
+
+    setMarkedLocationId(location.id);
+
+    if (!multiple && !isNotSelectable) {
+      dispatchSelectedLocationsAction({
+        type: 'CLEAR_SELECTED_LOCATIONS'
+      });
+      dispatchSelectedLocationsAction({
+        type: 'ADD_SELECTED_LOCATION',
+        location: location
+      });
+    }
+  };
+
+  var loadLocation = function loadLocation(_ref3) {
+    var nativeEvent = _ref3.nativeEvent;
+
+    if (isSelectionButtonClicked(nativeEvent) || containersOnly && !isContainer) {
+      return;
+    }
+
+    dispatchLoadedLocationsAction({
+      type: 'UPDATE_LOCATIONS',
+      data: {
+        parentLocationId: location.id,
+        subitems: []
+      }
+    });
+  };
+
+  var renderToggleSelectionButton = function renderToggleSelectionButton() {
+    if (!multiple || isNotSelectable) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_toggle_selection_button_toggle_selection_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      location: location
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className,
+    onClick: markLocation,
+    onDoubleClick: loadLocation
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-grid-item__preview"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    thumbnailData: version.Thumbnail,
+    iconExtraClasses: "ez-icon--extra-large",
+    contentTypeIconPath: contentTypesMap[location.ContentInfo.Content.ContentType._href].thumbnail
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-grid-item__name"
+  }, location.ContentInfo.Content.TranslatedName), renderToggleSelectionButton());
+};
+
+GridViewItem.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  version: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+GridViewItem.defaultProps = {
+  version: {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (GridViewItem);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.js":
+/*!**********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.js ***!
+  \**********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _grid_view_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grid.view.item */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/grid-view/grid.view.item.js");
+/* harmony import */ var _breadcrumbs_breadcrumbs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../breadcrumbs/breadcrumbs */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/breadcrumbs/breadcrumbs.js");
+/* harmony import */ var _hooks_useFindLocationsByParentLocationIdFetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/useFindLocationsByParentLocationIdFetch */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useFindLocationsByParentLocationIdFetch.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var SCROLL_OFFSET = 200;
+
+var GridView = function GridView(_ref) {
+  var itemsPerPage = _ref.itemsPerPage;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      offset = _useState2[0],
+      setOffset = _useState2[1];
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["LoadedLocationsMapContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      loadedLocationsMap = _useContext2[0],
+      dispatchLoadedLocationsAction = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SortingContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      sorting = _useContext4[0],
+      setSorting = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SortOrderContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      sortOrder = _useContext6[0],
+      setSortOrder = _useContext6[1];
+
+  var sortingOptions = _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SORTING_OPTIONS"].find(function (option) {
+    return option.sortClause === sorting;
+  });
+  var locationData = loadedLocationsMap.length ? loadedLocationsMap[loadedLocationsMap.length - 1] : {
+    subitems: []
+  };
+
+  var _useFindLocationsByPa = Object(_hooks_useFindLocationsByParentLocationIdFetch__WEBPACK_IMPORTED_MODULE_4__["useFindLocationsByParentLocationIdFetch"])(locationData, {
+    sortClause: sortingOptions.sortClause,
+    sortOrder: sortOrder
+  }, itemsPerPage, offset, true),
+      _useFindLocationsByPa2 = _slicedToArray(_useFindLocationsByPa, 2),
+      loadedLocations = _useFindLocationsByPa2[0],
+      isLoading = _useFindLocationsByPa2[1];
+
+  var loadMore = function loadMore(_ref2) {
+    var target = _ref2.target;
+    var areAllItemsLoaded = locationData.subitems.length >= loadedLocations.totalCount;
+    var isOffsetReached = target.scrollHeight - target.clientHeight - target.scrollTop < SCROLL_OFFSET;
+
+    if (areAllItemsLoaded || !isOffsetReached || isLoading) {
+      return;
+    }
+
+    setOffset(offset + itemsPerPage);
+  };
+
+  var renderItem = function renderItem(itemData) {
+    if (!itemData.version) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_grid_view_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: itemData.location.id,
+      location: itemData.location,
+      version: itemData.version
+    });
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (isLoading || !loadedLocations.subitems) {
+      return;
+    }
+
+    var data = _objectSpread(_objectSpread(_objectSpread({}, locationData), loadedLocations), {}, {
+      subitems: [].concat(_toConsumableArray(locationData.subitems), _toConsumableArray(loadedLocations.subitems))
+    });
+
+    setOffset(0);
+    dispatchLoadedLocationsAction({
+      type: 'UPDATE_LOCATIONS',
+      data: data
+    });
+  }, [loadedLocations, dispatchLoadedLocationsAction, isLoading]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-grid"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_breadcrumbs_breadcrumbs__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-grid__items-wrapper",
+    onScroll: loadMore
+  }, locationData.subitems.map(renderItem)));
+};
+
+GridView.propTypes = {
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+GridView.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (GridView);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/pure-toggle-selection-button/pure.toggle.selection.button.js":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/pure-toggle-selection-button/pure.toggle.selection.button.js ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var PureToggleSelectionButton = function PureToggleSelectionButton(_ref) {
+  var isSelected = _ref.isSelected,
+      toggleSelection = _ref.toggleSelection;
+  var refPureToggleSelectionButton = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["SelectedLocationsContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedLocations = _useContext2[0],
+      dispatchSelectedLocationsAction = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["MultipleConfigContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      multiple = _useContext4[0],
+      multipleItemsLimit = _useContext4[1];
+
+  var addLabel = Translator.trans(
+  /*@Desc("Add")*/
+  'browser.add', {}, 'universal_discovery_widget');
+  var selectedLabel = Translator.trans(
+  /*@Desc("Selected")*/
+  'browser.selected', {}, 'universal_discovery_widget');
+  var toggleSelectionLabel = isSelected ? selectedLabel : addLabel;
+  var iconName = isSelected ? 'checkmark' : 'create';
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__["createCssClassNames"])({
+    'c-toggle-selection-button': true,
+    'c-toggle-selection-button--selected': isSelected
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.hideAll(window.document.querySelector('.c-udw-tab')); // Title on toggler selection button is dynamic, for this we have to change 'data-original-title'.
+    // Remove title is neccessary to prevent situation when we have bootsrap and native title.
+
+    if (refPureToggleSelectionButton.current.getAttribute('data-original-title')) {
+      refPureToggleSelectionButton.current.removeAttribute('title');
+    }
+
+    refPureToggleSelectionButton.current.setAttribute('data-original-title', toggleSelectionLabel);
+  }, [isSelected]);
+
+  if (multiple && !isSelected && selectedLocations.length >= multipleItemsLimit && multipleItemsLimit !== 0) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    ref: refPureToggleSelectionButton,
+    className: className,
+    onClick: toggleSelection,
+    title: toggleSelectionLabel,
+    "data-tooltip-container-selector": ".c-udw-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: iconName,
+    extraClasses: "ez-icon--small"
+  }));
+};
+
+PureToggleSelectionButton.propTypes = {
+  isSelected: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  toggleSelection: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (PureToggleSelectionButton);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/search/search.js":
+/*!****************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/search/search.js ***!
+  \****************************************************************************************************************************/
+/*! exports provided: SelectedContentTypesContext, SelectedSectionContext, SelectedSubtreeContext, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedContentTypesContext", function() { return SelectedContentTypesContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedSectionContext", function() { return SelectedSectionContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedSubtreeContext", function() { return SelectedSubtreeContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _content_table_content_table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../content-table/content.table */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-table/content.table.js");
+/* harmony import */ var _filters_filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../filters/filters */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/filters/filters.js");
+/* harmony import */ var _hooks_useSearchByQueryFetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/useSearchByQueryFetch */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSearchByQueryFetch.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+var _this = undefined;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+var SelectedContentTypesContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var SelectedSectionContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var SelectedSubtreeContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+
+
+
+
+
+var ENTER_CHAR_CODE = 13;
+
+var selectedContentTypesReducer = function selectedContentTypesReducer(state, action) {
+  switch (action.type) {
+    case 'ADD_CONTENT_TYPE':
+      return [].concat(_toConsumableArray(state), [action.contentTypeIdentifier]);
+
+    case 'REMOVE_CONTENT_TYPE':
+      return state.filter(function (contentTypeIdentifier) {
+        return contentTypeIdentifier !== action.contentTypeIdentifier;
+      });
+
+    case 'CLEAR_CONTENT_TYPES':
+      return [];
+
+    default:
+      throw new Error();
+  }
+};
+
+var languages = Object.values(window.eZ.adminUiConfig.languages.mappings);
+
+var Search = function Search(_ref) {
+  var itemsPerPage = _ref.itemsPerPage;
+  var filtersLabel = Translator.trans(
+  /*@Desc("Filters")*/
+  'search.filters', {}, 'universal_discovery_widget');
+  var searchLabel = Translator.trans(
+  /*@Desc("Search")*/
+  'search.search', {}, 'universal_discovery_widget');
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["AllowedContentTypesContext"]);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      searchText = _useState2[0],
+      setSearchText = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      offset = _useState4[0],
+      setOffset = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      filtersCollapsed = _useState6[0],
+      setFiltersCollapsed = _useState6[1];
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(selectedContentTypesReducer, []),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      selectedContentTypes = _useReducer2[0],
+      dispatchSelectedContentTypesAction = _useReducer2[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      selectedSection = _useState8[0],
+      setSelectedSection = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      selectedSubtree = _useState10[0],
+      setSelectedSubtree = _useState10[1];
+
+  var firstLanguageCode = languages.length ? languages[0].languageCode : '';
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(firstLanguageCode),
+      _useState12 = _slicedToArray(_useState11, 2),
+      selectedLanguage = _useState12[0],
+      setSelectedLanguage = _useState12[1];
+
+  var updateSelectedLanguage = function updateSelectedLanguage(event) {
+    return setSelectedLanguage(event.target.value);
+  };
+
+  var _useSearchByQueryFetc = Object(_hooks_useSearchByQueryFetch__WEBPACK_IMPORTED_MODULE_5__["useSearchByQueryFetch"])(),
+      _useSearchByQueryFetc2 = _slicedToArray(_useSearchByQueryFetc, 3),
+      isLoading = _useSearchByQueryFetc2[0],
+      data = _useSearchByQueryFetc2[1],
+      searchByQuery = _useSearchByQueryFetc2[2];
+
+  var updateSearchQuery = function updateSearchQuery(_ref2) {
+    var value = _ref2.target.value;
+    return setSearchText(value);
+  };
+
+  var search = function search(forcedOffset) {
+    if (!searchText) {
+      return;
+    }
+
+    if (forcedOffset !== undefined && forcedOffset !== offset) {
+      setOffset(forcedOffset);
+      return;
+    }
+
+    var contentTypes = !!selectedContentTypes.length ? _toConsumableArray(selectedContentTypes) : allowedContentTypes;
+    searchByQuery(searchText, contentTypes, selectedSection, selectedSubtree, itemsPerPage, offset, selectedLanguage);
+  };
+
+  var handleKeyPressed = function handleKeyPressed(_ref3) {
+    var charCode = _ref3.charCode;
+
+    if (charCode === ENTER_CHAR_CODE) {
+      search(0);
+    }
+  };
+
+  var changePage = function changePage(pageIndex) {
+    return setOffset(pageIndex * itemsPerPage);
+  };
+
+  var toggleFiltersCollapsed = function toggleFiltersCollapsed() {
+    return setFiltersCollapsed(function (prevState) {
+      return !prevState;
+    });
+  };
+
+  var renderSearchResults = function renderSearchResults() {
+    var searchResultsLabel = Translator.trans(
+    /*@Desc("Search results")*/
+    'search.search_results', {}, 'universal_discovery_widget');
+    var noResultsLabel = Translator.trans(
+    /*@Desc("Sorry, no results were found for")*/
+    'search.no_results', {}, 'universal_discovery_widget');
+    var tipsLabel = Translator.trans(
+    /*@Desc("Some helpful search tips")*/
+    'search.tips', {}, 'universal_discovery_widget');
+    var checkSpellingLabel = Translator.trans(
+    /*@Desc("Check spelling of keywords.")*/
+    'search.check_spelling', {}, 'universal_discovery_widget');
+    var differentKeywordsLabel = Translator.trans(
+    /*@Desc("Try different keywords.")*/
+    'search.different_keywords', {}, 'universal_discovery_widget');
+    var moreGeneralLabel = Translator.trans(
+    /*@Desc("Try more general keywords.")*/
+    'search.more_general', {}, 'universal_discovery_widget');
+    var fewerKeywordsLabel = Translator.trans(
+    /*@Desc("Try fewer keywords. Reducing keywords result in more matches.")*/
+    'search.fewer_keywords', {}, 'universal_discovery_widget');
+    var title = "".concat(searchResultsLabel, " (").concat(data.count, ")");
+
+    if (data.count) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_table_content_table__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        count: data.count,
+        items: data.items,
+        itemsPerPage: itemsPerPage,
+        activePageIndex: offset ? offset / itemsPerPage : 0,
+        title: title,
+        onPageChange: changePage
+      });
+    } else if (!!data.items) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-search__no-results"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-search__no-results-title"
+      }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "".concat(noResultsLabel, " \"").concat(searchText, "\".")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, tipsLabel, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, checkSpellingLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, differentKeywordsLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, moreGeneralLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, fewerKeywordsLabel)));
+    }
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(search, [offset]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-search"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-search__tools-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-search__input-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "search",
+    className: "c-search__input form-control",
+    onChange: updateSearchQuery,
+    onKeyPress: handleKeyPressed,
+    value: searchText
+  })), languages.length > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-search__selector-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    className: "form-control c-search__select-language",
+    onChange: updateSelectedLanguage,
+    value: selectedLanguage
+  }, languages.map(function (language) {
+    if (!language.enabled) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      key: language.id,
+      value: language.languageCode,
+      onChange: updateSelectedLanguage
+    }, language.name);
+  }))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-search__search-btn btn btn-primary",
+    onClick: search.bind(_this, 0)
+  }, searchLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-search__filters-btn-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-search__toggle-filters-btn btn btn-secondary",
+    onClick: toggleFiltersCollapsed
+  }, filtersLabel))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectedContentTypesContext.Provider, {
+    value: [selectedContentTypes, dispatchSelectedContentTypesAction]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectedSectionContext.Provider, {
+    value: [selectedSection, setSelectedSection]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectedSubtreeContext.Provider, {
+    value: [selectedSubtree, setSelectedSubtree]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_filters_filters__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    isCollapsed: filtersCollapsed,
+    search: search
+  })))), renderSearchResults());
+};
+
+Search.propTypes = {
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+Search.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.item.js":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.item.js ***!
+  \*********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/thumbnail/thumbnail */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/thumbnail/thumbnail.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var SelectedLocationsItem = function SelectedLocationsItem(_ref) {
+  var location = _ref.location,
+      permissions = _ref.permissions;
+  var refSelectedLocationsItem = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["SelectedLocationsContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedLocations = _useContext2[0],
+      dispatchSelectedLocationsAction = _useContext2[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["ContentTypesMapContext"]);
+  var clearLabel = Translator.trans(
+  /*@Desc("Clear selection")*/
+  'selected_locations.clear_selection', {}, 'universal_discovery_widget');
+
+  var removeFromSelection = function removeFromSelection() {
+    window.eZ.helpers.tooltips.hideAll(refSelectedLocationsItem.current);
+    dispatchSelectedLocationsAction({
+      type: 'REMOVE_SELECTED_LOCATION',
+      id: location.id
+    });
+  };
+
+  var sortedActions = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    var selectedItemActions = window.eZ.adminUiConfig.universalDiscoveryWidget.selectedItemActions;
+    var actions = selectedItemActions ? _toConsumableArray(selectedItemActions) : [];
+    return actions.sort(function (actionA, actionB) {
+      return actionB.priority - actionA.priority;
+    });
+  }, []);
+  var version = location.ContentInfo.Content.CurrentVersion.Version;
+  var thumbnailData = version ? version.Thumbnail : {};
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(refSelectedLocationsItem.current);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations-item",
+    ref: refSelectedLocationsItem
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations-item__image-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    thumbnailData: thumbnailData
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations-item__info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-selected-locations-item__info-name"
+  }, location.ContentInfo.Content.TranslatedName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-selected-locations-item__info-description"
+  }, contentTypesMap[location.ContentInfo.Content.ContentType._href].name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations-item__actions-wrapper"
+  }, sortedActions.map(function (action) {
+    var Component = action.component;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, {
+      key: action.id,
+      location: location,
+      permissions: permissions
+    });
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "c-selected-locations-item__remove-button btn btn-icon",
+    onClick: removeFromSelection,
+    title: clearLabel,
+    "data-tooltip-container-selector": ".c-udw-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "trash",
+    extraClasses: "ez-icon--small-medium"
+  }))));
+};
+
+SelectedLocationsItem.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  permissions: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (SelectedLocationsItem);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.js":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.js ***!
+  \****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _selected_locations_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./selected.locations.item */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.item.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var SelectedLocations = function SelectedLocations() {
+  var refSelectedLocations = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var refTogglerButton = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["SelectedLocationsContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedLocations = _useContext2[0],
+      dispatchSelectedLocationsAction = _useContext2[1];
+
+  var allowConfirmation = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["AllowConfirmationContext"]);
+  var onConfirm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_4__["ConfirmContext"]);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isExpanded = _useState2[0],
+      setIsExpanded = _useState2[1];
+
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__["createCssClassNames"])({
+    'c-selected-locations': true,
+    'c-selected-locations--expanded': isExpanded
+  });
+  var expandLabel = Translator.trans(
+  /*@Desc("Expand sidebar")*/
+  'selected_locations.expand.sidebar', {}, 'universal_discovery_widget');
+  var collapseLabel = Translator.trans(
+  /*@Desc("Collapse sidebar")*/
+  'selected_locations.collapse.sidebar', {}, 'universal_discovery_widget');
+  var togglerLabel = isExpanded ? collapseLabel : expandLabel;
+
+  var clearSelection = function clearSelection() {
+    window.eZ.helpers.tooltips.hideAll(refSelectedLocations.current);
+    dispatchSelectedLocationsAction({
+      type: 'CLEAR_SELECTED_LOCATIONS'
+    });
+  };
+
+  var toggleExpanded = function toggleExpanded() {
+    setIsExpanded(!isExpanded);
+  };
+
+  var renderSelectionCounter = function renderSelectionCounter() {
+    var selectedLabel = Translator.trans(
+    /*@Desc("selected")*/
+    'selected_locations.selected', {}, 'universal_discovery_widget');
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-selected-locations__selection-counter"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-selected-locations__selection-count"
+    }, selectedLocations.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "c-selected-locations__selection-count-label"
+    }, selectedLabel));
+  };
+
+  var renderToggleButton = function renderToggleButton() {
+    var iconName = isExpanded ? 'caret-next' : 'caret-back';
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      ref: refTogglerButton,
+      type: "button",
+      className: "c-selected-locations__toggle-button btn btn-icon",
+      onClick: toggleExpanded,
+      title: togglerLabel,
+      "data-tooltip-container-selector": ".c-udw-tab"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: iconName,
+      extraClasses: "ez-icon--small ez-icon--secondary"
+    }));
+  };
+
+  var renderActionButtons = function renderActionButtons() {
+    var confirmSelectionLabel = Translator.trans(
+    /*@Desc("Confirm selection")*/
+    'selected_locations.confirm_selection', {}, 'universal_discovery_widget');
+    var clearAllLabel = Translator.trans(
+    /*@Desc("Clear all")*/
+    'selected_locations.clear_all', {}, 'universal_discovery_widget');
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "c-selected-locations__confirm-button btn btn-icon",
+      onClick: function onClick() {
+        return onConfirm();
+      },
+      title: confirmSelectionLabel,
+      "data-tooltip-container-selector": ".c-udw-tab"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: "checkmark",
+      extraClasses: "ez-icon--small-medium ez-icon--secondary"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "c-selected-locations__clear-selection-button btn btn-icon",
+      onClick: clearSelection,
+      title: clearAllLabel,
+      "data-tooltip-container-selector": ".c-udw-tab"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: "trash",
+      extraClasses: "ez-icon--small-medium ez-icon--secondary"
+    })));
+  };
+
+  var renderLocationsList = function renderLocationsList() {
+    if (!isExpanded) {
+      return null;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-selected-locations__items-wrapper"
+    }, selectedLocations.map(function (selectedLocation) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_selected_locations_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        key: selectedLocation.location.id,
+        location: selectedLocation.location,
+        permissions: selectedLocation.permissions
+      });
+    }));
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(refSelectedLocations.current);
+    window.eZ.helpers.tooltips.hideAll();
+
+    if (refTogglerButton.current) {
+      refTogglerButton.current.dataset.originalTitle = togglerLabel;
+    }
+  }, [isExpanded]);
+
+  if (!allowConfirmation) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className,
+    ref: refSelectedLocations
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-selected-locations__actions-wrapper"
+  }, renderToggleButton(), !isExpanded && renderActionButtons(), isExpanded && renderSelectionCounter(), isExpanded && renderActionButtons()), !isExpanded && renderSelectionCounter()), renderLocationsList());
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SelectedLocations);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab-selector/tab.selector.js":
+/*!****************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab-selector/tab.selector.js ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var TabSelector = function TabSelector() {
+  var tabs = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["TabsContext"]);
+  var tabsConfig = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["TabsConfigContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["ActiveTabContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      activeTab = _useContext2[0],
+      setActiveTab = _useContext2[1];
+
+  var sortedTabs = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return tabs.sort(function (tabA, tabB) {
+      if (!tabsConfig[tabB.id] || !tabsConfig[tabA.id]) {
+        return 0;
+      }
+
+      return tabsConfig[tabB.id].priority - tabsConfig[tabA.id].priority;
+    });
+  }, [tabs, tabsConfig]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tab-selector"
+  }, sortedTabs.map(function (tab) {
+    if (tab.isHiddenOnList || tabsConfig[tab.id] && tabsConfig[tab.id].hidden) {
+      return null;
+    }
+
+    var onClick = function onClick() {
+      return setActiveTab(tab.id);
+    };
+
+    var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+      'c-tab-selector__item': true,
+      'c-tab-selector__item--selected': tab.id === activeTab
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: className,
+      key: tab.id,
+      onClick: onClick
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      customPath: tab.icon,
+      extraClasses: "ez-icon--small-medium"
+    }), tab.label);
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TabSelector);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab/tab.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab/tab.js ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _top_menu_top_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../top-menu/top.menu */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/top-menu/top.menu.js");
+/* harmony import */ var _tab_selector_tab_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tab-selector/tab.selector */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab-selector/tab.selector.js");
+/* harmony import */ var _selected_locations_selected_locations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../selected-locations/selected.locations */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/selected-locations/selected.locations.js");
+/* harmony import */ var _content_create_widget_content_create_widget__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../content-create-widget/content.create.widget */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-create-widget/content.create.widget.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+var Tab = function Tab(_ref) {
+  var children = _ref.children,
+      actionsDisabledMap = _ref.actionsDisabledMap;
+  var ContentMetaPreview = window.eZ.adminUiConfig.universalDiscoveryWidget.contentMetaPreview;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["SelectedLocationsContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedLocations = _useContext2[0],
+      dispatchSelectedLocationsAction = _useContext2[1];
+
+  var selectedLocationsComponent = !!selectedLocations.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_selected_locations_selected_locations__WEBPACK_IMPORTED_MODULE_4__["default"], null) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-udw-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-udw-tab__top-bar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_menu_top_menu__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    actionsDisabledMap: actionsDisabledMap
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-udw-tab__left-sidebar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_create_widget_content_create_widget__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tab_selector_tab_selector__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-udw-tab__main"
+  }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-udw-tab__right-sidebar"
+  }, ContentMetaPreview && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentMetaPreview, null), selectedLocationsComponent));
+};
+
+Tab.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any.isRequired,
+  actionsDisabledMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+Tab.defaultProps = {
+  actionsDisabledMap: {
+    'content-create-button': false,
+    'sort-switcher': false,
+    'view-switcher': false
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (Tab);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/toggle-selection-button/toggle.selection.button.js":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/toggle-selection-button/toggle.selection.button.js ***!
+  \**************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+/* harmony import */ var _pure_toggle_selection_button_pure_toggle_selection_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pure-toggle-selection-button/pure.toggle.selection.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/pure-toggle-selection-button/pure.toggle.selection.button.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var ToggleSelectionButton = function ToggleSelectionButton(_ref) {
+  var location = _ref.location;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__["SelectedLocationsContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      selectedLocations = _useContext2[0],
+      dispatchSelectedLocationsAction = _useContext2[1];
+
+  var isSelected = selectedLocations.some(function (selectedItem) {
+    return selectedItem.location.id === location.id;
+  });
+
+  var toggleSelection = function toggleSelection() {
+    var action = isSelected ? {
+      type: 'REMOVE_SELECTED_LOCATION',
+      id: location.id
+    } : {
+      type: 'ADD_SELECTED_LOCATION',
+      location: location
+    };
+    dispatchSelectedLocationsAction(action);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pure_toggle_selection_button_pure_toggle_selection_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    isSelected: isSelected,
+    toggleSelection: toggleSelection
+  });
+};
+
+ToggleSelectionButton.propTypes = {
+  location: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (ToggleSelectionButton);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/top-menu/top.menu.js":
+/*!********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/top-menu/top.menu.js ***!
+  \********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+
+var TopMenu = function TopMenu(_ref) {
+  var actionsDisabledMap = _ref.actionsDisabledMap;
+  var title = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["TitleContext"]);
+  var cancelUDW = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["CancelContext"]);
+  var sortedActions = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    var actions = _toConsumableArray(window.eZ.adminUiConfig.universalDiscoveryWidget.topMenuActions);
+
+    return actions.sort(function (actionA, actionB) {
+      return actionB.priority - actionA.priority;
+    });
+  }, []);
+  var backTitle = Translator.trans(
+  /*@Desc("Back")*/
+  'back.label', {}, 'universal_discovery_widget');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-top-menu"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-top-menu__cancel-btn-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-top-menu__cancel-btn btn btn-icon",
+    type: "button",
+    onClick: cancelUDW,
+    title: backTitle,
+    "data-tooltip-container-selector": ".c-top-menu__cancel-btn-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "caret-back",
+    extraClasses: "ez-icon--secondary ez-icon--small"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-top-menu__title-wrapper"
+  }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-top-menu__actions-wrapper"
+  }, sortedActions.map(function (action) {
+    var Component = action.component;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, {
+      key: action.id,
+      isDisabled: actionsDisabledMap[action.id]
+    });
+  })));
+};
+
+TopMenu.propTypes = {
+  actionsDisabledMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+TopMenu.defaultProps = {
+  actionsDisabledMap: {
+    'content-create-button': false,
+    'sort-switcher': false,
+    'view-switcher': false
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (TopMenu);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/translation-selector/translation.selector.js":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/translation-selector/translation.selector.js ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+var _this = undefined;
+
+
+
+
+
+
+var TranslationSelectorButton = function TranslationSelectorButton(_ref) {
+  var hideTranslationSelector = _ref.hideTranslationSelector,
+      selectTranslation = _ref.selectTranslation,
+      version = _ref.version,
+      isOpen = _ref.isOpen;
+  var languageCodes = version ? version.VersionInfo.languageCodes.split(',') : [];
+  var editTranslationLabel = Translator.trans(
+  /*@Desc("Edit translation")*/
+  'meta_preview.edit_translation', {}, 'universal_discovery_widget');
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_2__["createCssClassNames"])({
+    'c-translation-selector': true,
+    'c-translation-selector--hidden': !isOpen
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-translation-selector__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-translation-selector__title"
+  }, "".concat(editTranslationLabel, " (").concat(languageCodes.length, ")")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-translation-selector__close-button btn",
+    onClick: hideTranslationSelector
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    name: "discard",
+    extraClasses: "ez-icon--small"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-translation-selector__languages-wrapper"
+  }, languageCodes.map(function (languageCode) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: languageCode,
+      className: "c-translation-selector__language",
+      onClick: selectTranslation.bind(_this, languageCode)
+    }, window.eZ.adminUiConfig.languages.mappings[languageCode].name);
+  })));
+};
+
+TranslationSelectorButton.propTypes = {
+  hideTranslationSelector: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  selectTranslation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  version: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  isOpen: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (TranslationSelectorButton);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tree-view/tree.view.js":
+/*!**********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tree-view/tree.view.js ***!
+  \**********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _content_tree_content_tree_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../content-tree/content.tree.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/content-tree/content.tree.module.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _content_meta_preview_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../content.meta.preview.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.meta.preview.module.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+
+
+
+var flattenTree = function flattenTree(tree) {
+  return tree.reduce(function (output, branch) {
+    return [].concat(_toConsumableArray(output), [branch.locationId], _toConsumableArray(flattenTree(branch.subitems)));
+  }, []);
+};
+
+var TreeView = function TreeView(_ref) {
+  var itemsPerPage = _ref.itemsPerPage;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["LoadedLocationsMapContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      loadedLocationsMap = _useContext2[0],
+      dispatchLoadedLocationsAction = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MarkedLocationIdContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      markedLocationId = _useContext4[0],
+      setMarkedLocationId = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["MultipleConfigContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      multiple = _useContext6[0],
+      multipleItemsLimit = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SelectedLocationsContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      selectedLocations = _useContext8[0],
+      dispatchSelectedLocationsAction = _useContext8[1];
+
+  var _useContext9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SortOrderContext"]),
+      _useContext10 = _slicedToArray(_useContext9, 2),
+      sortOrder = _useContext10[0],
+      setSortOrder = _useContext10[1];
+
+  var _useContext11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["SortingContext"]),
+      _useContext12 = _slicedToArray(_useContext11, 2),
+      sorting = _useContext12[0],
+      setSorting = _useContext12[1];
+
+  var allowedContentTypes = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["AllowedContentTypesContext"]);
+  var containersOnly = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContainersOnlyContext"]);
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["ContentTypesMapContext"]);
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["RestInfoContext"]);
+  var rootLocationId = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_5__["RootLocationIdContext"]);
+  var locationData = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return Object(_content_meta_preview_module__WEBPACK_IMPORTED_MODULE_4__["getLocationData"])(loadedLocationsMap, markedLocationId);
+  }, [markedLocationId, loadedLocationsMap]);
+  var userId = window.eZ.helpers.user.getId();
+
+  var expandItem = function expandItem(item, event) {
+    event.preventDefault();
+    event.currentTarget.closest('.c-list-item__label').querySelector('.c-list-item__toggler').click();
+  };
+
+  var markLocation = function markLocation(item) {
+    var locationId = item.locationId;
+
+    if (locationId === markedLocationId) {
+      return;
+    }
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_3__["loadAccordionData"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: locationId,
+      sortClause: sorting,
+      sortOrder: sortOrder,
+      rootLocationId: rootLocationId
+    }), function (locationsMap) {
+      var location = locationsMap[locationsMap.length - 1].location;
+      var contentTypeInfo = contentTypesMap[location.ContentInfo.Content.ContentType._href];
+      var isContainer = contentTypeInfo.isContainer;
+      var isNotSelectable = containersOnly && !isContainer || allowedContentTypes && !allowedContentTypes.includes(contentTypeInfo.identifier);
+      setMarkedLocationId(locationId);
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: locationsMap
+      });
+
+      if (!multiple && !isNotSelectable) {
+        dispatchSelectedLocationsAction({
+          type: 'REPLACE_SELECTED_LOCATIONS',
+          locations: [{
+            location: location
+          }]
+        });
+      }
+    });
+  };
+
+  var readSubtreeRecursive = function readSubtreeRecursive(tree) {
+    if (tree.length === 0) {
+      return [];
+    }
+
+    var location = tree.shift();
+    return [{
+      children: readSubtreeRecursive(tree),
+      limit: itemsPerPage,
+      locationId: location.parentLocationId,
+      offset: 0,
+      '_media-type': 'application/vnd.ez.api.ContentTreeLoadSubtreeRequestNode'
+    }];
+  };
+
+  var readSubtree = function readSubtree() {
+    return readSubtreeRecursive(_toConsumableArray(loadedLocationsMap));
+  };
+
+  var currentLocationPath = locationData && locationData.location ? locationData.location.pathString : '/1/';
+  var locationsLoaded = loadedLocationsMap.length > 1 || loadedLocationsMap.length === 1 && loadedLocationsMap[0].subitems.length > 0;
+  var contentTreeVisible = markedLocationId !== null && locationsLoaded || markedLocationId === null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tree"
+  }, contentTreeVisible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_tree_content_tree_module__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    userId: userId,
+    currentLocationPath: currentLocationPath,
+    rootLocationId: rootLocationId,
+    restInfo: restInfo,
+    onClickItem: expandItem,
+    readSubtree: readSubtree,
+    afterItemToggle: markLocation,
+    sort: {
+      sortClause: sorting,
+      sortOrder: sortOrder
+    }
+  }));
+};
+
+TreeView.propTypes = {
+  itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
+};
+TreeView.defaultProps = {
+  itemsPerPage: 50
+};
+/* harmony default export */ __webpack_exports__["default"] = (TreeView);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.create.tab.module.js":
+/*!*****************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.create.tab.module.js ***!
+  \*****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/helpers/deep.clone.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/deep.clone.helper.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var generateIframeUrl = function generateIframeUrl(_ref) {
+  var locationId = _ref.locationId,
+      languageCode = _ref.languageCode,
+      contentTypeIdentifier = _ref.contentTypeIdentifier;
+  return window.Routing.generate('ezplatform.content_on_the_fly.create', {
+    locationId: locationId,
+    languageCode: languageCode,
+    contentTypeIdentifier: contentTypeIdentifier
+  });
+};
+
+var ContentCreateTabModule = function ContentCreateTabModule() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      footerVisible = _useState2[0],
+      setFooterVisible = _useState2[1];
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["ContentOnTheFlyDataContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      contentOnTheFlyData = _useContext2[0],
+      setContentOnTheFlyData = _useContext2[1];
+
+  var tabs = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["TabsContext"]);
+  var contentOnTheFlyConfig = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["ContentOnTheFlyConfigContext"]);
+  var onConfirm = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["ConfirmContext"]);
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["RestInfoContext"]);
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["ActiveTabContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      activeTab = _useContext4[0],
+      setActiveTab = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["CreateContentWidgetContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      createContentVisible = _useContext6[0],
+      setCreateContentVisible = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["SelectedLocationsContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      selectedLocations = _useContext8[0],
+      dispatchSelectedLocationsAction = _useContext8[1];
+
+  var _useContext9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["LoadedLocationsMapContext"]),
+      _useContext10 = _slicedToArray(_useContext9, 2),
+      loadedLocationsMap = _useContext10[0],
+      dispatchLoadedLocationsAction = _useContext10[1];
+
+  var _useContext11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["MultipleConfigContext"]),
+      _useContext12 = _slicedToArray(_useContext11, 2),
+      multiple = _useContext12[0],
+      multipleItemsLimit = _useContext12[1];
+
+  var iframeUrl = generateIframeUrl(contentOnTheFlyData);
+  var iframeRef = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+
+  var cancelContentCreate = function cancelContentCreate() {
+    setCreateContentVisible(false);
+    setContentOnTheFlyData({});
+    setActiveTab(tabs[0].id);
+  };
+
+  var publishContent = function publishContent() {
+    var submitButton = iframeRef.current.contentWindow.document.body.querySelector('[data-action="publish"]');
+
+    if (submitButton) {
+      submitButton.click();
+    }
+  };
+
+  var handleIframeLoad = function handleIframeLoad() {
+    var locationId = iframeRef.current.contentWindow.document.querySelector('meta[name="LocationID"]');
+
+    if (locationId) {
+      Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_2__["findLocationsById"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+        id: parseInt(locationId.content, 10)
+      }), function (createdItems) {
+        if (contentOnTheFlyConfig.autoConfirmAfterPublish) {
+          var items = multiple ? [].concat(_toConsumableArray(selectedLocations), [{
+            location: createdItems[0]
+          }]) : [{
+            location: createdItems[0]
+          }];
+          onConfirm(items);
+          return;
+        }
+
+        var clonedLoadedLocations = Object(_common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_3__["default"])(loadedLocationsMap);
+        var parentLocationData = clonedLoadedLocations[clonedLoadedLocations.length - 1];
+        var action = multiple ? {
+          type: 'ADD_SELECTED_LOCATION',
+          location: createdItems[0]
+        } : {
+          type: 'REPLACE_SELECTED_LOCATIONS',
+          locations: [{
+            location: createdItems[0]
+          }]
+        };
+        parentLocationData.subitems = [];
+        parentLocationData.totalCount = parentLocationData.totalCount + 1;
+        dispatchLoadedLocationsAction({
+          type: 'SET_LOCATIONS',
+          data: clonedLoadedLocations
+        });
+        dispatchSelectedLocationsAction(action);
+        cancelContentCreate();
+      });
+    }
+
+    iframeRef.current.contentWindow.document.body.addEventListener('ez-udw-opened', hideFooter, false);
+    iframeRef.current.contentWindow.document.body.addEventListener('ez-udw-closed', showFooter, false);
+  };
+
+  var hideFooter = function hideFooter() {
+    return setFooterVisible(false);
+  };
+
+  var showFooter = function showFooter() {
+    return setFooterVisible(true);
+  };
+
+  var cancelLabel = Translator.trans(
+  /*@Desc("Cancel")*/
+  'content_create.cancel.label', {}, 'universal_discovery_widget');
+  var confirmLabel = Translator.trans(
+  /*@Desc("Confirm")*/
+  'content_create.confirm.label', {}, 'universal_discovery_widget');
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__["createCssClassNames"])({
+    'm-content-create': true,
+    'm-content-create--footer-visible': footerVisible
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.document.body.addEventListener('ez-udw-hide-footer', hideFooter, false);
+    window.document.body.addEventListener('ez-udw-show-footer', showFooter, false);
+    return function () {
+      window.document.body.removeEventListener('ez-udw-hide-footer', hideFooter, false);
+      window.document.body.removeEventListener('ez-udw-show-footer', showFooter, false);
+    };
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+    src: iframeUrl,
+    className: "m-content-create__iframe",
+    ref: iframeRef,
+    onLoad: handleIframeLoad
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-content-create__actions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "m-content-create__cancel-button btn btn-gray",
+    onClick: cancelContentCreate
+  }, cancelLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "m-content-create__confirm-button btn btn-primary",
+    onClick: publishContent
+  }, confirmLabel)));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.tabs', [{
+  id: 'content-create',
+  component: ContentCreateTabModule,
+  label: Translator.trans(
+  /*@Desc("Content create")*/
+  'content_create.label', {}, 'universal_discovery_widget'),
+  icon: window.eZ.helpers.icon.getIconPath('search'),
+  isHiddenOnList: true
+}], true);
+/* harmony default export */ __webpack_exports__["default"] = (ContentCreateTabModule);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.edit.tab.module.js":
+/*!***************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.edit.tab.module.js ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/helpers/deep.clone.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/deep.clone.helper.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var ContentEditTabModule = function ContentEditTabModule() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      footerVisible = _useState2[0],
+      setFooterVisible = _useState2[1];
+
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["RestInfoContext"]);
+  var tabs = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["TabsContext"]);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["ActiveTabContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      activeTab = _useContext2[0],
+      setActiveTab = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var _useContext5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["SelectedLocationsContext"]),
+      _useContext6 = _slicedToArray(_useContext5, 2),
+      selectedLocations = _useContext6[0],
+      dispatchSelectedLocationsAction = _useContext6[1];
+
+  var _useContext7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_1__["EditOnTheFlyDataContext"]),
+      _useContext8 = _slicedToArray(_useContext7, 2),
+      editOnTheFlyData = _useContext8[0],
+      setEditOnTheFlyData = _useContext8[1];
+
+  var cancelLabel = Translator.trans(
+  /*@Desc("Cancel")*/
+  'content_edit.cancel.label', {}, 'universal_discovery_widget');
+  var confirmLabel = Translator.trans(
+  /*@Desc("Confirm")*/
+  'content_edit.confirm.label', {}, 'universal_discovery_widget');
+  var iframeRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  var publishContent = function publishContent() {
+    var submitButton = iframeRef.current.contentWindow.document.body.querySelector('[data-action="publish"]');
+
+    if (submitButton) {
+      submitButton.click();
+    }
+  };
+
+  var cancelContentEdit = function cancelContentEdit() {
+    setActiveTab(tabs[0].id);
+    setEditOnTheFlyData({});
+  };
+
+  var handleContentPublished = function handleContentPublished(locationId) {
+    var clonedLocationsMap = Object(_common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_3__["default"])(loadedLocationsMap);
+    var isInSubitems = false;
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_2__["findLocationsByParentLocationId"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: locationId
+    }), function (response) {
+      var clonedSelectedLocation = Object(_common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_3__["default"])(selectedLocations);
+      var index = clonedSelectedLocation.findIndex(function (clonedLocation) {
+        return clonedLocation.location.id === locationId;
+      });
+
+      if (index !== -1) {
+        clonedSelectedLocation[index].location = response.location;
+        dispatchSelectedLocationsAction({
+          type: 'REPLACE_SELECTED_LOCATIONS',
+          locations: clonedSelectedLocation
+        });
+      }
+
+      dispatchLoadedLocationsAction({
+        type: 'UPDATE_LOCATIONS',
+        data: response
+      });
+    });
+    clonedLocationsMap.forEach(function (clonedLocation) {
+      var subitem = clonedLocation.subitems.find(function (subitem) {
+        return subitem.location.id === locationId;
+      });
+
+      if (subitem) {
+        clonedLocation.subitems = [];
+        isInSubitems = true;
+      }
+    });
+
+    if (isInSubitems) {
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: clonedLocationsMap
+      });
+    }
+
+    cancelContentEdit();
+  };
+
+  var handleIframeLoad = function handleIframeLoad() {
+    var locationId = iframeRef.current.contentWindow.document.querySelector('meta[name="LocationID"]');
+
+    if (locationId) {
+      handleContentPublished(parseInt(locationId.content, 10));
+    }
+
+    iframeRef.current.contentWindow.document.body.addEventListener('ez-udw-opened', hideFooter, false);
+    iframeRef.current.contentWindow.document.body.addEventListener('ez-udw-closed', showFooter, false);
+  };
+
+  var hideFooter = function hideFooter() {
+    return setFooterVisible(false);
+  };
+
+  var showFooter = function showFooter() {
+    return setFooterVisible(true);
+  };
+
+  var iframeUrl = window.Routing.generate('ezplatform.content_on_the_fly.edit', {
+    contentId: editOnTheFlyData.contentId,
+    versionNo: editOnTheFlyData.versionNo,
+    languageCode: editOnTheFlyData.languageCode,
+    locationId: editOnTheFlyData.locationId
+  }, true);
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_4__["createCssClassNames"])({
+    'c-content-edit': true,
+    'c-content-edit--footer-visible': footerVisible
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.document.body.addEventListener('ez-udw-hide-footer', hideFooter, false);
+    window.document.body.addEventListener('ez-udw-show-footer', showFooter, false);
+    return function () {
+      window.document.body.removeEventListener('ez-udw-hide-footer', hideFooter, false);
+      window.document.body.removeEventListener('ez-udw-show-footer', showFooter, false);
+    };
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+    src: iframeUrl,
+    className: "c-content-edit__iframe",
+    ref: iframeRef,
+    onLoad: handleIframeLoad
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-edit__actions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-content-edit__cancel-button btn btn-gray",
+    onClick: cancelContentEdit
+  }, cancelLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-content-edit__confirm-button btn btn-primary",
+    onClick: publishContent
+  }, confirmLabel)));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.tabs', [{
+  id: 'content-edit',
+  component: ContentEditTabModule,
+  label: Translator.trans(
+  /*@Desc("Content edit")*/
+  'content_edit.label', {}, 'universal_discovery_widget'),
+  isHiddenOnList: true
+}], true);
+/* harmony default export */ __webpack_exports__["default"] = (ContentEditTabModule);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.meta.preview.module.js":
+/*!*******************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.meta.preview.module.js ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: getLocationData, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLocationData", function() { return getLocationData; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+/* harmony import */ var _common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/thumbnail/thumbnail */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/thumbnail/thumbnail.js");
+/* harmony import */ var _components_translation_selector_translation_selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/translation-selector/translation.selector */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/translation-selector/translation.selector.js");
+/* harmony import */ var _components_content_edit_button_content_edit_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/content-edit-button/content.edit.button */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/content-edit-button/content.edit.button.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var getLocationData = function getLocationData(loadedLocationsMap, markedLocationId) {
+  return loadedLocationsMap.find(function (loadedLocation) {
+    return loadedLocation.parentLocationId === markedLocationId;
+  }) || loadedLocationsMap.length && loadedLocationsMap[loadedLocationsMap.length - 1].subitems.find(function (subitem) {
+    return subitem.location.id === markedLocationId;
+  });
+};
+
+var ContentMetaPreview = function ContentMetaPreview() {
+  var refContentMetaPreview = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["MarkedLocationIdContext"]),
+      _useContext2 = _slicedToArray(_useContext, 2),
+      markedLocationId = _useContext2[0],
+      setMarkedLocationId = _useContext2[1];
+
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["LoadedLocationsMapContext"]),
+      _useContext4 = _slicedToArray(_useContext3, 2),
+      loadedLocationsMap = _useContext4[0],
+      dispatchLoadedLocationsAction = _useContext4[1];
+
+  var contentTypesMap = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["ContentTypesMapContext"]);
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["RestInfoContext"]);
+  var allowRedirects = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_6__["AllowRedirectsContext"]);
+  var formatShortDateTime = window.eZ.helpers.timezone.formatShortDateTime;
+  var locationData = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    return getLocationData(loadedLocationsMap, markedLocationId);
+  }, [markedLocationId, loadedLocationsMap]);
+  var bookmarkLabel = Translator.trans(
+  /*@Desc("Bookmark")*/
+  'meta_preview.bookmark', {}, 'universal_discovery_widget');
+  var previewLabel = Translator.trans(
+  /*@Desc("Preview")*/
+  'meta_preview.preview', {}, 'universal_discovery_widget');
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.eZ.helpers.tooltips.parse(refContentMetaPreview.current);
+  });
+
+  if (!locationData || !locationData.location || !locationData.version || markedLocationId === 1) {
+    return null;
+  }
+
+  var bookmarked = locationData.bookmarked,
+      location = locationData.location,
+      version = locationData.version,
+      permissions = locationData.permissions;
+  var bookmarkIconName = bookmarked ? 'bookmark-active' : 'bookmark';
+
+  var toggleBookmarked = function toggleBookmarked() {
+    var toggleBookmark = bookmarked ? _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__["removeBookmark"] : _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_5__["addBookmark"];
+    toggleBookmark(_objectSpread(_objectSpread({}, restInfo), {}, {
+      locationId: location.id
+    }), function () {
+      dispatchLoadedLocationsAction({
+        type: 'UPDATE_LOCATIONS',
+        data: _objectSpread(_objectSpread({}, locationData), {}, {
+          bookmarked: !bookmarked
+        })
+      });
+    });
+  };
+
+  var previewContent = function previewContent() {
+    window.location.href = window.Routing.generate('_ez_content_view', {
+      contentId: location.ContentInfo.Content._id,
+      locationId: location.id
+    }, true);
+  };
+
+  var renderActions = function renderActions() {
+    var previewButton = allowRedirects ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "c-content-meta-preview__preview-button btn btn-icon",
+      onClick: previewContent,
+      "data-tooltip-container-selector": ".c-udw-tab",
+      title: previewLabel
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      name: "view",
+      extraClasses: "ez-icon--small-medium ez-icon--secondary"
+    })) : null;
+    var hasAccess = permissions && permissions.edit.hasAccess;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "c-content-meta-preview__actions"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_content_edit_button_content_edit_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      location: location,
+      version: version,
+      isDisabled: !hasAccess
+    }), previewButton);
+  };
+
+  var lastModifiedLabel = Translator.trans(
+  /*@Desc("Last Modified")*/
+  'meta_preview.last_modified', {}, 'universal_discovery_widget');
+  var creationDateLabel = Translator.trans(
+  /*@Desc("Creation Date")*/
+  'meta_preview.creation_date', {}, 'universal_discovery_widget');
+  var translationsLabel = Translator.trans(
+  /*@Desc("Translations")*/
+  'meta_preview.translations', {}, 'universal_discovery_widget');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview",
+    ref: refContentMetaPreview
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__preview"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_thumbnail_thumbnail__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    thumbnailData: version.Thumbnail,
+    iconExtraClasses: "ez-icon--extra-large"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "c-content-meta-preview__content-name"
+  }, location.ContentInfo.Content.TranslatedName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "c-content-meta-preview__toggle-bookmark-button btn btn-icon",
+    onClick: toggleBookmarked,
+    title: bookmarkLabel,
+    "data-placement": "left",
+    "data-tooltip-container-selector": ".c-content-meta-preview"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    name: bookmarkIconName,
+    extraClasses: "ez-icon--small ez-icon--secondary"
+  }))), renderActions(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__content-type-name"
+  }, contentTypesMap[location.ContentInfo.Content.ContentType._href].name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__details-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, lastModifiedLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, formatShortDateTime(new Date(location.ContentInfo.Content.lastModificationDate)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__details-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, creationDateLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, formatShortDateTime(new Date(location.ContentInfo.Content.publishedDate)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__details-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, translationsLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-content-meta-preview__translations-wrapper"
+  }, version.VersionInfo.languageCodes.split(',').map(function (languageCode) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      key: languageCode,
+      className: "c-content-meta-preview__translation"
+    }, window.eZ.adminUiConfig.languages.mappings[languageCode].name);
+  }))))));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.contentMetaPreview', ContentMetaPreview);
+/* harmony default export */ __webpack_exports__["default"] = (ContentMetaPreview);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useFindLocationsByParentLocationIdFetch.js":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useFindLocationsByParentLocationIdFetch.js ***!
+  \*************************************************************************************************************************************************/
+/*! exports provided: useFindLocationsByParentLocationIdFetch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFindLocationsByParentLocationIdFetch", function() { return useFindLocationsByParentLocationIdFetch; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var fetchInitialState = {
+  dataFetched: false,
+  data: {}
+};
+
+var fetchReducer = function fetchReducer(state, action) {
+  switch (action.type) {
+    case 'FETCH_START':
+      return fetchInitialState;
+
+    case 'FETCH_END':
+      return {
+        data: action.data,
+        dataFetched: true
+      };
+
+    default:
+      throw new Error();
+  }
+};
+
+var useFindLocationsByParentLocationIdFetch = function useFindLocationsByParentLocationIdFetch(locationData, _ref, limit, offset) {
+  var sortClause = _ref.sortClause,
+      sortOrder = _ref.sortOrder;
+  var gridView = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__["RestInfoContext"]);
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(fetchReducer, fetchInitialState),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      state = _useReducer2[0],
+      dispatch = _useReducer2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var effectCleaned = false;
+
+    if (!locationData.parentLocationId || locationData.collapsed || locationData.subitems.length >= locationData.totalCount || locationData.subitems.length >= limit + offset) {
+      dispatch({
+        type: 'FETCH_END',
+        data: {}
+      });
+      return;
+    }
+
+    dispatch({
+      type: 'FETCH_START'
+    });
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__["findLocationsByParentLocationId"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: locationData.parentLocationId,
+      sortClause: sortClause,
+      sortOrder: sortOrder,
+      limit: limit,
+      offset: offset,
+      gridView: gridView
+    }), function (response) {
+      if (effectCleaned) {
+        return;
+      }
+
+      dispatch({
+        type: 'FETCH_END',
+        data: response
+      });
+    });
+    return function () {
+      effectCleaned = true;
+    };
+  }, [restInfo, sortClause, sortOrder, locationData.parentLocationId, locationData.subitems.length, limit, offset, gridView, locationData.collapsed]);
+  return [state.data, !state.dataFetched];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadBookmarksFetch.js":
+/*!*******************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadBookmarksFetch.js ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: useLoadBookmarksFetch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadBookmarksFetch", function() { return useLoadBookmarksFetch; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var fetchInitialState = {
+  dataFetched: false,
+  data: {}
+};
+
+var fetchReducer = function fetchReducer(state, action) {
+  switch (action.type) {
+    case 'FETCH_START':
+      return fetchInitialState;
+
+    case 'FETCH_END':
+      return {
+        data: action.data,
+        dataFetched: true
+      };
+
+    default:
+      throw new Error();
+  }
+};
+
+var useLoadBookmarksFetch = function useLoadBookmarksFetch(limit, offset) {
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__["RestInfoContext"]);
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(fetchReducer, fetchInitialState),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      state = _useReducer2[0],
+      dispatch = _useReducer2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var effectCleaned = false;
+    dispatch({
+      type: 'FETCH_START'
+    });
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__["loadBookmarks"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      limit: limit,
+      offset: offset
+    }), function (response) {
+      if (effectCleaned) {
+        return;
+      }
+
+      dispatch({
+        type: 'FETCH_END',
+        data: response
+      });
+    });
+    return function () {
+      effectCleaned = true;
+    };
+  }, [restInfo, limit, offset]);
+  return [state.data, !state.dataFetched];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadedLocationsReducer.js":
+/*!***********************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadedLocationsReducer.js ***!
+  \***********************************************************************************************************************************/
+/*! exports provided: useLoadedLocationsReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLoadedLocationsReducer", function() { return useLoadedLocationsReducer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+var initialState = [{
+  parentLocationId: 1,
+  subitems: []
+}];
+
+var cutLocationsAfter = function cutLocationsAfter(state, action) {
+  var itemIndex = state.findIndex(function (data) {
+    return data.parentLocationId === action.locationId;
+  });
+
+  if (itemIndex === -1) {
+    return state;
+  }
+
+  return state.slice(0, itemIndex + 1);
+};
+
+var updateLocationsMap = function updateLocationsMap(state, action) {
+  var parentLocationIndex = state.findIndex(function (location) {
+    return location.parentLocationId === action.data.parentLocationId;
+  });
+
+  var updatedState = _toConsumableArray(state);
+
+  if (parentLocationIndex !== -1) {
+    updatedState[parentLocationIndex] = action.data;
+    return updatedState;
+  }
+
+  var childrenIndex = state.findIndex(function (data) {
+    return data.subitems.find(function (item) {
+      return item.location.id === action.data.parentLocationId;
+    });
+  });
+
+  if (childrenIndex !== -1) {
+    updatedState = updatedState.slice(0, childrenIndex + 1);
+  }
+
+  updatedState.push(action.data);
+  return updatedState;
+};
+
+var setLocations = function setLocations(state, action) {
+  return action.data;
+};
+
+var clearLoactions = function clearLoactions() {
+  return [];
+};
+
+var loadedLocationsReducer = function loadedLocationsReducer(state, action) {
+  switch (action.type) {
+    case 'CUT_LOCATIONS':
+      return cutLocationsAfter(state, action);
+
+    case 'UPDATE_LOCATIONS':
+      return updateLocationsMap(state, action);
+
+    case 'SET_LOCATIONS':
+      return setLocations(state, action);
+
+    case 'CLEAR_LOCATIONS':
+      return clearLoactions();
+
+    default:
+      throw new Error();
+  }
+};
+
+var useLoadedLocationsReducer = function useLoadedLocationsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(loadedLocationsReducer, state),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      loadedLocationsMap = _useReducer2[0],
+      dispatchLoadedLocationsAction = _useReducer2[1];
+
+  return [loadedLocationsMap, dispatchLoadedLocationsAction];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSearchByQueryFetch.js":
+/*!*******************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSearchByQueryFetch.js ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: useSearchByQueryFetch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSearchByQueryFetch", function() { return useSearchByQueryFetch; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var SEARCH_START = 'SEARCH_START';
+var SEARCH_END = 'SEARCH_END';
+
+var startSearch = function startSearch() {
+  return {
+    isLoading: true,
+    data: {}
+  };
+};
+
+var endSearch = function endSearch(_ref) {
+  var response = _ref.response;
+  return {
+    isLoading: false,
+    data: response
+  };
+};
+
+var searchByQueryReducer = function searchByQueryReducer(state, action) {
+  switch (action.type) {
+    case SEARCH_START:
+      return startSearch();
+
+    case SEARCH_END:
+      return endSearch(action);
+
+    default:
+      throw new Error();
+  }
+};
+
+var useSearchByQueryFetch = function useSearchByQueryFetch() {
+  var restInfo = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_2__["RestInfoContext"]);
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(searchByQueryReducer, {
+    isLoading: false,
+    data: {}
+  }),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      _useReducer2$ = _useReducer2[0],
+      isLoading = _useReducer2$.isLoading,
+      data = _useReducer2$.data,
+      dispatch = _useReducer2[1];
+
+  var searchByQuery = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (searchText, contentTypesIdentifiers, sectionIdentifier, subtreePathString, limit, offset, languageCode) {
+    var handleFetch = function handleFetch(response) {
+      dispatch({
+        type: SEARCH_END,
+        response: response
+      });
+    };
+
+    var query = {
+      FullTextCriterion: "".concat(searchText, "*")
+    };
+
+    if (contentTypesIdentifiers && contentTypesIdentifiers.length) {
+      query.ContentTypeIdentifierCriterion = contentTypesIdentifiers;
+    }
+
+    if (sectionIdentifier) {
+      query.SectionIdentifierCriterion = sectionIdentifier;
+    }
+
+    if (subtreePathString) {
+      query.SubtreeCriterion = subtreePathString;
+    }
+
+    dispatch({
+      type: SEARCH_START
+    });
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_1__["findLocationsBySearchQuery"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      query: query,
+      limit: limit,
+      offset: offset,
+      languageCode: languageCode
+    }), handleFetch);
+  }, [restInfo, dispatch]);
+  return [isLoading, data, searchByQuery];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSelectedLocationsReducer.js":
+/*!*************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSelectedLocationsReducer.js ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: useSelectedLocationsReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSelectedLocationsReducer", function() { return useSelectedLocationsReducer; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+var initialState = [];
+
+var selectedLocationsReducer = function selectedLocationsReducer(state, action) {
+  switch (action.type) {
+    case 'ADD_SELECTED_LOCATION':
+      return [].concat(_toConsumableArray(state), [{
+        location: action.location,
+        permissions: action.permissions
+      }]);
+
+    case 'REMOVE_SELECTED_LOCATION':
+      return state.filter(function (selectedItem) {
+        return selectedItem.location.id !== action.id;
+      });
+
+    case 'CLEAR_SELECTED_LOCATIONS':
+      return [];
+
+    case 'REPLACE_SELECTED_LOCATIONS':
+      return action.locations;
+
+    default:
+      throw new Error();
+  }
+};
+
+var useSelectedLocationsReducer = function useSelectedLocationsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(selectedLocationsReducer, state),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      selectedLocations = _useReducer2[0],
+      dispatchSelectedLocationsAction = _useReducer2[1];
+
+  return [selectedLocations, dispatchSelectedLocationsAction];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/search.tab.module.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/search.tab.module.js ***!
+  \*********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_tab_tab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tab/tab */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/tab/tab.js");
+/* harmony import */ var _components_search_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/search/search */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/components/search/search.js");
+/* harmony import */ var _universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./universal.discovery.module */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js");
+
+
+
+
+
+var SearchTabModule = function SearchTabModule() {
+  var tabsConfig = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_universal_discovery_module__WEBPACK_IMPORTED_MODULE_3__["TabsConfigContext"]);
+  var actionsDisabledMap = {
+    'content-create-button': true,
+    'sort-switcher': true,
+    'view-switcher': true
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "m-search-tab"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_tab_tab__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    actionsDisabledMap: actionsDisabledMap
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_search_search__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    itemsPerPage: tabsConfig.search.itemsPerPage
+  })));
+};
+
+eZ.addConfig('adminUiConfig.universalDiscoveryWidget.tabs', [{
+  id: 'search',
+  component: SearchTabModule,
+  label: Translator.trans(
+  /*@Desc("Search")*/
+  'search.label', {}, 'universal_discovery_widget'),
+  icon: window.eZ.helpers.icon.getIconPath('search')
+}], true);
+/* harmony default export */ __webpack_exports__["default"] = (SearchTabModule);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js":
+/*!****************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js ***!
+  \****************************************************************************************************************************************/
+/*! exports provided: QUERY_LIMIT, findLocationsByParentLocationId, loadAccordionData, findLocationsBySearchQuery, findLocationsById, findContentInfo, loadBookmarks, addBookmark, removeBookmark, loadContentTypes, createDraft, loadContentInfo, loadLocationsWithPermissions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QUERY_LIMIT", function() { return QUERY_LIMIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findLocationsByParentLocationId", function() { return findLocationsByParentLocationId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadAccordionData", function() { return loadAccordionData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findLocationsBySearchQuery", function() { return findLocationsBySearchQuery; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findLocationsById", function() { return findLocationsById; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findContentInfo", function() { return findContentInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadBookmarks", function() { return loadBookmarks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBookmark", function() { return addBookmark; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeBookmark", function() { return removeBookmark; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadContentTypes", function() { return loadContentTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createDraft", function() { return createDraft; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadContentInfo", function() { return loadContentInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadLocationsWithPermissions", function() { return loadLocationsWithPermissions; });
+/* harmony import */ var _common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common/services/notification.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/services/notification.service.js");
+/* harmony import */ var _common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common/helpers/request.helper.js */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/request.helper.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var HEADERS_CREATE_VIEW = {
+  Accept: 'application/vnd.ez.api.View+json; version=1.1',
+  'Content-Type': 'application/vnd.ez.api.ViewInput+json; version=1.1'
+};
+var ENDPOINT_CREATE_VIEW = '/api/ezp/v2/views';
+var ENDPOINT_BOOKMARK = '/api/ezp/v2/bookmark';
+var QUERY_LIMIT = 50;
+
+var mapSubitems = function mapSubitems(subitems) {
+  return subitems.locations.map(function (location) {
+    var mappedSubitems = {
+      location: location.Location
+    };
+
+    if (subitems.versions) {
+      var version = subitems.versions.find(function (version) {
+        return version.Version.VersionInfo.Content._href === location.Location.Content._href;
+      });
+      mappedSubitems.version = version.Version;
+    }
+
+    return mappedSubitems;
+  });
+};
+
+var findLocationsByParentLocationId = function findLocationsByParentLocationId(_ref, callback) {
+  var token = _ref.token,
+      parentLocationId = _ref.parentLocationId,
+      _ref$limit = _ref.limit,
+      limit = _ref$limit === void 0 ? QUERY_LIMIT : _ref$limit,
+      _ref$offset = _ref.offset,
+      offset = _ref$offset === void 0 ? 0 : _ref$offset,
+      _ref$sortClause = _ref.sortClause,
+      sortClause = _ref$sortClause === void 0 ? 'DatePublished' : _ref$sortClause,
+      _ref$sortOrder = _ref.sortOrder,
+      sortOrder = _ref$sortOrder === void 0 ? 'ascending' : _ref$sortOrder,
+      _ref$gridView = _ref.gridView,
+      gridView = _ref$gridView === void 0 ? false : _ref$gridView;
+  var routeName = gridView ? 'ezplatform.udw.location_gridview.data' : 'ezplatform.udw.location.data';
+  var url = window.Routing.generate(routeName, {
+    locationId: parentLocationId
+  });
+  var request = new Request("".concat(url, "?limit=").concat(limit, "&offset=").concat(offset, "&sortClause=").concat(sortClause, "&sortOrder=").concat(sortOrder), {
+    method: 'GET',
+    headers: {
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var bookmarked = response.bookmarked,
+        location = response.location,
+        permissions = response.permissions,
+        subitems = response.subitems,
+        version = response.version;
+    var subitemsData = mapSubitems(subitems);
+    var locationData = {
+      location: location ? location.Location : null,
+      version: version ? version.Version : null,
+      totalCount: subitems.totalCount,
+      subitems: subitemsData,
+      bookmarked: bookmarked,
+      permissions: permissions,
+      parentLocationId: parentLocationId
+    };
+    callback(locationData);
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var loadAccordionData = function loadAccordionData(_ref2, callback) {
+  var token = _ref2.token,
+      parentLocationId = _ref2.parentLocationId,
+      _ref2$limit = _ref2.limit,
+      limit = _ref2$limit === void 0 ? QUERY_LIMIT : _ref2$limit,
+      _ref2$sortClause = _ref2.sortClause,
+      sortClause = _ref2$sortClause === void 0 ? 'DatePublished' : _ref2$sortClause,
+      _ref2$sortOrder = _ref2.sortOrder,
+      sortOrder = _ref2$sortOrder === void 0 ? 'ascending' : _ref2$sortOrder,
+      _ref2$gridView = _ref2.gridView,
+      gridView = _ref2$gridView === void 0 ? false : _ref2$gridView,
+      _ref2$rootLocationId = _ref2.rootLocationId,
+      rootLocationId = _ref2$rootLocationId === void 0 ? 1 : _ref2$rootLocationId;
+  var routeName = gridView ? 'ezplatform.udw.accordion_gridview.data' : 'ezplatform.udw.accordion.data';
+  var url = window.Routing.generate(routeName, {
+    locationId: parentLocationId
+  });
+  var request = new Request("".concat(url, "?limit=").concat(limit, "&sortClause=").concat(sortClause, "&sortOrder=").concat(sortOrder, "&rootLocationId=").concat(rootLocationId), {
+    method: 'GET',
+    headers: {
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var mappedItems = response.breadcrumb.map(function (item) {
+      var location = item.Location;
+      var itemData = response.columns[location.id];
+      var mappedItem = {
+        location: location,
+        totalCount: itemData ? itemData.subitems.totalCount : undefined,
+        subitems: itemData ? mapSubitems(itemData.subitems) : [],
+        parentLocationId: location.id,
+        collapsed: !response.columns[location.id]
+      };
+      return mappedItem;
+    });
+    var rootLocationData = response.columns[1];
+    var lastLocationData = response.columns[parentLocationId];
+
+    if (rootLocationData) {
+      mappedItems.unshift({
+        totalCount: rootLocationData ? rootLocationData.subitems.totalCount : undefined,
+        subitems: rootLocationData ? mapSubitems(rootLocationData.subitems) : [],
+        parentLocationId: 1,
+        collapsed: false
+      });
+    }
+
+    mappedItems.push({
+      location: lastLocationData.location.Location,
+      version: lastLocationData.version.Version,
+      totalCount: lastLocationData ? lastLocationData.subitems.totalCount : undefined,
+      subitems: lastLocationData ? mapSubitems(lastLocationData.subitems) : [],
+      bookmarked: lastLocationData.bookmarked,
+      permissions: lastLocationData.permissions,
+      parentLocationId: parentLocationId
+    });
+    callback(mappedItems);
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var findLocationsBySearchQuery = function findLocationsBySearchQuery(_ref3, callback) {
+  var token = _ref3.token,
+      siteaccess = _ref3.siteaccess,
+      query = _ref3.query,
+      _ref3$limit = _ref3.limit,
+      limit = _ref3$limit === void 0 ? QUERY_LIMIT : _ref3$limit,
+      _ref3$offset = _ref3.offset,
+      offset = _ref3$offset === void 0 ? 0 : _ref3$offset,
+      _ref3$languageCode = _ref3.languageCode,
+      languageCode = _ref3$languageCode === void 0 ? null : _ref3$languageCode;
+  var useAlwaysAvailable = true;
+  var body = JSON.stringify({
+    ViewInput: {
+      identifier: "udw-locations-by-search-query-".concat(query.FullTextCriterion),
+      "public": false,
+      languageCode: languageCode,
+      useAlwaysAvailable: useAlwaysAvailable,
+      LocationQuery: {
+        FacetBuilders: {},
+        SortClauses: {},
+        Query: query,
+        limit: limit,
+        offset: offset
+      }
+    }
+  });
+  var request = new Request(ENDPOINT_CREATE_VIEW, {
+    method: 'POST',
+    headers: _objectSpread(_objectSpread({}, HEADERS_CREATE_VIEW), {}, {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    }),
+    body: body,
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var _response$View$Result = response.View.Result,
+        count = _response$View$Result.count,
+        searchHits = _response$View$Result.searchHits;
+    var items = searchHits.searchHit.map(function (searchHit) {
+      return searchHit.value.Location;
+    });
+    callback({
+      items: items,
+      count: count
+    });
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var findLocationsById = function findLocationsById(_ref4, callback) {
+  var token = _ref4.token,
+      siteaccess = _ref4.siteaccess,
+      id = _ref4.id,
+      _ref4$limit = _ref4.limit,
+      limit = _ref4$limit === void 0 ? QUERY_LIMIT : _ref4$limit,
+      _ref4$offset = _ref4.offset,
+      offset = _ref4$offset === void 0 ? 0 : _ref4$offset;
+  var body = JSON.stringify({
+    ViewInput: {
+      identifier: "udw-locations-by-id-".concat(id),
+      "public": false,
+      LocationQuery: {
+        FacetBuilders: {},
+        SortClauses: {
+          SectionIdentifier: 'ascending'
+        },
+        Filter: {
+          LocationIdCriterion: id
+        },
+        limit: limit,
+        offset: offset
+      }
+    }
+  });
+  var request = new Request(ENDPOINT_CREATE_VIEW, {
+    method: 'POST',
+    headers: _objectSpread(_objectSpread({}, HEADERS_CREATE_VIEW), {}, {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    }),
+    body: body,
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var items = response.View.Result.searchHits.searchHit.map(function (searchHit) {
+      return searchHit.value.Location;
+    });
+    callback(items);
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var findContentInfo = function findContentInfo(_ref5, callback) {
+  var token = _ref5.token,
+      siteaccess = _ref5.siteaccess,
+      contentId = _ref5.contentId,
+      _ref5$limit = _ref5.limit,
+      limit = _ref5$limit === void 0 ? QUERY_LIMIT : _ref5$limit,
+      _ref5$offset = _ref5.offset,
+      offset = _ref5$offset === void 0 ? 0 : _ref5$offset;
+  var body = JSON.stringify({
+    ViewInput: {
+      identifier: "udw-load-content-info-".concat(contentId),
+      "public": false,
+      ContentQuery: {
+        FacetBuilders: {},
+        SortClauses: {},
+        Filter: {
+          ContentIdCriterion: "".concat(contentId)
+        },
+        limit: limit,
+        offset: offset
+      }
+    }
+  });
+  var request = new Request(ENDPOINT_CREATE_VIEW, {
+    method: 'POST',
+    headers: _objectSpread(_objectSpread({}, HEADERS_CREATE_VIEW), {}, {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    }),
+    body: body,
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var items = response.View.Result.searchHits.searchHit.map(function (searchHit) {
+      return searchHit.value.Content;
+    });
+    callback(items);
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var loadBookmarks = function loadBookmarks(_ref6, callback) {
+  var token = _ref6.token,
+      siteaccess = _ref6.siteaccess,
+      limit = _ref6.limit,
+      offset = _ref6.offset;
+  var request = new Request("".concat(ENDPOINT_BOOKMARK, "?limit=").concat(limit, "&offset=").concat(offset), {
+    method: 'GET',
+    headers: {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token,
+      Accept: 'application/vnd.ez.api.ContentTypeInfoList+json'
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var count = response.BookmarkList.count;
+    var items = response.BookmarkList.items.map(function (item) {
+      return item.Location;
+    });
+    callback({
+      count: count,
+      items: items
+    });
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+
+var toggleBookmark = function toggleBookmark(_ref7, callback, method) {
+  var siteaccess = _ref7.siteaccess,
+      token = _ref7.token,
+      locationId = _ref7.locationId;
+  var request = new Request("".concat(ENDPOINT_BOOKMARK, "/").concat(locationId), {
+    method: method,
+    headers: {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponseStatus"]).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+
+var addBookmark = function addBookmark(options, callback) {
+  toggleBookmark(options, callback, 'POST');
+};
+var removeBookmark = function removeBookmark(options, callback) {
+  toggleBookmark(options, callback, 'DELETE');
+};
+var loadContentTypes = function loadContentTypes(_ref8, callback) {
+  var token = _ref8.token,
+      siteaccess = _ref8.siteaccess;
+  var request = new Request('/api/ezp/v2/content/types', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/vnd.ez.api.ContentTypeInfoList+json',
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var createDraft = function createDraft(_ref9, callback) {
+  var token = _ref9.token,
+      siteaccess = _ref9.siteaccess,
+      contentId = _ref9.contentId;
+  var request = new Request("/api/ezp/v2/content/objects/".concat(contentId, "/currentversion"), {
+    method: 'COPY',
+    headers: {
+      Accept: 'application/vnd.ez.api.VersionUpdate+json',
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var loadContentInfo = function loadContentInfo(_ref10, callback) {
+  var token = _ref10.token,
+      siteaccess = _ref10.siteaccess,
+      contentId = _ref10.contentId,
+      _ref10$limit = _ref10.limit,
+      limit = _ref10$limit === void 0 ? QUERY_LIMIT : _ref10$limit,
+      _ref10$offset = _ref10.offset,
+      offset = _ref10$offset === void 0 ? 0 : _ref10$offset;
+  var body = JSON.stringify({
+    ViewInput: {
+      identifier: "udw-load-content-info-".concat(contentId),
+      "public": false,
+      ContentQuery: {
+        FacetBuilders: {},
+        SortClauses: {},
+        Filter: {
+          ContentIdCriterion: "".concat(contentId)
+        },
+        limit: limit,
+        offset: offset
+      }
+    }
+  });
+  var request = new Request(ENDPOINT_CREATE_VIEW, {
+    method: 'POST',
+    headers: Object.assign({}, HEADERS_CREATE_VIEW, {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    }),
+    body: body,
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(function (response) {
+    var items = response.View.Result.searchHits.searchHit.map(function (searchHit) {
+      return searchHit.value.Content;
+    });
+    callback(items);
+  })["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+var loadLocationsWithPermissions = function loadLocationsWithPermissions(_ref11, callback) {
+  var locationIds = _ref11.locationIds;
+  var url = window.Routing.generate('ezplatform.udw.locations.data');
+  var request = new Request("".concat(url, "?locationIds=").concat(locationIds), {
+    method: 'GET',
+    mode: 'same-origin',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(_common_helpers_request_helper_js__WEBPACK_IMPORTED_MODULE_1__["handleRequestResponse"]).then(callback)["catch"](_common_services_notification_service__WEBPACK_IMPORTED_MODULE_0__["showErrorNotification"]);
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js":
+/*!******************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/universal.discovery.module.js ***!
+  \******************************************************************************************************************************/
+/*! exports provided: SORTING_OPTIONS, VIEWS, UDWContext, RestInfoContext, AllowRedirectsContext, AllowConfirmationContext, ContentTypesMapContext, ContentTypesInfoMapContext, MultipleConfigContext, ContainersOnlyContext, AllowedContentTypesContext, ActiveTabContext, TabsConfigContext, TabsContext, TitleContext, CancelContext, ConfirmContext, SortingContext, SortOrderContext, CurrentViewContext, MarkedLocationIdContext, LoadedLocationsMapContext, RootLocationIdContext, SelectedLocationsContext, CreateContentWidgetContext, ContentOnTheFlyDataContext, ContentOnTheFlyConfigContext, EditOnTheFlyDataContext, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SORTING_OPTIONS", function() { return SORTING_OPTIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VIEWS", function() { return VIEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UDWContext", function() { return UDWContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestInfoContext", function() { return RestInfoContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllowRedirectsContext", function() { return AllowRedirectsContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllowConfirmationContext", function() { return AllowConfirmationContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentTypesMapContext", function() { return ContentTypesMapContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentTypesInfoMapContext", function() { return ContentTypesInfoMapContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MultipleConfigContext", function() { return MultipleConfigContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContainersOnlyContext", function() { return ContainersOnlyContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllowedContentTypesContext", function() { return AllowedContentTypesContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActiveTabContext", function() { return ActiveTabContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsConfigContext", function() { return TabsConfigContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsContext", function() { return TabsContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleContext", function() { return TitleContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CancelContext", function() { return CancelContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmContext", function() { return ConfirmContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortingContext", function() { return SortingContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortOrderContext", function() { return SortOrderContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrentViewContext", function() { return CurrentViewContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkedLocationIdContext", function() { return MarkedLocationIdContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadedLocationsMapContext", function() { return LoadedLocationsMapContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RootLocationIdContext", function() { return RootLocationIdContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedLocationsContext", function() { return SelectedLocationsContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateContentWidgetContext", function() { return CreateContentWidgetContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentOnTheFlyDataContext", function() { return ContentOnTheFlyDataContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentOnTheFlyConfigContext", function() { return ContentOnTheFlyConfigContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditOnTheFlyDataContext", function() { return EditOnTheFlyDataContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../common/helpers/deep.clone.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/deep.clone.helper.js");
+/* harmony import */ var _common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/helpers/css.class.names */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/helpers/css.class.names.js");
+/* harmony import */ var _hooks_useLoadedLocationsReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hooks/useLoadedLocationsReducer */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useLoadedLocationsReducer.js");
+/* harmony import */ var _hooks_useSelectedLocationsReducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hooks/useSelectedLocationsReducer */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/hooks/useSelectedLocationsReducer.js");
+/* harmony import */ var _services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/universal.discovery.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/services/universal.discovery.service.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var CLASS_SCROLL_DISABLED = 'ez-scroll-disabled';
+var SORTING_OPTIONS = [{
+  label: Translator.trans(
+  /*@Desc("Date")*/
+  'sorting.date.label', {}, 'universal_discovery_widget'),
+  tooltipLabel: Translator.trans(
+  /*@Desc("Sort by Date")*/
+  'sorting.date.tooltip', {}, 'universal_discovery_widget'),
+  sortClause: 'DatePublished'
+}, {
+  label: Translator.trans(
+  /*@Desc("Name")*/
+  'sorting.name.label', {}, 'universal_discovery_widget'),
+  tooltipLabel: Translator.trans(
+  /*@Desc("Sort by Name")*/
+  'sorting.name.tooltip', {}, 'universal_discovery_widget'),
+  sortClause: 'ContentName'
+}];
+var VIEWS = [{
+  id: 'grid',
+  icon: 'view-grid',
+  tooltipLabel: Translator.trans(
+  /*@Desc("Grid view")*/
+  'sorting.grid.view', {}, 'universal_discovery_widget')
+}, {
+  id: 'finder',
+  icon: 'panels',
+  tooltipLabel: Translator.trans(
+  /*@Desc("Panels view")*/
+  'sorting.panels.view', {}, 'universal_discovery_widget')
+}, {
+  id: 'tree',
+  icon: 'content-tree',
+  tooltipLabel: Translator.trans(
+  /*@Desc("Tree view")*/
+  'sorting.tree.view', {}, 'universal_discovery_widget')
+}];
+var restInfo = {
+  token: document.querySelector('meta[name="CSRF-Token"]').content,
+  siteaccess: document.querySelector('meta[name="SiteAccess"]').content
+};
+var contentTypesMap = Object.values(eZ.adminUiConfig.contentTypes).reduce(function (contentTypesMap, contentTypesGroup) {
+  contentTypesGroup.forEach(function (contentType) {
+    contentTypesMap[contentType.href] = contentType;
+  });
+  return contentTypesMap;
+}, {});
+var UDWContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var RestInfoContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var AllowRedirectsContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var AllowConfirmationContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ContentTypesMapContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ContentTypesInfoMapContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var MultipleConfigContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ContainersOnlyContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var AllowedContentTypesContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ActiveTabContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var TabsConfigContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var TabsContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var TitleContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var CancelContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ConfirmContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var SortingContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var SortOrderContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var CurrentViewContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var MarkedLocationIdContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var LoadedLocationsMapContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var RootLocationIdContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var SelectedLocationsContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var CreateContentWidgetContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ContentOnTheFlyDataContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var ContentOnTheFlyConfigContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+var EditOnTheFlyDataContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+
+var UniversalDiscoveryModule = function UniversalDiscoveryModule(props) {
+  var tabs = window.eZ.adminUiConfig.universalDiscoveryWidget.tabs;
+  var defaultMarkedLocationId = props.startingLocationId || props.rootLocationId;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.activeTab),
+      _useState2 = _slicedToArray(_useState, 2),
+      activeTab = _useState2[0],
+      setActiveTab = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.activeSortClause),
+      _useState4 = _slicedToArray(_useState3, 2),
+      sorting = _useState4[0],
+      setSorting = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.activeSortOrder),
+      _useState6 = _slicedToArray(_useState5, 2),
+      sortOrder = _useState6[0],
+      setSortOrder = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.activeView),
+      _useState8 = _slicedToArray(_useState7, 2),
+      currentView = _useState8[0],
+      setCurrentView = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(defaultMarkedLocationId !== 1 ? defaultMarkedLocationId : null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      markedLocationId = _useState10[0],
+      setMarkedLocationId = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      createContentVisible = _useState12[0],
+      setCreateContentVisible = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState14 = _slicedToArray(_useState13, 2),
+      contentOnTheFlyData = _useState14[0],
+      setContentOnTheFlyData = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState16 = _slicedToArray(_useState15, 2),
+      editOnTheFlyData = _useState16[0],
+      setEditOnTheFlyData = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState18 = _slicedToArray(_useState17, 2),
+      contentTypesInfoMap = _useState18[0],
+      setContentTypesInfoMap = _useState18[1];
+
+  var _useLoadedLocationsRe = Object(_hooks_useLoadedLocationsReducer__WEBPACK_IMPORTED_MODULE_4__["useLoadedLocationsReducer"])([{
+    parentLocationId: props.rootLocationId,
+    subitems: []
+  }]),
+      _useLoadedLocationsRe2 = _slicedToArray(_useLoadedLocationsRe, 2),
+      loadedLocationsMap = _useLoadedLocationsRe2[0],
+      dispatchLoadedLocationsAction = _useLoadedLocationsRe2[1];
+
+  var _useSelectedLocations = Object(_hooks_useSelectedLocationsReducer__WEBPACK_IMPORTED_MODULE_5__["useSelectedLocationsReducer"])(),
+      _useSelectedLocations2 = _slicedToArray(_useSelectedLocations, 2),
+      selectedLocations = _useSelectedLocations2[0],
+      dispatchSelectedLocationsAction = _useSelectedLocations2[1];
+
+  var activeTabConfig = tabs.find(function (tab) {
+    return tab.id === activeTab;
+  });
+  var Tab = activeTabConfig.component;
+  var className = Object(_common_helpers_css_class_names__WEBPACK_IMPORTED_MODULE_3__["createCssClassNames"])({
+    'm-ud': true,
+    'm-ud--locations-selected': !!selectedLocations.length && props.allowConfirmation
+  });
+
+  var onConfirm = function onConfirm() {
+    var selectedItems = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : selectedLocations;
+    var updatedLocations = selectedItems.map(function (selectedItem) {
+      var clonedLocation = Object(_common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_2__["default"])(selectedItem.location);
+      var contentType = clonedLocation.ContentInfo.Content.ContentType;
+      clonedLocation.ContentInfo.Content.ContentTypeInfo = contentTypesInfoMap[contentType._href];
+      return clonedLocation;
+    });
+    props.onConfirm(updatedLocations);
+  };
+
+  var addPermissionsToSelectedLocations = function addPermissionsToSelectedLocations(response) {
+    var clonedSelectedLocation = Object(_common_helpers_deep_clone_helper__WEBPACK_IMPORTED_MODULE_2__["default"])(selectedLocations);
+    response.forEach(function (item) {
+      var locationWithoutPermissions = clonedSelectedLocation.find(function (selectedItem) {
+        return selectedItem.location.id === item.location.Location.id;
+      });
+
+      if (locationWithoutPermissions) {
+        locationWithoutPermissions.permissions = item.permissions;
+      }
+    });
+    dispatchSelectedLocationsAction({
+      type: 'REPLACE_SELECTED_LOCATIONS',
+      locations: clonedSelectedLocation
+    });
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var handleLoadContentTypes = function handleLoadContentTypes(response) {
+      var contentTypesMap = response.ContentTypeInfoList.ContentType.reduce(function (contentTypesList, item) {
+        contentTypesList[item._href] = item;
+        return contentTypesList;
+      }, {});
+      setContentTypesInfoMap(contentTypesMap);
+    };
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__["loadContentTypes"])(restInfo, handleLoadContentTypes);
+    window.document.body.dispatchEvent(new CustomEvent('ez-udw-opened'));
+    window.eZ.helpers.tooltips.parse(window.document.querySelector('.c-udw-tab'));
+    return function () {
+      window.document.body.dispatchEvent(new CustomEvent('ez-udw-closed'));
+    };
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!props.selectedLocations.length) {
+      return;
+    }
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__["findLocationsById"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      id: props.selectedLocations.join(',')
+    }), function (locations) {
+      var mappedLocation = props.selectedLocations.map(function (locationId) {
+        var location = locations.find(function (location) {
+          return location.id === parseInt(locationId, 10);
+        });
+        return {
+          location: location
+        };
+      });
+      dispatchSelectedLocationsAction({
+        type: 'REPLACE_SELECTED_LOCATIONS',
+        locations: mappedLocation
+      });
+    });
+  }, [props.selectedLocations]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var locationIds = selectedLocations.filter(function (item) {
+      return !item.permissions;
+    }).map(function (item) {
+      return item.location.id;
+    }).join(',');
+
+    if (!locationIds) {
+      return;
+    }
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__["loadLocationsWithPermissions"])({
+      locationIds: locationIds
+    }, addPermissionsToSelectedLocations);
+  }, [selectedLocations]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var locationsWithoutVersion = selectedLocations.filter(function (selectedItem) {
+      return !selectedItem.location.ContentInfo.Content.CurrentVersion.Version;
+    });
+
+    if (!locationsWithoutVersion.length) {
+      return;
+    }
+
+    var contentId = locationsWithoutVersion.map(function (item) {
+      return item.location.ContentInfo.Content._id;
+    }).join(',');
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__["loadContentInfo"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      contentId: contentId
+    }), function (response) {
+      var clonedLocations = selectedLocations;
+      response.forEach(function (content) {
+        var clonedLocation = clonedLocations.find(function (clonedItem) {
+          return clonedItem.location.ContentInfo.Content._id === content._id;
+        });
+
+        if (clonedLocation) {
+          clonedLocation.location.ContentInfo.Content.CurrentVersion.Version = content.CurrentVersion.Version;
+        }
+      });
+      dispatchSelectedLocationsAction({
+        type: 'REPLACE_SELECTED_LOCATIONS',
+        locations: clonedLocations
+      });
+    });
+  }, [selectedLocations]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.document.body.classList.add(CLASS_SCROLL_DISABLED);
+    return function () {
+      window.document.body.classList.remove(CLASS_SCROLL_DISABLED);
+    };
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (currentView === 'grid') {
+      loadedLocationsMap[loadedLocationsMap.length - 1].subitems = [];
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: loadedLocationsMap
+      });
+    } else if ((currentView === 'finder' || currentView === 'tree') && !!markedLocationId && markedLocationId !== loadedLocationsMap[loadedLocationsMap.length - 1].parentLocationId && loadedLocationsMap[loadedLocationsMap.length - 1].subitems.find(function (subitem) {
+      return subitem.location.id === markedLocationId;
+    })) {
+      dispatchLoadedLocationsAction({
+        type: 'UPDATE_LOCATIONS',
+        data: {
+          parentLocationId: markedLocationId,
+          subitems: []
+        }
+      });
+    }
+  }, [currentView]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!props.startingLocationId || props.startingLocationId === 1) {
+      return;
+    }
+
+    Object(_services_universal_discovery_service__WEBPACK_IMPORTED_MODULE_6__["loadAccordionData"])(_objectSpread(_objectSpread({}, restInfo), {}, {
+      parentLocationId: props.startingLocationId,
+      sortClause: sorting,
+      sortOrder: sortOrder,
+      gridView: currentView === 'grid',
+      rootLocationId: props.rootLocationId
+    }), function (locationsMap) {
+      dispatchLoadedLocationsAction({
+        type: 'SET_LOCATIONS',
+        data: locationsMap
+      });
+      setMarkedLocationId(props.startingLocationId);
+    });
+  }, [props.startingLocationId]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var locationsMap = loadedLocationsMap.map(function (loadedLocation) {
+      loadedLocation.subitems = [];
+      return loadedLocation;
+    });
+    dispatchLoadedLocationsAction({
+      type: 'SET_LOCATIONS',
+      data: locationsMap
+    });
+  }, [sorting, sortOrder]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UDWContext.Provider, {
+    value: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RestInfoContext.Provider, {
+    value: restInfo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AllowRedirectsContext.Provider, {
+    value: props.allowRedirects
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AllowConfirmationContext.Provider, {
+    value: props.allowConfirmation
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentTypesInfoMapContext.Provider, {
+    value: contentTypesInfoMap
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentTypesMapContext.Provider, {
+    value: contentTypesMap
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MultipleConfigContext.Provider, {
+    value: [props.multiple, props.multipleItemsLimit]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContainersOnlyContext.Provider, {
+    value: props.containersOnly
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AllowedContentTypesContext.Provider, {
+    value: props.allowedContentTypes
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ActiveTabContext.Provider, {
+    value: [activeTab, setActiveTab]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TabsContext.Provider, {
+    value: tabs
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TabsConfigContext.Provider, {
+    value: props.tabsConfig
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleContext.Provider, {
+    value: props.title
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CancelContext.Provider, {
+    value: props.onCancel
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ConfirmContext.Provider, {
+    value: onConfirm
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SortingContext.Provider, {
+    value: [sorting, setSorting]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SortOrderContext.Provider, {
+    value: [sortOrder, setSortOrder]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CurrentViewContext.Provider, {
+    value: [currentView, setCurrentView]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MarkedLocationIdContext.Provider, {
+    value: [markedLocationId, setMarkedLocationId]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoadedLocationsMapContext.Provider, {
+    value: [loadedLocationsMap, dispatchLoadedLocationsAction]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RootLocationIdContext.Provider, {
+    value: props.rootLocationId
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SelectedLocationsContext.Provider, {
+    value: [selectedLocations, dispatchSelectedLocationsAction]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CreateContentWidgetContext.Provider, {
+    value: [createContentVisible, setCreateContentVisible]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentOnTheFlyDataContext.Provider, {
+    value: [contentOnTheFlyData, setContentOnTheFlyData]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentOnTheFlyConfigContext.Provider, {
+    value: props.contentOnTheFly
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(EditOnTheFlyDataContext.Provider, {
+    value: [editOnTheFlyData, setEditOnTheFlyData]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tab, null))))))))))))))))))))))))))));
+};
+
+UniversalDiscoveryModule.propTypes = {
+  onConfirm: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onCancel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  activeTab: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  rootLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  startingLocationId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  multiple: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  multipleItemsLimit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  containersOnly: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  allowedContentTypes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+  activeSortClause: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  activeSortOrder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  activeView: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  contentOnTheFly: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    allowedLanguages: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    allowedLocations: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array.isRequired,
+    preselectedLocation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    preselectedContentType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    hidden: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+    autoConfirmAfterPublish: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+  }).isRequired,
+  tabsConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    itemsPerPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    priority: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    hidden: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+  })).isRequired,
+  selectedLocations: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  allowRedirects: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  allowConfirmation: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
+};
+UniversalDiscoveryModule.defaultProps = {
+  activeTab: 'browse',
+  rootLocationId: 1,
+  startingLocationId: null,
+  multiple: false,
+  multipleItemsLimit: 1,
+  containersOnly: false,
+  activeSortClause: 'date',
+  activeSortOrder: 'ascending',
+  activeView: 'finder',
+  tabs: window.eZ.adminUiConfig.universalDiscoveryWidget.tabs,
+  selectedLocations: []
+};
+eZ.addConfig('modules.UniversalDiscovery', UniversalDiscoveryModule);
+/* harmony default export */ __webpack_exports__["default"] = (UniversalDiscoveryModule);
+
+/***/ }),
+
+/***/ 27:
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/browse.tab.module.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/bookmarks.tab.module.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/search.tab.module.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.create.tab.module.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.edit.tab.module.js ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/browse.tab.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/browse.tab.module.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/bookmarks.tab.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/bookmarks.tab.module.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/search.tab.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/search.tab.module.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.create.tab.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.create.tab.module.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.edit.tab.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/universal-discovery/content.edit.tab.module.js");
+
+
+/***/ }),
+
+/***/ "prop-types":
+/*!****************************!*\
+  !*** external "PropTypes" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = PropTypes;
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = React;
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ReactDOM;
+
+/***/ })
+
+},[[27,"runtime"]]]);

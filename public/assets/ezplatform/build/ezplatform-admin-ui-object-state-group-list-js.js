@@ -1,1 +1,61 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-object-state-group-list-js","ezplatform-admin-ui-content-type-group-list-js","ezplatform-admin-ui-language-list-js","ezplatform-admin-ui-object-state-list-js","ezplatform-admin-ui-role-list-js"],{0:function(t,e,r){t.exports=r("rvQw")},rvQw:function(t,e){function r(t){return function(t){if(Array.isArray(t))return n(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return n(t,e);var r=Object.prototype.toString.call(t).slice(8,-1);"Object"===r&&t.constructor&&(r=t.constructor.name);if("Map"===r||"Set"===r)return Array.from(t);if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return n(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function n(t,e){(null==e||e>t.length)&&(e=t.length);for(var r=0,n=new Array(e);r<e;r++)n[r]=t[r];return n}var o;window,(o=window.document).querySelectorAll(".ez-toggle-btn-state").forEach((function(t){var e=r(t.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]')),n=o.querySelector(t.dataset.toggleButtonId);if(n){var a=function(){var t=e.some((function(t){return t.checked}));n.disabled=!t};a(),e.forEach((function(t){return t.addEventListener("change",a,!1)}))}}))}},[[0,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-object-state-group-list-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var toggleForms = doc.querySelectorAll('.ez-toggle-btn-state');
+  toggleForms.forEach(function (toggleForm) {
+    var checkboxes = _toConsumableArray(toggleForm.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]'));
+
+    var buttonRemove = doc.querySelector(toggleForm.dataset.toggleButtonId);
+
+    if (!buttonRemove) {
+      return;
+    }
+
+    var toggleButtonState = function toggleButtonState() {
+      var isAnythingSelected = checkboxes.some(function (el) {
+        return el.checked;
+      });
+      buttonRemove.disabled = !isAnythingSelected;
+    };
+
+    toggleButtonState();
+    checkboxes.forEach(function (checkbox) {
+      return checkbox.addEventListener('change', toggleButtonState, false);
+    });
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ 7:
+/*!******************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js");
+
+
+/***/ })
+
+},[[7,"runtime"]]]);

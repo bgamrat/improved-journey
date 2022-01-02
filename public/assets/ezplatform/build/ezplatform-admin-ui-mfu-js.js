@@ -1,1 +1,2519 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-mfu-js"],{34:function(e,t,n){e.exports=n("kfMk")},cDcd:function(e,t){e.exports=React},kfMk:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return Te}));var o=n("cDcd"),r=n.n(o),i=n("rf6O"),a=n.n(i),l=n("uHg5");function s(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var o,r,i=[],a=!0,l=!1;try{for(n=n.call(e);!(a=(o=n.next()).done)&&(i.push(o.value),!t||i.length!==t);a=!0);}catch(e){l=!0,r=e}finally{try{a||null==n.return||n.return()}finally{if(l)throw r}}return i}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return u(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return u(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function u(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}var c=function(e){var t=Object(o.useRef)(),n=s(Object(o.useState)("initial"),2),i=n[0],a=n[1];Object(o.useLayoutEffect)((function(){var e=t.current.getBoundingClientRect(),n=e.top,o=e.height,r=Math.round(n);r<35?a(o+r-35):r>35&&a("initial")}));var u={className:"c-tooltip-popup",hidden:!e.visible},c="initial"===i?{}:{maxHeight:i,overflowY:"scroll"},d=Translator.trans("tooltip.close_label",{},"content");return r.a.createElement("div",u,r.a.createElement("div",{className:"c-tooltip-popup__header"},r.a.createElement("div",{className:"c-tooltip-popup__title"},e.title),r.a.createElement("div",{className:"c-tooltip-popup__close",title:d,onClick:e.onClose,tabIndex:"-1","data-tooltip-container-selector":".c-tooltip-popup__header"},r.a.createElement(l.a,{name:"discard",extraClasses:"ez-icon--small"}))),r.a.createElement("div",{className:"c-tooltip-popup__content",ref:t,style:c},e.children),r.a.createElement("div",{className:"c-tooltip-popup__footer"},r.a.createElement("button",{class:"btn btn-secondary",onClick:e.onClose},d)))};c.propTypes={title:a.a.string.isRequired,children:a.a.node.isRequired,visible:a.a.bool.isRequired,onClose:a.a.func},c.defaultProps={onClose:function(){}};var d=c,p=function(e){for(var t,n=parseInt(e,10)||0,o=0;n>=1024;)n/=1024,o++;return t=o<1?0:1,n.toFixed(n>=10||t)+" "+["bytes","KB","MB","GB"][o]};function f(e){return(f="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function h(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function m(e,t){return(m=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function y(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,o=g(e);if(t){var r=g(this).constructor;n=Reflect.construct(o,arguments,r)}else n=o.apply(this,arguments);return b(this,n)}}function b(e,t){if(t&&("object"===f(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return v(e)}function v(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function g(e){return(g=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var w=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&m(e,t)}(a,e);var t,n,o,i=y(a);function a(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,a),(t=i.call(this,e))._refFileInput=null,t.openFileSelector=t.openFileSelector.bind(v(t)),t.handleUpload=t.handleUpload.bind(v(t)),t}return t=a,(n=[{key:"openFileSelector",value:function(e){e.preventDefault(),this._refFileInput.click()}},{key:"handleUpload",value:function(e){this.props.preventDefaultAction(e),this.props.onDrop(this.props.processUploadedFiles(e))}},{key:"componentDidMount",value:function(){window.addEventListener("drop",this.props.preventDefaultAction,!1),window.addEventListener("dragover",this.props.preventDefaultAction,!1)}},{key:"componentWillUnmount",value:function(){window.removeEventListener("drop",this.props.preventDefaultAction,!1),window.removeEventListener("dragover",this.props.preventDefaultAction,!1)}},{key:"render",value:function(){var e=this,t=Translator.trans("max_file_size.message",{},"multi_file_upload"),n=Translator.trans("drop_action.message",{},"multi_file_upload"),o=Translator.trans("upload_btn.label",{},"multi_file_upload");return r.a.createElement("form",{className:"c-drop-area",multiple:!0,onDrop:this.handleUpload},r.a.createElement("div",{className:"c-drop-area__message c-drop-area__message--main"},n),r.a.createElement("button",{type:"button",class:"btn btn-primary c-drop-area__btn-select",onClick:this.openFileSelector,tabIndex:"-1"},o),r.a.createElement("div",{className:"c-drop-area__message c-drop-area__message--filesize"},"(",t," ",p(this.props.maxFileSize),")"),r.a.createElement("input",{className:"c-drop-area__input--hidden",ref:function(t){return e._refFileInput=t},id:"mfu-files",type:"file",name:"files[]",hidden:!0,multiple:!0,onChange:this.handleUpload}))}}])&&h(t.prototype,n),o&&h(t,o),a}(o.Component);w.propTypes={onDrop:a.a.func.isRequired,maxFileSize:a.a.number.isRequired,processUploadedFiles:a.a.func.isRequired,preventDefaultAction:a.a.func.isRequired};var _=function(e){return r.a.createElement("div",{className:"c-progress-bar"},r.a.createElement("div",{className:"c-progress-bar__value",style:{width:"".concat(e.progress,"%")}}),r.a.createElement("div",{className:"c-progress-bar__label"},"".concat(e.progress,"%")),r.a.createElement("div",{className:"c-progress-bar__uploaded"},e.uploaded," of ",e.total))};_.propTypes={progress:a.a.number.isRequired,uploaded:a.a.string.isRequired,total:a.a.string.isRequired};var T=_;function O(e){return(O="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function S(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,o)}return n}function U(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?S(Object(n),!0).forEach((function(t){C(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):S(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function C(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function R(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function E(e,t){return(E=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function k(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,o=q(e);if(t){var r=q(this).constructor;n=Reflect.construct(o,arguments,r)}else n=o.apply(this,arguments);return j(this,n)}}function j(e,t){if(t&&("object"===O(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return P(e)}function P(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function q(e){return(q=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var A=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&E(e,t)}(a,e);var t,n,o,i=k(a);function a(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,a),(t=i.call(this,e)).handleFileSizeNotAllowed=t.handleFileSizeNotAllowed.bind(P(t)),t.handleFileTypeNotAllowed=t.handleFileTypeNotAllowed.bind(P(t)),t.handleContentTypeNotAllowed=t.handleContentTypeNotAllowed.bind(P(t)),t.handleEditBtnClick=t.handleEditBtnClick.bind(P(t)),t.handleUploadAbort=t.handleUploadAbort.bind(P(t)),t.handleUploadError=t.handleUploadError.bind(P(t)),t.handleUploadLoad=t.handleUploadLoad.bind(P(t)),t.handleUploadProgress=t.handleUploadProgress.bind(P(t)),t.handleUploadEnd=t.handleUploadEnd.bind(P(t)),t.handleLoadStart=t.handleLoadStart.bind(P(t)),t.handleFileDeleted=t.handleFileDeleted.bind(P(t)),t.abortUploading=t.abortUploading.bind(P(t)),t.deleteFile=t.deleteFile.bind(P(t)),t.contentInfoInput=null,t.contentVersionInfoInput=null,t.contentVersionNoInput=null,t.contentEditBtn=null,t.state={uploading:!1,uploaded:e.isUploaded,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,aborted:!1,failed:!1,deleted:!1,progress:0,xhr:null,struct:e.data.struct||null,totalSize:p(e.data.file.size),uploadedSize:"0"},t}return t=a,(n=[{key:"componentDidMount",value:function(){var e=this.props,t=e.data,n=e.adminUiConfig,o=e.parentInfo,r=e.createFileStruct,i=e.isUploaded,a=e.checkCanUpload,l=e.contentCreatePermissionsConfig,s=e.currentLanguage;if(this.contentInfoInput=window.document.querySelector("#form_subitems_content_edit_content_info"),this.contentVersionInfoInput=window.document.querySelector("#form_subitems_content_edit_version_info_content_info"),this.contentVersionNoInput=window.document.querySelector("#form_subitems_content_edit_version_info_version_no"),this.contentEditBtn=window.document.querySelector("#form_subitems_content_edit_create"),!i){var u=U(U({},n.multiFileUpload),{},{contentCreatePermissionsConfig:l}),c={fileTypeNotAllowedCallback:this.handleFileTypeNotAllowed,fileSizeNotAllowedCallback:this.handleFileSizeNotAllowed,contentTypeNotAllowedCallback:this.handleContentTypeNotAllowed};a(t.file,o,u,c)?r(t.file,{parentInfo:o,config:n,languageCode:s}).then(this.initPublishFile.bind(this,n)):this.setState((function(){return{uploading:!1,disallowed:!0,uploaded:!1,aborted:!1,failed:!0}}))}}},{key:"initPublishFile",value:function(e,t){var n=e.token,o=e.siteaccess;this.props.publishFile({struct:t,token:n,siteaccess:o},{upload:{onabort:this.handleUploadAbort,onerror:this.handleUploadError,onload:this.handleUploadLoad,onprogress:this.handleUploadProgress},onloadstart:this.handleLoadStart,onerror:this.handleUploadError},this.handleUploadEnd)}},{key:"handleFileTypeNotAllowed",value:function(){this.setState((function(){return{uploading:!1,disallowed:!0,disallowedType:!0,disallowedSize:!1,disallowedContentType:!1,uploaded:!1,aborted:!1,failed:!0}}))}},{key:"handleFileSizeNotAllowed",value:function(){this.setState((function(){return{uploading:!1,disallowed:!0,disallowedType:!1,disallowedSize:!0,disallowedContentType:!1,uploaded:!1,aborted:!1,failed:!0}}))}},{key:"handleContentTypeNotAllowed",value:function(){this.setState((function(){return{uploading:!1,disallowed:!0,disallowedType:!1,disallowedSize:!1,disallowedContentType:!0,uploaded:!1,aborted:!1,failed:!0}}))}},{key:"handleLoadStart",value:function(e){this.setState((function(){return{uploading:!0,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,uploaded:!1,aborted:!1,failed:!1,xhr:e.target}}))}},{key:"handleUploadAbort",value:function(){this.setState((function(){return{uploading:!1,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,uploaded:!1,aborted:!0,failed:!1}}))}},{key:"handleUploadError",value:function(){this.setState((function(e){return{uploading:!1,disallowed:e.disallowed,disallowedSize:e.disallowedSize,disallowedType:e.disallowedType,disallowedContentType:e.disallowedContentType,uploaded:!1,aborted:e.aborted,failed:!0}}))}},{key:"handleUploadLoad",value:function(){this.setState((function(){return{uploading:!1,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,uploaded:!0,aborted:!1,failed:!1}}))}},{key:"handleUploadProgress",value:function(e){var t=this,n=e.loaded/e.total,o=parseInt(100*n,10);this.setState((function(){return{uploadedSize:p(n*parseInt(t.props.data.file.size,10)),uploading:!0,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,uploaded:!1,aborted:!1,failed:!1,progress:o}}))}},{key:"handleUploadEnd",value:function(){var e=this;this.setState((function(e){return{struct:JSON.parse(e.xhr.response),uploading:!1,disallowed:!1,disallowedType:!1,disallowedSize:!1,disallowedContentType:!1,uploaded:!0,aborted:!1,failed:!1}}),(function(){var t=e.props.data;e.props.onAfterUpload(U(U({},t),{},{struct:e.state.struct}))}))}},{key:"abortUploading",value:function(){this.state.xhr.abort(),this.props.onAfterAbort(this.props.data)}},{key:"deleteFile",value:function(){var e=this;this.setState((function(){return{deleted:!0}}),(function(){return e.props.deleteFile(e.props.adminUiConfig,e.state.struct,e.handleFileDeleted)}))}},{key:"handleFileDeleted",value:function(){this.props.onAfterDelete(this.props.data)}},{key:"getContentTypeIdentifier",value:function(){var e=this.props,t=e.contentTypesMap,n=e.data;if(!n.struct||!n.struct.Content)return null;var o=n.struct.Content.ContentType._href,r=t?t[o]:null;return r?r.identifier:null}},{key:"renderIcon",value:function(){var e=this.getContentTypeIdentifier();if(!e)return null;var t=eZ.helpers.contentType.getContentTypeIconUrl(e);return r.a.createElement(l.a,{customPath:t,extraClasses:"ez-icon--small-medium ez-icon--base-dark"})}},{key:"renderProgressBar",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.progress,i=e.totalSize,a=e.uploadedSize,l=e.disallowed;return this.props.isUploaded||t||n||l?null:r.a.createElement(T,{progress:o,uploaded:a,total:i})}},{key:"renderErrorMessage",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.disallowedType,i=e.disallowedSize,a=e.failed,l=e.uploading,s=e.disallowedContentType,u=!t&&!n&&(i||o||s)&&a&&!l,c=Translator.trans("cannot_upload.message",{},"multi_file_upload"),d=Translator.trans("disallowed_type.message",{},"multi_file_upload"),p=Translator.trans("disallowed_size.message",{},"multi_file_upload"),f=Translator.trans("disallowed_content_type.message",{},"multi_file_upload"),h=c;return o&&(h=d),i&&(h=p),s&&(h=f),u?r.a.createElement("div",{className:"c-upload-list-item__message c-upload-list-item__message--error"},h):null}},{key:"renderSuccessMessage",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.disallowedSize,i=e.disallowedType,a=e.failed,l=e.uploading,s=t&&!n&&!(o||i)&&!a&&!l,u=Translator.trans("upload.success.message",{},"multi_file_upload");return s?r.a.createElement("div",{className:"c-upload-list-item__message c-upload-list-item__message--success"},u):null}},{key:"renderAbortBtn",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.disallowedSize,i=e.disallowedType,a=e.failed,s=e.uploading;if(t||n||o||i||a||!s)return null;var u=Translator.trans("abort.label",{},"multi_file_upload");return r.a.createElement("div",{className:"c-upload-list-item__action c-upload-list-item__action--abort",onClick:this.abortUploading,title:u,tabIndex:"-1"},r.a.createElement(l.a,{name:"circle-close",extraClasses:"ez-icon--small-medium"}))}},{key:"handleEditBtnClick",value:function(e){e.preventDefault();var t=this.state.struct.Content,n=t._id,o=t.CurrentVersion.Version.VersionInfo.VersionTranslationInfo.Language[0].languageCode,r=t.CurrentVersion.Version.VersionInfo.versionNo;this.contentInfoInput.value=n,this.contentVersionInfoInput.value=n,this.contentVersionNoInput.value=r,window.document.querySelector("#form_subitems_content_edit_language_".concat(o)).checked=!0,this.contentEditBtn.click()}},{key:"renderEditBtn",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.disallowedSize,i=e.disallowedType,a=e.failed,s=e.uploading;if(!this.props.isUploaded&&(!t||n||o||i||a||s))return null;var u=Translator.trans("edit.label",{},"multi_file_upload");return r.a.createElement("div",{className:"c-upload-list-item__action c-upload-list-item__action--edit",title:u,onClick:this.handleEditBtnClick,tabIndex:"-1"},r.a.createElement(l.a,{name:"edit",extraClasses:"ez-icon--small-medium"}))}},{key:"renderDeleteBtn",value:function(){var e=this.state,t=e.uploaded,n=e.aborted,o=e.disallowedSize,i=e.disallowedType,a=e.failed,s=e.uploading;if(!this.props.isUploaded&&(!t||n||o||i||a||s))return null;var u=Translator.trans("delete.label",{},"multi_file_upload");return r.a.createElement("div",{className:"c-upload-list-item__action c-upload-list-item__action--delete",onClick:this.deleteFile,title:u,tabIndex:"-1"},r.a.createElement(l.a,{name:"trash",extraClasses:"ez-icon--small-medium"}))}},{key:"render",value:function(){return this.state.deleted?null:r.a.createElement("div",{className:"c-upload-list-item"},r.a.createElement("div",{className:"c-upload-list-item__icon-wrapper"},this.renderIcon()),r.a.createElement("div",{className:"c-upload-list-item__meta"},r.a.createElement("div",{className:"c-upload-list-item__name"},this.props.data.file.name),r.a.createElement("div",{className:"c-upload-list-item__size"},this.state.uploaded?this.state.totalSize:"")),r.a.createElement("div",{className:"c-upload-list-item__info"},this.renderErrorMessage(),this.renderSuccessMessage(),this.renderProgressBar()),r.a.createElement("div",{className:"c-upload-list-item__actions"},this.renderAbortBtn(),this.renderEditBtn(),this.renderDeleteBtn()))}}])&&R(t.prototype,n),o&&R(t,o),a}(o.Component);function F(e){return(F="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function I(e){return function(e){if(Array.isArray(e))return D(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return D(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return D(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function D(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}function z(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function N(e,t){return(N=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function x(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,o=M(e);if(t){var r=M(this).constructor;n=Reflect.construct(o,arguments,r)}else n=o.apply(this,arguments);return L(this,n)}}function L(e,t){if(t&&("object"===F(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e)}function M(e){return(M=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}A.propTypes={data:a.a.object.isRequired,onAfterUpload:a.a.func.isRequired,onAfterAbort:a.a.func.isRequired,onAfterDelete:a.a.func.isRequired,isUploaded:a.a.bool.isRequired,createFileStruct:a.a.func.isRequired,publishFile:a.a.func.isRequired,deleteFile:a.a.func.isRequired,checkCanUpload:a.a.func.isRequired,adminUiConfig:a.a.shape({multiFileUpload:a.a.shape({defaultMappings:a.a.arrayOf(a.a.object).isRequired,fallbackContentType:a.a.object.isRequired,locationMappings:a.a.arrayOf(a.a.object).isRequired,maxFileSize:a.a.number.isRequired}).isRequired,token:a.a.string.isRequired,siteaccess:a.a.string.isRequired}).isRequired,parentInfo:a.a.shape({contentTypeIdentifier:a.a.string.isRequired,contentTypeId:a.a.number.isRequired,locationPath:a.a.string.isRequired,language:a.a.string.isRequired}).isRequired,contentCreatePermissionsConfig:a.a.object,contentTypesMap:a.a.object.isRequired,currentLanguage:a.a.string},A.defaultProps={isUploaded:!1,currentLanguage:""};var B=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&N(e,t)}(a,e);var t,n,o,i=x(a);function a(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,a),(t=i.call(this,e)).state={itemsToUpload:e.itemsToUpload,items:[]},t}return t=a,(n=[{key:"UNSAFE_componentWillReceiveProps",value:function(e){this.setState((function(t){var n=t.itemsToUpload.filter((function(t){return!e.itemsToUpload.find((function(e){return e.id===t.id}))}));return{itemsToUpload:[].concat(I(n),I(e.itemsToUpload))}}))}},{key:"componentDidUpdate",value:function(){this.props.onAfterUpload(this.state.items)}},{key:"handleAfterUpload",value:function(e){this.setState((function(t){return{itemsToUpload:t.itemsToUpload.filter((function(t){return t.id!==e.id})),items:[].concat(I(t.items),[e])}}))}},{key:"handleAfterAbort",value:function(e){this.setState((function(t){var n=t.items.filter((function(t){return t.id!==e.id})),o=t.itemsToUpload.filter((function(t){return t.id!==e.id}));return Object.assign({},t,{uploaded:n.length,total:n.length+o.length,itemsToUpload:o,items:n})}))}},{key:"handleAfterDelete",value:function(e){this.setState((function(t){var n=t.items.filter((function(t){return t.id!==e.id})),o=t.itemsToUpload.filter((function(t){return t.id!==e.id}));return Object.assign({},t,{uploaded:n.length,total:n.length+o.length,itemsToUpload:o,items:n})}))}},{key:"renderItemToUpload",value:function(e){return this.renderItem(e,{isUploaded:!1,createFileStruct:this.props.createFileStruct,publishFile:this.props.publishFile,onAfterAbort:this.handleAfterAbort.bind(this),onAfterUpload:this.handleAfterUpload.bind(this),checkCanUpload:this.props.checkCanUpload})}},{key:"renderUploadedItem",value:function(e){return this.renderItem(e,{isUploaded:!0,deleteFile:this.props.deleteFile,onAfterDelete:this.handleAfterDelete.bind(this)})}},{key:"renderItem",value:function(e,t){var n=this.props,o=n.adminUiConfig,i=n.parentInfo,a=n.contentCreatePermissionsConfig,l=n.contentTypesMap,s=n.currentLanguage,u=Object.assign({key:e.id,data:e,adminUiConfig:o,parentInfo:i,contentCreatePermissionsConfig:a,contentTypesMap:l,currentLanguage:s},t);return r.a.createElement(A,u)}},{key:"render",value:function(){var e=this.state,t=e.items,n=e.itemsToUpload,o=t.length,i=o+n.length;return r.a.createElement("div",{className:"c-upload-list"},r.a.createElement("div",{className:"c-upload-list__title"},this.props.uploadedItemsListTitle," (",o,"/",i,")"),r.a.createElement("div",{className:"c-upload-list__items"},n.map(this.renderItemToUpload.bind(this)),t.map(this.renderUploadedItem.bind(this))))}}])&&z(t.prototype,n),o&&z(t,o),a}(o.Component);function V(e){return(V="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function W(){return(W=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e}).apply(this,arguments)}function X(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,o)}return n}function H(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?X(Object(n),!0).forEach((function(t){Z(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):X(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Z(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function J(e){return function(e){if(Array.isArray(e))return $(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return $(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return $(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function $(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}function G(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function K(e,t){return(K=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function Y(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,o=te(e);if(t){var r=te(this).constructor;n=Reflect.construct(o,arguments,r)}else n=o.apply(this,arguments);return Q(this,n)}}function Q(e,t){if(t&&("object"===V(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return ee(e)}function ee(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function te(e){return(te=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}B.propTypes={itemsToUpload:a.a.arrayOf(a.a.object),onAfterUpload:a.a.func.isRequired,createFileStruct:a.a.func.isRequired,publishFile:a.a.func.isRequired,deleteFile:a.a.func.isRequired,checkCanUpload:a.a.func.isRequired,adminUiConfig:a.a.shape({multiFileUpload:a.a.shape({defaultMappings:a.a.arrayOf(a.a.object).isRequired,fallbackContentType:a.a.object.isRequired,locationMappings:a.a.arrayOf(a.a.object).isRequired,maxFileSize:a.a.number.isRequired}).isRequired,token:a.a.string.isRequired,siteaccess:a.a.string.isRequired}).isRequired,parentInfo:a.a.shape({contentTypeIdentifier:a.a.string.isRequired,contentTypeId:a.a.number.isRequired,locationPath:a.a.string.isRequired,language:a.a.string.isRequired}).isRequired,uploadedItemsListTitle:a.a.string.isRequired,contentCreatePermissionsConfig:a.a.object.isRequired,contentTypesMap:a.a.object.isRequired,currentLanguage:a.a.string},B.defaultProps={itemsToUpload:[],currentLanguage:""};var ne=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&K(e,t)}(a,e);var t,n,o,i=Y(a);function a(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,a),(t=i.call(this,e)).uploadFiles=t.uploadFiles.bind(ee(t)),t.refTooltip=r.a.createRef(),t.state={itemsToUpload:e.itemsToUpload},t}return t=a,(n=[{key:"componentDidMount",value:function(){window.document.body.classList.add("ez-scroll-disabled"),window.eZ.helpers.tooltips.parse(this.refTooltip.current)}},{key:"componentWillUnmount",value:function(){window.document.body.classList.remove("ez-scroll-disabled")}},{key:"UNSAFE_componentWillReceiveProps",value:function(e){this.setState((function(t){var n=t.itemsToUpload.filter((function(t){return!e.itemsToUpload.find((function(e){return e.id===t.id}))}));return{itemsToUpload:[].concat(J(n),J(e.itemsToUpload))}}))}},{key:"uploadFiles",value:function(e){this.setState((function(){return{itemsToUpload:e}}))}},{key:"render",value:function(){var e=this.props,t=H(H({},e),{},{itemsToUpload:this.state.itemsToUpload}),n=Translator.trans("upload_popup.close",{},"multi_file_upload");return r.a.createElement("div",{className:"c-upload-popup",ref:this.refTooltip},r.a.createElement(d,W({title:n},e),r.a.createElement(w,{onDrop:this.uploadFiles,maxFileSize:this.props.adminUiConfig.multiFileUpload.maxFileSize,preventDefaultAction:this.props.preventDefaultAction,processUploadedFiles:this.props.processUploadedFiles}),r.a.createElement(B,t)))}}])&&G(t.prototype,n),o&&G(t,o),a}(o.Component);ne.propTypes={popupTitle:a.a.string.isRequired,visible:a.a.bool,onUpload:a.a.func,onUploadEnd:a.a.func,onUploadFail:a.a.func,onItemEdit:a.a.func,onItemRemove:a.a.func,onClose:a.a.func,itemsToUpload:a.a.array,onAfterUpload:a.a.func.isRequired,createFileStruct:a.a.func.isRequired,publishFile:a.a.func.isRequired,deleteFile:a.a.func.isRequired,checkCanUpload:a.a.func.isRequired,adminUiConfig:a.a.shape({multiFileUpload:a.a.shape({defaultMappings:a.a.arrayOf(a.a.object).isRequired,fallbackContentType:a.a.object.isRequired,locationMappings:a.a.arrayOf(a.a.object).isRequired,maxFileSize:a.a.number.isRequired}).isRequired,token:a.a.string.isRequired,siteaccess:a.a.string.isRequired}).isRequired,parentInfo:a.a.shape({contentTypeIdentifier:a.a.string.isRequired,contentTypeId:a.a.number.isRequired,locationPath:a.a.string.isRequired,language:a.a.string.isRequired}).isRequired,preventDefaultAction:a.a.func.isRequired,processUploadedFiles:a.a.func.isRequired,contentTypesMap:a.a.object.isRequired,currentLanguage:a.a.string},ne.defaultProps={visible:!0,itemsToUpload:[],currentLanguage:""};var oe=function(e,t,n){4===e.readyState&&(0===e.status&&""===e.statusText||(e.status>=400||!e.status?n(e):t(JSON.parse(e.response))))},re=function(e){if(!e.ok)throw Error(e.text());return e},ie=function(e,t,n){var o=this;this.addEventListener("load",(function(){return t({fileReader:o,file:e})}),!1),this.addEventListener("error",(function(){return n()}),!1),this.readAsDataURL(e)},ae=function(e,t){return e.find((function(e){return e.mimeTypes.find((function(e){return e===t.type}))}))},le=function(e,t){return!t||function(e,t){return!!ae(e,t)}(t.mappings,e)},se=function(e,t,n){var o=n.locationMappings.find((function(e){return e.contentTypeIdentifier===t.contentTypeIdentifier})),r=o?o.mappings:n.defaultMappings;return ae(r,e)||n.fallbackContentType},ue=function(e,t){var n=e.parentInfo,o=e.config,r=e.languageCode,i="/api/ezp/v2/content/locations".concat(n.locationPath);i=i.endsWith("/")?i.slice(0,-1):i;var a,l,s,u,c,d=se(t.file,n,o.multiFileUpload);return(a=o,l=d.contentTypeIdentifier,s=a.token,u=a.siteaccess,c=new Request("/api/ezp/v2/content/types?identifier=".concat(l),{method:"GET",headers:{Accept:"application/vnd.ez.api.ContentTypeInfoList+json","X-Siteaccess":u,"X-CSRF-Token":s},credentials:"same-origin",mode:"cors"}),fetch(c).then(re)).then((function(e){return e.json()})).catch((function(){return window.eZ.helpers.notification.showErrorNotification("Cannot get content type by identifier")})).then((function(e){var o={fileName:t.file.name,data:t.fileReader.result.replace(/^.*;base64,/,"")};t.file.type.startsWith("image/")&&(o.alternativeText=t.file.name);var a=[{fieldDefinitionIdentifier:d.nameFieldIdentifier,fieldValue:t.file.name},{fieldDefinitionIdentifier:d.contentFieldIdentifier,fieldValue:o}];return{ContentCreate:{ContentType:{_href:e.ContentTypeInfoList.ContentType[0]._href},mainLanguageCode:r||n.language,LocationCreate:{ParentLocation:{_href:i},sortField:"PATH",sortOrder:"ASC"},Section:null,alwaysAvailable:!0,remoteId:null,modificationDate:(new Date).toISOString(),fields:{field:a}}}})).catch((function(){return window.eZ.helpers.notification.showErrorNotification("Cannot create content structure")}))},ce=function(e,t){var n=e.struct,o=e.token,r=e.siteaccess,i=new XMLHttpRequest,a=JSON.stringify(n),l={Accept:"application/vnd.ez.api.Content+json","Content-Type":"application/vnd.ez.api.ContentCreate+json","X-CSRF-Token":o,"X-Siteaccess":r};return new Promise((function(e,n){if(i.open("POST","/api/ezp/v2/content/objects",!0),i.onreadystatechange=oe.bind(null,i,e,n),t&&Object.keys(t).length){var o=t.upload;o&&Object.keys(o).length&&(i.upload.onabort=o.onabort,i.upload.onerror=n,i.upload.onload=o.onload,i.upload.onprogress=o.onprogress,i.upload.ontimeout=o.ontimeout),i.onerror=n,i.onloadstart=t.onloadstart}for(var r in l)l.hasOwnProperty(r)&&i.setRequestHeader(r,l[r]);i.send(a)}))},de=function(e,t){var n=e.token,o=e.siteaccess;if(!t||!t.hasOwnProperty("Content"))return Promise.reject("Cannot publish content based on an uploaded file");var r=new Request(t.Content.CurrentVersion.Version._href,{method:"POST",headers:{"X-Siteaccess":o,"X-CSRF-Token":n,"X-HTTP-Method-Override":"PUBLISH"},mode:"cors",credentials:"same-origin"});return fetch(r).then(re)};function pe(e){return(pe="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function fe(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,o)}return n}function he(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?fe(Object(n),!0).forEach((function(t){me(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):fe(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function me(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function ye(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function be(e,t){return(be=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function ve(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,o=_e(e);if(t){var r=_e(this).constructor;n=Reflect.construct(o,arguments,r)}else n=o.apply(this,arguments);return ge(this,n)}}function ge(e,t){if(t&&("object"===pe(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return we(e)}function we(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function _e(e){return(_e=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}var Te=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&be(e,t)}(a,e);var t,n,o,i=ve(a);function a(e){var t;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,a);var n=!0;return(t=i.call(this,e))._itemsUploaded=[],e.itemsToUpload&&e.itemsToUpload.length||(n=!1),t.handleDropOnWindow=t.handleDropOnWindow.bind(we(t)),t.handleAfterUpload=t.handleAfterUpload.bind(we(t)),t.showUploadPopup=t.showUploadPopup.bind(we(t)),t.hidePopup=t.hidePopup.bind(we(t)),t.processUploadedFiles=t.processUploadedFiles.bind(we(t)),t.setUdwStateOpened=t.setUdwStateOpened.bind(we(t)),t.setUdwStateClosed=t.setUdwStateClosed.bind(we(t)),t.state={udwOpened:!1,popupVisible:n,itemsToUpload:e.itemsToUpload,allowDropOnWindow:!0,uploadDisabled:Object.values(e.contentCreatePermissionsConfig).every((function(e){return!e}))},t}return t=a,(n=[{key:"componentDidMount",value:function(){this.manageDropEvent(),window.document.body.addEventListener("ez-udw-opened",this.setUdwStateOpened,!1),window.document.body.addEventListener("ez-udw-closed",this.setUdwStateClosed,!1)}},{key:"componentDidUpdate",value:function(){this.manageDropEvent()}},{key:"componentWillUnmount",value:function(){window.document.body.removeEventListener("ez-udw-opened",this.setUdwStateOpened,!1),window.document.body.removeEventListener("ez-udw-closed",this.setUdwStateClosed,!1)}},{key:"setUdwStateOpened",value:function(){this.setState({udwOpened:!0})}},{key:"setUdwStateClosed",value:function(){this.setState({udwOpened:!1})}},{key:"manageDropEvent",value:function(){var e=this.state,t=e.uploadDisabled,n=e.popupVisible,o=e.itemsToUpload;t||n||o.length||(window.addEventListener("drop",this.handleDropOnWindow,!1),window.addEventListener("dragover",this.preventDefaultAction,!1))}},{key:"hidePopup",value:function(){this.setState((function(e){return Object.assign({},e,{popupVisible:!1})})),this.props.onPopupClose(this._itemsUploaded)}},{key:"showUploadPopup",value:function(){this.setState((function(e){return Object.assign({},e,{popupVisible:!0,itemsToUpload:[]})}))}},{key:"handleAfterUpload",value:function(e){this._itemsUploaded=e}},{key:"handleDropOnWindow",value:function(e){this.preventDefaultAction(e);var t=this.processUploadedFiles(e);this.state.allowDropOnWindow&&t.length&&!this.state.udwOpened&&(window.removeEventListener("drop",this.handleDropOnWindow,!1),window.removeEventListener("dragover",this.preventDefaultAction,!1),this.setState((function(e){return Object.assign({},e,{itemsToUpload:t,popupVisible:!0,allowDropOnWindow:!1})})))}},{key:"extractDroppedFilesList",value:function(e){return e.nativeEvent?e.nativeEvent.dataTransfer||e.nativeEvent.target:e.dataTransfer}},{key:"processUploadedFiles",value:function(e){var t=this.extractDroppedFilesList(e);return Array.from(t.files).map((function(e){return{id:Math.floor(Math.random()*Date.now()),file:e}}))}},{key:"preventDefaultAction",value:function(e){e.preventDefault(),e.stopPropagation()}},{key:"renderBtn",value:function(){if(!this.props.withUploadButton)return null;var e=this.state.uploadDisabled,t={className:"m-mfu__btn--upload",title:Translator.trans("multi_file_upload_open_btn.label",{},"multi_file_upload"),onClick:this.showUploadPopup,type:"button"};return e&&(delete t.onClick,t.disabled=!0),r.a.createElement("button",t,r.a.createElement(l.a,{name:"upload",extraClasses:"ez-icon--base-dark ez-icon--small-medium"}))}},{key:"renderPopup",value:function(){if(!this.state.popupVisible)return null;var e=he(he({},this.props),{},{visible:!0,onClose:this.hidePopup,itemsToUpload:this.state.itemsToUpload,onAfterUpload:this.handleAfterUpload,preventDefaultAction:this.preventDefaultAction,processUploadedFiles:this.processUploadedFiles});return r.a.createElement(ne,e)}},{key:"render",value:function(){return r.a.createElement("div",{className:"m-mfu"},this.renderBtn(),this.renderPopup())}}])&&ye(t.prototype,n),o&&ye(t,o),a}(o.Component);eZ.addConfig("modules.MultiFileUpload",Te),Te.propTypes={adminUiConfig:a.a.shape({multiFileUpload:a.a.shape({defaultMappings:a.a.arrayOf(a.a.object).isRequired,fallbackContentType:a.a.object.isRequired,locationMappings:a.a.arrayOf(a.a.object).isRequired,maxFileSize:a.a.number.isRequired}).isRequired,token:a.a.string.isRequired,siteaccess:a.a.string.isRequired}).isRequired,parentInfo:a.a.shape({contentTypeIdentifier:a.a.string.isRequired,contentTypeId:a.a.number.isRequired,locationPath:a.a.string.isRequired,language:a.a.string.isRequired}).isRequired,checkCanUpload:a.a.func,createFileStruct:a.a.func,deleteFile:a.a.func,onPopupClose:a.a.func,publishFile:a.a.func,itemsToUpload:a.a.array,withUploadButton:a.a.bool,contentCreatePermissionsConfig:a.a.object,contentTypesMap:a.a.object.isRequired,currentLanguage:a.a.string},Te.defaultProps={checkCanUpload:function(e,t,n,o){var r=n.locationMappings.find((function(e){return e.contentTypeIdentifier===t.contentTypeIdentifier}));return function(e,t,n){if(!n.hasOwnProperty("contentCreatePermissionsConfig")||!n.contentCreatePermissionsConfig)return!0;var o=se(e,t,n);return n.contentCreatePermissionsConfig[o.contentTypeIdentifier]}(e,t,n)?le(e,r)?!(e.size>n.maxFileSize)||(o.fileSizeNotAllowedCallback(),!1):(o.fileTypeNotAllowedCallback(),!1):(o.contentTypeNotAllowedCallback(),!1)},createFileStruct:function(e,t){return new Promise(ie.bind(new FileReader,e)).then(ue.bind(null,t))},deleteFile:function(e,t,n){var o=e.token,r=e.siteaccess,i=new Request(t.Content._href,{method:"DELETE",headers:{"X-Siteaccess":r,"X-CSRF-Token":o},mode:"cors",credentials:"same-origin"});fetch(i).then(re).then(n).catch((function(){return window.eZ.helpers.notification.showErrorNotification("An error occurred while deleting a file")}))},onPopupClose:function(){},publishFile:function(e,t,n){ce(e,t).then(de.bind(null,e)).then(n).catch((function(){return window.eZ.helpers.notification.showErrorNotification("An error occurred while publishing a file")}))},itemsToUpload:[],withUploadButton:!0,currentLanguage:""}},rf6O:function(e,t){e.exports=PropTypes},uHg5:function(e,t,n){"use strict";var o=n("cDcd"),r=n.n(o),i=n("rf6O"),a=n.n(i),l=function(e){var t=e.customPath?e.customPath:window.eZ.helpers.icon.getIconPath(e.name),n="ez-icon";return e.extraClasses&&(n="".concat(n," ").concat(e.extraClasses)),r.a.createElement("svg",{className:n},r.a.createElement("use",{xlinkHref:t}))};l.propTypes={extraClasses:a.a.string,name:a.a.string,customPath:a.a.string},l.defaultProps={customPath:null,name:null,extraClasses:null},t.a=l}},[[34,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-mfu-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js":
+/*!************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Icon = function Icon(props) {
+  var linkHref = props.customPath ? props.customPath : window.eZ.helpers.icon.getIconPath(props.name);
+  var className = 'ez-icon';
+
+  if (props.extraClasses) {
+    className = "".concat(className, " ").concat(props.extraClasses);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
+    xlinkHref: linkHref
+  }));
+};
+
+Icon.propTypes = {
+  extraClasses: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  name: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  customPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+Icon.defaultProps = {
+  customPath: null,
+  name: null,
+  extraClasses: null
+};
+/* harmony default export */ __webpack_exports__["default"] = (Icon);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/tooltip-popup/tooltip.popup.component.js":
+/*!****************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/tooltip-popup/tooltip.popup.component.js ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icon_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var INITIAL_HEIGHT = 'initial';
+var HEADER_HEIGHT = 35;
+
+var TooltipPopupComponent = function TooltipPopupComponent(props) {
+  var contentRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(INITIAL_HEIGHT),
+      _useState2 = _slicedToArray(_useState, 2),
+      maxHeight = _useState2[0],
+      setMaxHeight = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"])(function () {
+    var _contentRef$current$g = contentRef.current.getBoundingClientRect(),
+        top = _contentRef$current$g.top,
+        height = _contentRef$current$g.height;
+
+    var topRounded = Math.round(top);
+
+    if (topRounded < HEADER_HEIGHT) {
+      setMaxHeight(height + topRounded - HEADER_HEIGHT);
+    } else if (topRounded > HEADER_HEIGHT) {
+      setMaxHeight(INITIAL_HEIGHT);
+    }
+  });
+  var attrs = {
+    className: 'c-tooltip-popup',
+    hidden: !props.visible
+  };
+  var contentStyle = maxHeight === INITIAL_HEIGHT ? {} : {
+    maxHeight: maxHeight,
+    overflowY: 'scroll'
+  };
+  var closeLabel = Translator.trans(
+  /*@Desc("Close")*/
+  'tooltip.close_label', {}, 'content');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", attrs, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tooltip-popup__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tooltip-popup__title"
+  }, props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tooltip-popup__close",
+    title: closeLabel,
+    onClick: props.onClose,
+    tabIndex: "-1",
+    "data-tooltip-container-selector": ".c-tooltip-popup__header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icon_icon__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "discard",
+    extraClasses: "ez-icon--small"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tooltip-popup__content",
+    ref: contentRef,
+    style: contentStyle
+  }, props.children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-tooltip-popup__footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    "class": "btn btn-secondary",
+    onClick: props.onClose
+  }, closeLabel)));
+};
+
+TooltipPopupComponent.propTypes = {
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired,
+  visible: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  onClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+TooltipPopupComponent.defaultProps = {
+  onClose: function onClose() {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (TooltipPopupComponent);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/drop-area/drop.area.component.js":
+/*!******************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/drop-area/drop.area.component.js ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DropAreaComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helpers_text_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/text.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/helpers/text.helper.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var DropAreaComponent = /*#__PURE__*/function (_Component) {
+  _inherits(DropAreaComponent, _Component);
+
+  var _super = _createSuper(DropAreaComponent);
+
+  function DropAreaComponent(props) {
+    var _this;
+
+    _classCallCheck(this, DropAreaComponent);
+
+    _this = _super.call(this, props);
+    _this._refFileInput = null;
+    _this.openFileSelector = _this.openFileSelector.bind(_assertThisInitialized(_this));
+    _this.handleUpload = _this.handleUpload.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+  /**
+   * Opens a browser native file selector
+   *
+   * @method openFileSelector
+   * @param {Event} event
+   * @memberof DropAreaComponent
+   */
+
+
+  _createClass(DropAreaComponent, [{
+    key: "openFileSelector",
+    value: function openFileSelector(event) {
+      event.preventDefault();
+
+      this._refFileInput.click();
+    }
+    /**
+     * Handles file upload
+     *
+     * @method handleUpload
+     * @param {Event} event
+     * @memberof DropAreaComponent
+     */
+
+  }, {
+    key: "handleUpload",
+    value: function handleUpload(event) {
+      this.props.preventDefaultAction(event);
+      this.props.onDrop(this.props.processUploadedFiles(event));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.addEventListener('drop', this.props.preventDefaultAction, false);
+      window.addEventListener('dragover', this.props.preventDefaultAction, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('drop', this.props.preventDefaultAction, false);
+      window.removeEventListener('dragover', this.props.preventDefaultAction, false);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var maxFileSizeMessage = Translator.trans(
+      /*@Desc("Max file size:")*/
+      'max_file_size.message', {}, 'multi_file_upload');
+      var dropActionMessage = Translator.trans(
+      /*@Desc("Drag your files to the browser window or select them")*/
+      'drop_action.message', {}, 'multi_file_upload');
+      var uploadBtnLabel = Translator.trans(
+      /*@Desc("Upload sub-items")*/
+      'upload_btn.label', {}, 'multi_file_upload');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "c-drop-area",
+        multiple: true,
+        onDrop: this.handleUpload
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-drop-area__message c-drop-area__message--main"
+      }, dropActionMessage), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        "class": "btn btn-primary c-drop-area__btn-select",
+        onClick: this.openFileSelector,
+        tabIndex: "-1"
+      }, uploadBtnLabel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-drop-area__message c-drop-area__message--filesize"
+      }, "(", maxFileSizeMessage, " ", Object(_helpers_text_helper__WEBPACK_IMPORTED_MODULE_2__["fileSizeToString"])(this.props.maxFileSize), ")"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "c-drop-area__input--hidden",
+        ref: function ref(_ref) {
+          return _this2._refFileInput = _ref;
+        },
+        id: "mfu-files",
+        type: "file",
+        name: "files[]",
+        hidden: true,
+        multiple: true,
+        onChange: this.handleUpload
+      }));
+    }
+  }]);
+
+  return DropAreaComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+DropAreaComponent.propTypes = {
+  onDrop: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  maxFileSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  processUploadedFiles: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  preventDefaultAction: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/progress-bar/progress.bar.component.js":
+/*!************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/progress-bar/progress.bar.component.js ***!
+  \************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var ProgressBarComponent = function ProgressBarComponent(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-progress-bar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-progress-bar__value",
+    style: {
+      width: "".concat(props.progress, "%")
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-progress-bar__label"
+  }, "".concat(props.progress, "%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "c-progress-bar__uploaded"
+  }, props.uploaded, " of ", props.total));
+};
+
+ProgressBarComponent.propTypes = {
+  progress: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+  uploaded: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  total: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (ProgressBarComponent);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.item.component.js":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.item.component.js ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadItemComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _progress_bar_progress_bar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../progress-bar/progress.bar.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/progress-bar/progress.bar.component.js");
+/* harmony import */ var _helpers_text_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/text.helper */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/helpers/text.helper.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+var UploadItemComponent = /*#__PURE__*/function (_Component) {
+  _inherits(UploadItemComponent, _Component);
+
+  var _super = _createSuper(UploadItemComponent);
+
+  function UploadItemComponent(props) {
+    var _this;
+
+    _classCallCheck(this, UploadItemComponent);
+
+    _this = _super.call(this, props);
+    _this.handleFileSizeNotAllowed = _this.handleFileSizeNotAllowed.bind(_assertThisInitialized(_this));
+    _this.handleFileTypeNotAllowed = _this.handleFileTypeNotAllowed.bind(_assertThisInitialized(_this));
+    _this.handleContentTypeNotAllowed = _this.handleContentTypeNotAllowed.bind(_assertThisInitialized(_this));
+    _this.handleEditBtnClick = _this.handleEditBtnClick.bind(_assertThisInitialized(_this));
+    _this.handleUploadAbort = _this.handleUploadAbort.bind(_assertThisInitialized(_this));
+    _this.handleUploadError = _this.handleUploadError.bind(_assertThisInitialized(_this));
+    _this.handleUploadLoad = _this.handleUploadLoad.bind(_assertThisInitialized(_this));
+    _this.handleUploadProgress = _this.handleUploadProgress.bind(_assertThisInitialized(_this));
+    _this.handleUploadEnd = _this.handleUploadEnd.bind(_assertThisInitialized(_this));
+    _this.handleLoadStart = _this.handleLoadStart.bind(_assertThisInitialized(_this));
+    _this.handleFileDeleted = _this.handleFileDeleted.bind(_assertThisInitialized(_this));
+    _this.abortUploading = _this.abortUploading.bind(_assertThisInitialized(_this));
+    _this.deleteFile = _this.deleteFile.bind(_assertThisInitialized(_this));
+    _this.contentInfoInput = null;
+    _this.contentVersionInfoInput = null;
+    _this.contentVersionNoInput = null;
+    _this.contentEditBtn = null;
+    _this.state = {
+      uploading: false,
+      uploaded: props.isUploaded,
+      disallowed: false,
+      disallowedType: false,
+      disallowedSize: false,
+      disallowedContentType: false,
+      aborted: false,
+      failed: false,
+      deleted: false,
+      progress: 0,
+      xhr: null,
+      struct: props.data.struct || null,
+      totalSize: Object(_helpers_text_helper__WEBPACK_IMPORTED_MODULE_3__["fileSizeToString"])(props.data.file.size),
+      uploadedSize: '0'
+    };
+    return _this;
+  }
+
+  _createClass(UploadItemComponent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this$props = this.props,
+          data = _this$props.data,
+          adminUiConfig = _this$props.adminUiConfig,
+          parentInfo = _this$props.parentInfo,
+          createFileStruct = _this$props.createFileStruct,
+          isUploaded = _this$props.isUploaded,
+          checkCanUpload = _this$props.checkCanUpload,
+          contentCreatePermissionsConfig = _this$props.contentCreatePermissionsConfig,
+          currentLanguage = _this$props.currentLanguage;
+      this.contentInfoInput = window.document.querySelector('#form_subitems_content_edit_content_info');
+      this.contentVersionInfoInput = window.document.querySelector('#form_subitems_content_edit_version_info_content_info');
+      this.contentVersionNoInput = window.document.querySelector('#form_subitems_content_edit_version_info_version_no');
+      this.contentEditBtn = window.document.querySelector('#form_subitems_content_edit_create');
+
+      if (isUploaded) {
+        return;
+      }
+
+      var config = _objectSpread(_objectSpread({}, adminUiConfig.multiFileUpload), {}, {
+        contentCreatePermissionsConfig: contentCreatePermissionsConfig
+      });
+
+      var callbacks = {
+        fileTypeNotAllowedCallback: this.handleFileTypeNotAllowed,
+        fileSizeNotAllowedCallback: this.handleFileSizeNotAllowed,
+        contentTypeNotAllowedCallback: this.handleContentTypeNotAllowed
+      };
+
+      if (!checkCanUpload(data.file, parentInfo, config, callbacks)) {
+        this.setState(function () {
+          return {
+            uploading: false,
+            disallowed: true,
+            uploaded: false,
+            aborted: false,
+            failed: true
+          };
+        });
+        return;
+      }
+
+      createFileStruct(data.file, {
+        parentInfo: parentInfo,
+        config: adminUiConfig,
+        languageCode: currentLanguage
+      }).then(this.initPublishFile.bind(this, adminUiConfig));
+    }
+    /**
+     * Initializes file-based content publishing
+     *
+     * @method initPublishFile
+     * @param {Object} restInfo config object containing token and siteaccess properties
+     * @param {Object} struct
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "initPublishFile",
+    value: function initPublishFile(_ref, struct) {
+      var token = _ref.token,
+          siteaccess = _ref.siteaccess;
+      this.props.publishFile({
+        struct: struct,
+        token: token,
+        siteaccess: siteaccess
+      }, {
+        upload: {
+          onabort: this.handleUploadAbort,
+          onerror: this.handleUploadError,
+          onload: this.handleUploadLoad,
+          onprogress: this.handleUploadProgress
+        },
+        onloadstart: this.handleLoadStart,
+        onerror: this.handleUploadError
+      }, this.handleUploadEnd);
+    }
+    /**
+     * Handles the case when a file cannot be upload because of file type
+     *
+     * @method handleFileTypeNotAllowed
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleFileTypeNotAllowed",
+    value: function handleFileTypeNotAllowed() {
+      this.setState(function () {
+        return {
+          uploading: false,
+          disallowed: true,
+          disallowedType: true,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: false,
+          aborted: false,
+          failed: true
+        };
+      });
+    }
+    /**
+     * Handles the case when a file cannot be upload because of file size
+     *
+     * @method handleFileSizeNotAllowed
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleFileSizeNotAllowed",
+    value: function handleFileSizeNotAllowed() {
+      this.setState(function () {
+        return {
+          uploading: false,
+          disallowed: true,
+          disallowedType: false,
+          disallowedSize: true,
+          disallowedContentType: false,
+          uploaded: false,
+          aborted: false,
+          failed: true
+        };
+      });
+    }
+  }, {
+    key: "handleContentTypeNotAllowed",
+    value: function handleContentTypeNotAllowed() {
+      this.setState(function () {
+        return {
+          uploading: false,
+          disallowed: true,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: true,
+          uploaded: false,
+          aborted: false,
+          failed: true
+        };
+      });
+    }
+    /**
+     * Handles the upload load start event
+     *
+     * @method handleLoadStart
+     * @param {Event} event
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleLoadStart",
+    value: function handleLoadStart(event) {
+      this.setState(function () {
+        return {
+          uploading: true,
+          disallowed: false,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: false,
+          aborted: false,
+          failed: false,
+          xhr: event.target
+        };
+      });
+    }
+    /**
+     * Handles the upload abort event
+     *
+     * @method handleUploadAbort
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleUploadAbort",
+    value: function handleUploadAbort() {
+      this.setState(function () {
+        return {
+          uploading: false,
+          disallowed: false,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: false,
+          aborted: true,
+          failed: false
+        };
+      });
+    }
+    /**
+     * Handles the upload error event
+     *
+     * @method handleUploadError
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleUploadError",
+    value: function handleUploadError() {
+      this.setState(function (state) {
+        return {
+          uploading: false,
+          disallowed: state.disallowed,
+          disallowedSize: state.disallowedSize,
+          disallowedType: state.disallowedType,
+          disallowedContentType: state.disallowedContentType,
+          uploaded: false,
+          aborted: state.aborted,
+          failed: true
+        };
+      });
+    }
+    /**
+     * Handles the upload load event
+     *
+     * @method handleUploadLoad
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleUploadLoad",
+    value: function handleUploadLoad() {
+      this.setState(function () {
+        return {
+          uploading: false,
+          disallowed: false,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: true,
+          aborted: false,
+          failed: false
+        };
+      });
+    }
+    /**
+     * Handles the upload progress event
+     *
+     * @method handleUploadProgress
+     * @param {Event} event
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleUploadProgress",
+    value: function handleUploadProgress(event) {
+      var _this2 = this;
+
+      var fraction = event.loaded / event.total;
+      var progress = parseInt(fraction * 100, 10);
+      this.setState(function () {
+        return {
+          uploadedSize: Object(_helpers_text_helper__WEBPACK_IMPORTED_MODULE_3__["fileSizeToString"])(fraction * parseInt(_this2.props.data.file.size, 10)),
+          uploading: true,
+          disallowed: false,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: false,
+          aborted: false,
+          failed: false,
+          progress: progress
+        };
+      });
+    }
+    /**
+     * Handles the upload end event
+     *
+     * @method handleUploadEnd
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleUploadEnd",
+    value: function handleUploadEnd() {
+      var _this3 = this;
+
+      this.setState(function (state) {
+        var struct = JSON.parse(state.xhr.response);
+        return {
+          struct: struct,
+          uploading: false,
+          disallowed: false,
+          disallowedType: false,
+          disallowedSize: false,
+          disallowedContentType: false,
+          uploaded: true,
+          aborted: false,
+          failed: false
+        };
+      }, function () {
+        var data = _this3.props.data;
+
+        _this3.props.onAfterUpload(_objectSpread(_objectSpread({}, data), {}, {
+          struct: _this3.state.struct
+        }));
+      });
+    }
+    /**
+     * Aborts file upload
+     *
+     * @method abortUploading
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "abortUploading",
+    value: function abortUploading() {
+      this.state.xhr.abort();
+      this.props.onAfterAbort(this.props.data);
+    }
+    /**
+     * Deletes a file
+     *
+     * @method deleteFile
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "deleteFile",
+    value: function deleteFile() {
+      var _this4 = this;
+
+      this.setState(function () {
+        return {
+          deleted: true
+        };
+      }, function () {
+        return _this4.props.deleteFile(_this4.props.adminUiConfig, _this4.state.struct, _this4.handleFileDeleted);
+      });
+    }
+    /**
+     * Handles the file deleted event
+     *
+     * @method handleFileDeleted
+     * @memberof UploadItemComponent
+     */
+
+  }, {
+    key: "handleFileDeleted",
+    value: function handleFileDeleted() {
+      this.props.onAfterDelete(this.props.data);
+    }
+    /**
+     * Returns content type identifier
+     * based on Content object returned from server after upload
+     *
+     * @method getContentTypeIdentifier
+     * @memberof UploadItemComponent
+     * @returns {String|null}
+     */
+
+  }, {
+    key: "getContentTypeIdentifier",
+    value: function getContentTypeIdentifier() {
+      var _this$props2 = this.props,
+          contentTypesMap = _this$props2.contentTypesMap,
+          data = _this$props2.data;
+
+      if (!data.struct || !data.struct.Content) {
+        return null;
+      }
+
+      var contentTypeHref = data.struct.Content.ContentType._href;
+      var contentType = contentTypesMap ? contentTypesMap[contentTypeHref] : null;
+      var contentTypeIdentifier = contentType ? contentType.identifier : null;
+      return contentTypeIdentifier;
+    }
+    /**
+     * Renders an icon of a content type
+     *
+     * @method renderIcon
+     * @returns {JSX.Element|null}
+     */
+
+  }, {
+    key: "renderIcon",
+    value: function renderIcon() {
+      var contentTypeIdentifier = this.getContentTypeIdentifier();
+
+      if (!contentTypeIdentifier) {
+        return null;
+      }
+
+      var contentTypeIconUrl = eZ.helpers.contentType.getContentTypeIconUrl(contentTypeIdentifier);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        customPath: contentTypeIconUrl,
+        extraClasses: "ez-icon--small-medium ez-icon--base-dark"
+      });
+    }
+    /**
+     * Renders a progress bar
+     *
+     * @method renderProgressBar
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderProgressBar",
+    value: function renderProgressBar() {
+      var _this$state = this.state,
+          uploaded = _this$state.uploaded,
+          aborted = _this$state.aborted,
+          progress = _this$state.progress,
+          totalSize = _this$state.totalSize,
+          uploadedSize = _this$state.uploadedSize,
+          disallowed = _this$state.disallowed;
+
+      if (this.props.isUploaded || uploaded || aborted || disallowed) {
+        return null;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_progress_bar_progress_bar_component__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        progress: progress,
+        uploaded: uploadedSize,
+        total: totalSize
+      });
+    }
+    /**
+     * Renders an error message
+     *
+     * @method renderErrorMessage
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderErrorMessage",
+    value: function renderErrorMessage() {
+      var _this$state2 = this.state,
+          uploaded = _this$state2.uploaded,
+          aborted = _this$state2.aborted,
+          disallowedType = _this$state2.disallowedType,
+          disallowedSize = _this$state2.disallowedSize,
+          failed = _this$state2.failed,
+          uploading = _this$state2.uploading,
+          disallowedContentType = _this$state2.disallowedContentType;
+      var isError = !uploaded && !aborted && (disallowedSize || disallowedType || disallowedContentType) && failed && !uploading;
+      var cannotUploadMessage = Translator.trans(
+      /*@Desc("Cannot upload file")*/
+      'cannot_upload.message', {}, 'multi_file_upload');
+      var disallowedTypeMessage = Translator.trans(
+      /*@Desc("File type is not allowed")*/
+      'disallowed_type.message', {}, 'multi_file_upload');
+      var disallowedSizeMessage = Translator.trans(
+      /*@Desc("File size is not allowed")*/
+      'disallowed_size.message', {}, 'multi_file_upload');
+      var disallowedContentTypeMessage = Translator.trans(
+      /*@Desc("You do not have permission to create this Content item")*/
+      'disallowed_content_type.message', {}, 'multi_file_upload');
+      var msg = cannotUploadMessage;
+
+      if (disallowedType) {
+        msg = disallowedTypeMessage;
+      }
+
+      if (disallowedSize) {
+        msg = disallowedSizeMessage;
+      }
+
+      if (disallowedContentType) {
+        msg = disallowedContentTypeMessage;
+      }
+
+      return isError ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__message c-upload-list-item__message--error"
+      }, msg) : null;
+    }
+    /**
+     * Renders an error message
+     *
+     * @method renderErrorMessage
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderSuccessMessage",
+    value: function renderSuccessMessage() {
+      var _this$state3 = this.state,
+          uploaded = _this$state3.uploaded,
+          aborted = _this$state3.aborted,
+          disallowedSize = _this$state3.disallowedSize,
+          disallowedType = _this$state3.disallowedType,
+          failed = _this$state3.failed,
+          uploading = _this$state3.uploading;
+      var isSuccess = uploaded && !aborted && !(disallowedSize || disallowedType) && !failed && !uploading;
+      var message = Translator.trans(
+      /*@Desc("Uploaded")*/
+      'upload.success.message', {}, 'multi_file_upload');
+      return isSuccess ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__message c-upload-list-item__message--success"
+      }, message) : null;
+    }
+    /**
+     * Renders an abort upload button
+     *
+     * @method renderAbortBtn
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderAbortBtn",
+    value: function renderAbortBtn() {
+      var _this$state4 = this.state,
+          uploaded = _this$state4.uploaded,
+          aborted = _this$state4.aborted,
+          disallowedSize = _this$state4.disallowedSize,
+          disallowedType = _this$state4.disallowedType,
+          failed = _this$state4.failed,
+          uploading = _this$state4.uploading;
+      var canAbort = !uploaded && !aborted && !disallowedSize && !disallowedType && !failed && uploading;
+
+      if (!canAbort) {
+        return null;
+      }
+
+      var label = Translator.trans(
+      /*@Desc("Abort")*/
+      'abort.label', {}, 'multi_file_upload');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__action c-upload-list-item__action--abort",
+        onClick: this.abortUploading,
+        title: label,
+        tabIndex: "-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "circle-close",
+        extraClasses: "ez-icon--small-medium"
+      }));
+    }
+    /**
+     * Handles the edit button click event. Fills in the hidden form to redirect a user to a correct content edit location.
+     *
+     * @method handleEditBtnClick
+     * @memberof UploadItemComponent
+     * @param {Event} event
+     */
+
+  }, {
+    key: "handleEditBtnClick",
+    value: function handleEditBtnClick(event) {
+      event.preventDefault();
+      var struct = this.state.struct;
+      var content = struct.Content;
+      var contentId = content._id;
+      var languageCode = content.CurrentVersion.Version.VersionInfo.VersionTranslationInfo.Language['0'].languageCode;
+      var versionNo = content.CurrentVersion.Version.VersionInfo.versionNo;
+      this.contentInfoInput.value = contentId;
+      this.contentVersionInfoInput.value = contentId;
+      this.contentVersionNoInput.value = versionNo;
+      window.document.querySelector("#form_subitems_content_edit_language_".concat(languageCode)).checked = true;
+      this.contentEditBtn.click();
+    }
+    /**
+     * Renders an edit content button
+     *
+     * @method renderEditBtn
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderEditBtn",
+    value: function renderEditBtn() {
+      var _this$state5 = this.state,
+          uploaded = _this$state5.uploaded,
+          aborted = _this$state5.aborted,
+          disallowedSize = _this$state5.disallowedSize,
+          disallowedType = _this$state5.disallowedType,
+          failed = _this$state5.failed,
+          uploading = _this$state5.uploading;
+      var canEdit = this.props.isUploaded || uploaded && !aborted && !(disallowedSize || disallowedType) && !failed && !uploading;
+
+      if (!canEdit) {
+        return null;
+      }
+
+      var label = Translator.trans(
+      /*@Desc("Edit")*/
+      'edit.label', {}, 'multi_file_upload');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__action c-upload-list-item__action--edit",
+        title: label,
+        onClick: this.handleEditBtnClick,
+        tabIndex: "-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "edit",
+        extraClasses: "ez-icon--small-medium"
+      }));
+    }
+    /**
+     * Renders an delete content button
+     *
+     * @method renderDeleteBtn
+     * @memberof UploadItemComponent
+     * @returns {null|Element}
+     */
+
+  }, {
+    key: "renderDeleteBtn",
+    value: function renderDeleteBtn() {
+      var _this$state6 = this.state,
+          uploaded = _this$state6.uploaded,
+          aborted = _this$state6.aborted,
+          disallowedSize = _this$state6.disallowedSize,
+          disallowedType = _this$state6.disallowedType,
+          failed = _this$state6.failed,
+          uploading = _this$state6.uploading;
+      var canDelete = this.props.isUploaded || uploaded && !aborted && !(disallowedSize || disallowedType) && !failed && !uploading;
+
+      if (!canDelete) {
+        return null;
+      }
+
+      var label = Translator.trans(
+      /*@Desc("Delete")*/
+      'delete.label', {}, 'multi_file_upload');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__action c-upload-list-item__action--delete",
+        onClick: this.deleteFile,
+        title: label,
+        tabIndex: "-1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "trash",
+        extraClasses: "ez-icon--small-medium"
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.deleted) {
+        return null;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__icon-wrapper"
+      }, this.renderIcon()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__meta"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__name"
+      }, this.props.data.file.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__size"
+      }, this.state.uploaded ? this.state.totalSize : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__info"
+      }, this.renderErrorMessage(), this.renderSuccessMessage(), this.renderProgressBar()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list-item__actions"
+      }, this.renderAbortBtn(), this.renderEditBtn(), this.renderDeleteBtn()));
+    }
+  }]);
+
+  return UploadItemComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+UploadItemComponent.propTypes = {
+  data: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  onAfterUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onAfterAbort: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  onAfterDelete: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  isUploaded: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired,
+  createFileStruct: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  publishFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  deleteFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  checkCanUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  adminUiConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    multiFileUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      defaultMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      fallbackContentType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+      locationMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      maxFileSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+    }).isRequired,
+    token: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    siteaccess: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  parentInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    contentTypeIdentifier: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    contentTypeId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    locationPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    language: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  contentCreatePermissionsConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  contentTypesMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  currentLanguage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+UploadItemComponent.defaultProps = {
+  isUploaded: false,
+  currentLanguage: ''
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.list.component.js":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.list.component.js ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadListComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _upload_item_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./upload.item.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.item.component.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var UploadListComponent = /*#__PURE__*/function (_Component) {
+  _inherits(UploadListComponent, _Component);
+
+  var _super = _createSuper(UploadListComponent);
+
+  function UploadListComponent(props) {
+    var _this;
+
+    _classCallCheck(this, UploadListComponent);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      itemsToUpload: props.itemsToUpload,
+      items: []
+    };
+    return _this;
+  }
+
+  _createClass(UploadListComponent, [{
+    key: "UNSAFE_componentWillReceiveProps",
+    value: function UNSAFE_componentWillReceiveProps(props) {
+      this.setState(function (state) {
+        var stateItems = state.itemsToUpload.filter(function (stateItem) {
+          return !props.itemsToUpload.find(function (propItem) {
+            return propItem.id === stateItem.id;
+          });
+        });
+        return {
+          itemsToUpload: [].concat(_toConsumableArray(stateItems), _toConsumableArray(props.itemsToUpload))
+        };
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.props.onAfterUpload(this.state.items);
+    }
+    /**
+     * Handles after file upload event
+     *
+     * @method handleAfterUpload
+     * @param {Object} item
+     * @memberof UploadListComponent
+     */
+
+  }, {
+    key: "handleAfterUpload",
+    value: function handleAfterUpload(item) {
+      this.setState(function (state) {
+        return {
+          itemsToUpload: state.itemsToUpload.filter(function (data) {
+            return data.id !== item.id;
+          }),
+          items: [].concat(_toConsumableArray(state.items), [item])
+        };
+      });
+    }
+    /**
+     * Handles after file upload abort event
+     *
+     * @method handleAfterAbort
+     * @param {Object} item
+     * @memberof UploadListComponent
+     */
+
+  }, {
+    key: "handleAfterAbort",
+    value: function handleAfterAbort(item) {
+      this.setState(function (state) {
+        var items = state.items.filter(function (data) {
+          return data.id !== item.id;
+        });
+        var itemsToUpload = state.itemsToUpload.filter(function (data) {
+          return data.id !== item.id;
+        });
+        return Object.assign({}, state, {
+          uploaded: items.length,
+          total: items.length + itemsToUpload.length,
+          itemsToUpload: itemsToUpload,
+          items: items
+        });
+      });
+    }
+    /**
+     * Handles after file delete event
+     *
+     * @method handleAfterDelete
+     * @param {Object} item
+     * @memberof UploadListComponent
+     */
+
+  }, {
+    key: "handleAfterDelete",
+    value: function handleAfterDelete(item) {
+      this.setState(function (state) {
+        var items = state.items.filter(function (data) {
+          return data.id !== item.id;
+        });
+        var itemsToUpload = state.itemsToUpload.filter(function (data) {
+          return data.id !== item.id;
+        });
+        return Object.assign({}, state, {
+          uploaded: items.length,
+          total: items.length + itemsToUpload.length,
+          itemsToUpload: itemsToUpload,
+          items: items
+        });
+      });
+    }
+    /**
+     * Renders an item to upload
+     *
+     * @method renderItemToUpload
+     * @param {Object} item
+     * @memberof UploadListComponent
+     * @returns {Element}
+     */
+
+  }, {
+    key: "renderItemToUpload",
+    value: function renderItemToUpload(item) {
+      return this.renderItem(item, {
+        isUploaded: false,
+        createFileStruct: this.props.createFileStruct,
+        publishFile: this.props.publishFile,
+        onAfterAbort: this.handleAfterAbort.bind(this),
+        onAfterUpload: this.handleAfterUpload.bind(this),
+        checkCanUpload: this.props.checkCanUpload
+      });
+    }
+    /**
+     * Renders an uploaded item
+     *
+     * @method renderUploadedItem
+     * @param {Object} item
+     * @memberof UploadListComponent
+     * @returns {Element}
+     */
+
+  }, {
+    key: "renderUploadedItem",
+    value: function renderUploadedItem(item) {
+      return this.renderItem(item, {
+        isUploaded: true,
+        deleteFile: this.props.deleteFile,
+        onAfterDelete: this.handleAfterDelete.bind(this)
+      });
+    }
+    /**
+     * Renders an item
+     *
+     * @method renderItem
+     * @param {Object} item
+     * @param {Object} customAttrs component's custom attrs
+     * @memberof UploadListComponent
+     * @returns {Element}
+     */
+
+  }, {
+    key: "renderItem",
+    value: function renderItem(item, customAttrs) {
+      var _this$props = this.props,
+          adminUiConfig = _this$props.adminUiConfig,
+          parentInfo = _this$props.parentInfo,
+          contentCreatePermissionsConfig = _this$props.contentCreatePermissionsConfig,
+          contentTypesMap = _this$props.contentTypesMap,
+          currentLanguage = _this$props.currentLanguage;
+      var attrs = Object.assign({
+        key: item.id,
+        data: item,
+        adminUiConfig: adminUiConfig,
+        parentInfo: parentInfo,
+        contentCreatePermissionsConfig: contentCreatePermissionsConfig,
+        contentTypesMap: contentTypesMap,
+        currentLanguage: currentLanguage
+      }, customAttrs);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_upload_item_component__WEBPACK_IMPORTED_MODULE_2__["default"], attrs);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          items = _this$state.items,
+          itemsToUpload = _this$state.itemsToUpload;
+      var uploaded = items.length;
+      var total = uploaded + itemsToUpload.length;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list__title"
+      }, this.props.uploadedItemsListTitle, " (", uploaded, "/", total, ")"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-list__items"
+      }, itemsToUpload.map(this.renderItemToUpload.bind(this)), items.map(this.renderUploadedItem.bind(this))));
+    }
+  }]);
+
+  return UploadListComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+UploadListComponent.propTypes = {
+  itemsToUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object),
+  onAfterUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  createFileStruct: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  publishFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  deleteFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  checkCanUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  adminUiConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    multiFileUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      defaultMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      fallbackContentType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+      locationMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      maxFileSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+    }).isRequired,
+    token: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    siteaccess: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  parentInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    contentTypeIdentifier: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    contentTypeId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    locationPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    language: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  uploadedItemsListTitle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  contentCreatePermissionsConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  contentTypesMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  currentLanguage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+UploadListComponent.defaultProps = {
+  itemsToUpload: [],
+  currentLanguage: ''
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-popup/upload.popup.component.js":
+/*!************************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-popup/upload.popup.component.js ***!
+  \************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UploadPopupModule; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_tooltip_popup_tooltip_popup_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/tooltip-popup/tooltip.popup.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/tooltip-popup/tooltip.popup.component.js");
+/* harmony import */ var _drop_area_drop_area_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../drop-area/drop.area.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/drop-area/drop.area.component.js");
+/* harmony import */ var _upload_list_upload_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../upload-list/upload.list.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-list/upload.list.component.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var CLASS_SCROLL_DISABLED = 'ez-scroll-disabled';
+
+var UploadPopupModule = /*#__PURE__*/function (_Component) {
+  _inherits(UploadPopupModule, _Component);
+
+  var _super = _createSuper(UploadPopupModule);
+
+  function UploadPopupModule(props) {
+    var _this;
+
+    _classCallCheck(this, UploadPopupModule);
+
+    _this = _super.call(this, props);
+    _this.uploadFiles = _this.uploadFiles.bind(_assertThisInitialized(_this));
+    _this.refTooltip = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.state = {
+      itemsToUpload: props.itemsToUpload
+    };
+    return _this;
+  }
+
+  _createClass(UploadPopupModule, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.document.body.classList.add(CLASS_SCROLL_DISABLED);
+      window.eZ.helpers.tooltips.parse(this.refTooltip.current);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.document.body.classList.remove(CLASS_SCROLL_DISABLED);
+    }
+  }, {
+    key: "UNSAFE_componentWillReceiveProps",
+    value: function UNSAFE_componentWillReceiveProps(props) {
+      this.setState(function (state) {
+        var stateItems = state.itemsToUpload.filter(function (stateItem) {
+          return !props.itemsToUpload.find(function (propItem) {
+            return propItem.id === stateItem.id;
+          });
+        });
+        return {
+          itemsToUpload: [].concat(_toConsumableArray(stateItems), _toConsumableArray(props.itemsToUpload))
+        };
+      });
+    }
+    /**
+     * Uploads files
+     *
+     * @method uploadFiles
+     * @param {Array} itemsToUpload
+     * @memberof UploadPopupModule
+     */
+
+  }, {
+    key: "uploadFiles",
+    value: function uploadFiles(itemsToUpload) {
+      this.setState(function () {
+        return {
+          itemsToUpload: itemsToUpload
+        };
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var tooltipAttrs = this.props;
+
+      var listAttrs = _objectSpread(_objectSpread({}, tooltipAttrs), {}, {
+        itemsToUpload: this.state.itemsToUpload
+      });
+
+      var title = Translator.trans(
+      /*@Desc("Multi-file upload")*/
+      'upload_popup.close', {}, 'multi_file_upload');
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-upload-popup",
+        ref: this.refTooltip
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_tooltip_popup_tooltip_popup_component__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
+        title: title
+      }, tooltipAttrs), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_drop_area_drop_area_component__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onDrop: this.uploadFiles,
+        maxFileSize: this.props.adminUiConfig.multiFileUpload.maxFileSize,
+        preventDefaultAction: this.props.preventDefaultAction,
+        processUploadedFiles: this.props.processUploadedFiles
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_upload_list_upload_list_component__WEBPACK_IMPORTED_MODULE_4__["default"], listAttrs)));
+    }
+  }]);
+
+  return UploadPopupModule;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+UploadPopupModule.propTypes = {
+  popupTitle: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  visible: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  onUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onUploadEnd: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onUploadFail: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onItemEdit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onItemRemove: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  itemsToUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  onAfterUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  createFileStruct: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  publishFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  deleteFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  checkCanUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  adminUiConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    multiFileUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      defaultMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      fallbackContentType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+      locationMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      maxFileSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+    }).isRequired,
+    token: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    siteaccess: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  parentInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    contentTypeIdentifier: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    contentTypeId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    locationPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    language: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  preventDefaultAction: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  processUploadedFiles: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  contentTypesMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  currentLanguage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+UploadPopupModule.defaultProps = {
+  visible: true,
+  itemsToUpload: [],
+  currentLanguage: ''
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/helpers/text.helper.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/helpers/text.helper.js ***!
+  \*********************************************************************************************************************/
+/*! exports provided: fileSizeToString */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileSizeToString", function() { return fileSizeToString; });
+/**
+ * Returns a filesize as a formatted string
+ *
+ * @function fileSizeToString
+ * @param {Number} filesize
+ * @returns {String}
+ */
+var fileSizeToString = function fileSizeToString(filesize) {
+  var units = ['bytes', 'KB', 'MB', 'GB'];
+  var kilobyte = 1024;
+  var size = parseInt(filesize, 10) || 0;
+  var unitIndex = 0;
+  var decimalUnits;
+
+  while (size >= kilobyte) {
+    size = size / kilobyte;
+    unitIndex++;
+  }
+
+  decimalUnits = unitIndex < 1 ? 0 : 1;
+  return size.toFixed(size >= 10 || decimalUnits) + ' ' + units[unitIndex];
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/multi.file.upload.module.js":
+/*!**************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/multi.file.upload.module.js ***!
+  \**************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MultiFileUploadModule; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_upload_popup_upload_popup_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/upload-popup/upload.popup.component */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/components/upload-popup/upload.popup.component.js");
+/* harmony import */ var _services_multi_file_upload_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/multi.file.upload.service */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/services/multi.file.upload.service.js");
+/* harmony import */ var _common_icon_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../common/icon/icon */ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/common/icon/icon.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+var MultiFileUploadModule = /*#__PURE__*/function (_Component) {
+  _inherits(MultiFileUploadModule, _Component);
+
+  var _super = _createSuper(MultiFileUploadModule);
+
+  function MultiFileUploadModule(props) {
+    var _this;
+
+    _classCallCheck(this, MultiFileUploadModule);
+
+    _this = _super.call(this, props);
+    var popupVisible = true;
+    _this._itemsUploaded = [];
+
+    if (!props.itemsToUpload || !props.itemsToUpload.length) {
+      popupVisible = false;
+    }
+
+    _this.handleDropOnWindow = _this.handleDropOnWindow.bind(_assertThisInitialized(_this));
+    _this.handleAfterUpload = _this.handleAfterUpload.bind(_assertThisInitialized(_this));
+    _this.showUploadPopup = _this.showUploadPopup.bind(_assertThisInitialized(_this));
+    _this.hidePopup = _this.hidePopup.bind(_assertThisInitialized(_this));
+    _this.processUploadedFiles = _this.processUploadedFiles.bind(_assertThisInitialized(_this));
+    _this.setUdwStateOpened = _this.setUdwStateOpened.bind(_assertThisInitialized(_this));
+    _this.setUdwStateClosed = _this.setUdwStateClosed.bind(_assertThisInitialized(_this));
+    _this.state = {
+      udwOpened: false,
+      popupVisible: popupVisible,
+      itemsToUpload: props.itemsToUpload,
+      allowDropOnWindow: true,
+      uploadDisabled: Object.values(props.contentCreatePermissionsConfig).every(function (isEnabled) {
+        return !isEnabled;
+      })
+    };
+    return _this;
+  }
+
+  _createClass(MultiFileUploadModule, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.manageDropEvent();
+      window.document.body.addEventListener('ez-udw-opened', this.setUdwStateOpened, false);
+      window.document.body.addEventListener('ez-udw-closed', this.setUdwStateClosed, false);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.manageDropEvent();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.document.body.removeEventListener('ez-udw-opened', this.setUdwStateOpened, false);
+      window.document.body.removeEventListener('ez-udw-closed', this.setUdwStateClosed, false);
+    }
+    /**
+     * Set udw state as open
+     *
+     * @method setUdwStateOpened
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "setUdwStateOpened",
+    value: function setUdwStateOpened() {
+      this.setState({
+        udwOpened: true
+      });
+    }
+    /**
+     * Set udw state as closed
+     *
+     * @method setUdwStateClosed
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "setUdwStateClosed",
+    value: function setUdwStateClosed() {
+      this.setState({
+        udwOpened: false
+      });
+    }
+    /**
+     * Attaches `drop` and `dragover` events handlers on window
+     *
+     * @method manageDropEvent
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "manageDropEvent",
+    value: function manageDropEvent() {
+      var _this$state = this.state,
+          uploadDisabled = _this$state.uploadDisabled,
+          popupVisible = _this$state.popupVisible,
+          itemsToUpload = _this$state.itemsToUpload;
+
+      if (!uploadDisabled && !popupVisible && !itemsToUpload.length) {
+        window.addEventListener('drop', this.handleDropOnWindow, false);
+        window.addEventListener('dragover', this.preventDefaultAction, false);
+      }
+    }
+    /**
+     * Hides multi file upload popup
+     *
+     * @method hidePopup
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "hidePopup",
+    value: function hidePopup() {
+      this.setState(function (state) {
+        return Object.assign({}, state, {
+          popupVisible: false
+        });
+      });
+      this.props.onPopupClose(this._itemsUploaded);
+    }
+    /**
+     * Displays multi file upload popup
+     *
+     * @method showUploadPopup
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "showUploadPopup",
+    value: function showUploadPopup() {
+      this.setState(function (state) {
+        return Object.assign({}, state, {
+          popupVisible: true,
+          itemsToUpload: []
+        });
+      });
+    }
+    /**
+     * Keeps information about uploaded files.
+     * We want to avoid component rerendering so it's stored in an object instance property.
+     *
+     * @method handleAfterUpload
+     * @param {Array} itemsUploaded
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "handleAfterUpload",
+    value: function handleAfterUpload(itemsUploaded) {
+      this._itemsUploaded = itemsUploaded;
+    }
+    /**
+     * Handles dropping on window.
+     * When file/files are dropped onto window the `drop` and `dragover` event handlers are removed.
+     *
+     * @method handleDropOnWindow
+     * @param {Event} event
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "handleDropOnWindow",
+    value: function handleDropOnWindow(event) {
+      this.preventDefaultAction(event);
+      var itemsToUpload = this.processUploadedFiles(event); // Covers the case when dragging and dropping page elements inside the browser,
+      // like links, images, etc.
+
+      if (!this.state.allowDropOnWindow || !itemsToUpload.length || this.state.udwOpened) {
+        return;
+      }
+
+      window.removeEventListener('drop', this.handleDropOnWindow, false);
+      window.removeEventListener('dragover', this.preventDefaultAction, false);
+      this.setState(function (state) {
+        return Object.assign({}, state, {
+          itemsToUpload: itemsToUpload,
+          popupVisible: true,
+          allowDropOnWindow: false
+        });
+      });
+    }
+    /**
+     * Extracts information about dropped files
+     *
+     * @method extractDroppedFilesList
+     * @param {Event} event
+     * @returns {undefined|Array}
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "extractDroppedFilesList",
+    value: function extractDroppedFilesList(event) {
+      var list;
+
+      if (event.nativeEvent) {
+        list = event.nativeEvent.dataTransfer || event.nativeEvent.target;
+      } else {
+        list = event.dataTransfer;
+      }
+
+      return list;
+    }
+    /**
+     * Processes uploaded files and generates an unique file id
+     *
+     * @method processUploadedFiles
+     * @param {Event} event
+     * @returns {Array}
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "processUploadedFiles",
+    value: function processUploadedFiles(event) {
+      var list = this.extractDroppedFilesList(event);
+      return Array.from(list.files).map(function (file) {
+        return {
+          id: Math.floor(Math.random() * Date.now()),
+          file: file
+        };
+      });
+    }
+    /**
+     * Prevents default event actions
+     *
+     * @method preventDefaultAction
+     * @param {Event} event
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "preventDefaultAction",
+    value: function preventDefaultAction(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    /**
+     * Renders multi file upload button,
+     * that allows to open multi file upload popup.
+     *
+     * @method renderBtn
+     * @returns {null|Element}
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "renderBtn",
+    value: function renderBtn() {
+      if (!this.props.withUploadButton) {
+        return null;
+      }
+
+      var uploadDisabled = this.state.uploadDisabled;
+      var title = Translator.trans(
+      /*@Desc("Upload sub-items")*/
+      'multi_file_upload_open_btn.label', {}, 'multi_file_upload');
+      var attrs = {
+        className: 'm-mfu__btn--upload',
+        title: title,
+        onClick: this.showUploadPopup,
+        type: 'button'
+      };
+
+      if (uploadDisabled) {
+        delete attrs.onClick;
+        attrs.disabled = true;
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", attrs, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_icon_icon__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        name: "upload",
+        extraClasses: "ez-icon--base-dark ez-icon--small-medium"
+      }));
+    }
+    /**
+     * Renders a popup
+     *
+     * @method renderPopup
+     * @returns {null|Element}
+     * @memberof MultiFileUploadModule
+     */
+
+  }, {
+    key: "renderPopup",
+    value: function renderPopup() {
+      if (!this.state.popupVisible) {
+        return null;
+      }
+
+      var attrs = _objectSpread(_objectSpread({}, this.props), {}, {
+        visible: true,
+        onClose: this.hidePopup,
+        itemsToUpload: this.state.itemsToUpload,
+        onAfterUpload: this.handleAfterUpload,
+        preventDefaultAction: this.preventDefaultAction,
+        processUploadedFiles: this.processUploadedFiles
+      });
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_upload_popup_upload_popup_component__WEBPACK_IMPORTED_MODULE_2__["default"], attrs);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-mfu"
+      }, this.renderBtn(), this.renderPopup());
+    }
+  }]);
+
+  return MultiFileUploadModule;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+eZ.addConfig('modules.MultiFileUpload', MultiFileUploadModule);
+MultiFileUploadModule.propTypes = {
+  adminUiConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    multiFileUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+      defaultMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      fallbackContentType: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+      locationMappings: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object).isRequired,
+      maxFileSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired
+    }).isRequired,
+    token: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    siteaccess: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  parentInfo: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    contentTypeIdentifier: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    contentTypeId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number.isRequired,
+    locationPath: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+    language: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+  }).isRequired,
+  checkCanUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  createFileStruct: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  deleteFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  onPopupClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  publishFile: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  itemsToUpload: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  withUploadButton: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  contentCreatePermissionsConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  contentTypesMap: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  currentLanguage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+MultiFileUploadModule.defaultProps = {
+  checkCanUpload: _services_multi_file_upload_service__WEBPACK_IMPORTED_MODULE_3__["checkCanUpload"],
+  createFileStruct: _services_multi_file_upload_service__WEBPACK_IMPORTED_MODULE_3__["createFileStruct"],
+  deleteFile: _services_multi_file_upload_service__WEBPACK_IMPORTED_MODULE_3__["deleteFile"],
+  onPopupClose: function onPopupClose() {},
+  publishFile: _services_multi_file_upload_service__WEBPACK_IMPORTED_MODULE_3__["publishFile"],
+  itemsToUpload: [],
+  withUploadButton: true,
+  currentLanguage: ''
+};
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/services/multi.file.upload.service.js":
+/*!************************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/services/multi.file.upload.service.js ***!
+  \************************************************************************************************************************************/
+/*! exports provided: checkCanUpload, createFileStruct, publishFile, deleteFile */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkCanUpload", function() { return checkCanUpload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFileStruct", function() { return createFileStruct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "publishFile", function() { return publishFile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFile", function() { return deleteFile; });
+/**
+ * Handles ready state change of request
+ *
+ * @function handleOnReadyStateChange
+ * @param {XMLHttpRequest} xhr
+ * @param {Function} onSuccess
+ * @param {Function} onError
+ */
+var handleOnReadyStateChange = function handleOnReadyStateChange(xhr, onSuccess, onError) {
+  if (xhr.readyState !== 4) {
+    return;
+  }
+
+  if (xhr.status === 0 && xhr.statusText === '') {
+    // request aborted
+    return;
+  }
+
+  if (xhr.status >= 400 || !xhr.status) {
+    onError(xhr);
+    return;
+  }
+
+  onSuccess(JSON.parse(xhr.response));
+};
+/**
+ * Handles request response
+ *
+ * @function handleRequestResponse
+ * @param {Response} response
+ * @returns {String|Response}
+ */
+
+
+var handleRequestResponse = function handleRequestResponse(response) {
+  if (!response.ok) {
+    throw Error(response.text());
+  }
+
+  return response;
+};
+/**
+ * Read file handler
+ *
+ * @function readFile
+ * @param {File} file
+ * @param {Function} resolve
+ * @param {Function} reject
+ */
+
+
+var readFile = function readFile(file, resolve, reject) {
+  var _this = this;
+
+  this.addEventListener('load', function () {
+    return resolve({
+      fileReader: _this,
+      file: file
+    });
+  }, false);
+  this.addEventListener('error', function () {
+    return reject();
+  }, false);
+  this.readAsDataURL(file);
+};
+/**
+ * Finds a content type mapping based on a file type
+ *
+ * @function findFileTypeMapping
+ * @param {Array} mappings
+ * @param {File} file
+ * @returns {Object|undefined}
+ */
+
+
+var findFileTypeMapping = function findFileTypeMapping(mappings, file) {
+  return mappings.find(function (item) {
+    return item.mimeTypes.find(function (type) {
+      return type === file.type;
+    });
+  });
+};
+/**
+ * Checks if file's MIME Type is allowed
+ *
+ * @function isMimeTypeAllowed
+ * @param {Array} mappings
+ * @param {File} file
+ * @returns {Boolean}
+ */
+
+
+var isMimeTypeAllowed = function isMimeTypeAllowed(mappings, file) {
+  return !!findFileTypeMapping(mappings, file);
+};
+/**
+ * Checks if file type is allowed
+ *
+ * @function checkFileTypeAllowed
+ * @param {File} file
+ * @param {Object} locationMapping
+ * @returns {Boolean}
+ */
+
+
+var checkFileTypeAllowed = function checkFileTypeAllowed(file, locationMapping) {
+  return !locationMapping ? true : isMimeTypeAllowed(locationMapping.mappings, file);
+};
+/**
+ * Detects a content type for a given file
+ *
+ * @function detectContentTypeMapping
+ * @param {File} file
+ * @param {Object} parentInfo
+ * @param {Object} config
+ * @returns {Object} detected content type config
+ */
+
+
+var detectContentTypeMapping = function detectContentTypeMapping(file, parentInfo, config) {
+  var locationMapping = config.locationMappings.find(function (item) {
+    return item.contentTypeIdentifier === parentInfo.contentTypeIdentifier;
+  });
+  var mappings = locationMapping ? locationMapping.mappings : config.defaultMappings;
+  return findFileTypeMapping(mappings, file) || config.fallbackContentType;
+};
+/**
+ * Gets content type identifier
+ *
+ * @function getContentTypeByIdentifier
+ * @param {Object} params params object containing token and siteaccess properties
+ * @param {String} identifier content type identifier
+ * @returns {Promise}
+ */
+
+
+var getContentTypeByIdentifier = function getContentTypeByIdentifier(_ref, identifier) {
+  var token = _ref.token,
+      siteaccess = _ref.siteaccess;
+  var request = new Request("/api/ezp/v2/content/types?identifier=".concat(identifier), {
+    method: 'GET',
+    headers: {
+      Accept: 'application/vnd.ez.api.ContentTypeInfoList+json',
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    credentials: 'same-origin',
+    mode: 'cors'
+  });
+  return fetch(request).then(handleRequestResponse);
+};
+/**
+ * Prepares a ContentCreate struct based on an uploaded file type
+ *
+ * @function prepareStruct
+ * @param {Object} params params object containing parentInfo and config properties
+ * @param {Object} data file data containing File object and FileReader object
+ * @returns {Promise}
+ */
+
+
+var prepareStruct = function prepareStruct(_ref2, data) {
+  var parentInfo = _ref2.parentInfo,
+      config = _ref2.config,
+      languageCode = _ref2.languageCode;
+  var parentLocation = "/api/ezp/v2/content/locations".concat(parentInfo.locationPath);
+  parentLocation = parentLocation.endsWith('/') ? parentLocation.slice(0, -1) : parentLocation;
+  var mapping = detectContentTypeMapping(data.file, parentInfo, config.multiFileUpload);
+  return getContentTypeByIdentifier(config, mapping.contentTypeIdentifier).then(function (response) {
+    return response.json();
+  })["catch"](function () {
+    return window.eZ.helpers.notification.showErrorNotification('Cannot get content type by identifier');
+  }).then(function (response) {
+    var fileValue = {
+      fileName: data.file.name,
+      data: data.fileReader.result.replace(/^.*;base64,/, '')
+    };
+
+    if (data.file.type.startsWith('image/')) {
+      fileValue.alternativeText = data.file.name;
+    }
+
+    var fields = [{
+      fieldDefinitionIdentifier: mapping.nameFieldIdentifier,
+      fieldValue: data.file.name
+    }, {
+      fieldDefinitionIdentifier: mapping.contentFieldIdentifier,
+      fieldValue: fileValue
+    }];
+    var struct = {
+      ContentCreate: {
+        ContentType: {
+          _href: response.ContentTypeInfoList.ContentType[0]._href
+        },
+        mainLanguageCode: languageCode || parentInfo.language,
+        LocationCreate: {
+          ParentLocation: {
+            _href: parentLocation
+          },
+          sortField: 'PATH',
+          sortOrder: 'ASC'
+        },
+        Section: null,
+        alwaysAvailable: true,
+        remoteId: null,
+        modificationDate: new Date().toISOString(),
+        fields: {
+          field: fields
+        }
+      }
+    };
+    return struct;
+  })["catch"](function () {
+    return window.eZ.helpers.notification.showErrorNotification('Cannot create content structure');
+  });
+};
+/**
+ * Creates a content draft
+ *
+ * @function createDraft
+ * @param {Object} params params object containing struct, token and siteaccess properties
+ * @param {Object} requestEventHandlers object containing a list of callbacks
+ * @returns {Promise}
+ */
+
+
+var createDraft = function createDraft(_ref3, requestEventHandlers) {
+  var struct = _ref3.struct,
+      token = _ref3.token,
+      siteaccess = _ref3.siteaccess;
+  var xhr = new XMLHttpRequest();
+  var body = JSON.stringify(struct);
+  var headers = {
+    Accept: 'application/vnd.ez.api.Content+json',
+    'Content-Type': 'application/vnd.ez.api.ContentCreate+json',
+    'X-CSRF-Token': token,
+    'X-Siteaccess': siteaccess
+  };
+  return new Promise(function (resolve, reject) {
+    xhr.open('POST', '/api/ezp/v2/content/objects', true);
+    xhr.onreadystatechange = handleOnReadyStateChange.bind(null, xhr, resolve, reject);
+
+    if (requestEventHandlers && Object.keys(requestEventHandlers).length) {
+      var uploadEvents = requestEventHandlers.upload;
+
+      if (uploadEvents && Object.keys(uploadEvents).length) {
+        xhr.upload.onabort = uploadEvents.onabort;
+        xhr.upload.onerror = reject;
+        xhr.upload.onload = uploadEvents.onload;
+        xhr.upload.onprogress = uploadEvents.onprogress;
+        xhr.upload.ontimeout = uploadEvents.ontimeout;
+      }
+
+      xhr.onerror = reject;
+      xhr.onloadstart = requestEventHandlers.onloadstart;
+    }
+
+    for (var headerType in headers) {
+      if (headers.hasOwnProperty(headerType)) {
+        xhr.setRequestHeader(headerType, headers[headerType]);
+      }
+    }
+
+    xhr.send(body);
+  });
+};
+/**
+ * Publishes a content draft
+ *
+ * @function publishDraft
+ * @param {Object} params params object containing token and siteaccess properties
+ * @param {Object} response object containing created draft struct
+ * @returns {Promise}
+ */
+
+
+var publishDraft = function publishDraft(_ref4, response) {
+  var token = _ref4.token,
+      siteaccess = _ref4.siteaccess;
+
+  if (!response || !response.hasOwnProperty('Content')) {
+    return Promise.reject('Cannot publish content based on an uploaded file');
+  }
+
+  var request = new Request(response.Content.CurrentVersion.Version._href, {
+    method: 'POST',
+    headers: {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token,
+      'X-HTTP-Method-Override': 'PUBLISH'
+    },
+    mode: 'cors',
+    credentials: 'same-origin'
+  });
+  return fetch(request).then(handleRequestResponse);
+};
+/**
+ * Checks whether a content based on an uploaded file can be created
+ *
+ * @function canCreateContent
+ * @param {File} file
+ * @param {Object} parentInfo parent info hash
+ * @param {Object} config multi file upload config
+ * @returns {Boolean}
+ */
+
+
+var canCreateContent = function canCreateContent(file, parentInfo, config) {
+  if (!config.hasOwnProperty('contentCreatePermissionsConfig') || !config.contentCreatePermissionsConfig) {
+    return true;
+  }
+
+  var contentTypeConfig = detectContentTypeMapping(file, parentInfo, config);
+  return config.contentCreatePermissionsConfig[contentTypeConfig.contentTypeIdentifier];
+};
+/**
+ * Checks if a file can be uploaded
+ *
+ * @function checkCanUpload
+ * @param {File} file
+ * @param {Object} parentInfo parent info hash
+ * @param {Object} config multi file upload config
+ * @param {Object} callbacks a list of callbacks
+ * @returns {Boolean}
+ */
+
+
+var checkCanUpload = function checkCanUpload(file, parentInfo, config, callbacks) {
+  var locationMapping = config.locationMappings.find(function (item) {
+    return item.contentTypeIdentifier === parentInfo.contentTypeIdentifier;
+  });
+
+  if (!canCreateContent(file, parentInfo, config)) {
+    callbacks.contentTypeNotAllowedCallback();
+    return false;
+  }
+
+  if (!checkFileTypeAllowed(file, locationMapping)) {
+    callbacks.fileTypeNotAllowedCallback();
+    return false;
+  }
+
+  if (file.size > config.maxFileSize) {
+    callbacks.fileSizeNotAllowedCallback();
+    return false;
+  }
+
+  return true;
+};
+/**
+ * Creates a ContentCreate struct based on a file
+ *
+ * @function createFileStruct
+ * @param {File} file
+ * @param {Object} params struct params
+ * @returns {Promise}
+ */
+
+var createFileStruct = function createFileStruct(file, params) {
+  return new Promise(readFile.bind(new FileReader(), file)).then(prepareStruct.bind(null, params));
+};
+/**
+ * Publishes file
+ *
+ * @function publishFile
+ * @param {Object} data file data
+ * @param {Object} requestEventHandlers a list of request event handlers
+ * @param {Function} callback a success callback
+ */
+
+var publishFile = function publishFile(data, requestEventHandlers, callback) {
+  createDraft(data, requestEventHandlers).then(publishDraft.bind(null, data)).then(callback)["catch"](function () {
+    return window.eZ.helpers.notification.showErrorNotification('An error occurred while publishing a file');
+  });
+};
+/**
+ * Deletes file
+ *
+ * @function deleteFile
+ * @param {Object} systemInfo system info containing: token and siteaccess info.
+ * @param {Object} struct Content struct
+ * @param {Function} callback file deleted callback
+ */
+
+var deleteFile = function deleteFile(_ref5, struct, callback) {
+  var token = _ref5.token,
+      siteaccess = _ref5.siteaccess;
+  var request = new Request(struct.Content._href, {
+    method: 'DELETE',
+    headers: {
+      'X-Siteaccess': siteaccess,
+      'X-CSRF-Token': token
+    },
+    mode: 'cors',
+    credentials: 'same-origin'
+  });
+  fetch(request).then(handleRequestResponse).then(callback)["catch"](function () {
+    return window.eZ.helpers.notification.showErrorNotification('An error occurred while deleting a file');
+  });
+};
+
+/***/ }),
+
+/***/ 29:
+/*!********************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/multi.file.upload.module.js ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/multi.file.upload.module.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/ui-dev/src/modules/multi-file-upload/multi.file.upload.module.js");
+
+
+/***/ }),
+
+/***/ "prop-types":
+/*!****************************!*\
+  !*** external "PropTypes" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = PropTypes;
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = React;
+
+/***/ })
+
+},[[29,"runtime"]]]);

@@ -1,1 +1,102 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-modal-location-trash-js"],{22:function(e,t,r){e.exports=r("4LSH")},"4LSH":function(e,t){function r(e){return function(e){if(Array.isArray(e))return n(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return n(e,t);var r=Object.prototype.toString.call(e).slice(8,-1);"Object"===r&&e.constructor&&(r=e.constructor.name);if("Map"===r||"Set"===r)return Array.from(e);if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return n(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function n(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,n=new Array(t);r<t;r++)n[r]=e[r];return n}!function(e,t){var n=t.querySelector('form[name="location_trash"]'),o=n.querySelector('button[type="submit"]'),a=n.querySelectorAll(".ez-modal__trash-option"),i=n.querySelector('input[name="location_trash[confirm][]"]'),l=function(e){e.disabled=!1,e.classList.remove("disabled")};if(t.body.addEventListener("ez-trash-modal-refresh",(function(e){var t=e.detail.numberOfSubitems,r=document.querySelector(".ez-modal--trash-location"),n=r.querySelector(".modal-body"),o=r.querySelector(".modal-footer .ez-modal-button--send-to-trash"),a=r.dataset.contentName;if(t){var i=Translator.trans("trash_container.modal.message_main",{content_name:a,children_count:t},"content");n.querySelector(".ez-modal__option-description").innerHTML=i}else{var l=Translator.trans("trash.modal.message",{},"content");n.innerHTML=l,o.removeAttribute("disabled"),o.classList.remove("disabled")}}),!1),i){n.addEventListener("change",(function(){var e;r(a).every((function(e){var t=r(e.querySelectorAll("input"));return 0===t.length||t.some((function(e){return e.checked}))}))&&i.checked?l(o):((e=o).disabled=!0,e.classList.add("disabled"))}),!1)}else l(o)}(window,document)}},[[22,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-modal-location-trash-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.trash.js":
+/*!****************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.trash.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var form = doc.querySelector('form[name="location_trash"]');
+  var submitButton = form.querySelector('button[type="submit"]');
+  var allOptions = form.querySelectorAll('.ez-modal__trash-option');
+  var confirmCheckbox = form.querySelector('input[name="location_trash[confirm][]"]');
+
+  var enableButton = function enableButton(button) {
+    button.disabled = false;
+    button.classList.remove('disabled');
+  };
+
+  var disableButton = function disableButton(button) {
+    button.disabled = true;
+    button.classList.add('disabled');
+  };
+
+  var refreshTrashModal = function refreshTrashModal(event) {
+    var numberOfSubitems = event.detail.numberOfSubitems;
+    var sendToTrashModal = document.querySelector('.ez-modal--trash-location');
+    var modalBody = sendToTrashModal.querySelector('.modal-body');
+    var modalSendToTrashButton = sendToTrashModal.querySelector('.modal-footer .ez-modal-button--send-to-trash');
+    var contentName = sendToTrashModal.dataset.contentName;
+
+    if (numberOfSubitems) {
+      var message = Translator.trans(
+      /*@Desc("Sending '%content_name%' and its %children_count% Content item(s) to Trash will also send the sub-items of this Location to Trash.")*/
+      'trash_container.modal.message_main', {
+        content_name: contentName,
+        children_count: numberOfSubitems
+      }, 'content');
+      modalBody.querySelector('.ez-modal__option-description').innerHTML = message;
+    } else {
+      var _message = Translator.trans(
+      /*@Desc("Are you sure you want to send this Content item to Trash?")*/
+      'trash.modal.message', {}, 'content');
+
+      modalBody.innerHTML = _message;
+      modalSendToTrashButton.removeAttribute('disabled');
+      modalSendToTrashButton.classList.remove('disabled');
+    }
+  };
+
+  doc.body.addEventListener('ez-trash-modal-refresh', refreshTrashModal, false);
+
+  if (!confirmCheckbox) {
+    enableButton(submitButton);
+    return;
+  }
+
+  var toggleSubmitButton = function toggleSubmitButton() {
+    var areAllOptionsChecked = _toConsumableArray(allOptions).every(function (option) {
+      var inputs = _toConsumableArray(option.querySelectorAll('input'));
+
+      var isInputChecked = function isInputChecked(input) {
+        return input.checked;
+      };
+
+      return inputs.length === 0 || inputs.some(isInputChecked);
+    });
+
+    areAllOptionsChecked && confirmCheckbox.checked ? enableButton(submitButton) : disableButton(submitButton);
+  };
+
+  form.addEventListener('change', toggleSubmitButton, false);
+})(window, document);
+
+/***/ }),
+
+/***/ 17:
+/*!**********************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.trash.js ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.trash.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.trash.js");
+
+
+/***/ })
+
+},[[17,"runtime"]]]);

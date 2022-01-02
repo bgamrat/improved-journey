@@ -1,1 +1,260 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-policy-edit-js","ezplatform-admin-ui-policy-create-with-limitation-js"],{2:function(e,t,n){e.exports=n("AVXI")},AVXI:function(e,t){function n(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function o(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null==n)return;var r,o,i=[],a=!0,c=!1;try{for(n=n.call(e);!(a=(r=n.next()).done)&&(i.push(r.value),!t||i.length!==t);a=!0);}catch(e){c=!0,o=e}finally{try{a||null==n.return||n.return()}finally{if(c)throw o}}return i}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return i(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}!function(e,t,i,a,c,u){var l=this,s=t.querySelector('meta[name="CSRF-Token"]').content,p=t.querySelector('meta[name="SiteAccess"]').content,f=t.getElementById("react-udw"),d=t.querySelectorAll(".ez-pick-location-limitation-button"),y=function(e){return e.reduce((function(e,t){return e[t[t.length-1]]={uri:"/api/ezp/v2/views",method:"POST",headers:{Accept:"application/vnd.ez.api.View+json; version=1.1","Content-Type":"application/vnd.ez.api.ViewInput+json; version=1.1","X-Requested-With":"XMLHttpRequest"},content:JSON.stringify({ViewInput:{identifier:"udw-locations-by-path-string-".concat(t.join("-")),public:!1,LocationQuery:{FacetBuilders:{},SortClauses:{SectionIdentifier:"ascending"},Filter:{LocationIdCriterion:t.join(",")},limit:50,offset:0}}})},e}),{})},m=function(e,t){!function(e,t){var n=y(e),r=new Request("/api/ezp/v2/bulk",{method:"POST",headers:{Accept:"application/vnd.ez.api.BulkOperationResponse+json","Content-Type":"application/vnd.ez.api.BulkOperation+json","X-Siteaccess":p,"X-CSRF-Token":s},body:JSON.stringify({bulkOperations:{operations:n}}),mode:"same-origin",credentials:"same-origin"}),o=u.trans("limitation.pick.error",{},"universal_discovery_widget");fetch(r).then(i.helpers.request.getJsonFromResponse).then(t).catch((function(){return i.helpers.notification.showErrorNotification(o)}))}(t.map(v),(function(t){var n=t.BulkOperationResponse.operations;Object.entries(n).forEach((function(t){var n=o(t,2),r=n[0],i=n[1].content,a=JSON.parse(i),c=e.querySelector('[data-location-id="'.concat(r,'"]')),u=c.querySelector(".ez-tag__content"),l=c.querySelector(".ez-tag__spinner");u.innerText=function(e){return e.View.Result.searchHits.searchHit.map((function(e){return e.value.Location.ContentInfo.Content.TranslatedName})).join(" / ")}(a),l.hidden=!0,u.hidden=!1}))}))},v=function(e){return function(e){return e.slice(1)}(function(e){return e.split("/").filter((function(e){return e}))}(e.pathString))},w=function(e,n){var r=n.dataset.locationId;!function(e,n){var r=t.querySelector(e),o=r.value.split(",").filter((function(e){return e!==n}));r.value=o.join(",")}(e.dataset.locationInputSelector,r),n.remove()},S=function(e,t){t.querySelector(".ez-tag__remove-btn").addEventListener("click",(function(){return w(e,t)}),!1)},b=function(){return c.unmountComponentAtNode(f)},h=function(e,n){n.length&&(function(e,n){var r=t.querySelector(e.dataset.locationInputSelector),o=n.map((function(e){return e.id})).join(",");r.value=o}(e,n),function(e,n){var r=t.querySelector(e.dataset.selectedLocationListSelector),o=e.dataset.valueTemplate,i=t.createDocumentFragment();n.forEach((function(n){var r=n.id,a=t.createElement("ul"),c=o.replace("{{ location_id }}",r);a.insertAdjacentHTML("beforeend",c);var u=a.querySelector("li"),l=u.querySelector(".ez-tag");S(e,l),i.append(u)})),r.innerHTML="",r.append(i),m(r,n)}(e,n)),b()},g=function(e){e.preventDefault();var o=e.currentTarget,s=t.querySelector(o.dataset.locationInputSelector).value.split(",").filter((function(e){return!!e})).map((function(e){return parseInt(e,10)})),p=JSON.parse(e.currentTarget.dataset.udwConfig),d=u.trans("subtree_limitation.title",{},"universal_discovery_widget");c.render(a.createElement(i.modules.UniversalDiscovery,function(e){for(var t=1;t<arguments.length;t++){var o=null!=arguments[t]?arguments[t]:{};t%2?n(Object(o),!0).forEach((function(t){r(e,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(o,t))}))}return e}({onConfirm:h.bind(l,e.target),onCancel:b,title:d,multiple:!0,selectedLocations:s},p)),f)};d.forEach((function(e){t.querySelector(e.dataset.selectedLocationListSelector).querySelectorAll(".ez-tag").forEach(S.bind(null,e)),e.addEventListener("click",g,!1)})),t.querySelectorAll(".ez-update-policy__action-wrapper").forEach((function(e){var t=e.querySelector(".ez-update-policy__source-input");new i.core.CustomDropdown({container:e,sourceInput:t,itemsContainer:e.querySelector(".ez-custom-dropdown__items")}).init()}))}(window,window.document,window.eZ,window.React,window.ReactDOM,window.Translator)}},[[2,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-policy-edit-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.limitation.pick.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.limitation.pick.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var _this = this;
+
+  var SELECTOR_LOCATION_LIMITATION_BTN = '.ez-pick-location-limitation-button';
+  var SELECTOR_EZ_TAG = '.ez-tag';
+  var IDS_SEPARATOR = ',';
+  var SELECTOR_CUSTOM_DROPDOWN_CONTAINER = '.ez-update-policy__action-wrapper';
+  var SELECTOR_SOURCE_INPUT = '.ez-update-policy__source-input';
+  var SELECTOR_ITEMS = '.ez-custom-dropdown__items';
+  var token = doc.querySelector('meta[name="CSRF-Token"]').content;
+  var siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
+  var udwContainer = doc.getElementById('react-udw');
+  var limitationBtns = doc.querySelectorAll(SELECTOR_LOCATION_LIMITATION_BTN);
+
+  var findLocationsByIdList = function findLocationsByIdList(pathArraysWithoutRoot, callback) {
+    var bulkOperations = getBulkOperations(pathArraysWithoutRoot);
+    var request = new Request('/api/ezp/v2/bulk', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/vnd.ez.api.BulkOperationResponse+json',
+        'Content-Type': 'application/vnd.ez.api.BulkOperation+json',
+        'X-Siteaccess': siteaccess,
+        'X-CSRF-Token': token
+      },
+      body: JSON.stringify({
+        bulkOperations: {
+          operations: bulkOperations
+        }
+      }),
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    });
+    var errorMessage = Translator.trans(
+    /*@Desc("Could not fetch content names")*/
+    'limitation.pick.error', {}, 'universal_discovery_widget');
+    fetch(request).then(eZ.helpers.request.getJsonFromResponse).then(callback)["catch"](function () {
+      return eZ.helpers.notification.showErrorNotification(errorMessage);
+    });
+  };
+
+  var getBulkOperations = function getBulkOperations(pathArraysWithoutRoot) {
+    return pathArraysWithoutRoot.reduce(function (operations, pathArray) {
+      var locationId = pathArray[pathArray.length - 1];
+      operations[locationId] = {
+        uri: '/api/ezp/v2/views',
+        method: 'POST',
+        headers: {
+          Accept: 'application/vnd.ez.api.View+json; version=1.1',
+          'Content-Type': 'application/vnd.ez.api.ViewInput+json; version=1.1',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        content: JSON.stringify({
+          ViewInput: {
+            identifier: "udw-locations-by-path-string-".concat(pathArray.join('-')),
+            "public": false,
+            LocationQuery: {
+              FacetBuilders: {},
+              SortClauses: {
+                SectionIdentifier: 'ascending'
+              },
+              Filter: {
+                LocationIdCriterion: pathArray.join(IDS_SEPARATOR)
+              },
+              limit: 50,
+              offset: 0
+            }
+          }
+        })
+      };
+      return operations;
+    }, {});
+  };
+
+  var removeRootLocation = function removeRootLocation(pathArray) {
+    return pathArray.slice(1);
+  };
+
+  var pathStringToPathArray = function pathStringToPathArray(pathString) {
+    return pathString.split('/').filter(function (el) {
+      return el;
+    });
+  };
+
+  var buildContentBreadcrumbs = function buildContentBreadcrumbs(viewData) {
+    var searchHitList = viewData.View.Result.searchHits.searchHit;
+    return searchHitList.map(function (searchHit) {
+      return searchHit.value.Location.ContentInfo.Content.TranslatedName;
+    }).join(' / ');
+  };
+
+  var addLocationsToInput = function addLocationsToInput(limitationBtn, selectedItems) {
+    var input = doc.querySelector(limitationBtn.dataset.locationInputSelector);
+    var selectedLocationsIds = selectedItems.map(function (item) {
+      return item.id;
+    }).join(IDS_SEPARATOR);
+    input.value = selectedLocationsIds;
+  };
+
+  var removeLocationFromInput = function removeLocationFromInput(locationInputSelector, removedLocationId) {
+    var input = doc.querySelector(locationInputSelector);
+    var locationsIdsWithoutRemoved = input.value.split(IDS_SEPARATOR).filter(function (locationId) {
+      return locationId !== removedLocationId;
+    });
+    input.value = locationsIdsWithoutRemoved.join(IDS_SEPARATOR);
+  };
+
+  var addLocationsTags = function addLocationsTags(limitationBtn, selectedItems) {
+    var tagsList = doc.querySelector(limitationBtn.dataset.selectedLocationListSelector);
+    var tagTemplate = limitationBtn.dataset.valueTemplate;
+    var fragment = doc.createDocumentFragment();
+    selectedItems.forEach(function (location) {
+      var locationId = location.id;
+      var container = doc.createElement('ul');
+      var renderedItem = tagTemplate.replace('{{ location_id }}', locationId);
+      container.insertAdjacentHTML('beforeend', renderedItem);
+      var listItemNode = container.querySelector('li');
+      var tagNode = listItemNode.querySelector(SELECTOR_EZ_TAG);
+      attachTagEventHandlers(limitationBtn, tagNode);
+      fragment.append(listItemNode);
+    });
+    tagsList.innerHTML = '';
+    tagsList.append(fragment);
+    setTagsBreadcrumbs(tagsList, selectedItems);
+  };
+
+  var setTagsBreadcrumbs = function setTagsBreadcrumbs(tagsList, selectedItems) {
+    var pathArraysWithoutRoot = selectedItems.map(getLocationPathArray);
+    findLocationsByIdList(pathArraysWithoutRoot, function (response) {
+      var operations = response.BulkOperationResponse.operations;
+      Object.entries(operations).forEach(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            locationId = _ref2[0],
+            content = _ref2[1].content;
+
+        var viewData = JSON.parse(content);
+        var tag = tagsList.querySelector("[data-location-id=\"".concat(locationId, "\"]"));
+        var tagContent = tag.querySelector('.ez-tag__content');
+        var tagSpinner = tag.querySelector('.ez-tag__spinner');
+        tagContent.innerText = buildContentBreadcrumbs(viewData);
+        tagSpinner.hidden = true;
+        tagContent.hidden = false;
+      });
+    });
+  };
+
+  var getLocationPathArray = function getLocationPathArray(_ref3) {
+    var pathString = _ref3.pathString;
+    var pathArray = pathStringToPathArray(pathString);
+    var pathArrayWithoutRoot = removeRootLocation(pathArray);
+    return pathArrayWithoutRoot;
+  };
+
+  var handleTagRemove = function handleTagRemove(limitationBtn, tag) {
+    var removedLocationId = tag.dataset.locationId;
+    var locationInputSelector = limitationBtn.dataset.locationInputSelector;
+    removeLocationFromInput(locationInputSelector, removedLocationId);
+    tag.remove();
+  };
+
+  var attachTagEventHandlers = function attachTagEventHandlers(limitationBtn, tag) {
+    var removeTagBtn = tag.querySelector('.ez-tag__remove-btn');
+    removeTagBtn.addEventListener('click', function () {
+      return handleTagRemove(limitationBtn, tag);
+    }, false);
+  };
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var handleUdwConfirm = function handleUdwConfirm(limitationBtn, selectedItems) {
+    if (selectedItems.length) {
+      addLocationsToInput(limitationBtn, selectedItems);
+      addLocationsTags(limitationBtn, selectedItems);
+    }
+
+    closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var limitationBtn = event.currentTarget;
+    var input = doc.querySelector(limitationBtn.dataset.locationInputSelector);
+    var selectedLocationsIds = input.value.split(IDS_SEPARATOR).filter(function (idString) {
+      return !!idString;
+    }).map(function (idString) {
+      return parseInt(idString, 10);
+    });
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    var title = Translator.trans(
+    /*@Desc("Choose Locations")*/
+    'subtree_limitation.title', {}, 'universal_discovery_widget');
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: handleUdwConfirm.bind(_this, event.target),
+      onCancel: closeUDW,
+      title: title,
+      multiple: true,
+      selectedLocations: selectedLocationsIds
+    }, config)), udwContainer);
+  };
+
+  limitationBtns.forEach(function (limitationBtn) {
+    var tagsList = doc.querySelector(limitationBtn.dataset.selectedLocationListSelector);
+    var tags = tagsList.querySelectorAll(SELECTOR_EZ_TAG);
+    tags.forEach(attachTagEventHandlers.bind(null, limitationBtn));
+    limitationBtn.addEventListener('click', openUDW, false);
+  });
+  doc.querySelectorAll(SELECTOR_CUSTOM_DROPDOWN_CONTAINER).forEach(function (container) {
+    var sourceInput = container.querySelector(SELECTOR_SOURCE_INPUT);
+    var dropdown = new eZ.core.CustomDropdown({
+      container: container,
+      sourceInput: sourceInput,
+      itemsContainer: container.querySelector(SELECTOR_ITEMS)
+    });
+    dropdown.init();
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ 8:
+/*!********************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.limitation.pick.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.limitation.pick.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.limitation.pick.js");
+
+
+/***/ })
+
+},[[8,"runtime"]]]);

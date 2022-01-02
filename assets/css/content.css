@@ -30,3 +30,6 @@ table.with-borders td {
     border: 1px solid;
     padding: 3px;
 }
+.ezrichtext-field table tbody tr td {
+    padding-left: 1rem;
+}

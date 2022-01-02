@@ -1,1 +1,31 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-link-manager-list-js"],{26:function(n,t,e){n.exports=e("3GcQ")},"3GcQ":function(n,t){document.getElementById("search_data_status").addEventListener("change",(function(){this.form.submit()}))}},[[26,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-link-manager-list-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.linkmanager.list.js":
+/*!***************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.linkmanager.list.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (doc) {
+  var statusField = doc.getElementById('search_data_status');
+  statusField.addEventListener('change', function () {
+    this.form.submit();
+  });
+})(document);
+
+/***/ }),
+
+/***/ 21:
+/*!*********************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.linkmanager.list.js ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.linkmanager.list.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.linkmanager.list.js");
+
+
+/***/ })
+
+},[[21,"runtime"]]]);

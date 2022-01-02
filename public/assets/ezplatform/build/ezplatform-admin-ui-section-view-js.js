@@ -1,1 +1,68 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-section-view-js"],{18:function(e,t,n){e.exports=n("BzZe")},BzZe:function(e,t){function n(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}!function(e,t,o,c,i){var u=this,a=t.querySelectorAll(".btn--open-udw"),f=t.getElementById("react-udw"),l=function(){return i.unmountComponentAtNode(f)},p=function(e,t){e.querySelector("#".concat(e.getAttribute("name"),"_locations_location")).value=t.map((function(e){return e.id})).join(),l(),e.submit()},s=function(){return l()},w=function(e){e.preventDefault();var t=e.target.closest("form"),a=JSON.parse(e.currentTarget.dataset.udwConfig);i.render(c.createElement(o.modules.UniversalDiscovery,function(e){for(var t=1;t<arguments.length;t++){var o=null!=arguments[t]?arguments[t]:{};t%2?n(Object(o),!0).forEach((function(t){r(e,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(o,t))}))}return e}({onConfirm:p.bind(u,t),onCancel:s},a)),f)};a.forEach((function(e){return e.addEventListener("click",w,!1)}))}(window,window.document,window.eZ,window.React,window.ReactDOM)}},[[18,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-section-view-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.view.js":
+/*!***********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.view.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM) {
+  var _this = this;
+
+  var btns = doc.querySelectorAll('.btn--open-udw');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(form, content) {
+    var field = form.querySelector("#".concat(form.getAttribute('name'), "_locations_location"));
+    field.value = content.map(function (item) {
+      return item.id;
+    }).join();
+    closeUDW();
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var form = event.target.closest('form');
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm.bind(_this, form),
+      onCancel: onCancel
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM);
+
+/***/ }),
+
+/***/ 13:
+/*!*****************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.view.js ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.view.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.view.js");
+
+
+/***/ })
+
+},[[13,"runtime"]]]);

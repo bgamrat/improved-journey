@@ -1,1 +1,118 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-section-list-js"],{17:function(e,t,n){n("muK3"),e.exports=n("rvQw")},muK3:function(e,t){function n(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}!function(e,t,o,c,i){var a=this,u=t.querySelectorAll(".btn--open-udw"),l=t.getElementById("react-udw"),f=function(){return i.unmountComponentAtNode(l)},s=function(e,t){e.querySelector("#".concat(e.getAttribute("name"),"_locations_location")).value=t.map((function(e){return e.id})).join(),f(),e.submit()},d=function(){return f()},b=function(e){e.preventDefault();var u=t.querySelector('form[name="section_content_assign"]'),f=e.target.closest("a"),b=JSON.parse(f.dataset.udwConfig);u.action=f.dataset.formAction,t.querySelector("#section_content_assign_section").value=f.dataset.sectionId,i.render(c.createElement(o.modules.UniversalDiscovery,function(e){for(var t=1;t<arguments.length;t++){var o=null!=arguments[t]?arguments[t]:{};t%2?n(Object(o),!0).forEach((function(t){r(e,t,o[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(o,t))}))}return e}({onConfirm:s.bind(a,u),onCancel:d},b)),l)};u.forEach((function(e){return e.addEventListener("click",b,!1)}))}(window,window.document,window.eZ,window.React,window.ReactDOM)},rvQw:function(e,t){function n(e){return function(e){if(Array.isArray(e))return r(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return r(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return r(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var o;window,(o=window.document).querySelectorAll(".ez-toggle-btn-state").forEach((function(e){var t=n(e.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]')),r=o.querySelector(e.dataset.toggleButtonId);if(r){var c=function(){var e=t.some((function(e){return e.checked}));r.disabled=!e};c(),t.forEach((function(e){return e.addEventListener("change",c,!1)}))}}))}},[[17,"runtime"]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-section-list-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.list.js":
+/*!***********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.list.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM) {
+  var _this = this;
+
+  var btns = doc.querySelectorAll('.btn--open-udw');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(form, content) {
+    var field = form.querySelector("#".concat(form.getAttribute('name'), "_locations_location"));
+    field.value = content.map(function (item) {
+      return item.id;
+    }).join();
+    closeUDW();
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var form = doc.querySelector('form[name="section_content_assign"]');
+    var btn = event.target.closest('a');
+    var config = JSON.parse(btn.dataset.udwConfig);
+    form.action = btn.dataset.formAction;
+    doc.querySelector('#section_content_assign_section').value = btn.dataset.sectionId;
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm.bind(_this, form),
+      onCancel: onCancel
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var toggleForms = doc.querySelectorAll('.ez-toggle-btn-state');
+  toggleForms.forEach(function (toggleForm) {
+    var checkboxes = _toConsumableArray(toggleForm.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]'));
+
+    var buttonRemove = doc.querySelector(toggleForm.dataset.toggleButtonId);
+
+    if (!buttonRemove) {
+      return;
+    }
+
+    var toggleButtonState = function toggleButtonState() {
+      var isAnythingSelected = checkboxes.some(function (el) {
+        return el.checked;
+      });
+      buttonRemove.disabled = !isAnythingSelected;
+    };
+
+    toggleButtonState();
+    checkboxes.forEach(function (checkbox) {
+      return checkbox.addEventListener('change', toggleButtonState, false);
+    });
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ 12:
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.list.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.list.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.section.list.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js");
+
+
+/***/ })
+
+},[[12,"runtime"]]]);

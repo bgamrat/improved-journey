@@ -1,3 +1,18 @@
+# improved-journey
+
+Uses wkhtmltopdf and knp-snappy to generate PDFs of course documents 
+
+Useful commands
+
+```
+composer install
+bin/console cache:clear
+bin/console ibexa:encore:compile
+rm -rf public/pdf/*
+```
+
+Based on (and thank you to!)
+
 # Ibexa Flex website skeleton
 
 This is a Symfony Flex website skeleton allowing installation of all editions of
@@ -16,14 +31,6 @@ a subscription. Learn more about [Ibexa DXP](https://www.ibexa.co/products).
 
 For installation instructions of Ibexa Open Source see [ibexa/oss](https://github.com/ibexa/oss)
 package.
-
-AND 
-
-```
-composer install
-bin/console cache:clear
-bin/console ibexa:encore:compile
-```
 
 ## COPYRIGHT
 Copyright (C) 1999-2021 Ibexa AS (formerly eZ Systems AS). All rights reserved.

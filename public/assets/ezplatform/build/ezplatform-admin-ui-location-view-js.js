@@ -1,5 +1,7027 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["ezplatform-admin-ui-location-view-js"],{"/nHf":function(t,e){var n,i;window,n=window.document,i=function(t){n.querySelector("#main_translation_update_language_code").value=t.target.value,n.querySelector('form[name="main_translation_update"]').submit()},n.querySelectorAll('input[name="main_translation_update"]').forEach((function(t){return t.addEventListener("change",i,!1)}))},21:function(t,e,n){n("XTxE"),n("cKz5"),n("81PU"),n("KuNv"),n("nx6J"),n("zaCD"),n("Buo9"),n("Na7+"),n("s7Kb"),n("S264"),n("FgTm"),n("ek4S"),n("G96h"),n("4fiY"),n("RvAi"),n("N/up"),n("BboL"),n("6HWo"),n("3daL"),n("LdnA"),n("VFBs"),n("DUYn"),n("xVo+"),n("RCya"),n("GVId"),n("rvQw"),n("Axjq"),n("5oW+"),n("/nHf"),t.exports=n("vvQ+")},"3daL":function(t,e){function n(t){return function(t){if(Array.isArray(t))return i(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}var o,r,s,a,h;window,o=window.document,s=o.querySelectorAll(".ez-instant-filter"),a=function(t){var e=!!n(t.querySelectorAll(".ez-instant-filter__group-item")).filter((function(t){return!t.hasAttribute("hidden")})).length;t.querySelector(".ez-instant-filter__group-name")[e?"removeAttribute":"setAttribute"]("hidden",!0)},h=function(t,e,n){window.clearTimeout(r),r=window.setTimeout((function(){var i=n.target.value.toLowerCase(),o=t.filter((function(t){return t.label.includes(i)}));t.forEach((function(t){return t.element.setAttribute("hidden",!0)})),o.forEach((function(t){return t.element.removeAttribute("hidden")})),e.forEach(a)}),200)},s.forEach((function(t){var e=t.querySelector(".ez-instant-filter__input"),i=n(t.querySelectorAll(".ez-instant-filter__group")),o=n(t.querySelectorAll(".ez-instant-filter__group-item")).reduce((function(t,e){return[].concat(n(t),[{label:e.textContent.toLowerCase(),element:e}])}),[]);e.addEventListener("change",h.bind(t,o,i),!1),e.addEventListener("blur",h.bind(t,o,i),!1),e.addEventListener("keyup",h.bind(t,o,i),!1)}))},"4fiY":function(t,e){function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function i(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.React,a=window.ReactDOM,h=window.Translator,c=o.querySelectorAll(".btn--udw-add"),u=o.querySelector("#content_location_add_add"),l=o.querySelector('form[name="content_location_add"]').querySelector("#content_location_add_new_locations"),d=o.getElementById("react-udw"),_=function(){return a.unmountComponentAtNode(d)},p=function(t){_(),l.value=t[0].id,u.click()},m=function(){return _()},f=function(t){t.preventDefault(),t.stopPropagation();var e=JSON.parse(t.currentTarget.dataset.udwConfig),o=h.trans("add_location.title",{},"universal_discovery_widget");a.render(s.createElement(r.modules.UniversalDiscovery,function(t){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?n(Object(o),!0).forEach((function(e){i(t,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}({onConfirm:p,onCancel:m,containersOnly:!0,title:o,multiple:!1},e)),d)},c.forEach((function(t){return t.addEventListener("click",f,!1)}))},"5oW+":function(t,e){var n,i,o,r,s,a,h,c,u,l,d,_;window,n=window.document,i=window.eZ,o=n.querySelector('meta[name="CSRF-Token"]').content,r=n.querySelector('meta[name="SiteAccess"]').content,s=n.querySelector(".ez-add-to-bookmarks"),a=parseInt(s.getAttribute("data-location-id"),10),h=i.helpers.notification.showErrorNotification,c=!1,u=function(t){if(!t.ok)throw Error(t.statusText);return t.status},l=function(t){_(t),c=!1},d=function(t){if(!c){c=!0;var e=t?"POST":"DELETE",n=new Request("".concat("/api/ezp/v2/bookmark","/").concat(a),{method:e,headers:{"X-Siteaccess":r,"X-CSRF-Token":o},mode:"same-origin",credentials:"same-origin"});fetch(n).then(u).then(l.bind(null,t)).catch(h)}},_=function(t){s.classList.toggle("ez-add-to-bookmarks--checked",t)},n.body.addEventListener("ez-bookmark-change",(function(t){var e=t.detail,n=e.bookmarked;(function(t){return parseInt(t,10)===a})(e.locationId)&&_(n)}),!1),s&&s.addEventListener("click",(function(){var t=!s.classList.contains("ez-add-to-bookmarks--checked");d(t)}),!1)},"6HWo":function(t,e){var n,i,o;window,n=window.document.querySelector(".ez-extra-actions--create"),i=n.querySelectorAll('.form-check [type="radio"]'),o=n.querySelector("form"),i.forEach((function(t){return t.addEventListener("change",(function(){return o.submit()}),!1)}))},"81PU":function(t,e){function n(t,e){var n="undefined"!=typeof Symbol&&t[Symbol.iterator]||t["@@iterator"];if(!n){if(Array.isArray(t)||(n=function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t))||e&&t&&"number"==typeof t.length){n&&(t=n);var o=0,r=function(){};return{s:r,n:function(){return o>=t.length?{done:!0}:{done:!1,value:t[o++]}},e:function(t){throw t},f:r}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var s,a=!0,h=!1;return{s:function(){n=n.call(t)},n:function(){var t=n.next();return a=t.done,t},e:function(t){h=!0,s=t},f:function(){try{a||null==n.return||n.return()}finally{if(h)throw s}}}}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}function o(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function r(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{};e%2?o(Object(n),!0).forEach((function(e){s(t,e,n[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(n)):o(Object(n)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(n,e))}))}return t}function s(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var a,h,c,u,l,d,_,p,m,f,g,v,y,w,b,x,L,P,T,S,z;a=window,h=window.document,c=window.localStorage,u=window.jQuery,l=window.React,d=window.ReactDOM,_=window.eZ,p=window.Routing,m=window.Translator,f=h.querySelectorAll(".ez-sil"),g=h.querySelector("#ez-mfu"),v=h.querySelector('meta[name="CSRF-Token"]').content,y=h.querySelector('meta[name="SiteAccess"]').content,w=h.querySelector("[data-sort-field][data-sort-order]"),b=w.getAttribute("data-sort-field"),x=w.getAttribute("data-sort-order"),L={adminUiConfig:r(r({},_.adminUiConfig),{},{token:v,siteaccess:y}),parentInfo:{contentTypeIdentifier:g.dataset.parentContentTypeIdentifier,contentTypeId:parseInt(g.dataset.parentContentTypeId,10),locationPath:g.dataset.parentLocationPath,language:g.dataset.parentContentLanguage},currentLanguage:g.dataset.currentLanguage},P=function(t,e){var n=t._id,i=e._id,o=t.mainLanguageCode,r=p.generate("ezplatform.version_draft.has_no_conflict",{contentId:n,languageCode:o,locationId:i}),s=function(){h.querySelector("#form_subitems_content_edit_content_info").value=n,h.querySelector("#form_subitems_content_edit_language_".concat(o)).checked=!0,h.querySelector("#form_subitems_content_edit_create").click()},a=function(){s(),u("#version-draft-conflict-modal").modal("hide")},c=function(t){var e=h.querySelector(".ez-modal-wrapper");e.innerHTML=t,function(t){var e=t.querySelector(".ez-btn--add-draft");e&&e.addEventListener("click",a,!1),t.querySelectorAll(".ez-btn--prevented").forEach((function(t){return t.addEventListener("click",(function(t){return t.preventDefault()}),!1)})),u("#version-draft-conflict-modal").modal("show").on("shown.bs.modal",(function(){return _.helpers.tooltips.parse()}))}(e)},l=p.generate("ezplatform.content.check_edit_permission",{contentId:n,languageCode:t.mainLanguageCode}),d=m.trans("content.edit.permission.error",{},"content");fetch(l,{mode:"same-origin",credentials:"same-origin"}).then(_.helpers.request.getJsonFromResponse).then((function(t){if(t.canEdit)return fetch(r,{mode:"same-origin",credentials:"same-origin"});throw new Error(d)})).then((function(t){409===t.status?t.text().then(c):200===t.status&&s()})).catch(_.helpers.notification.showErrorNotification)},T=function(t,e){return p.generate("_ez_content_view",{contentId:e,locationId:t})},S=function(t){for(;t.firstChild;)t.removeChild(t.firstChild)},z=function(t,e){var n;!function(t){var e=h.querySelector("#bulk-action-failed-modal").querySelector(".ez-bulk-action-failed-modal__table"),n=e.querySelector(".ez-bulk-action-failed-modal__table-body"),i=e.dataset.tableRowTemplate,o=h.createDocumentFragment();t.forEach((function(t){var e=t.contentName,n=t.contentTypeName,r=h.createElement("tbody"),s=i.replace("{{ content_name }}",e).replace("{{ content_type_name }}",n);r.insertAdjacentHTML("beforeend",s);var a=r.querySelector("tr");o.append(a)})),S(n),n.append(o)}(e),n=t,h.querySelector("".concat("#bulk-action-failed-modal"," .ez-table-header__headline")).innerHTML=n,u("#bulk-action-failed-modal").modal("show")},f.forEach((function(t){var e=parseInt(t.dataset.location,10),i=function(t){var e=t===_.adminUiConfig.locations.media?"grid":"table";return c.getItem("ez-subitems-active-view-location-".concat(t))||e}(e),o=JSON.parse(t.dataset.items).SubitemsList,h=o.SubitemsRow.map((function(t){return{content:t.Content,location:t.Location}})),u=JSON.parse(t.dataset.contentTypes).ContentTypeInfoList.ContentType.reduce((function(t,e){return t[e._href]=e,t}),{}),p=JSON.parse(t.dataset.udwConfigBulkMoveItems),m=JSON.parse(t.dataset.udwConfigBulkAddLocation),f=Object.values(_.adminUiConfig.contentTypes).reduce((function(t,e){var i,o=n(e);try{for(o.s();!(i=o.n()).done;){var r=i.value;t[r.href]=r}}catch(t){o.e(t)}finally{o.f()}return t}),{});d.render(l.createElement(_.modules.SubItems,{handleEditItem:P,generateLink:T,activeView:i,parentLocationId:e,sortClauses:s({},b,x),restInfo:{token:v,siteaccess:y},extraActions:[{component:_.modules.MultiFileUpload,attrs:r(r({},L),{},{onPopupClose:function(t){return t.length&&a.location.reload(!0)},contentCreatePermissionsConfig:JSON.parse(t.dataset.mfuCreatePermissionsConfig),contentTypesMap:f})}],items:h,contentTypesMap:u,totalCount:o.ChildrenCount,udwConfigBulkMoveItems:p,udwConfigBulkAddLocation:m,showBulkActionFailedModal:z}),t)}))},Axjq:function(t,e){var n,i,o,r,s,a,h;n=window,i=window.document,o=window.jQuery,r=window.eZ,s=window.Translator,a=window.Routing,h=function(t){var e=r.helpers.notification.showErrorNotification,h=t.currentTarget.dataset.contentDraftEditUrl,c=t.currentTarget.dataset.versionHasConflictUrl,u=t.currentTarget.dataset.contentId,l=t.currentTarget.dataset.languageCode,d=a.generate("ezplatform.content.check_edit_permission",{contentId:u,languageCode:l}),_=s.trans("content.edit.permission.error",{},"content");t.preventDefault(),fetch(d,{mode:"same-origin",credentials:"same-origin"}).then(r.helpers.request.getJsonFromResponse).then((function(t){if(t.canEdit)return fetch(c,{mode:"same-origin",credentials:"same-origin"});throw new Error(_)})).then((function(t){409===t.status&&(i.querySelector("#edit-conflicted-draft").href=h,o("#version-conflict-modal").modal("show")),403===t.status&&t.text().then(e),200===t.status&&(n.location.href=h)})).catch(e)},i.querySelectorAll(".ez-btn--content-draft-edit").forEach((function(t){return t.addEventListener("click",h,!1)}))},BboL:function(t,e){var n,i,o;window,n=window.document,i=n.querySelector(".ez-btn--edit-user"),o=n.querySelector('.ez-extra-actions--edit-user.ez-extra-actions--prevent-show [type="radio"]'),n.querySelector(".ez-extra-actions--edit-user")&&o&&i.addEventListener("click",(function(){o.checked=!0,o.dispatchEvent(new CustomEvent("change"))}),!1)},Buo9:function(t,e){var n,i;window,n=window.document,i=function(t){n.querySelector("#content_main_location_update_location").value=t.target.value,n.querySelector('form[name="content_main_location_update"]').submit()},n.querySelectorAll('input[name="updateMainLocation"]').forEach((function(t){return t.addEventListener("change",i,!1)}))},DUYn:function(t,e){var n,i,o;window,n=window.document,i=n.querySelector(".ez-btn--edit"),(o=n.querySelector('.ez-extra-actions--edit.ez-extra-actions--prevent-show [type="radio"]'))&&i.addEventListener("click",(function(){o.checked=!0,o.dispatchEvent(new CustomEvent("change"))}),!1)},FgTm:function(t,e){function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function i(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.React,a=window.ReactDOM,h=window.Translator,c=o.querySelectorAll(".btn--udw-copy"),u=o.querySelector('form[name="location_copy"]'),l=u.querySelector("#location_copy_new_parent_location"),d=o.getElementById("react-udw"),_=function(){return a.unmountComponentAtNode(d)},p=function(t){_(),l.value=t[0].id,u.submit()},m=function(){return _()},f=function(t){t.preventDefault();var e=JSON.parse(t.currentTarget.dataset.udwConfig),o=h.trans("copy.title",{},"universal_discovery_widget");a.render(s.createElement(r.modules.UniversalDiscovery,function(t){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?n(Object(o),!0).forEach((function(e){i(t,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}({onConfirm:p,onCancel:m,title:o,multiple:!1,containersOnly:!0},e)),d)},c.forEach((function(t){return t.addEventListener("click",f,!1)}))},G96h:function(t,e){function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function i(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.React,a=window.ReactDOM,h=window.Translator,c=o.querySelectorAll(".ez-btn--udw-copy-subtree"),u=o.querySelector('form[name="location_copy_subtree"]'),l=u.querySelector("#location_copy_subtree_new_parent_location"),d=o.querySelector("#react-udw"),_=function(){return a.unmountComponentAtNode(d)},p=function(t){_(),l.value=t[0].id,u.submit()},m=function(){return _()},f=function(t){t.preventDefault();var e=h.trans("subtree.title",{},"universal_discovery_widget"),o=JSON.parse(t.currentTarget.dataset.udwConfig);a.render(s.createElement(r.modules.UniversalDiscovery,function(t){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?n(Object(o),!0).forEach((function(e){i(t,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}({onConfirm:p,onCancel:m,title:e,multiple:!1,containersOnly:!0},o)),d)},c.forEach((function(t){return t.addEventListener("click",f,!1)}))},GVId:function(t,e){!function(t,e){var n=window.document.querySelector("#ez-modal--custom-url-alias");if(n){var i=n.querySelectorAll('[data-dismiss="modal"]'),o=n.querySelector('[type="submit"]'),r=n.querySelector('[required="required"]'),s=n.querySelectorAll(".ez-field-edit--ezboolean input"),a=n.querySelector('[name="custom_url_add[site_root]"]'),h=function(){var t=0!==r.value.trim().length;o[t?"removeAttribute":"setAttribute"]("disabled",!0)},c=function(t){var e=t.target,n=e.checked?"add":"remove";e.closest(".ez-data-source__label").classList[n]("is-checked")},u=function(){r.value="",h()};r.addEventListener("input",h,!1),a.addEventListener("change",(function(t){var e=t.target.checked;n.querySelector('[name="custom_url_add[site_access]"]')[e?"removeAttribute":"setAttribute"]("disabled",!0)}),!1),s.forEach((function(t){return t.addEventListener("change",c,!1)})),i.forEach((function(t){return t.addEventListener("click",u,!1)}))}}(window)},KuNv:function(t,e){var n,i;n=window,window.document,(i=window.jQuery)('.ez-tabs a[href="#'.concat(n.location.hash.split("#")[1],'"]')).tab("show"),i(".ez-tabs a").on("shown.bs.tab",(function(t){n.location.hash="".concat(t.target.hash,"#tab")}))},LdnA:function(t,e,n){var i,o,r;function s(t){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["ezplatform-admin-ui-location-view-js"],{
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui-assets/Resources/public/vendors/leaflet/dist/leaflet.js":
+/*!******************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui-assets/Resources/public/vendors/leaflet/dist/leaflet.js ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 /* @preserve
  * Leaflet 1.7.1, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
- */!function(n,a){"object"==s(e)&&void 0!==t?a(e):(o=[e],void 0===(r="function"==typeof(i=a)?i.apply(e,o):i)||(t.exports=r))}(0,(function(t){"use strict";function e(t){for(var e,n,i=1,o=arguments.length;i<o;i++)for(e in n=arguments[i])t[e]=n[e];return t}var n=Object.create||function(t){return i.prototype=t,new i};function i(){}function o(t,e){var n=Array.prototype.slice;if(t.bind)return t.bind.apply(t,n.call(arguments,1));var i=n.call(arguments,2);return function(){return t.apply(e,i.length?i.concat(n.call(arguments)):arguments)}}var r=0;function a(t){return t._leaflet_id=t._leaflet_id||++r,t._leaflet_id}function h(t,e,n){var i,o,r=function(){i=!1,o&&(s.apply(n,o),o=!1)},s=function(){i?o=arguments:(t.apply(n,arguments),setTimeout(r,e),i=!0)};return s}function c(t,e,n){var i=e[1],o=e[0],r=i-o;return t===i&&n?t:((t-o)%r+r)%r+o}function u(){return!1}function l(t,e){var n=Math.pow(10,void 0===e?6:e);return Math.round(t*n)/n}function d(t){return t.trim?t.trim():t.replace(/^\s+|\s+$/g,"")}function _(t){return d(t).split(/\s+/)}function p(t,e){for(var i in Object.prototype.hasOwnProperty.call(t,"options")||(t.options=t.options?n(t.options):{}),e)t.options[i]=e[i];return t.options}function m(t,e,n){var i=[];for(var o in t)i.push(encodeURIComponent(n?o.toUpperCase():o)+"="+encodeURIComponent(t[o]));return(e&&-1!==e.indexOf("?")?"&":"?")+i.join("&")}var f=/\{ *([\w_-]+) *\}/g;function g(t,e){return t.replace(f,(function(t,n){var i=e[n];if(void 0===i)throw new Error("No value provided for variable "+t);return"function"==typeof i&&(i=i(e)),i}))}var v=Array.isArray||function(t){return"[object Array]"===Object.prototype.toString.call(t)};function y(t,e){for(var n=0;n<t.length;n++)if(t[n]===e)return n;return-1}var w="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";function b(t){return window["webkit"+t]||window["moz"+t]||window["ms"+t]}var x=0;function P(t){var e=+new Date,n=Math.max(0,16-(e-x));return x=e+n,window.setTimeout(t,n)}var T=window.requestAnimationFrame||b("RequestAnimationFrame")||P,S=window.cancelAnimationFrame||b("CancelAnimationFrame")||b("CancelRequestAnimationFrame")||function(t){window.clearTimeout(t)};function z(t,e,n){if(!n||T!==P)return T.call(window,o(t,e));t.call(e)}function E(t){t&&S.call(window,t)}var M={extend:e,create:n,bind:o,lastId:r,stamp:a,throttle:h,wrapNum:c,falseFn:u,formatNum:l,trim:d,splitWords:_,setOptions:p,getParamString:m,template:g,isArray:v,indexOf:y,emptyImageUrl:w,requestFn:T,cancelFn:S,requestAnimFrame:z,cancelAnimFrame:E};function C(){}C.extend=function(t){function i(){this.initialize&&this.initialize.apply(this,arguments),this.callInitHooks()}var o=i.__super__=this.prototype,r=n(o);for(var s in(r.constructor=i).prototype=r,this)Object.prototype.hasOwnProperty.call(this,s)&&"prototype"!==s&&"__super__"!==s&&(i[s]=this[s]);return t.statics&&(e(i,t.statics),delete t.statics),t.includes&&(function(t){if("undefined"!=typeof L&&L&&L.Mixin){t=v(t)?t:[t];for(var e=0;e<t.length;e++)t[e]===L.Mixin.Events&&console.warn("Deprecated include of L.Mixin.Events: this property will be removed in future releases, please inherit from L.Evented instead.",(new Error).stack)}}(t.includes),e.apply(null,[r].concat(t.includes)),delete t.includes),r.options&&(t.options=e(n(r.options),t.options)),e(r,t),r._initHooks=[],r.callInitHooks=function(){if(!this._initHooksCalled){o.callInitHooks&&o.callInitHooks.call(this),this._initHooksCalled=!0;for(var t=0,e=r._initHooks.length;t<e;t++)r._initHooks[t].call(this)}},i},C.include=function(t){return e(this.prototype,t),this},C.mergeOptions=function(t){return e(this.prototype.options,t),this},C.addInitHook=function(t){var e=Array.prototype.slice.call(arguments,1),n="function"==typeof t?t:function(){this[t].apply(this,e)};return this.prototype._initHooks=this.prototype._initHooks||[],this.prototype._initHooks.push(n),this};var k={on:function(t,e,n){if("object"==s(t))for(var i in t)this._on(i,t[i],e);else for(var o=0,r=(t=_(t)).length;o<r;o++)this._on(t[o],e,n);return this},off:function(t,e,n){if(t)if("object"==s(t))for(var i in t)this._off(i,t[i],e);else for(var o=0,r=(t=_(t)).length;o<r;o++)this._off(t[o],e,n);else delete this._events;return this},_on:function(t,e,n){this._events=this._events||{};var i=this._events[t];i||(i=[],this._events[t]=i),n===this&&(n=void 0);for(var o={fn:e,ctx:n},r=i,s=0,a=r.length;s<a;s++)if(r[s].fn===e&&r[s].ctx===n)return;r.push(o)},_off:function(t,e,n){var i,o,r;if(this._events&&(i=this._events[t]))if(e){if(n===this&&(n=void 0),i)for(o=0,r=i.length;o<r;o++){var s=i[o];if(s.ctx===n&&s.fn===e)return s.fn=u,this._firingCount&&(this._events[t]=i=i.slice()),void i.splice(o,1)}}else{for(o=0,r=i.length;o<r;o++)i[o].fn=u;delete this._events[t]}},fire:function(t,n,i){if(!this.listens(t,i))return this;var o=e({},n,{type:t,target:this,sourceTarget:n&&n.sourceTarget||this});if(this._events){var r=this._events[t];if(r){this._firingCount=this._firingCount+1||1;for(var s=0,a=r.length;s<a;s++){var h=r[s];h.fn.call(h.ctx||this,o)}this._firingCount--}}return i&&this._propagateEvent(o),this},listens:function(t,e){var n=this._events&&this._events[t];if(n&&n.length)return!0;if(e)for(var i in this._eventParents)if(this._eventParents[i].listens(t,e))return!0;return!1},once:function(t,e,n){if("object"==s(t)){for(var i in t)this.once(i,t[i],e);return this}var r=o((function(){this.off(t,e,n).off(t,r,n)}),this);return this.on(t,e,n).on(t,r,n)},addEventParent:function(t){return this._eventParents=this._eventParents||{},this._eventParents[a(t)]=t,this},removeEventParent:function(t){return this._eventParents&&delete this._eventParents[a(t)],this},_propagateEvent:function(t){for(var n in this._eventParents)this._eventParents[n].fire(t.type,e({layer:t.target,propagatedFrom:t.target},t),!0)}};k.addEventListener=k.on,k.removeEventListener=k.clearAllEventListeners=k.off,k.addOneTimeEventListener=k.once,k.fireEvent=k.fire,k.hasEventListeners=k.listens;var O=C.extend(k);function A(t,e,n){this.x=n?Math.round(t):t,this.y=n?Math.round(e):e}var I=Math.trunc||function(t){return 0<t?Math.floor(t):Math.ceil(t)};function Z(t,e,n){return t instanceof A?t:v(t)?new A(t[0],t[1]):null==t?t:"object"==s(t)&&"x"in t&&"y"in t?new A(t.x,t.y):new A(t,e,n)}function B(t,e){if(t)for(var n=e?[t,e]:t,i=0,o=n.length;i<o;i++)this.extend(n[i])}function j(t,e){return!t||t instanceof B?t:new B(t,e)}function R(t,e){if(t)for(var n=e?[t,e]:t,i=0,o=n.length;i<o;i++)this.extend(n[i])}function D(t,e){return t instanceof R?t:new R(t,e)}function q(t,e,n){if(isNaN(t)||isNaN(e))throw new Error("Invalid LatLng object: ("+t+", "+e+")");this.lat=+t,this.lng=+e,void 0!==n&&(this.alt=+n)}function N(t,e,n){return t instanceof q?t:v(t)&&"object"!=s(t[0])?3===t.length?new q(t[0],t[1],t[2]):2===t.length?new q(t[0],t[1]):null:null==t?t:"object"==s(t)&&"lat"in t?new q(t.lat,"lng"in t?t.lng:t.lon,t.alt):void 0===e?null:new q(t,e,n)}A.prototype={clone:function(){return new A(this.x,this.y)},add:function(t){return this.clone()._add(Z(t))},_add:function(t){return this.x+=t.x,this.y+=t.y,this},subtract:function(t){return this.clone()._subtract(Z(t))},_subtract:function(t){return this.x-=t.x,this.y-=t.y,this},divideBy:function(t){return this.clone()._divideBy(t)},_divideBy:function(t){return this.x/=t,this.y/=t,this},multiplyBy:function(t){return this.clone()._multiplyBy(t)},_multiplyBy:function(t){return this.x*=t,this.y*=t,this},scaleBy:function(t){return new A(this.x*t.x,this.y*t.y)},unscaleBy:function(t){return new A(this.x/t.x,this.y/t.y)},round:function(){return this.clone()._round()},_round:function(){return this.x=Math.round(this.x),this.y=Math.round(this.y),this},floor:function(){return this.clone()._floor()},_floor:function(){return this.x=Math.floor(this.x),this.y=Math.floor(this.y),this},ceil:function(){return this.clone()._ceil()},_ceil:function(){return this.x=Math.ceil(this.x),this.y=Math.ceil(this.y),this},trunc:function(){return this.clone()._trunc()},_trunc:function(){return this.x=I(this.x),this.y=I(this.y),this},distanceTo:function(t){var e=(t=Z(t)).x-this.x,n=t.y-this.y;return Math.sqrt(e*e+n*n)},equals:function(t){return(t=Z(t)).x===this.x&&t.y===this.y},contains:function(t){return t=Z(t),Math.abs(t.x)<=Math.abs(this.x)&&Math.abs(t.y)<=Math.abs(this.y)},toString:function(){return"Point("+l(this.x)+", "+l(this.y)+")"}},B.prototype={extend:function(t){return t=Z(t),this.min||this.max?(this.min.x=Math.min(t.x,this.min.x),this.max.x=Math.max(t.x,this.max.x),this.min.y=Math.min(t.y,this.min.y),this.max.y=Math.max(t.y,this.max.y)):(this.min=t.clone(),this.max=t.clone()),this},getCenter:function(t){return new A((this.min.x+this.max.x)/2,(this.min.y+this.max.y)/2,t)},getBottomLeft:function(){return new A(this.min.x,this.max.y)},getTopRight:function(){return new A(this.max.x,this.min.y)},getTopLeft:function(){return this.min},getBottomRight:function(){return this.max},getSize:function(){return this.max.subtract(this.min)},contains:function(t){var e,n;return(t=("number"==typeof t[0]||t instanceof A?Z:j)(t))instanceof B?(e=t.min,n=t.max):e=n=t,e.x>=this.min.x&&n.x<=this.max.x&&e.y>=this.min.y&&n.y<=this.max.y},intersects:function(t){t=j(t);var e=this.min,n=this.max,i=t.min,o=t.max,r=o.x>=e.x&&i.x<=n.x,s=o.y>=e.y&&i.y<=n.y;return r&&s},overlaps:function(t){t=j(t);var e=this.min,n=this.max,i=t.min,o=t.max,r=o.x>e.x&&i.x<n.x,s=o.y>e.y&&i.y<n.y;return r&&s},isValid:function(){return!(!this.min||!this.max)}},R.prototype={extend:function(t){var e,n,i=this._southWest,o=this._northEast;if(t instanceof q)n=e=t;else{if(!(t instanceof R))return t?this.extend(N(t)||D(t)):this;if(e=t._southWest,n=t._northEast,!e||!n)return this}return i||o?(i.lat=Math.min(e.lat,i.lat),i.lng=Math.min(e.lng,i.lng),o.lat=Math.max(n.lat,o.lat),o.lng=Math.max(n.lng,o.lng)):(this._southWest=new q(e.lat,e.lng),this._northEast=new q(n.lat,n.lng)),this},pad:function(t){var e=this._southWest,n=this._northEast,i=Math.abs(e.lat-n.lat)*t,o=Math.abs(e.lng-n.lng)*t;return new R(new q(e.lat-i,e.lng-o),new q(n.lat+i,n.lng+o))},getCenter:function(){return new q((this._southWest.lat+this._northEast.lat)/2,(this._southWest.lng+this._northEast.lng)/2)},getSouthWest:function(){return this._southWest},getNorthEast:function(){return this._northEast},getNorthWest:function(){return new q(this.getNorth(),this.getWest())},getSouthEast:function(){return new q(this.getSouth(),this.getEast())},getWest:function(){return this._southWest.lng},getSouth:function(){return this._southWest.lat},getEast:function(){return this._northEast.lng},getNorth:function(){return this._northEast.lat},contains:function(t){t=("number"==typeof t[0]||t instanceof q||"lat"in t?N:D)(t);var e,n,i=this._southWest,o=this._northEast;return t instanceof R?(e=t.getSouthWest(),n=t.getNorthEast()):e=n=t,e.lat>=i.lat&&n.lat<=o.lat&&e.lng>=i.lng&&n.lng<=o.lng},intersects:function(t){t=D(t);var e=this._southWest,n=this._northEast,i=t.getSouthWest(),o=t.getNorthEast(),r=o.lat>=e.lat&&i.lat<=n.lat,s=o.lng>=e.lng&&i.lng<=n.lng;return r&&s},overlaps:function(t){t=D(t);var e=this._southWest,n=this._northEast,i=t.getSouthWest(),o=t.getNorthEast(),r=o.lat>e.lat&&i.lat<n.lat,s=o.lng>e.lng&&i.lng<n.lng;return r&&s},toBBoxString:function(){return[this.getWest(),this.getSouth(),this.getEast(),this.getNorth()].join(",")},equals:function(t,e){return!!t&&(t=D(t),this._southWest.equals(t.getSouthWest(),e)&&this._northEast.equals(t.getNorthEast(),e))},isValid:function(){return!(!this._southWest||!this._northEast)}};var H,W={latLngToPoint:function(t,e){var n=this.projection.project(t),i=this.scale(e);return this.transformation._transform(n,i)},pointToLatLng:function(t,e){var n=this.scale(e),i=this.transformation.untransform(t,n);return this.projection.unproject(i)},project:function(t){return this.projection.project(t)},unproject:function(t){return this.projection.unproject(t)},scale:function(t){return 256*Math.pow(2,t)},zoom:function(t){return Math.log(t/256)/Math.LN2},getProjectedBounds:function(t){if(this.infinite)return null;var e=this.projection.bounds,n=this.scale(t);return new B(this.transformation.transform(e.min,n),this.transformation.transform(e.max,n))},infinite:!(q.prototype={equals:function(t,e){return!!t&&(t=N(t),Math.max(Math.abs(this.lat-t.lat),Math.abs(this.lng-t.lng))<=(void 0===e?1e-9:e))},toString:function(t){return"LatLng("+l(this.lat,t)+", "+l(this.lng,t)+")"},distanceTo:function(t){return F.distance(this,N(t))},wrap:function(){return F.wrapLatLng(this)},toBounds:function(t){var e=180*t/40075017,n=e/Math.cos(Math.PI/180*this.lat);return D([this.lat-e,this.lng-n],[this.lat+e,this.lng+n])},clone:function(){return new q(this.lat,this.lng,this.alt)}}),wrapLatLng:function(t){var e=this.wrapLng?c(t.lng,this.wrapLng,!0):t.lng;return new q(this.wrapLat?c(t.lat,this.wrapLat,!0):t.lat,e,t.alt)},wrapLatLngBounds:function(t){var e=t.getCenter(),n=this.wrapLatLng(e),i=e.lat-n.lat,o=e.lng-n.lng;if(0==i&&0==o)return t;var r=t.getSouthWest(),s=t.getNorthEast();return new R(new q(r.lat-i,r.lng-o),new q(s.lat-i,s.lng-o))}},F=e({},W,{wrapLng:[-180,180],R:6371e3,distance:function(t,e){var n=Math.PI/180,i=t.lat*n,o=e.lat*n,r=Math.sin((e.lat-t.lat)*n/2),s=Math.sin((e.lng-t.lng)*n/2),a=r*r+Math.cos(i)*Math.cos(o)*s*s,h=2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));return this.R*h}}),U=6378137,V={R:U,MAX_LATITUDE:85.0511287798,project:function(t){var e=Math.PI/180,n=this.MAX_LATITUDE,i=Math.max(Math.min(n,t.lat),-n),o=Math.sin(i*e);return new A(this.R*t.lng*e,this.R*Math.log((1+o)/(1-o))/2)},unproject:function(t){var e=180/Math.PI;return new q((2*Math.atan(Math.exp(t.y/this.R))-Math.PI/2)*e,t.x*e/this.R)},bounds:new B([-(H=U*Math.PI),-H],[H,H])};function G(t,e,n,i){if(v(t))return this._a=t[0],this._b=t[1],this._c=t[2],void(this._d=t[3]);this._a=t,this._b=e,this._c=n,this._d=i}function K(t,e,n,i){return new G(t,e,n,i)}G.prototype={transform:function(t,e){return this._transform(t.clone(),e)},_transform:function(t,e){return e=e||1,t.x=e*(this._a*t.x+this._b),t.y=e*(this._c*t.y+this._d),t},untransform:function(t,e){return e=e||1,new A((t.x/e-this._b)/this._a,(t.y/e-this._d)/this._c)}};var J,Y=e({},F,{code:"EPSG:3857",projection:V,transformation:K(J=.5/(Math.PI*V.R),.5,-J,.5)}),X=e({},Y,{code:"EPSG:900913"});function Q(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}function $(t,e){for(var n,i,o,r,s="",a=0,h=t.length;a<h;a++){for(n=0,i=(o=t[a]).length;n<i;n++)s+=(n?"L":"M")+(r=o[n]).x+" "+r.y;s+=e?kt?"z":"x":""}return s||"M0 0"}var tt=document.documentElement.style,et="ActiveXObject"in window,nt=et&&!document.addEventListener,it="msLaunchUri"in navigator&&!("documentMode"in document),ot=At("webkit"),rt=At("android"),st=At("android 2")||At("android 3"),at=parseInt(/WebKit\/([0-9]+)|$/.exec(navigator.userAgent)[1],10),ht=rt&&At("Google")&&at<537&&!("AudioNode"in window),ct=!!window.opera,ut=!it&&At("chrome"),lt=At("gecko")&&!ot&&!ct&&!et,dt=!ut&&At("safari"),_t=At("phantom"),pt="OTransition"in tt,mt=0===navigator.platform.indexOf("Win"),ft=et&&"transition"in tt,gt="WebKitCSSMatrix"in window&&"m11"in new window.WebKitCSSMatrix&&!st,vt="MozPerspective"in tt,yt=!window.L_DISABLE_3D&&(ft||gt||vt)&&!pt&&!_t,wt="undefined"!=typeof orientation||At("mobile"),bt=wt&&ot,xt=wt&&gt,Lt=!window.PointerEvent&&window.MSPointerEvent,Pt=!(!window.PointerEvent&&!Lt),Tt=!window.L_NO_TOUCH&&(Pt||"ontouchstart"in window||window.DocumentTouch&&document instanceof window.DocumentTouch),St=wt&&ct,zt=wt&&lt,Et=1<(window.devicePixelRatio||window.screen.deviceXDPI/window.screen.logicalXDPI),Mt=function(){var t=!1;try{var e=Object.defineProperty({},"passive",{get:function(){t=!0}});window.addEventListener("testPassiveEventSupport",u,e),window.removeEventListener("testPassiveEventSupport",u,e)}catch(t){}return t}(),Ct=!!document.createElement("canvas").getContext,kt=!(!document.createElementNS||!Q("svg").createSVGRect),Ot=!kt&&function(){try{var t=document.createElement("div");t.innerHTML='<v:shape adj="1"/>';var e=t.firstChild;return e.style.behavior="url(#default#VML)",e&&"object"==s(e.adj)}catch(t){return!1}}();function At(t){return 0<=navigator.userAgent.toLowerCase().indexOf(t)}var It={ie:et,ielt9:nt,edge:it,webkit:ot,android:rt,android23:st,androidStock:ht,opera:ct,chrome:ut,gecko:lt,safari:dt,phantom:_t,opera12:pt,win:mt,ie3d:ft,webkit3d:gt,gecko3d:vt,any3d:yt,mobile:wt,mobileWebkit:bt,mobileWebkit3d:xt,msPointer:Lt,pointer:Pt,touch:Tt,mobileOpera:St,mobileGecko:zt,retina:Et,passiveEvents:Mt,canvas:Ct,svg:kt,vml:Ot},Zt=Lt?"MSPointerDown":"pointerdown",Bt=Lt?"MSPointerMove":"pointermove",jt=Lt?"MSPointerUp":"pointerup",Rt=Lt?"MSPointerCancel":"pointercancel",Dt={},qt=!1;function Nt(t,e,n,i){function r(t){Ut(t,a)}var s,a,h,c,u,l,d,_;function p(t){t.pointerType===(t.MSPOINTER_TYPE_MOUSE||"mouse")&&0===t.buttons||Ut(t,c)}return"touchstart"===e?(u=t,l=n,d=i,_=o((function(t){t.MSPOINTER_TYPE_TOUCH&&t.pointerType===t.MSPOINTER_TYPE_TOUCH&&Re(t),Ut(t,l)})),u["_leaflet_touchstart"+d]=_,u.addEventListener(Zt,_,!1),qt||(document.addEventListener(Zt,Ht,!0),document.addEventListener(Bt,Wt,!0),document.addEventListener(jt,Ft,!0),document.addEventListener(Rt,Ft,!0),qt=!0)):"touchmove"===e?(c=n,(h=t)["_leaflet_touchmove"+i]=p,h.addEventListener(Bt,p,!1)):"touchend"===e&&(a=n,(s=t)["_leaflet_touchend"+i]=r,s.addEventListener(jt,r,!1),s.addEventListener(Rt,r,!1)),this}function Ht(t){Dt[t.pointerId]=t}function Wt(t){Dt[t.pointerId]&&(Dt[t.pointerId]=t)}function Ft(t){delete Dt[t.pointerId]}function Ut(t,e){for(var n in t.touches=[],Dt)t.touches.push(Dt[n]);t.changedTouches=[t],e(t)}var Vt,Gt,Kt,Jt,Yt,Xt,Qt=Lt?"MSPointerDown":Pt?"pointerdown":"touchstart",$t=Lt?"MSPointerUp":Pt?"pointerup":"touchend",te="_leaflet_",ee=ge(["transform","webkitTransform","OTransform","MozTransform","msTransform"]),ne=ge(["webkitTransition","transition","OTransition","MozTransition","msTransition"]),ie="webkitTransition"===ne||"OTransition"===ne?ne+"End":"transitionend";function oe(t){return"string"==typeof t?document.getElementById(t):t}function re(t,e){var n,i=t.style[e]||t.currentStyle&&t.currentStyle[e];return i&&"auto"!==i||!document.defaultView||(i=(n=document.defaultView.getComputedStyle(t,null))?n[e]:null),"auto"===i?null:i}function se(t,e,n){var i=document.createElement(t);return i.className=e||"",n&&n.appendChild(i),i}function ae(t){var e=t.parentNode;e&&e.removeChild(t)}function he(t){for(;t.firstChild;)t.removeChild(t.firstChild)}function ce(t){var e=t.parentNode;e&&e.lastChild!==t&&e.appendChild(t)}function ue(t){var e=t.parentNode;e&&e.firstChild!==t&&e.insertBefore(t,e.firstChild)}function le(t,e){if(void 0!==t.classList)return t.classList.contains(e);var n=me(t);return 0<n.length&&new RegExp("(^|\\s)"+e+"(\\s|$)").test(n)}function de(t,e){var n;if(void 0!==t.classList)for(var i=_(e),o=0,r=i.length;o<r;o++)t.classList.add(i[o]);else le(t,e)||pe(t,((n=me(t))?n+" ":"")+e)}function _e(t,e){void 0!==t.classList?t.classList.remove(e):pe(t,d((" "+me(t)+" ").replace(" "+e+" "," ")))}function pe(t,e){void 0===t.className.baseVal?t.className=e:t.className.baseVal=e}function me(t){return t.correspondingElement&&(t=t.correspondingElement),void 0===t.className.baseVal?t.className:t.className.baseVal}function fe(t,e){"opacity"in t.style?t.style.opacity=e:"filter"in t.style&&function(t,e){var n=!1,i="DXImageTransform.Microsoft.Alpha";try{n=t.filters.item(i)}catch(t){if(1===e)return}e=Math.round(100*e),n?(n.Enabled=100!==e,n.Opacity=e):t.style.filter+=" progid:"+i+"(opacity="+e+")"}(t,e)}function ge(t){for(var e=document.documentElement.style,n=0;n<t.length;n++)if(t[n]in e)return t[n];return!1}function ve(t,e,n){var i=e||new A(0,0);t.style[ee]=(ft?"translate("+i.x+"px,"+i.y+"px)":"translate3d("+i.x+"px,"+i.y+"px,0)")+(n?" scale("+n+")":"")}function ye(t,e){t._leaflet_pos=e,yt?ve(t,e):(t.style.left=e.x+"px",t.style.top=e.y+"px")}function we(t){return t._leaflet_pos||new A(0,0)}function be(){Ee(window,"dragstart",Re)}function xe(){Ce(window,"dragstart",Re)}function Le(t){for(;-1===t.tabIndex;)t=t.parentNode;t.style&&(Pe(),Xt=(Yt=t).style.outline,t.style.outline="none",Ee(window,"keydown",Pe))}function Pe(){Yt&&(Yt.style.outline=Xt,Xt=Yt=void 0,Ce(window,"keydown",Pe))}function Te(t){for(;!((t=t.parentNode).offsetWidth&&t.offsetHeight||t===document.body););return t}function Se(t){var e=t.getBoundingClientRect();return{x:e.width/t.offsetWidth||1,y:e.height/t.offsetHeight||1,boundingClientRect:e}}Jt="onselectstart"in document?(Kt=function(){Ee(window,"selectstart",Re)},function(){Ce(window,"selectstart",Re)}):(Gt=ge(["userSelect","WebkitUserSelect","OUserSelect","MozUserSelect","msUserSelect"]),Kt=function(){var t;Gt&&(t=document.documentElement.style,Vt=t[Gt],t[Gt]="none")},function(){Gt&&(document.documentElement.style[Gt]=Vt,Vt=void 0)});var ze={TRANSFORM:ee,TRANSITION:ne,TRANSITION_END:ie,get:oe,getStyle:re,create:se,remove:ae,empty:he,toFront:ce,toBack:ue,hasClass:le,addClass:de,removeClass:_e,setClass:pe,getClass:me,setOpacity:fe,testProp:ge,setTransform:ve,setPosition:ye,getPosition:we,disableTextSelection:Kt,enableTextSelection:Jt,disableImageDrag:be,enableImageDrag:xe,preventOutline:Le,restoreOutline:Pe,getSizedParentNode:Te,getScale:Se};function Ee(t,e,n,i){if("object"==s(e))for(var o in e)Ae(t,o,e[o],n);else for(var r=0,a=(e=_(e)).length;r<a;r++)Ae(t,e[r],n,i);return this}var Me="_leaflet_events";function Ce(t,e,n,i){if("object"==s(e))for(var o in e)Ie(t,o,e[o],n);else if(e)for(var r=0,a=(e=_(e)).length;r<a;r++)Ie(t,e[r],n,i);else{for(var h in t[Me])Ie(t,h,t[Me][h]);delete t[Me]}return this}function ke(){return Pt&&!it&&!dt}var Oe={mouseenter:"mouseover",mouseleave:"mouseout",wheel:!("onwheel"in window)&&"mousewheel"};function Ae(t,e,n,i){var o=e+a(n)+(i?"_"+a(i):"");if(t[Me]&&t[Me][o])return this;var r,s,h,c,u,l,d=function(e){return n.call(i||t,e||window.event)},_=d;function p(t){if(Pt){if(!t.isPrimary)return;if("mouse"===t.pointerType)return}else if(1<t.touches.length)return;var e=Date.now(),n=e-(c||e);u=t.touches?t.touches[0]:t,l=0<n&&n<=250,c=e}function m(t){if(l&&!u.cancelBubble){if(Pt){if("mouse"===t.pointerType)return;var e,n,i={};for(n in u)e=u[n],i[n]=e&&e.bind?e.bind(u):e;u=i}u.type="dblclick",u.button=0,s(u),c=null}}Pt&&0===e.indexOf("touch")?Nt(t,e,d,o):Tt&&"dblclick"===e&&!ke()?(s=d,l=!1,(r=t)[te+Qt+(h=o)]=p,r[te+$t+h]=m,r[te+"dblclick"+h]=s,r.addEventListener(Qt,p,!!Mt&&{passive:!1}),r.addEventListener($t,m,!!Mt&&{passive:!1}),r.addEventListener("dblclick",s,!1)):"addEventListener"in t?"touchstart"===e||"touchmove"===e||"wheel"===e||"mousewheel"===e?t.addEventListener(Oe[e]||e,d,!!Mt&&{passive:!1}):"mouseenter"===e||"mouseleave"===e?(d=function(e){e=e||window.event,Ve(t,e)&&_(e)},t.addEventListener(Oe[e],d,!1)):t.addEventListener(e,_,!1):"attachEvent"in t&&t.attachEvent("on"+e,d),t[Me]=t[Me]||{},t[Me][o]=d}function Ie(t,e,n,i){var o,r,s,h,c,u,l,d,_=e+a(n)+(i?"_"+a(i):""),p=t[Me]&&t[Me][_];if(!p)return this;Pt&&0===e.indexOf("touch")?(d=(u=t)["_leaflet_"+(l=e)+_],"touchstart"===l?u.removeEventListener(Zt,d,!1):"touchmove"===l?u.removeEventListener(Bt,d,!1):"touchend"===l&&(u.removeEventListener(jt,d,!1),u.removeEventListener(Rt,d,!1))):Tt&&"dblclick"===e&&!ke()?(s=(o=t)[te+Qt+(r=_)],h=o[te+$t+r],c=o[te+"dblclick"+r],o.removeEventListener(Qt,s,!!Mt&&{passive:!1}),o.removeEventListener($t,h,!!Mt&&{passive:!1}),o.removeEventListener("dblclick",c,!1)):"removeEventListener"in t?t.removeEventListener(Oe[e]||e,p,!1):"detachEvent"in t&&t.detachEvent("on"+e,p),t[Me][_]=null}function Ze(t){return t.stopPropagation?t.stopPropagation():t.originalEvent?t.originalEvent._stopped=!0:t.cancelBubble=!0,Ue(t),this}function Be(t){return Ae(t,"wheel",Ze),this}function je(t){return Ee(t,"mousedown touchstart dblclick",Ze),Ae(t,"click",Fe),this}function Re(t){return t.preventDefault?t.preventDefault():t.returnValue=!1,this}function De(t){return Re(t),Ze(t),this}function qe(t,e){if(!e)return new A(t.clientX,t.clientY);var n=Se(e),i=n.boundingClientRect;return new A((t.clientX-i.left)/n.x-e.clientLeft,(t.clientY-i.top)/n.y-e.clientTop)}var Ne=mt&&ut?2*window.devicePixelRatio:lt?window.devicePixelRatio:1;function He(t){return it?t.wheelDeltaY/2:t.deltaY&&0===t.deltaMode?-t.deltaY/Ne:t.deltaY&&1===t.deltaMode?20*-t.deltaY:t.deltaY&&2===t.deltaMode?60*-t.deltaY:t.deltaX||t.deltaZ?0:t.wheelDelta?(t.wheelDeltaY||t.wheelDelta)/2:t.detail&&Math.abs(t.detail)<32765?20*-t.detail:t.detail?t.detail/-32765*60:0}var We={};function Fe(t){We[t.type]=!0}function Ue(t){var e=We[t.type];return We[t.type]=!1,e}function Ve(t,e){var n=e.relatedTarget;if(!n)return!0;try{for(;n&&n!==t;)n=n.parentNode}catch(t){return!1}return n!==t}var Ge={on:Ee,off:Ce,stopPropagation:Ze,disableScrollPropagation:Be,disableClickPropagation:je,preventDefault:Re,stop:De,getMousePosition:qe,getWheelDelta:He,fakeStop:Fe,skipped:Ue,isExternalTarget:Ve,addListener:Ee,removeListener:Ce},Ke=O.extend({run:function(t,e,n,i){this.stop(),this._el=t,this._inProgress=!0,this._duration=n||.25,this._easeOutPower=1/Math.max(i||.5,.2),this._startPos=we(t),this._offset=e.subtract(this._startPos),this._startTime=+new Date,this.fire("start"),this._animate()},stop:function(){this._inProgress&&(this._step(!0),this._complete())},_animate:function(){this._animId=z(this._animate,this),this._step()},_step:function(t){var e=new Date-this._startTime,n=1e3*this._duration;e<n?this._runFrame(this._easeOut(e/n),t):(this._runFrame(1),this._complete())},_runFrame:function(t,e){var n=this._startPos.add(this._offset.multiplyBy(t));e&&n._round(),ye(this._el,n),this.fire("step")},_complete:function(){E(this._animId),this._inProgress=!1,this.fire("end")},_easeOut:function(t){return 1-Math.pow(1-t,this._easeOutPower)}}),Je=O.extend({options:{crs:Y,center:void 0,zoom:void 0,minZoom:void 0,maxZoom:void 0,layers:[],maxBounds:void 0,renderer:void 0,zoomAnimation:!0,zoomAnimationThreshold:4,fadeAnimation:!0,markerZoomAnimation:!0,transform3DLimit:8388608,zoomSnap:1,zoomDelta:1,trackResize:!0},initialize:function(t,e){e=p(this,e),this._handlers=[],this._layers={},this._zoomBoundLayers={},this._sizeChanged=!0,this._initContainer(t),this._initLayout(),this._onResize=o(this._onResize,this),this._initEvents(),e.maxBounds&&this.setMaxBounds(e.maxBounds),void 0!==e.zoom&&(this._zoom=this._limitZoom(e.zoom)),e.center&&void 0!==e.zoom&&this.setView(N(e.center),e.zoom,{reset:!0}),this.callInitHooks(),this._zoomAnimated=ne&&yt&&!St&&this.options.zoomAnimation,this._zoomAnimated&&(this._createAnimProxy(),Ee(this._proxy,ie,this._catchTransitionEnd,this)),this._addLayers(this.options.layers)},setView:function(t,n,i){return n=void 0===n?this._zoom:this._limitZoom(n),t=this._limitCenter(N(t),n,this.options.maxBounds),i=i||{},this._stop(),this._loaded&&!i.reset&&!0!==i&&(void 0!==i.animate&&(i.zoom=e({animate:i.animate},i.zoom),i.pan=e({animate:i.animate,duration:i.duration},i.pan)),this._zoom!==n?this._tryAnimatedZoom&&this._tryAnimatedZoom(t,n,i.zoom):this._tryAnimatedPan(t,i.pan))?(clearTimeout(this._sizeTimer),this):(this._resetView(t,n),this)},setZoom:function(t,e){return this._loaded?this.setView(this.getCenter(),t,{zoom:e}):(this._zoom=t,this)},zoomIn:function(t,e){return t=t||(yt?this.options.zoomDelta:1),this.setZoom(this._zoom+t,e)},zoomOut:function(t,e){return t=t||(yt?this.options.zoomDelta:1),this.setZoom(this._zoom-t,e)},setZoomAround:function(t,e,n){var i=this.getZoomScale(e),o=this.getSize().divideBy(2),r=(t instanceof A?t:this.latLngToContainerPoint(t)).subtract(o).multiplyBy(1-1/i),s=this.containerPointToLatLng(o.add(r));return this.setView(s,e,{zoom:n})},_getBoundsCenterZoom:function(t,e){e=e||{},t=t.getBounds?t.getBounds():D(t);var n=Z(e.paddingTopLeft||e.padding||[0,0]),i=Z(e.paddingBottomRight||e.padding||[0,0]),o=this.getBoundsZoom(t,!1,n.add(i));if((o="number"==typeof e.maxZoom?Math.min(e.maxZoom,o):o)===1/0)return{center:t.getCenter(),zoom:o};var r=i.subtract(n).divideBy(2),s=this.project(t.getSouthWest(),o),a=this.project(t.getNorthEast(),o);return{center:this.unproject(s.add(a).divideBy(2).add(r),o),zoom:o}},fitBounds:function(t,e){if(!(t=D(t)).isValid())throw new Error("Bounds are not valid.");var n=this._getBoundsCenterZoom(t,e);return this.setView(n.center,n.zoom,e)},fitWorld:function(t){return this.fitBounds([[-90,-180],[90,180]],t)},panTo:function(t,e){return this.setView(t,this._zoom,{pan:e})},panBy:function(t,e){return e=e||{},(t=Z(t).round()).x||t.y?(!0===e.animate||this.getSize().contains(t)?(this._panAnim||(this._panAnim=new Ke,this._panAnim.on({step:this._onPanTransitionStep,end:this._onPanTransitionEnd},this)),e.noMoveStart||this.fire("movestart"),!1!==e.animate?(de(this._mapPane,"leaflet-pan-anim"),n=this._getMapPanePos().subtract(t).round(),this._panAnim.run(this._mapPane,n,e.duration||.25,e.easeLinearity)):(this._rawPanBy(t),this.fire("move").fire("moveend"))):this._resetView(this.unproject(this.project(this.getCenter()).add(t)),this.getZoom()),this):this.fire("moveend");var n},flyTo:function(t,e,n){if(!1===(n=n||{}).animate||!yt)return this.setView(t,e,n);this._stop();var i=this.project(this.getCenter()),o=this.project(t),r=this.getSize(),s=this._zoom;t=N(t),e=void 0===e?s:e;var a=Math.max(r.x,r.y),h=a*this.getZoomScale(s,e),c=o.distanceTo(i)||1,u=1.42,l=u*u;function d(t){var e=(h*h-a*a+(t?-1:1)*l*l*c*c)/(2*(t?h:a)*l*c),n=Math.sqrt(e*e+1)-e;return n<1e-9?-18:Math.log(n)}function _(t){return(Math.exp(t)-Math.exp(-t))/2}function p(t){return(Math.exp(t)+Math.exp(-t))/2}var m=d(0);function f(t){return a*(p(m)*(_(e=m+u*t)/p(e))-_(m))/l;var e}var g=Date.now(),v=(d(1)-m)/u,y=n.duration?1e3*n.duration:1e3*v*.8;return this._moveStart(!0,n.noMoveStart),function n(){var r,h,l=(Date.now()-g)/y,d=(r=l,(1-Math.pow(1-r,1.5))*v);l<=1?(this._flyToFrame=z(n,this),this._move(this.unproject(i.add(o.subtract(i).multiplyBy(f(d)/c)),s),this.getScaleZoom(a/(h=d,a*(p(m)/p(m+u*h))),s),{flyTo:!0})):this._move(t,e)._moveEnd(!0)}.call(this),this},flyToBounds:function(t,e){var n=this._getBoundsCenterZoom(t,e);return this.flyTo(n.center,n.zoom,e)},setMaxBounds:function(t){return(t=D(t)).isValid()?(this.options.maxBounds&&this.off("moveend",this._panInsideMaxBounds),this.options.maxBounds=t,this._loaded&&this._panInsideMaxBounds(),this.on("moveend",this._panInsideMaxBounds)):(this.options.maxBounds=null,this.off("moveend",this._panInsideMaxBounds))},setMinZoom:function(t){var e=this.options.minZoom;return this.options.minZoom=t,this._loaded&&e!==t&&(this.fire("zoomlevelschange"),this.getZoom()<this.options.minZoom)?this.setZoom(t):this},setMaxZoom:function(t){var e=this.options.maxZoom;return this.options.maxZoom=t,this._loaded&&e!==t&&(this.fire("zoomlevelschange"),this.getZoom()>this.options.maxZoom)?this.setZoom(t):this},panInsideBounds:function(t,e){this._enforcingBounds=!0;var n=this.getCenter(),i=this._limitCenter(n,this._zoom,D(t));return n.equals(i)||this.panTo(i,e),this._enforcingBounds=!1,this},panInside:function(t,e){var n,i,o=Z((e=e||{}).paddingTopLeft||e.padding||[0,0]),r=Z(e.paddingBottomRight||e.padding||[0,0]),s=this.getCenter(),a=this.project(s),h=this.project(t),c=this.getPixelBounds(),u=c.getSize().divideBy(2),l=j([c.min.add(o),c.max.subtract(r)]);return l.contains(h)||(this._enforcingBounds=!0,n=a.subtract(h),i=Z(h.x+n.x,h.y+n.y),(h.x<l.min.x||h.x>l.max.x)&&(i.x=a.x-n.x,0<n.x?i.x+=u.x-o.x:i.x-=u.x-r.x),(h.y<l.min.y||h.y>l.max.y)&&(i.y=a.y-n.y,0<n.y?i.y+=u.y-o.y:i.y-=u.y-r.y),this.panTo(this.unproject(i),e),this._enforcingBounds=!1),this},invalidateSize:function(t){if(!this._loaded)return this;t=e({animate:!1,pan:!0},!0===t?{animate:!0}:t);var n=this.getSize();this._sizeChanged=!0,this._lastCenter=null;var i=this.getSize(),r=n.divideBy(2).round(),s=i.divideBy(2).round(),a=r.subtract(s);return a.x||a.y?(t.animate&&t.pan?this.panBy(a):(t.pan&&this._rawPanBy(a),this.fire("move"),t.debounceMoveend?(clearTimeout(this._sizeTimer),this._sizeTimer=setTimeout(o(this.fire,this,"moveend"),200)):this.fire("moveend")),this.fire("resize",{oldSize:n,newSize:i})):this},stop:function(){return this.setZoom(this._limitZoom(this._zoom)),this.options.zoomSnap||this.fire("viewreset"),this._stop()},locate:function(t){if(t=this._locateOptions=e({timeout:1e4,watch:!1},t),!("geolocation"in navigator))return this._handleGeolocationError({code:0,message:"Geolocation not supported."}),this;var n=o(this._handleGeolocationResponse,this),i=o(this._handleGeolocationError,this);return t.watch?this._locationWatchId=navigator.geolocation.watchPosition(n,i,t):navigator.geolocation.getCurrentPosition(n,i,t),this},stopLocate:function(){return navigator.geolocation&&navigator.geolocation.clearWatch&&navigator.geolocation.clearWatch(this._locationWatchId),this._locateOptions&&(this._locateOptions.setView=!1),this},_handleGeolocationError:function(t){var e=t.code,n=t.message||(1===e?"permission denied":2===e?"position unavailable":"timeout");this._locateOptions.setView&&!this._loaded&&this.fitWorld(),this.fire("locationerror",{code:e,message:"Geolocation error: "+n+"."})},_handleGeolocationResponse:function(t){var e,n=new q(t.coords.latitude,t.coords.longitude),i=n.toBounds(2*t.coords.accuracy),o=this._locateOptions;o.setView&&(e=this.getBoundsZoom(i),this.setView(n,o.maxZoom?Math.min(e,o.maxZoom):e));var r={latlng:n,bounds:i,timestamp:t.timestamp};for(var s in t.coords)"number"==typeof t.coords[s]&&(r[s]=t.coords[s]);this.fire("locationfound",r)},addHandler:function(t,e){if(!e)return this;var n=this[t]=new e(this);return this._handlers.push(n),this.options[t]&&n.enable(),this},remove:function(){if(this._initEvents(!0),this.off("moveend",this._panInsideMaxBounds),this._containerId!==this._container._leaflet_id)throw new Error("Map container is being reused by another instance");try{delete this._container._leaflet_id,delete this._containerId}catch(t){this._container._leaflet_id=void 0,this._containerId=void 0}var t;for(t in void 0!==this._locationWatchId&&this.stopLocate(),this._stop(),ae(this._mapPane),this._clearControlPos&&this._clearControlPos(),this._resizeRequest&&(E(this._resizeRequest),this._resizeRequest=null),this._clearHandlers(),this._loaded&&this.fire("unload"),this._layers)this._layers[t].remove();for(t in this._panes)ae(this._panes[t]);return this._layers=[],this._panes=[],delete this._mapPane,delete this._renderer,this},createPane:function(t,e){var n=se("div","leaflet-pane"+(t?" leaflet-"+t.replace("Pane","")+"-pane":""),e||this._mapPane);return t&&(this._panes[t]=n),n},getCenter:function(){return this._checkIfLoaded(),this._lastCenter&&!this._moved()?this._lastCenter:this.layerPointToLatLng(this._getCenterLayerPoint())},getZoom:function(){return this._zoom},getBounds:function(){var t=this.getPixelBounds();return new R(this.unproject(t.getBottomLeft()),this.unproject(t.getTopRight()))},getMinZoom:function(){return void 0===this.options.minZoom?this._layersMinZoom||0:this.options.minZoom},getMaxZoom:function(){return void 0===this.options.maxZoom?void 0===this._layersMaxZoom?1/0:this._layersMaxZoom:this.options.maxZoom},getBoundsZoom:function(t,e,n){t=D(t),n=Z(n||[0,0]);var i=this.getZoom()||0,o=this.getMinZoom(),r=this.getMaxZoom(),s=t.getNorthWest(),a=t.getSouthEast(),h=this.getSize().subtract(n),c=j(this.project(a,i),this.project(s,i)).getSize(),u=yt?this.options.zoomSnap:1,l=h.x/c.x,d=h.y/c.y,_=e?Math.max(l,d):Math.min(l,d);i=this.getScaleZoom(_,i);return u&&(i=Math.round(i/(u/100))*(u/100),i=e?Math.ceil(i/u)*u:Math.floor(i/u)*u),Math.max(o,Math.min(r,i))},getSize:function(){return this._size&&!this._sizeChanged||(this._size=new A(this._container.clientWidth||0,this._container.clientHeight||0),this._sizeChanged=!1),this._size.clone()},getPixelBounds:function(t,e){var n=this._getTopLeftPoint(t,e);return new B(n,n.add(this.getSize()))},getPixelOrigin:function(){return this._checkIfLoaded(),this._pixelOrigin},getPixelWorldBounds:function(t){return this.options.crs.getProjectedBounds(void 0===t?this.getZoom():t)},getPane:function(t){return"string"==typeof t?this._panes[t]:t},getPanes:function(){return this._panes},getContainer:function(){return this._container},getZoomScale:function(t,e){var n=this.options.crs;return e=void 0===e?this._zoom:e,n.scale(t)/n.scale(e)},getScaleZoom:function(t,e){var n=this.options.crs;e=void 0===e?this._zoom:e;var i=n.zoom(t*n.scale(e));return isNaN(i)?1/0:i},project:function(t,e){return e=void 0===e?this._zoom:e,this.options.crs.latLngToPoint(N(t),e)},unproject:function(t,e){return e=void 0===e?this._zoom:e,this.options.crs.pointToLatLng(Z(t),e)},layerPointToLatLng:function(t){var e=Z(t).add(this.getPixelOrigin());return this.unproject(e)},latLngToLayerPoint:function(t){return this.project(N(t))._round()._subtract(this.getPixelOrigin())},wrapLatLng:function(t){return this.options.crs.wrapLatLng(N(t))},wrapLatLngBounds:function(t){return this.options.crs.wrapLatLngBounds(D(t))},distance:function(t,e){return this.options.crs.distance(N(t),N(e))},containerPointToLayerPoint:function(t){return Z(t).subtract(this._getMapPanePos())},layerPointToContainerPoint:function(t){return Z(t).add(this._getMapPanePos())},containerPointToLatLng:function(t){var e=this.containerPointToLayerPoint(Z(t));return this.layerPointToLatLng(e)},latLngToContainerPoint:function(t){return this.layerPointToContainerPoint(this.latLngToLayerPoint(N(t)))},mouseEventToContainerPoint:function(t){return qe(t,this._container)},mouseEventToLayerPoint:function(t){return this.containerPointToLayerPoint(this.mouseEventToContainerPoint(t))},mouseEventToLatLng:function(t){return this.layerPointToLatLng(this.mouseEventToLayerPoint(t))},_initContainer:function(t){var e=this._container=oe(t);if(!e)throw new Error("Map container not found.");if(e._leaflet_id)throw new Error("Map container is already initialized.");Ee(e,"scroll",this._onScroll,this),this._containerId=a(e)},_initLayout:function(){var t=this._container;this._fadeAnimated=this.options.fadeAnimation&&yt,de(t,"leaflet-container"+(Tt?" leaflet-touch":"")+(Et?" leaflet-retina":"")+(nt?" leaflet-oldie":"")+(dt?" leaflet-safari":"")+(this._fadeAnimated?" leaflet-fade-anim":""));var e=re(t,"position");"absolute"!==e&&"relative"!==e&&"fixed"!==e&&(t.style.position="relative"),this._initPanes(),this._initControlPos&&this._initControlPos()},_initPanes:function(){var t=this._panes={};this._paneRenderers={},this._mapPane=this.createPane("mapPane",this._container),ye(this._mapPane,new A(0,0)),this.createPane("tilePane"),this.createPane("shadowPane"),this.createPane("overlayPane"),this.createPane("markerPane"),this.createPane("tooltipPane"),this.createPane("popupPane"),this.options.markerZoomAnimation||(de(t.markerPane,"leaflet-zoom-hide"),de(t.shadowPane,"leaflet-zoom-hide"))},_resetView:function(t,e){ye(this._mapPane,new A(0,0));var n=!this._loaded;this._loaded=!0,e=this._limitZoom(e),this.fire("viewprereset");var i=this._zoom!==e;this._moveStart(i,!1)._move(t,e)._moveEnd(i),this.fire("viewreset"),n&&this.fire("load")},_moveStart:function(t,e){return t&&this.fire("zoomstart"),e||this.fire("movestart"),this},_move:function(t,e,n){void 0===e&&(e=this._zoom);var i=this._zoom!==e;return this._zoom=e,this._lastCenter=t,this._pixelOrigin=this._getNewPixelOrigin(t),(i||n&&n.pinch)&&this.fire("zoom",n),this.fire("move",n)},_moveEnd:function(t){return t&&this.fire("zoomend"),this.fire("moveend")},_stop:function(){return E(this._flyToFrame),this._panAnim&&this._panAnim.stop(),this},_rawPanBy:function(t){ye(this._mapPane,this._getMapPanePos().subtract(t))},_getZoomSpan:function(){return this.getMaxZoom()-this.getMinZoom()},_panInsideMaxBounds:function(){this._enforcingBounds||this.panInsideBounds(this.options.maxBounds)},_checkIfLoaded:function(){if(!this._loaded)throw new Error("Set map center and zoom first.")},_initEvents:function(t){this._targets={};var e=t?Ce:Ee;e((this._targets[a(this._container)]=this)._container,"click dblclick mousedown mouseup mouseover mouseout mousemove contextmenu keypress keydown keyup",this._handleDOMEvent,this),this.options.trackResize&&e(window,"resize",this._onResize,this),yt&&this.options.transform3DLimit&&(t?this.off:this.on).call(this,"moveend",this._onMoveEnd)},_onResize:function(){E(this._resizeRequest),this._resizeRequest=z((function(){this.invalidateSize({debounceMoveend:!0})}),this)},_onScroll:function(){this._container.scrollTop=0,this._container.scrollLeft=0},_onMoveEnd:function(){var t=this._getMapPanePos();Math.max(Math.abs(t.x),Math.abs(t.y))>=this.options.transform3DLimit&&this._resetView(this.getCenter(),this.getZoom())},_findEventTargets:function(t,e){for(var n,i=[],o="mouseout"===e||"mouseover"===e,r=t.target||t.srcElement,s=!1;r;){if((n=this._targets[a(r)])&&("click"===e||"preclick"===e)&&!t._simulated&&this._draggableMoved(n)){s=!0;break}if(n&&n.listens(e,!0)){if(o&&!Ve(r,t))break;if(i.push(n),o)break}if(r===this._container)break;r=r.parentNode}return i.length||s||o||!Ve(r,t)||(i=[this]),i},_handleDOMEvent:function(t){var e;this._loaded&&!Ue(t)&&("mousedown"!==(e=t.type)&&"keypress"!==e&&"keyup"!==e&&"keydown"!==e||Le(t.target||t.srcElement),this._fireDOMEvent(t,e))},_mouseEvents:["click","dblclick","mouseover","mouseout","contextmenu"],_fireDOMEvent:function(t,n,i){var o;if("click"===t.type&&((o=e({},t)).type="preclick",this._fireDOMEvent(o,o.type,i)),!t._stopped&&(i=(i||[]).concat(this._findEventTargets(t,n))).length){var r=i[0];"contextmenu"===n&&r.listens(n,!0)&&Re(t);var s,a={originalEvent:t};"keypress"!==t.type&&"keydown"!==t.type&&"keyup"!==t.type&&(s=r.getLatLng&&(!r._radius||r._radius<=10),a.containerPoint=s?this.latLngToContainerPoint(r.getLatLng()):this.mouseEventToContainerPoint(t),a.layerPoint=this.containerPointToLayerPoint(a.containerPoint),a.latlng=s?r.getLatLng():this.layerPointToLatLng(a.layerPoint));for(var h=0;h<i.length;h++)if(i[h].fire(n,a,!0),a.originalEvent._stopped||!1===i[h].options.bubblingMouseEvents&&-1!==y(this._mouseEvents,n))return}},_draggableMoved:function(t){return(t=t.dragging&&t.dragging.enabled()?t:this).dragging&&t.dragging.moved()||this.boxZoom&&this.boxZoom.moved()},_clearHandlers:function(){for(var t=0,e=this._handlers.length;t<e;t++)this._handlers[t].disable()},whenReady:function(t,e){return this._loaded?t.call(e||this,{target:this}):this.on("load",t,e),this},_getMapPanePos:function(){return we(this._mapPane)||new A(0,0)},_moved:function(){var t=this._getMapPanePos();return t&&!t.equals([0,0])},_getTopLeftPoint:function(t,e){return(t&&void 0!==e?this._getNewPixelOrigin(t,e):this.getPixelOrigin()).subtract(this._getMapPanePos())},_getNewPixelOrigin:function(t,e){var n=this.getSize()._divideBy(2);return this.project(t,e)._subtract(n)._add(this._getMapPanePos())._round()},_latLngToNewLayerPoint:function(t,e,n){var i=this._getNewPixelOrigin(n,e);return this.project(t,e)._subtract(i)},_latLngBoundsToNewLayerBounds:function(t,e,n){var i=this._getNewPixelOrigin(n,e);return j([this.project(t.getSouthWest(),e)._subtract(i),this.project(t.getNorthWest(),e)._subtract(i),this.project(t.getSouthEast(),e)._subtract(i),this.project(t.getNorthEast(),e)._subtract(i)])},_getCenterLayerPoint:function(){return this.containerPointToLayerPoint(this.getSize()._divideBy(2))},_getCenterOffset:function(t){return this.latLngToLayerPoint(t).subtract(this._getCenterLayerPoint())},_limitCenter:function(t,e,n){if(!n)return t;var i=this.project(t,e),o=this.getSize().divideBy(2),r=new B(i.subtract(o),i.add(o)),s=this._getBoundsOffset(r,n,e);return s.round().equals([0,0])?t:this.unproject(i.add(s),e)},_limitOffset:function(t,e){if(!e)return t;var n=this.getPixelBounds(),i=new B(n.min.add(t),n.max.add(t));return t.add(this._getBoundsOffset(i,e))},_getBoundsOffset:function(t,e,n){var i=j(this.project(e.getNorthEast(),n),this.project(e.getSouthWest(),n)),o=i.min.subtract(t.min),r=i.max.subtract(t.max);return new A(this._rebound(o.x,-r.x),this._rebound(o.y,-r.y))},_rebound:function(t,e){return 0<t+e?Math.round(t-e)/2:Math.max(0,Math.ceil(t))-Math.max(0,Math.floor(e))},_limitZoom:function(t){var e=this.getMinZoom(),n=this.getMaxZoom(),i=yt?this.options.zoomSnap:1;return i&&(t=Math.round(t/i)*i),Math.max(e,Math.min(n,t))},_onPanTransitionStep:function(){this.fire("move")},_onPanTransitionEnd:function(){_e(this._mapPane,"leaflet-pan-anim"),this.fire("moveend")},_tryAnimatedPan:function(t,e){var n=this._getCenterOffset(t)._trunc();return!(!0!==(e&&e.animate)&&!this.getSize().contains(n)||(this.panBy(n,e),0))},_createAnimProxy:function(){var t=this._proxy=se("div","leaflet-proxy leaflet-zoom-animated");this._panes.mapPane.appendChild(t),this.on("zoomanim",(function(t){var e=ee,n=this._proxy.style[e];ve(this._proxy,this.project(t.center,t.zoom),this.getZoomScale(t.zoom,1)),n===this._proxy.style[e]&&this._animatingZoom&&this._onZoomTransitionEnd()}),this),this.on("load moveend",this._animMoveEnd,this),this._on("unload",this._destroyAnimProxy,this)},_destroyAnimProxy:function(){ae(this._proxy),this.off("load moveend",this._animMoveEnd,this),delete this._proxy},_animMoveEnd:function(){var t=this.getCenter(),e=this.getZoom();ve(this._proxy,this.project(t,e),this.getZoomScale(e,1))},_catchTransitionEnd:function(t){this._animatingZoom&&0<=t.propertyName.indexOf("transform")&&this._onZoomTransitionEnd()},_nothingToAnimate:function(){return!this._container.getElementsByClassName("leaflet-zoom-animated").length},_tryAnimatedZoom:function(t,e,n){if(this._animatingZoom)return!0;if(n=n||{},!this._zoomAnimated||!1===n.animate||this._nothingToAnimate()||Math.abs(e-this._zoom)>this.options.zoomAnimationThreshold)return!1;var i=this.getZoomScale(e),o=this._getCenterOffset(t)._divideBy(1-1/i);return!(!0!==n.animate&&!this.getSize().contains(o)||(z((function(){this._moveStart(!0,!1)._animateZoom(t,e,!0)}),this),0))},_animateZoom:function(t,e,n,i){this._mapPane&&(n&&(this._animatingZoom=!0,this._animateToCenter=t,this._animateToZoom=e,de(this._mapPane,"leaflet-zoom-anim")),this.fire("zoomanim",{center:t,zoom:e,noUpdate:i}),setTimeout(o(this._onZoomTransitionEnd,this),250))},_onZoomTransitionEnd:function(){this._animatingZoom&&(this._mapPane&&_e(this._mapPane,"leaflet-zoom-anim"),this._animatingZoom=!1,this._move(this._animateToCenter,this._animateToZoom),z((function(){this._moveEnd(!0)}),this))}});function Ye(t){return new Xe(t)}var Xe=C.extend({options:{position:"topright"},initialize:function(t){p(this,t)},getPosition:function(){return this.options.position},setPosition:function(t){var e=this._map;return e&&e.removeControl(this),this.options.position=t,e&&e.addControl(this),this},getContainer:function(){return this._container},addTo:function(t){this.remove(),this._map=t;var e=this._container=this.onAdd(t),n=this.getPosition(),i=t._controlCorners[n];return de(e,"leaflet-control"),-1!==n.indexOf("bottom")?i.insertBefore(e,i.firstChild):i.appendChild(e),this._map.on("unload",this.remove,this),this},remove:function(){return this._map&&(ae(this._container),this.onRemove&&this.onRemove(this._map),this._map.off("unload",this.remove,this),this._map=null),this},_refocusOnMap:function(t){this._map&&t&&0<t.screenX&&0<t.screenY&&this._map.getContainer().focus()}});Je.include({addControl:function(t){return t.addTo(this),this},removeControl:function(t){return t.remove(),this},_initControlPos:function(){var t=this._controlCorners={},e="leaflet-",n=this._controlContainer=se("div",e+"control-container",this._container);function i(i,o){var r=e+i+" "+e+o;t[i+o]=se("div",r,n)}i("top","left"),i("top","right"),i("bottom","left"),i("bottom","right")},_clearControlPos:function(){for(var t in this._controlCorners)ae(this._controlCorners[t]);ae(this._controlContainer),delete this._controlCorners,delete this._controlContainer}});var Qe=Xe.extend({options:{collapsed:!0,position:"topright",autoZIndex:!0,hideSingleBase:!1,sortLayers:!1,sortFunction:function(t,e,n,i){return n<i?-1:i<n?1:0}},initialize:function(t,e,n){for(var i in p(this,n),this._layerControlInputs=[],this._layers=[],this._lastZIndex=0,this._handlingClick=!1,t)this._addLayer(t[i],i);for(i in e)this._addLayer(e[i],i,!0)},onAdd:function(t){this._initLayout(),this._update(),(this._map=t).on("zoomend",this._checkDisabledLayers,this);for(var e=0;e<this._layers.length;e++)this._layers[e].layer.on("add remove",this._onLayerChange,this);return this._container},addTo:function(t){return Xe.prototype.addTo.call(this,t),this._expandIfNotCollapsed()},onRemove:function(){this._map.off("zoomend",this._checkDisabledLayers,this);for(var t=0;t<this._layers.length;t++)this._layers[t].layer.off("add remove",this._onLayerChange,this)},addBaseLayer:function(t,e){return this._addLayer(t,e),this._map?this._update():this},addOverlay:function(t,e){return this._addLayer(t,e,!0),this._map?this._update():this},removeLayer:function(t){t.off("add remove",this._onLayerChange,this);var e=this._getLayer(a(t));return e&&this._layers.splice(this._layers.indexOf(e),1),this._map?this._update():this},expand:function(){de(this._container,"leaflet-control-layers-expanded"),this._section.style.height=null;var t=this._map.getSize().y-(this._container.offsetTop+50);return t<this._section.clientHeight?(de(this._section,"leaflet-control-layers-scrollbar"),this._section.style.height=t+"px"):_e(this._section,"leaflet-control-layers-scrollbar"),this._checkDisabledLayers(),this},collapse:function(){return _e(this._container,"leaflet-control-layers-expanded"),this},_initLayout:function(){var t="leaflet-control-layers",e=this._container=se("div",t),n=this.options.collapsed;e.setAttribute("aria-haspopup",!0),je(e),Be(e);var i=this._section=se("section",t+"-list");n&&(this._map.on("click",this.collapse,this),rt||Ee(e,{mouseenter:this.expand,mouseleave:this.collapse},this));var o=this._layersLink=se("a",t+"-toggle",e);o.href="#",o.title="Layers",Tt?(Ee(o,"click",De),Ee(o,"click",this.expand,this)):Ee(o,"focus",this.expand,this),n||this.expand(),this._baseLayersList=se("div",t+"-base",i),this._separator=se("div",t+"-separator",i),this._overlaysList=se("div",t+"-overlays",i),e.appendChild(i)},_getLayer:function(t){for(var e=0;e<this._layers.length;e++)if(this._layers[e]&&a(this._layers[e].layer)===t)return this._layers[e]},_addLayer:function(t,e,n){this._map&&t.on("add remove",this._onLayerChange,this),this._layers.push({layer:t,name:e,overlay:n}),this.options.sortLayers&&this._layers.sort(o((function(t,e){return this.options.sortFunction(t.layer,e.layer,t.name,e.name)}),this)),this.options.autoZIndex&&t.setZIndex&&(this._lastZIndex++,t.setZIndex(this._lastZIndex)),this._expandIfNotCollapsed()},_update:function(){if(!this._container)return this;he(this._baseLayersList),he(this._overlaysList),this._layerControlInputs=[];for(var t,e,n,i=0,o=0;o<this._layers.length;o++)n=this._layers[o],this._addItem(n),e=e||n.overlay,t=t||!n.overlay,i+=n.overlay?0:1;return this.options.hideSingleBase&&(t=t&&1<i,this._baseLayersList.style.display=t?"":"none"),this._separator.style.display=e&&t?"":"none",this},_onLayerChange:function(t){this._handlingClick||this._update();var e=this._getLayer(a(t.target)),n=e.overlay?"add"===t.type?"overlayadd":"overlayremove":"add"===t.type?"baselayerchange":null;n&&this._map.fire(n,e)},_createRadioElement:function(t,e){var n='<input type="radio" class="leaflet-control-layers-selector" name="'+t+'"'+(e?' checked="checked"':"")+"/>",i=document.createElement("div");return i.innerHTML=n,i.firstChild},_addItem:function(t){var e,n=document.createElement("label"),i=this._map.hasLayer(t.layer);t.overlay?((e=document.createElement("input")).type="checkbox",e.className="leaflet-control-layers-selector",e.defaultChecked=i):e=this._createRadioElement("leaflet-base-layers_"+a(this),i),this._layerControlInputs.push(e),e.layerId=a(t.layer),Ee(e,"click",this._onInputClick,this);var o=document.createElement("span");o.innerHTML=" "+t.name;var r=document.createElement("div");return n.appendChild(r),r.appendChild(e),r.appendChild(o),(t.overlay?this._overlaysList:this._baseLayersList).appendChild(n),this._checkDisabledLayers(),n},_onInputClick:function(){var t,e,n=this._layerControlInputs,i=[],o=[];this._handlingClick=!0;for(var r=n.length-1;0<=r;r--)t=n[r],e=this._getLayer(t.layerId).layer,t.checked?i.push(e):t.checked||o.push(e);for(r=0;r<o.length;r++)this._map.hasLayer(o[r])&&this._map.removeLayer(o[r]);for(r=0;r<i.length;r++)this._map.hasLayer(i[r])||this._map.addLayer(i[r]);this._handlingClick=!1,this._refocusOnMap()},_checkDisabledLayers:function(){for(var t,e,n=this._layerControlInputs,i=this._map.getZoom(),o=n.length-1;0<=o;o--)t=n[o],e=this._getLayer(t.layerId).layer,t.disabled=void 0!==e.options.minZoom&&i<e.options.minZoom||void 0!==e.options.maxZoom&&i>e.options.maxZoom},_expandIfNotCollapsed:function(){return this._map&&!this.options.collapsed&&this.expand(),this},_expand:function(){return this.expand()},_collapse:function(){return this.collapse()}}),$e=Xe.extend({options:{position:"topleft",zoomInText:"+",zoomInTitle:"Zoom in",zoomOutText:"&#x2212;",zoomOutTitle:"Zoom out"},onAdd:function(t){var e="leaflet-control-zoom",n=se("div",e+" leaflet-bar"),i=this.options;return this._zoomInButton=this._createButton(i.zoomInText,i.zoomInTitle,e+"-in",n,this._zoomIn),this._zoomOutButton=this._createButton(i.zoomOutText,i.zoomOutTitle,e+"-out",n,this._zoomOut),this._updateDisabled(),t.on("zoomend zoomlevelschange",this._updateDisabled,this),n},onRemove:function(t){t.off("zoomend zoomlevelschange",this._updateDisabled,this)},disable:function(){return this._disabled=!0,this._updateDisabled(),this},enable:function(){return this._disabled=!1,this._updateDisabled(),this},_zoomIn:function(t){!this._disabled&&this._map._zoom<this._map.getMaxZoom()&&this._map.zoomIn(this._map.options.zoomDelta*(t.shiftKey?3:1))},_zoomOut:function(t){!this._disabled&&this._map._zoom>this._map.getMinZoom()&&this._map.zoomOut(this._map.options.zoomDelta*(t.shiftKey?3:1))},_createButton:function(t,e,n,i,o){var r=se("a",n,i);return r.innerHTML=t,r.href="#",r.title=e,r.setAttribute("role","button"),r.setAttribute("aria-label",e),je(r),Ee(r,"click",De),Ee(r,"click",o,this),Ee(r,"click",this._refocusOnMap,this),r},_updateDisabled:function(){var t=this._map,e="leaflet-disabled";_e(this._zoomInButton,e),_e(this._zoomOutButton,e),!this._disabled&&t._zoom!==t.getMinZoom()||de(this._zoomOutButton,e),!this._disabled&&t._zoom!==t.getMaxZoom()||de(this._zoomInButton,e)}});Je.mergeOptions({zoomControl:!0}),Je.addInitHook((function(){this.options.zoomControl&&(this.zoomControl=new $e,this.addControl(this.zoomControl))}));var tn=Xe.extend({options:{position:"bottomleft",maxWidth:100,metric:!0,imperial:!0},onAdd:function(t){var e="leaflet-control-scale",n=se("div",e),i=this.options;return this._addScales(i,e+"-line",n),t.on(i.updateWhenIdle?"moveend":"move",this._update,this),t.whenReady(this._update,this),n},onRemove:function(t){t.off(this.options.updateWhenIdle?"moveend":"move",this._update,this)},_addScales:function(t,e,n){t.metric&&(this._mScale=se("div",e,n)),t.imperial&&(this._iScale=se("div",e,n))},_update:function(){var t=this._map,e=t.getSize().y/2,n=t.distance(t.containerPointToLatLng([0,e]),t.containerPointToLatLng([this.options.maxWidth,e]));this._updateScales(n)},_updateScales:function(t){this.options.metric&&t&&this._updateMetric(t),this.options.imperial&&t&&this._updateImperial(t)},_updateMetric:function(t){var e=this._getRoundNum(t),n=e<1e3?e+" m":e/1e3+" km";this._updateScale(this._mScale,n,e/t)},_updateImperial:function(t){var e,n,i,o=3.2808399*t;5280<o?(e=o/5280,n=this._getRoundNum(e),this._updateScale(this._iScale,n+" mi",n/e)):(i=this._getRoundNum(o),this._updateScale(this._iScale,i+" ft",i/o))},_updateScale:function(t,e,n){t.style.width=Math.round(this.options.maxWidth*n)+"px",t.innerHTML=e},_getRoundNum:function(t){var e=Math.pow(10,(Math.floor(t)+"").length-1),n=t/e;return e*(10<=n?10:5<=n?5:3<=n?3:2<=n?2:1)}}),en=Xe.extend({options:{position:"bottomright",prefix:'<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'},initialize:function(t){p(this,t),this._attributions={}},onAdd:function(t){for(var e in(t.attributionControl=this)._container=se("div","leaflet-control-attribution"),je(this._container),t._layers)t._layers[e].getAttribution&&this.addAttribution(t._layers[e].getAttribution());return this._update(),this._container},setPrefix:function(t){return this.options.prefix=t,this._update(),this},addAttribution:function(t){return t&&(this._attributions[t]||(this._attributions[t]=0),this._attributions[t]++,this._update()),this},removeAttribution:function(t){return t&&this._attributions[t]&&(this._attributions[t]--,this._update()),this},_update:function(){if(this._map){var t=[];for(var e in this._attributions)this._attributions[e]&&t.push(e);var n=[];this.options.prefix&&n.push(this.options.prefix),t.length&&n.push(t.join(", ")),this._container.innerHTML=n.join(" | ")}}});Je.mergeOptions({attributionControl:!0}),Je.addInitHook((function(){this.options.attributionControl&&(new en).addTo(this)})),Xe.Layers=Qe,Xe.Zoom=$e,Xe.Scale=tn,Xe.Attribution=en,Ye.layers=function(t,e,n){return new Qe(t,e,n)},Ye.zoom=function(t){return new $e(t)},Ye.scale=function(t){return new tn(t)},Ye.attribution=function(t){return new en(t)};var nn=C.extend({initialize:function(t){this._map=t},enable:function(){return this._enabled||(this._enabled=!0,this.addHooks()),this},disable:function(){return this._enabled&&(this._enabled=!1,this.removeHooks()),this},enabled:function(){return!!this._enabled}});nn.addTo=function(t,e){return t.addHandler(e,this),this};var on,rn={Events:k},sn=Tt?"touchstart mousedown":"mousedown",an={mousedown:"mouseup",touchstart:"touchend",pointerdown:"touchend",MSPointerDown:"touchend"},hn={mousedown:"mousemove",touchstart:"touchmove",pointerdown:"touchmove",MSPointerDown:"touchmove"},cn=O.extend({options:{clickTolerance:3},initialize:function(t,e,n,i){p(this,i),this._element=t,this._dragStartTarget=e||t,this._preventOutline=n},enable:function(){this._enabled||(Ee(this._dragStartTarget,sn,this._onDown,this),this._enabled=!0)},disable:function(){this._enabled&&(cn._dragging===this&&this.finishDrag(),Ce(this._dragStartTarget,sn,this._onDown,this),this._enabled=!1,this._moved=!1)},_onDown:function(t){var e,n;!t._simulated&&this._enabled&&(this._moved=!1,le(this._element,"leaflet-zoom-anim")||cn._dragging||t.shiftKey||1!==t.which&&1!==t.button&&!t.touches||((cn._dragging=this)._preventOutline&&Le(this._element),be(),Kt(),this._moving||(this.fire("down"),e=t.touches?t.touches[0]:t,n=Te(this._element),this._startPoint=new A(e.clientX,e.clientY),this._parentScale=Se(n),Ee(document,hn[t.type],this._onMove,this),Ee(document,an[t.type],this._onUp,this))))},_onMove:function(t){var e,n;!t._simulated&&this._enabled&&(t.touches&&1<t.touches.length?this._moved=!0:((n=new A((e=t.touches&&1===t.touches.length?t.touches[0]:t).clientX,e.clientY)._subtract(this._startPoint)).x||n.y)&&(Math.abs(n.x)+Math.abs(n.y)<this.options.clickTolerance||(n.x/=this._parentScale.x,n.y/=this._parentScale.y,Re(t),this._moved||(this.fire("dragstart"),this._moved=!0,this._startPos=we(this._element).subtract(n),de(document.body,"leaflet-dragging"),this._lastTarget=t.target||t.srcElement,window.SVGElementInstance&&this._lastTarget instanceof window.SVGElementInstance&&(this._lastTarget=this._lastTarget.correspondingUseElement),de(this._lastTarget,"leaflet-drag-target")),this._newPos=this._startPos.add(n),this._moving=!0,E(this._animRequest),this._lastEvent=t,this._animRequest=z(this._updatePosition,this,!0))))},_updatePosition:function(){var t={originalEvent:this._lastEvent};this.fire("predrag",t),ye(this._element,this._newPos),this.fire("drag",t)},_onUp:function(t){!t._simulated&&this._enabled&&this.finishDrag()},finishDrag:function(){for(var t in _e(document.body,"leaflet-dragging"),this._lastTarget&&(_e(this._lastTarget,"leaflet-drag-target"),this._lastTarget=null),hn)Ce(document,hn[t],this._onMove,this),Ce(document,an[t],this._onUp,this);xe(),Jt(),this._moved&&this._moving&&(E(this._animRequest),this.fire("dragend",{distance:this._newPos.distanceTo(this._startPos)})),this._moving=!1,cn._dragging=!1}});function un(t,e){if(!e||!t.length)return t.slice();var n=e*e;return function(t,e){var n=t.length,i=new(("undefined"==typeof Uint8Array?"undefined":s(Uint8Array))!=void 0+""?Uint8Array:Array)(n);i[0]=i[n-1]=1,function t(e,n,i,o,r){var s,a,h,c=0;for(a=o+1;a<=r-1;a++)c<(h=mn(e[a],e[o],e[r],!0))&&(s=a,c=h);i<c&&(n[s]=1,t(e,n,i,o,s),t(e,n,i,s,r))}(t,i,e,0,n-1);var o,r=[];for(o=0;o<n;o++)i[o]&&r.push(t[o]);return r}(t=function(t,e){for(var n=[t[0]],i=1,o=0,r=t.length;i<r;i++)(function(t,e){var n=e.x-t.x,i=e.y-t.y;return n*n+i*i})(t[i],t[o])>e&&(n.push(t[i]),o=i);return o<r-1&&n.push(t[r-1]),n}(t,n),n)}function ln(t,e,n){return Math.sqrt(mn(t,e,n,!0))}function dn(t,e,n,i,o){var r,s,a,h=i?on:pn(t,n),c=pn(e,n);for(on=c;;){if(!(h|c))return[t,e];if(h&c)return!1;a=pn(s=_n(t,e,r=h||c,n,o),n),r===h?(t=s,h=a):(e=s,c=a)}}function _n(t,e,n,i,o){var r,s,a=e.x-t.x,h=e.y-t.y,c=i.min,u=i.max;return 8&n?(r=t.x+a*(u.y-t.y)/h,s=u.y):4&n?(r=t.x+a*(c.y-t.y)/h,s=c.y):2&n?(r=u.x,s=t.y+h*(u.x-t.x)/a):1&n&&(r=c.x,s=t.y+h*(c.x-t.x)/a),new A(r,s,o)}function pn(t,e){var n=0;return t.x<e.min.x?n|=1:t.x>e.max.x&&(n|=2),t.y<e.min.y?n|=4:t.y>e.max.y&&(n|=8),n}function mn(t,e,n,i){var o,r=e.x,s=e.y,a=n.x-r,h=n.y-s,c=a*a+h*h;return 0<c&&(1<(o=((t.x-r)*a+(t.y-s)*h)/c)?(r=n.x,s=n.y):0<o&&(r+=a*o,s+=h*o)),a=t.x-r,h=t.y-s,i?a*a+h*h:new A(r,s)}function fn(t){return!v(t[0])||"object"!=s(t[0][0])&&void 0!==t[0][0]}function gn(t){return console.warn("Deprecated use of _flat, please use L.LineUtil.isFlat instead."),fn(t)}var vn={simplify:un,pointToSegmentDistance:ln,closestPointOnSegment:function(t,e,n){return mn(t,e,n)},clipSegment:dn,_getEdgeIntersection:_n,_getBitCode:pn,_sqClosestPointOnSegment:mn,isFlat:fn,_flat:gn};function yn(t,e,n){for(var i,o,r,s,a,h,c,u=[1,4,2,8],l=0,d=t.length;l<d;l++)t[l]._code=pn(t[l],e);for(r=0;r<4;r++){for(h=u[r],i=[],l=0,o=(d=t.length)-1;l<d;o=l++)s=t[l],a=t[o],s._code&h?a._code&h||((c=_n(a,s,h,e,n))._code=pn(c,e),i.push(c)):(a._code&h&&((c=_n(a,s,h,e,n))._code=pn(c,e),i.push(c)),i.push(s));t=i}return t}var wn,bn={clipPolygon:yn},xn={project:function(t){return new A(t.lng,t.lat)},unproject:function(t){return new q(t.y,t.x)},bounds:new B([-180,-90],[180,90])},Ln={R:6378137,R_MINOR:6356752.314245179,bounds:new B([-20037508.34279,-15496570.73972],[20037508.34279,18764656.23138]),project:function(t){var e=Math.PI/180,n=this.R,i=t.lat*e,o=this.R_MINOR/n,r=Math.sqrt(1-o*o),s=r*Math.sin(i),a=Math.tan(Math.PI/4-i/2)/Math.pow((1-s)/(1+s),r/2);i=-n*Math.log(Math.max(a,1e-10));return new A(t.lng*e*n,i)},unproject:function(t){for(var e,n=180/Math.PI,i=this.R,o=this.R_MINOR/i,r=Math.sqrt(1-o*o),s=Math.exp(-t.y/i),a=Math.PI/2-2*Math.atan(s),h=0,c=.1;h<15&&1e-7<Math.abs(c);h++)e=r*Math.sin(a),e=Math.pow((1-e)/(1+e),r/2),a+=c=Math.PI/2-2*Math.atan(s*e)-a;return new q(a*n,t.x*n/i)}},Pn={LonLat:xn,Mercator:Ln,SphericalMercator:V},Tn=e({},F,{code:"EPSG:3395",projection:Ln,transformation:K(wn=.5/(Math.PI*Ln.R),.5,-wn,.5)}),Sn=e({},F,{code:"EPSG:4326",projection:xn,transformation:K(1/180,1,-1/180,.5)}),zn=e({},W,{projection:xn,transformation:K(1,0,-1,0),scale:function(t){return Math.pow(2,t)},zoom:function(t){return Math.log(t)/Math.LN2},distance:function(t,e){var n=e.lng-t.lng,i=e.lat-t.lat;return Math.sqrt(n*n+i*i)},infinite:!0});W.Earth=F,W.EPSG3395=Tn,W.EPSG3857=Y,W.EPSG900913=X,W.EPSG4326=Sn,W.Simple=zn;var En=O.extend({options:{pane:"overlayPane",attribution:null,bubblingMouseEvents:!0},addTo:function(t){return t.addLayer(this),this},remove:function(){return this.removeFrom(this._map||this._mapToAdd)},removeFrom:function(t){return t&&t.removeLayer(this),this},getPane:function(t){return this._map.getPane(t?this.options[t]||t:this.options.pane)},addInteractiveTarget:function(t){return this._map._targets[a(t)]=this},removeInteractiveTarget:function(t){return delete this._map._targets[a(t)],this},getAttribution:function(){return this.options.attribution},_layerAdd:function(t){var e,n=t.target;n.hasLayer(this)&&(this._map=n,this._zoomAnimated=n._zoomAnimated,this.getEvents&&(e=this.getEvents(),n.on(e,this),this.once("remove",(function(){n.off(e,this)}),this)),this.onAdd(n),this.getAttribution&&n.attributionControl&&n.attributionControl.addAttribution(this.getAttribution()),this.fire("add"),n.fire("layeradd",{layer:this}))}});Je.include({addLayer:function(t){if(!t._layerAdd)throw new Error("The provided object is not a Layer.");var e=a(t);return this._layers[e]||((this._layers[e]=t)._mapToAdd=this,t.beforeAdd&&t.beforeAdd(this),this.whenReady(t._layerAdd,t)),this},removeLayer:function(t){var e=a(t);return this._layers[e]&&(this._loaded&&t.onRemove(this),t.getAttribution&&this.attributionControl&&this.attributionControl.removeAttribution(t.getAttribution()),delete this._layers[e],this._loaded&&(this.fire("layerremove",{layer:t}),t.fire("remove")),t._map=t._mapToAdd=null),this},hasLayer:function(t){return!!t&&a(t)in this._layers},eachLayer:function(t,e){for(var n in this._layers)t.call(e,this._layers[n]);return this},_addLayers:function(t){for(var e=0,n=(t=t?v(t)?t:[t]:[]).length;e<n;e++)this.addLayer(t[e])},_addZoomLimit:function(t){!isNaN(t.options.maxZoom)&&isNaN(t.options.minZoom)||(this._zoomBoundLayers[a(t)]=t,this._updateZoomLevels())},_removeZoomLimit:function(t){var e=a(t);this._zoomBoundLayers[e]&&(delete this._zoomBoundLayers[e],this._updateZoomLevels())},_updateZoomLevels:function(){var t=1/0,e=-1/0,n=this._getZoomSpan();for(var i in this._zoomBoundLayers){var o=this._zoomBoundLayers[i].options;t=void 0===o.minZoom?t:Math.min(t,o.minZoom),e=void 0===o.maxZoom?e:Math.max(e,o.maxZoom)}this._layersMaxZoom=e===-1/0?void 0:e,this._layersMinZoom=t===1/0?void 0:t,n!==this._getZoomSpan()&&this.fire("zoomlevelschange"),void 0===this.options.maxZoom&&this._layersMaxZoom&&this.getZoom()>this._layersMaxZoom&&this.setZoom(this._layersMaxZoom),void 0===this.options.minZoom&&this._layersMinZoom&&this.getZoom()<this._layersMinZoom&&this.setZoom(this._layersMinZoom)}});var Mn=En.extend({initialize:function(t,e){var n,i;if(p(this,e),this._layers={},t)for(n=0,i=t.length;n<i;n++)this.addLayer(t[n])},addLayer:function(t){var e=this.getLayerId(t);return this._layers[e]=t,this._map&&this._map.addLayer(t),this},removeLayer:function(t){var e=t in this._layers?t:this.getLayerId(t);return this._map&&this._layers[e]&&this._map.removeLayer(this._layers[e]),delete this._layers[e],this},hasLayer:function(t){return!!t&&("number"==typeof t?t:this.getLayerId(t))in this._layers},clearLayers:function(){return this.eachLayer(this.removeLayer,this)},invoke:function(t){var e,n,i=Array.prototype.slice.call(arguments,1);for(e in this._layers)(n=this._layers[e])[t]&&n[t].apply(n,i);return this},onAdd:function(t){this.eachLayer(t.addLayer,t)},onRemove:function(t){this.eachLayer(t.removeLayer,t)},eachLayer:function(t,e){for(var n in this._layers)t.call(e,this._layers[n]);return this},getLayer:function(t){return this._layers[t]},getLayers:function(){var t=[];return this.eachLayer(t.push,t),t},setZIndex:function(t){return this.invoke("setZIndex",t)},getLayerId:a}),Cn=Mn.extend({addLayer:function(t){return this.hasLayer(t)?this:(t.addEventParent(this),Mn.prototype.addLayer.call(this,t),this.fire("layeradd",{layer:t}))},removeLayer:function(t){return this.hasLayer(t)?(t in this._layers&&(t=this._layers[t]),t.removeEventParent(this),Mn.prototype.removeLayer.call(this,t),this.fire("layerremove",{layer:t})):this},setStyle:function(t){return this.invoke("setStyle",t)},bringToFront:function(){return this.invoke("bringToFront")},bringToBack:function(){return this.invoke("bringToBack")},getBounds:function(){var t=new R;for(var e in this._layers){var n=this._layers[e];t.extend(n.getBounds?n.getBounds():n.getLatLng())}return t}}),kn=C.extend({options:{popupAnchor:[0,0],tooltipAnchor:[0,0]},initialize:function(t){p(this,t)},createIcon:function(t){return this._createIcon("icon",t)},createShadow:function(t){return this._createIcon("shadow",t)},_createIcon:function(t,e){var n=this._getIconUrl(t);if(!n){if("icon"===t)throw new Error("iconUrl not set in Icon options (see the docs).");return null}var i=this._createImg(n,e&&"IMG"===e.tagName?e:null);return this._setIconStyles(i,t),i},_setIconStyles:function(t,e){var n=this.options,i=n[e+"Size"];"number"==typeof i&&(i=[i,i]);var o=Z(i),r=Z("shadow"===e&&n.shadowAnchor||n.iconAnchor||o&&o.divideBy(2,!0));t.className="leaflet-marker-"+e+" "+(n.className||""),r&&(t.style.marginLeft=-r.x+"px",t.style.marginTop=-r.y+"px"),o&&(t.style.width=o.x+"px",t.style.height=o.y+"px")},_createImg:function(t,e){return(e=e||document.createElement("img")).src=t,e},_getIconUrl:function(t){return Et&&this.options[t+"RetinaUrl"]||this.options[t+"Url"]}}),On=kn.extend({options:{iconUrl:"marker-icon.png",iconRetinaUrl:"marker-icon-2x.png",shadowUrl:"marker-shadow.png",iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],tooltipAnchor:[16,-28],shadowSize:[41,41]},_getIconUrl:function(t){return On.imagePath||(On.imagePath=this._detectIconPath()),(this.options.imagePath||On.imagePath)+kn.prototype._getIconUrl.call(this,t)},_detectIconPath:function(){var t=se("div","leaflet-default-icon-path",document.body),e=re(t,"background-image")||re(t,"backgroundImage");return document.body.removeChild(t),null===e||0!==e.indexOf("url")?"":e.replace(/^url\(["']?/,"").replace(/marker-icon\.png["']?\)$/,"")}}),An=nn.extend({initialize:function(t){this._marker=t},addHooks:function(){var t=this._marker._icon;this._draggable||(this._draggable=new cn(t,t,!0)),this._draggable.on({dragstart:this._onDragStart,predrag:this._onPreDrag,drag:this._onDrag,dragend:this._onDragEnd},this).enable(),de(t,"leaflet-marker-draggable")},removeHooks:function(){this._draggable.off({dragstart:this._onDragStart,predrag:this._onPreDrag,drag:this._onDrag,dragend:this._onDragEnd},this).disable(),this._marker._icon&&_e(this._marker._icon,"leaflet-marker-draggable")},moved:function(){return this._draggable&&this._draggable._moved},_adjustPan:function(t){var e,n=this._marker,i=n._map,o=this._marker.options.autoPanSpeed,r=this._marker.options.autoPanPadding,s=we(n._icon),a=i.getPixelBounds(),h=i.getPixelOrigin(),c=j(a.min._subtract(h).add(r),a.max._subtract(h).subtract(r));c.contains(s)||(e=Z((Math.max(c.max.x,s.x)-c.max.x)/(a.max.x-c.max.x)-(Math.min(c.min.x,s.x)-c.min.x)/(a.min.x-c.min.x),(Math.max(c.max.y,s.y)-c.max.y)/(a.max.y-c.max.y)-(Math.min(c.min.y,s.y)-c.min.y)/(a.min.y-c.min.y)).multiplyBy(o),i.panBy(e,{animate:!1}),this._draggable._newPos._add(e),this._draggable._startPos._add(e),ye(n._icon,this._draggable._newPos),this._onDrag(t),this._panRequest=z(this._adjustPan.bind(this,t)))},_onDragStart:function(){this._oldLatLng=this._marker.getLatLng(),this._marker.closePopup&&this._marker.closePopup(),this._marker.fire("movestart").fire("dragstart")},_onPreDrag:function(t){this._marker.options.autoPan&&(E(this._panRequest),this._panRequest=z(this._adjustPan.bind(this,t)))},_onDrag:function(t){var e=this._marker,n=e._shadow,i=we(e._icon),o=e._map.layerPointToLatLng(i);n&&ye(n,i),e._latlng=o,t.latlng=o,t.oldLatLng=this._oldLatLng,e.fire("move",t).fire("drag",t)},_onDragEnd:function(t){E(this._panRequest),delete this._oldLatLng,this._marker.fire("moveend").fire("dragend",t)}}),In=En.extend({options:{icon:new On,interactive:!0,keyboard:!0,title:"",alt:"",zIndexOffset:0,opacity:1,riseOnHover:!1,riseOffset:250,pane:"markerPane",shadowPane:"shadowPane",bubblingMouseEvents:!1,draggable:!1,autoPan:!1,autoPanPadding:[50,50],autoPanSpeed:10},initialize:function(t,e){p(this,e),this._latlng=N(t)},onAdd:function(t){this._zoomAnimated=this._zoomAnimated&&t.options.markerZoomAnimation,this._zoomAnimated&&t.on("zoomanim",this._animateZoom,this),this._initIcon(),this.update()},onRemove:function(t){this.dragging&&this.dragging.enabled()&&(this.options.draggable=!0,this.dragging.removeHooks()),delete this.dragging,this._zoomAnimated&&t.off("zoomanim",this._animateZoom,this),this._removeIcon(),this._removeShadow()},getEvents:function(){return{zoom:this.update,viewreset:this.update}},getLatLng:function(){return this._latlng},setLatLng:function(t){var e=this._latlng;return this._latlng=N(t),this.update(),this.fire("move",{oldLatLng:e,latlng:this._latlng})},setZIndexOffset:function(t){return this.options.zIndexOffset=t,this.update()},getIcon:function(){return this.options.icon},setIcon:function(t){return this.options.icon=t,this._map&&(this._initIcon(),this.update()),this._popup&&this.bindPopup(this._popup,this._popup.options),this},getElement:function(){return this._icon},update:function(){var t;return this._icon&&this._map&&(t=this._map.latLngToLayerPoint(this._latlng).round(),this._setPos(t)),this},_initIcon:function(){var t=this.options,e="leaflet-zoom-"+(this._zoomAnimated?"animated":"hide"),n=t.icon.createIcon(this._icon),i=!1;n!==this._icon&&(this._icon&&this._removeIcon(),i=!0,t.title&&(n.title=t.title),"IMG"===n.tagName&&(n.alt=t.alt||"")),de(n,e),t.keyboard&&(n.tabIndex="0"),this._icon=n,t.riseOnHover&&this.on({mouseover:this._bringToFront,mouseout:this._resetZIndex});var o=t.icon.createShadow(this._shadow),r=!1;o!==this._shadow&&(this._removeShadow(),r=!0),o&&(de(o,e),o.alt=""),this._shadow=o,t.opacity<1&&this._updateOpacity(),i&&this.getPane().appendChild(this._icon),this._initInteraction(),o&&r&&this.getPane(t.shadowPane).appendChild(this._shadow)},_removeIcon:function(){this.options.riseOnHover&&this.off({mouseover:this._bringToFront,mouseout:this._resetZIndex}),ae(this._icon),this.removeInteractiveTarget(this._icon),this._icon=null},_removeShadow:function(){this._shadow&&ae(this._shadow),this._shadow=null},_setPos:function(t){this._icon&&ye(this._icon,t),this._shadow&&ye(this._shadow,t),this._zIndex=t.y+this.options.zIndexOffset,this._resetZIndex()},_updateZIndex:function(t){this._icon&&(this._icon.style.zIndex=this._zIndex+t)},_animateZoom:function(t){var e=this._map._latLngToNewLayerPoint(this._latlng,t.zoom,t.center).round();this._setPos(e)},_initInteraction:function(){var t;this.options.interactive&&(de(this._icon,"leaflet-interactive"),this.addInteractiveTarget(this._icon),An&&(t=this.options.draggable,this.dragging&&(t=this.dragging.enabled(),this.dragging.disable()),this.dragging=new An(this),t&&this.dragging.enable()))},setOpacity:function(t){return this.options.opacity=t,this._map&&this._updateOpacity(),this},_updateOpacity:function(){var t=this.options.opacity;this._icon&&fe(this._icon,t),this._shadow&&fe(this._shadow,t)},_bringToFront:function(){this._updateZIndex(this.options.riseOffset)},_resetZIndex:function(){this._updateZIndex(0)},_getPopupAnchor:function(){return this.options.icon.options.popupAnchor},_getTooltipAnchor:function(){return this.options.icon.options.tooltipAnchor}}),Zn=En.extend({options:{stroke:!0,color:"#3388ff",weight:3,opacity:1,lineCap:"round",lineJoin:"round",dashArray:null,dashOffset:null,fill:!1,fillColor:null,fillOpacity:.2,fillRule:"evenodd",interactive:!0,bubblingMouseEvents:!0},beforeAdd:function(t){this._renderer=t.getRenderer(this)},onAdd:function(){this._renderer._initPath(this),this._reset(),this._renderer._addPath(this)},onRemove:function(){this._renderer._removePath(this)},redraw:function(){return this._map&&this._renderer._updatePath(this),this},setStyle:function(t){return p(this,t),this._renderer&&(this._renderer._updateStyle(this),this.options.stroke&&t&&Object.prototype.hasOwnProperty.call(t,"weight")&&this._updateBounds()),this},bringToFront:function(){return this._renderer&&this._renderer._bringToFront(this),this},bringToBack:function(){return this._renderer&&this._renderer._bringToBack(this),this},getElement:function(){return this._path},_reset:function(){this._project(),this._update()},_clickTolerance:function(){return(this.options.stroke?this.options.weight/2:0)+this._renderer.options.tolerance}}),Bn=Zn.extend({options:{fill:!0,radius:10},initialize:function(t,e){p(this,e),this._latlng=N(t),this._radius=this.options.radius},setLatLng:function(t){var e=this._latlng;return this._latlng=N(t),this.redraw(),this.fire("move",{oldLatLng:e,latlng:this._latlng})},getLatLng:function(){return this._latlng},setRadius:function(t){return this.options.radius=this._radius=t,this.redraw()},getRadius:function(){return this._radius},setStyle:function(t){var e=t&&t.radius||this._radius;return Zn.prototype.setStyle.call(this,t),this.setRadius(e),this},_project:function(){this._point=this._map.latLngToLayerPoint(this._latlng),this._updateBounds()},_updateBounds:function(){var t=this._radius,e=this._radiusY||t,n=this._clickTolerance(),i=[t+n,e+n];this._pxBounds=new B(this._point.subtract(i),this._point.add(i))},_update:function(){this._map&&this._updatePath()},_updatePath:function(){this._renderer._updateCircle(this)},_empty:function(){return this._radius&&!this._renderer._bounds.intersects(this._pxBounds)},_containsPoint:function(t){return t.distanceTo(this._point)<=this._radius+this._clickTolerance()}}),jn=Bn.extend({initialize:function(t,n,i){if("number"==typeof n&&(n=e({},i,{radius:n})),p(this,n),this._latlng=N(t),isNaN(this.options.radius))throw new Error("Circle radius cannot be NaN");this._mRadius=this.options.radius},setRadius:function(t){return this._mRadius=t,this.redraw()},getRadius:function(){return this._mRadius},getBounds:function(){var t=[this._radius,this._radiusY||this._radius];return new R(this._map.layerPointToLatLng(this._point.subtract(t)),this._map.layerPointToLatLng(this._point.add(t)))},setStyle:Zn.prototype.setStyle,_project:function(){var t,e,n,i,o,r,s,a,h=this._latlng.lng,c=this._latlng.lat,u=this._map,l=u.options.crs;l.distance===F.distance?(t=Math.PI/180,e=this._mRadius/F.R/t,n=u.project([c+e,h]),i=u.project([c-e,h]),o=n.add(i).divideBy(2),r=u.unproject(o).lat,s=Math.acos((Math.cos(e*t)-Math.sin(c*t)*Math.sin(r*t))/(Math.cos(c*t)*Math.cos(r*t)))/t,!isNaN(s)&&0!==s||(s=e/Math.cos(Math.PI/180*c)),this._point=o.subtract(u.getPixelOrigin()),this._radius=isNaN(s)?0:o.x-u.project([r,h-s]).x,this._radiusY=o.y-n.y):(a=l.unproject(l.project(this._latlng).subtract([this._mRadius,0])),this._point=u.latLngToLayerPoint(this._latlng),this._radius=this._point.x-u.latLngToLayerPoint(a).x),this._updateBounds()}}),Rn=Zn.extend({options:{smoothFactor:1,noClip:!1},initialize:function(t,e){p(this,e),this._setLatLngs(t)},getLatLngs:function(){return this._latlngs},setLatLngs:function(t){return this._setLatLngs(t),this.redraw()},isEmpty:function(){return!this._latlngs.length},closestLayerPoint:function(t){for(var e,n,i=1/0,o=null,r=mn,s=0,a=this._parts.length;s<a;s++)for(var h=this._parts[s],c=1,u=h.length;c<u;c++){var l=r(t,e=h[c-1],n=h[c],!0);l<i&&(i=l,o=r(t,e,n))}return o&&(o.distance=Math.sqrt(i)),o},getCenter:function(){if(!this._map)throw new Error("Must add layer to map before using getCenter()");var t,e,n,i,o,r,s,a=this._rings[0],h=a.length;if(!h)return null;for(e=t=0;t<h-1;t++)e+=a[t].distanceTo(a[t+1])/2;if(0===e)return this._map.layerPointToLatLng(a[0]);for(i=t=0;t<h-1;t++)if(o=a[t],r=a[t+1],e<(i+=n=o.distanceTo(r)))return s=(i-e)/n,this._map.layerPointToLatLng([r.x-s*(r.x-o.x),r.y-s*(r.y-o.y)])},getBounds:function(){return this._bounds},addLatLng:function(t,e){return e=e||this._defaultShape(),t=N(t),e.push(t),this._bounds.extend(t),this.redraw()},_setLatLngs:function(t){this._bounds=new R,this._latlngs=this._convertLatLngs(t)},_defaultShape:function(){return fn(this._latlngs)?this._latlngs:this._latlngs[0]},_convertLatLngs:function(t){for(var e=[],n=fn(t),i=0,o=t.length;i<o;i++)n?(e[i]=N(t[i]),this._bounds.extend(e[i])):e[i]=this._convertLatLngs(t[i]);return e},_project:function(){var t=new B;this._rings=[],this._projectLatlngs(this._latlngs,this._rings,t),this._bounds.isValid()&&t.isValid()&&(this._rawPxBounds=t,this._updateBounds())},_updateBounds:function(){var t=this._clickTolerance(),e=new A(t,t);this._pxBounds=new B([this._rawPxBounds.min.subtract(e),this._rawPxBounds.max.add(e)])},_projectLatlngs:function(t,e,n){var i,o,r=t[0]instanceof q,s=t.length;if(r){for(o=[],i=0;i<s;i++)o[i]=this._map.latLngToLayerPoint(t[i]),n.extend(o[i]);e.push(o)}else for(i=0;i<s;i++)this._projectLatlngs(t[i],e,n)},_clipPoints:function(){var t=this._renderer._bounds;if(this._parts=[],this._pxBounds&&this._pxBounds.intersects(t))if(this.options.noClip)this._parts=this._rings;else for(var e,n,i,o,r=this._parts,s=0,a=0,h=this._rings.length;s<h;s++)for(e=0,n=(o=this._rings[s]).length;e<n-1;e++)(i=dn(o[e],o[e+1],t,e,!0))&&(r[a]=r[a]||[],r[a].push(i[0]),i[1]===o[e+1]&&e!==n-2||(r[a].push(i[1]),a++))},_simplifyPoints:function(){for(var t=this._parts,e=this.options.smoothFactor,n=0,i=t.length;n<i;n++)t[n]=un(t[n],e)},_update:function(){this._map&&(this._clipPoints(),this._simplifyPoints(),this._updatePath())},_updatePath:function(){this._renderer._updatePoly(this)},_containsPoint:function(t,e){var n,i,o,r,s,a,h=this._clickTolerance();if(!this._pxBounds||!this._pxBounds.contains(t))return!1;for(n=0,r=this._parts.length;n<r;n++)for(i=0,o=(s=(a=this._parts[n]).length)-1;i<s;o=i++)if((e||0!==i)&&ln(t,a[o],a[i])<=h)return!0;return!1}});Rn._flat=gn;var Dn=Rn.extend({options:{fill:!0},isEmpty:function(){return!this._latlngs.length||!this._latlngs[0].length},getCenter:function(){if(!this._map)throw new Error("Must add layer to map before using getCenter()");var t,e,n,i,o,r,s,a,h,c=this._rings[0],u=c.length;if(!u)return null;for(t=r=s=a=0,e=u-1;t<u;e=t++)n=c[t],i=c[e],o=n.y*i.x-i.y*n.x,s+=(n.x+i.x)*o,a+=(n.y+i.y)*o,r+=3*o;return h=0===r?c[0]:[s/r,a/r],this._map.layerPointToLatLng(h)},_convertLatLngs:function(t){var e=Rn.prototype._convertLatLngs.call(this,t),n=e.length;return 2<=n&&e[0]instanceof q&&e[0].equals(e[n-1])&&e.pop(),e},_setLatLngs:function(t){Rn.prototype._setLatLngs.call(this,t),fn(this._latlngs)&&(this._latlngs=[this._latlngs])},_defaultShape:function(){return fn(this._latlngs[0])?this._latlngs[0]:this._latlngs[0][0]},_clipPoints:function(){var t=this._renderer._bounds,e=this.options.weight,n=new A(e,e);t=new B(t.min.subtract(n),t.max.add(n));if(this._parts=[],this._pxBounds&&this._pxBounds.intersects(t))if(this.options.noClip)this._parts=this._rings;else for(var i,o=0,r=this._rings.length;o<r;o++)(i=yn(this._rings[o],t,!0)).length&&this._parts.push(i)},_updatePath:function(){this._renderer._updatePoly(this,!0)},_containsPoint:function(t){var e,n,i,o,r,s,a,h,c=!1;if(!this._pxBounds||!this._pxBounds.contains(t))return!1;for(o=0,a=this._parts.length;o<a;o++)for(r=0,s=(h=(e=this._parts[o]).length)-1;r<h;s=r++)n=e[r],i=e[s],n.y>t.y!=i.y>t.y&&t.x<(i.x-n.x)*(t.y-n.y)/(i.y-n.y)+n.x&&(c=!c);return c||Rn.prototype._containsPoint.call(this,t,!0)}}),qn=Cn.extend({initialize:function(t,e){p(this,e),this._layers={},t&&this.addData(t)},addData:function(t){var e,n,i,o=v(t)?t:t.features;if(o){for(e=0,n=o.length;e<n;e++)((i=o[e]).geometries||i.geometry||i.features||i.coordinates)&&this.addData(i);return this}var r=this.options;if(r.filter&&!r.filter(t))return this;var s=Nn(t,r);return s?(s.feature=Kn(t),s.defaultOptions=s.options,this.resetStyle(s),r.onEachFeature&&r.onEachFeature(t,s),this.addLayer(s)):this},resetStyle:function(t){return void 0===t?this.eachLayer(this.resetStyle,this):(t.options=e({},t.defaultOptions),this._setLayerStyle(t,this.options.style),this)},setStyle:function(t){return this.eachLayer((function(e){this._setLayerStyle(e,t)}),this)},_setLayerStyle:function(t,e){t.setStyle&&("function"==typeof e&&(e=e(t.feature)),t.setStyle(e))}});function Nn(t,e){var n,i,o,r,s="Feature"===t.type?t.geometry:t,a=s?s.coordinates:null,h=[],c=e&&e.pointToLayer,u=e&&e.coordsToLatLng||Wn;if(!a&&!s)return null;switch(s.type){case"Point":return Hn(c,t,n=u(a),e);case"MultiPoint":for(o=0,r=a.length;o<r;o++)n=u(a[o]),h.push(Hn(c,t,n,e));return new Cn(h);case"LineString":case"MultiLineString":return i=Fn(a,"LineString"===s.type?0:1,u),new Rn(i,e);case"Polygon":case"MultiPolygon":return i=Fn(a,"Polygon"===s.type?1:2,u),new Dn(i,e);case"GeometryCollection":for(o=0,r=s.geometries.length;o<r;o++){var l=Nn({geometry:s.geometries[o],type:"Feature",properties:t.properties},e);l&&h.push(l)}return new Cn(h);default:throw new Error("Invalid GeoJSON object.")}}function Hn(t,e,n,i){return t?t(e,n):new In(n,i&&i.markersInheritOptions&&i)}function Wn(t){return new q(t[1],t[0],t[2])}function Fn(t,e,n){for(var i,o=[],r=0,s=t.length;r<s;r++)i=e?Fn(t[r],e-1,n):(n||Wn)(t[r]),o.push(i);return o}function Un(t,e){return e="number"==typeof e?e:6,void 0!==t.alt?[l(t.lng,e),l(t.lat,e),l(t.alt,e)]:[l(t.lng,e),l(t.lat,e)]}function Vn(t,e,n,i){for(var o=[],r=0,s=t.length;r<s;r++)o.push(e?Vn(t[r],e-1,n,i):Un(t[r],i));return!e&&n&&o.push(o[0]),o}function Gn(t,n){return t.feature?e({},t.feature,{geometry:n}):Kn(n)}function Kn(t){return"Feature"===t.type||"FeatureCollection"===t.type?t:{type:"Feature",properties:{},geometry:t}}var Jn={toGeoJSON:function(t){return Gn(this,{type:"Point",coordinates:Un(this.getLatLng(),t)})}};function Yn(t,e){return new qn(t,e)}In.include(Jn),jn.include(Jn),Bn.include(Jn),Rn.include({toGeoJSON:function(t){var e=!fn(this._latlngs);return Gn(this,{type:(e?"Multi":"")+"LineString",coordinates:Vn(this._latlngs,e?1:0,!1,t)})}}),Dn.include({toGeoJSON:function(t){var e=!fn(this._latlngs),n=e&&!fn(this._latlngs[0]),i=Vn(this._latlngs,n?2:e?1:0,!0,t);return e||(i=[i]),Gn(this,{type:(n?"Multi":"")+"Polygon",coordinates:i})}}),Mn.include({toMultiPoint:function(t){var e=[];return this.eachLayer((function(n){e.push(n.toGeoJSON(t).geometry.coordinates)})),Gn(this,{type:"MultiPoint",coordinates:e})},toGeoJSON:function(t){var e=this.feature&&this.feature.geometry&&this.feature.geometry.type;if("MultiPoint"===e)return this.toMultiPoint(t);var n="GeometryCollection"===e,i=[];return this.eachLayer((function(e){var o,r;e.toGeoJSON&&(o=e.toGeoJSON(t),n?i.push(o.geometry):"FeatureCollection"===(r=Kn(o)).type?i.push.apply(i,r.features):i.push(r))})),n?Gn(this,{geometries:i,type:"GeometryCollection"}):{type:"FeatureCollection",features:i}}});var Xn=Yn,Qn=En.extend({options:{opacity:1,alt:"",interactive:!1,crossOrigin:!1,errorOverlayUrl:"",zIndex:1,className:""},initialize:function(t,e,n){this._url=t,this._bounds=D(e),p(this,n)},onAdd:function(){this._image||(this._initImage(),this.options.opacity<1&&this._updateOpacity()),this.options.interactive&&(de(this._image,"leaflet-interactive"),this.addInteractiveTarget(this._image)),this.getPane().appendChild(this._image),this._reset()},onRemove:function(){ae(this._image),this.options.interactive&&this.removeInteractiveTarget(this._image)},setOpacity:function(t){return this.options.opacity=t,this._image&&this._updateOpacity(),this},setStyle:function(t){return t.opacity&&this.setOpacity(t.opacity),this},bringToFront:function(){return this._map&&ce(this._image),this},bringToBack:function(){return this._map&&ue(this._image),this},setUrl:function(t){return this._url=t,this._image&&(this._image.src=t),this},setBounds:function(t){return this._bounds=D(t),this._map&&this._reset(),this},getEvents:function(){var t={zoom:this._reset,viewreset:this._reset};return this._zoomAnimated&&(t.zoomanim=this._animateZoom),t},setZIndex:function(t){return this.options.zIndex=t,this._updateZIndex(),this},getBounds:function(){return this._bounds},getElement:function(){return this._image},_initImage:function(){var t="IMG"===this._url.tagName,e=this._image=t?this._url:se("img");de(e,"leaflet-image-layer"),this._zoomAnimated&&de(e,"leaflet-zoom-animated"),this.options.className&&de(e,this.options.className),e.onselectstart=u,e.onmousemove=u,e.onload=o(this.fire,this,"load"),e.onerror=o(this._overlayOnError,this,"error"),!this.options.crossOrigin&&""!==this.options.crossOrigin||(e.crossOrigin=!0===this.options.crossOrigin?"":this.options.crossOrigin),this.options.zIndex&&this._updateZIndex(),t?this._url=e.src:(e.src=this._url,e.alt=this.options.alt)},_animateZoom:function(t){var e=this._map.getZoomScale(t.zoom),n=this._map._latLngBoundsToNewLayerBounds(this._bounds,t.zoom,t.center).min;ve(this._image,n,e)},_reset:function(){var t=this._image,e=new B(this._map.latLngToLayerPoint(this._bounds.getNorthWest()),this._map.latLngToLayerPoint(this._bounds.getSouthEast())),n=e.getSize();ye(t,e.min),t.style.width=n.x+"px",t.style.height=n.y+"px"},_updateOpacity:function(){fe(this._image,this.options.opacity)},_updateZIndex:function(){this._image&&void 0!==this.options.zIndex&&null!==this.options.zIndex&&(this._image.style.zIndex=this.options.zIndex)},_overlayOnError:function(){this.fire("error");var t=this.options.errorOverlayUrl;t&&this._url!==t&&(this._url=t,this._image.src=t)}}),$n=Qn.extend({options:{autoplay:!0,loop:!0,keepAspectRatio:!0,muted:!1},_initImage:function(){var t="VIDEO"===this._url.tagName,e=this._image=t?this._url:se("video");if(de(e,"leaflet-image-layer"),this._zoomAnimated&&de(e,"leaflet-zoom-animated"),this.options.className&&de(e,this.options.className),e.onselectstart=u,e.onmousemove=u,e.onloadeddata=o(this.fire,this,"load"),t){for(var n=e.getElementsByTagName("source"),i=[],r=0;r<n.length;r++)i.push(n[r].src);this._url=0<n.length?i:[e.src]}else{v(this._url)||(this._url=[this._url]),!this.options.keepAspectRatio&&Object.prototype.hasOwnProperty.call(e.style,"objectFit")&&(e.style.objectFit="fill"),e.autoplay=!!this.options.autoplay,e.loop=!!this.options.loop,e.muted=!!this.options.muted;for(var s=0;s<this._url.length;s++){var a=se("source");a.src=this._url[s],e.appendChild(a)}}}}),ti=Qn.extend({_initImage:function(){var t=this._image=this._url;de(t,"leaflet-image-layer"),this._zoomAnimated&&de(t,"leaflet-zoom-animated"),this.options.className&&de(t,this.options.className),t.onselectstart=u,t.onmousemove=u}}),ei=En.extend({options:{offset:[0,7],className:"",pane:"popupPane"},initialize:function(t,e){p(this,t),this._source=e},onAdd:function(t){this._zoomAnimated=t._zoomAnimated,this._container||this._initLayout(),t._fadeAnimated&&fe(this._container,0),clearTimeout(this._removeTimeout),this.getPane().appendChild(this._container),this.update(),t._fadeAnimated&&fe(this._container,1),this.bringToFront()},onRemove:function(t){t._fadeAnimated?(fe(this._container,0),this._removeTimeout=setTimeout(o(ae,void 0,this._container),200)):ae(this._container)},getLatLng:function(){return this._latlng},setLatLng:function(t){return this._latlng=N(t),this._map&&(this._updatePosition(),this._adjustPan()),this},getContent:function(){return this._content},setContent:function(t){return this._content=t,this.update(),this},getElement:function(){return this._container},update:function(){this._map&&(this._container.style.visibility="hidden",this._updateContent(),this._updateLayout(),this._updatePosition(),this._container.style.visibility="",this._adjustPan())},getEvents:function(){var t={zoom:this._updatePosition,viewreset:this._updatePosition};return this._zoomAnimated&&(t.zoomanim=this._animateZoom),t},isOpen:function(){return!!this._map&&this._map.hasLayer(this)},bringToFront:function(){return this._map&&ce(this._container),this},bringToBack:function(){return this._map&&ue(this._container),this},_prepareOpen:function(t,e,n){if(e instanceof En||(n=e,e=t),e instanceof Cn)for(var i in t._layers){e=t._layers[i];break}if(!n)if(e.getCenter)n=e.getCenter();else{if(!e.getLatLng)throw new Error("Unable to get source layer LatLng.");n=e.getLatLng()}return this._source=e,this.update(),n},_updateContent:function(){if(this._content){var t=this._contentNode,e="function"==typeof this._content?this._content(this._source||this):this._content;if("string"==typeof e)t.innerHTML=e;else{for(;t.hasChildNodes();)t.removeChild(t.firstChild);t.appendChild(e)}this.fire("contentupdate")}},_updatePosition:function(){var t,e,n,i,o;this._map&&(t=this._map.latLngToLayerPoint(this._latlng),e=Z(this.options.offset),n=this._getAnchor(),this._zoomAnimated?ye(this._container,t.add(n)):e=e.add(t).add(n),i=this._containerBottom=-e.y,o=this._containerLeft=-Math.round(this._containerWidth/2)+e.x,this._container.style.bottom=i+"px",this._container.style.left=o+"px")},_getAnchor:function(){return[0,0]}}),ni=ei.extend({options:{maxWidth:300,minWidth:50,maxHeight:null,autoPan:!0,autoPanPaddingTopLeft:null,autoPanPaddingBottomRight:null,autoPanPadding:[5,5],keepInView:!1,closeButton:!0,autoClose:!0,closeOnEscapeKey:!0,className:""},openOn:function(t){return t.openPopup(this),this},onAdd:function(t){ei.prototype.onAdd.call(this,t),t.fire("popupopen",{popup:this}),this._source&&(this._source.fire("popupopen",{popup:this},!0),this._source instanceof Zn||this._source.on("preclick",Ze))},onRemove:function(t){ei.prototype.onRemove.call(this,t),t.fire("popupclose",{popup:this}),this._source&&(this._source.fire("popupclose",{popup:this},!0),this._source instanceof Zn||this._source.off("preclick",Ze))},getEvents:function(){var t=ei.prototype.getEvents.call(this);return(void 0!==this.options.closeOnClick?this.options.closeOnClick:this._map.options.closePopupOnClick)&&(t.preclick=this._close),this.options.keepInView&&(t.moveend=this._adjustPan),t},_close:function(){this._map&&this._map.closePopup(this)},_initLayout:function(){var t,e="leaflet-popup",n=this._container=se("div",e+" "+(this.options.className||"")+" leaflet-zoom-animated"),i=this._wrapper=se("div",e+"-content-wrapper",n);this._contentNode=se("div",e+"-content",i),je(n),Be(this._contentNode),Ee(n,"contextmenu",Ze),this._tipContainer=se("div",e+"-tip-container",n),this._tip=se("div",e+"-tip",this._tipContainer),this.options.closeButton&&((t=this._closeButton=se("a",e+"-close-button",n)).href="#close",t.innerHTML="&#215;",Ee(t,"click",this._onCloseButtonClick,this))},_updateLayout:function(){var t=this._contentNode,e=t.style;e.width="",e.whiteSpace="nowrap";var n=t.offsetWidth;n=Math.min(n,this.options.maxWidth);n=Math.max(n,this.options.minWidth),e.width=n+1+"px",e.whiteSpace="",e.height="";var i=t.offsetHeight,o=this.options.maxHeight,r="leaflet-popup-scrolled";o&&o<i?(e.height=o+"px",de(t,r)):_e(t,r),this._containerWidth=this._container.offsetWidth},_animateZoom:function(t){var e=this._map._latLngToNewLayerPoint(this._latlng,t.zoom,t.center),n=this._getAnchor();ye(this._container,e.add(n))},_adjustPan:function(){var t,e,n,i,o,r,s,a,h,c,u,l;this.options.autoPan&&(this._map._panAnim&&this._map._panAnim.stop(),t=this._map,e=parseInt(re(this._container,"marginBottom"),10)||0,n=this._container.offsetHeight+e,i=this._containerWidth,(o=new A(this._containerLeft,-n-this._containerBottom))._add(we(this._container)),r=t.layerPointToContainerPoint(o),s=Z(this.options.autoPanPadding),a=Z(this.options.autoPanPaddingTopLeft||s),h=Z(this.options.autoPanPaddingBottomRight||s),c=t.getSize(),l=u=0,r.x+i+h.x>c.x&&(u=r.x+i-c.x+h.x),r.x-u-a.x<0&&(u=r.x-a.x),r.y+n+h.y>c.y&&(l=r.y+n-c.y+h.y),r.y-l-a.y<0&&(l=r.y-a.y),(u||l)&&t.fire("autopanstart").panBy([u,l]))},_onCloseButtonClick:function(t){this._close(),De(t)},_getAnchor:function(){return Z(this._source&&this._source._getPopupAnchor?this._source._getPopupAnchor():[0,0])}});Je.mergeOptions({closePopupOnClick:!0}),Je.include({openPopup:function(t,e,n){return t instanceof ni||(t=new ni(n).setContent(t)),e&&t.setLatLng(e),this.hasLayer(t)?this:(this._popup&&this._popup.options.autoClose&&this.closePopup(),this._popup=t,this.addLayer(t))},closePopup:function(t){return t&&t!==this._popup||(t=this._popup,this._popup=null),t&&this.removeLayer(t),this}}),En.include({bindPopup:function(t,e){return t instanceof ni?(p(t,e),(this._popup=t)._source=this):(this._popup&&!e||(this._popup=new ni(e,this)),this._popup.setContent(t)),this._popupHandlersAdded||(this.on({click:this._openPopup,keypress:this._onKeyPress,remove:this.closePopup,move:this._movePopup}),this._popupHandlersAdded=!0),this},unbindPopup:function(){return this._popup&&(this.off({click:this._openPopup,keypress:this._onKeyPress,remove:this.closePopup,move:this._movePopup}),this._popupHandlersAdded=!1,this._popup=null),this},openPopup:function(t,e){return this._popup&&this._map&&(e=this._popup._prepareOpen(this,t,e),this._map.openPopup(this._popup,e)),this},closePopup:function(){return this._popup&&this._popup._close(),this},togglePopup:function(t){return this._popup&&(this._popup._map?this.closePopup():this.openPopup(t)),this},isPopupOpen:function(){return!!this._popup&&this._popup.isOpen()},setPopupContent:function(t){return this._popup&&this._popup.setContent(t),this},getPopup:function(){return this._popup},_openPopup:function(t){var e=t.layer||t.target;this._popup&&this._map&&(De(t),e instanceof Zn?this.openPopup(t.layer||t.target,t.latlng):this._map.hasLayer(this._popup)&&this._popup._source===e?this.closePopup():this.openPopup(e,t.latlng))},_movePopup:function(t){this._popup.setLatLng(t.latlng)},_onKeyPress:function(t){13===t.originalEvent.keyCode&&this._openPopup(t)}});var ii=ei.extend({options:{pane:"tooltipPane",offset:[0,0],direction:"auto",permanent:!1,sticky:!1,interactive:!1,opacity:.9},onAdd:function(t){ei.prototype.onAdd.call(this,t),this.setOpacity(this.options.opacity),t.fire("tooltipopen",{tooltip:this}),this._source&&this._source.fire("tooltipopen",{tooltip:this},!0)},onRemove:function(t){ei.prototype.onRemove.call(this,t),t.fire("tooltipclose",{tooltip:this}),this._source&&this._source.fire("tooltipclose",{tooltip:this},!0)},getEvents:function(){var t=ei.prototype.getEvents.call(this);return Tt&&!this.options.permanent&&(t.preclick=this._close),t},_close:function(){this._map&&this._map.closeTooltip(this)},_initLayout:function(){var t="leaflet-tooltip "+(this.options.className||"")+" leaflet-zoom-"+(this._zoomAnimated?"animated":"hide");this._contentNode=this._container=se("div",t)},_updateLayout:function(){},_adjustPan:function(){},_setPosition:function(t){var e,n=this._map,i=this._container,o=n.latLngToContainerPoint(n.getCenter()),r=n.layerPointToContainerPoint(t),s=this.options.direction,a=i.offsetWidth,h=i.offsetHeight,c=Z(this.options.offset),u=this._getAnchor(),l="top"===s?(e=a/2,h):"bottom"===s?(e=a/2,0):(e="center"===s?a/2:"right"===s?0:"left"===s?a:r.x<o.x?(s="right",0):(s="left",a+2*(c.x+u.x)),h/2);t=t.subtract(Z(e,l,!0)).add(c).add(u),_e(i,"leaflet-tooltip-right"),_e(i,"leaflet-tooltip-left"),_e(i,"leaflet-tooltip-top"),_e(i,"leaflet-tooltip-bottom"),de(i,"leaflet-tooltip-"+s),ye(i,t)},_updatePosition:function(){var t=this._map.latLngToLayerPoint(this._latlng);this._setPosition(t)},setOpacity:function(t){this.options.opacity=t,this._container&&fe(this._container,t)},_animateZoom:function(t){var e=this._map._latLngToNewLayerPoint(this._latlng,t.zoom,t.center);this._setPosition(e)},_getAnchor:function(){return Z(this._source&&this._source._getTooltipAnchor&&!this.options.sticky?this._source._getTooltipAnchor():[0,0])}});Je.include({openTooltip:function(t,e,n){return t instanceof ii||(t=new ii(n).setContent(t)),e&&t.setLatLng(e),this.hasLayer(t)?this:this.addLayer(t)},closeTooltip:function(t){return t&&this.removeLayer(t),this}}),En.include({bindTooltip:function(t,e){return t instanceof ii?(p(t,e),(this._tooltip=t)._source=this):(this._tooltip&&!e||(this._tooltip=new ii(e,this)),this._tooltip.setContent(t)),this._initTooltipInteractions(),this._tooltip.options.permanent&&this._map&&this._map.hasLayer(this)&&this.openTooltip(),this},unbindTooltip:function(){return this._tooltip&&(this._initTooltipInteractions(!0),this.closeTooltip(),this._tooltip=null),this},_initTooltipInteractions:function(t){var e,n;!t&&this._tooltipHandlersAdded||(e=t?"off":"on",n={remove:this.closeTooltip,move:this._moveTooltip},this._tooltip.options.permanent?n.add=this._openTooltip:(n.mouseover=this._openTooltip,n.mouseout=this.closeTooltip,this._tooltip.options.sticky&&(n.mousemove=this._moveTooltip),Tt&&(n.click=this._openTooltip)),this[e](n),this._tooltipHandlersAdded=!t)},openTooltip:function(t,e){return this._tooltip&&this._map&&(e=this._tooltip._prepareOpen(this,t,e),this._map.openTooltip(this._tooltip,e),this._tooltip.options.interactive&&this._tooltip._container&&(de(this._tooltip._container,"leaflet-clickable"),this.addInteractiveTarget(this._tooltip._container))),this},closeTooltip:function(){return this._tooltip&&(this._tooltip._close(),this._tooltip.options.interactive&&this._tooltip._container&&(_e(this._tooltip._container,"leaflet-clickable"),this.removeInteractiveTarget(this._tooltip._container))),this},toggleTooltip:function(t){return this._tooltip&&(this._tooltip._map?this.closeTooltip():this.openTooltip(t)),this},isTooltipOpen:function(){return this._tooltip.isOpen()},setTooltipContent:function(t){return this._tooltip&&this._tooltip.setContent(t),this},getTooltip:function(){return this._tooltip},_openTooltip:function(t){var e=t.layer||t.target;this._tooltip&&this._map&&this.openTooltip(e,this._tooltip.options.sticky?t.latlng:void 0)},_moveTooltip:function(t){var e,n,i=t.latlng;this._tooltip.options.sticky&&t.originalEvent&&(e=this._map.mouseEventToContainerPoint(t.originalEvent),n=this._map.containerPointToLayerPoint(e),i=this._map.layerPointToLatLng(n)),this._tooltip.setLatLng(i)}});var oi=kn.extend({options:{iconSize:[12,12],html:!1,bgPos:null,className:"leaflet-div-icon"},createIcon:function(t){var e,n=t&&"DIV"===t.tagName?t:document.createElement("div"),i=this.options;return i.html instanceof Element?(he(n),n.appendChild(i.html)):n.innerHTML=!1!==i.html?i.html:"",i.bgPos&&(e=Z(i.bgPos),n.style.backgroundPosition=-e.x+"px "+-e.y+"px"),this._setIconStyles(n,"icon"),n},createShadow:function(){return null}});kn.Default=On;var ri=En.extend({options:{tileSize:256,opacity:1,updateWhenIdle:wt,updateWhenZooming:!0,updateInterval:200,zIndex:1,bounds:null,minZoom:0,maxZoom:void 0,maxNativeZoom:void 0,minNativeZoom:void 0,noWrap:!1,pane:"tilePane",className:"",keepBuffer:2},initialize:function(t){p(this,t)},onAdd:function(){this._initContainer(),this._levels={},this._tiles={},this._resetView(),this._update()},beforeAdd:function(t){t._addZoomLimit(this)},onRemove:function(t){this._removeAllTiles(),ae(this._container),t._removeZoomLimit(this),this._container=null,this._tileZoom=void 0},bringToFront:function(){return this._map&&(ce(this._container),this._setAutoZIndex(Math.max)),this},bringToBack:function(){return this._map&&(ue(this._container),this._setAutoZIndex(Math.min)),this},getContainer:function(){return this._container},setOpacity:function(t){return this.options.opacity=t,this._updateOpacity(),this},setZIndex:function(t){return this.options.zIndex=t,this._updateZIndex(),this},isLoading:function(){return this._loading},redraw:function(){return this._map&&(this._removeAllTiles(),this._update()),this},getEvents:function(){var t={viewprereset:this._invalidateAll,viewreset:this._resetView,zoom:this._resetView,moveend:this._onMoveEnd};return this.options.updateWhenIdle||(this._onMove||(this._onMove=h(this._onMoveEnd,this.options.updateInterval,this)),t.move=this._onMove),this._zoomAnimated&&(t.zoomanim=this._animateZoom),t},createTile:function(){return document.createElement("div")},getTileSize:function(){var t=this.options.tileSize;return t instanceof A?t:new A(t,t)},_updateZIndex:function(){this._container&&void 0!==this.options.zIndex&&null!==this.options.zIndex&&(this._container.style.zIndex=this.options.zIndex)},_setAutoZIndex:function(t){for(var e,n=this.getPane().children,i=-t(-1/0,1/0),o=0,r=n.length;o<r;o++)e=n[o].style.zIndex,n[o]!==this._container&&e&&(i=t(i,+e));isFinite(i)&&(this.options.zIndex=i+t(-1,1),this._updateZIndex())},_updateOpacity:function(){if(this._map&&!nt){fe(this._container,this.options.opacity);var t=+new Date,e=!1,n=!1;for(var i in this._tiles){var o,r=this._tiles[i];r.current&&r.loaded&&(o=Math.min(1,(t-r.loaded)/200),fe(r.el,o),o<1?e=!0:(r.active?n=!0:this._onOpaqueTile(r),r.active=!0))}n&&!this._noPrune&&this._pruneTiles(),e&&(E(this._fadeFrame),this._fadeFrame=z(this._updateOpacity,this))}},_onOpaqueTile:u,_initContainer:function(){this._container||(this._container=se("div","leaflet-layer "+(this.options.className||"")),this._updateZIndex(),this.options.opacity<1&&this._updateOpacity(),this.getPane().appendChild(this._container))},_updateLevels:function(){var t=this._tileZoom,e=this.options.maxZoom;if(void 0!==t){for(var n in this._levels)n=Number(n),this._levels[n].el.children.length||n===t?(this._levels[n].el.style.zIndex=e-Math.abs(t-n),this._onUpdateLevel(n)):(ae(this._levels[n].el),this._removeTilesAtZoom(n),this._onRemoveLevel(n),delete this._levels[n]);var i=this._levels[t],o=this._map;return i||((i=this._levels[t]={}).el=se("div","leaflet-tile-container leaflet-zoom-animated",this._container),i.el.style.zIndex=e,i.origin=o.project(o.unproject(o.getPixelOrigin()),t).round(),i.zoom=t,this._setZoomTransform(i,o.getCenter(),o.getZoom()),i.el.offsetWidth,this._onCreateLevel(i)),this._level=i}},_onUpdateLevel:u,_onRemoveLevel:u,_onCreateLevel:u,_pruneTiles:function(){if(this._map){var t,e,n,i=this._map.getZoom();if(i>this.options.maxZoom||i<this.options.minZoom)this._removeAllTiles();else{for(t in this._tiles)(n=this._tiles[t]).retain=n.current;for(t in this._tiles)(n=this._tiles[t]).current&&!n.active&&(e=n.coords,this._retainParent(e.x,e.y,e.z,e.z-5)||this._retainChildren(e.x,e.y,e.z,e.z+2));for(t in this._tiles)this._tiles[t].retain||this._removeTile(t)}}},_removeTilesAtZoom:function(t){for(var e in this._tiles)this._tiles[e].coords.z===t&&this._removeTile(e)},_removeAllTiles:function(){for(var t in this._tiles)this._removeTile(t)},_invalidateAll:function(){for(var t in this._levels)ae(this._levels[t].el),this._onRemoveLevel(Number(t)),delete this._levels[t];this._removeAllTiles(),this._tileZoom=void 0},_retainParent:function(t,e,n,i){var o=Math.floor(t/2),r=Math.floor(e/2),s=n-1,a=new A(+o,+r);a.z=+s;var h=this._tileCoordsToKey(a),c=this._tiles[h];return c&&c.active?c.retain=!0:(c&&c.loaded&&(c.retain=!0),i<s&&this._retainParent(o,r,s,i))},_retainChildren:function(t,e,n,i){for(var o=2*t;o<2*t+2;o++)for(var r=2*e;r<2*e+2;r++){var s=new A(o,r);s.z=n+1;var a=this._tileCoordsToKey(s),h=this._tiles[a];h&&h.active?h.retain=!0:(h&&h.loaded&&(h.retain=!0),n+1<i&&this._retainChildren(o,r,n+1,i))}},_resetView:function(t){var e=t&&(t.pinch||t.flyTo);this._setView(this._map.getCenter(),this._map.getZoom(),e,e)},_animateZoom:function(t){this._setView(t.center,t.zoom,!0,t.noUpdate)},_clampZoom:function(t){var e=this.options;return void 0!==e.minNativeZoom&&t<e.minNativeZoom?e.minNativeZoom:void 0!==e.maxNativeZoom&&e.maxNativeZoom<t?e.maxNativeZoom:t},_setView:function(t,e,n,i){var o=Math.round(e),r=(o=void 0!==this.options.maxZoom&&o>this.options.maxZoom||void 0!==this.options.minZoom&&o<this.options.minZoom?void 0:this._clampZoom(o),this.options.updateWhenZooming&&o!==this._tileZoom);i&&!r||(this._tileZoom=o,this._abortLoading&&this._abortLoading(),this._updateLevels(),this._resetGrid(),void 0!==o&&this._update(t),n||this._pruneTiles(),this._noPrune=!!n),this._setZoomTransforms(t,e)},_setZoomTransforms:function(t,e){for(var n in this._levels)this._setZoomTransform(this._levels[n],t,e)},_setZoomTransform:function(t,e,n){var i=this._map.getZoomScale(n,t.zoom),o=t.origin.multiplyBy(i).subtract(this._map._getNewPixelOrigin(e,n)).round();yt?ve(t.el,o,i):ye(t.el,o)},_resetGrid:function(){var t=this._map,e=t.options.crs,n=this._tileSize=this.getTileSize(),i=this._tileZoom,o=this._map.getPixelWorldBounds(this._tileZoom);o&&(this._globalTileRange=this._pxBoundsToTileRange(o)),this._wrapX=e.wrapLng&&!this.options.noWrap&&[Math.floor(t.project([0,e.wrapLng[0]],i).x/n.x),Math.ceil(t.project([0,e.wrapLng[1]],i).x/n.y)],this._wrapY=e.wrapLat&&!this.options.noWrap&&[Math.floor(t.project([e.wrapLat[0],0],i).y/n.x),Math.ceil(t.project([e.wrapLat[1],0],i).y/n.y)]},_onMoveEnd:function(){this._map&&!this._map._animatingZoom&&this._update()},_getTiledPixelBounds:function(t){var e=this._map,n=e._animatingZoom?Math.max(e._animateToZoom,e.getZoom()):e.getZoom(),i=e.getZoomScale(n,this._tileZoom),o=e.project(t,this._tileZoom).floor(),r=e.getSize().divideBy(2*i);return new B(o.subtract(r),o.add(r))},_update:function(t){var e=this._map;if(e){var n=this._clampZoom(e.getZoom());if(void 0===t&&(t=e.getCenter()),void 0!==this._tileZoom){var i=this._getTiledPixelBounds(t),o=this._pxBoundsToTileRange(i),r=o.getCenter(),s=[],a=this.options.keepBuffer,h=new B(o.getBottomLeft().subtract([a,-a]),o.getTopRight().add([a,-a]));if(!(isFinite(o.min.x)&&isFinite(o.min.y)&&isFinite(o.max.x)&&isFinite(o.max.y)))throw new Error("Attempted to load an infinite number of tiles");for(var c in this._tiles){var u=this._tiles[c].coords;u.z===this._tileZoom&&h.contains(new A(u.x,u.y))||(this._tiles[c].current=!1)}if(1<Math.abs(n-this._tileZoom))this._setView(t,n);else{for(var l=o.min.y;l<=o.max.y;l++)for(var d=o.min.x;d<=o.max.x;d++){var _,p=new A(d,l);p.z=this._tileZoom,this._isValidTile(p)&&((_=this._tiles[this._tileCoordsToKey(p)])?_.current=!0:s.push(p))}if(s.sort((function(t,e){return t.distanceTo(r)-e.distanceTo(r)})),0!==s.length){this._loading||(this._loading=!0,this.fire("loading"));var m=document.createDocumentFragment();for(d=0;d<s.length;d++)this._addTile(s[d],m);this._level.el.appendChild(m)}}}}},_isValidTile:function(t){var e=this._map.options.crs;if(!e.infinite){var n=this._globalTileRange;if(!e.wrapLng&&(t.x<n.min.x||t.x>n.max.x)||!e.wrapLat&&(t.y<n.min.y||t.y>n.max.y))return!1}if(!this.options.bounds)return!0;var i=this._tileCoordsToBounds(t);return D(this.options.bounds).overlaps(i)},_keyToBounds:function(t){return this._tileCoordsToBounds(this._keyToTileCoords(t))},_tileCoordsToNwSe:function(t){var e=this._map,n=this.getTileSize(),i=t.scaleBy(n),o=i.add(n);return[e.unproject(i,t.z),e.unproject(o,t.z)]},_tileCoordsToBounds:function(t){var e=this._tileCoordsToNwSe(t),n=new R(e[0],e[1]);return this.options.noWrap||(n=this._map.wrapLatLngBounds(n)),n},_tileCoordsToKey:function(t){return t.x+":"+t.y+":"+t.z},_keyToTileCoords:function(t){var e=t.split(":"),n=new A(+e[0],+e[1]);return n.z=+e[2],n},_removeTile:function(t){var e=this._tiles[t];e&&(ae(e.el),delete this._tiles[t],this.fire("tileunload",{tile:e.el,coords:this._keyToTileCoords(t)}))},_initTile:function(t){de(t,"leaflet-tile");var e=this.getTileSize();t.style.width=e.x+"px",t.style.height=e.y+"px",t.onselectstart=u,t.onmousemove=u,nt&&this.options.opacity<1&&fe(t,this.options.opacity),rt&&!st&&(t.style.WebkitBackfaceVisibility="hidden")},_addTile:function(t,e){var n=this._getTilePos(t),i=this._tileCoordsToKey(t),r=this.createTile(this._wrapCoords(t),o(this._tileReady,this,t));this._initTile(r),this.createTile.length<2&&z(o(this._tileReady,this,t,null,r)),ye(r,n),this._tiles[i]={el:r,coords:t,current:!0},e.appendChild(r),this.fire("tileloadstart",{tile:r,coords:t})},_tileReady:function(t,e,n){e&&this.fire("tileerror",{error:e,tile:n,coords:t});var i=this._tileCoordsToKey(t);(n=this._tiles[i])&&(n.loaded=+new Date,this._map._fadeAnimated?(fe(n.el,0),E(this._fadeFrame),this._fadeFrame=z(this._updateOpacity,this)):(n.active=!0,this._pruneTiles()),e||(de(n.el,"leaflet-tile-loaded"),this.fire("tileload",{tile:n.el,coords:t})),this._noTilesToLoad()&&(this._loading=!1,this.fire("load"),nt||!this._map._fadeAnimated?z(this._pruneTiles,this):setTimeout(o(this._pruneTiles,this),250)))},_getTilePos:function(t){return t.scaleBy(this.getTileSize()).subtract(this._level.origin)},_wrapCoords:function(t){var e=new A(this._wrapX?c(t.x,this._wrapX):t.x,this._wrapY?c(t.y,this._wrapY):t.y);return e.z=t.z,e},_pxBoundsToTileRange:function(t){var e=this.getTileSize();return new B(t.min.unscaleBy(e).floor(),t.max.unscaleBy(e).ceil().subtract([1,1]))},_noTilesToLoad:function(){for(var t in this._tiles)if(!this._tiles[t].loaded)return!1;return!0}}),si=ri.extend({options:{minZoom:0,maxZoom:18,subdomains:"abc",errorTileUrl:"",zoomOffset:0,tms:!1,zoomReverse:!1,detectRetina:!1,crossOrigin:!1},initialize:function(t,e){this._url=t,(e=p(this,e)).detectRetina&&Et&&0<e.maxZoom&&(e.tileSize=Math.floor(e.tileSize/2),e.zoomReverse?(e.zoomOffset--,e.minZoom++):(e.zoomOffset++,e.maxZoom--),e.minZoom=Math.max(0,e.minZoom)),"string"==typeof e.subdomains&&(e.subdomains=e.subdomains.split("")),rt||this.on("tileunload",this._onTileRemove)},setUrl:function(t,e){return this._url===t&&void 0===e&&(e=!0),this._url=t,e||this.redraw(),this},createTile:function(t,e){var n=document.createElement("img");return Ee(n,"load",o(this._tileOnLoad,this,e,n)),Ee(n,"error",o(this._tileOnError,this,e,n)),!this.options.crossOrigin&&""!==this.options.crossOrigin||(n.crossOrigin=!0===this.options.crossOrigin?"":this.options.crossOrigin),n.alt="",n.setAttribute("role","presentation"),n.src=this.getTileUrl(t),n},getTileUrl:function(t){var n,i={r:Et?"@2x":"",s:this._getSubdomain(t),x:t.x,y:t.y,z:this._getZoomForUrl()};return this._map&&!this._map.options.crs.infinite&&(n=this._globalTileRange.max.y-t.y,this.options.tms&&(i.y=n),i["-y"]=n),g(this._url,e(i,this.options))},_tileOnLoad:function(t,e){nt?setTimeout(o(t,this,null,e),0):t(null,e)},_tileOnError:function(t,e,n){var i=this.options.errorTileUrl;i&&e.getAttribute("src")!==i&&(e.src=i),t(n,e)},_onTileRemove:function(t){t.tile.onload=null},_getZoomForUrl:function(){var t=this._tileZoom,e=this.options.maxZoom;return this.options.zoomReverse&&(t=e-t),t+this.options.zoomOffset},_getSubdomain:function(t){var e=Math.abs(t.x+t.y)%this.options.subdomains.length;return this.options.subdomains[e]},_abortLoading:function(){var t,e;for(t in this._tiles)this._tiles[t].coords.z!==this._tileZoom&&((e=this._tiles[t].el).onload=u,e.onerror=u,e.complete||(e.src=w,ae(e),delete this._tiles[t]))},_removeTile:function(t){var e=this._tiles[t];if(e)return ht||e.el.setAttribute("src",w),ri.prototype._removeTile.call(this,t)},_tileReady:function(t,e,n){if(this._map&&(!n||n.getAttribute("src")!==w))return ri.prototype._tileReady.call(this,t,e,n)}});function ai(t,e){return new si(t,e)}var hi=si.extend({defaultWmsParams:{service:"WMS",request:"GetMap",layers:"",styles:"",format:"image/jpeg",transparent:!1,version:"1.1.1"},options:{crs:null,uppercase:!1},initialize:function(t,n){this._url=t;var i=e({},this.defaultWmsParams);for(var o in n)o in this.options||(i[o]=n[o]);var r=(n=p(this,n)).detectRetina&&Et?2:1,s=this.getTileSize();i.width=s.x*r,i.height=s.y*r,this.wmsParams=i},onAdd:function(t){this._crs=this.options.crs||t.options.crs,this._wmsVersion=parseFloat(this.wmsParams.version);var e=1.3<=this._wmsVersion?"crs":"srs";this.wmsParams[e]=this._crs.code,si.prototype.onAdd.call(this,t)},getTileUrl:function(t){var e=this._tileCoordsToNwSe(t),n=this._crs,i=j(n.project(e[0]),n.project(e[1])),o=i.min,r=i.max,s=(1.3<=this._wmsVersion&&this._crs===Sn?[o.y,o.x,r.y,r.x]:[o.x,o.y,r.x,r.y]).join(","),a=si.prototype.getTileUrl.call(this,t);return a+m(this.wmsParams,a,this.options.uppercase)+(this.options.uppercase?"&BBOX=":"&bbox=")+s},setParams:function(t,n){return e(this.wmsParams,t),n||this.redraw(),this}});si.WMS=hi,ai.wms=function(t,e){return new hi(t,e)};var ci=En.extend({options:{padding:.1,tolerance:0},initialize:function(t){p(this,t),a(this),this._layers=this._layers||{}},onAdd:function(){this._container||(this._initContainer(),this._zoomAnimated&&de(this._container,"leaflet-zoom-animated")),this.getPane().appendChild(this._container),this._update(),this.on("update",this._updatePaths,this)},onRemove:function(){this.off("update",this._updatePaths,this),this._destroyContainer()},getEvents:function(){var t={viewreset:this._reset,zoom:this._onZoom,moveend:this._update,zoomend:this._onZoomEnd};return this._zoomAnimated&&(t.zoomanim=this._onAnimZoom),t},_onAnimZoom:function(t){this._updateTransform(t.center,t.zoom)},_onZoom:function(){this._updateTransform(this._map.getCenter(),this._map.getZoom())},_updateTransform:function(t,e){var n=this._map.getZoomScale(e,this._zoom),i=we(this._container),o=this._map.getSize().multiplyBy(.5+this.options.padding),r=this._map.project(this._center,e),s=this._map.project(t,e).subtract(r),a=o.multiplyBy(-n).add(i).add(o).subtract(s);yt?ve(this._container,a,n):ye(this._container,a)},_reset:function(){for(var t in this._update(),this._updateTransform(this._center,this._zoom),this._layers)this._layers[t]._reset()},_onZoomEnd:function(){for(var t in this._layers)this._layers[t]._project()},_updatePaths:function(){for(var t in this._layers)this._layers[t]._update()},_update:function(){var t=this.options.padding,e=this._map.getSize(),n=this._map.containerPointToLayerPoint(e.multiplyBy(-t)).round();this._bounds=new B(n,n.add(e.multiplyBy(1+2*t)).round()),this._center=this._map.getCenter(),this._zoom=this._map.getZoom()}}),ui=ci.extend({getEvents:function(){var t=ci.prototype.getEvents.call(this);return t.viewprereset=this._onViewPreReset,t},_onViewPreReset:function(){this._postponeUpdatePaths=!0},onAdd:function(){ci.prototype.onAdd.call(this),this._draw()},_initContainer:function(){var t=this._container=document.createElement("canvas");Ee(t,"mousemove",this._onMouseMove,this),Ee(t,"click dblclick mousedown mouseup contextmenu",this._onClick,this),Ee(t,"mouseout",this._handleMouseOut,this),this._ctx=t.getContext("2d")},_destroyContainer:function(){E(this._redrawRequest),delete this._ctx,ae(this._container),Ce(this._container),delete this._container},_updatePaths:function(){if(!this._postponeUpdatePaths){for(var t in this._redrawBounds=null,this._layers)this._layers[t]._update();this._redraw()}},_update:function(){var t,e,n,i;this._map._animatingZoom&&this._bounds||(ci.prototype._update.call(this),t=this._bounds,e=this._container,n=t.getSize(),i=Et?2:1,ye(e,t.min),e.width=i*n.x,e.height=i*n.y,e.style.width=n.x+"px",e.style.height=n.y+"px",Et&&this._ctx.scale(2,2),this._ctx.translate(-t.min.x,-t.min.y),this.fire("update"))},_reset:function(){ci.prototype._reset.call(this),this._postponeUpdatePaths&&(this._postponeUpdatePaths=!1,this._updatePaths())},_initPath:function(t){this._updateDashArray(t);var e=(this._layers[a(t)]=t)._order={layer:t,prev:this._drawLast,next:null};this._drawLast&&(this._drawLast.next=e),this._drawLast=e,this._drawFirst=this._drawFirst||this._drawLast},_addPath:function(t){this._requestRedraw(t)},_removePath:function(t){var e=t._order,n=e.next,i=e.prev;n?n.prev=i:this._drawLast=i,i?i.next=n:this._drawFirst=n,delete t._order,delete this._layers[a(t)],this._requestRedraw(t)},_updatePath:function(t){this._extendRedrawBounds(t),t._project(),t._update(),this._requestRedraw(t)},_updateStyle:function(t){this._updateDashArray(t),this._requestRedraw(t)},_updateDashArray:function(t){if("string"==typeof t.options.dashArray){for(var e,n=t.options.dashArray.split(/[, ]+/),i=[],o=0;o<n.length;o++){if(e=Number(n[o]),isNaN(e))return;i.push(e)}t.options._dashArray=i}else t.options._dashArray=t.options.dashArray},_requestRedraw:function(t){this._map&&(this._extendRedrawBounds(t),this._redrawRequest=this._redrawRequest||z(this._redraw,this))},_extendRedrawBounds:function(t){var e;t._pxBounds&&(e=(t.options.weight||0)+1,this._redrawBounds=this._redrawBounds||new B,this._redrawBounds.extend(t._pxBounds.min.subtract([e,e])),this._redrawBounds.extend(t._pxBounds.max.add([e,e])))},_redraw:function(){this._redrawRequest=null,this._redrawBounds&&(this._redrawBounds.min._floor(),this._redrawBounds.max._ceil()),this._clear(),this._draw(),this._redrawBounds=null},_clear:function(){var t,e=this._redrawBounds;e?(t=e.getSize(),this._ctx.clearRect(e.min.x,e.min.y,t.x,t.y)):(this._ctx.save(),this._ctx.setTransform(1,0,0,1,0,0),this._ctx.clearRect(0,0,this._container.width,this._container.height),this._ctx.restore())},_draw:function(){var t,e,n=this._redrawBounds;this._ctx.save(),n&&(e=n.getSize(),this._ctx.beginPath(),this._ctx.rect(n.min.x,n.min.y,e.x,e.y),this._ctx.clip()),this._drawing=!0;for(var i=this._drawFirst;i;i=i.next)t=i.layer,(!n||t._pxBounds&&t._pxBounds.intersects(n))&&t._updatePath();this._drawing=!1,this._ctx.restore()},_updatePoly:function(t,e){if(this._drawing){var n,i,o,r,s=t._parts,a=s.length,h=this._ctx;if(a){for(h.beginPath(),n=0;n<a;n++){for(i=0,o=s[n].length;i<o;i++)r=s[n][i],h[i?"lineTo":"moveTo"](r.x,r.y);e&&h.closePath()}this._fillStroke(h,t)}}},_updateCircle:function(t){var e,n,i,o;this._drawing&&!t._empty()&&(e=t._point,n=this._ctx,i=Math.max(Math.round(t._radius),1),1!=(o=(Math.max(Math.round(t._radiusY),1)||i)/i)&&(n.save(),n.scale(1,o)),n.beginPath(),n.arc(e.x,e.y/o,i,0,2*Math.PI,!1),1!=o&&n.restore(),this._fillStroke(n,t))},_fillStroke:function(t,e){var n=e.options;n.fill&&(t.globalAlpha=n.fillOpacity,t.fillStyle=n.fillColor||n.color,t.fill(n.fillRule||"evenodd")),n.stroke&&0!==n.weight&&(t.setLineDash&&t.setLineDash(e.options&&e.options._dashArray||[]),t.globalAlpha=n.opacity,t.lineWidth=n.weight,t.strokeStyle=n.color,t.lineCap=n.lineCap,t.lineJoin=n.lineJoin,t.stroke())},_onClick:function(t){for(var e,n,i=this._map.mouseEventToLayerPoint(t),o=this._drawFirst;o;o=o.next)(e=o.layer).options.interactive&&e._containsPoint(i)&&(("click"===t.type||"preclick"!==t.type)&&this._map._draggableMoved(e)||(n=e));n&&(Fe(t),this._fireEvent([n],t))},_onMouseMove:function(t){var e;!this._map||this._map.dragging.moving()||this._map._animatingZoom||(e=this._map.mouseEventToLayerPoint(t),this._handleMouseHover(t,e))},_handleMouseOut:function(t){var e=this._hoveredLayer;e&&(_e(this._container,"leaflet-interactive"),this._fireEvent([e],t,"mouseout"),this._hoveredLayer=null,this._mouseHoverThrottled=!1)},_handleMouseHover:function(t,e){if(!this._mouseHoverThrottled){for(var n,i,r=this._drawFirst;r;r=r.next)(n=r.layer).options.interactive&&n._containsPoint(e)&&(i=n);i!==this._hoveredLayer&&(this._handleMouseOut(t),i&&(de(this._container,"leaflet-interactive"),this._fireEvent([i],t,"mouseover"),this._hoveredLayer=i)),this._hoveredLayer&&this._fireEvent([this._hoveredLayer],t),this._mouseHoverThrottled=!0,setTimeout(o((function(){this._mouseHoverThrottled=!1}),this),32)}},_fireEvent:function(t,e,n){this._map._fireDOMEvent(e,n||e.type,t)},_bringToFront:function(t){var e,n,i=t._order;i&&(e=i.next,n=i.prev,e&&((e.prev=n)?n.next=e:e&&(this._drawFirst=e),i.prev=this._drawLast,(this._drawLast.next=i).next=null,this._drawLast=i,this._requestRedraw(t)))},_bringToBack:function(t){var e,n,i=t._order;i&&(e=i.next,(n=i.prev)&&((n.next=e)?e.prev=n:n&&(this._drawLast=n),i.prev=null,i.next=this._drawFirst,this._drawFirst.prev=i,this._drawFirst=i,this._requestRedraw(t)))}});function li(t){return Ct?new ui(t):null}var di=function(){try{return document.namespaces.add("lvml","urn:schemas-microsoft-com:vml"),function(t){return document.createElement("<lvml:"+t+' class="lvml">')}}catch(t){return function(t){return document.createElement("<"+t+' xmlns="urn:schemas-microsoft.com:vml" class="lvml">')}}}(),_i={_initContainer:function(){this._container=se("div","leaflet-vml-container")},_update:function(){this._map._animatingZoom||(ci.prototype._update.call(this),this.fire("update"))},_initPath:function(t){var e=t._container=di("shape");de(e,"leaflet-vml-shape "+(this.options.className||"")),e.coordsize="1 1",t._path=di("path"),e.appendChild(t._path),this._updateStyle(t),this._layers[a(t)]=t},_addPath:function(t){var e=t._container;this._container.appendChild(e),t.options.interactive&&t.addInteractiveTarget(e)},_removePath:function(t){var e=t._container;ae(e),t.removeInteractiveTarget(e),delete this._layers[a(t)]},_updateStyle:function(t){var e=t._stroke,n=t._fill,i=t.options,o=t._container;o.stroked=!!i.stroke,o.filled=!!i.fill,i.stroke?(e=e||(t._stroke=di("stroke")),o.appendChild(e),e.weight=i.weight+"px",e.color=i.color,e.opacity=i.opacity,i.dashArray?e.dashStyle=v(i.dashArray)?i.dashArray.join(" "):i.dashArray.replace(/( *, *)/g," "):e.dashStyle="",e.endcap=i.lineCap.replace("butt","flat"),e.joinstyle=i.lineJoin):e&&(o.removeChild(e),t._stroke=null),i.fill?(n=n||(t._fill=di("fill")),o.appendChild(n),n.color=i.fillColor||i.color,n.opacity=i.fillOpacity):n&&(o.removeChild(n),t._fill=null)},_updateCircle:function(t){var e=t._point.round(),n=Math.round(t._radius),i=Math.round(t._radiusY||n);this._setPath(t,t._empty()?"M0 0":"AL "+e.x+","+e.y+" "+n+","+i+" 0,23592600")},_setPath:function(t,e){t._path.v=e},_bringToFront:function(t){ce(t._container)},_bringToBack:function(t){ue(t._container)}},pi=Ot?di:Q,mi=ci.extend({getEvents:function(){var t=ci.prototype.getEvents.call(this);return t.zoomstart=this._onZoomStart,t},_initContainer:function(){this._container=pi("svg"),this._container.setAttribute("pointer-events","none"),this._rootGroup=pi("g"),this._container.appendChild(this._rootGroup)},_destroyContainer:function(){ae(this._container),Ce(this._container),delete this._container,delete this._rootGroup,delete this._svgSize},_onZoomStart:function(){this._update()},_update:function(){var t,e,n;this._map._animatingZoom&&this._bounds||(ci.prototype._update.call(this),e=(t=this._bounds).getSize(),n=this._container,this._svgSize&&this._svgSize.equals(e)||(this._svgSize=e,n.setAttribute("width",e.x),n.setAttribute("height",e.y)),ye(n,t.min),n.setAttribute("viewBox",[t.min.x,t.min.y,e.x,e.y].join(" ")),this.fire("update"))},_initPath:function(t){var e=t._path=pi("path");t.options.className&&de(e,t.options.className),t.options.interactive&&de(e,"leaflet-interactive"),this._updateStyle(t),this._layers[a(t)]=t},_addPath:function(t){this._rootGroup||this._initContainer(),this._rootGroup.appendChild(t._path),t.addInteractiveTarget(t._path)},_removePath:function(t){ae(t._path),t.removeInteractiveTarget(t._path),delete this._layers[a(t)]},_updatePath:function(t){t._project(),t._update()},_updateStyle:function(t){var e=t._path,n=t.options;e&&(n.stroke?(e.setAttribute("stroke",n.color),e.setAttribute("stroke-opacity",n.opacity),e.setAttribute("stroke-width",n.weight),e.setAttribute("stroke-linecap",n.lineCap),e.setAttribute("stroke-linejoin",n.lineJoin),n.dashArray?e.setAttribute("stroke-dasharray",n.dashArray):e.removeAttribute("stroke-dasharray"),n.dashOffset?e.setAttribute("stroke-dashoffset",n.dashOffset):e.removeAttribute("stroke-dashoffset")):e.setAttribute("stroke","none"),n.fill?(e.setAttribute("fill",n.fillColor||n.color),e.setAttribute("fill-opacity",n.fillOpacity),e.setAttribute("fill-rule",n.fillRule||"evenodd")):e.setAttribute("fill","none"))},_updatePoly:function(t,e){this._setPath(t,$(t._parts,e))},_updateCircle:function(t){var e=t._point,n=Math.max(Math.round(t._radius),1),i="a"+n+","+(Math.max(Math.round(t._radiusY),1)||n)+" 0 1,0 ",o=t._empty()?"M0 0":"M"+(e.x-n)+","+e.y+i+2*n+",0 "+i+2*-n+",0 ";this._setPath(t,o)},_setPath:function(t,e){t._path.setAttribute("d",e)},_bringToFront:function(t){ce(t._path)},_bringToBack:function(t){ue(t._path)}});function fi(t){return kt||Ot?new mi(t):null}Ot&&mi.include(_i),Je.include({getRenderer:function(t){var e=(e=t.options.renderer||this._getPaneRenderer(t.options.pane)||this.options.renderer||this._renderer)||(this._renderer=this._createRenderer());return this.hasLayer(e)||this.addLayer(e),e},_getPaneRenderer:function(t){if("overlayPane"===t||void 0===t)return!1;var e=this._paneRenderers[t];return void 0===e&&(e=this._createRenderer({pane:t}),this._paneRenderers[t]=e),e},_createRenderer:function(t){return this.options.preferCanvas&&li(t)||fi(t)}});var gi=Dn.extend({initialize:function(t,e){Dn.prototype.initialize.call(this,this._boundsToLatLngs(t),e)},setBounds:function(t){return this.setLatLngs(this._boundsToLatLngs(t))},_boundsToLatLngs:function(t){return[(t=D(t)).getSouthWest(),t.getNorthWest(),t.getNorthEast(),t.getSouthEast()]}});mi.create=pi,mi.pointsToPath=$,qn.geometryToLayer=Nn,qn.coordsToLatLng=Wn,qn.coordsToLatLngs=Fn,qn.latLngToCoords=Un,qn.latLngsToCoords=Vn,qn.getFeature=Gn,qn.asFeature=Kn,Je.mergeOptions({boxZoom:!0});var vi=nn.extend({initialize:function(t){this._map=t,this._container=t._container,this._pane=t._panes.overlayPane,this._resetStateTimeout=0,t.on("unload",this._destroy,this)},addHooks:function(){Ee(this._container,"mousedown",this._onMouseDown,this)},removeHooks:function(){Ce(this._container,"mousedown",this._onMouseDown,this)},moved:function(){return this._moved},_destroy:function(){ae(this._pane),delete this._pane},_resetState:function(){this._resetStateTimeout=0,this._moved=!1},_clearDeferredResetState:function(){0!==this._resetStateTimeout&&(clearTimeout(this._resetStateTimeout),this._resetStateTimeout=0)},_onMouseDown:function(t){if(!t.shiftKey||1!==t.which&&1!==t.button)return!1;this._clearDeferredResetState(),this._resetState(),Kt(),be(),this._startPoint=this._map.mouseEventToContainerPoint(t),Ee(document,{contextmenu:De,mousemove:this._onMouseMove,mouseup:this._onMouseUp,keydown:this._onKeyDown},this)},_onMouseMove:function(t){this._moved||(this._moved=!0,this._box=se("div","leaflet-zoom-box",this._container),de(this._container,"leaflet-crosshair"),this._map.fire("boxzoomstart")),this._point=this._map.mouseEventToContainerPoint(t);var e=new B(this._point,this._startPoint),n=e.getSize();ye(this._box,e.min),this._box.style.width=n.x+"px",this._box.style.height=n.y+"px"},_finish:function(){this._moved&&(ae(this._box),_e(this._container,"leaflet-crosshair")),Jt(),xe(),Ce(document,{contextmenu:De,mousemove:this._onMouseMove,mouseup:this._onMouseUp,keydown:this._onKeyDown},this)},_onMouseUp:function(t){var e;1!==t.which&&1!==t.button||(this._finish(),this._moved&&(this._clearDeferredResetState(),this._resetStateTimeout=setTimeout(o(this._resetState,this),0),e=new R(this._map.containerPointToLatLng(this._startPoint),this._map.containerPointToLatLng(this._point)),this._map.fitBounds(e).fire("boxzoomend",{boxZoomBounds:e})))},_onKeyDown:function(t){27===t.keyCode&&this._finish()}});Je.addInitHook("addHandler","boxZoom",vi),Je.mergeOptions({doubleClickZoom:!0});var yi=nn.extend({addHooks:function(){this._map.on("dblclick",this._onDoubleClick,this)},removeHooks:function(){this._map.off("dblclick",this._onDoubleClick,this)},_onDoubleClick:function(t){var e=this._map,n=e.getZoom(),i=e.options.zoomDelta,o=t.originalEvent.shiftKey?n-i:n+i;"center"===e.options.doubleClickZoom?e.setZoom(o):e.setZoomAround(t.containerPoint,o)}});Je.addInitHook("addHandler","doubleClickZoom",yi),Je.mergeOptions({dragging:!0,inertia:!st,inertiaDeceleration:3400,inertiaMaxSpeed:1/0,easeLinearity:.2,worldCopyJump:!1,maxBoundsViscosity:0});var wi=nn.extend({addHooks:function(){var t;this._draggable||(t=this._map,this._draggable=new cn(t._mapPane,t._container),this._draggable.on({dragstart:this._onDragStart,drag:this._onDrag,dragend:this._onDragEnd},this),this._draggable.on("predrag",this._onPreDragLimit,this),t.options.worldCopyJump&&(this._draggable.on("predrag",this._onPreDragWrap,this),t.on("zoomend",this._onZoomEnd,this),t.whenReady(this._onZoomEnd,this))),de(this._map._container,"leaflet-grab leaflet-touch-drag"),this._draggable.enable(),this._positions=[],this._times=[]},removeHooks:function(){_e(this._map._container,"leaflet-grab"),_e(this._map._container,"leaflet-touch-drag"),this._draggable.disable()},moved:function(){return this._draggable&&this._draggable._moved},moving:function(){return this._draggable&&this._draggable._moving},_onDragStart:function(){var t,e=this._map;e._stop(),this._map.options.maxBounds&&this._map.options.maxBoundsViscosity?(t=D(this._map.options.maxBounds),this._offsetLimit=j(this._map.latLngToContainerPoint(t.getNorthWest()).multiplyBy(-1),this._map.latLngToContainerPoint(t.getSouthEast()).multiplyBy(-1).add(this._map.getSize())),this._viscosity=Math.min(1,Math.max(0,this._map.options.maxBoundsViscosity))):this._offsetLimit=null,e.fire("movestart").fire("dragstart"),e.options.inertia&&(this._positions=[],this._times=[])},_onDrag:function(t){var e,n;this._map.options.inertia&&(e=this._lastTime=+new Date,n=this._lastPos=this._draggable._absPos||this._draggable._newPos,this._positions.push(n),this._times.push(e),this._prunePositions(e)),this._map.fire("move",t).fire("drag",t)},_prunePositions:function(t){for(;1<this._positions.length&&50<t-this._times[0];)this._positions.shift(),this._times.shift()},_onZoomEnd:function(){var t=this._map.getSize().divideBy(2),e=this._map.latLngToLayerPoint([0,0]);this._initialWorldOffset=e.subtract(t).x,this._worldWidth=this._map.getPixelWorldBounds().getSize().x},_viscousLimit:function(t,e){return t-(t-e)*this._viscosity},_onPreDragLimit:function(){var t,e;this._viscosity&&this._offsetLimit&&(t=this._draggable._newPos.subtract(this._draggable._startPos),e=this._offsetLimit,t.x<e.min.x&&(t.x=this._viscousLimit(t.x,e.min.x)),t.y<e.min.y&&(t.y=this._viscousLimit(t.y,e.min.y)),t.x>e.max.x&&(t.x=this._viscousLimit(t.x,e.max.x)),t.y>e.max.y&&(t.y=this._viscousLimit(t.y,e.max.y)),this._draggable._newPos=this._draggable._startPos.add(t))},_onPreDragWrap:function(){var t=this._worldWidth,e=Math.round(t/2),n=this._initialWorldOffset,i=this._draggable._newPos.x,o=(i-e+n)%t+e-n,r=(i+e+n)%t-e-n,s=Math.abs(o+n)<Math.abs(r+n)?o:r;this._draggable._absPos=this._draggable._newPos.clone(),this._draggable._newPos.x=s},_onDragEnd:function(t){var e,n,i,o,r,s,a,h,c,u=this._map,l=u.options,d=!l.inertia||this._times.length<2;u.fire("dragend",t),d?u.fire("moveend"):(this._prunePositions(+new Date),e=this._lastPos.subtract(this._positions[0]),n=(this._lastTime-this._times[0])/1e3,i=l.easeLinearity,r=(o=e.multiplyBy(i/n)).distanceTo([0,0]),s=Math.min(l.inertiaMaxSpeed,r),a=o.multiplyBy(s/r),h=s/(l.inertiaDeceleration*i),(c=a.multiplyBy(-h/2).round()).x||c.y?(c=u._limitOffset(c,u.options.maxBounds),z((function(){u.panBy(c,{duration:h,easeLinearity:i,noMoveStart:!0,animate:!0})}))):u.fire("moveend"))}});Je.addInitHook("addHandler","dragging",wi),Je.mergeOptions({keyboard:!0,keyboardPanDelta:80});var bi=nn.extend({keyCodes:{left:[37],right:[39],down:[40],up:[38],zoomIn:[187,107,61,171],zoomOut:[189,109,54,173]},initialize:function(t){this._map=t,this._setPanDelta(t.options.keyboardPanDelta),this._setZoomDelta(t.options.zoomDelta)},addHooks:function(){var t=this._map._container;t.tabIndex<=0&&(t.tabIndex="0"),Ee(t,{focus:this._onFocus,blur:this._onBlur,mousedown:this._onMouseDown},this),this._map.on({focus:this._addHooks,blur:this._removeHooks},this)},removeHooks:function(){this._removeHooks(),Ce(this._map._container,{focus:this._onFocus,blur:this._onBlur,mousedown:this._onMouseDown},this),this._map.off({focus:this._addHooks,blur:this._removeHooks},this)},_onMouseDown:function(){var t,e,n,i;this._focused||(t=document.body,e=document.documentElement,n=t.scrollTop||e.scrollTop,i=t.scrollLeft||e.scrollLeft,this._map._container.focus(),window.scrollTo(i,n))},_onFocus:function(){this._focused=!0,this._map.fire("focus")},_onBlur:function(){this._focused=!1,this._map.fire("blur")},_setPanDelta:function(t){for(var e=this._panKeys={},n=this.keyCodes,i=0,o=n.left.length;i<o;i++)e[n.left[i]]=[-1*t,0];for(i=0,o=n.right.length;i<o;i++)e[n.right[i]]=[t,0];for(i=0,o=n.down.length;i<o;i++)e[n.down[i]]=[0,t];for(i=0,o=n.up.length;i<o;i++)e[n.up[i]]=[0,-1*t]},_setZoomDelta:function(t){for(var e=this._zoomKeys={},n=this.keyCodes,i=0,o=n.zoomIn.length;i<o;i++)e[n.zoomIn[i]]=t;for(i=0,o=n.zoomOut.length;i<o;i++)e[n.zoomOut[i]]=-t},_addHooks:function(){Ee(document,"keydown",this._onKeyDown,this)},_removeHooks:function(){Ce(document,"keydown",this._onKeyDown,this)},_onKeyDown:function(t){if(!(t.altKey||t.ctrlKey||t.metaKey)){var e,n=t.keyCode,i=this._map;if(n in this._panKeys)i._panAnim&&i._panAnim._inProgress||(e=this._panKeys[n],t.shiftKey&&(e=Z(e).multiplyBy(3)),i.panBy(e),i.options.maxBounds&&i.panInsideBounds(i.options.maxBounds));else if(n in this._zoomKeys)i.setZoom(i.getZoom()+(t.shiftKey?3:1)*this._zoomKeys[n]);else{if(27!==n||!i._popup||!i._popup.options.closeOnEscapeKey)return;i.closePopup()}De(t)}}});Je.addInitHook("addHandler","keyboard",bi),Je.mergeOptions({scrollWheelZoom:!0,wheelDebounceTime:40,wheelPxPerZoomLevel:60});var xi=nn.extend({addHooks:function(){Ee(this._map._container,"wheel",this._onWheelScroll,this),this._delta=0},removeHooks:function(){Ce(this._map._container,"wheel",this._onWheelScroll,this)},_onWheelScroll:function(t){var e=He(t),n=this._map.options.wheelDebounceTime;this._delta+=e,this._lastMousePos=this._map.mouseEventToContainerPoint(t),this._startTime||(this._startTime=+new Date);var i=Math.max(n-(new Date-this._startTime),0);clearTimeout(this._timer),this._timer=setTimeout(o(this._performZoom,this),i),De(t)},_performZoom:function(){var t=this._map,e=t.getZoom(),n=this._map.options.zoomSnap||0;t._stop();var i=this._delta/(4*this._map.options.wheelPxPerZoomLevel),o=4*Math.log(2/(1+Math.exp(-Math.abs(i))))/Math.LN2,r=n?Math.ceil(o/n)*n:o,s=t._limitZoom(e+(0<this._delta?r:-r))-e;this._delta=0,this._startTime=null,s&&("center"===t.options.scrollWheelZoom?t.setZoom(e+s):t.setZoomAround(this._lastMousePos,e+s))}});Je.addInitHook("addHandler","scrollWheelZoom",xi),Je.mergeOptions({tap:!0,tapTolerance:15});var Li=nn.extend({addHooks:function(){Ee(this._map._container,"touchstart",this._onDown,this)},removeHooks:function(){Ce(this._map._container,"touchstart",this._onDown,this)},_onDown:function(t){if(t.touches){if(Re(t),this._fireClick=!0,1<t.touches.length)return this._fireClick=!1,void clearTimeout(this._holdTimeout);var e=t.touches[0],n=e.target;this._startPos=this._newPos=new A(e.clientX,e.clientY),n.tagName&&"a"===n.tagName.toLowerCase()&&de(n,"leaflet-active"),this._holdTimeout=setTimeout(o((function(){this._isTapValid()&&(this._fireClick=!1,this._onUp(),this._simulateEvent("contextmenu",e))}),this),1e3),this._simulateEvent("mousedown",e),Ee(document,{touchmove:this._onMove,touchend:this._onUp},this)}},_onUp:function(t){var e,n;clearTimeout(this._holdTimeout),Ce(document,{touchmove:this._onMove,touchend:this._onUp},this),this._fireClick&&t&&t.changedTouches&&((n=(e=t.changedTouches[0]).target)&&n.tagName&&"a"===n.tagName.toLowerCase()&&_e(n,"leaflet-active"),this._simulateEvent("mouseup",e),this._isTapValid()&&this._simulateEvent("click",e))},_isTapValid:function(){return this._newPos.distanceTo(this._startPos)<=this._map.options.tapTolerance},_onMove:function(t){var e=t.touches[0];this._newPos=new A(e.clientX,e.clientY),this._simulateEvent("mousemove",e)},_simulateEvent:function(t,e){var n=document.createEvent("MouseEvents");n._simulated=!0,e.target._simulatedClick=!0,n.initMouseEvent(t,!0,!0,window,1,e.screenX,e.screenY,e.clientX,e.clientY,!1,!1,!1,!1,0,null),e.target.dispatchEvent(n)}});!Tt||Pt&&!dt||Je.addInitHook("addHandler","tap",Li),Je.mergeOptions({touchZoom:Tt&&!st,bounceAtZoomLimits:!0});var Pi=nn.extend({addHooks:function(){de(this._map._container,"leaflet-touch-zoom"),Ee(this._map._container,"touchstart",this._onTouchStart,this)},removeHooks:function(){_e(this._map._container,"leaflet-touch-zoom"),Ce(this._map._container,"touchstart",this._onTouchStart,this)},_onTouchStart:function(t){var e,n,i=this._map;!t.touches||2!==t.touches.length||i._animatingZoom||this._zooming||(e=i.mouseEventToContainerPoint(t.touches[0]),n=i.mouseEventToContainerPoint(t.touches[1]),this._centerPoint=i.getSize()._divideBy(2),this._startLatLng=i.containerPointToLatLng(this._centerPoint),"center"!==i.options.touchZoom&&(this._pinchStartLatLng=i.containerPointToLatLng(e.add(n)._divideBy(2))),this._startDist=e.distanceTo(n),this._startZoom=i.getZoom(),this._moved=!1,this._zooming=!0,i._stop(),Ee(document,"touchmove",this._onTouchMove,this),Ee(document,"touchend",this._onTouchEnd,this),Re(t))},_onTouchMove:function(t){if(t.touches&&2===t.touches.length&&this._zooming){var e=this._map,n=e.mouseEventToContainerPoint(t.touches[0]),i=e.mouseEventToContainerPoint(t.touches[1]),r=n.distanceTo(i)/this._startDist;if(this._zoom=e.getScaleZoom(r,this._startZoom),!e.options.bounceAtZoomLimits&&(this._zoom<e.getMinZoom()&&r<1||this._zoom>e.getMaxZoom()&&1<r)&&(this._zoom=e._limitZoom(this._zoom)),"center"===e.options.touchZoom){if(this._center=this._startLatLng,1==r)return}else{var s=n._add(i)._divideBy(2)._subtract(this._centerPoint);if(1==r&&0===s.x&&0===s.y)return;this._center=e.unproject(e.project(this._pinchStartLatLng,this._zoom).subtract(s),this._zoom)}this._moved||(e._moveStart(!0,!1),this._moved=!0),E(this._animRequest);var a=o(e._move,e,this._center,this._zoom,{pinch:!0,round:!1});this._animRequest=z(a,this,!0),Re(t)}},_onTouchEnd:function(){this._moved&&this._zooming?(this._zooming=!1,E(this._animRequest),Ce(document,"touchmove",this._onTouchMove,this),Ce(document,"touchend",this._onTouchEnd,this),this._map.options.zoomAnimation?this._map._animateZoom(this._center,this._map._limitZoom(this._zoom),!0,this._map.options.zoomSnap):this._map._resetView(this._center,this._map._limitZoom(this._zoom))):this._zooming=!1}});Je.addInitHook("addHandler","touchZoom",Pi),Je.BoxZoom=vi,Je.DoubleClickZoom=yi,Je.Drag=wi,Je.Keyboard=bi,Je.ScrollWheelZoom=xi,Je.Tap=Li,Je.TouchZoom=Pi,t.version="1.7.1",t.Control=Xe,t.control=Ye,t.Browser=It,t.Evented=O,t.Mixin=rn,t.Util=M,t.Class=C,t.Handler=nn,t.extend=e,t.bind=o,t.stamp=a,t.setOptions=p,t.DomEvent=Ge,t.DomUtil=ze,t.PosAnimation=Ke,t.Draggable=cn,t.LineUtil=vn,t.PolyUtil=bn,t.Point=A,t.point=Z,t.Bounds=B,t.bounds=j,t.Transformation=G,t.transformation=K,t.Projection=Pn,t.LatLng=q,t.latLng=N,t.LatLngBounds=R,t.latLngBounds=D,t.CRS=W,t.GeoJSON=qn,t.geoJSON=Yn,t.geoJson=Xn,t.Layer=En,t.LayerGroup=Mn,t.layerGroup=function(t,e){return new Mn(t,e)},t.FeatureGroup=Cn,t.featureGroup=function(t,e){return new Cn(t,e)},t.ImageOverlay=Qn,t.imageOverlay=function(t,e,n){return new Qn(t,e,n)},t.VideoOverlay=$n,t.videoOverlay=function(t,e,n){return new $n(t,e,n)},t.SVGOverlay=ti,t.svgOverlay=function(t,e,n){return new ti(t,e,n)},t.DivOverlay=ei,t.Popup=ni,t.popup=function(t,e){return new ni(t,e)},t.Tooltip=ii,t.tooltip=function(t,e){return new ii(t,e)},t.Icon=kn,t.icon=function(t){return new kn(t)},t.DivIcon=oi,t.divIcon=function(t){return new oi(t)},t.Marker=In,t.marker=function(t,e){return new In(t,e)},t.TileLayer=si,t.tileLayer=ai,t.GridLayer=ri,t.gridLayer=function(t){return new ri(t)},t.SVG=mi,t.svg=fi,t.Renderer=ci,t.Canvas=ui,t.canvas=li,t.Path=Zn,t.CircleMarker=Bn,t.circleMarker=function(t,e){return new Bn(t,e)},t.Circle=jn,t.circle=function(t,e,n){return new jn(t,e,n)},t.Polyline=Rn,t.polyline=function(t,e){return new Rn(t,e)},t.Polygon=Dn,t.polygon=function(t,e){return new Dn(t,e)},t.Rectangle=gi,t.rectangle=function(t,e){return new gi(t,e)},t.Map=Je,t.map=function(t,e){return new Je(t,e)};var Ti=window.L;t.noConflict=function(){return window.L=Ti,this},window.L=t}))},"N/up":function(t,e){function n(t){return function(t){if(Array.isArray(t))return i(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.jQuery,a=window.Routing,h=o.querySelector(".ez-extra-actions--edit")||o.querySelector(".ez-extra-actions--edit-user"),c=n(h.querySelectorAll('.form-check [type="radio"]')),u=h.querySelector("form"),l=(u.querySelector("#content_edit_content_info")||u.querySelector("#user_edit_content_info")).value,d=(u.querySelector("#content_edit_location")||u.querySelector("#user_edit_location")).value,_=function(){u.submit(),s("#version-draft-conflict-modal").modal("hide")},p=function(){c.forEach((function(t){t.checked=!1}));var t=new CustomEvent("ez-draft-conflict-modal-hidden");o.body.dispatchEvent(t)},m=function(t){var e=o.querySelector(".ez-modal-wrapper");e.innerHTML=t,function(t){var e=t.querySelector(".ez-btn--add-draft");e&&e.addEventListener("click",_,!1),t.querySelectorAll(".ez-btn--prevented").forEach((function(t){return t.addEventListener("click",(function(t){return t.preventDefault()}),!1)})),s("#version-draft-conflict-modal").modal("show").on("hidden.bs.modal",p).on("shown.bs.modal",(function(){return r.helpers.tooltips.parse()}))}(e)},f=function(t){var e=t.currentTarget.value,n=a.generate("ezplatform.version_draft.has_no_conflict",{contentId:l,languageCode:e,locationId:d});fetch(n,{credentials:"same-origin"}).then((function(t){if(409===t.status)t.text().then(m);else if(200===t.status){if(u.querySelector("#user_edit_version_info"))return void function(t){var e=u.querySelector("#user_edit_version_info_version_no").value;window.location.href=a.generate("ezplatform.user.update",{contentId:l,versionNo:e,language:t})}(e);u.submit()}}))},c.forEach((function(t){return t.addEventListener("change",f,!1)}))},"Na7+":function(t,e){var n,i,o,r,s,a;window,n=window.document,i=window.localStorage,o=window.jQuery,r=function(t){return t.dataset.collapseStateKey||"ez-content-preview-collapsed"},s=function(t){var e=r(t),n=i.getItem(e);return!!JSON.parse(n)},a=function(t,e){var n=r(t.target);i.setItem(n,e)},n.querySelectorAll(".ez-content-preview-collapse").forEach((function(t){(t=o(t).collapse({toggle:s(t)})).on("hide.bs.collapse",(function(t){return a(t,!0)})),t.on("show.bs.collapse",(function(t){return a(t,!1)}))}))},RCya:function(t,e){var n,i,o,r;window,n=window.document,i=n.querySelector(".ez-btn--reveal"),o=n.querySelector('form[name="content_visibility_update"]'),r=n.querySelector("#content_visibility_update_visible"),i&&i.addEventListener("click",(function(){r.value=1,o.submit()}),!1)},RvAi:function(t,e){function n(t){return function(t){if(Array.isArray(t))return i(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}var o,r,s,a,h,c,u,l,d,_;o=window,r=window.document,a="ez-extra-actions--hidden",h=n(r.querySelectorAll(".ez-btn--extra-actions")),c=r.querySelector(".ez-context-menu"),u=r.querySelector(".ez-footer"),l=function(){var t=r.querySelector(".ez-extra-actions:not(.ez-extra-actions--hidden)"),e=(u?Math.min(u.getBoundingClientRect().top,o.innerHeight):o.innerHeight)-t.getBoundingClientRect().top-8;t.style.height="".concat(e,"px")},d=function(){clearTimeout(s),s=setTimeout(l,50)},_=function(){o.removeEventListener("scroll",d,!1),o.removeEventListener("resize",d,!1)},h.forEach((function(t){t.addEventListener("click",(function(){var e=r.querySelector('.ez-extra-actions[data-actions="'.concat(t.dataset.actions,'"]'));if(!t.dataset.validate||parseInt(t.dataset.isFormValid,10)){var n,i=(n=e).classList.contains(a)&&!n.classList.contains("ez-extra-actions--prevent-show"),s=i?"add":"remove",u=i?"remove":"add",p=i?"add":"remove",m=e.querySelector(t.dataset.focusElement),f=function n(i){var o=!t.contains(i.target),s=!h.includes(i.target),u=!i.target.closest(".ez-extra-actions"),l=!i.target.closest(".flatpickr-calendar");o&&u&&l&&(t.classList.remove("ez-btn--active-button"),e.classList.add(a),s&&c.classList.remove("ez-context-menu--expanded"),r.body.removeEventListener("click",n,!1),_())};t.classList[s]("ez-btn--active-button"),e.classList[u](a),c.classList[p]("ez-context-menu--expanded"),e.classList.contains(a)?(r.body.removeEventListener("click",f),_()):(r.body.addEventListener("click",f,!1),l(),o.addEventListener("scroll",d,!1),o.addEventListener("resize",d,!1)),m&&m.focus()}}),!1)}))},S264:function(t,e){function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function i(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.React,a=window.ReactDOM,h=window.Translator,c=o.querySelectorAll(".btn--udw-move"),u=o.querySelector('form[name="location_move"]'),l=u.querySelector("#location_move_new_parent_location"),d=o.getElementById("react-udw"),_=function(){return a.unmountComponentAtNode(d)},p=function(t){_(),l.value=t[0].id,u.submit()},m=function(){return _()},f=function(t){t.preventDefault();var e=JSON.parse(t.currentTarget.dataset.udwConfig),o=h.trans("move.title",{},"universal_discovery_widget");a.render(s.createElement(r.modules.UniversalDiscovery,function(t){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?n(Object(o),!0).forEach((function(e){i(t,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}({onConfirm:p,onCancel:m,title:o,multiple:!1,containersOnly:!0},e)),d)},c.forEach((function(t){return t.addEventListener("click",f,!1)}))},VFBs:function(t,e){var n,i;window,n=window.document,i=window.L,n.querySelectorAll(".ez-gmaplocation__map").forEach((function(t){var e=parseFloat(t.dataset.latitude),n=parseFloat(t.dataset.longitude),o=i.map(t,{zoom:15,zoomControl:!1,scrollWheelZoom:!1,dragging:!1,tap:!1,center:[e,n]});i.marker([e,n],{icon:new i.Icon.Default({imagePath:"/bundles/ezplatformadminuiassets/vendors/leaflet/dist/images/"})}).addTo(o),i.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(o)}))},XTxE:function(t,e){var n,i,o;n=window,i=window.document,o=function(t){n.location=t.currentTarget.value},i.querySelectorAll(".ez-location-language-change").forEach((function(t){t.addEventListener("change",o,!1)}))},cKz5:function(t,e){var n,i,o,r,s,a,h,c,u,l,d,_,p,m,f,g,v,y;window,n=window.document,i=window.React,o=window.ReactDOM,r=window.eZ,s=window.localStorage,a=n.querySelector('meta[name="CSRF-Token"]').content,h=n.querySelector('meta[name="SiteAccess"]').content,c=n.querySelector(".ez-content-tree-container"),u=n.querySelector(".ez-content-tree-container__wrapper"),l=n.querySelector(".ez-btn--toggle-content-tree"),d=c.dataset,_=d.currentLocationPath,p=d.treeRootLocationId,m=window.eZ.helpers.user.getId(),f=null,g=function(){var t=Math.min(window.innerHeight-c.getBoundingClientRect().top,window.innerHeight);u.style.height="".concat(t,"px")},v=function(){f&&cancelAnimationFrame(f),f=requestAnimationFrame(g)},y=function(t,e){var n=JSON.parse(s.getItem("ez-content-tree-expanded"));n instanceof Object||(n={}),n[t]=e,s.setItem("ez-content-tree-expanded",JSON.stringify(n))},o.render(i.createElement(r.modules.ContentTree,{userId:m,currentLocationPath:_,rootLocationId:parseInt(p,10),restInfo:{token:a,siteaccess:h}}),u),l.addEventListener("click",(function(){n.activeElement.blur(),c.classList.toggle("ez-content-tree-container--expanded"),c.classList.add("ez-content-tree-container--animate"),l.classList.toggle("ez-btn--content-tree-expanded"),g();var t=c.classList.contains("ez-content-tree-container--expanded");y(m,t),r.helpers.tooltips.hideAll()}),!1),function(t){var e=JSON.parse(s.getItem("ez-content-tree-expanded"));return e&&e[t]}(m)&&(c.classList.add("ez-content-tree-container--expanded"),l.classList.add("ez-btn--content-tree-expanded")),g(),n.addEventListener("scroll",v,{capture:!1,passive:!0}),window.addEventListener("resize",v,{capture:!1,passive:!0})},ek4S:function(t,e){function n(t,e){var n=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),n.push.apply(n,i)}return n}function i(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var o,r,s,a,h,c,u,l,d,_,p,m,f;window,o=window.document,r=window.eZ,s=window.React,a=window.ReactDOM,h=window.Translator,c=o.querySelectorAll(".btn--udw-swap"),u=o.querySelector('form[name="location_swap"]'),l=u.querySelector("#location_swap_new_location"),d=o.getElementById("react-udw"),_=function(){return a.unmountComponentAtNode(d)},p=function(t){_(),l.value=t[0].id,u.submit()},m=function(){return _()},f=function(t){t.preventDefault();var e=JSON.parse(t.currentTarget.dataset.udwConfig),o=h.trans("swap.title",{},"universal_discovery_widget");a.render(s.createElement(r.modules.UniversalDiscovery,function(t){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?n(Object(o),!0).forEach((function(e){i(t,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(o)):n(Object(o)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(o,e))}))}return t}({onConfirm:p,onCancel:m,title:o,multiple:!1},e)),d)},c.forEach((function(t){return t.addEventListener("click",f,!1)}))},nx6J:function(t,e){function n(t){return function(t){if(Array.isArray(t))return i(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}var o,r,s,a,h;window,o=window.document,r=window.jQuery,s=window.Translator,a=function(){o.querySelectorAll(".ez-tabs").forEach((function(t){var e=n(t.querySelectorAll(":scope > .ez-tabs__tab")),i=n(t.querySelectorAll(":scope > .ez-tabs__tab .nav-link")),o=t.querySelector(":scope > .ez-tabs__tab--more");if(o){var r=n(o.querySelectorAll(".ez-tabs__tab")),s=i.find((function(t){return t.classList.contains("active")})),a=s?s.closest(".ez-tabs__tab"):null,h=a?a.offsetWidth+.5:0,c=o.offsetWidth+.5,u=t.offsetWidth-.5,l=[],d=c+h;e.forEach((function(t){return t.classList.remove("ez-tabs__tab--hidden")})),o.classList.remove("ez-tabs__tab--hidden");for(var _=0;_<e.length;_++){var p=e[_];if(p.querySelector(".nav-link")!==s){var m=_===e.length-1,f=0===l.length,g=p.offsetWidth<o.offsetWidth+.5;if(m&&f&&g)break;d+p.offsetWidth+.5>u&&l.push(_),d+=p.offsetWidth+.5}}e.forEach((function(t,e){t.classList.toggle("ez-tabs__tab--hidden",l.includes(e))})),r.forEach((function(t,e){t.classList.toggle("ez-tabs__tab--hidden",!l.includes(e))})),o.classList.toggle("ez-tabs__tab--hidden",!l.length)}}))},h=function(t,e){var n=t.currentTarget,i=e.find((function(t){return t.href===n.href}));i&&(r(i).tab("show"),a())},o.querySelectorAll(".ez-tabs").forEach((function(t){var e=s.trans("content.view.more.label",{},"content");t.insertAdjacentHTML("beforeend",'<li class="nav-item ez-tabs__tab ez-tabs__tab--more">\n                <a class="nav-link" id="ez-tab-label--more" role="tab">'.concat(e,'</a>\n                <ul class="nav nav-tabs ez-tabs ez-tabs--hidden ez-tabs--secondary" role="tablist">\n                    ').concat(t.innerHTML,"\n                </ul>\n            </li>"))})),a(),o.addEventListener("click",(function(t){o.querySelectorAll(".ez-tabs").forEach((function(e){var n=e.querySelector(".ez-tabs__tab--more");if(n){var i=n.classList.contains("ez-tabs__tab--expanded"),o=t.target.closest(".ez-tabs__tab--more"),r=n.querySelector(".ez-tabs--secondary");if(!i||o)return;n.classList.remove("ez-tabs__tab--expanded"),r.classList.add("ez-tabs--hidden")}}))})),o.querySelectorAll(".ez-tabs").forEach((function(t){var e=t.querySelector(".ez-tabs__tab--more");if(e){var n=t.querySelector(".ez-tabs__tab--more .nav-link"),i=e.querySelector(".ez-tabs--secondary");n.addEventListener("click",(function(){e.classList.toggle("ez-tabs__tab--expanded"),i.classList.toggle("ez-tabs--hidden")}))}})),o.querySelectorAll(".ez-tabs").forEach((function(t){var e=t.querySelector(".ez-tabs__tab--more"),i=n(t.querySelectorAll(".ez-tabs__tab .nav-link"));if(e){var o=e.querySelector(".ez-tabs--secondary"),s=n(o.querySelectorAll(".ez-tabs__tab .nav-link"));i.forEach((function(t){r(t).on("shown.bs.tab",(function(t){h(t,s)}))})),s.forEach((function(t){t.addEventListener("click",(function(t){h(t,i),e.classList.toggle("ez-tabs__tab--expanded",!1),o.classList.toggle("ez-tabs--hidden",!0)}))}))}})),document.body.addEventListener("ez-content-tree-resized",a),window.addEventListener("resize",a)},rvQw:function(t,e){function n(t){return function(t){if(Array.isArray(t))return i(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(!t)return;if("string"==typeof t)return i(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);"Object"===n&&t.constructor&&(n=t.constructor.name);if("Map"===n||"Set"===n)return Array.from(t);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return i(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function i(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,i=new Array(e);n<e;n++)i[n]=t[n];return i}var o;window,(o=window.document).querySelectorAll(".ez-toggle-btn-state").forEach((function(t){var e=n(t.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]')),i=o.querySelector(t.dataset.toggleButtonId);if(i){var r=function(){var t=e.some((function(t){return t.checked}));i.disabled=!t};r(),e.forEach((function(t){return t.addEventListener("change",r,!1)}))}}))},s7Kb:function(t,e){var n,i,o,r,s,a,h;window,n=window.document,i=window.jQuery,o=window.eZ,r=window.Translator,s=window.Routing,a=o.helpers.notification.showErrorNotification,h=function(t){var e=n.querySelector("form.ez-edit-content-form"),h=e.name,c=t.currentTarget.dataset,u=c.contentId,l=c.versionNo,d=c.languageCode,_=e.querySelector('input[name="'.concat(h,'[content_info]"]')),p=e.querySelector('input[name="'.concat(h,'[version_info][content_info]"]')),m=e.querySelector('input[name="'.concat(h,'[version_info][version_no]"]')),f=e.querySelector("#".concat(h,"_language_").concat(d)),g=s.generate("ezplatform.version_draft.has_no_conflict",{contentId:u,languageCode:d}),v=s.generate("ezplatform.content.check_edit_permission",{contentId:u,languageCode:d}),y=r.trans("content.edit.permission.error",{},"content"),w=function(){_.value=u,p.value=u,m.value=void 0!==l?l:null,f.checked=!0,e.submit()},b=function(){w(),i("#version-draft-conflict-modal").modal("hide")},x=function(t){var e=n.querySelector(".ez-modal-wrapper");e.innerHTML=t;var o=e.querySelector(".ez-btn--add-draft");o&&o.addEventListener("click",b,!1),e.querySelectorAll(".ez-btn--prevented").forEach((function(t){return t.addEventListener("click",(function(t){return t.preventDefault()}),!1)})),i("#version-draft-conflict-modal").modal("show")};t.preventDefault(),fetch(v,{mode:"same-origin",credentials:"same-origin"}).then(o.helpers.request.getJsonFromResponse).then((function(t){if(t.canEdit)return fetch(g,{mode:"same-origin",credentials:"same-origin"});throw new Error(y)})).then((function(t){409===t.status?t.text().then(x):403===t.status?t.text().then(a):200===t.status&&w()})).catch(a)},n.querySelectorAll(".ez-btn--content-edit").forEach((function(t){return t.addEventListener("click",h,!1)}))},"vvQ+":function(t,e){window,document,window.eZ.helpers.table.parseCheckbox(".ez-table__cell .form-check-input, .c-table-view-item .ez-input--checkbox","ez-table__row--active")},"xVo+":function(t,e){var n,i,o,r,s,a;window,n=window.document,i=window.jQuery,o=n.querySelector(".ez-btn--hide"),r=n.querySelector("#hide-content-modal"),s=n.querySelector('form[name="content_visibility_update"]'),a=n.querySelector("#content_visibility_update_visible"),o&&(r&&r.querySelector(".btn-confirm").addEventListener("click",(function(){a.value=0,s.submit()})),o.addEventListener("click",(function(){r?i(r).modal("show"):(a.value=0,s.submit())}),!1))},zaCD:function(t,e){var n,i,o,r,s,a,h,c;window,n=window.document,i=window.eZ,o=n.querySelector('form[name="location_update_visibility_data"]'),r=n.querySelectorAll("#ez-tab-location-view-locations .ez-checkbox-icon__checkbox"),s=i.helpers.notification.showErrorNotification,a=function(t,e){var o,r,s=e.message;o=t.target,r=o.checked,o.closest(".ez-checkbox-icon").classList.toggle("is-checked",r),i.helpers.notification.showSuccessNotification(s),n.body.dispatchEvent(new CustomEvent("ez-content-tree-refresh"))},h=function(t){if(200!==t.status)throw new Error(t.statusText);return t.json()},c=function(t){o.querySelector("#location_update_visibility_data_location").value=t.target.value,o.querySelector("#location_update_visibility_data_hidden").checked=!t.target.checked;var e=new Request(o.action,{method:"POST",body:new FormData(o),mode:"same-origin",credentials:"same-origin"});fetch(e).then(h).then(a.bind(null,t)).catch(s)},r.forEach((function(t){t.addEventListener("change",c,!1)}))}},[[21,"runtime"]]]);
+ */
+!function (t, i) {
+  "object" == ( false ? undefined : _typeof(exports)) && "undefined" != typeof module ? i(exports) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (i),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
+}(this, function (t) {
+  "use strict";
+
+  function h(t) {
+    for (var i, e, n = 1, o = arguments.length; n < o; n++) {
+      for (i in e = arguments[n]) {
+        t[i] = e[i];
+      }
+    }
+
+    return t;
+  }
+
+  var s = Object.create || function (t) {
+    return i.prototype = t, new i();
+  };
+
+  function i() {}
+
+  function p(t, i) {
+    var e = Array.prototype.slice;
+    if (t.bind) return t.bind.apply(t, e.call(arguments, 1));
+    var n = e.call(arguments, 2);
+    return function () {
+      return t.apply(i, n.length ? n.concat(e.call(arguments)) : arguments);
+    };
+  }
+
+  var e = 0;
+
+  function m(t) {
+    return t._leaflet_id = t._leaflet_id || ++e, t._leaflet_id;
+  }
+
+  function n(t, i, e) {
+    var n,
+        o,
+        s = function s() {
+      n = !1, o && (r.apply(e, o), o = !1);
+    },
+        r = function r() {
+      n ? o = arguments : (t.apply(e, arguments), setTimeout(s, i), n = !0);
+    };
+
+    return r;
+  }
+
+  function o(t, i, e) {
+    var n = i[1],
+        o = i[0],
+        s = n - o;
+    return t === n && e ? t : ((t - o) % s + s) % s + o;
+  }
+
+  function a() {
+    return !1;
+  }
+
+  function r(t, i) {
+    var e = Math.pow(10, void 0 === i ? 6 : i);
+    return Math.round(t * e) / e;
+  }
+
+  function u(t) {
+    return t.trim ? t.trim() : t.replace(/^\s+|\s+$/g, "");
+  }
+
+  function l(t) {
+    return u(t).split(/\s+/);
+  }
+
+  function c(t, i) {
+    for (var e in Object.prototype.hasOwnProperty.call(t, "options") || (t.options = t.options ? s(t.options) : {}), i) {
+      t.options[e] = i[e];
+    }
+
+    return t.options;
+  }
+
+  function _(t, i, e) {
+    var n = [];
+
+    for (var o in t) {
+      n.push(encodeURIComponent(e ? o.toUpperCase() : o) + "=" + encodeURIComponent(t[o]));
+    }
+
+    return (i && -1 !== i.indexOf("?") ? "&" : "?") + n.join("&");
+  }
+
+  var d = /\{ *([\w_-]+) *\}/g;
+
+  function f(t, n) {
+    return t.replace(d, function (t, i) {
+      var e = n[i];
+      if (void 0 === e) throw new Error("No value provided for variable " + t);
+      return "function" == typeof e && (e = e(n)), e;
+    });
+  }
+
+  var g = Array.isArray || function (t) {
+    return "[object Array]" === Object.prototype.toString.call(t);
+  };
+
+  function v(t, i) {
+    for (var e = 0; e < t.length; e++) {
+      if (t[e] === i) return e;
+    }
+
+    return -1;
+  }
+
+  var y = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+
+  function x(t) {
+    return window["webkit" + t] || window["moz" + t] || window["ms" + t];
+  }
+
+  var w = 0;
+
+  function P(t) {
+    var i = +new Date(),
+        e = Math.max(0, 16 - (i - w));
+    return w = i + e, window.setTimeout(t, e);
+  }
+
+  var b = window.requestAnimationFrame || x("RequestAnimationFrame") || P,
+      T = window.cancelAnimationFrame || x("CancelAnimationFrame") || x("CancelRequestAnimationFrame") || function (t) {
+    window.clearTimeout(t);
+  };
+
+  function M(t, i, e) {
+    if (!e || b !== P) return b.call(window, p(t, i));
+    t.call(i);
+  }
+
+  function z(t) {
+    t && T.call(window, t);
+  }
+
+  var C = {
+    extend: h,
+    create: s,
+    bind: p,
+    lastId: e,
+    stamp: m,
+    throttle: n,
+    wrapNum: o,
+    falseFn: a,
+    formatNum: r,
+    trim: u,
+    splitWords: l,
+    setOptions: c,
+    getParamString: _,
+    template: f,
+    isArray: g,
+    indexOf: v,
+    emptyImageUrl: y,
+    requestFn: b,
+    cancelFn: T,
+    requestAnimFrame: M,
+    cancelAnimFrame: z
+  };
+
+  function S() {}
+
+  S.extend = function (t) {
+    function i() {
+      this.initialize && this.initialize.apply(this, arguments), this.callInitHooks();
+    }
+
+    var e = i.__super__ = this.prototype,
+        n = s(e);
+
+    for (var o in (n.constructor = i).prototype = n, this) {
+      Object.prototype.hasOwnProperty.call(this, o) && "prototype" !== o && "__super__" !== o && (i[o] = this[o]);
+    }
+
+    return t.statics && (h(i, t.statics), delete t.statics), t.includes && (function (t) {
+      if ("undefined" == typeof L || !L || !L.Mixin) return;
+      t = g(t) ? t : [t];
+
+      for (var i = 0; i < t.length; i++) {
+        t[i] === L.Mixin.Events && console.warn("Deprecated include of L.Mixin.Events: this property will be removed in future releases, please inherit from L.Evented instead.", new Error().stack);
+      }
+    }(t.includes), h.apply(null, [n].concat(t.includes)), delete t.includes), n.options && (t.options = h(s(n.options), t.options)), h(n, t), n._initHooks = [], n.callInitHooks = function () {
+      if (!this._initHooksCalled) {
+        e.callInitHooks && e.callInitHooks.call(this), this._initHooksCalled = !0;
+
+        for (var t = 0, i = n._initHooks.length; t < i; t++) {
+          n._initHooks[t].call(this);
+        }
+      }
+    }, i;
+  }, S.include = function (t) {
+    return h(this.prototype, t), this;
+  }, S.mergeOptions = function (t) {
+    return h(this.prototype.options, t), this;
+  }, S.addInitHook = function (t) {
+    var i = Array.prototype.slice.call(arguments, 1),
+        e = "function" == typeof t ? t : function () {
+      this[t].apply(this, i);
+    };
+    return this.prototype._initHooks = this.prototype._initHooks || [], this.prototype._initHooks.push(e), this;
+  };
+  var Z = {
+    on: function on(t, i, e) {
+      if ("object" == _typeof(t)) for (var n in t) {
+        this._on(n, t[n], i);
+      } else for (var o = 0, s = (t = l(t)).length; o < s; o++) {
+        this._on(t[o], i, e);
+      }
+      return this;
+    },
+    off: function off(t, i, e) {
+      if (t) {
+        if ("object" == _typeof(t)) for (var n in t) {
+          this._off(n, t[n], i);
+        } else for (var o = 0, s = (t = l(t)).length; o < s; o++) {
+          this._off(t[o], i, e);
+        }
+      } else delete this._events;
+      return this;
+    },
+    _on: function _on(t, i, e) {
+      this._events = this._events || {};
+      var n = this._events[t];
+      n || (n = [], this._events[t] = n), e === this && (e = void 0);
+
+      for (var o = {
+        fn: i,
+        ctx: e
+      }, s = n, r = 0, a = s.length; r < a; r++) {
+        if (s[r].fn === i && s[r].ctx === e) return;
+      }
+
+      s.push(o);
+    },
+    _off: function _off(t, i, e) {
+      var n, o, s;
+      if (this._events && (n = this._events[t])) if (i) {
+        if (e === this && (e = void 0), n) for (o = 0, s = n.length; o < s; o++) {
+          var r = n[o];
+          if (r.ctx === e && r.fn === i) return r.fn = a, this._firingCount && (this._events[t] = n = n.slice()), void n.splice(o, 1);
+        }
+      } else {
+        for (o = 0, s = n.length; o < s; o++) {
+          n[o].fn = a;
+        }
+
+        delete this._events[t];
+      }
+    },
+    fire: function fire(t, i, e) {
+      if (!this.listens(t, e)) return this;
+      var n = h({}, i, {
+        type: t,
+        target: this,
+        sourceTarget: i && i.sourceTarget || this
+      });
+
+      if (this._events) {
+        var o = this._events[t];
+
+        if (o) {
+          this._firingCount = this._firingCount + 1 || 1;
+
+          for (var s = 0, r = o.length; s < r; s++) {
+            var a = o[s];
+            a.fn.call(a.ctx || this, n);
+          }
+
+          this._firingCount--;
+        }
+      }
+
+      return e && this._propagateEvent(n), this;
+    },
+    listens: function listens(t, i) {
+      var e = this._events && this._events[t];
+      if (e && e.length) return !0;
+      if (i) for (var n in this._eventParents) {
+        if (this._eventParents[n].listens(t, i)) return !0;
+      }
+      return !1;
+    },
+    once: function once(t, i, e) {
+      if ("object" == _typeof(t)) {
+        for (var n in t) {
+          this.once(n, t[n], i);
+        }
+
+        return this;
+      }
+
+      var o = p(function () {
+        this.off(t, i, e).off(t, o, e);
+      }, this);
+      return this.on(t, i, e).on(t, o, e);
+    },
+    addEventParent: function addEventParent(t) {
+      return this._eventParents = this._eventParents || {}, this._eventParents[m(t)] = t, this;
+    },
+    removeEventParent: function removeEventParent(t) {
+      return this._eventParents && delete this._eventParents[m(t)], this;
+    },
+    _propagateEvent: function _propagateEvent(t) {
+      for (var i in this._eventParents) {
+        this._eventParents[i].fire(t.type, h({
+          layer: t.target,
+          propagatedFrom: t.target
+        }, t), !0);
+      }
+    }
+  };
+  Z.addEventListener = Z.on, Z.removeEventListener = Z.clearAllEventListeners = Z.off, Z.addOneTimeEventListener = Z.once, Z.fireEvent = Z.fire, Z.hasEventListeners = Z.listens;
+  var E = S.extend(Z);
+
+  function k(t, i, e) {
+    this.x = e ? Math.round(t) : t, this.y = e ? Math.round(i) : i;
+  }
+
+  var B = Math.trunc || function (t) {
+    return 0 < t ? Math.floor(t) : Math.ceil(t);
+  };
+
+  function A(t, i, e) {
+    return t instanceof k ? t : g(t) ? new k(t[0], t[1]) : null == t ? t : "object" == _typeof(t) && "x" in t && "y" in t ? new k(t.x, t.y) : new k(t, i, e);
+  }
+
+  function I(t, i) {
+    if (t) for (var e = i ? [t, i] : t, n = 0, o = e.length; n < o; n++) {
+      this.extend(e[n]);
+    }
+  }
+
+  function O(t, i) {
+    return !t || t instanceof I ? t : new I(t, i);
+  }
+
+  function R(t, i) {
+    if (t) for (var e = i ? [t, i] : t, n = 0, o = e.length; n < o; n++) {
+      this.extend(e[n]);
+    }
+  }
+
+  function N(t, i) {
+    return t instanceof R ? t : new R(t, i);
+  }
+
+  function D(t, i, e) {
+    if (isNaN(t) || isNaN(i)) throw new Error("Invalid LatLng object: (" + t + ", " + i + ")");
+    this.lat = +t, this.lng = +i, void 0 !== e && (this.alt = +e);
+  }
+
+  function j(t, i, e) {
+    return t instanceof D ? t : g(t) && "object" != _typeof(t[0]) ? 3 === t.length ? new D(t[0], t[1], t[2]) : 2 === t.length ? new D(t[0], t[1]) : null : null == t ? t : "object" == _typeof(t) && "lat" in t ? new D(t.lat, "lng" in t ? t.lng : t.lon, t.alt) : void 0 === i ? null : new D(t, i, e);
+  }
+
+  k.prototype = {
+    clone: function clone() {
+      return new k(this.x, this.y);
+    },
+    add: function add(t) {
+      return this.clone()._add(A(t));
+    },
+    _add: function _add(t) {
+      return this.x += t.x, this.y += t.y, this;
+    },
+    subtract: function subtract(t) {
+      return this.clone()._subtract(A(t));
+    },
+    _subtract: function _subtract(t) {
+      return this.x -= t.x, this.y -= t.y, this;
+    },
+    divideBy: function divideBy(t) {
+      return this.clone()._divideBy(t);
+    },
+    _divideBy: function _divideBy(t) {
+      return this.x /= t, this.y /= t, this;
+    },
+    multiplyBy: function multiplyBy(t) {
+      return this.clone()._multiplyBy(t);
+    },
+    _multiplyBy: function _multiplyBy(t) {
+      return this.x *= t, this.y *= t, this;
+    },
+    scaleBy: function scaleBy(t) {
+      return new k(this.x * t.x, this.y * t.y);
+    },
+    unscaleBy: function unscaleBy(t) {
+      return new k(this.x / t.x, this.y / t.y);
+    },
+    round: function round() {
+      return this.clone()._round();
+    },
+    _round: function _round() {
+      return this.x = Math.round(this.x), this.y = Math.round(this.y), this;
+    },
+    floor: function floor() {
+      return this.clone()._floor();
+    },
+    _floor: function _floor() {
+      return this.x = Math.floor(this.x), this.y = Math.floor(this.y), this;
+    },
+    ceil: function ceil() {
+      return this.clone()._ceil();
+    },
+    _ceil: function _ceil() {
+      return this.x = Math.ceil(this.x), this.y = Math.ceil(this.y), this;
+    },
+    trunc: function trunc() {
+      return this.clone()._trunc();
+    },
+    _trunc: function _trunc() {
+      return this.x = B(this.x), this.y = B(this.y), this;
+    },
+    distanceTo: function distanceTo(t) {
+      var i = (t = A(t)).x - this.x,
+          e = t.y - this.y;
+      return Math.sqrt(i * i + e * e);
+    },
+    equals: function equals(t) {
+      return (t = A(t)).x === this.x && t.y === this.y;
+    },
+    contains: function contains(t) {
+      return t = A(t), Math.abs(t.x) <= Math.abs(this.x) && Math.abs(t.y) <= Math.abs(this.y);
+    },
+    toString: function toString() {
+      return "Point(" + r(this.x) + ", " + r(this.y) + ")";
+    }
+  }, I.prototype = {
+    extend: function extend(t) {
+      return t = A(t), this.min || this.max ? (this.min.x = Math.min(t.x, this.min.x), this.max.x = Math.max(t.x, this.max.x), this.min.y = Math.min(t.y, this.min.y), this.max.y = Math.max(t.y, this.max.y)) : (this.min = t.clone(), this.max = t.clone()), this;
+    },
+    getCenter: function getCenter(t) {
+      return new k((this.min.x + this.max.x) / 2, (this.min.y + this.max.y) / 2, t);
+    },
+    getBottomLeft: function getBottomLeft() {
+      return new k(this.min.x, this.max.y);
+    },
+    getTopRight: function getTopRight() {
+      return new k(this.max.x, this.min.y);
+    },
+    getTopLeft: function getTopLeft() {
+      return this.min;
+    },
+    getBottomRight: function getBottomRight() {
+      return this.max;
+    },
+    getSize: function getSize() {
+      return this.max.subtract(this.min);
+    },
+    contains: function contains(t) {
+      var i, e;
+      return (t = ("number" == typeof t[0] || t instanceof k ? A : O)(t)) instanceof I ? (i = t.min, e = t.max) : i = e = t, i.x >= this.min.x && e.x <= this.max.x && i.y >= this.min.y && e.y <= this.max.y;
+    },
+    intersects: function intersects(t) {
+      t = O(t);
+      var i = this.min,
+          e = this.max,
+          n = t.min,
+          o = t.max,
+          s = o.x >= i.x && n.x <= e.x,
+          r = o.y >= i.y && n.y <= e.y;
+      return s && r;
+    },
+    overlaps: function overlaps(t) {
+      t = O(t);
+      var i = this.min,
+          e = this.max,
+          n = t.min,
+          o = t.max,
+          s = o.x > i.x && n.x < e.x,
+          r = o.y > i.y && n.y < e.y;
+      return s && r;
+    },
+    isValid: function isValid() {
+      return !(!this.min || !this.max);
+    }
+  }, R.prototype = {
+    extend: function extend(t) {
+      var i,
+          e,
+          n = this._southWest,
+          o = this._northEast;
+      if (t instanceof D) e = i = t;else {
+        if (!(t instanceof R)) return t ? this.extend(j(t) || N(t)) : this;
+        if (i = t._southWest, e = t._northEast, !i || !e) return this;
+      }
+      return n || o ? (n.lat = Math.min(i.lat, n.lat), n.lng = Math.min(i.lng, n.lng), o.lat = Math.max(e.lat, o.lat), o.lng = Math.max(e.lng, o.lng)) : (this._southWest = new D(i.lat, i.lng), this._northEast = new D(e.lat, e.lng)), this;
+    },
+    pad: function pad(t) {
+      var i = this._southWest,
+          e = this._northEast,
+          n = Math.abs(i.lat - e.lat) * t,
+          o = Math.abs(i.lng - e.lng) * t;
+      return new R(new D(i.lat - n, i.lng - o), new D(e.lat + n, e.lng + o));
+    },
+    getCenter: function getCenter() {
+      return new D((this._southWest.lat + this._northEast.lat) / 2, (this._southWest.lng + this._northEast.lng) / 2);
+    },
+    getSouthWest: function getSouthWest() {
+      return this._southWest;
+    },
+    getNorthEast: function getNorthEast() {
+      return this._northEast;
+    },
+    getNorthWest: function getNorthWest() {
+      return new D(this.getNorth(), this.getWest());
+    },
+    getSouthEast: function getSouthEast() {
+      return new D(this.getSouth(), this.getEast());
+    },
+    getWest: function getWest() {
+      return this._southWest.lng;
+    },
+    getSouth: function getSouth() {
+      return this._southWest.lat;
+    },
+    getEast: function getEast() {
+      return this._northEast.lng;
+    },
+    getNorth: function getNorth() {
+      return this._northEast.lat;
+    },
+    contains: function contains(t) {
+      t = ("number" == typeof t[0] || t instanceof D || "lat" in t ? j : N)(t);
+      var i,
+          e,
+          n = this._southWest,
+          o = this._northEast;
+      return t instanceof R ? (i = t.getSouthWest(), e = t.getNorthEast()) : i = e = t, i.lat >= n.lat && e.lat <= o.lat && i.lng >= n.lng && e.lng <= o.lng;
+    },
+    intersects: function intersects(t) {
+      t = N(t);
+      var i = this._southWest,
+          e = this._northEast,
+          n = t.getSouthWest(),
+          o = t.getNorthEast(),
+          s = o.lat >= i.lat && n.lat <= e.lat,
+          r = o.lng >= i.lng && n.lng <= e.lng;
+      return s && r;
+    },
+    overlaps: function overlaps(t) {
+      t = N(t);
+      var i = this._southWest,
+          e = this._northEast,
+          n = t.getSouthWest(),
+          o = t.getNorthEast(),
+          s = o.lat > i.lat && n.lat < e.lat,
+          r = o.lng > i.lng && n.lng < e.lng;
+      return s && r;
+    },
+    toBBoxString: function toBBoxString() {
+      return [this.getWest(), this.getSouth(), this.getEast(), this.getNorth()].join(",");
+    },
+    equals: function equals(t, i) {
+      return !!t && (t = N(t), this._southWest.equals(t.getSouthWest(), i) && this._northEast.equals(t.getNorthEast(), i));
+    },
+    isValid: function isValid() {
+      return !(!this._southWest || !this._northEast);
+    }
+  };
+  var W,
+      H = {
+    latLngToPoint: function latLngToPoint(t, i) {
+      var e = this.projection.project(t),
+          n = this.scale(i);
+      return this.transformation._transform(e, n);
+    },
+    pointToLatLng: function pointToLatLng(t, i) {
+      var e = this.scale(i),
+          n = this.transformation.untransform(t, e);
+      return this.projection.unproject(n);
+    },
+    project: function project(t) {
+      return this.projection.project(t);
+    },
+    unproject: function unproject(t) {
+      return this.projection.unproject(t);
+    },
+    scale: function scale(t) {
+      return 256 * Math.pow(2, t);
+    },
+    zoom: function zoom(t) {
+      return Math.log(t / 256) / Math.LN2;
+    },
+    getProjectedBounds: function getProjectedBounds(t) {
+      if (this.infinite) return null;
+      var i = this.projection.bounds,
+          e = this.scale(t);
+      return new I(this.transformation.transform(i.min, e), this.transformation.transform(i.max, e));
+    },
+    infinite: !(D.prototype = {
+      equals: function equals(t, i) {
+        return !!t && (t = j(t), Math.max(Math.abs(this.lat - t.lat), Math.abs(this.lng - t.lng)) <= (void 0 === i ? 1e-9 : i));
+      },
+      toString: function toString(t) {
+        return "LatLng(" + r(this.lat, t) + ", " + r(this.lng, t) + ")";
+      },
+      distanceTo: function distanceTo(t) {
+        return F.distance(this, j(t));
+      },
+      wrap: function wrap() {
+        return F.wrapLatLng(this);
+      },
+      toBounds: function toBounds(t) {
+        var i = 180 * t / 40075017,
+            e = i / Math.cos(Math.PI / 180 * this.lat);
+        return N([this.lat - i, this.lng - e], [this.lat + i, this.lng + e]);
+      },
+      clone: function clone() {
+        return new D(this.lat, this.lng, this.alt);
+      }
+    }),
+    wrapLatLng: function wrapLatLng(t) {
+      var i = this.wrapLng ? o(t.lng, this.wrapLng, !0) : t.lng;
+      return new D(this.wrapLat ? o(t.lat, this.wrapLat, !0) : t.lat, i, t.alt);
+    },
+    wrapLatLngBounds: function wrapLatLngBounds(t) {
+      var i = t.getCenter(),
+          e = this.wrapLatLng(i),
+          n = i.lat - e.lat,
+          o = i.lng - e.lng;
+      if (0 == n && 0 == o) return t;
+      var s = t.getSouthWest(),
+          r = t.getNorthEast();
+      return new R(new D(s.lat - n, s.lng - o), new D(r.lat - n, r.lng - o));
+    }
+  },
+      F = h({}, H, {
+    wrapLng: [-180, 180],
+    R: 6371e3,
+    distance: function distance(t, i) {
+      var e = Math.PI / 180,
+          n = t.lat * e,
+          o = i.lat * e,
+          s = Math.sin((i.lat - t.lat) * e / 2),
+          r = Math.sin((i.lng - t.lng) * e / 2),
+          a = s * s + Math.cos(n) * Math.cos(o) * r * r,
+          h = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return this.R * h;
+    }
+  }),
+      U = 6378137,
+      V = {
+    R: U,
+    MAX_LATITUDE: 85.0511287798,
+    project: function project(t) {
+      var i = Math.PI / 180,
+          e = this.MAX_LATITUDE,
+          n = Math.max(Math.min(e, t.lat), -e),
+          o = Math.sin(n * i);
+      return new k(this.R * t.lng * i, this.R * Math.log((1 + o) / (1 - o)) / 2);
+    },
+    unproject: function unproject(t) {
+      var i = 180 / Math.PI;
+      return new D((2 * Math.atan(Math.exp(t.y / this.R)) - Math.PI / 2) * i, t.x * i / this.R);
+    },
+    bounds: new I([-(W = U * Math.PI), -W], [W, W])
+  };
+
+  function q(t, i, e, n) {
+    if (g(t)) return this._a = t[0], this._b = t[1], this._c = t[2], void (this._d = t[3]);
+    this._a = t, this._b = i, this._c = e, this._d = n;
+  }
+
+  function G(t, i, e, n) {
+    return new q(t, i, e, n);
+  }
+
+  q.prototype = {
+    transform: function transform(t, i) {
+      return this._transform(t.clone(), i);
+    },
+    _transform: function _transform(t, i) {
+      return i = i || 1, t.x = i * (this._a * t.x + this._b), t.y = i * (this._c * t.y + this._d), t;
+    },
+    untransform: function untransform(t, i) {
+      return i = i || 1, new k((t.x / i - this._b) / this._a, (t.y / i - this._d) / this._c);
+    }
+  };
+  var K,
+      Y = h({}, F, {
+    code: "EPSG:3857",
+    projection: V,
+    transformation: G(K = .5 / (Math.PI * V.R), .5, -K, .5)
+  }),
+      X = h({}, Y, {
+    code: "EPSG:900913"
+  });
+
+  function J(t) {
+    return document.createElementNS("http://www.w3.org/2000/svg", t);
+  }
+
+  function $(t, i) {
+    for (var e, n, o, s, r = "", a = 0, h = t.length; a < h; a++) {
+      for (e = 0, n = (o = t[a]).length; e < n; e++) {
+        r += (e ? "L" : "M") + (s = o[e]).x + " " + s.y;
+      }
+
+      r += i ? Zt ? "z" : "x" : "";
+    }
+
+    return r || "M0 0";
+  }
+
+  var Q = document.documentElement.style,
+      tt = ("ActiveXObject" in window),
+      it = tt && !document.addEventListener,
+      et = "msLaunchUri" in navigator && !("documentMode" in document),
+      nt = kt("webkit"),
+      ot = kt("android"),
+      st = kt("android 2") || kt("android 3"),
+      rt = parseInt(/WebKit\/([0-9]+)|$/.exec(navigator.userAgent)[1], 10),
+      at = ot && kt("Google") && rt < 537 && !("AudioNode" in window),
+      ht = !!window.opera,
+      ut = !et && kt("chrome"),
+      lt = kt("gecko") && !nt && !ht && !tt,
+      ct = !ut && kt("safari"),
+      _t = kt("phantom"),
+      dt = ("OTransition" in Q),
+      pt = 0 === navigator.platform.indexOf("Win"),
+      mt = tt && "transition" in Q,
+      ft = "WebKitCSSMatrix" in window && "m11" in new window.WebKitCSSMatrix() && !st,
+      gt = ("MozPerspective" in Q),
+      vt = !window.L_DISABLE_3D && (mt || ft || gt) && !dt && !_t,
+      yt = "undefined" != typeof orientation || kt("mobile"),
+      xt = yt && nt,
+      wt = yt && ft,
+      Pt = !window.PointerEvent && window.MSPointerEvent,
+      Lt = !(!window.PointerEvent && !Pt),
+      bt = !window.L_NO_TOUCH && (Lt || "ontouchstart" in window || window.DocumentTouch && document instanceof window.DocumentTouch),
+      Tt = yt && ht,
+      Mt = yt && lt,
+      zt = 1 < (window.devicePixelRatio || window.screen.deviceXDPI / window.screen.logicalXDPI),
+      Ct = function () {
+    var t = !1;
+
+    try {
+      var i = Object.defineProperty({}, "passive", {
+        get: function get() {
+          t = !0;
+        }
+      });
+      window.addEventListener("testPassiveEventSupport", a, i), window.removeEventListener("testPassiveEventSupport", a, i);
+    } catch (t) {}
+
+    return t;
+  }(),
+      St = !!document.createElement("canvas").getContext,
+      Zt = !(!document.createElementNS || !J("svg").createSVGRect),
+      Et = !Zt && function () {
+    try {
+      var t = document.createElement("div");
+      t.innerHTML = '<v:shape adj="1"/>';
+      var i = t.firstChild;
+      return i.style.behavior = "url(#default#VML)", i && "object" == _typeof(i.adj);
+    } catch (t) {
+      return !1;
+    }
+  }();
+
+  function kt(t) {
+    return 0 <= navigator.userAgent.toLowerCase().indexOf(t);
+  }
+
+  var Bt = {
+    ie: tt,
+    ielt9: it,
+    edge: et,
+    webkit: nt,
+    android: ot,
+    android23: st,
+    androidStock: at,
+    opera: ht,
+    chrome: ut,
+    gecko: lt,
+    safari: ct,
+    phantom: _t,
+    opera12: dt,
+    win: pt,
+    ie3d: mt,
+    webkit3d: ft,
+    gecko3d: gt,
+    any3d: vt,
+    mobile: yt,
+    mobileWebkit: xt,
+    mobileWebkit3d: wt,
+    msPointer: Pt,
+    pointer: Lt,
+    touch: bt,
+    mobileOpera: Tt,
+    mobileGecko: Mt,
+    retina: zt,
+    passiveEvents: Ct,
+    canvas: St,
+    svg: Zt,
+    vml: Et
+  },
+      At = Pt ? "MSPointerDown" : "pointerdown",
+      It = Pt ? "MSPointerMove" : "pointermove",
+      Ot = Pt ? "MSPointerUp" : "pointerup",
+      Rt = Pt ? "MSPointerCancel" : "pointercancel",
+      Nt = {},
+      Dt = !1;
+
+  function jt(t, i, e, n) {
+    function o(t) {
+      Ut(t, r);
+    }
+
+    var s, r, a, h, u, l, c, _;
+
+    function d(t) {
+      t.pointerType === (t.MSPOINTER_TYPE_MOUSE || "mouse") && 0 === t.buttons || Ut(t, h);
+    }
+
+    return "touchstart" === i ? (u = t, l = e, c = n, _ = p(function (t) {
+      t.MSPOINTER_TYPE_TOUCH && t.pointerType === t.MSPOINTER_TYPE_TOUCH && Ri(t), Ut(t, l);
+    }), u["_leaflet_touchstart" + c] = _, u.addEventListener(At, _, !1), Dt || (document.addEventListener(At, Wt, !0), document.addEventListener(It, Ht, !0), document.addEventListener(Ot, Ft, !0), document.addEventListener(Rt, Ft, !0), Dt = !0)) : "touchmove" === i ? (h = e, (a = t)["_leaflet_touchmove" + n] = d, a.addEventListener(It, d, !1)) : "touchend" === i && (r = e, (s = t)["_leaflet_touchend" + n] = o, s.addEventListener(Ot, o, !1), s.addEventListener(Rt, o, !1)), this;
+  }
+
+  function Wt(t) {
+    Nt[t.pointerId] = t;
+  }
+
+  function Ht(t) {
+    Nt[t.pointerId] && (Nt[t.pointerId] = t);
+  }
+
+  function Ft(t) {
+    delete Nt[t.pointerId];
+  }
+
+  function Ut(t, i) {
+    for (var e in t.touches = [], Nt) {
+      t.touches.push(Nt[e]);
+    }
+
+    t.changedTouches = [t], i(t);
+  }
+
+  var Vt = Pt ? "MSPointerDown" : Lt ? "pointerdown" : "touchstart",
+      qt = Pt ? "MSPointerUp" : Lt ? "pointerup" : "touchend",
+      Gt = "_leaflet_";
+  var Kt,
+      Yt,
+      Xt,
+      Jt,
+      $t,
+      Qt,
+      ti = fi(["transform", "webkitTransform", "OTransform", "MozTransform", "msTransform"]),
+      ii = fi(["webkitTransition", "transition", "OTransition", "MozTransition", "msTransition"]),
+      ei = "webkitTransition" === ii || "OTransition" === ii ? ii + "End" : "transitionend";
+
+  function ni(t) {
+    return "string" == typeof t ? document.getElementById(t) : t;
+  }
+
+  function oi(t, i) {
+    var e,
+        n = t.style[i] || t.currentStyle && t.currentStyle[i];
+    return n && "auto" !== n || !document.defaultView || (n = (e = document.defaultView.getComputedStyle(t, null)) ? e[i] : null), "auto" === n ? null : n;
+  }
+
+  function si(t, i, e) {
+    var n = document.createElement(t);
+    return n.className = i || "", e && e.appendChild(n), n;
+  }
+
+  function ri(t) {
+    var i = t.parentNode;
+    i && i.removeChild(t);
+  }
+
+  function ai(t) {
+    for (; t.firstChild;) {
+      t.removeChild(t.firstChild);
+    }
+  }
+
+  function hi(t) {
+    var i = t.parentNode;
+    i && i.lastChild !== t && i.appendChild(t);
+  }
+
+  function ui(t) {
+    var i = t.parentNode;
+    i && i.firstChild !== t && i.insertBefore(t, i.firstChild);
+  }
+
+  function li(t, i) {
+    if (void 0 !== t.classList) return t.classList.contains(i);
+    var e = pi(t);
+    return 0 < e.length && new RegExp("(^|\\s)" + i + "(\\s|$)").test(e);
+  }
+
+  function ci(t, i) {
+    var e;
+    if (void 0 !== t.classList) for (var n = l(i), o = 0, s = n.length; o < s; o++) {
+      t.classList.add(n[o]);
+    } else li(t, i) || di(t, ((e = pi(t)) ? e + " " : "") + i);
+  }
+
+  function _i(t, i) {
+    void 0 !== t.classList ? t.classList.remove(i) : di(t, u((" " + pi(t) + " ").replace(" " + i + " ", " ")));
+  }
+
+  function di(t, i) {
+    void 0 === t.className.baseVal ? t.className = i : t.className.baseVal = i;
+  }
+
+  function pi(t) {
+    return t.correspondingElement && (t = t.correspondingElement), void 0 === t.className.baseVal ? t.className : t.className.baseVal;
+  }
+
+  function mi(t, i) {
+    "opacity" in t.style ? t.style.opacity = i : "filter" in t.style && function (t, i) {
+      var e = !1,
+          n = "DXImageTransform.Microsoft.Alpha";
+
+      try {
+        e = t.filters.item(n);
+      } catch (t) {
+        if (1 === i) return;
+      }
+
+      i = Math.round(100 * i), e ? (e.Enabled = 100 !== i, e.Opacity = i) : t.style.filter += " progid:" + n + "(opacity=" + i + ")";
+    }(t, i);
+  }
+
+  function fi(t) {
+    for (var i = document.documentElement.style, e = 0; e < t.length; e++) {
+      if (t[e] in i) return t[e];
+    }
+
+    return !1;
+  }
+
+  function gi(t, i, e) {
+    var n = i || new k(0, 0);
+    t.style[ti] = (mt ? "translate(" + n.x + "px," + n.y + "px)" : "translate3d(" + n.x + "px," + n.y + "px,0)") + (e ? " scale(" + e + ")" : "");
+  }
+
+  function vi(t, i) {
+    t._leaflet_pos = i, vt ? gi(t, i) : (t.style.left = i.x + "px", t.style.top = i.y + "px");
+  }
+
+  function yi(t) {
+    return t._leaflet_pos || new k(0, 0);
+  }
+
+  function xi() {
+    zi(window, "dragstart", Ri);
+  }
+
+  function wi() {
+    Si(window, "dragstart", Ri);
+  }
+
+  function Pi(t) {
+    for (; -1 === t.tabIndex;) {
+      t = t.parentNode;
+    }
+
+    t.style && (Li(), Qt = ($t = t).style.outline, t.style.outline = "none", zi(window, "keydown", Li));
+  }
+
+  function Li() {
+    $t && ($t.style.outline = Qt, Qt = $t = void 0, Si(window, "keydown", Li));
+  }
+
+  function bi(t) {
+    for (; !((t = t.parentNode).offsetWidth && t.offsetHeight || t === document.body);) {
+      ;
+    }
+
+    return t;
+  }
+
+  function Ti(t) {
+    var i = t.getBoundingClientRect();
+    return {
+      x: i.width / t.offsetWidth || 1,
+      y: i.height / t.offsetHeight || 1,
+      boundingClientRect: i
+    };
+  }
+
+  Jt = "onselectstart" in document ? (Xt = function Xt() {
+    zi(window, "selectstart", Ri);
+  }, function () {
+    Si(window, "selectstart", Ri);
+  }) : (Yt = fi(["userSelect", "WebkitUserSelect", "OUserSelect", "MozUserSelect", "msUserSelect"]), Xt = function Xt() {
+    var t;
+    Yt && (t = document.documentElement.style, Kt = t[Yt], t[Yt] = "none");
+  }, function () {
+    Yt && (document.documentElement.style[Yt] = Kt, Kt = void 0);
+  });
+  var Mi = {
+    TRANSFORM: ti,
+    TRANSITION: ii,
+    TRANSITION_END: ei,
+    get: ni,
+    getStyle: oi,
+    create: si,
+    remove: ri,
+    empty: ai,
+    toFront: hi,
+    toBack: ui,
+    hasClass: li,
+    addClass: ci,
+    removeClass: _i,
+    setClass: di,
+    getClass: pi,
+    setOpacity: mi,
+    testProp: fi,
+    setTransform: gi,
+    setPosition: vi,
+    getPosition: yi,
+    disableTextSelection: Xt,
+    enableTextSelection: Jt,
+    disableImageDrag: xi,
+    enableImageDrag: wi,
+    preventOutline: Pi,
+    restoreOutline: Li,
+    getSizedParentNode: bi,
+    getScale: Ti
+  };
+
+  function zi(t, i, e, n) {
+    if ("object" == _typeof(i)) for (var o in i) {
+      ki(t, o, i[o], e);
+    } else for (var s = 0, r = (i = l(i)).length; s < r; s++) {
+      ki(t, i[s], e, n);
+    }
+    return this;
+  }
+
+  var Ci = "_leaflet_events";
+
+  function Si(t, i, e, n) {
+    if ("object" == _typeof(i)) for (var o in i) {
+      Bi(t, o, i[o], e);
+    } else if (i) for (var s = 0, r = (i = l(i)).length; s < r; s++) {
+      Bi(t, i[s], e, n);
+    } else {
+      for (var a in t[Ci]) {
+        Bi(t, a, t[Ci][a]);
+      }
+
+      delete t[Ci];
+    }
+    return this;
+  }
+
+  function Zi() {
+    return Lt && !et && !ct;
+  }
+
+  var Ei = {
+    mouseenter: "mouseover",
+    mouseleave: "mouseout",
+    wheel: !("onwheel" in window) && "mousewheel"
+  };
+
+  function ki(i, t, e, n) {
+    var o = t + m(e) + (n ? "_" + m(n) : "");
+    if (i[Ci] && i[Ci][o]) return this;
+
+    var s,
+        r,
+        a,
+        h,
+        u,
+        l,
+        c = function c(t) {
+      return e.call(n || i, t || window.event);
+    },
+        _ = c;
+
+    function d(t) {
+      if (Lt) {
+        if (!t.isPrimary) return;
+        if ("mouse" === t.pointerType) return;
+      } else if (1 < t.touches.length) return;
+
+      var i = Date.now(),
+          e = i - (h || i);
+      u = t.touches ? t.touches[0] : t, l = 0 < e && e <= 250, h = i;
+    }
+
+    function p(t) {
+      if (l && !u.cancelBubble) {
+        if (Lt) {
+          if ("mouse" === t.pointerType) return;
+          var i,
+              e,
+              n = {};
+
+          for (e in u) {
+            i = u[e], n[e] = i && i.bind ? i.bind(u) : i;
+          }
+
+          u = n;
+        }
+
+        u.type = "dblclick", u.button = 0, r(u), h = null;
+      }
+    }
+
+    Lt && 0 === t.indexOf("touch") ? jt(i, t, c, o) : bt && "dblclick" === t && !Zi() ? (r = c, l = !1, (s = i)[Gt + Vt + (a = o)] = d, s[Gt + qt + a] = p, s[Gt + "dblclick" + a] = r, s.addEventListener(Vt, d, !!Ct && {
+      passive: !1
+    }), s.addEventListener(qt, p, !!Ct && {
+      passive: !1
+    }), s.addEventListener("dblclick", r, !1)) : "addEventListener" in i ? "touchstart" === t || "touchmove" === t || "wheel" === t || "mousewheel" === t ? i.addEventListener(Ei[t] || t, c, !!Ct && {
+      passive: !1
+    }) : "mouseenter" === t || "mouseleave" === t ? (c = function c(t) {
+      t = t || window.event, Vi(i, t) && _(t);
+    }, i.addEventListener(Ei[t], c, !1)) : i.addEventListener(t, _, !1) : "attachEvent" in i && i.attachEvent("on" + t, c), i[Ci] = i[Ci] || {}, i[Ci][o] = c;
+  }
+
+  function Bi(t, i, e, n) {
+    var o,
+        s,
+        r,
+        a,
+        h,
+        u,
+        l,
+        c,
+        _ = i + m(e) + (n ? "_" + m(n) : ""),
+        d = t[Ci] && t[Ci][_];
+
+    if (!d) return this;
+    Lt && 0 === i.indexOf("touch") ? (c = (u = t)["_leaflet_" + (l = i) + _], "touchstart" === l ? u.removeEventListener(At, c, !1) : "touchmove" === l ? u.removeEventListener(It, c, !1) : "touchend" === l && (u.removeEventListener(Ot, c, !1), u.removeEventListener(Rt, c, !1))) : bt && "dblclick" === i && !Zi() ? (r = (o = t)[Gt + Vt + (s = _)], a = o[Gt + qt + s], h = o[Gt + "dblclick" + s], o.removeEventListener(Vt, r, !!Ct && {
+      passive: !1
+    }), o.removeEventListener(qt, a, !!Ct && {
+      passive: !1
+    }), o.removeEventListener("dblclick", h, !1)) : "removeEventListener" in t ? t.removeEventListener(Ei[i] || i, d, !1) : "detachEvent" in t && t.detachEvent("on" + i, d), t[Ci][_] = null;
+  }
+
+  function Ai(t) {
+    return t.stopPropagation ? t.stopPropagation() : t.originalEvent ? t.originalEvent._stopped = !0 : t.cancelBubble = !0, Ui(t), this;
+  }
+
+  function Ii(t) {
+    return ki(t, "wheel", Ai), this;
+  }
+
+  function Oi(t) {
+    return zi(t, "mousedown touchstart dblclick", Ai), ki(t, "click", Fi), this;
+  }
+
+  function Ri(t) {
+    return t.preventDefault ? t.preventDefault() : t.returnValue = !1, this;
+  }
+
+  function Ni(t) {
+    return Ri(t), Ai(t), this;
+  }
+
+  function Di(t, i) {
+    if (!i) return new k(t.clientX, t.clientY);
+    var e = Ti(i),
+        n = e.boundingClientRect;
+    return new k((t.clientX - n.left) / e.x - i.clientLeft, (t.clientY - n.top) / e.y - i.clientTop);
+  }
+
+  var ji = pt && ut ? 2 * window.devicePixelRatio : lt ? window.devicePixelRatio : 1;
+
+  function Wi(t) {
+    return et ? t.wheelDeltaY / 2 : t.deltaY && 0 === t.deltaMode ? -t.deltaY / ji : t.deltaY && 1 === t.deltaMode ? 20 * -t.deltaY : t.deltaY && 2 === t.deltaMode ? 60 * -t.deltaY : t.deltaX || t.deltaZ ? 0 : t.wheelDelta ? (t.wheelDeltaY || t.wheelDelta) / 2 : t.detail && Math.abs(t.detail) < 32765 ? 20 * -t.detail : t.detail ? t.detail / -32765 * 60 : 0;
+  }
+
+  var Hi = {};
+
+  function Fi(t) {
+    Hi[t.type] = !0;
+  }
+
+  function Ui(t) {
+    var i = Hi[t.type];
+    return Hi[t.type] = !1, i;
+  }
+
+  function Vi(t, i) {
+    var e = i.relatedTarget;
+    if (!e) return !0;
+
+    try {
+      for (; e && e !== t;) {
+        e = e.parentNode;
+      }
+    } catch (t) {
+      return !1;
+    }
+
+    return e !== t;
+  }
+
+  var qi = {
+    on: zi,
+    off: Si,
+    stopPropagation: Ai,
+    disableScrollPropagation: Ii,
+    disableClickPropagation: Oi,
+    preventDefault: Ri,
+    stop: Ni,
+    getMousePosition: Di,
+    getWheelDelta: Wi,
+    fakeStop: Fi,
+    skipped: Ui,
+    isExternalTarget: Vi,
+    addListener: zi,
+    removeListener: Si
+  },
+      Gi = E.extend({
+    run: function run(t, i, e, n) {
+      this.stop(), this._el = t, this._inProgress = !0, this._duration = e || .25, this._easeOutPower = 1 / Math.max(n || .5, .2), this._startPos = yi(t), this._offset = i.subtract(this._startPos), this._startTime = +new Date(), this.fire("start"), this._animate();
+    },
+    stop: function stop() {
+      this._inProgress && (this._step(!0), this._complete());
+    },
+    _animate: function _animate() {
+      this._animId = M(this._animate, this), this._step();
+    },
+    _step: function _step(t) {
+      var i = new Date() - this._startTime,
+          e = 1e3 * this._duration;
+      i < e ? this._runFrame(this._easeOut(i / e), t) : (this._runFrame(1), this._complete());
+    },
+    _runFrame: function _runFrame(t, i) {
+      var e = this._startPos.add(this._offset.multiplyBy(t));
+
+      i && e._round(), vi(this._el, e), this.fire("step");
+    },
+    _complete: function _complete() {
+      z(this._animId), this._inProgress = !1, this.fire("end");
+    },
+    _easeOut: function _easeOut(t) {
+      return 1 - Math.pow(1 - t, this._easeOutPower);
+    }
+  }),
+      Ki = E.extend({
+    options: {
+      crs: Y,
+      center: void 0,
+      zoom: void 0,
+      minZoom: void 0,
+      maxZoom: void 0,
+      layers: [],
+      maxBounds: void 0,
+      renderer: void 0,
+      zoomAnimation: !0,
+      zoomAnimationThreshold: 4,
+      fadeAnimation: !0,
+      markerZoomAnimation: !0,
+      transform3DLimit: 8388608,
+      zoomSnap: 1,
+      zoomDelta: 1,
+      trackResize: !0
+    },
+    initialize: function initialize(t, i) {
+      i = c(this, i), this._handlers = [], this._layers = {}, this._zoomBoundLayers = {}, this._sizeChanged = !0, this._initContainer(t), this._initLayout(), this._onResize = p(this._onResize, this), this._initEvents(), i.maxBounds && this.setMaxBounds(i.maxBounds), void 0 !== i.zoom && (this._zoom = this._limitZoom(i.zoom)), i.center && void 0 !== i.zoom && this.setView(j(i.center), i.zoom, {
+        reset: !0
+      }), this.callInitHooks(), this._zoomAnimated = ii && vt && !Tt && this.options.zoomAnimation, this._zoomAnimated && (this._createAnimProxy(), zi(this._proxy, ei, this._catchTransitionEnd, this)), this._addLayers(this.options.layers);
+    },
+    setView: function setView(t, i, e) {
+      if ((i = void 0 === i ? this._zoom : this._limitZoom(i), t = this._limitCenter(j(t), i, this.options.maxBounds), e = e || {}, this._stop(), this._loaded && !e.reset && !0 !== e) && (void 0 !== e.animate && (e.zoom = h({
+        animate: e.animate
+      }, e.zoom), e.pan = h({
+        animate: e.animate,
+        duration: e.duration
+      }, e.pan)), this._zoom !== i ? this._tryAnimatedZoom && this._tryAnimatedZoom(t, i, e.zoom) : this._tryAnimatedPan(t, e.pan))) return clearTimeout(this._sizeTimer), this;
+      return this._resetView(t, i), this;
+    },
+    setZoom: function setZoom(t, i) {
+      return this._loaded ? this.setView(this.getCenter(), t, {
+        zoom: i
+      }) : (this._zoom = t, this);
+    },
+    zoomIn: function zoomIn(t, i) {
+      return t = t || (vt ? this.options.zoomDelta : 1), this.setZoom(this._zoom + t, i);
+    },
+    zoomOut: function zoomOut(t, i) {
+      return t = t || (vt ? this.options.zoomDelta : 1), this.setZoom(this._zoom - t, i);
+    },
+    setZoomAround: function setZoomAround(t, i, e) {
+      var n = this.getZoomScale(i),
+          o = this.getSize().divideBy(2),
+          s = (t instanceof k ? t : this.latLngToContainerPoint(t)).subtract(o).multiplyBy(1 - 1 / n),
+          r = this.containerPointToLatLng(o.add(s));
+      return this.setView(r, i, {
+        zoom: e
+      });
+    },
+    _getBoundsCenterZoom: function _getBoundsCenterZoom(t, i) {
+      i = i || {}, t = t.getBounds ? t.getBounds() : N(t);
+      var e = A(i.paddingTopLeft || i.padding || [0, 0]),
+          n = A(i.paddingBottomRight || i.padding || [0, 0]),
+          o = this.getBoundsZoom(t, !1, e.add(n));
+      if ((o = "number" == typeof i.maxZoom ? Math.min(i.maxZoom, o) : o) === 1 / 0) return {
+        center: t.getCenter(),
+        zoom: o
+      };
+      var s = n.subtract(e).divideBy(2),
+          r = this.project(t.getSouthWest(), o),
+          a = this.project(t.getNorthEast(), o);
+      return {
+        center: this.unproject(r.add(a).divideBy(2).add(s), o),
+        zoom: o
+      };
+    },
+    fitBounds: function fitBounds(t, i) {
+      if (!(t = N(t)).isValid()) throw new Error("Bounds are not valid.");
+
+      var e = this._getBoundsCenterZoom(t, i);
+
+      return this.setView(e.center, e.zoom, i);
+    },
+    fitWorld: function fitWorld(t) {
+      return this.fitBounds([[-90, -180], [90, 180]], t);
+    },
+    panTo: function panTo(t, i) {
+      return this.setView(t, this._zoom, {
+        pan: i
+      });
+    },
+    panBy: function panBy(t, i) {
+      return i = i || {}, (t = A(t).round()).x || t.y ? (!0 === i.animate || this.getSize().contains(t) ? (this._panAnim || (this._panAnim = new Gi(), this._panAnim.on({
+        step: this._onPanTransitionStep,
+        end: this._onPanTransitionEnd
+      }, this)), i.noMoveStart || this.fire("movestart"), !1 !== i.animate ? (ci(this._mapPane, "leaflet-pan-anim"), e = this._getMapPanePos().subtract(t).round(), this._panAnim.run(this._mapPane, e, i.duration || .25, i.easeLinearity)) : (this._rawPanBy(t), this.fire("move").fire("moveend"))) : this._resetView(this.unproject(this.project(this.getCenter()).add(t)), this.getZoom()), this) : this.fire("moveend");
+      var e;
+    },
+    flyTo: function flyTo(s, r, t) {
+      if (!1 === (t = t || {}).animate || !vt) return this.setView(s, r, t);
+
+      this._stop();
+
+      var a = this.project(this.getCenter()),
+          h = this.project(s),
+          i = this.getSize(),
+          u = this._zoom;
+      s = j(s), r = void 0 === r ? u : r;
+      var l = Math.max(i.x, i.y),
+          n = l * this.getZoomScale(u, r),
+          c = h.distanceTo(a) || 1,
+          _ = 1.42,
+          o = _ * _;
+
+      function e(t) {
+        var i = (n * n - l * l + (t ? -1 : 1) * o * o * c * c) / (2 * (t ? n : l) * o * c),
+            e = Math.sqrt(i * i + 1) - i;
+        return e < 1e-9 ? -18 : Math.log(e);
+      }
+
+      function d(t) {
+        return (Math.exp(t) - Math.exp(-t)) / 2;
+      }
+
+      function p(t) {
+        return (Math.exp(t) + Math.exp(-t)) / 2;
+      }
+
+      var m = e(0);
+
+      function f(t) {
+        return l * (p(m) * (d(i = m + _ * t) / p(i)) - d(m)) / o;
+        var i;
+      }
+
+      var g = Date.now(),
+          v = (e(1) - m) / _,
+          y = t.duration ? 1e3 * t.duration : 1e3 * v * .8;
+
+      return this._moveStart(!0, t.noMoveStart), function t() {
+        var i,
+            e,
+            n = (Date.now() - g) / y,
+            o = (i = n, (1 - Math.pow(1 - i, 1.5)) * v);
+        n <= 1 ? (this._flyToFrame = M(t, this), this._move(this.unproject(a.add(h.subtract(a).multiplyBy(f(o) / c)), u), this.getScaleZoom(l / (e = o, l * (p(m) / p(m + _ * e))), u), {
+          flyTo: !0
+        })) : this._move(s, r)._moveEnd(!0);
+      }.call(this), this;
+    },
+    flyToBounds: function flyToBounds(t, i) {
+      var e = this._getBoundsCenterZoom(t, i);
+
+      return this.flyTo(e.center, e.zoom, i);
+    },
+    setMaxBounds: function setMaxBounds(t) {
+      return (t = N(t)).isValid() ? (this.options.maxBounds && this.off("moveend", this._panInsideMaxBounds), this.options.maxBounds = t, this._loaded && this._panInsideMaxBounds(), this.on("moveend", this._panInsideMaxBounds)) : (this.options.maxBounds = null, this.off("moveend", this._panInsideMaxBounds));
+    },
+    setMinZoom: function setMinZoom(t) {
+      var i = this.options.minZoom;
+      return this.options.minZoom = t, this._loaded && i !== t && (this.fire("zoomlevelschange"), this.getZoom() < this.options.minZoom) ? this.setZoom(t) : this;
+    },
+    setMaxZoom: function setMaxZoom(t) {
+      var i = this.options.maxZoom;
+      return this.options.maxZoom = t, this._loaded && i !== t && (this.fire("zoomlevelschange"), this.getZoom() > this.options.maxZoom) ? this.setZoom(t) : this;
+    },
+    panInsideBounds: function panInsideBounds(t, i) {
+      this._enforcingBounds = !0;
+
+      var e = this.getCenter(),
+          n = this._limitCenter(e, this._zoom, N(t));
+
+      return e.equals(n) || this.panTo(n, i), this._enforcingBounds = !1, this;
+    },
+    panInside: function panInside(t, i) {
+      var e,
+          n,
+          o = A((i = i || {}).paddingTopLeft || i.padding || [0, 0]),
+          s = A(i.paddingBottomRight || i.padding || [0, 0]),
+          r = this.getCenter(),
+          a = this.project(r),
+          h = this.project(t),
+          u = this.getPixelBounds(),
+          l = u.getSize().divideBy(2),
+          c = O([u.min.add(o), u.max.subtract(s)]);
+      return c.contains(h) || (this._enforcingBounds = !0, e = a.subtract(h), n = A(h.x + e.x, h.y + e.y), (h.x < c.min.x || h.x > c.max.x) && (n.x = a.x - e.x, 0 < e.x ? n.x += l.x - o.x : n.x -= l.x - s.x), (h.y < c.min.y || h.y > c.max.y) && (n.y = a.y - e.y, 0 < e.y ? n.y += l.y - o.y : n.y -= l.y - s.y), this.panTo(this.unproject(n), i), this._enforcingBounds = !1), this;
+    },
+    invalidateSize: function invalidateSize(t) {
+      if (!this._loaded) return this;
+      t = h({
+        animate: !1,
+        pan: !0
+      }, !0 === t ? {
+        animate: !0
+      } : t);
+      var i = this.getSize();
+      this._sizeChanged = !0, this._lastCenter = null;
+      var e = this.getSize(),
+          n = i.divideBy(2).round(),
+          o = e.divideBy(2).round(),
+          s = n.subtract(o);
+      return s.x || s.y ? (t.animate && t.pan ? this.panBy(s) : (t.pan && this._rawPanBy(s), this.fire("move"), t.debounceMoveend ? (clearTimeout(this._sizeTimer), this._sizeTimer = setTimeout(p(this.fire, this, "moveend"), 200)) : this.fire("moveend")), this.fire("resize", {
+        oldSize: i,
+        newSize: e
+      })) : this;
+    },
+    stop: function stop() {
+      return this.setZoom(this._limitZoom(this._zoom)), this.options.zoomSnap || this.fire("viewreset"), this._stop();
+    },
+    locate: function locate(t) {
+      if (t = this._locateOptions = h({
+        timeout: 1e4,
+        watch: !1
+      }, t), !("geolocation" in navigator)) return this._handleGeolocationError({
+        code: 0,
+        message: "Geolocation not supported."
+      }), this;
+      var i = p(this._handleGeolocationResponse, this),
+          e = p(this._handleGeolocationError, this);
+      return t.watch ? this._locationWatchId = navigator.geolocation.watchPosition(i, e, t) : navigator.geolocation.getCurrentPosition(i, e, t), this;
+    },
+    stopLocate: function stopLocate() {
+      return navigator.geolocation && navigator.geolocation.clearWatch && navigator.geolocation.clearWatch(this._locationWatchId), this._locateOptions && (this._locateOptions.setView = !1), this;
+    },
+    _handleGeolocationError: function _handleGeolocationError(t) {
+      var i = t.code,
+          e = t.message || (1 === i ? "permission denied" : 2 === i ? "position unavailable" : "timeout");
+      this._locateOptions.setView && !this._loaded && this.fitWorld(), this.fire("locationerror", {
+        code: i,
+        message: "Geolocation error: " + e + "."
+      });
+    },
+    _handleGeolocationResponse: function _handleGeolocationResponse(t) {
+      var i,
+          e = new D(t.coords.latitude, t.coords.longitude),
+          n = e.toBounds(2 * t.coords.accuracy),
+          o = this._locateOptions;
+      o.setView && (i = this.getBoundsZoom(n), this.setView(e, o.maxZoom ? Math.min(i, o.maxZoom) : i));
+      var s = {
+        latlng: e,
+        bounds: n,
+        timestamp: t.timestamp
+      };
+
+      for (var r in t.coords) {
+        "number" == typeof t.coords[r] && (s[r] = t.coords[r]);
+      }
+
+      this.fire("locationfound", s);
+    },
+    addHandler: function addHandler(t, i) {
+      if (!i) return this;
+      var e = this[t] = new i(this);
+      return this._handlers.push(e), this.options[t] && e.enable(), this;
+    },
+    remove: function remove() {
+      if (this._initEvents(!0), this.off("moveend", this._panInsideMaxBounds), this._containerId !== this._container._leaflet_id) throw new Error("Map container is being reused by another instance");
+
+      try {
+        delete this._container._leaflet_id, delete this._containerId;
+      } catch (t) {
+        this._container._leaflet_id = void 0, this._containerId = void 0;
+      }
+
+      var t;
+
+      for (t in void 0 !== this._locationWatchId && this.stopLocate(), this._stop(), ri(this._mapPane), this._clearControlPos && this._clearControlPos(), this._resizeRequest && (z(this._resizeRequest), this._resizeRequest = null), this._clearHandlers(), this._loaded && this.fire("unload"), this._layers) {
+        this._layers[t].remove();
+      }
+
+      for (t in this._panes) {
+        ri(this._panes[t]);
+      }
+
+      return this._layers = [], this._panes = [], delete this._mapPane, delete this._renderer, this;
+    },
+    createPane: function createPane(t, i) {
+      var e = si("div", "leaflet-pane" + (t ? " leaflet-" + t.replace("Pane", "") + "-pane" : ""), i || this._mapPane);
+      return t && (this._panes[t] = e), e;
+    },
+    getCenter: function getCenter() {
+      return this._checkIfLoaded(), this._lastCenter && !this._moved() ? this._lastCenter : this.layerPointToLatLng(this._getCenterLayerPoint());
+    },
+    getZoom: function getZoom() {
+      return this._zoom;
+    },
+    getBounds: function getBounds() {
+      var t = this.getPixelBounds();
+      return new R(this.unproject(t.getBottomLeft()), this.unproject(t.getTopRight()));
+    },
+    getMinZoom: function getMinZoom() {
+      return void 0 === this.options.minZoom ? this._layersMinZoom || 0 : this.options.minZoom;
+    },
+    getMaxZoom: function getMaxZoom() {
+      return void 0 === this.options.maxZoom ? void 0 === this._layersMaxZoom ? 1 / 0 : this._layersMaxZoom : this.options.maxZoom;
+    },
+    getBoundsZoom: function getBoundsZoom(t, i, e) {
+      t = N(t), e = A(e || [0, 0]);
+
+      var n = this.getZoom() || 0,
+          o = this.getMinZoom(),
+          s = this.getMaxZoom(),
+          r = t.getNorthWest(),
+          a = t.getSouthEast(),
+          h = this.getSize().subtract(e),
+          u = O(this.project(a, n), this.project(r, n)).getSize(),
+          l = vt ? this.options.zoomSnap : 1,
+          c = h.x / u.x,
+          _ = h.y / u.y,
+          d = i ? Math.max(c, _) : Math.min(c, _),
+          n = this.getScaleZoom(d, n);
+
+      return l && (n = Math.round(n / (l / 100)) * (l / 100), n = i ? Math.ceil(n / l) * l : Math.floor(n / l) * l), Math.max(o, Math.min(s, n));
+    },
+    getSize: function getSize() {
+      return this._size && !this._sizeChanged || (this._size = new k(this._container.clientWidth || 0, this._container.clientHeight || 0), this._sizeChanged = !1), this._size.clone();
+    },
+    getPixelBounds: function getPixelBounds(t, i) {
+      var e = this._getTopLeftPoint(t, i);
+
+      return new I(e, e.add(this.getSize()));
+    },
+    getPixelOrigin: function getPixelOrigin() {
+      return this._checkIfLoaded(), this._pixelOrigin;
+    },
+    getPixelWorldBounds: function getPixelWorldBounds(t) {
+      return this.options.crs.getProjectedBounds(void 0 === t ? this.getZoom() : t);
+    },
+    getPane: function getPane(t) {
+      return "string" == typeof t ? this._panes[t] : t;
+    },
+    getPanes: function getPanes() {
+      return this._panes;
+    },
+    getContainer: function getContainer() {
+      return this._container;
+    },
+    getZoomScale: function getZoomScale(t, i) {
+      var e = this.options.crs;
+      return i = void 0 === i ? this._zoom : i, e.scale(t) / e.scale(i);
+    },
+    getScaleZoom: function getScaleZoom(t, i) {
+      var e = this.options.crs;
+      i = void 0 === i ? this._zoom : i;
+      var n = e.zoom(t * e.scale(i));
+      return isNaN(n) ? 1 / 0 : n;
+    },
+    project: function project(t, i) {
+      return i = void 0 === i ? this._zoom : i, this.options.crs.latLngToPoint(j(t), i);
+    },
+    unproject: function unproject(t, i) {
+      return i = void 0 === i ? this._zoom : i, this.options.crs.pointToLatLng(A(t), i);
+    },
+    layerPointToLatLng: function layerPointToLatLng(t) {
+      var i = A(t).add(this.getPixelOrigin());
+      return this.unproject(i);
+    },
+    latLngToLayerPoint: function latLngToLayerPoint(t) {
+      return this.project(j(t))._round()._subtract(this.getPixelOrigin());
+    },
+    wrapLatLng: function wrapLatLng(t) {
+      return this.options.crs.wrapLatLng(j(t));
+    },
+    wrapLatLngBounds: function wrapLatLngBounds(t) {
+      return this.options.crs.wrapLatLngBounds(N(t));
+    },
+    distance: function distance(t, i) {
+      return this.options.crs.distance(j(t), j(i));
+    },
+    containerPointToLayerPoint: function containerPointToLayerPoint(t) {
+      return A(t).subtract(this._getMapPanePos());
+    },
+    layerPointToContainerPoint: function layerPointToContainerPoint(t) {
+      return A(t).add(this._getMapPanePos());
+    },
+    containerPointToLatLng: function containerPointToLatLng(t) {
+      var i = this.containerPointToLayerPoint(A(t));
+      return this.layerPointToLatLng(i);
+    },
+    latLngToContainerPoint: function latLngToContainerPoint(t) {
+      return this.layerPointToContainerPoint(this.latLngToLayerPoint(j(t)));
+    },
+    mouseEventToContainerPoint: function mouseEventToContainerPoint(t) {
+      return Di(t, this._container);
+    },
+    mouseEventToLayerPoint: function mouseEventToLayerPoint(t) {
+      return this.containerPointToLayerPoint(this.mouseEventToContainerPoint(t));
+    },
+    mouseEventToLatLng: function mouseEventToLatLng(t) {
+      return this.layerPointToLatLng(this.mouseEventToLayerPoint(t));
+    },
+    _initContainer: function _initContainer(t) {
+      var i = this._container = ni(t);
+      if (!i) throw new Error("Map container not found.");
+      if (i._leaflet_id) throw new Error("Map container is already initialized.");
+      zi(i, "scroll", this._onScroll, this), this._containerId = m(i);
+    },
+    _initLayout: function _initLayout() {
+      var t = this._container;
+      this._fadeAnimated = this.options.fadeAnimation && vt, ci(t, "leaflet-container" + (bt ? " leaflet-touch" : "") + (zt ? " leaflet-retina" : "") + (it ? " leaflet-oldie" : "") + (ct ? " leaflet-safari" : "") + (this._fadeAnimated ? " leaflet-fade-anim" : ""));
+      var i = oi(t, "position");
+      "absolute" !== i && "relative" !== i && "fixed" !== i && (t.style.position = "relative"), this._initPanes(), this._initControlPos && this._initControlPos();
+    },
+    _initPanes: function _initPanes() {
+      var t = this._panes = {};
+      this._paneRenderers = {}, this._mapPane = this.createPane("mapPane", this._container), vi(this._mapPane, new k(0, 0)), this.createPane("tilePane"), this.createPane("shadowPane"), this.createPane("overlayPane"), this.createPane("markerPane"), this.createPane("tooltipPane"), this.createPane("popupPane"), this.options.markerZoomAnimation || (ci(t.markerPane, "leaflet-zoom-hide"), ci(t.shadowPane, "leaflet-zoom-hide"));
+    },
+    _resetView: function _resetView(t, i) {
+      vi(this._mapPane, new k(0, 0));
+      var e = !this._loaded;
+      this._loaded = !0, i = this._limitZoom(i), this.fire("viewprereset");
+      var n = this._zoom !== i;
+      this._moveStart(n, !1)._move(t, i)._moveEnd(n), this.fire("viewreset"), e && this.fire("load");
+    },
+    _moveStart: function _moveStart(t, i) {
+      return t && this.fire("zoomstart"), i || this.fire("movestart"), this;
+    },
+    _move: function _move(t, i, e) {
+      void 0 === i && (i = this._zoom);
+      var n = this._zoom !== i;
+      return this._zoom = i, this._lastCenter = t, this._pixelOrigin = this._getNewPixelOrigin(t), (n || e && e.pinch) && this.fire("zoom", e), this.fire("move", e);
+    },
+    _moveEnd: function _moveEnd(t) {
+      return t && this.fire("zoomend"), this.fire("moveend");
+    },
+    _stop: function _stop() {
+      return z(this._flyToFrame), this._panAnim && this._panAnim.stop(), this;
+    },
+    _rawPanBy: function _rawPanBy(t) {
+      vi(this._mapPane, this._getMapPanePos().subtract(t));
+    },
+    _getZoomSpan: function _getZoomSpan() {
+      return this.getMaxZoom() - this.getMinZoom();
+    },
+    _panInsideMaxBounds: function _panInsideMaxBounds() {
+      this._enforcingBounds || this.panInsideBounds(this.options.maxBounds);
+    },
+    _checkIfLoaded: function _checkIfLoaded() {
+      if (!this._loaded) throw new Error("Set map center and zoom first.");
+    },
+    _initEvents: function _initEvents(t) {
+      this._targets = {};
+      var i = t ? Si : zi;
+      i((this._targets[m(this._container)] = this)._container, "click dblclick mousedown mouseup mouseover mouseout mousemove contextmenu keypress keydown keyup", this._handleDOMEvent, this), this.options.trackResize && i(window, "resize", this._onResize, this), vt && this.options.transform3DLimit && (t ? this.off : this.on).call(this, "moveend", this._onMoveEnd);
+    },
+    _onResize: function _onResize() {
+      z(this._resizeRequest), this._resizeRequest = M(function () {
+        this.invalidateSize({
+          debounceMoveend: !0
+        });
+      }, this);
+    },
+    _onScroll: function _onScroll() {
+      this._container.scrollTop = 0, this._container.scrollLeft = 0;
+    },
+    _onMoveEnd: function _onMoveEnd() {
+      var t = this._getMapPanePos();
+
+      Math.max(Math.abs(t.x), Math.abs(t.y)) >= this.options.transform3DLimit && this._resetView(this.getCenter(), this.getZoom());
+    },
+    _findEventTargets: function _findEventTargets(t, i) {
+      for (var e, n = [], o = "mouseout" === i || "mouseover" === i, s = t.target || t.srcElement, r = !1; s;) {
+        if ((e = this._targets[m(s)]) && ("click" === i || "preclick" === i) && !t._simulated && this._draggableMoved(e)) {
+          r = !0;
+          break;
+        }
+
+        if (e && e.listens(i, !0)) {
+          if (o && !Vi(s, t)) break;
+          if (n.push(e), o) break;
+        }
+
+        if (s === this._container) break;
+        s = s.parentNode;
+      }
+
+      return n.length || r || o || !Vi(s, t) || (n = [this]), n;
+    },
+    _handleDOMEvent: function _handleDOMEvent(t) {
+      var i;
+      this._loaded && !Ui(t) && ("mousedown" !== (i = t.type) && "keypress" !== i && "keyup" !== i && "keydown" !== i || Pi(t.target || t.srcElement), this._fireDOMEvent(t, i));
+    },
+    _mouseEvents: ["click", "dblclick", "mouseover", "mouseout", "contextmenu"],
+    _fireDOMEvent: function _fireDOMEvent(t, i, e) {
+      var n;
+
+      if ("click" === t.type && ((n = h({}, t)).type = "preclick", this._fireDOMEvent(n, n.type, e)), !t._stopped && (e = (e || []).concat(this._findEventTargets(t, i))).length) {
+        var o = e[0];
+        "contextmenu" === i && o.listens(i, !0) && Ri(t);
+        var s,
+            r = {
+          originalEvent: t
+        };
+        "keypress" !== t.type && "keydown" !== t.type && "keyup" !== t.type && (s = o.getLatLng && (!o._radius || o._radius <= 10), r.containerPoint = s ? this.latLngToContainerPoint(o.getLatLng()) : this.mouseEventToContainerPoint(t), r.layerPoint = this.containerPointToLayerPoint(r.containerPoint), r.latlng = s ? o.getLatLng() : this.layerPointToLatLng(r.layerPoint));
+
+        for (var a = 0; a < e.length; a++) {
+          if (e[a].fire(i, r, !0), r.originalEvent._stopped || !1 === e[a].options.bubblingMouseEvents && -1 !== v(this._mouseEvents, i)) return;
+        }
+      }
+    },
+    _draggableMoved: function _draggableMoved(t) {
+      return (t = t.dragging && t.dragging.enabled() ? t : this).dragging && t.dragging.moved() || this.boxZoom && this.boxZoom.moved();
+    },
+    _clearHandlers: function _clearHandlers() {
+      for (var t = 0, i = this._handlers.length; t < i; t++) {
+        this._handlers[t].disable();
+      }
+    },
+    whenReady: function whenReady(t, i) {
+      return this._loaded ? t.call(i || this, {
+        target: this
+      }) : this.on("load", t, i), this;
+    },
+    _getMapPanePos: function _getMapPanePos() {
+      return yi(this._mapPane) || new k(0, 0);
+    },
+    _moved: function _moved() {
+      var t = this._getMapPanePos();
+
+      return t && !t.equals([0, 0]);
+    },
+    _getTopLeftPoint: function _getTopLeftPoint(t, i) {
+      return (t && void 0 !== i ? this._getNewPixelOrigin(t, i) : this.getPixelOrigin()).subtract(this._getMapPanePos());
+    },
+    _getNewPixelOrigin: function _getNewPixelOrigin(t, i) {
+      var e = this.getSize()._divideBy(2);
+
+      return this.project(t, i)._subtract(e)._add(this._getMapPanePos())._round();
+    },
+    _latLngToNewLayerPoint: function _latLngToNewLayerPoint(t, i, e) {
+      var n = this._getNewPixelOrigin(e, i);
+
+      return this.project(t, i)._subtract(n);
+    },
+    _latLngBoundsToNewLayerBounds: function _latLngBoundsToNewLayerBounds(t, i, e) {
+      var n = this._getNewPixelOrigin(e, i);
+
+      return O([this.project(t.getSouthWest(), i)._subtract(n), this.project(t.getNorthWest(), i)._subtract(n), this.project(t.getSouthEast(), i)._subtract(n), this.project(t.getNorthEast(), i)._subtract(n)]);
+    },
+    _getCenterLayerPoint: function _getCenterLayerPoint() {
+      return this.containerPointToLayerPoint(this.getSize()._divideBy(2));
+    },
+    _getCenterOffset: function _getCenterOffset(t) {
+      return this.latLngToLayerPoint(t).subtract(this._getCenterLayerPoint());
+    },
+    _limitCenter: function _limitCenter(t, i, e) {
+      if (!e) return t;
+
+      var n = this.project(t, i),
+          o = this.getSize().divideBy(2),
+          s = new I(n.subtract(o), n.add(o)),
+          r = this._getBoundsOffset(s, e, i);
+
+      return r.round().equals([0, 0]) ? t : this.unproject(n.add(r), i);
+    },
+    _limitOffset: function _limitOffset(t, i) {
+      if (!i) return t;
+      var e = this.getPixelBounds(),
+          n = new I(e.min.add(t), e.max.add(t));
+      return t.add(this._getBoundsOffset(n, i));
+    },
+    _getBoundsOffset: function _getBoundsOffset(t, i, e) {
+      var n = O(this.project(i.getNorthEast(), e), this.project(i.getSouthWest(), e)),
+          o = n.min.subtract(t.min),
+          s = n.max.subtract(t.max);
+      return new k(this._rebound(o.x, -s.x), this._rebound(o.y, -s.y));
+    },
+    _rebound: function _rebound(t, i) {
+      return 0 < t + i ? Math.round(t - i) / 2 : Math.max(0, Math.ceil(t)) - Math.max(0, Math.floor(i));
+    },
+    _limitZoom: function _limitZoom(t) {
+      var i = this.getMinZoom(),
+          e = this.getMaxZoom(),
+          n = vt ? this.options.zoomSnap : 1;
+      return n && (t = Math.round(t / n) * n), Math.max(i, Math.min(e, t));
+    },
+    _onPanTransitionStep: function _onPanTransitionStep() {
+      this.fire("move");
+    },
+    _onPanTransitionEnd: function _onPanTransitionEnd() {
+      _i(this._mapPane, "leaflet-pan-anim"), this.fire("moveend");
+    },
+    _tryAnimatedPan: function _tryAnimatedPan(t, i) {
+      var e = this._getCenterOffset(t)._trunc();
+
+      return !(!0 !== (i && i.animate) && !this.getSize().contains(e)) && (this.panBy(e, i), !0);
+    },
+    _createAnimProxy: function _createAnimProxy() {
+      var t = this._proxy = si("div", "leaflet-proxy leaflet-zoom-animated");
+      this._panes.mapPane.appendChild(t), this.on("zoomanim", function (t) {
+        var i = ti,
+            e = this._proxy.style[i];
+        gi(this._proxy, this.project(t.center, t.zoom), this.getZoomScale(t.zoom, 1)), e === this._proxy.style[i] && this._animatingZoom && this._onZoomTransitionEnd();
+      }, this), this.on("load moveend", this._animMoveEnd, this), this._on("unload", this._destroyAnimProxy, this);
+    },
+    _destroyAnimProxy: function _destroyAnimProxy() {
+      ri(this._proxy), this.off("load moveend", this._animMoveEnd, this), delete this._proxy;
+    },
+    _animMoveEnd: function _animMoveEnd() {
+      var t = this.getCenter(),
+          i = this.getZoom();
+      gi(this._proxy, this.project(t, i), this.getZoomScale(i, 1));
+    },
+    _catchTransitionEnd: function _catchTransitionEnd(t) {
+      this._animatingZoom && 0 <= t.propertyName.indexOf("transform") && this._onZoomTransitionEnd();
+    },
+    _nothingToAnimate: function _nothingToAnimate() {
+      return !this._container.getElementsByClassName("leaflet-zoom-animated").length;
+    },
+    _tryAnimatedZoom: function _tryAnimatedZoom(t, i, e) {
+      if (this._animatingZoom) return !0;
+      if (e = e || {}, !this._zoomAnimated || !1 === e.animate || this._nothingToAnimate() || Math.abs(i - this._zoom) > this.options.zoomAnimationThreshold) return !1;
+
+      var n = this.getZoomScale(i),
+          o = this._getCenterOffset(t)._divideBy(1 - 1 / n);
+
+      return !(!0 !== e.animate && !this.getSize().contains(o)) && (M(function () {
+        this._moveStart(!0, !1)._animateZoom(t, i, !0);
+      }, this), !0);
+    },
+    _animateZoom: function _animateZoom(t, i, e, n) {
+      this._mapPane && (e && (this._animatingZoom = !0, this._animateToCenter = t, this._animateToZoom = i, ci(this._mapPane, "leaflet-zoom-anim")), this.fire("zoomanim", {
+        center: t,
+        zoom: i,
+        noUpdate: n
+      }), setTimeout(p(this._onZoomTransitionEnd, this), 250));
+    },
+    _onZoomTransitionEnd: function _onZoomTransitionEnd() {
+      this._animatingZoom && (this._mapPane && _i(this._mapPane, "leaflet-zoom-anim"), this._animatingZoom = !1, this._move(this._animateToCenter, this._animateToZoom), M(function () {
+        this._moveEnd(!0);
+      }, this));
+    }
+  });
+
+  function Yi(t) {
+    return new Xi(t);
+  }
+
+  var Xi = S.extend({
+    options: {
+      position: "topright"
+    },
+    initialize: function initialize(t) {
+      c(this, t);
+    },
+    getPosition: function getPosition() {
+      return this.options.position;
+    },
+    setPosition: function setPosition(t) {
+      var i = this._map;
+      return i && i.removeControl(this), this.options.position = t, i && i.addControl(this), this;
+    },
+    getContainer: function getContainer() {
+      return this._container;
+    },
+    addTo: function addTo(t) {
+      this.remove(), this._map = t;
+      var i = this._container = this.onAdd(t),
+          e = this.getPosition(),
+          n = t._controlCorners[e];
+      return ci(i, "leaflet-control"), -1 !== e.indexOf("bottom") ? n.insertBefore(i, n.firstChild) : n.appendChild(i), this._map.on("unload", this.remove, this), this;
+    },
+    remove: function remove() {
+      return this._map && (ri(this._container), this.onRemove && this.onRemove(this._map), this._map.off("unload", this.remove, this), this._map = null), this;
+    },
+    _refocusOnMap: function _refocusOnMap(t) {
+      this._map && t && 0 < t.screenX && 0 < t.screenY && this._map.getContainer().focus();
+    }
+  });
+  Ki.include({
+    addControl: function addControl(t) {
+      return t.addTo(this), this;
+    },
+    removeControl: function removeControl(t) {
+      return t.remove(), this;
+    },
+    _initControlPos: function _initControlPos() {
+      var n = this._controlCorners = {},
+          o = "leaflet-",
+          s = this._controlContainer = si("div", o + "control-container", this._container);
+
+      function t(t, i) {
+        var e = o + t + " " + o + i;
+        n[t + i] = si("div", e, s);
+      }
+
+      t("top", "left"), t("top", "right"), t("bottom", "left"), t("bottom", "right");
+    },
+    _clearControlPos: function _clearControlPos() {
+      for (var t in this._controlCorners) {
+        ri(this._controlCorners[t]);
+      }
+
+      ri(this._controlContainer), delete this._controlCorners, delete this._controlContainer;
+    }
+  });
+  var Ji = Xi.extend({
+    options: {
+      collapsed: !0,
+      position: "topright",
+      autoZIndex: !0,
+      hideSingleBase: !1,
+      sortLayers: !1,
+      sortFunction: function sortFunction(t, i, e, n) {
+        return e < n ? -1 : n < e ? 1 : 0;
+      }
+    },
+    initialize: function initialize(t, i, e) {
+      for (var n in c(this, e), this._layerControlInputs = [], this._layers = [], this._lastZIndex = 0, this._handlingClick = !1, t) {
+        this._addLayer(t[n], n);
+      }
+
+      for (n in i) {
+        this._addLayer(i[n], n, !0);
+      }
+    },
+    onAdd: function onAdd(t) {
+      this._initLayout(), this._update(), (this._map = t).on("zoomend", this._checkDisabledLayers, this);
+
+      for (var i = 0; i < this._layers.length; i++) {
+        this._layers[i].layer.on("add remove", this._onLayerChange, this);
+      }
+
+      return this._container;
+    },
+    addTo: function addTo(t) {
+      return Xi.prototype.addTo.call(this, t), this._expandIfNotCollapsed();
+    },
+    onRemove: function onRemove() {
+      this._map.off("zoomend", this._checkDisabledLayers, this);
+
+      for (var t = 0; t < this._layers.length; t++) {
+        this._layers[t].layer.off("add remove", this._onLayerChange, this);
+      }
+    },
+    addBaseLayer: function addBaseLayer(t, i) {
+      return this._addLayer(t, i), this._map ? this._update() : this;
+    },
+    addOverlay: function addOverlay(t, i) {
+      return this._addLayer(t, i, !0), this._map ? this._update() : this;
+    },
+    removeLayer: function removeLayer(t) {
+      t.off("add remove", this._onLayerChange, this);
+
+      var i = this._getLayer(m(t));
+
+      return i && this._layers.splice(this._layers.indexOf(i), 1), this._map ? this._update() : this;
+    },
+    expand: function expand() {
+      ci(this._container, "leaflet-control-layers-expanded"), this._section.style.height = null;
+      var t = this._map.getSize().y - (this._container.offsetTop + 50);
+      return t < this._section.clientHeight ? (ci(this._section, "leaflet-control-layers-scrollbar"), this._section.style.height = t + "px") : _i(this._section, "leaflet-control-layers-scrollbar"), this._checkDisabledLayers(), this;
+    },
+    collapse: function collapse() {
+      return _i(this._container, "leaflet-control-layers-expanded"), this;
+    },
+    _initLayout: function _initLayout() {
+      var t = "leaflet-control-layers",
+          i = this._container = si("div", t),
+          e = this.options.collapsed;
+      i.setAttribute("aria-haspopup", !0), Oi(i), Ii(i);
+      var n = this._section = si("section", t + "-list");
+      e && (this._map.on("click", this.collapse, this), ot || zi(i, {
+        mouseenter: this.expand,
+        mouseleave: this.collapse
+      }, this));
+      var o = this._layersLink = si("a", t + "-toggle", i);
+      o.href = "#", o.title = "Layers", bt ? (zi(o, "click", Ni), zi(o, "click", this.expand, this)) : zi(o, "focus", this.expand, this), e || this.expand(), this._baseLayersList = si("div", t + "-base", n), this._separator = si("div", t + "-separator", n), this._overlaysList = si("div", t + "-overlays", n), i.appendChild(n);
+    },
+    _getLayer: function _getLayer(t) {
+      for (var i = 0; i < this._layers.length; i++) {
+        if (this._layers[i] && m(this._layers[i].layer) === t) return this._layers[i];
+      }
+    },
+    _addLayer: function _addLayer(t, i, e) {
+      this._map && t.on("add remove", this._onLayerChange, this), this._layers.push({
+        layer: t,
+        name: i,
+        overlay: e
+      }), this.options.sortLayers && this._layers.sort(p(function (t, i) {
+        return this.options.sortFunction(t.layer, i.layer, t.name, i.name);
+      }, this)), this.options.autoZIndex && t.setZIndex && (this._lastZIndex++, t.setZIndex(this._lastZIndex)), this._expandIfNotCollapsed();
+    },
+    _update: function _update() {
+      if (!this._container) return this;
+      ai(this._baseLayersList), ai(this._overlaysList), this._layerControlInputs = [];
+
+      for (var t, i, e, n = 0, o = 0; o < this._layers.length; o++) {
+        e = this._layers[o], this._addItem(e), i = i || e.overlay, t = t || !e.overlay, n += e.overlay ? 0 : 1;
+      }
+
+      return this.options.hideSingleBase && (t = t && 1 < n, this._baseLayersList.style.display = t ? "" : "none"), this._separator.style.display = i && t ? "" : "none", this;
+    },
+    _onLayerChange: function _onLayerChange(t) {
+      this._handlingClick || this._update();
+
+      var i = this._getLayer(m(t.target)),
+          e = i.overlay ? "add" === t.type ? "overlayadd" : "overlayremove" : "add" === t.type ? "baselayerchange" : null;
+
+      e && this._map.fire(e, i);
+    },
+    _createRadioElement: function _createRadioElement(t, i) {
+      var e = '<input type="radio" class="leaflet-control-layers-selector" name="' + t + '"' + (i ? ' checked="checked"' : "") + "/>",
+          n = document.createElement("div");
+      return n.innerHTML = e, n.firstChild;
+    },
+    _addItem: function _addItem(t) {
+      var i,
+          e = document.createElement("label"),
+          n = this._map.hasLayer(t.layer);
+
+      t.overlay ? ((i = document.createElement("input")).type = "checkbox", i.className = "leaflet-control-layers-selector", i.defaultChecked = n) : i = this._createRadioElement("leaflet-base-layers_" + m(this), n), this._layerControlInputs.push(i), i.layerId = m(t.layer), zi(i, "click", this._onInputClick, this);
+      var o = document.createElement("span");
+      o.innerHTML = " " + t.name;
+      var s = document.createElement("div");
+      return e.appendChild(s), s.appendChild(i), s.appendChild(o), (t.overlay ? this._overlaysList : this._baseLayersList).appendChild(e), this._checkDisabledLayers(), e;
+    },
+    _onInputClick: function _onInputClick() {
+      var t,
+          i,
+          e = this._layerControlInputs,
+          n = [],
+          o = [];
+      this._handlingClick = !0;
+
+      for (var s = e.length - 1; 0 <= s; s--) {
+        t = e[s], i = this._getLayer(t.layerId).layer, t.checked ? n.push(i) : t.checked || o.push(i);
+      }
+
+      for (s = 0; s < o.length; s++) {
+        this._map.hasLayer(o[s]) && this._map.removeLayer(o[s]);
+      }
+
+      for (s = 0; s < n.length; s++) {
+        this._map.hasLayer(n[s]) || this._map.addLayer(n[s]);
+      }
+
+      this._handlingClick = !1, this._refocusOnMap();
+    },
+    _checkDisabledLayers: function _checkDisabledLayers() {
+      for (var t, i, e = this._layerControlInputs, n = this._map.getZoom(), o = e.length - 1; 0 <= o; o--) {
+        t = e[o], i = this._getLayer(t.layerId).layer, t.disabled = void 0 !== i.options.minZoom && n < i.options.minZoom || void 0 !== i.options.maxZoom && n > i.options.maxZoom;
+      }
+    },
+    _expandIfNotCollapsed: function _expandIfNotCollapsed() {
+      return this._map && !this.options.collapsed && this.expand(), this;
+    },
+    _expand: function _expand() {
+      return this.expand();
+    },
+    _collapse: function _collapse() {
+      return this.collapse();
+    }
+  }),
+      $i = Xi.extend({
+    options: {
+      position: "topleft",
+      zoomInText: "+",
+      zoomInTitle: "Zoom in",
+      zoomOutText: "&#x2212;",
+      zoomOutTitle: "Zoom out"
+    },
+    onAdd: function onAdd(t) {
+      var i = "leaflet-control-zoom",
+          e = si("div", i + " leaflet-bar"),
+          n = this.options;
+      return this._zoomInButton = this._createButton(n.zoomInText, n.zoomInTitle, i + "-in", e, this._zoomIn), this._zoomOutButton = this._createButton(n.zoomOutText, n.zoomOutTitle, i + "-out", e, this._zoomOut), this._updateDisabled(), t.on("zoomend zoomlevelschange", this._updateDisabled, this), e;
+    },
+    onRemove: function onRemove(t) {
+      t.off("zoomend zoomlevelschange", this._updateDisabled, this);
+    },
+    disable: function disable() {
+      return this._disabled = !0, this._updateDisabled(), this;
+    },
+    enable: function enable() {
+      return this._disabled = !1, this._updateDisabled(), this;
+    },
+    _zoomIn: function _zoomIn(t) {
+      !this._disabled && this._map._zoom < this._map.getMaxZoom() && this._map.zoomIn(this._map.options.zoomDelta * (t.shiftKey ? 3 : 1));
+    },
+    _zoomOut: function _zoomOut(t) {
+      !this._disabled && this._map._zoom > this._map.getMinZoom() && this._map.zoomOut(this._map.options.zoomDelta * (t.shiftKey ? 3 : 1));
+    },
+    _createButton: function _createButton(t, i, e, n, o) {
+      var s = si("a", e, n);
+      return s.innerHTML = t, s.href = "#", s.title = i, s.setAttribute("role", "button"), s.setAttribute("aria-label", i), Oi(s), zi(s, "click", Ni), zi(s, "click", o, this), zi(s, "click", this._refocusOnMap, this), s;
+    },
+    _updateDisabled: function _updateDisabled() {
+      var t = this._map,
+          i = "leaflet-disabled";
+      _i(this._zoomInButton, i), _i(this._zoomOutButton, i), !this._disabled && t._zoom !== t.getMinZoom() || ci(this._zoomOutButton, i), !this._disabled && t._zoom !== t.getMaxZoom() || ci(this._zoomInButton, i);
+    }
+  });
+  Ki.mergeOptions({
+    zoomControl: !0
+  }), Ki.addInitHook(function () {
+    this.options.zoomControl && (this.zoomControl = new $i(), this.addControl(this.zoomControl));
+  });
+  var Qi = Xi.extend({
+    options: {
+      position: "bottomleft",
+      maxWidth: 100,
+      metric: !0,
+      imperial: !0
+    },
+    onAdd: function onAdd(t) {
+      var i = "leaflet-control-scale",
+          e = si("div", i),
+          n = this.options;
+      return this._addScales(n, i + "-line", e), t.on(n.updateWhenIdle ? "moveend" : "move", this._update, this), t.whenReady(this._update, this), e;
+    },
+    onRemove: function onRemove(t) {
+      t.off(this.options.updateWhenIdle ? "moveend" : "move", this._update, this);
+    },
+    _addScales: function _addScales(t, i, e) {
+      t.metric && (this._mScale = si("div", i, e)), t.imperial && (this._iScale = si("div", i, e));
+    },
+    _update: function _update() {
+      var t = this._map,
+          i = t.getSize().y / 2,
+          e = t.distance(t.containerPointToLatLng([0, i]), t.containerPointToLatLng([this.options.maxWidth, i]));
+
+      this._updateScales(e);
+    },
+    _updateScales: function _updateScales(t) {
+      this.options.metric && t && this._updateMetric(t), this.options.imperial && t && this._updateImperial(t);
+    },
+    _updateMetric: function _updateMetric(t) {
+      var i = this._getRoundNum(t),
+          e = i < 1e3 ? i + " m" : i / 1e3 + " km";
+
+      this._updateScale(this._mScale, e, i / t);
+    },
+    _updateImperial: function _updateImperial(t) {
+      var i,
+          e,
+          n,
+          o = 3.2808399 * t;
+      5280 < o ? (i = o / 5280, e = this._getRoundNum(i), this._updateScale(this._iScale, e + " mi", e / i)) : (n = this._getRoundNum(o), this._updateScale(this._iScale, n + " ft", n / o));
+    },
+    _updateScale: function _updateScale(t, i, e) {
+      t.style.width = Math.round(this.options.maxWidth * e) + "px", t.innerHTML = i;
+    },
+    _getRoundNum: function _getRoundNum(t) {
+      var i = Math.pow(10, (Math.floor(t) + "").length - 1),
+          e = t / i;
+      return i * (e = 10 <= e ? 10 : 5 <= e ? 5 : 3 <= e ? 3 : 2 <= e ? 2 : 1);
+    }
+  }),
+      te = Xi.extend({
+    options: {
+      position: "bottomright",
+      prefix: '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+    },
+    initialize: function initialize(t) {
+      c(this, t), this._attributions = {};
+    },
+    onAdd: function onAdd(t) {
+      for (var i in (t.attributionControl = this)._container = si("div", "leaflet-control-attribution"), Oi(this._container), t._layers) {
+        t._layers[i].getAttribution && this.addAttribution(t._layers[i].getAttribution());
+      }
+
+      return this._update(), this._container;
+    },
+    setPrefix: function setPrefix(t) {
+      return this.options.prefix = t, this._update(), this;
+    },
+    addAttribution: function addAttribution(t) {
+      return t && (this._attributions[t] || (this._attributions[t] = 0), this._attributions[t]++, this._update()), this;
+    },
+    removeAttribution: function removeAttribution(t) {
+      return t && this._attributions[t] && (this._attributions[t]--, this._update()), this;
+    },
+    _update: function _update() {
+      if (this._map) {
+        var t = [];
+
+        for (var i in this._attributions) {
+          this._attributions[i] && t.push(i);
+        }
+
+        var e = [];
+        this.options.prefix && e.push(this.options.prefix), t.length && e.push(t.join(", ")), this._container.innerHTML = e.join(" | ");
+      }
+    }
+  });
+  Ki.mergeOptions({
+    attributionControl: !0
+  }), Ki.addInitHook(function () {
+    this.options.attributionControl && new te().addTo(this);
+  });
+  Xi.Layers = Ji, Xi.Zoom = $i, Xi.Scale = Qi, Xi.Attribution = te, Yi.layers = function (t, i, e) {
+    return new Ji(t, i, e);
+  }, Yi.zoom = function (t) {
+    return new $i(t);
+  }, Yi.scale = function (t) {
+    return new Qi(t);
+  }, Yi.attribution = function (t) {
+    return new te(t);
+  };
+  var ie = S.extend({
+    initialize: function initialize(t) {
+      this._map = t;
+    },
+    enable: function enable() {
+      return this._enabled || (this._enabled = !0, this.addHooks()), this;
+    },
+    disable: function disable() {
+      return this._enabled && (this._enabled = !1, this.removeHooks()), this;
+    },
+    enabled: function enabled() {
+      return !!this._enabled;
+    }
+  });
+
+  ie.addTo = function (t, i) {
+    return t.addHandler(i, this), this;
+  };
+
+  var ee,
+      ne = {
+    Events: Z
+  },
+      oe = bt ? "touchstart mousedown" : "mousedown",
+      se = {
+    mousedown: "mouseup",
+    touchstart: "touchend",
+    pointerdown: "touchend",
+    MSPointerDown: "touchend"
+  },
+      re = {
+    mousedown: "mousemove",
+    touchstart: "touchmove",
+    pointerdown: "touchmove",
+    MSPointerDown: "touchmove"
+  },
+      ae = E.extend({
+    options: {
+      clickTolerance: 3
+    },
+    initialize: function initialize(t, i, e, n) {
+      c(this, n), this._element = t, this._dragStartTarget = i || t, this._preventOutline = e;
+    },
+    enable: function enable() {
+      this._enabled || (zi(this._dragStartTarget, oe, this._onDown, this), this._enabled = !0);
+    },
+    disable: function disable() {
+      this._enabled && (ae._dragging === this && this.finishDrag(), Si(this._dragStartTarget, oe, this._onDown, this), this._enabled = !1, this._moved = !1);
+    },
+    _onDown: function _onDown(t) {
+      var i, e;
+      !t._simulated && this._enabled && (this._moved = !1, li(this._element, "leaflet-zoom-anim") || ae._dragging || t.shiftKey || 1 !== t.which && 1 !== t.button && !t.touches || ((ae._dragging = this)._preventOutline && Pi(this._element), xi(), Xt(), this._moving || (this.fire("down"), i = t.touches ? t.touches[0] : t, e = bi(this._element), this._startPoint = new k(i.clientX, i.clientY), this._parentScale = Ti(e), zi(document, re[t.type], this._onMove, this), zi(document, se[t.type], this._onUp, this))));
+    },
+    _onMove: function _onMove(t) {
+      var i, e;
+      !t._simulated && this._enabled && (t.touches && 1 < t.touches.length ? this._moved = !0 : ((e = new k((i = t.touches && 1 === t.touches.length ? t.touches[0] : t).clientX, i.clientY)._subtract(this._startPoint)).x || e.y) && (Math.abs(e.x) + Math.abs(e.y) < this.options.clickTolerance || (e.x /= this._parentScale.x, e.y /= this._parentScale.y, Ri(t), this._moved || (this.fire("dragstart"), this._moved = !0, this._startPos = yi(this._element).subtract(e), ci(document.body, "leaflet-dragging"), this._lastTarget = t.target || t.srcElement, window.SVGElementInstance && this._lastTarget instanceof window.SVGElementInstance && (this._lastTarget = this._lastTarget.correspondingUseElement), ci(this._lastTarget, "leaflet-drag-target")), this._newPos = this._startPos.add(e), this._moving = !0, z(this._animRequest), this._lastEvent = t, this._animRequest = M(this._updatePosition, this, !0))));
+    },
+    _updatePosition: function _updatePosition() {
+      var t = {
+        originalEvent: this._lastEvent
+      };
+      this.fire("predrag", t), vi(this._element, this._newPos), this.fire("drag", t);
+    },
+    _onUp: function _onUp(t) {
+      !t._simulated && this._enabled && this.finishDrag();
+    },
+    finishDrag: function finishDrag() {
+      for (var t in _i(document.body, "leaflet-dragging"), this._lastTarget && (_i(this._lastTarget, "leaflet-drag-target"), this._lastTarget = null), re) {
+        Si(document, re[t], this._onMove, this), Si(document, se[t], this._onUp, this);
+      }
+
+      wi(), Jt(), this._moved && this._moving && (z(this._animRequest), this.fire("dragend", {
+        distance: this._newPos.distanceTo(this._startPos)
+      })), this._moving = !1, ae._dragging = !1;
+    }
+  });
+
+  function he(t, i) {
+    if (!i || !t.length) return t.slice();
+    var e = i * i;
+    return t = function (t, i) {
+      var e = t.length,
+          n = new ((typeof Uint8Array === "undefined" ? "undefined" : _typeof(Uint8Array)) != void 0 + "" ? Uint8Array : Array)(e);
+      n[0] = n[e - 1] = 1, function t(i, e, n, o, s) {
+        var r,
+            a,
+            h,
+            u = 0;
+
+        for (a = o + 1; a <= s - 1; a++) {
+          h = de(i[a], i[o], i[s], !0), u < h && (r = a, u = h);
+        }
+
+        n < u && (e[r] = 1, t(i, e, n, o, r), t(i, e, n, r, s));
+      }(t, n, i, 0, e - 1);
+      var o,
+          s = [];
+
+      for (o = 0; o < e; o++) {
+        n[o] && s.push(t[o]);
+      }
+
+      return s;
+    }(t = function (t, i) {
+      for (var e = [t[0]], n = 1, o = 0, s = t.length; n < s; n++) {
+        (function (t, i) {
+          var e = i.x - t.x,
+              n = i.y - t.y;
+          return e * e + n * n;
+        })(t[n], t[o]) > i && (e.push(t[n]), o = n);
+      }
+
+      o < s - 1 && e.push(t[s - 1]);
+      return e;
+    }(t, e), e);
+  }
+
+  function ue(t, i, e) {
+    return Math.sqrt(de(t, i, e, !0));
+  }
+
+  function le(t, i, e, n, o) {
+    var s,
+        r,
+        a,
+        h = n ? ee : _e(t, e),
+        u = _e(i, e);
+
+    for (ee = u;;) {
+      if (!(h | u)) return [t, i];
+      if (h & u) return !1;
+      a = _e(r = ce(t, i, s = h || u, e, o), e), s === h ? (t = r, h = a) : (i = r, u = a);
+    }
+  }
+
+  function ce(t, i, e, n, o) {
+    var s,
+        r,
+        a = i.x - t.x,
+        h = i.y - t.y,
+        u = n.min,
+        l = n.max;
+    return 8 & e ? (s = t.x + a * (l.y - t.y) / h, r = l.y) : 4 & e ? (s = t.x + a * (u.y - t.y) / h, r = u.y) : 2 & e ? (s = l.x, r = t.y + h * (l.x - t.x) / a) : 1 & e && (s = u.x, r = t.y + h * (u.x - t.x) / a), new k(s, r, o);
+  }
+
+  function _e(t, i) {
+    var e = 0;
+    return t.x < i.min.x ? e |= 1 : t.x > i.max.x && (e |= 2), t.y < i.min.y ? e |= 4 : t.y > i.max.y && (e |= 8), e;
+  }
+
+  function de(t, i, e, n) {
+    var o,
+        s = i.x,
+        r = i.y,
+        a = e.x - s,
+        h = e.y - r,
+        u = a * a + h * h;
+    return 0 < u && (1 < (o = ((t.x - s) * a + (t.y - r) * h) / u) ? (s = e.x, r = e.y) : 0 < o && (s += a * o, r += h * o)), a = t.x - s, h = t.y - r, n ? a * a + h * h : new k(s, r);
+  }
+
+  function pe(t) {
+    return !g(t[0]) || "object" != _typeof(t[0][0]) && void 0 !== t[0][0];
+  }
+
+  function me(t) {
+    return console.warn("Deprecated use of _flat, please use L.LineUtil.isFlat instead."), pe(t);
+  }
+
+  var fe = {
+    simplify: he,
+    pointToSegmentDistance: ue,
+    closestPointOnSegment: function closestPointOnSegment(t, i, e) {
+      return de(t, i, e);
+    },
+    clipSegment: le,
+    _getEdgeIntersection: ce,
+    _getBitCode: _e,
+    _sqClosestPointOnSegment: de,
+    isFlat: pe,
+    _flat: me
+  };
+
+  function ge(t, i, e) {
+    for (var n, o, s, r, a, h, u, l = [1, 4, 2, 8], c = 0, _ = t.length; c < _; c++) {
+      t[c]._code = _e(t[c], i);
+    }
+
+    for (s = 0; s < 4; s++) {
+      for (h = l[s], n = [], c = 0, o = (_ = t.length) - 1; c < _; o = c++) {
+        r = t[c], a = t[o], r._code & h ? a._code & h || ((u = ce(a, r, h, i, e))._code = _e(u, i), n.push(u)) : (a._code & h && ((u = ce(a, r, h, i, e))._code = _e(u, i), n.push(u)), n.push(r));
+      }
+
+      t = n;
+    }
+
+    return t;
+  }
+
+  var ve,
+      ye = {
+    clipPolygon: ge
+  },
+      xe = {
+    project: function project(t) {
+      return new k(t.lng, t.lat);
+    },
+    unproject: function unproject(t) {
+      return new D(t.y, t.x);
+    },
+    bounds: new I([-180, -90], [180, 90])
+  },
+      we = {
+    R: 6378137,
+    R_MINOR: 6356752.314245179,
+    bounds: new I([-20037508.34279, -15496570.73972], [20037508.34279, 18764656.23138]),
+    project: function project(t) {
+      var i = Math.PI / 180,
+          e = this.R,
+          n = t.lat * i,
+          o = this.R_MINOR / e,
+          s = Math.sqrt(1 - o * o),
+          r = s * Math.sin(n),
+          a = Math.tan(Math.PI / 4 - n / 2) / Math.pow((1 - r) / (1 + r), s / 2),
+          n = -e * Math.log(Math.max(a, 1e-10));
+      return new k(t.lng * i * e, n);
+    },
+    unproject: function unproject(t) {
+      for (var i, e = 180 / Math.PI, n = this.R, o = this.R_MINOR / n, s = Math.sqrt(1 - o * o), r = Math.exp(-t.y / n), a = Math.PI / 2 - 2 * Math.atan(r), h = 0, u = .1; h < 15 && 1e-7 < Math.abs(u); h++) {
+        i = s * Math.sin(a), i = Math.pow((1 - i) / (1 + i), s / 2), a += u = Math.PI / 2 - 2 * Math.atan(r * i) - a;
+      }
+
+      return new D(a * e, t.x * e / n);
+    }
+  },
+      Pe = {
+    LonLat: xe,
+    Mercator: we,
+    SphericalMercator: V
+  },
+      Le = h({}, F, {
+    code: "EPSG:3395",
+    projection: we,
+    transformation: G(ve = .5 / (Math.PI * we.R), .5, -ve, .5)
+  }),
+      be = h({}, F, {
+    code: "EPSG:4326",
+    projection: xe,
+    transformation: G(1 / 180, 1, -1 / 180, .5)
+  }),
+      Te = h({}, H, {
+    projection: xe,
+    transformation: G(1, 0, -1, 0),
+    scale: function scale(t) {
+      return Math.pow(2, t);
+    },
+    zoom: function zoom(t) {
+      return Math.log(t) / Math.LN2;
+    },
+    distance: function distance(t, i) {
+      var e = i.lng - t.lng,
+          n = i.lat - t.lat;
+      return Math.sqrt(e * e + n * n);
+    },
+    infinite: !0
+  });
+  H.Earth = F, H.EPSG3395 = Le, H.EPSG3857 = Y, H.EPSG900913 = X, H.EPSG4326 = be, H.Simple = Te;
+  var Me = E.extend({
+    options: {
+      pane: "overlayPane",
+      attribution: null,
+      bubblingMouseEvents: !0
+    },
+    addTo: function addTo(t) {
+      return t.addLayer(this), this;
+    },
+    remove: function remove() {
+      return this.removeFrom(this._map || this._mapToAdd);
+    },
+    removeFrom: function removeFrom(t) {
+      return t && t.removeLayer(this), this;
+    },
+    getPane: function getPane(t) {
+      return this._map.getPane(t ? this.options[t] || t : this.options.pane);
+    },
+    addInteractiveTarget: function addInteractiveTarget(t) {
+      return this._map._targets[m(t)] = this;
+    },
+    removeInteractiveTarget: function removeInteractiveTarget(t) {
+      return delete this._map._targets[m(t)], this;
+    },
+    getAttribution: function getAttribution() {
+      return this.options.attribution;
+    },
+    _layerAdd: function _layerAdd(t) {
+      var i,
+          e = t.target;
+      e.hasLayer(this) && (this._map = e, this._zoomAnimated = e._zoomAnimated, this.getEvents && (i = this.getEvents(), e.on(i, this), this.once("remove", function () {
+        e.off(i, this);
+      }, this)), this.onAdd(e), this.getAttribution && e.attributionControl && e.attributionControl.addAttribution(this.getAttribution()), this.fire("add"), e.fire("layeradd", {
+        layer: this
+      }));
+    }
+  });
+  Ki.include({
+    addLayer: function addLayer(t) {
+      if (!t._layerAdd) throw new Error("The provided object is not a Layer.");
+      var i = m(t);
+      return this._layers[i] || ((this._layers[i] = t)._mapToAdd = this, t.beforeAdd && t.beforeAdd(this), this.whenReady(t._layerAdd, t)), this;
+    },
+    removeLayer: function removeLayer(t) {
+      var i = m(t);
+      return this._layers[i] && (this._loaded && t.onRemove(this), t.getAttribution && this.attributionControl && this.attributionControl.removeAttribution(t.getAttribution()), delete this._layers[i], this._loaded && (this.fire("layerremove", {
+        layer: t
+      }), t.fire("remove")), t._map = t._mapToAdd = null), this;
+    },
+    hasLayer: function hasLayer(t) {
+      return !!t && m(t) in this._layers;
+    },
+    eachLayer: function eachLayer(t, i) {
+      for (var e in this._layers) {
+        t.call(i, this._layers[e]);
+      }
+
+      return this;
+    },
+    _addLayers: function _addLayers(t) {
+      for (var i = 0, e = (t = t ? g(t) ? t : [t] : []).length; i < e; i++) {
+        this.addLayer(t[i]);
+      }
+    },
+    _addZoomLimit: function _addZoomLimit(t) {
+      !isNaN(t.options.maxZoom) && isNaN(t.options.minZoom) || (this._zoomBoundLayers[m(t)] = t, this._updateZoomLevels());
+    },
+    _removeZoomLimit: function _removeZoomLimit(t) {
+      var i = m(t);
+      this._zoomBoundLayers[i] && (delete this._zoomBoundLayers[i], this._updateZoomLevels());
+    },
+    _updateZoomLevels: function _updateZoomLevels() {
+      var t = 1 / 0,
+          i = -1 / 0,
+          e = this._getZoomSpan();
+
+      for (var n in this._zoomBoundLayers) {
+        var o = this._zoomBoundLayers[n].options,
+            t = void 0 === o.minZoom ? t : Math.min(t, o.minZoom),
+            i = void 0 === o.maxZoom ? i : Math.max(i, o.maxZoom);
+      }
+
+      this._layersMaxZoom = i === -1 / 0 ? void 0 : i, this._layersMinZoom = t === 1 / 0 ? void 0 : t, e !== this._getZoomSpan() && this.fire("zoomlevelschange"), void 0 === this.options.maxZoom && this._layersMaxZoom && this.getZoom() > this._layersMaxZoom && this.setZoom(this._layersMaxZoom), void 0 === this.options.minZoom && this._layersMinZoom && this.getZoom() < this._layersMinZoom && this.setZoom(this._layersMinZoom);
+    }
+  });
+  var ze = Me.extend({
+    initialize: function initialize(t, i) {
+      var e, n;
+      if (c(this, i), this._layers = {}, t) for (e = 0, n = t.length; e < n; e++) {
+        this.addLayer(t[e]);
+      }
+    },
+    addLayer: function addLayer(t) {
+      var i = this.getLayerId(t);
+      return this._layers[i] = t, this._map && this._map.addLayer(t), this;
+    },
+    removeLayer: function removeLayer(t) {
+      var i = t in this._layers ? t : this.getLayerId(t);
+      return this._map && this._layers[i] && this._map.removeLayer(this._layers[i]), delete this._layers[i], this;
+    },
+    hasLayer: function hasLayer(t) {
+      return !!t && ("number" == typeof t ? t : this.getLayerId(t)) in this._layers;
+    },
+    clearLayers: function clearLayers() {
+      return this.eachLayer(this.removeLayer, this);
+    },
+    invoke: function invoke(t) {
+      var i,
+          e,
+          n = Array.prototype.slice.call(arguments, 1);
+
+      for (i in this._layers) {
+        (e = this._layers[i])[t] && e[t].apply(e, n);
+      }
+
+      return this;
+    },
+    onAdd: function onAdd(t) {
+      this.eachLayer(t.addLayer, t);
+    },
+    onRemove: function onRemove(t) {
+      this.eachLayer(t.removeLayer, t);
+    },
+    eachLayer: function eachLayer(t, i) {
+      for (var e in this._layers) {
+        t.call(i, this._layers[e]);
+      }
+
+      return this;
+    },
+    getLayer: function getLayer(t) {
+      return this._layers[t];
+    },
+    getLayers: function getLayers() {
+      var t = [];
+      return this.eachLayer(t.push, t), t;
+    },
+    setZIndex: function setZIndex(t) {
+      return this.invoke("setZIndex", t);
+    },
+    getLayerId: m
+  }),
+      Ce = ze.extend({
+    addLayer: function addLayer(t) {
+      return this.hasLayer(t) ? this : (t.addEventParent(this), ze.prototype.addLayer.call(this, t), this.fire("layeradd", {
+        layer: t
+      }));
+    },
+    removeLayer: function removeLayer(t) {
+      return this.hasLayer(t) ? (t in this._layers && (t = this._layers[t]), t.removeEventParent(this), ze.prototype.removeLayer.call(this, t), this.fire("layerremove", {
+        layer: t
+      })) : this;
+    },
+    setStyle: function setStyle(t) {
+      return this.invoke("setStyle", t);
+    },
+    bringToFront: function bringToFront() {
+      return this.invoke("bringToFront");
+    },
+    bringToBack: function bringToBack() {
+      return this.invoke("bringToBack");
+    },
+    getBounds: function getBounds() {
+      var t = new R();
+
+      for (var i in this._layers) {
+        var e = this._layers[i];
+        t.extend(e.getBounds ? e.getBounds() : e.getLatLng());
+      }
+
+      return t;
+    }
+  }),
+      Se = S.extend({
+    options: {
+      popupAnchor: [0, 0],
+      tooltipAnchor: [0, 0]
+    },
+    initialize: function initialize(t) {
+      c(this, t);
+    },
+    createIcon: function createIcon(t) {
+      return this._createIcon("icon", t);
+    },
+    createShadow: function createShadow(t) {
+      return this._createIcon("shadow", t);
+    },
+    _createIcon: function _createIcon(t, i) {
+      var e = this._getIconUrl(t);
+
+      if (!e) {
+        if ("icon" === t) throw new Error("iconUrl not set in Icon options (see the docs).");
+        return null;
+      }
+
+      var n = this._createImg(e, i && "IMG" === i.tagName ? i : null);
+
+      return this._setIconStyles(n, t), n;
+    },
+    _setIconStyles: function _setIconStyles(t, i) {
+      var e = this.options,
+          n = e[i + "Size"];
+      "number" == typeof n && (n = [n, n]);
+      var o = A(n),
+          s = A("shadow" === i && e.shadowAnchor || e.iconAnchor || o && o.divideBy(2, !0));
+      t.className = "leaflet-marker-" + i + " " + (e.className || ""), s && (t.style.marginLeft = -s.x + "px", t.style.marginTop = -s.y + "px"), o && (t.style.width = o.x + "px", t.style.height = o.y + "px");
+    },
+    _createImg: function _createImg(t, i) {
+      return (i = i || document.createElement("img")).src = t, i;
+    },
+    _getIconUrl: function _getIconUrl(t) {
+      return zt && this.options[t + "RetinaUrl"] || this.options[t + "Url"];
+    }
+  });
+  var Ze = Se.extend({
+    options: {
+      iconUrl: "marker-icon.png",
+      iconRetinaUrl: "marker-icon-2x.png",
+      shadowUrl: "marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      tooltipAnchor: [16, -28],
+      shadowSize: [41, 41]
+    },
+    _getIconUrl: function _getIconUrl(t) {
+      return Ze.imagePath || (Ze.imagePath = this._detectIconPath()), (this.options.imagePath || Ze.imagePath) + Se.prototype._getIconUrl.call(this, t);
+    },
+    _detectIconPath: function _detectIconPath() {
+      var t = si("div", "leaflet-default-icon-path", document.body),
+          i = oi(t, "background-image") || oi(t, "backgroundImage");
+      return document.body.removeChild(t), i = null === i || 0 !== i.indexOf("url") ? "" : i.replace(/^url\(["']?/, "").replace(/marker-icon\.png["']?\)$/, "");
+    }
+  }),
+      Ee = ie.extend({
+    initialize: function initialize(t) {
+      this._marker = t;
+    },
+    addHooks: function addHooks() {
+      var t = this._marker._icon;
+      this._draggable || (this._draggable = new ae(t, t, !0)), this._draggable.on({
+        dragstart: this._onDragStart,
+        predrag: this._onPreDrag,
+        drag: this._onDrag,
+        dragend: this._onDragEnd
+      }, this).enable(), ci(t, "leaflet-marker-draggable");
+    },
+    removeHooks: function removeHooks() {
+      this._draggable.off({
+        dragstart: this._onDragStart,
+        predrag: this._onPreDrag,
+        drag: this._onDrag,
+        dragend: this._onDragEnd
+      }, this).disable(), this._marker._icon && _i(this._marker._icon, "leaflet-marker-draggable");
+    },
+    moved: function moved() {
+      return this._draggable && this._draggable._moved;
+    },
+    _adjustPan: function _adjustPan(t) {
+      var i,
+          e = this._marker,
+          n = e._map,
+          o = this._marker.options.autoPanSpeed,
+          s = this._marker.options.autoPanPadding,
+          r = yi(e._icon),
+          a = n.getPixelBounds(),
+          h = n.getPixelOrigin(),
+          u = O(a.min._subtract(h).add(s), a.max._subtract(h).subtract(s));
+      u.contains(r) || (i = A((Math.max(u.max.x, r.x) - u.max.x) / (a.max.x - u.max.x) - (Math.min(u.min.x, r.x) - u.min.x) / (a.min.x - u.min.x), (Math.max(u.max.y, r.y) - u.max.y) / (a.max.y - u.max.y) - (Math.min(u.min.y, r.y) - u.min.y) / (a.min.y - u.min.y)).multiplyBy(o), n.panBy(i, {
+        animate: !1
+      }), this._draggable._newPos._add(i), this._draggable._startPos._add(i), vi(e._icon, this._draggable._newPos), this._onDrag(t), this._panRequest = M(this._adjustPan.bind(this, t)));
+    },
+    _onDragStart: function _onDragStart() {
+      this._oldLatLng = this._marker.getLatLng(), this._marker.closePopup && this._marker.closePopup(), this._marker.fire("movestart").fire("dragstart");
+    },
+    _onPreDrag: function _onPreDrag(t) {
+      this._marker.options.autoPan && (z(this._panRequest), this._panRequest = M(this._adjustPan.bind(this, t)));
+    },
+    _onDrag: function _onDrag(t) {
+      var i = this._marker,
+          e = i._shadow,
+          n = yi(i._icon),
+          o = i._map.layerPointToLatLng(n);
+
+      e && vi(e, n), i._latlng = o, t.latlng = o, t.oldLatLng = this._oldLatLng, i.fire("move", t).fire("drag", t);
+    },
+    _onDragEnd: function _onDragEnd(t) {
+      z(this._panRequest), delete this._oldLatLng, this._marker.fire("moveend").fire("dragend", t);
+    }
+  }),
+      ke = Me.extend({
+    options: {
+      icon: new Ze(),
+      interactive: !0,
+      keyboard: !0,
+      title: "",
+      alt: "",
+      zIndexOffset: 0,
+      opacity: 1,
+      riseOnHover: !1,
+      riseOffset: 250,
+      pane: "markerPane",
+      shadowPane: "shadowPane",
+      bubblingMouseEvents: !1,
+      draggable: !1,
+      autoPan: !1,
+      autoPanPadding: [50, 50],
+      autoPanSpeed: 10
+    },
+    initialize: function initialize(t, i) {
+      c(this, i), this._latlng = j(t);
+    },
+    onAdd: function onAdd(t) {
+      this._zoomAnimated = this._zoomAnimated && t.options.markerZoomAnimation, this._zoomAnimated && t.on("zoomanim", this._animateZoom, this), this._initIcon(), this.update();
+    },
+    onRemove: function onRemove(t) {
+      this.dragging && this.dragging.enabled() && (this.options.draggable = !0, this.dragging.removeHooks()), delete this.dragging, this._zoomAnimated && t.off("zoomanim", this._animateZoom, this), this._removeIcon(), this._removeShadow();
+    },
+    getEvents: function getEvents() {
+      return {
+        zoom: this.update,
+        viewreset: this.update
+      };
+    },
+    getLatLng: function getLatLng() {
+      return this._latlng;
+    },
+    setLatLng: function setLatLng(t) {
+      var i = this._latlng;
+      return this._latlng = j(t), this.update(), this.fire("move", {
+        oldLatLng: i,
+        latlng: this._latlng
+      });
+    },
+    setZIndexOffset: function setZIndexOffset(t) {
+      return this.options.zIndexOffset = t, this.update();
+    },
+    getIcon: function getIcon() {
+      return this.options.icon;
+    },
+    setIcon: function setIcon(t) {
+      return this.options.icon = t, this._map && (this._initIcon(), this.update()), this._popup && this.bindPopup(this._popup, this._popup.options), this;
+    },
+    getElement: function getElement() {
+      return this._icon;
+    },
+    update: function update() {
+      var t;
+      return this._icon && this._map && (t = this._map.latLngToLayerPoint(this._latlng).round(), this._setPos(t)), this;
+    },
+    _initIcon: function _initIcon() {
+      var t = this.options,
+          i = "leaflet-zoom-" + (this._zoomAnimated ? "animated" : "hide"),
+          e = t.icon.createIcon(this._icon),
+          n = !1;
+      e !== this._icon && (this._icon && this._removeIcon(), n = !0, t.title && (e.title = t.title), "IMG" === e.tagName && (e.alt = t.alt || "")), ci(e, i), t.keyboard && (e.tabIndex = "0"), this._icon = e, t.riseOnHover && this.on({
+        mouseover: this._bringToFront,
+        mouseout: this._resetZIndex
+      });
+      var o = t.icon.createShadow(this._shadow),
+          s = !1;
+      o !== this._shadow && (this._removeShadow(), s = !0), o && (ci(o, i), o.alt = ""), this._shadow = o, t.opacity < 1 && this._updateOpacity(), n && this.getPane().appendChild(this._icon), this._initInteraction(), o && s && this.getPane(t.shadowPane).appendChild(this._shadow);
+    },
+    _removeIcon: function _removeIcon() {
+      this.options.riseOnHover && this.off({
+        mouseover: this._bringToFront,
+        mouseout: this._resetZIndex
+      }), ri(this._icon), this.removeInteractiveTarget(this._icon), this._icon = null;
+    },
+    _removeShadow: function _removeShadow() {
+      this._shadow && ri(this._shadow), this._shadow = null;
+    },
+    _setPos: function _setPos(t) {
+      this._icon && vi(this._icon, t), this._shadow && vi(this._shadow, t), this._zIndex = t.y + this.options.zIndexOffset, this._resetZIndex();
+    },
+    _updateZIndex: function _updateZIndex(t) {
+      this._icon && (this._icon.style.zIndex = this._zIndex + t);
+    },
+    _animateZoom: function _animateZoom(t) {
+      var i = this._map._latLngToNewLayerPoint(this._latlng, t.zoom, t.center).round();
+
+      this._setPos(i);
+    },
+    _initInteraction: function _initInteraction() {
+      var t;
+      this.options.interactive && (ci(this._icon, "leaflet-interactive"), this.addInteractiveTarget(this._icon), Ee && (t = this.options.draggable, this.dragging && (t = this.dragging.enabled(), this.dragging.disable()), this.dragging = new Ee(this), t && this.dragging.enable()));
+    },
+    setOpacity: function setOpacity(t) {
+      return this.options.opacity = t, this._map && this._updateOpacity(), this;
+    },
+    _updateOpacity: function _updateOpacity() {
+      var t = this.options.opacity;
+      this._icon && mi(this._icon, t), this._shadow && mi(this._shadow, t);
+    },
+    _bringToFront: function _bringToFront() {
+      this._updateZIndex(this.options.riseOffset);
+    },
+    _resetZIndex: function _resetZIndex() {
+      this._updateZIndex(0);
+    },
+    _getPopupAnchor: function _getPopupAnchor() {
+      return this.options.icon.options.popupAnchor;
+    },
+    _getTooltipAnchor: function _getTooltipAnchor() {
+      return this.options.icon.options.tooltipAnchor;
+    }
+  });
+  var Be = Me.extend({
+    options: {
+      stroke: !0,
+      color: "#3388ff",
+      weight: 3,
+      opacity: 1,
+      lineCap: "round",
+      lineJoin: "round",
+      dashArray: null,
+      dashOffset: null,
+      fill: !1,
+      fillColor: null,
+      fillOpacity: .2,
+      fillRule: "evenodd",
+      interactive: !0,
+      bubblingMouseEvents: !0
+    },
+    beforeAdd: function beforeAdd(t) {
+      this._renderer = t.getRenderer(this);
+    },
+    onAdd: function onAdd() {
+      this._renderer._initPath(this), this._reset(), this._renderer._addPath(this);
+    },
+    onRemove: function onRemove() {
+      this._renderer._removePath(this);
+    },
+    redraw: function redraw() {
+      return this._map && this._renderer._updatePath(this), this;
+    },
+    setStyle: function setStyle(t) {
+      return c(this, t), this._renderer && (this._renderer._updateStyle(this), this.options.stroke && t && Object.prototype.hasOwnProperty.call(t, "weight") && this._updateBounds()), this;
+    },
+    bringToFront: function bringToFront() {
+      return this._renderer && this._renderer._bringToFront(this), this;
+    },
+    bringToBack: function bringToBack() {
+      return this._renderer && this._renderer._bringToBack(this), this;
+    },
+    getElement: function getElement() {
+      return this._path;
+    },
+    _reset: function _reset() {
+      this._project(), this._update();
+    },
+    _clickTolerance: function _clickTolerance() {
+      return (this.options.stroke ? this.options.weight / 2 : 0) + this._renderer.options.tolerance;
+    }
+  }),
+      Ae = Be.extend({
+    options: {
+      fill: !0,
+      radius: 10
+    },
+    initialize: function initialize(t, i) {
+      c(this, i), this._latlng = j(t), this._radius = this.options.radius;
+    },
+    setLatLng: function setLatLng(t) {
+      var i = this._latlng;
+      return this._latlng = j(t), this.redraw(), this.fire("move", {
+        oldLatLng: i,
+        latlng: this._latlng
+      });
+    },
+    getLatLng: function getLatLng() {
+      return this._latlng;
+    },
+    setRadius: function setRadius(t) {
+      return this.options.radius = this._radius = t, this.redraw();
+    },
+    getRadius: function getRadius() {
+      return this._radius;
+    },
+    setStyle: function setStyle(t) {
+      var i = t && t.radius || this._radius;
+      return Be.prototype.setStyle.call(this, t), this.setRadius(i), this;
+    },
+    _project: function _project() {
+      this._point = this._map.latLngToLayerPoint(this._latlng), this._updateBounds();
+    },
+    _updateBounds: function _updateBounds() {
+      var t = this._radius,
+          i = this._radiusY || t,
+          e = this._clickTolerance(),
+          n = [t + e, i + e];
+
+      this._pxBounds = new I(this._point.subtract(n), this._point.add(n));
+    },
+    _update: function _update() {
+      this._map && this._updatePath();
+    },
+    _updatePath: function _updatePath() {
+      this._renderer._updateCircle(this);
+    },
+    _empty: function _empty() {
+      return this._radius && !this._renderer._bounds.intersects(this._pxBounds);
+    },
+    _containsPoint: function _containsPoint(t) {
+      return t.distanceTo(this._point) <= this._radius + this._clickTolerance();
+    }
+  });
+  var Ie = Ae.extend({
+    initialize: function initialize(t, i, e) {
+      if ("number" == typeof i && (i = h({}, e, {
+        radius: i
+      })), c(this, i), this._latlng = j(t), isNaN(this.options.radius)) throw new Error("Circle radius cannot be NaN");
+      this._mRadius = this.options.radius;
+    },
+    setRadius: function setRadius(t) {
+      return this._mRadius = t, this.redraw();
+    },
+    getRadius: function getRadius() {
+      return this._mRadius;
+    },
+    getBounds: function getBounds() {
+      var t = [this._radius, this._radiusY || this._radius];
+      return new R(this._map.layerPointToLatLng(this._point.subtract(t)), this._map.layerPointToLatLng(this._point.add(t)));
+    },
+    setStyle: Be.prototype.setStyle,
+    _project: function _project() {
+      var t,
+          i,
+          e,
+          n,
+          o,
+          s,
+          r,
+          a,
+          h = this._latlng.lng,
+          u = this._latlng.lat,
+          l = this._map,
+          c = l.options.crs;
+      c.distance === F.distance ? (t = Math.PI / 180, i = this._mRadius / F.R / t, e = l.project([u + i, h]), n = l.project([u - i, h]), o = e.add(n).divideBy(2), s = l.unproject(o).lat, r = Math.acos((Math.cos(i * t) - Math.sin(u * t) * Math.sin(s * t)) / (Math.cos(u * t) * Math.cos(s * t))) / t, !isNaN(r) && 0 !== r || (r = i / Math.cos(Math.PI / 180 * u)), this._point = o.subtract(l.getPixelOrigin()), this._radius = isNaN(r) ? 0 : o.x - l.project([s, h - r]).x, this._radiusY = o.y - e.y) : (a = c.unproject(c.project(this._latlng).subtract([this._mRadius, 0])), this._point = l.latLngToLayerPoint(this._latlng), this._radius = this._point.x - l.latLngToLayerPoint(a).x), this._updateBounds();
+    }
+  });
+  var Oe = Be.extend({
+    options: {
+      smoothFactor: 1,
+      noClip: !1
+    },
+    initialize: function initialize(t, i) {
+      c(this, i), this._setLatLngs(t);
+    },
+    getLatLngs: function getLatLngs() {
+      return this._latlngs;
+    },
+    setLatLngs: function setLatLngs(t) {
+      return this._setLatLngs(t), this.redraw();
+    },
+    isEmpty: function isEmpty() {
+      return !this._latlngs.length;
+    },
+    closestLayerPoint: function closestLayerPoint(t) {
+      for (var i, e, n = 1 / 0, o = null, s = de, r = 0, a = this._parts.length; r < a; r++) {
+        for (var h = this._parts[r], u = 1, l = h.length; u < l; u++) {
+          var c = s(t, i = h[u - 1], e = h[u], !0);
+          c < n && (n = c, o = s(t, i, e));
+        }
+      }
+
+      return o && (o.distance = Math.sqrt(n)), o;
+    },
+    getCenter: function getCenter() {
+      if (!this._map) throw new Error("Must add layer to map before using getCenter()");
+      var t,
+          i,
+          e,
+          n,
+          o,
+          s,
+          r,
+          a = this._rings[0],
+          h = a.length;
+      if (!h) return null;
+
+      for (i = t = 0; t < h - 1; t++) {
+        i += a[t].distanceTo(a[t + 1]) / 2;
+      }
+
+      if (0 === i) return this._map.layerPointToLatLng(a[0]);
+
+      for (n = t = 0; t < h - 1; t++) {
+        if (o = a[t], s = a[t + 1], i < (n += e = o.distanceTo(s))) return r = (n - i) / e, this._map.layerPointToLatLng([s.x - r * (s.x - o.x), s.y - r * (s.y - o.y)]);
+      }
+    },
+    getBounds: function getBounds() {
+      return this._bounds;
+    },
+    addLatLng: function addLatLng(t, i) {
+      return i = i || this._defaultShape(), t = j(t), i.push(t), this._bounds.extend(t), this.redraw();
+    },
+    _setLatLngs: function _setLatLngs(t) {
+      this._bounds = new R(), this._latlngs = this._convertLatLngs(t);
+    },
+    _defaultShape: function _defaultShape() {
+      return pe(this._latlngs) ? this._latlngs : this._latlngs[0];
+    },
+    _convertLatLngs: function _convertLatLngs(t) {
+      for (var i = [], e = pe(t), n = 0, o = t.length; n < o; n++) {
+        e ? (i[n] = j(t[n]), this._bounds.extend(i[n])) : i[n] = this._convertLatLngs(t[n]);
+      }
+
+      return i;
+    },
+    _project: function _project() {
+      var t = new I();
+      this._rings = [], this._projectLatlngs(this._latlngs, this._rings, t), this._bounds.isValid() && t.isValid() && (this._rawPxBounds = t, this._updateBounds());
+    },
+    _updateBounds: function _updateBounds() {
+      var t = this._clickTolerance(),
+          i = new k(t, t);
+
+      this._pxBounds = new I([this._rawPxBounds.min.subtract(i), this._rawPxBounds.max.add(i)]);
+    },
+    _projectLatlngs: function _projectLatlngs(t, i, e) {
+      var n,
+          o,
+          s = t[0] instanceof D,
+          r = t.length;
+
+      if (s) {
+        for (o = [], n = 0; n < r; n++) {
+          o[n] = this._map.latLngToLayerPoint(t[n]), e.extend(o[n]);
+        }
+
+        i.push(o);
+      } else for (n = 0; n < r; n++) {
+        this._projectLatlngs(t[n], i, e);
+      }
+    },
+    _clipPoints: function _clipPoints() {
+      var t = this._renderer._bounds;
+      if (this._parts = [], this._pxBounds && this._pxBounds.intersects(t)) if (this.options.noClip) this._parts = this._rings;else for (var i, e, n, o, s = this._parts, r = 0, a = 0, h = this._rings.length; r < h; r++) {
+        for (i = 0, e = (o = this._rings[r]).length; i < e - 1; i++) {
+          (n = le(o[i], o[i + 1], t, i, !0)) && (s[a] = s[a] || [], s[a].push(n[0]), n[1] === o[i + 1] && i !== e - 2 || (s[a].push(n[1]), a++));
+        }
+      }
+    },
+    _simplifyPoints: function _simplifyPoints() {
+      for (var t = this._parts, i = this.options.smoothFactor, e = 0, n = t.length; e < n; e++) {
+        t[e] = he(t[e], i);
+      }
+    },
+    _update: function _update() {
+      this._map && (this._clipPoints(), this._simplifyPoints(), this._updatePath());
+    },
+    _updatePath: function _updatePath() {
+      this._renderer._updatePoly(this);
+    },
+    _containsPoint: function _containsPoint(t, i) {
+      var e,
+          n,
+          o,
+          s,
+          r,
+          a,
+          h = this._clickTolerance();
+
+      if (!this._pxBounds || !this._pxBounds.contains(t)) return !1;
+
+      for (e = 0, s = this._parts.length; e < s; e++) {
+        for (n = 0, o = (r = (a = this._parts[e]).length) - 1; n < r; o = n++) {
+          if ((i || 0 !== n) && ue(t, a[o], a[n]) <= h) return !0;
+        }
+      }
+
+      return !1;
+    }
+  });
+  Oe._flat = me;
+  var Re = Oe.extend({
+    options: {
+      fill: !0
+    },
+    isEmpty: function isEmpty() {
+      return !this._latlngs.length || !this._latlngs[0].length;
+    },
+    getCenter: function getCenter() {
+      if (!this._map) throw new Error("Must add layer to map before using getCenter()");
+      var t,
+          i,
+          e,
+          n,
+          o,
+          s,
+          r,
+          a,
+          h,
+          u = this._rings[0],
+          l = u.length;
+      if (!l) return null;
+
+      for (t = s = r = a = 0, i = l - 1; t < l; i = t++) {
+        e = u[t], n = u[i], o = e.y * n.x - n.y * e.x, r += (e.x + n.x) * o, a += (e.y + n.y) * o, s += 3 * o;
+      }
+
+      return h = 0 === s ? u[0] : [r / s, a / s], this._map.layerPointToLatLng(h);
+    },
+    _convertLatLngs: function _convertLatLngs(t) {
+      var i = Oe.prototype._convertLatLngs.call(this, t),
+          e = i.length;
+
+      return 2 <= e && i[0] instanceof D && i[0].equals(i[e - 1]) && i.pop(), i;
+    },
+    _setLatLngs: function _setLatLngs(t) {
+      Oe.prototype._setLatLngs.call(this, t), pe(this._latlngs) && (this._latlngs = [this._latlngs]);
+    },
+    _defaultShape: function _defaultShape() {
+      return pe(this._latlngs[0]) ? this._latlngs[0] : this._latlngs[0][0];
+    },
+    _clipPoints: function _clipPoints() {
+      var t = this._renderer._bounds,
+          i = this.options.weight,
+          e = new k(i, i),
+          t = new I(t.min.subtract(e), t.max.add(e));
+      if (this._parts = [], this._pxBounds && this._pxBounds.intersects(t)) if (this.options.noClip) this._parts = this._rings;else for (var n, o = 0, s = this._rings.length; o < s; o++) {
+        (n = ge(this._rings[o], t, !0)).length && this._parts.push(n);
+      }
+    },
+    _updatePath: function _updatePath() {
+      this._renderer._updatePoly(this, !0);
+    },
+    _containsPoint: function _containsPoint(t) {
+      var i,
+          e,
+          n,
+          o,
+          s,
+          r,
+          a,
+          h,
+          u = !1;
+      if (!this._pxBounds || !this._pxBounds.contains(t)) return !1;
+
+      for (o = 0, a = this._parts.length; o < a; o++) {
+        for (s = 0, r = (h = (i = this._parts[o]).length) - 1; s < h; r = s++) {
+          e = i[s], n = i[r], e.y > t.y != n.y > t.y && t.x < (n.x - e.x) * (t.y - e.y) / (n.y - e.y) + e.x && (u = !u);
+        }
+      }
+
+      return u || Oe.prototype._containsPoint.call(this, t, !0);
+    }
+  });
+  var Ne = Ce.extend({
+    initialize: function initialize(t, i) {
+      c(this, i), this._layers = {}, t && this.addData(t);
+    },
+    addData: function addData(t) {
+      var i,
+          e,
+          n,
+          o = g(t) ? t : t.features;
+
+      if (o) {
+        for (i = 0, e = o.length; i < e; i++) {
+          ((n = o[i]).geometries || n.geometry || n.features || n.coordinates) && this.addData(n);
+        }
+
+        return this;
+      }
+
+      var s = this.options;
+      if (s.filter && !s.filter(t)) return this;
+      var r = De(t, s);
+      return r ? (r.feature = qe(t), r.defaultOptions = r.options, this.resetStyle(r), s.onEachFeature && s.onEachFeature(t, r), this.addLayer(r)) : this;
+    },
+    resetStyle: function resetStyle(t) {
+      return void 0 === t ? this.eachLayer(this.resetStyle, this) : (t.options = h({}, t.defaultOptions), this._setLayerStyle(t, this.options.style), this);
+    },
+    setStyle: function setStyle(i) {
+      return this.eachLayer(function (t) {
+        this._setLayerStyle(t, i);
+      }, this);
+    },
+    _setLayerStyle: function _setLayerStyle(t, i) {
+      t.setStyle && ("function" == typeof i && (i = i(t.feature)), t.setStyle(i));
+    }
+  });
+
+  function De(t, i) {
+    var e,
+        n,
+        o,
+        s,
+        r = "Feature" === t.type ? t.geometry : t,
+        a = r ? r.coordinates : null,
+        h = [],
+        u = i && i.pointToLayer,
+        l = i && i.coordsToLatLng || We;
+    if (!a && !r) return null;
+
+    switch (r.type) {
+      case "Point":
+        return je(u, t, e = l(a), i);
+
+      case "MultiPoint":
+        for (o = 0, s = a.length; o < s; o++) {
+          e = l(a[o]), h.push(je(u, t, e, i));
+        }
+
+        return new Ce(h);
+
+      case "LineString":
+      case "MultiLineString":
+        return n = He(a, "LineString" === r.type ? 0 : 1, l), new Oe(n, i);
+
+      case "Polygon":
+      case "MultiPolygon":
+        return n = He(a, "Polygon" === r.type ? 1 : 2, l), new Re(n, i);
+
+      case "GeometryCollection":
+        for (o = 0, s = r.geometries.length; o < s; o++) {
+          var c = De({
+            geometry: r.geometries[o],
+            type: "Feature",
+            properties: t.properties
+          }, i);
+          c && h.push(c);
+        }
+
+        return new Ce(h);
+
+      default:
+        throw new Error("Invalid GeoJSON object.");
+    }
+  }
+
+  function je(t, i, e, n) {
+    return t ? t(i, e) : new ke(e, n && n.markersInheritOptions && n);
+  }
+
+  function We(t) {
+    return new D(t[1], t[0], t[2]);
+  }
+
+  function He(t, i, e) {
+    for (var n, o = [], s = 0, r = t.length; s < r; s++) {
+      n = i ? He(t[s], i - 1, e) : (e || We)(t[s]), o.push(n);
+    }
+
+    return o;
+  }
+
+  function Fe(t, i) {
+    return i = "number" == typeof i ? i : 6, void 0 !== t.alt ? [r(t.lng, i), r(t.lat, i), r(t.alt, i)] : [r(t.lng, i), r(t.lat, i)];
+  }
+
+  function Ue(t, i, e, n) {
+    for (var o = [], s = 0, r = t.length; s < r; s++) {
+      o.push(i ? Ue(t[s], i - 1, e, n) : Fe(t[s], n));
+    }
+
+    return !i && e && o.push(o[0]), o;
+  }
+
+  function Ve(t, i) {
+    return t.feature ? h({}, t.feature, {
+      geometry: i
+    }) : qe(i);
+  }
+
+  function qe(t) {
+    return "Feature" === t.type || "FeatureCollection" === t.type ? t : {
+      type: "Feature",
+      properties: {},
+      geometry: t
+    };
+  }
+
+  var Ge = {
+    toGeoJSON: function toGeoJSON(t) {
+      return Ve(this, {
+        type: "Point",
+        coordinates: Fe(this.getLatLng(), t)
+      });
+    }
+  };
+
+  function Ke(t, i) {
+    return new Ne(t, i);
+  }
+
+  ke.include(Ge), Ie.include(Ge), Ae.include(Ge), Oe.include({
+    toGeoJSON: function toGeoJSON(t) {
+      var i = !pe(this._latlngs);
+      return Ve(this, {
+        type: (i ? "Multi" : "") + "LineString",
+        coordinates: Ue(this._latlngs, i ? 1 : 0, !1, t)
+      });
+    }
+  }), Re.include({
+    toGeoJSON: function toGeoJSON(t) {
+      var i = !pe(this._latlngs),
+          e = i && !pe(this._latlngs[0]),
+          n = Ue(this._latlngs, e ? 2 : i ? 1 : 0, !0, t);
+      return i || (n = [n]), Ve(this, {
+        type: (e ? "Multi" : "") + "Polygon",
+        coordinates: n
+      });
+    }
+  }), ze.include({
+    toMultiPoint: function toMultiPoint(i) {
+      var e = [];
+      return this.eachLayer(function (t) {
+        e.push(t.toGeoJSON(i).geometry.coordinates);
+      }), Ve(this, {
+        type: "MultiPoint",
+        coordinates: e
+      });
+    },
+    toGeoJSON: function toGeoJSON(n) {
+      var t = this.feature && this.feature.geometry && this.feature.geometry.type;
+      if ("MultiPoint" === t) return this.toMultiPoint(n);
+      var o = "GeometryCollection" === t,
+          s = [];
+      return this.eachLayer(function (t) {
+        var i, e;
+        t.toGeoJSON && (i = t.toGeoJSON(n), o ? s.push(i.geometry) : "FeatureCollection" === (e = qe(i)).type ? s.push.apply(s, e.features) : s.push(e));
+      }), o ? Ve(this, {
+        geometries: s,
+        type: "GeometryCollection"
+      }) : {
+        type: "FeatureCollection",
+        features: s
+      };
+    }
+  });
+  var Ye = Ke,
+      Xe = Me.extend({
+    options: {
+      opacity: 1,
+      alt: "",
+      interactive: !1,
+      crossOrigin: !1,
+      errorOverlayUrl: "",
+      zIndex: 1,
+      className: ""
+    },
+    initialize: function initialize(t, i, e) {
+      this._url = t, this._bounds = N(i), c(this, e);
+    },
+    onAdd: function onAdd() {
+      this._image || (this._initImage(), this.options.opacity < 1 && this._updateOpacity()), this.options.interactive && (ci(this._image, "leaflet-interactive"), this.addInteractiveTarget(this._image)), this.getPane().appendChild(this._image), this._reset();
+    },
+    onRemove: function onRemove() {
+      ri(this._image), this.options.interactive && this.removeInteractiveTarget(this._image);
+    },
+    setOpacity: function setOpacity(t) {
+      return this.options.opacity = t, this._image && this._updateOpacity(), this;
+    },
+    setStyle: function setStyle(t) {
+      return t.opacity && this.setOpacity(t.opacity), this;
+    },
+    bringToFront: function bringToFront() {
+      return this._map && hi(this._image), this;
+    },
+    bringToBack: function bringToBack() {
+      return this._map && ui(this._image), this;
+    },
+    setUrl: function setUrl(t) {
+      return this._url = t, this._image && (this._image.src = t), this;
+    },
+    setBounds: function setBounds(t) {
+      return this._bounds = N(t), this._map && this._reset(), this;
+    },
+    getEvents: function getEvents() {
+      var t = {
+        zoom: this._reset,
+        viewreset: this._reset
+      };
+      return this._zoomAnimated && (t.zoomanim = this._animateZoom), t;
+    },
+    setZIndex: function setZIndex(t) {
+      return this.options.zIndex = t, this._updateZIndex(), this;
+    },
+    getBounds: function getBounds() {
+      return this._bounds;
+    },
+    getElement: function getElement() {
+      return this._image;
+    },
+    _initImage: function _initImage() {
+      var t = "IMG" === this._url.tagName,
+          i = this._image = t ? this._url : si("img");
+      ci(i, "leaflet-image-layer"), this._zoomAnimated && ci(i, "leaflet-zoom-animated"), this.options.className && ci(i, this.options.className), i.onselectstart = a, i.onmousemove = a, i.onload = p(this.fire, this, "load"), i.onerror = p(this._overlayOnError, this, "error"), !this.options.crossOrigin && "" !== this.options.crossOrigin || (i.crossOrigin = !0 === this.options.crossOrigin ? "" : this.options.crossOrigin), this.options.zIndex && this._updateZIndex(), t ? this._url = i.src : (i.src = this._url, i.alt = this.options.alt);
+    },
+    _animateZoom: function _animateZoom(t) {
+      var i = this._map.getZoomScale(t.zoom),
+          e = this._map._latLngBoundsToNewLayerBounds(this._bounds, t.zoom, t.center).min;
+
+      gi(this._image, e, i);
+    },
+    _reset: function _reset() {
+      var t = this._image,
+          i = new I(this._map.latLngToLayerPoint(this._bounds.getNorthWest()), this._map.latLngToLayerPoint(this._bounds.getSouthEast())),
+          e = i.getSize();
+      vi(t, i.min), t.style.width = e.x + "px", t.style.height = e.y + "px";
+    },
+    _updateOpacity: function _updateOpacity() {
+      mi(this._image, this.options.opacity);
+    },
+    _updateZIndex: function _updateZIndex() {
+      this._image && void 0 !== this.options.zIndex && null !== this.options.zIndex && (this._image.style.zIndex = this.options.zIndex);
+    },
+    _overlayOnError: function _overlayOnError() {
+      this.fire("error");
+      var t = this.options.errorOverlayUrl;
+      t && this._url !== t && (this._url = t, this._image.src = t);
+    }
+  }),
+      Je = Xe.extend({
+    options: {
+      autoplay: !0,
+      loop: !0,
+      keepAspectRatio: !0,
+      muted: !1
+    },
+    _initImage: function _initImage() {
+      var t = "VIDEO" === this._url.tagName,
+          i = this._image = t ? this._url : si("video");
+
+      if (ci(i, "leaflet-image-layer"), this._zoomAnimated && ci(i, "leaflet-zoom-animated"), this.options.className && ci(i, this.options.className), i.onselectstart = a, i.onmousemove = a, i.onloadeddata = p(this.fire, this, "load"), t) {
+        for (var e = i.getElementsByTagName("source"), n = [], o = 0; o < e.length; o++) {
+          n.push(e[o].src);
+        }
+
+        this._url = 0 < e.length ? n : [i.src];
+      } else {
+        g(this._url) || (this._url = [this._url]), !this.options.keepAspectRatio && Object.prototype.hasOwnProperty.call(i.style, "objectFit") && (i.style.objectFit = "fill"), i.autoplay = !!this.options.autoplay, i.loop = !!this.options.loop, i.muted = !!this.options.muted;
+
+        for (var s = 0; s < this._url.length; s++) {
+          var r = si("source");
+          r.src = this._url[s], i.appendChild(r);
+        }
+      }
+    }
+  });
+  var $e = Xe.extend({
+    _initImage: function _initImage() {
+      var t = this._image = this._url;
+      ci(t, "leaflet-image-layer"), this._zoomAnimated && ci(t, "leaflet-zoom-animated"), this.options.className && ci(t, this.options.className), t.onselectstart = a, t.onmousemove = a;
+    }
+  });
+  var Qe = Me.extend({
+    options: {
+      offset: [0, 7],
+      className: "",
+      pane: "popupPane"
+    },
+    initialize: function initialize(t, i) {
+      c(this, t), this._source = i;
+    },
+    onAdd: function onAdd(t) {
+      this._zoomAnimated = t._zoomAnimated, this._container || this._initLayout(), t._fadeAnimated && mi(this._container, 0), clearTimeout(this._removeTimeout), this.getPane().appendChild(this._container), this.update(), t._fadeAnimated && mi(this._container, 1), this.bringToFront();
+    },
+    onRemove: function onRemove(t) {
+      t._fadeAnimated ? (mi(this._container, 0), this._removeTimeout = setTimeout(p(ri, void 0, this._container), 200)) : ri(this._container);
+    },
+    getLatLng: function getLatLng() {
+      return this._latlng;
+    },
+    setLatLng: function setLatLng(t) {
+      return this._latlng = j(t), this._map && (this._updatePosition(), this._adjustPan()), this;
+    },
+    getContent: function getContent() {
+      return this._content;
+    },
+    setContent: function setContent(t) {
+      return this._content = t, this.update(), this;
+    },
+    getElement: function getElement() {
+      return this._container;
+    },
+    update: function update() {
+      this._map && (this._container.style.visibility = "hidden", this._updateContent(), this._updateLayout(), this._updatePosition(), this._container.style.visibility = "", this._adjustPan());
+    },
+    getEvents: function getEvents() {
+      var t = {
+        zoom: this._updatePosition,
+        viewreset: this._updatePosition
+      };
+      return this._zoomAnimated && (t.zoomanim = this._animateZoom), t;
+    },
+    isOpen: function isOpen() {
+      return !!this._map && this._map.hasLayer(this);
+    },
+    bringToFront: function bringToFront() {
+      return this._map && hi(this._container), this;
+    },
+    bringToBack: function bringToBack() {
+      return this._map && ui(this._container), this;
+    },
+    _prepareOpen: function _prepareOpen(t, i, e) {
+      if (i instanceof Me || (e = i, i = t), i instanceof Ce) for (var n in t._layers) {
+        i = t._layers[n];
+        break;
+      }
+      if (!e) if (i.getCenter) e = i.getCenter();else {
+        if (!i.getLatLng) throw new Error("Unable to get source layer LatLng.");
+        e = i.getLatLng();
+      }
+      return this._source = i, this.update(), e;
+    },
+    _updateContent: function _updateContent() {
+      if (this._content) {
+        var t = this._contentNode,
+            i = "function" == typeof this._content ? this._content(this._source || this) : this._content;
+        if ("string" == typeof i) t.innerHTML = i;else {
+          for (; t.hasChildNodes();) {
+            t.removeChild(t.firstChild);
+          }
+
+          t.appendChild(i);
+        }
+        this.fire("contentupdate");
+      }
+    },
+    _updatePosition: function _updatePosition() {
+      var t, i, e, n, o;
+      this._map && (t = this._map.latLngToLayerPoint(this._latlng), i = A(this.options.offset), e = this._getAnchor(), this._zoomAnimated ? vi(this._container, t.add(e)) : i = i.add(t).add(e), n = this._containerBottom = -i.y, o = this._containerLeft = -Math.round(this._containerWidth / 2) + i.x, this._container.style.bottom = n + "px", this._container.style.left = o + "px");
+    },
+    _getAnchor: function _getAnchor() {
+      return [0, 0];
+    }
+  }),
+      tn = Qe.extend({
+    options: {
+      maxWidth: 300,
+      minWidth: 50,
+      maxHeight: null,
+      autoPan: !0,
+      autoPanPaddingTopLeft: null,
+      autoPanPaddingBottomRight: null,
+      autoPanPadding: [5, 5],
+      keepInView: !1,
+      closeButton: !0,
+      autoClose: !0,
+      closeOnEscapeKey: !0,
+      className: ""
+    },
+    openOn: function openOn(t) {
+      return t.openPopup(this), this;
+    },
+    onAdd: function onAdd(t) {
+      Qe.prototype.onAdd.call(this, t), t.fire("popupopen", {
+        popup: this
+      }), this._source && (this._source.fire("popupopen", {
+        popup: this
+      }, !0), this._source instanceof Be || this._source.on("preclick", Ai));
+    },
+    onRemove: function onRemove(t) {
+      Qe.prototype.onRemove.call(this, t), t.fire("popupclose", {
+        popup: this
+      }), this._source && (this._source.fire("popupclose", {
+        popup: this
+      }, !0), this._source instanceof Be || this._source.off("preclick", Ai));
+    },
+    getEvents: function getEvents() {
+      var t = Qe.prototype.getEvents.call(this);
+      return (void 0 !== this.options.closeOnClick ? this.options.closeOnClick : this._map.options.closePopupOnClick) && (t.preclick = this._close), this.options.keepInView && (t.moveend = this._adjustPan), t;
+    },
+    _close: function _close() {
+      this._map && this._map.closePopup(this);
+    },
+    _initLayout: function _initLayout() {
+      var t,
+          i = "leaflet-popup",
+          e = this._container = si("div", i + " " + (this.options.className || "") + " leaflet-zoom-animated"),
+          n = this._wrapper = si("div", i + "-content-wrapper", e);
+      this._contentNode = si("div", i + "-content", n), Oi(e), Ii(this._contentNode), zi(e, "contextmenu", Ai), this._tipContainer = si("div", i + "-tip-container", e), this._tip = si("div", i + "-tip", this._tipContainer), this.options.closeButton && ((t = this._closeButton = si("a", i + "-close-button", e)).href = "#close", t.innerHTML = "&#215;", zi(t, "click", this._onCloseButtonClick, this));
+    },
+    _updateLayout: function _updateLayout() {
+      var t = this._contentNode,
+          i = t.style;
+      i.width = "", i.whiteSpace = "nowrap";
+      var e = t.offsetWidth,
+          e = Math.min(e, this.options.maxWidth);
+      e = Math.max(e, this.options.minWidth), i.width = e + 1 + "px", i.whiteSpace = "", i.height = "";
+      var n = t.offsetHeight,
+          o = this.options.maxHeight,
+          s = "leaflet-popup-scrolled";
+      o && o < n ? (i.height = o + "px", ci(t, s)) : _i(t, s), this._containerWidth = this._container.offsetWidth;
+    },
+    _animateZoom: function _animateZoom(t) {
+      var i = this._map._latLngToNewLayerPoint(this._latlng, t.zoom, t.center),
+          e = this._getAnchor();
+
+      vi(this._container, i.add(e));
+    },
+    _adjustPan: function _adjustPan() {
+      var t, i, e, n, o, s, r, a, h, u, l, c;
+      this.options.autoPan && (this._map._panAnim && this._map._panAnim.stop(), t = this._map, i = parseInt(oi(this._container, "marginBottom"), 10) || 0, e = this._container.offsetHeight + i, n = this._containerWidth, (o = new k(this._containerLeft, -e - this._containerBottom))._add(yi(this._container)), s = t.layerPointToContainerPoint(o), r = A(this.options.autoPanPadding), a = A(this.options.autoPanPaddingTopLeft || r), h = A(this.options.autoPanPaddingBottomRight || r), u = t.getSize(), c = l = 0, s.x + n + h.x > u.x && (l = s.x + n - u.x + h.x), s.x - l - a.x < 0 && (l = s.x - a.x), s.y + e + h.y > u.y && (c = s.y + e - u.y + h.y), s.y - c - a.y < 0 && (c = s.y - a.y), (l || c) && t.fire("autopanstart").panBy([l, c]));
+    },
+    _onCloseButtonClick: function _onCloseButtonClick(t) {
+      this._close(), Ni(t);
+    },
+    _getAnchor: function _getAnchor() {
+      return A(this._source && this._source._getPopupAnchor ? this._source._getPopupAnchor() : [0, 0]);
+    }
+  });
+  Ki.mergeOptions({
+    closePopupOnClick: !0
+  }), Ki.include({
+    openPopup: function openPopup(t, i, e) {
+      return t instanceof tn || (t = new tn(e).setContent(t)), i && t.setLatLng(i), this.hasLayer(t) ? this : (this._popup && this._popup.options.autoClose && this.closePopup(), this._popup = t, this.addLayer(t));
+    },
+    closePopup: function closePopup(t) {
+      return t && t !== this._popup || (t = this._popup, this._popup = null), t && this.removeLayer(t), this;
+    }
+  }), Me.include({
+    bindPopup: function bindPopup(t, i) {
+      return t instanceof tn ? (c(t, i), (this._popup = t)._source = this) : (this._popup && !i || (this._popup = new tn(i, this)), this._popup.setContent(t)), this._popupHandlersAdded || (this.on({
+        click: this._openPopup,
+        keypress: this._onKeyPress,
+        remove: this.closePopup,
+        move: this._movePopup
+      }), this._popupHandlersAdded = !0), this;
+    },
+    unbindPopup: function unbindPopup() {
+      return this._popup && (this.off({
+        click: this._openPopup,
+        keypress: this._onKeyPress,
+        remove: this.closePopup,
+        move: this._movePopup
+      }), this._popupHandlersAdded = !1, this._popup = null), this;
+    },
+    openPopup: function openPopup(t, i) {
+      return this._popup && this._map && (i = this._popup._prepareOpen(this, t, i), this._map.openPopup(this._popup, i)), this;
+    },
+    closePopup: function closePopup() {
+      return this._popup && this._popup._close(), this;
+    },
+    togglePopup: function togglePopup(t) {
+      return this._popup && (this._popup._map ? this.closePopup() : this.openPopup(t)), this;
+    },
+    isPopupOpen: function isPopupOpen() {
+      return !!this._popup && this._popup.isOpen();
+    },
+    setPopupContent: function setPopupContent(t) {
+      return this._popup && this._popup.setContent(t), this;
+    },
+    getPopup: function getPopup() {
+      return this._popup;
+    },
+    _openPopup: function _openPopup(t) {
+      var i = t.layer || t.target;
+      this._popup && this._map && (Ni(t), i instanceof Be ? this.openPopup(t.layer || t.target, t.latlng) : this._map.hasLayer(this._popup) && this._popup._source === i ? this.closePopup() : this.openPopup(i, t.latlng));
+    },
+    _movePopup: function _movePopup(t) {
+      this._popup.setLatLng(t.latlng);
+    },
+    _onKeyPress: function _onKeyPress(t) {
+      13 === t.originalEvent.keyCode && this._openPopup(t);
+    }
+  });
+  var en = Qe.extend({
+    options: {
+      pane: "tooltipPane",
+      offset: [0, 0],
+      direction: "auto",
+      permanent: !1,
+      sticky: !1,
+      interactive: !1,
+      opacity: .9
+    },
+    onAdd: function onAdd(t) {
+      Qe.prototype.onAdd.call(this, t), this.setOpacity(this.options.opacity), t.fire("tooltipopen", {
+        tooltip: this
+      }), this._source && this._source.fire("tooltipopen", {
+        tooltip: this
+      }, !0);
+    },
+    onRemove: function onRemove(t) {
+      Qe.prototype.onRemove.call(this, t), t.fire("tooltipclose", {
+        tooltip: this
+      }), this._source && this._source.fire("tooltipclose", {
+        tooltip: this
+      }, !0);
+    },
+    getEvents: function getEvents() {
+      var t = Qe.prototype.getEvents.call(this);
+      return bt && !this.options.permanent && (t.preclick = this._close), t;
+    },
+    _close: function _close() {
+      this._map && this._map.closeTooltip(this);
+    },
+    _initLayout: function _initLayout() {
+      var t = "leaflet-tooltip " + (this.options.className || "") + " leaflet-zoom-" + (this._zoomAnimated ? "animated" : "hide");
+      this._contentNode = this._container = si("div", t);
+    },
+    _updateLayout: function _updateLayout() {},
+    _adjustPan: function _adjustPan() {},
+    _setPosition: function _setPosition(t) {
+      var i,
+          e = this._map,
+          n = this._container,
+          o = e.latLngToContainerPoint(e.getCenter()),
+          s = e.layerPointToContainerPoint(t),
+          r = this.options.direction,
+          a = n.offsetWidth,
+          h = n.offsetHeight,
+          u = A(this.options.offset),
+          l = this._getAnchor(),
+          c = "top" === r ? (i = a / 2, h) : "bottom" === r ? (i = a / 2, 0) : (i = "center" === r ? a / 2 : "right" === r ? 0 : "left" === r ? a : s.x < o.x ? (r = "right", 0) : (r = "left", a + 2 * (u.x + l.x)), h / 2);
+
+      t = t.subtract(A(i, c, !0)).add(u).add(l), _i(n, "leaflet-tooltip-right"), _i(n, "leaflet-tooltip-left"), _i(n, "leaflet-tooltip-top"), _i(n, "leaflet-tooltip-bottom"), ci(n, "leaflet-tooltip-" + r), vi(n, t);
+    },
+    _updatePosition: function _updatePosition() {
+      var t = this._map.latLngToLayerPoint(this._latlng);
+
+      this._setPosition(t);
+    },
+    setOpacity: function setOpacity(t) {
+      this.options.opacity = t, this._container && mi(this._container, t);
+    },
+    _animateZoom: function _animateZoom(t) {
+      var i = this._map._latLngToNewLayerPoint(this._latlng, t.zoom, t.center);
+
+      this._setPosition(i);
+    },
+    _getAnchor: function _getAnchor() {
+      return A(this._source && this._source._getTooltipAnchor && !this.options.sticky ? this._source._getTooltipAnchor() : [0, 0]);
+    }
+  });
+  Ki.include({
+    openTooltip: function openTooltip(t, i, e) {
+      return t instanceof en || (t = new en(e).setContent(t)), i && t.setLatLng(i), this.hasLayer(t) ? this : this.addLayer(t);
+    },
+    closeTooltip: function closeTooltip(t) {
+      return t && this.removeLayer(t), this;
+    }
+  }), Me.include({
+    bindTooltip: function bindTooltip(t, i) {
+      return t instanceof en ? (c(t, i), (this._tooltip = t)._source = this) : (this._tooltip && !i || (this._tooltip = new en(i, this)), this._tooltip.setContent(t)), this._initTooltipInteractions(), this._tooltip.options.permanent && this._map && this._map.hasLayer(this) && this.openTooltip(), this;
+    },
+    unbindTooltip: function unbindTooltip() {
+      return this._tooltip && (this._initTooltipInteractions(!0), this.closeTooltip(), this._tooltip = null), this;
+    },
+    _initTooltipInteractions: function _initTooltipInteractions(t) {
+      var i, e;
+      !t && this._tooltipHandlersAdded || (i = t ? "off" : "on", e = {
+        remove: this.closeTooltip,
+        move: this._moveTooltip
+      }, this._tooltip.options.permanent ? e.add = this._openTooltip : (e.mouseover = this._openTooltip, e.mouseout = this.closeTooltip, this._tooltip.options.sticky && (e.mousemove = this._moveTooltip), bt && (e.click = this._openTooltip)), this[i](e), this._tooltipHandlersAdded = !t);
+    },
+    openTooltip: function openTooltip(t, i) {
+      return this._tooltip && this._map && (i = this._tooltip._prepareOpen(this, t, i), this._map.openTooltip(this._tooltip, i), this._tooltip.options.interactive && this._tooltip._container && (ci(this._tooltip._container, "leaflet-clickable"), this.addInteractiveTarget(this._tooltip._container))), this;
+    },
+    closeTooltip: function closeTooltip() {
+      return this._tooltip && (this._tooltip._close(), this._tooltip.options.interactive && this._tooltip._container && (_i(this._tooltip._container, "leaflet-clickable"), this.removeInteractiveTarget(this._tooltip._container))), this;
+    },
+    toggleTooltip: function toggleTooltip(t) {
+      return this._tooltip && (this._tooltip._map ? this.closeTooltip() : this.openTooltip(t)), this;
+    },
+    isTooltipOpen: function isTooltipOpen() {
+      return this._tooltip.isOpen();
+    },
+    setTooltipContent: function setTooltipContent(t) {
+      return this._tooltip && this._tooltip.setContent(t), this;
+    },
+    getTooltip: function getTooltip() {
+      return this._tooltip;
+    },
+    _openTooltip: function _openTooltip(t) {
+      var i = t.layer || t.target;
+      this._tooltip && this._map && this.openTooltip(i, this._tooltip.options.sticky ? t.latlng : void 0);
+    },
+    _moveTooltip: function _moveTooltip(t) {
+      var i,
+          e,
+          n = t.latlng;
+      this._tooltip.options.sticky && t.originalEvent && (i = this._map.mouseEventToContainerPoint(t.originalEvent), e = this._map.containerPointToLayerPoint(i), n = this._map.layerPointToLatLng(e)), this._tooltip.setLatLng(n);
+    }
+  });
+  var nn = Se.extend({
+    options: {
+      iconSize: [12, 12],
+      html: !1,
+      bgPos: null,
+      className: "leaflet-div-icon"
+    },
+    createIcon: function createIcon(t) {
+      var i,
+          e = t && "DIV" === t.tagName ? t : document.createElement("div"),
+          n = this.options;
+      return n.html instanceof Element ? (ai(e), e.appendChild(n.html)) : e.innerHTML = !1 !== n.html ? n.html : "", n.bgPos && (i = A(n.bgPos), e.style.backgroundPosition = -i.x + "px " + -i.y + "px"), this._setIconStyles(e, "icon"), e;
+    },
+    createShadow: function createShadow() {
+      return null;
+    }
+  });
+  Se.Default = Ze;
+  var on = Me.extend({
+    options: {
+      tileSize: 256,
+      opacity: 1,
+      updateWhenIdle: yt,
+      updateWhenZooming: !0,
+      updateInterval: 200,
+      zIndex: 1,
+      bounds: null,
+      minZoom: 0,
+      maxZoom: void 0,
+      maxNativeZoom: void 0,
+      minNativeZoom: void 0,
+      noWrap: !1,
+      pane: "tilePane",
+      className: "",
+      keepBuffer: 2
+    },
+    initialize: function initialize(t) {
+      c(this, t);
+    },
+    onAdd: function onAdd() {
+      this._initContainer(), this._levels = {}, this._tiles = {}, this._resetView(), this._update();
+    },
+    beforeAdd: function beforeAdd(t) {
+      t._addZoomLimit(this);
+    },
+    onRemove: function onRemove(t) {
+      this._removeAllTiles(), ri(this._container), t._removeZoomLimit(this), this._container = null, this._tileZoom = void 0;
+    },
+    bringToFront: function bringToFront() {
+      return this._map && (hi(this._container), this._setAutoZIndex(Math.max)), this;
+    },
+    bringToBack: function bringToBack() {
+      return this._map && (ui(this._container), this._setAutoZIndex(Math.min)), this;
+    },
+    getContainer: function getContainer() {
+      return this._container;
+    },
+    setOpacity: function setOpacity(t) {
+      return this.options.opacity = t, this._updateOpacity(), this;
+    },
+    setZIndex: function setZIndex(t) {
+      return this.options.zIndex = t, this._updateZIndex(), this;
+    },
+    isLoading: function isLoading() {
+      return this._loading;
+    },
+    redraw: function redraw() {
+      return this._map && (this._removeAllTiles(), this._update()), this;
+    },
+    getEvents: function getEvents() {
+      var t = {
+        viewprereset: this._invalidateAll,
+        viewreset: this._resetView,
+        zoom: this._resetView,
+        moveend: this._onMoveEnd
+      };
+      return this.options.updateWhenIdle || (this._onMove || (this._onMove = n(this._onMoveEnd, this.options.updateInterval, this)), t.move = this._onMove), this._zoomAnimated && (t.zoomanim = this._animateZoom), t;
+    },
+    createTile: function createTile() {
+      return document.createElement("div");
+    },
+    getTileSize: function getTileSize() {
+      var t = this.options.tileSize;
+      return t instanceof k ? t : new k(t, t);
+    },
+    _updateZIndex: function _updateZIndex() {
+      this._container && void 0 !== this.options.zIndex && null !== this.options.zIndex && (this._container.style.zIndex = this.options.zIndex);
+    },
+    _setAutoZIndex: function _setAutoZIndex(t) {
+      for (var i, e = this.getPane().children, n = -t(-1 / 0, 1 / 0), o = 0, s = e.length; o < s; o++) {
+        i = e[o].style.zIndex, e[o] !== this._container && i && (n = t(n, +i));
+      }
+
+      isFinite(n) && (this.options.zIndex = n + t(-1, 1), this._updateZIndex());
+    },
+    _updateOpacity: function _updateOpacity() {
+      if (this._map && !it) {
+        mi(this._container, this.options.opacity);
+        var t = +new Date(),
+            i = !1,
+            e = !1;
+
+        for (var n in this._tiles) {
+          var o,
+              s = this._tiles[n];
+          s.current && s.loaded && (o = Math.min(1, (t - s.loaded) / 200), mi(s.el, o), o < 1 ? i = !0 : (s.active ? e = !0 : this._onOpaqueTile(s), s.active = !0));
+        }
+
+        e && !this._noPrune && this._pruneTiles(), i && (z(this._fadeFrame), this._fadeFrame = M(this._updateOpacity, this));
+      }
+    },
+    _onOpaqueTile: a,
+    _initContainer: function _initContainer() {
+      this._container || (this._container = si("div", "leaflet-layer " + (this.options.className || "")), this._updateZIndex(), this.options.opacity < 1 && this._updateOpacity(), this.getPane().appendChild(this._container));
+    },
+    _updateLevels: function _updateLevels() {
+      var t = this._tileZoom,
+          i = this.options.maxZoom;
+
+      if (void 0 !== t) {
+        for (var e in this._levels) {
+          e = Number(e), this._levels[e].el.children.length || e === t ? (this._levels[e].el.style.zIndex = i - Math.abs(t - e), this._onUpdateLevel(e)) : (ri(this._levels[e].el), this._removeTilesAtZoom(e), this._onRemoveLevel(e), delete this._levels[e]);
+        }
+
+        var n = this._levels[t],
+            o = this._map;
+        return n || ((n = this._levels[t] = {}).el = si("div", "leaflet-tile-container leaflet-zoom-animated", this._container), n.el.style.zIndex = i, n.origin = o.project(o.unproject(o.getPixelOrigin()), t).round(), n.zoom = t, this._setZoomTransform(n, o.getCenter(), o.getZoom()), a(n.el.offsetWidth), this._onCreateLevel(n)), this._level = n;
+      }
+    },
+    _onUpdateLevel: a,
+    _onRemoveLevel: a,
+    _onCreateLevel: a,
+    _pruneTiles: function _pruneTiles() {
+      if (this._map) {
+        var t,
+            i,
+            e,
+            n = this._map.getZoom();
+
+        if (n > this.options.maxZoom || n < this.options.minZoom) this._removeAllTiles();else {
+          for (t in this._tiles) {
+            (e = this._tiles[t]).retain = e.current;
+          }
+
+          for (t in this._tiles) {
+            (e = this._tiles[t]).current && !e.active && (i = e.coords, this._retainParent(i.x, i.y, i.z, i.z - 5) || this._retainChildren(i.x, i.y, i.z, i.z + 2));
+          }
+
+          for (t in this._tiles) {
+            this._tiles[t].retain || this._removeTile(t);
+          }
+        }
+      }
+    },
+    _removeTilesAtZoom: function _removeTilesAtZoom(t) {
+      for (var i in this._tiles) {
+        this._tiles[i].coords.z === t && this._removeTile(i);
+      }
+    },
+    _removeAllTiles: function _removeAllTiles() {
+      for (var t in this._tiles) {
+        this._removeTile(t);
+      }
+    },
+    _invalidateAll: function _invalidateAll() {
+      for (var t in this._levels) {
+        ri(this._levels[t].el), this._onRemoveLevel(Number(t)), delete this._levels[t];
+      }
+
+      this._removeAllTiles(), this._tileZoom = void 0;
+    },
+    _retainParent: function _retainParent(t, i, e, n) {
+      var o = Math.floor(t / 2),
+          s = Math.floor(i / 2),
+          r = e - 1,
+          a = new k(+o, +s);
+      a.z = +r;
+
+      var h = this._tileCoordsToKey(a),
+          u = this._tiles[h];
+
+      return u && u.active ? u.retain = !0 : (u && u.loaded && (u.retain = !0), n < r && this._retainParent(o, s, r, n));
+    },
+    _retainChildren: function _retainChildren(t, i, e, n) {
+      for (var o = 2 * t; o < 2 * t + 2; o++) {
+        for (var s = 2 * i; s < 2 * i + 2; s++) {
+          var r = new k(o, s);
+          r.z = e + 1;
+
+          var a = this._tileCoordsToKey(r),
+              h = this._tiles[a];
+
+          h && h.active ? h.retain = !0 : (h && h.loaded && (h.retain = !0), e + 1 < n && this._retainChildren(o, s, e + 1, n));
+        }
+      }
+    },
+    _resetView: function _resetView(t) {
+      var i = t && (t.pinch || t.flyTo);
+
+      this._setView(this._map.getCenter(), this._map.getZoom(), i, i);
+    },
+    _animateZoom: function _animateZoom(t) {
+      this._setView(t.center, t.zoom, !0, t.noUpdate);
+    },
+    _clampZoom: function _clampZoom(t) {
+      var i = this.options;
+      return void 0 !== i.minNativeZoom && t < i.minNativeZoom ? i.minNativeZoom : void 0 !== i.maxNativeZoom && i.maxNativeZoom < t ? i.maxNativeZoom : t;
+    },
+    _setView: function _setView(t, i, e, n) {
+      var o = Math.round(i),
+          o = void 0 !== this.options.maxZoom && o > this.options.maxZoom || void 0 !== this.options.minZoom && o < this.options.minZoom ? void 0 : this._clampZoom(o),
+          s = this.options.updateWhenZooming && o !== this._tileZoom;
+      n && !s || (this._tileZoom = o, this._abortLoading && this._abortLoading(), this._updateLevels(), this._resetGrid(), void 0 !== o && this._update(t), e || this._pruneTiles(), this._noPrune = !!e), this._setZoomTransforms(t, i);
+    },
+    _setZoomTransforms: function _setZoomTransforms(t, i) {
+      for (var e in this._levels) {
+        this._setZoomTransform(this._levels[e], t, i);
+      }
+    },
+    _setZoomTransform: function _setZoomTransform(t, i, e) {
+      var n = this._map.getZoomScale(e, t.zoom),
+          o = t.origin.multiplyBy(n).subtract(this._map._getNewPixelOrigin(i, e)).round();
+
+      vt ? gi(t.el, o, n) : vi(t.el, o);
+    },
+    _resetGrid: function _resetGrid() {
+      var t = this._map,
+          i = t.options.crs,
+          e = this._tileSize = this.getTileSize(),
+          n = this._tileZoom,
+          o = this._map.getPixelWorldBounds(this._tileZoom);
+
+      o && (this._globalTileRange = this._pxBoundsToTileRange(o)), this._wrapX = i.wrapLng && !this.options.noWrap && [Math.floor(t.project([0, i.wrapLng[0]], n).x / e.x), Math.ceil(t.project([0, i.wrapLng[1]], n).x / e.y)], this._wrapY = i.wrapLat && !this.options.noWrap && [Math.floor(t.project([i.wrapLat[0], 0], n).y / e.x), Math.ceil(t.project([i.wrapLat[1], 0], n).y / e.y)];
+    },
+    _onMoveEnd: function _onMoveEnd() {
+      this._map && !this._map._animatingZoom && this._update();
+    },
+    _getTiledPixelBounds: function _getTiledPixelBounds(t) {
+      var i = this._map,
+          e = i._animatingZoom ? Math.max(i._animateToZoom, i.getZoom()) : i.getZoom(),
+          n = i.getZoomScale(e, this._tileZoom),
+          o = i.project(t, this._tileZoom).floor(),
+          s = i.getSize().divideBy(2 * n);
+      return new I(o.subtract(s), o.add(s));
+    },
+    _update: function _update(t) {
+      var i = this._map;
+
+      if (i) {
+        var e = this._clampZoom(i.getZoom());
+
+        if (void 0 === t && (t = i.getCenter()), void 0 !== this._tileZoom) {
+          var n = this._getTiledPixelBounds(t),
+              o = this._pxBoundsToTileRange(n),
+              s = o.getCenter(),
+              r = [],
+              a = this.options.keepBuffer,
+              h = new I(o.getBottomLeft().subtract([a, -a]), o.getTopRight().add([a, -a]));
+
+          if (!(isFinite(o.min.x) && isFinite(o.min.y) && isFinite(o.max.x) && isFinite(o.max.y))) throw new Error("Attempted to load an infinite number of tiles");
+
+          for (var u in this._tiles) {
+            var l = this._tiles[u].coords;
+            l.z === this._tileZoom && h.contains(new k(l.x, l.y)) || (this._tiles[u].current = !1);
+          }
+
+          if (1 < Math.abs(e - this._tileZoom)) this._setView(t, e);else {
+            for (var c = o.min.y; c <= o.max.y; c++) {
+              for (var _ = o.min.x; _ <= o.max.x; _++) {
+                var d,
+                    p = new k(_, c);
+                p.z = this._tileZoom, this._isValidTile(p) && ((d = this._tiles[this._tileCoordsToKey(p)]) ? d.current = !0 : r.push(p));
+              }
+            }
+
+            if (r.sort(function (t, i) {
+              return t.distanceTo(s) - i.distanceTo(s);
+            }), 0 !== r.length) {
+              this._loading || (this._loading = !0, this.fire("loading"));
+
+              for (var m = document.createDocumentFragment(), _ = 0; _ < r.length; _++) {
+                this._addTile(r[_], m);
+              }
+
+              this._level.el.appendChild(m);
+            }
+          }
+        }
+      }
+    },
+    _isValidTile: function _isValidTile(t) {
+      var i = this._map.options.crs;
+
+      if (!i.infinite) {
+        var e = this._globalTileRange;
+        if (!i.wrapLng && (t.x < e.min.x || t.x > e.max.x) || !i.wrapLat && (t.y < e.min.y || t.y > e.max.y)) return !1;
+      }
+
+      if (!this.options.bounds) return !0;
+
+      var n = this._tileCoordsToBounds(t);
+
+      return N(this.options.bounds).overlaps(n);
+    },
+    _keyToBounds: function _keyToBounds(t) {
+      return this._tileCoordsToBounds(this._keyToTileCoords(t));
+    },
+    _tileCoordsToNwSe: function _tileCoordsToNwSe(t) {
+      var i = this._map,
+          e = this.getTileSize(),
+          n = t.scaleBy(e),
+          o = n.add(e);
+      return [i.unproject(n, t.z), i.unproject(o, t.z)];
+    },
+    _tileCoordsToBounds: function _tileCoordsToBounds(t) {
+      var i = this._tileCoordsToNwSe(t),
+          e = new R(i[0], i[1]);
+
+      return this.options.noWrap || (e = this._map.wrapLatLngBounds(e)), e;
+    },
+    _tileCoordsToKey: function _tileCoordsToKey(t) {
+      return t.x + ":" + t.y + ":" + t.z;
+    },
+    _keyToTileCoords: function _keyToTileCoords(t) {
+      var i = t.split(":"),
+          e = new k(+i[0], +i[1]);
+      return e.z = +i[2], e;
+    },
+    _removeTile: function _removeTile(t) {
+      var i = this._tiles[t];
+      i && (ri(i.el), delete this._tiles[t], this.fire("tileunload", {
+        tile: i.el,
+        coords: this._keyToTileCoords(t)
+      }));
+    },
+    _initTile: function _initTile(t) {
+      ci(t, "leaflet-tile");
+      var i = this.getTileSize();
+      t.style.width = i.x + "px", t.style.height = i.y + "px", t.onselectstart = a, t.onmousemove = a, it && this.options.opacity < 1 && mi(t, this.options.opacity), ot && !st && (t.style.WebkitBackfaceVisibility = "hidden");
+    },
+    _addTile: function _addTile(t, i) {
+      var e = this._getTilePos(t),
+          n = this._tileCoordsToKey(t),
+          o = this.createTile(this._wrapCoords(t), p(this._tileReady, this, t));
+
+      this._initTile(o), this.createTile.length < 2 && M(p(this._tileReady, this, t, null, o)), vi(o, e), this._tiles[n] = {
+        el: o,
+        coords: t,
+        current: !0
+      }, i.appendChild(o), this.fire("tileloadstart", {
+        tile: o,
+        coords: t
+      });
+    },
+    _tileReady: function _tileReady(t, i, e) {
+      i && this.fire("tileerror", {
+        error: i,
+        tile: e,
+        coords: t
+      });
+
+      var n = this._tileCoordsToKey(t);
+
+      (e = this._tiles[n]) && (e.loaded = +new Date(), this._map._fadeAnimated ? (mi(e.el, 0), z(this._fadeFrame), this._fadeFrame = M(this._updateOpacity, this)) : (e.active = !0, this._pruneTiles()), i || (ci(e.el, "leaflet-tile-loaded"), this.fire("tileload", {
+        tile: e.el,
+        coords: t
+      })), this._noTilesToLoad() && (this._loading = !1, this.fire("load"), it || !this._map._fadeAnimated ? M(this._pruneTiles, this) : setTimeout(p(this._pruneTiles, this), 250)));
+    },
+    _getTilePos: function _getTilePos(t) {
+      return t.scaleBy(this.getTileSize()).subtract(this._level.origin);
+    },
+    _wrapCoords: function _wrapCoords(t) {
+      var i = new k(this._wrapX ? o(t.x, this._wrapX) : t.x, this._wrapY ? o(t.y, this._wrapY) : t.y);
+      return i.z = t.z, i;
+    },
+    _pxBoundsToTileRange: function _pxBoundsToTileRange(t) {
+      var i = this.getTileSize();
+      return new I(t.min.unscaleBy(i).floor(), t.max.unscaleBy(i).ceil().subtract([1, 1]));
+    },
+    _noTilesToLoad: function _noTilesToLoad() {
+      for (var t in this._tiles) {
+        if (!this._tiles[t].loaded) return !1;
+      }
+
+      return !0;
+    }
+  });
+  var sn = on.extend({
+    options: {
+      minZoom: 0,
+      maxZoom: 18,
+      subdomains: "abc",
+      errorTileUrl: "",
+      zoomOffset: 0,
+      tms: !1,
+      zoomReverse: !1,
+      detectRetina: !1,
+      crossOrigin: !1
+    },
+    initialize: function initialize(t, i) {
+      this._url = t, (i = c(this, i)).detectRetina && zt && 0 < i.maxZoom && (i.tileSize = Math.floor(i.tileSize / 2), i.zoomReverse ? (i.zoomOffset--, i.minZoom++) : (i.zoomOffset++, i.maxZoom--), i.minZoom = Math.max(0, i.minZoom)), "string" == typeof i.subdomains && (i.subdomains = i.subdomains.split("")), ot || this.on("tileunload", this._onTileRemove);
+    },
+    setUrl: function setUrl(t, i) {
+      return this._url === t && void 0 === i && (i = !0), this._url = t, i || this.redraw(), this;
+    },
+    createTile: function createTile(t, i) {
+      var e = document.createElement("img");
+      return zi(e, "load", p(this._tileOnLoad, this, i, e)), zi(e, "error", p(this._tileOnError, this, i, e)), !this.options.crossOrigin && "" !== this.options.crossOrigin || (e.crossOrigin = !0 === this.options.crossOrigin ? "" : this.options.crossOrigin), e.alt = "", e.setAttribute("role", "presentation"), e.src = this.getTileUrl(t), e;
+    },
+    getTileUrl: function getTileUrl(t) {
+      var i,
+          e = {
+        r: zt ? "@2x" : "",
+        s: this._getSubdomain(t),
+        x: t.x,
+        y: t.y,
+        z: this._getZoomForUrl()
+      };
+      return this._map && !this._map.options.crs.infinite && (i = this._globalTileRange.max.y - t.y, this.options.tms && (e.y = i), e["-y"] = i), f(this._url, h(e, this.options));
+    },
+    _tileOnLoad: function _tileOnLoad(t, i) {
+      it ? setTimeout(p(t, this, null, i), 0) : t(null, i);
+    },
+    _tileOnError: function _tileOnError(t, i, e) {
+      var n = this.options.errorTileUrl;
+      n && i.getAttribute("src") !== n && (i.src = n), t(e, i);
+    },
+    _onTileRemove: function _onTileRemove(t) {
+      t.tile.onload = null;
+    },
+    _getZoomForUrl: function _getZoomForUrl() {
+      var t = this._tileZoom,
+          i = this.options.maxZoom;
+      return this.options.zoomReverse && (t = i - t), t + this.options.zoomOffset;
+    },
+    _getSubdomain: function _getSubdomain(t) {
+      var i = Math.abs(t.x + t.y) % this.options.subdomains.length;
+      return this.options.subdomains[i];
+    },
+    _abortLoading: function _abortLoading() {
+      var t, i;
+
+      for (t in this._tiles) {
+        this._tiles[t].coords.z !== this._tileZoom && ((i = this._tiles[t].el).onload = a, i.onerror = a, i.complete || (i.src = y, ri(i), delete this._tiles[t]));
+      }
+    },
+    _removeTile: function _removeTile(t) {
+      var i = this._tiles[t];
+      if (i) return at || i.el.setAttribute("src", y), on.prototype._removeTile.call(this, t);
+    },
+    _tileReady: function _tileReady(t, i, e) {
+      if (this._map && (!e || e.getAttribute("src") !== y)) return on.prototype._tileReady.call(this, t, i, e);
+    }
+  });
+
+  function rn(t, i) {
+    return new sn(t, i);
+  }
+
+  var an = sn.extend({
+    defaultWmsParams: {
+      service: "WMS",
+      request: "GetMap",
+      layers: "",
+      styles: "",
+      format: "image/jpeg",
+      transparent: !1,
+      version: "1.1.1"
+    },
+    options: {
+      crs: null,
+      uppercase: !1
+    },
+    initialize: function initialize(t, i) {
+      this._url = t;
+      var e = h({}, this.defaultWmsParams);
+
+      for (var n in i) {
+        n in this.options || (e[n] = i[n]);
+      }
+
+      var o = (i = c(this, i)).detectRetina && zt ? 2 : 1,
+          s = this.getTileSize();
+      e.width = s.x * o, e.height = s.y * o, this.wmsParams = e;
+    },
+    onAdd: function onAdd(t) {
+      this._crs = this.options.crs || t.options.crs, this._wmsVersion = parseFloat(this.wmsParams.version);
+      var i = 1.3 <= this._wmsVersion ? "crs" : "srs";
+      this.wmsParams[i] = this._crs.code, sn.prototype.onAdd.call(this, t);
+    },
+    getTileUrl: function getTileUrl(t) {
+      var i = this._tileCoordsToNwSe(t),
+          e = this._crs,
+          n = O(e.project(i[0]), e.project(i[1])),
+          o = n.min,
+          s = n.max,
+          r = (1.3 <= this._wmsVersion && this._crs === be ? [o.y, o.x, s.y, s.x] : [o.x, o.y, s.x, s.y]).join(","),
+          a = sn.prototype.getTileUrl.call(this, t);
+
+      return a + _(this.wmsParams, a, this.options.uppercase) + (this.options.uppercase ? "&BBOX=" : "&bbox=") + r;
+    },
+    setParams: function setParams(t, i) {
+      return h(this.wmsParams, t), i || this.redraw(), this;
+    }
+  });
+  sn.WMS = an, rn.wms = function (t, i) {
+    return new an(t, i);
+  };
+  var hn = Me.extend({
+    options: {
+      padding: .1,
+      tolerance: 0
+    },
+    initialize: function initialize(t) {
+      c(this, t), m(this), this._layers = this._layers || {};
+    },
+    onAdd: function onAdd() {
+      this._container || (this._initContainer(), this._zoomAnimated && ci(this._container, "leaflet-zoom-animated")), this.getPane().appendChild(this._container), this._update(), this.on("update", this._updatePaths, this);
+    },
+    onRemove: function onRemove() {
+      this.off("update", this._updatePaths, this), this._destroyContainer();
+    },
+    getEvents: function getEvents() {
+      var t = {
+        viewreset: this._reset,
+        zoom: this._onZoom,
+        moveend: this._update,
+        zoomend: this._onZoomEnd
+      };
+      return this._zoomAnimated && (t.zoomanim = this._onAnimZoom), t;
+    },
+    _onAnimZoom: function _onAnimZoom(t) {
+      this._updateTransform(t.center, t.zoom);
+    },
+    _onZoom: function _onZoom() {
+      this._updateTransform(this._map.getCenter(), this._map.getZoom());
+    },
+    _updateTransform: function _updateTransform(t, i) {
+      var e = this._map.getZoomScale(i, this._zoom),
+          n = yi(this._container),
+          o = this._map.getSize().multiplyBy(.5 + this.options.padding),
+          s = this._map.project(this._center, i),
+          r = this._map.project(t, i).subtract(s),
+          a = o.multiplyBy(-e).add(n).add(o).subtract(r);
+
+      vt ? gi(this._container, a, e) : vi(this._container, a);
+    },
+    _reset: function _reset() {
+      for (var t in this._update(), this._updateTransform(this._center, this._zoom), this._layers) {
+        this._layers[t]._reset();
+      }
+    },
+    _onZoomEnd: function _onZoomEnd() {
+      for (var t in this._layers) {
+        this._layers[t]._project();
+      }
+    },
+    _updatePaths: function _updatePaths() {
+      for (var t in this._layers) {
+        this._layers[t]._update();
+      }
+    },
+    _update: function _update() {
+      var t = this.options.padding,
+          i = this._map.getSize(),
+          e = this._map.containerPointToLayerPoint(i.multiplyBy(-t)).round();
+
+      this._bounds = new I(e, e.add(i.multiplyBy(1 + 2 * t)).round()), this._center = this._map.getCenter(), this._zoom = this._map.getZoom();
+    }
+  }),
+      un = hn.extend({
+    getEvents: function getEvents() {
+      var t = hn.prototype.getEvents.call(this);
+      return t.viewprereset = this._onViewPreReset, t;
+    },
+    _onViewPreReset: function _onViewPreReset() {
+      this._postponeUpdatePaths = !0;
+    },
+    onAdd: function onAdd() {
+      hn.prototype.onAdd.call(this), this._draw();
+    },
+    _initContainer: function _initContainer() {
+      var t = this._container = document.createElement("canvas");
+      zi(t, "mousemove", this._onMouseMove, this), zi(t, "click dblclick mousedown mouseup contextmenu", this._onClick, this), zi(t, "mouseout", this._handleMouseOut, this), this._ctx = t.getContext("2d");
+    },
+    _destroyContainer: function _destroyContainer() {
+      z(this._redrawRequest), delete this._ctx, ri(this._container), Si(this._container), delete this._container;
+    },
+    _updatePaths: function _updatePaths() {
+      if (!this._postponeUpdatePaths) {
+        for (var t in this._redrawBounds = null, this._layers) {
+          this._layers[t]._update();
+        }
+
+        this._redraw();
+      }
+    },
+    _update: function _update() {
+      var t, i, e, n;
+      this._map._animatingZoom && this._bounds || (hn.prototype._update.call(this), t = this._bounds, i = this._container, e = t.getSize(), n = zt ? 2 : 1, vi(i, t.min), i.width = n * e.x, i.height = n * e.y, i.style.width = e.x + "px", i.style.height = e.y + "px", zt && this._ctx.scale(2, 2), this._ctx.translate(-t.min.x, -t.min.y), this.fire("update"));
+    },
+    _reset: function _reset() {
+      hn.prototype._reset.call(this), this._postponeUpdatePaths && (this._postponeUpdatePaths = !1, this._updatePaths());
+    },
+    _initPath: function _initPath(t) {
+      this._updateDashArray(t);
+
+      var i = (this._layers[m(t)] = t)._order = {
+        layer: t,
+        prev: this._drawLast,
+        next: null
+      };
+      this._drawLast && (this._drawLast.next = i), this._drawLast = i, this._drawFirst = this._drawFirst || this._drawLast;
+    },
+    _addPath: function _addPath(t) {
+      this._requestRedraw(t);
+    },
+    _removePath: function _removePath(t) {
+      var i = t._order,
+          e = i.next,
+          n = i.prev;
+      e ? e.prev = n : this._drawLast = n, n ? n.next = e : this._drawFirst = e, delete t._order, delete this._layers[m(t)], this._requestRedraw(t);
+    },
+    _updatePath: function _updatePath(t) {
+      this._extendRedrawBounds(t), t._project(), t._update(), this._requestRedraw(t);
+    },
+    _updateStyle: function _updateStyle(t) {
+      this._updateDashArray(t), this._requestRedraw(t);
+    },
+    _updateDashArray: function _updateDashArray(t) {
+      if ("string" == typeof t.options.dashArray) {
+        for (var i, e = t.options.dashArray.split(/[, ]+/), n = [], o = 0; o < e.length; o++) {
+          if (i = Number(e[o]), isNaN(i)) return;
+          n.push(i);
+        }
+
+        t.options._dashArray = n;
+      } else t.options._dashArray = t.options.dashArray;
+    },
+    _requestRedraw: function _requestRedraw(t) {
+      this._map && (this._extendRedrawBounds(t), this._redrawRequest = this._redrawRequest || M(this._redraw, this));
+    },
+    _extendRedrawBounds: function _extendRedrawBounds(t) {
+      var i;
+      t._pxBounds && (i = (t.options.weight || 0) + 1, this._redrawBounds = this._redrawBounds || new I(), this._redrawBounds.extend(t._pxBounds.min.subtract([i, i])), this._redrawBounds.extend(t._pxBounds.max.add([i, i])));
+    },
+    _redraw: function _redraw() {
+      this._redrawRequest = null, this._redrawBounds && (this._redrawBounds.min._floor(), this._redrawBounds.max._ceil()), this._clear(), this._draw(), this._redrawBounds = null;
+    },
+    _clear: function _clear() {
+      var t,
+          i = this._redrawBounds;
+      i ? (t = i.getSize(), this._ctx.clearRect(i.min.x, i.min.y, t.x, t.y)) : (this._ctx.save(), this._ctx.setTransform(1, 0, 0, 1, 0, 0), this._ctx.clearRect(0, 0, this._container.width, this._container.height), this._ctx.restore());
+    },
+    _draw: function _draw() {
+      var t,
+          i,
+          e = this._redrawBounds;
+      this._ctx.save(), e && (i = e.getSize(), this._ctx.beginPath(), this._ctx.rect(e.min.x, e.min.y, i.x, i.y), this._ctx.clip()), this._drawing = !0;
+
+      for (var n = this._drawFirst; n; n = n.next) {
+        t = n.layer, (!e || t._pxBounds && t._pxBounds.intersects(e)) && t._updatePath();
+      }
+
+      this._drawing = !1, this._ctx.restore();
+    },
+    _updatePoly: function _updatePoly(t, i) {
+      if (this._drawing) {
+        var e,
+            n,
+            o,
+            s,
+            r = t._parts,
+            a = r.length,
+            h = this._ctx;
+
+        if (a) {
+          for (h.beginPath(), e = 0; e < a; e++) {
+            for (n = 0, o = r[e].length; n < o; n++) {
+              s = r[e][n], h[n ? "lineTo" : "moveTo"](s.x, s.y);
+            }
+
+            i && h.closePath();
+          }
+
+          this._fillStroke(h, t);
+        }
+      }
+    },
+    _updateCircle: function _updateCircle(t) {
+      var i, e, n, o;
+      this._drawing && !t._empty() && (i = t._point, e = this._ctx, n = Math.max(Math.round(t._radius), 1), 1 != (o = (Math.max(Math.round(t._radiusY), 1) || n) / n) && (e.save(), e.scale(1, o)), e.beginPath(), e.arc(i.x, i.y / o, n, 0, 2 * Math.PI, !1), 1 != o && e.restore(), this._fillStroke(e, t));
+    },
+    _fillStroke: function _fillStroke(t, i) {
+      var e = i.options;
+      e.fill && (t.globalAlpha = e.fillOpacity, t.fillStyle = e.fillColor || e.color, t.fill(e.fillRule || "evenodd")), e.stroke && 0 !== e.weight && (t.setLineDash && t.setLineDash(i.options && i.options._dashArray || []), t.globalAlpha = e.opacity, t.lineWidth = e.weight, t.strokeStyle = e.color, t.lineCap = e.lineCap, t.lineJoin = e.lineJoin, t.stroke());
+    },
+    _onClick: function _onClick(t) {
+      for (var i, e, n = this._map.mouseEventToLayerPoint(t), o = this._drawFirst; o; o = o.next) {
+        (i = o.layer).options.interactive && i._containsPoint(n) && (("click" === t.type || "preclick" !== t.type) && this._map._draggableMoved(i) || (e = i));
+      }
+
+      e && (Fi(t), this._fireEvent([e], t));
+    },
+    _onMouseMove: function _onMouseMove(t) {
+      var i;
+      !this._map || this._map.dragging.moving() || this._map._animatingZoom || (i = this._map.mouseEventToLayerPoint(t), this._handleMouseHover(t, i));
+    },
+    _handleMouseOut: function _handleMouseOut(t) {
+      var i = this._hoveredLayer;
+      i && (_i(this._container, "leaflet-interactive"), this._fireEvent([i], t, "mouseout"), this._hoveredLayer = null, this._mouseHoverThrottled = !1);
+    },
+    _handleMouseHover: function _handleMouseHover(t, i) {
+      if (!this._mouseHoverThrottled) {
+        for (var e, n, o = this._drawFirst; o; o = o.next) {
+          (e = o.layer).options.interactive && e._containsPoint(i) && (n = e);
+        }
+
+        n !== this._hoveredLayer && (this._handleMouseOut(t), n && (ci(this._container, "leaflet-interactive"), this._fireEvent([n], t, "mouseover"), this._hoveredLayer = n)), this._hoveredLayer && this._fireEvent([this._hoveredLayer], t), this._mouseHoverThrottled = !0, setTimeout(p(function () {
+          this._mouseHoverThrottled = !1;
+        }, this), 32);
+      }
+    },
+    _fireEvent: function _fireEvent(t, i, e) {
+      this._map._fireDOMEvent(i, e || i.type, t);
+    },
+    _bringToFront: function _bringToFront(t) {
+      var i,
+          e,
+          n = t._order;
+      n && (i = n.next, e = n.prev, i && ((i.prev = e) ? e.next = i : i && (this._drawFirst = i), n.prev = this._drawLast, (this._drawLast.next = n).next = null, this._drawLast = n, this._requestRedraw(t)));
+    },
+    _bringToBack: function _bringToBack(t) {
+      var i,
+          e,
+          n = t._order;
+      n && (i = n.next, (e = n.prev) && ((e.next = i) ? i.prev = e : e && (this._drawLast = e), n.prev = null, n.next = this._drawFirst, this._drawFirst.prev = n, this._drawFirst = n, this._requestRedraw(t)));
+    }
+  });
+
+  function ln(t) {
+    return St ? new un(t) : null;
+  }
+
+  var cn = function () {
+    try {
+      return document.namespaces.add("lvml", "urn:schemas-microsoft-com:vml"), function (t) {
+        return document.createElement("<lvml:" + t + ' class="lvml">');
+      };
+    } catch (t) {
+      return function (t) {
+        return document.createElement("<" + t + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">');
+      };
+    }
+  }(),
+      _n = {
+    _initContainer: function _initContainer() {
+      this._container = si("div", "leaflet-vml-container");
+    },
+    _update: function _update() {
+      this._map._animatingZoom || (hn.prototype._update.call(this), this.fire("update"));
+    },
+    _initPath: function _initPath(t) {
+      var i = t._container = cn("shape");
+      ci(i, "leaflet-vml-shape " + (this.options.className || "")), i.coordsize = "1 1", t._path = cn("path"), i.appendChild(t._path), this._updateStyle(t), this._layers[m(t)] = t;
+    },
+    _addPath: function _addPath(t) {
+      var i = t._container;
+      this._container.appendChild(i), t.options.interactive && t.addInteractiveTarget(i);
+    },
+    _removePath: function _removePath(t) {
+      var i = t._container;
+      ri(i), t.removeInteractiveTarget(i), delete this._layers[m(t)];
+    },
+    _updateStyle: function _updateStyle(t) {
+      var i = t._stroke,
+          e = t._fill,
+          n = t.options,
+          o = t._container;
+      o.stroked = !!n.stroke, o.filled = !!n.fill, n.stroke ? (i = i || (t._stroke = cn("stroke")), o.appendChild(i), i.weight = n.weight + "px", i.color = n.color, i.opacity = n.opacity, n.dashArray ? i.dashStyle = g(n.dashArray) ? n.dashArray.join(" ") : n.dashArray.replace(/( *, *)/g, " ") : i.dashStyle = "", i.endcap = n.lineCap.replace("butt", "flat"), i.joinstyle = n.lineJoin) : i && (o.removeChild(i), t._stroke = null), n.fill ? (e = e || (t._fill = cn("fill")), o.appendChild(e), e.color = n.fillColor || n.color, e.opacity = n.fillOpacity) : e && (o.removeChild(e), t._fill = null);
+    },
+    _updateCircle: function _updateCircle(t) {
+      var i = t._point.round(),
+          e = Math.round(t._radius),
+          n = Math.round(t._radiusY || e);
+
+      this._setPath(t, t._empty() ? "M0 0" : "AL " + i.x + "," + i.y + " " + e + "," + n + " 0,23592600");
+    },
+    _setPath: function _setPath(t, i) {
+      t._path.v = i;
+    },
+    _bringToFront: function _bringToFront(t) {
+      hi(t._container);
+    },
+    _bringToBack: function _bringToBack(t) {
+      ui(t._container);
+    }
+  },
+      dn = Et ? cn : J,
+      pn = hn.extend({
+    getEvents: function getEvents() {
+      var t = hn.prototype.getEvents.call(this);
+      return t.zoomstart = this._onZoomStart, t;
+    },
+    _initContainer: function _initContainer() {
+      this._container = dn("svg"), this._container.setAttribute("pointer-events", "none"), this._rootGroup = dn("g"), this._container.appendChild(this._rootGroup);
+    },
+    _destroyContainer: function _destroyContainer() {
+      ri(this._container), Si(this._container), delete this._container, delete this._rootGroup, delete this._svgSize;
+    },
+    _onZoomStart: function _onZoomStart() {
+      this._update();
+    },
+    _update: function _update() {
+      var t, i, e;
+      this._map._animatingZoom && this._bounds || (hn.prototype._update.call(this), i = (t = this._bounds).getSize(), e = this._container, this._svgSize && this._svgSize.equals(i) || (this._svgSize = i, e.setAttribute("width", i.x), e.setAttribute("height", i.y)), vi(e, t.min), e.setAttribute("viewBox", [t.min.x, t.min.y, i.x, i.y].join(" ")), this.fire("update"));
+    },
+    _initPath: function _initPath(t) {
+      var i = t._path = dn("path");
+      t.options.className && ci(i, t.options.className), t.options.interactive && ci(i, "leaflet-interactive"), this._updateStyle(t), this._layers[m(t)] = t;
+    },
+    _addPath: function _addPath(t) {
+      this._rootGroup || this._initContainer(), this._rootGroup.appendChild(t._path), t.addInteractiveTarget(t._path);
+    },
+    _removePath: function _removePath(t) {
+      ri(t._path), t.removeInteractiveTarget(t._path), delete this._layers[m(t)];
+    },
+    _updatePath: function _updatePath(t) {
+      t._project(), t._update();
+    },
+    _updateStyle: function _updateStyle(t) {
+      var i = t._path,
+          e = t.options;
+      i && (e.stroke ? (i.setAttribute("stroke", e.color), i.setAttribute("stroke-opacity", e.opacity), i.setAttribute("stroke-width", e.weight), i.setAttribute("stroke-linecap", e.lineCap), i.setAttribute("stroke-linejoin", e.lineJoin), e.dashArray ? i.setAttribute("stroke-dasharray", e.dashArray) : i.removeAttribute("stroke-dasharray"), e.dashOffset ? i.setAttribute("stroke-dashoffset", e.dashOffset) : i.removeAttribute("stroke-dashoffset")) : i.setAttribute("stroke", "none"), e.fill ? (i.setAttribute("fill", e.fillColor || e.color), i.setAttribute("fill-opacity", e.fillOpacity), i.setAttribute("fill-rule", e.fillRule || "evenodd")) : i.setAttribute("fill", "none"));
+    },
+    _updatePoly: function _updatePoly(t, i) {
+      this._setPath(t, $(t._parts, i));
+    },
+    _updateCircle: function _updateCircle(t) {
+      var i = t._point,
+          e = Math.max(Math.round(t._radius), 1),
+          n = "a" + e + "," + (Math.max(Math.round(t._radiusY), 1) || e) + " 0 1,0 ",
+          o = t._empty() ? "M0 0" : "M" + (i.x - e) + "," + i.y + n + 2 * e + ",0 " + n + 2 * -e + ",0 ";
+
+      this._setPath(t, o);
+    },
+    _setPath: function _setPath(t, i) {
+      t._path.setAttribute("d", i);
+    },
+    _bringToFront: function _bringToFront(t) {
+      hi(t._path);
+    },
+    _bringToBack: function _bringToBack(t) {
+      ui(t._path);
+    }
+  });
+
+  function mn(t) {
+    return Zt || Et ? new pn(t) : null;
+  }
+
+  Et && pn.include(_n), Ki.include({
+    getRenderer: function getRenderer(t) {
+      var i = (i = t.options.renderer || this._getPaneRenderer(t.options.pane) || this.options.renderer || this._renderer) || (this._renderer = this._createRenderer());
+
+      return this.hasLayer(i) || this.addLayer(i), i;
+    },
+    _getPaneRenderer: function _getPaneRenderer(t) {
+      if ("overlayPane" === t || void 0 === t) return !1;
+      var i = this._paneRenderers[t];
+      return void 0 === i && (i = this._createRenderer({
+        pane: t
+      }), this._paneRenderers[t] = i), i;
+    },
+    _createRenderer: function _createRenderer(t) {
+      return this.options.preferCanvas && ln(t) || mn(t);
+    }
+  });
+  var fn = Re.extend({
+    initialize: function initialize(t, i) {
+      Re.prototype.initialize.call(this, this._boundsToLatLngs(t), i);
+    },
+    setBounds: function setBounds(t) {
+      return this.setLatLngs(this._boundsToLatLngs(t));
+    },
+    _boundsToLatLngs: function _boundsToLatLngs(t) {
+      return [(t = N(t)).getSouthWest(), t.getNorthWest(), t.getNorthEast(), t.getSouthEast()];
+    }
+  });
+  pn.create = dn, pn.pointsToPath = $, Ne.geometryToLayer = De, Ne.coordsToLatLng = We, Ne.coordsToLatLngs = He, Ne.latLngToCoords = Fe, Ne.latLngsToCoords = Ue, Ne.getFeature = Ve, Ne.asFeature = qe, Ki.mergeOptions({
+    boxZoom: !0
+  });
+  var gn = ie.extend({
+    initialize: function initialize(t) {
+      this._map = t, this._container = t._container, this._pane = t._panes.overlayPane, this._resetStateTimeout = 0, t.on("unload", this._destroy, this);
+    },
+    addHooks: function addHooks() {
+      zi(this._container, "mousedown", this._onMouseDown, this);
+    },
+    removeHooks: function removeHooks() {
+      Si(this._container, "mousedown", this._onMouseDown, this);
+    },
+    moved: function moved() {
+      return this._moved;
+    },
+    _destroy: function _destroy() {
+      ri(this._pane), delete this._pane;
+    },
+    _resetState: function _resetState() {
+      this._resetStateTimeout = 0, this._moved = !1;
+    },
+    _clearDeferredResetState: function _clearDeferredResetState() {
+      0 !== this._resetStateTimeout && (clearTimeout(this._resetStateTimeout), this._resetStateTimeout = 0);
+    },
+    _onMouseDown: function _onMouseDown(t) {
+      if (!t.shiftKey || 1 !== t.which && 1 !== t.button) return !1;
+      this._clearDeferredResetState(), this._resetState(), Xt(), xi(), this._startPoint = this._map.mouseEventToContainerPoint(t), zi(document, {
+        contextmenu: Ni,
+        mousemove: this._onMouseMove,
+        mouseup: this._onMouseUp,
+        keydown: this._onKeyDown
+      }, this);
+    },
+    _onMouseMove: function _onMouseMove(t) {
+      this._moved || (this._moved = !0, this._box = si("div", "leaflet-zoom-box", this._container), ci(this._container, "leaflet-crosshair"), this._map.fire("boxzoomstart")), this._point = this._map.mouseEventToContainerPoint(t);
+      var i = new I(this._point, this._startPoint),
+          e = i.getSize();
+      vi(this._box, i.min), this._box.style.width = e.x + "px", this._box.style.height = e.y + "px";
+    },
+    _finish: function _finish() {
+      this._moved && (ri(this._box), _i(this._container, "leaflet-crosshair")), Jt(), wi(), Si(document, {
+        contextmenu: Ni,
+        mousemove: this._onMouseMove,
+        mouseup: this._onMouseUp,
+        keydown: this._onKeyDown
+      }, this);
+    },
+    _onMouseUp: function _onMouseUp(t) {
+      var i;
+      1 !== t.which && 1 !== t.button || (this._finish(), this._moved && (this._clearDeferredResetState(), this._resetStateTimeout = setTimeout(p(this._resetState, this), 0), i = new R(this._map.containerPointToLatLng(this._startPoint), this._map.containerPointToLatLng(this._point)), this._map.fitBounds(i).fire("boxzoomend", {
+        boxZoomBounds: i
+      })));
+    },
+    _onKeyDown: function _onKeyDown(t) {
+      27 === t.keyCode && this._finish();
+    }
+  });
+  Ki.addInitHook("addHandler", "boxZoom", gn), Ki.mergeOptions({
+    doubleClickZoom: !0
+  });
+  var vn = ie.extend({
+    addHooks: function addHooks() {
+      this._map.on("dblclick", this._onDoubleClick, this);
+    },
+    removeHooks: function removeHooks() {
+      this._map.off("dblclick", this._onDoubleClick, this);
+    },
+    _onDoubleClick: function _onDoubleClick(t) {
+      var i = this._map,
+          e = i.getZoom(),
+          n = i.options.zoomDelta,
+          o = t.originalEvent.shiftKey ? e - n : e + n;
+      "center" === i.options.doubleClickZoom ? i.setZoom(o) : i.setZoomAround(t.containerPoint, o);
+    }
+  });
+  Ki.addInitHook("addHandler", "doubleClickZoom", vn), Ki.mergeOptions({
+    dragging: !0,
+    inertia: !st,
+    inertiaDeceleration: 3400,
+    inertiaMaxSpeed: 1 / 0,
+    easeLinearity: .2,
+    worldCopyJump: !1,
+    maxBoundsViscosity: 0
+  });
+  var yn = ie.extend({
+    addHooks: function addHooks() {
+      var t;
+      this._draggable || (t = this._map, this._draggable = new ae(t._mapPane, t._container), this._draggable.on({
+        dragstart: this._onDragStart,
+        drag: this._onDrag,
+        dragend: this._onDragEnd
+      }, this), this._draggable.on("predrag", this._onPreDragLimit, this), t.options.worldCopyJump && (this._draggable.on("predrag", this._onPreDragWrap, this), t.on("zoomend", this._onZoomEnd, this), t.whenReady(this._onZoomEnd, this))), ci(this._map._container, "leaflet-grab leaflet-touch-drag"), this._draggable.enable(), this._positions = [], this._times = [];
+    },
+    removeHooks: function removeHooks() {
+      _i(this._map._container, "leaflet-grab"), _i(this._map._container, "leaflet-touch-drag"), this._draggable.disable();
+    },
+    moved: function moved() {
+      return this._draggable && this._draggable._moved;
+    },
+    moving: function moving() {
+      return this._draggable && this._draggable._moving;
+    },
+    _onDragStart: function _onDragStart() {
+      var t,
+          i = this._map;
+      i._stop(), this._map.options.maxBounds && this._map.options.maxBoundsViscosity ? (t = N(this._map.options.maxBounds), this._offsetLimit = O(this._map.latLngToContainerPoint(t.getNorthWest()).multiplyBy(-1), this._map.latLngToContainerPoint(t.getSouthEast()).multiplyBy(-1).add(this._map.getSize())), this._viscosity = Math.min(1, Math.max(0, this._map.options.maxBoundsViscosity))) : this._offsetLimit = null, i.fire("movestart").fire("dragstart"), i.options.inertia && (this._positions = [], this._times = []);
+    },
+    _onDrag: function _onDrag(t) {
+      var i, e;
+      this._map.options.inertia && (i = this._lastTime = +new Date(), e = this._lastPos = this._draggable._absPos || this._draggable._newPos, this._positions.push(e), this._times.push(i), this._prunePositions(i)), this._map.fire("move", t).fire("drag", t);
+    },
+    _prunePositions: function _prunePositions(t) {
+      for (; 1 < this._positions.length && 50 < t - this._times[0];) {
+        this._positions.shift(), this._times.shift();
+      }
+    },
+    _onZoomEnd: function _onZoomEnd() {
+      var t = this._map.getSize().divideBy(2),
+          i = this._map.latLngToLayerPoint([0, 0]);
+
+      this._initialWorldOffset = i.subtract(t).x, this._worldWidth = this._map.getPixelWorldBounds().getSize().x;
+    },
+    _viscousLimit: function _viscousLimit(t, i) {
+      return t - (t - i) * this._viscosity;
+    },
+    _onPreDragLimit: function _onPreDragLimit() {
+      var t, i;
+      this._viscosity && this._offsetLimit && (t = this._draggable._newPos.subtract(this._draggable._startPos), i = this._offsetLimit, t.x < i.min.x && (t.x = this._viscousLimit(t.x, i.min.x)), t.y < i.min.y && (t.y = this._viscousLimit(t.y, i.min.y)), t.x > i.max.x && (t.x = this._viscousLimit(t.x, i.max.x)), t.y > i.max.y && (t.y = this._viscousLimit(t.y, i.max.y)), this._draggable._newPos = this._draggable._startPos.add(t));
+    },
+    _onPreDragWrap: function _onPreDragWrap() {
+      var t = this._worldWidth,
+          i = Math.round(t / 2),
+          e = this._initialWorldOffset,
+          n = this._draggable._newPos.x,
+          o = (n - i + e) % t + i - e,
+          s = (n + i + e) % t - i - e,
+          r = Math.abs(o + e) < Math.abs(s + e) ? o : s;
+      this._draggable._absPos = this._draggable._newPos.clone(), this._draggable._newPos.x = r;
+    },
+    _onDragEnd: function _onDragEnd(t) {
+      var i,
+          e,
+          n,
+          o,
+          s,
+          r,
+          a,
+          h,
+          u,
+          l = this._map,
+          c = l.options,
+          _ = !c.inertia || this._times.length < 2;
+
+      l.fire("dragend", t), _ ? l.fire("moveend") : (this._prunePositions(+new Date()), i = this._lastPos.subtract(this._positions[0]), e = (this._lastTime - this._times[0]) / 1e3, n = c.easeLinearity, s = (o = i.multiplyBy(n / e)).distanceTo([0, 0]), r = Math.min(c.inertiaMaxSpeed, s), a = o.multiplyBy(r / s), h = r / (c.inertiaDeceleration * n), (u = a.multiplyBy(-h / 2).round()).x || u.y ? (u = l._limitOffset(u, l.options.maxBounds), M(function () {
+        l.panBy(u, {
+          duration: h,
+          easeLinearity: n,
+          noMoveStart: !0,
+          animate: !0
+        });
+      })) : l.fire("moveend"));
+    }
+  });
+  Ki.addInitHook("addHandler", "dragging", yn), Ki.mergeOptions({
+    keyboard: !0,
+    keyboardPanDelta: 80
+  });
+  var xn = ie.extend({
+    keyCodes: {
+      left: [37],
+      right: [39],
+      down: [40],
+      up: [38],
+      zoomIn: [187, 107, 61, 171],
+      zoomOut: [189, 109, 54, 173]
+    },
+    initialize: function initialize(t) {
+      this._map = t, this._setPanDelta(t.options.keyboardPanDelta), this._setZoomDelta(t.options.zoomDelta);
+    },
+    addHooks: function addHooks() {
+      var t = this._map._container;
+      t.tabIndex <= 0 && (t.tabIndex = "0"), zi(t, {
+        focus: this._onFocus,
+        blur: this._onBlur,
+        mousedown: this._onMouseDown
+      }, this), this._map.on({
+        focus: this._addHooks,
+        blur: this._removeHooks
+      }, this);
+    },
+    removeHooks: function removeHooks() {
+      this._removeHooks(), Si(this._map._container, {
+        focus: this._onFocus,
+        blur: this._onBlur,
+        mousedown: this._onMouseDown
+      }, this), this._map.off({
+        focus: this._addHooks,
+        blur: this._removeHooks
+      }, this);
+    },
+    _onMouseDown: function _onMouseDown() {
+      var t, i, e, n;
+      this._focused || (t = document.body, i = document.documentElement, e = t.scrollTop || i.scrollTop, n = t.scrollLeft || i.scrollLeft, this._map._container.focus(), window.scrollTo(n, e));
+    },
+    _onFocus: function _onFocus() {
+      this._focused = !0, this._map.fire("focus");
+    },
+    _onBlur: function _onBlur() {
+      this._focused = !1, this._map.fire("blur");
+    },
+    _setPanDelta: function _setPanDelta(t) {
+      for (var i = this._panKeys = {}, e = this.keyCodes, n = 0, o = e.left.length; n < o; n++) {
+        i[e.left[n]] = [-1 * t, 0];
+      }
+
+      for (n = 0, o = e.right.length; n < o; n++) {
+        i[e.right[n]] = [t, 0];
+      }
+
+      for (n = 0, o = e.down.length; n < o; n++) {
+        i[e.down[n]] = [0, t];
+      }
+
+      for (n = 0, o = e.up.length; n < o; n++) {
+        i[e.up[n]] = [0, -1 * t];
+      }
+    },
+    _setZoomDelta: function _setZoomDelta(t) {
+      for (var i = this._zoomKeys = {}, e = this.keyCodes, n = 0, o = e.zoomIn.length; n < o; n++) {
+        i[e.zoomIn[n]] = t;
+      }
+
+      for (n = 0, o = e.zoomOut.length; n < o; n++) {
+        i[e.zoomOut[n]] = -t;
+      }
+    },
+    _addHooks: function _addHooks() {
+      zi(document, "keydown", this._onKeyDown, this);
+    },
+    _removeHooks: function _removeHooks() {
+      Si(document, "keydown", this._onKeyDown, this);
+    },
+    _onKeyDown: function _onKeyDown(t) {
+      if (!(t.altKey || t.ctrlKey || t.metaKey)) {
+        var i,
+            e = t.keyCode,
+            n = this._map;
+        if (e in this._panKeys) n._panAnim && n._panAnim._inProgress || (i = this._panKeys[e], t.shiftKey && (i = A(i).multiplyBy(3)), n.panBy(i), n.options.maxBounds && n.panInsideBounds(n.options.maxBounds));else if (e in this._zoomKeys) n.setZoom(n.getZoom() + (t.shiftKey ? 3 : 1) * this._zoomKeys[e]);else {
+          if (27 !== e || !n._popup || !n._popup.options.closeOnEscapeKey) return;
+          n.closePopup();
+        }
+        Ni(t);
+      }
+    }
+  });
+  Ki.addInitHook("addHandler", "keyboard", xn), Ki.mergeOptions({
+    scrollWheelZoom: !0,
+    wheelDebounceTime: 40,
+    wheelPxPerZoomLevel: 60
+  });
+  var wn = ie.extend({
+    addHooks: function addHooks() {
+      zi(this._map._container, "wheel", this._onWheelScroll, this), this._delta = 0;
+    },
+    removeHooks: function removeHooks() {
+      Si(this._map._container, "wheel", this._onWheelScroll, this);
+    },
+    _onWheelScroll: function _onWheelScroll(t) {
+      var i = Wi(t),
+          e = this._map.options.wheelDebounceTime;
+      this._delta += i, this._lastMousePos = this._map.mouseEventToContainerPoint(t), this._startTime || (this._startTime = +new Date());
+      var n = Math.max(e - (new Date() - this._startTime), 0);
+      clearTimeout(this._timer), this._timer = setTimeout(p(this._performZoom, this), n), Ni(t);
+    },
+    _performZoom: function _performZoom() {
+      var t = this._map,
+          i = t.getZoom(),
+          e = this._map.options.zoomSnap || 0;
+
+      t._stop();
+
+      var n = this._delta / (4 * this._map.options.wheelPxPerZoomLevel),
+          o = 4 * Math.log(2 / (1 + Math.exp(-Math.abs(n)))) / Math.LN2,
+          s = e ? Math.ceil(o / e) * e : o,
+          r = t._limitZoom(i + (0 < this._delta ? s : -s)) - i;
+      this._delta = 0, this._startTime = null, r && ("center" === t.options.scrollWheelZoom ? t.setZoom(i + r) : t.setZoomAround(this._lastMousePos, i + r));
+    }
+  });
+  Ki.addInitHook("addHandler", "scrollWheelZoom", wn), Ki.mergeOptions({
+    tap: !0,
+    tapTolerance: 15
+  });
+  var Pn = ie.extend({
+    addHooks: function addHooks() {
+      zi(this._map._container, "touchstart", this._onDown, this);
+    },
+    removeHooks: function removeHooks() {
+      Si(this._map._container, "touchstart", this._onDown, this);
+    },
+    _onDown: function _onDown(t) {
+      if (t.touches) {
+        if (Ri(t), this._fireClick = !0, 1 < t.touches.length) return this._fireClick = !1, void clearTimeout(this._holdTimeout);
+        var i = t.touches[0],
+            e = i.target;
+        this._startPos = this._newPos = new k(i.clientX, i.clientY), e.tagName && "a" === e.tagName.toLowerCase() && ci(e, "leaflet-active"), this._holdTimeout = setTimeout(p(function () {
+          this._isTapValid() && (this._fireClick = !1, this._onUp(), this._simulateEvent("contextmenu", i));
+        }, this), 1e3), this._simulateEvent("mousedown", i), zi(document, {
+          touchmove: this._onMove,
+          touchend: this._onUp
+        }, this);
+      }
+    },
+    _onUp: function _onUp(t) {
+      var i, e;
+      clearTimeout(this._holdTimeout), Si(document, {
+        touchmove: this._onMove,
+        touchend: this._onUp
+      }, this), this._fireClick && t && t.changedTouches && ((e = (i = t.changedTouches[0]).target) && e.tagName && "a" === e.tagName.toLowerCase() && _i(e, "leaflet-active"), this._simulateEvent("mouseup", i), this._isTapValid() && this._simulateEvent("click", i));
+    },
+    _isTapValid: function _isTapValid() {
+      return this._newPos.distanceTo(this._startPos) <= this._map.options.tapTolerance;
+    },
+    _onMove: function _onMove(t) {
+      var i = t.touches[0];
+      this._newPos = new k(i.clientX, i.clientY), this._simulateEvent("mousemove", i);
+    },
+    _simulateEvent: function _simulateEvent(t, i) {
+      var e = document.createEvent("MouseEvents");
+      e._simulated = !0, i.target._simulatedClick = !0, e.initMouseEvent(t, !0, !0, window, 1, i.screenX, i.screenY, i.clientX, i.clientY, !1, !1, !1, !1, 0, null), i.target.dispatchEvent(e);
+    }
+  });
+  !bt || Lt && !ct || Ki.addInitHook("addHandler", "tap", Pn), Ki.mergeOptions({
+    touchZoom: bt && !st,
+    bounceAtZoomLimits: !0
+  });
+  var Ln = ie.extend({
+    addHooks: function addHooks() {
+      ci(this._map._container, "leaflet-touch-zoom"), zi(this._map._container, "touchstart", this._onTouchStart, this);
+    },
+    removeHooks: function removeHooks() {
+      _i(this._map._container, "leaflet-touch-zoom"), Si(this._map._container, "touchstart", this._onTouchStart, this);
+    },
+    _onTouchStart: function _onTouchStart(t) {
+      var i,
+          e,
+          n = this._map;
+      !t.touches || 2 !== t.touches.length || n._animatingZoom || this._zooming || (i = n.mouseEventToContainerPoint(t.touches[0]), e = n.mouseEventToContainerPoint(t.touches[1]), this._centerPoint = n.getSize()._divideBy(2), this._startLatLng = n.containerPointToLatLng(this._centerPoint), "center" !== n.options.touchZoom && (this._pinchStartLatLng = n.containerPointToLatLng(i.add(e)._divideBy(2))), this._startDist = i.distanceTo(e), this._startZoom = n.getZoom(), this._moved = !1, this._zooming = !0, n._stop(), zi(document, "touchmove", this._onTouchMove, this), zi(document, "touchend", this._onTouchEnd, this), Ri(t));
+    },
+    _onTouchMove: function _onTouchMove(t) {
+      if (t.touches && 2 === t.touches.length && this._zooming) {
+        var i = this._map,
+            e = i.mouseEventToContainerPoint(t.touches[0]),
+            n = i.mouseEventToContainerPoint(t.touches[1]),
+            o = e.distanceTo(n) / this._startDist;
+
+        if (this._zoom = i.getScaleZoom(o, this._startZoom), !i.options.bounceAtZoomLimits && (this._zoom < i.getMinZoom() && o < 1 || this._zoom > i.getMaxZoom() && 1 < o) && (this._zoom = i._limitZoom(this._zoom)), "center" === i.options.touchZoom) {
+          if (this._center = this._startLatLng, 1 == o) return;
+        } else {
+          var s = e._add(n)._divideBy(2)._subtract(this._centerPoint);
+
+          if (1 == o && 0 === s.x && 0 === s.y) return;
+          this._center = i.unproject(i.project(this._pinchStartLatLng, this._zoom).subtract(s), this._zoom);
+        }
+
+        this._moved || (i._moveStart(!0, !1), this._moved = !0), z(this._animRequest);
+        var r = p(i._move, i, this._center, this._zoom, {
+          pinch: !0,
+          round: !1
+        });
+        this._animRequest = M(r, this, !0), Ri(t);
+      }
+    },
+    _onTouchEnd: function _onTouchEnd() {
+      this._moved && this._zooming ? (this._zooming = !1, z(this._animRequest), Si(document, "touchmove", this._onTouchMove, this), Si(document, "touchend", this._onTouchEnd, this), this._map.options.zoomAnimation ? this._map._animateZoom(this._center, this._map._limitZoom(this._zoom), !0, this._map.options.zoomSnap) : this._map._resetView(this._center, this._map._limitZoom(this._zoom))) : this._zooming = !1;
+    }
+  });
+  Ki.addInitHook("addHandler", "touchZoom", Ln), Ki.BoxZoom = gn, Ki.DoubleClickZoom = vn, Ki.Drag = yn, Ki.Keyboard = xn, Ki.ScrollWheelZoom = wn, Ki.Tap = Pn, Ki.TouchZoom = Ln, t.version = "1.7.1", t.Control = Xi, t.control = Yi, t.Browser = Bt, t.Evented = E, t.Mixin = ne, t.Util = C, t.Class = S, t.Handler = ie, t.extend = h, t.bind = p, t.stamp = m, t.setOptions = c, t.DomEvent = qi, t.DomUtil = Mi, t.PosAnimation = Gi, t.Draggable = ae, t.LineUtil = fe, t.PolyUtil = ye, t.Point = k, t.point = A, t.Bounds = I, t.bounds = O, t.Transformation = q, t.transformation = G, t.Projection = Pe, t.LatLng = D, t.latLng = j, t.LatLngBounds = R, t.latLngBounds = N, t.CRS = H, t.GeoJSON = Ne, t.geoJSON = Ke, t.geoJson = Ye, t.Layer = Me, t.LayerGroup = ze, t.layerGroup = function (t, i) {
+    return new ze(t, i);
+  }, t.FeatureGroup = Ce, t.featureGroup = function (t, i) {
+    return new Ce(t, i);
+  }, t.ImageOverlay = Xe, t.imageOverlay = function (t, i, e) {
+    return new Xe(t, i, e);
+  }, t.VideoOverlay = Je, t.videoOverlay = function (t, i, e) {
+    return new Je(t, i, e);
+  }, t.SVGOverlay = $e, t.svgOverlay = function (t, i, e) {
+    return new $e(t, i, e);
+  }, t.DivOverlay = Qe, t.Popup = tn, t.popup = function (t, i) {
+    return new tn(t, i);
+  }, t.Tooltip = en, t.tooltip = function (t, i) {
+    return new en(t, i);
+  }, t.Icon = Se, t.icon = function (t) {
+    return new Se(t);
+  }, t.DivIcon = nn, t.divIcon = function (t) {
+    return new nn(t);
+  }, t.Marker = ke, t.marker = function (t, i) {
+    return new ke(t, i);
+  }, t.TileLayer = sn, t.tileLayer = rn, t.GridLayer = on, t.gridLayer = function (t) {
+    return new on(t);
+  }, t.SVG = pn, t.svg = mn, t.Renderer = hn, t.Canvas = un, t.canvas = ln, t.Path = Be, t.CircleMarker = Ae, t.circleMarker = function (t, i) {
+    return new Ae(t, i);
+  }, t.Circle = Ie, t.circle = function (t, i, e) {
+    return new Ie(t, i, e);
+  }, t.Polyline = Oe, t.polyline = function (t, i) {
+    return new Oe(t, i);
+  }, t.Polygon = Re, t.polygon = function (t, i) {
+    return new Re(t, i);
+  }, t.Rectangle = fn, t.rectangle = function (t, i) {
+    return new fn(t, i);
+  }, t.Map = Ki, t.map = function (t, i) {
+    return new Ki(t, i);
+  };
+  var bn = window.L;
+  t.noConflict = function () {
+    return window.L = bn, this;
+  }, window.L = t;
+});
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.content.tree.js":
+/*!***********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.content.tree.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, React, ReactDOM, eZ, localStorage) {
+  var KEY_CONTENT_TREE_EXPANDED = 'ez-content-tree-expanded';
+  var CLASS_CONTENT_TREE_EXPANDED = 'ez-content-tree-container--expanded';
+  var CLASS_CONTENT_TREE_ANIMATE = 'ez-content-tree-container--animate';
+  var CLASS_BTN_CONTENT_TREE_EXPANDED = 'ez-btn--content-tree-expanded';
+  var token = doc.querySelector('meta[name="CSRF-Token"]').content;
+  var siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
+  var contentTreeContainer = doc.querySelector('.ez-content-tree-container');
+  var contentTreeWrapper = doc.querySelector('.ez-content-tree-container__wrapper');
+  var btn = doc.querySelector('.ez-btn--toggle-content-tree');
+  var _contentTreeContainer = contentTreeContainer.dataset,
+      currentLocationPath = _contentTreeContainer.currentLocationPath,
+      treeRootLocationId = _contentTreeContainer.treeRootLocationId;
+  var userId = window.eZ.helpers.user.getId();
+  var frame = null;
+
+  var toggleContentTreePanel = function toggleContentTreePanel() {
+    doc.activeElement.blur();
+    contentTreeContainer.classList.toggle(CLASS_CONTENT_TREE_EXPANDED);
+    contentTreeContainer.classList.add(CLASS_CONTENT_TREE_ANIMATE);
+    btn.classList.toggle(CLASS_BTN_CONTENT_TREE_EXPANDED);
+    updateContentTreeWrapperHeight();
+    var isContentTreeExpanded = contentTreeContainer.classList.contains(CLASS_CONTENT_TREE_EXPANDED);
+    saveContentTreeExpandedState(userId, isContentTreeExpanded);
+    eZ.helpers.tooltips.hideAll();
+  };
+
+  var updateContentTreeWrapperHeight = function updateContentTreeWrapperHeight() {
+    var height = Math.min(window.innerHeight - contentTreeContainer.getBoundingClientRect().top, window.innerHeight);
+    contentTreeWrapper.style.height = "".concat(height, "px");
+  };
+
+  var handleViewportChange = function handleViewportChange() {
+    if (frame) {
+      cancelAnimationFrame(frame);
+    }
+
+    frame = requestAnimationFrame(updateContentTreeWrapperHeight);
+  };
+
+  var saveContentTreeExpandedState = function saveContentTreeExpandedState(userId, isExpanded) {
+    var expandedState = JSON.parse(localStorage.getItem(KEY_CONTENT_TREE_EXPANDED));
+
+    if (!(expandedState instanceof Object)) {
+      expandedState = {};
+    }
+
+    expandedState[userId] = isExpanded;
+    localStorage.setItem(KEY_CONTENT_TREE_EXPANDED, JSON.stringify(expandedState));
+  };
+
+  var isContentTreeExpanded = function isContentTreeExpanded(userId) {
+    var expandedState = JSON.parse(localStorage.getItem(KEY_CONTENT_TREE_EXPANDED));
+    return expandedState && expandedState[userId];
+  };
+
+  ReactDOM.render(React.createElement(eZ.modules.ContentTree, {
+    userId: userId,
+    currentLocationPath: currentLocationPath,
+    rootLocationId: parseInt(treeRootLocationId, 10),
+    restInfo: {
+      token: token,
+      siteaccess: siteaccess
+    }
+  }), contentTreeWrapper);
+  btn.addEventListener('click', toggleContentTreePanel, false);
+
+  if (isContentTreeExpanded(userId)) {
+    contentTreeContainer.classList.add(CLASS_CONTENT_TREE_EXPANDED);
+    btn.classList.add(CLASS_BTN_CONTENT_TREE_EXPANDED);
+  }
+
+  updateContentTreeWrapperHeight();
+  doc.addEventListener('scroll', handleViewportChange, {
+    capture: false,
+    passive: true
+  });
+  window.addEventListener('resize', handleViewportChange, {
+    capture: false,
+    passive: true
+  });
+})(window, window.document, window.React, window.ReactDOM, window.eZ, window.localStorage);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.adaptive.tabs.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.adaptive.tabs.js ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc, $, Translator) {
+  var OFFSET_ROUNDING_COMPENSATOR = 0.5;
+  var TABS_SELECTOR = '.ez-tabs';
+
+  var copyTabs = function copyTabs() {
+    doc.querySelectorAll(TABS_SELECTOR).forEach(function (primaryTabs) {
+      var moreLabel = Translator.trans(
+      /*@Desc("More")*/
+      'content.view.more.label', {}, 'content');
+      primaryTabs.insertAdjacentHTML('beforeend', "<li class=\"nav-item ez-tabs__tab ez-tabs__tab--more\">\n                <a class=\"nav-link\" id=\"ez-tab-label--more\" role=\"tab\">".concat(moreLabel, "</a>\n                <ul class=\"nav nav-tabs ez-tabs ez-tabs--hidden ez-tabs--secondary\" role=\"tablist\">\n                    ").concat(primaryTabs.innerHTML, "\n                </ul>\n            </li>"));
+    });
+  };
+
+  var adaptTabs = function adaptTabs() {
+    doc.querySelectorAll(TABS_SELECTOR).forEach(function (primaryTabsList) {
+      var primaryTabs = _toConsumableArray(primaryTabsList.querySelectorAll(':scope > .ez-tabs__tab'));
+
+      var primaryTabsLinks = _toConsumableArray(primaryTabsList.querySelectorAll(':scope > .ez-tabs__tab .nav-link'));
+
+      var moreTab = primaryTabsList.querySelector(':scope > .ez-tabs__tab--more');
+
+      if (moreTab) {
+        var secondaryTabs = _toConsumableArray(moreTab.querySelectorAll('.ez-tabs__tab'));
+
+        var activePrimaryTabLink = primaryTabsLinks.find(function (tabLink) {
+          return tabLink.classList.contains('active');
+        });
+        var activePrimaryTab = activePrimaryTabLink ? activePrimaryTabLink.closest('.ez-tabs__tab') : null;
+        var activePrimaryTabWidth = activePrimaryTab ? activePrimaryTab.offsetWidth + OFFSET_ROUNDING_COMPENSATOR : 0;
+        var moreTabWidth = moreTab.offsetWidth + OFFSET_ROUNDING_COMPENSATOR;
+        var maxTotalWidth = primaryTabsList.offsetWidth - OFFSET_ROUNDING_COMPENSATOR;
+        var hiddenPrimaryTabs = [];
+        var currentWidth = moreTabWidth + activePrimaryTabWidth;
+        primaryTabs.forEach(function (tab) {
+          return tab.classList.remove('ez-tabs__tab--hidden');
+        });
+        moreTab.classList.remove('ez-tabs__tab--hidden');
+
+        for (var i = 0; i < primaryTabs.length; i++) {
+          var tab = primaryTabs[i];
+          var tabLink = tab.querySelector('.nav-link');
+
+          if (tabLink === activePrimaryTabLink) {
+            continue;
+          }
+
+          var isLastTab = i === primaryTabs.length - 1;
+          var allPreviousTabsVisible = hiddenPrimaryTabs.length === 0;
+          var isTabNarrowerThanMoreTab = tab.offsetWidth < moreTab.offsetWidth + OFFSET_ROUNDING_COMPENSATOR;
+
+          if (isLastTab && allPreviousTabsVisible && isTabNarrowerThanMoreTab) {
+            break;
+          }
+
+          if (currentWidth + tab.offsetWidth + OFFSET_ROUNDING_COMPENSATOR > maxTotalWidth) {
+            hiddenPrimaryTabs.push(i);
+          }
+
+          currentWidth += tab.offsetWidth + OFFSET_ROUNDING_COMPENSATOR;
+        }
+
+        primaryTabs.forEach(function (tab, index) {
+          tab.classList.toggle('ez-tabs__tab--hidden', hiddenPrimaryTabs.includes(index));
+        });
+        secondaryTabs.forEach(function (tab, index) {
+          tab.classList.toggle('ez-tabs__tab--hidden', !hiddenPrimaryTabs.includes(index));
+        });
+        moreTab.classList.toggle('ez-tabs__tab--hidden', !hiddenPrimaryTabs.length);
+      }
+    });
+  };
+
+  var handleClickOutsideSecondaryMenu = function handleClickOutsideSecondaryMenu(event) {
+    doc.querySelectorAll(TABS_SELECTOR).forEach(function (primaryTabsList) {
+      var moreTab = primaryTabsList.querySelector('.ez-tabs__tab--more');
+
+      if (moreTab) {
+        var isSecondaryMenuExpanded = moreTab.classList.contains('ez-tabs__tab--expanded');
+        var isClickInsideMoreTab = event.target.closest('.ez-tabs__tab--more');
+        var secondaryTabsList = moreTab.querySelector('.ez-tabs--secondary');
+
+        if (!isSecondaryMenuExpanded || isClickInsideMoreTab) {
+          return;
+        }
+
+        moreTab.classList.remove('ez-tabs__tab--expanded');
+        secondaryTabsList.classList.add('ez-tabs--hidden');
+      }
+    });
+  };
+
+  var handleTabClick = function handleTabClick(event, otherTabsLinks) {
+    var clickedTabLink = event.currentTarget;
+    var otherTabLinkToShow = otherTabsLinks.find(function (otherTabLink) {
+      return otherTabLink.href === clickedTabLink.href;
+    });
+
+    if (!otherTabLinkToShow) {
+      return;
+    }
+
+    $(otherTabLinkToShow).tab('show');
+    adaptTabs();
+  };
+
+  copyTabs();
+  adaptTabs();
+  doc.addEventListener('click', handleClickOutsideSecondaryMenu);
+  doc.querySelectorAll(TABS_SELECTOR).forEach(function (primaryTabsList) {
+    var moreTab = primaryTabsList.querySelector('.ez-tabs__tab--more');
+
+    if (moreTab) {
+      var moreTabLink = primaryTabsList.querySelector('.ez-tabs__tab--more .nav-link');
+      var secondaryTabsList = moreTab.querySelector('.ez-tabs--secondary');
+      moreTabLink.addEventListener('click', function () {
+        moreTab.classList.toggle('ez-tabs__tab--expanded');
+        secondaryTabsList.classList.toggle('ez-tabs--hidden');
+      });
+    }
+  });
+  doc.querySelectorAll(TABS_SELECTOR).forEach(function (primaryTabsList) {
+    var moreTab = primaryTabsList.querySelector('.ez-tabs__tab--more');
+
+    var primaryTabsLinks = _toConsumableArray(primaryTabsList.querySelectorAll('.ez-tabs__tab .nav-link'));
+
+    if (moreTab) {
+      var secondaryTabsList = moreTab.querySelector('.ez-tabs--secondary');
+
+      var secondaryTabsLinks = _toConsumableArray(secondaryTabsList.querySelectorAll('.ez-tabs__tab .nav-link'));
+
+      primaryTabsLinks.forEach(function (tabLink) {
+        $(tabLink).on('shown.bs.tab', function (event) {
+          handleTabClick(event, secondaryTabsLinks);
+        });
+      });
+      secondaryTabsLinks.forEach(function (tabLink) {
+        tabLink.addEventListener('click', function (event) {
+          handleTabClick(event, primaryTabsLinks);
+          moreTab.classList.toggle('ez-tabs__tab--expanded', false);
+          secondaryTabsList.classList.toggle('ez-tabs--hidden', true);
+        });
+      });
+    }
+  });
+  document.body.addEventListener('ez-content-tree-resized', adaptTabs);
+  window.addEventListener('resize', adaptTabs);
+})(window, window.document, window.jQuery, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.add.custom_url.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.add.custom_url.js ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var modal = doc.querySelector('#ez-modal--custom-url-alias');
+
+  if (modal) {
+    var discardBtns = modal.querySelectorAll('[data-dismiss="modal"]');
+    var submitBtn = modal.querySelector('[type="submit"]');
+    var input = modal.querySelector('[required="required"]');
+    var checkboxes = modal.querySelectorAll('.ez-field-edit--ezboolean input');
+    var siteRootCheckbox = modal.querySelector('[name="custom_url_add[site_root]"]');
+
+    var toggleButtonState = function toggleButtonState() {
+      var hasValue = input.value.trim().length !== 0;
+      var methodName = hasValue ? 'removeAttribute' : 'setAttribute';
+      submitBtn[methodName]('disabled', true);
+    };
+
+    var toggleCheckbox = function toggleCheckbox(event) {
+      var checkbox = event.target;
+      var methodName = checkbox.checked ? 'add' : 'remove';
+      checkbox.closest('.ez-data-source__label').classList[methodName]('is-checked');
+    };
+
+    var clearValues = function clearValues() {
+      input.value = '';
+      toggleButtonState();
+    };
+
+    var toggleSiteAccessSelect = function toggleSiteAccessSelect(event) {
+      var isChecked = event.target.checked;
+      var siteAccessSelect = modal.querySelector('[name="custom_url_add[site_access]"]');
+      var methodName = isChecked ? 'removeAttribute' : 'setAttribute';
+      siteAccessSelect[methodName]('disabled', true);
+    };
+
+    input.addEventListener('input', toggleButtonState, false);
+    siteRootCheckbox.addEventListener('change', toggleSiteAccessSelect, false);
+    checkboxes.forEach(function (checkbox) {
+      return checkbox.addEventListener('change', toggleCheckbox, false);
+    });
+    discardBtns.forEach(function (btn) {
+      return btn.addEventListener('click', clearValues, false);
+    });
+  }
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.bookmark.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.bookmark.js ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, eZ) {
+  var ENDPOINT_BOOKMARK = '/api/ezp/v2/bookmark';
+  var SELECTOR_BOOKMARK_WRAPPER = '.ez-add-to-bookmarks';
+  var CLASS_BOOKMARK_CHECKED = 'ez-add-to-bookmarks--checked';
+  var token = doc.querySelector('meta[name="CSRF-Token"]').content;
+  var siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
+  var bookmarkWrapper = doc.querySelector(SELECTOR_BOOKMARK_WRAPPER);
+  var currentLocationId = parseInt(bookmarkWrapper.getAttribute('data-location-id'), 10);
+  var handleUpdateError = eZ.helpers.notification.showErrorNotification;
+  var isUpdatingBookmark = false;
+
+  var getResponseStatus = function getResponseStatus(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+
+    return response.status;
+  };
+
+  var onBookmarkUpdated = function onBookmarkUpdated(isBookmarked) {
+    toggleBookmarkIconState(isBookmarked);
+    isUpdatingBookmark = false;
+  };
+
+  var updateBookmark = function updateBookmark(addBookmark) {
+    if (isUpdatingBookmark) {
+      return;
+    }
+
+    isUpdatingBookmark = true;
+    var method = addBookmark ? 'POST' : 'DELETE';
+    var request = new Request("".concat(ENDPOINT_BOOKMARK, "/").concat(currentLocationId), {
+      method: method,
+      headers: {
+        'X-Siteaccess': siteaccess,
+        'X-CSRF-Token': token
+      },
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    });
+    fetch(request).then(getResponseStatus).then(onBookmarkUpdated.bind(null, addBookmark))["catch"](handleUpdateError);
+  };
+
+  var isCurrentLocation = function isCurrentLocation(locationId) {
+    return parseInt(locationId, 10) === currentLocationId;
+  };
+
+  var toggleBookmarkIconState = function toggleBookmarkIconState(isBookmarked) {
+    bookmarkWrapper.classList.toggle(CLASS_BOOKMARK_CHECKED, isBookmarked);
+  };
+
+  var updateBookmarkIconState = function updateBookmarkIconState(_ref) {
+    var detail = _ref.detail;
+    var bookmarked = detail.bookmarked,
+        locationId = detail.locationId;
+
+    if (isCurrentLocation(locationId)) {
+      toggleBookmarkIconState(bookmarked);
+    }
+  };
+
+  var checkIsBookmarked = function checkIsBookmarked() {
+    return bookmarkWrapper.classList.contains(CLASS_BOOKMARK_CHECKED);
+  };
+
+  var onBookmarkChange = function onBookmarkChange() {
+    var addBookmark = !checkIsBookmarked();
+    updateBookmark(addBookmark);
+  };
+
+  doc.body.addEventListener('ez-bookmark-change', updateBookmarkIconState, false);
+
+  if (bookmarkWrapper) {
+    bookmarkWrapper.addEventListener('click', onBookmarkChange, false);
+  }
+})(window, window.document, window.eZ);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js":
+/*!***********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var changeLocationLanguage = function changeLocationLanguage(event) {
+    global.location = event.currentTarget.value;
+  };
+
+  var locationLanguageSwitchers = doc.querySelectorAll('.ez-location-language-change');
+  locationLanguageSwitchers.forEach(function (locationLanguageSwitcher) {
+    locationLanguageSwitcher.addEventListener('change', changeLocationLanguage, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.load.map.js":
+/*!****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.load.map.js ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, Leaflet) {
+  doc.querySelectorAll('.ez-gmaplocation__map').forEach(function (mapLocation) {
+    var latitude = parseFloat(mapLocation.dataset.latitude);
+    var longitude = parseFloat(mapLocation.dataset.longitude);
+    var map = Leaflet.map(mapLocation, {
+      zoom: 15,
+      zoomControl: false,
+      scrollWheelZoom: false,
+      dragging: false,
+      tap: false,
+      center: [latitude, longitude]
+    });
+    Leaflet.marker([latitude, longitude], {
+      icon: new Leaflet.Icon.Default({
+        imagePath: '/bundles/ezplatformadminuiassets/vendors/leaflet/dist/images/'
+      })
+    }).addTo(map);
+    Leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  });
+})(window, window.document, window.L);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tab.js":
+/*!***********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tab.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, $) {
+  $(".ez-tabs a[href=\"#".concat(global.location.hash.split('#')[1], "\"]")).tab('show'); // Change hash for page-reload
+
+  $('.ez-tabs a').on('shown.bs.tab', function (event) {
+    global.location.hash = "".concat(event.target.hash, "#tab");
+  });
+})(window, window.document, window.jQuery);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tooglecontentpreview.js":
+/*!****************************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tooglecontentpreview.js ***!
+  \****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, localStorage, $) {
+  var CONTENT_PREVIEW_COLLAPSE_SELECTOR = '.ez-content-preview-collapse';
+  var DEFAULT_CONTENT_PREVIEW_TOGGLE_STATE_KEY = 'ez-content-preview-collapsed';
+
+  var getStateKey = function getStateKey(collapseTarget) {
+    return collapseTarget.dataset.collapseStateKey || DEFAULT_CONTENT_PREVIEW_TOGGLE_STATE_KEY;
+  };
+
+  var getContentPreviewToggleState = function getContentPreviewToggleState(collapsable) {
+    var stateKey = getStateKey(collapsable);
+    var value = localStorage.getItem(stateKey);
+    return !!JSON.parse(value);
+  };
+
+  var setContentPreviewToggleState = function setContentPreviewToggleState(event, value) {
+    var stateKey = getStateKey(event.target);
+    localStorage.setItem(stateKey, value);
+  };
+
+  doc.querySelectorAll(CONTENT_PREVIEW_COLLAPSE_SELECTOR).forEach(function (collapsable) {
+    collapsable = $(collapsable).collapse({
+      toggle: getContentPreviewToggleState(collapsable)
+    });
+    collapsable.on('hide.bs.collapse', function (event) {
+      return setContentPreviewToggleState(event, true);
+    });
+    collapsable.on('show.bs.collapse', function (event) {
+      return setContentPreviewToggleState(event, false);
+    });
+  });
+})(window, window.document, window.localStorage, window.jQuery);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.update.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.update.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var updateMainLocation = function updateMainLocation(event) {
+    doc.querySelector('#content_main_location_update_location').value = event.target.value;
+    doc.querySelector('form[name="content_main_location_update"]').submit();
+  };
+
+  doc.querySelectorAll('input[name="updateMainLocation"]').forEach(function (input) {
+    return input.addEventListener('change', updateMainLocation, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.view.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.view.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, localStorage, $, React, ReactDOM, eZ, Routing, Translator) {
+  var SELECTOR_MODAL_BULK_ACTION_FAIL = '#bulk-action-failed-modal';
+  var listContainers = doc.querySelectorAll('.ez-sil');
+  var mfuContainer = doc.querySelector('#ez-mfu');
+  var token = doc.querySelector('meta[name="CSRF-Token"]').content;
+  var siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
+  var sortContainer = doc.querySelector('[data-sort-field][data-sort-order]');
+  var sortField = sortContainer.getAttribute('data-sort-field');
+  var sortOrder = sortContainer.getAttribute('data-sort-order');
+  var mfuAttrs = {
+    adminUiConfig: _objectSpread(_objectSpread({}, eZ.adminUiConfig), {}, {
+      token: token,
+      siteaccess: siteaccess
+    }),
+    parentInfo: {
+      contentTypeIdentifier: mfuContainer.dataset.parentContentTypeIdentifier,
+      contentTypeId: parseInt(mfuContainer.dataset.parentContentTypeId, 10),
+      locationPath: mfuContainer.dataset.parentLocationPath,
+      language: mfuContainer.dataset.parentContentLanguage
+    },
+    currentLanguage: mfuContainer.dataset.currentLanguage
+  };
+
+  var handleEditItem = function handleEditItem(content, location) {
+    var contentId = content._id;
+    var locationId = location._id;
+    var languageCode = content.mainLanguageCode;
+    var checkVersionDraftLink = Routing.generate('ezplatform.version_draft.has_no_conflict', {
+      contentId: contentId,
+      languageCode: languageCode,
+      locationId: locationId
+    });
+
+    var submitVersionEditForm = function submitVersionEditForm() {
+      doc.querySelector('#form_subitems_content_edit_content_info').value = contentId;
+      doc.querySelector("#form_subitems_content_edit_language_".concat(languageCode)).checked = true;
+      doc.querySelector('#form_subitems_content_edit_create').click();
+    };
+
+    var addDraft = function addDraft() {
+      submitVersionEditForm();
+      $('#version-draft-conflict-modal').modal('hide');
+    };
+
+    var attachModalListeners = function attachModalListeners(wrapper) {
+      var addDraftButton = wrapper.querySelector('.ez-btn--add-draft');
+
+      if (addDraftButton) {
+        addDraftButton.addEventListener('click', addDraft, false);
+      }
+
+      wrapper.querySelectorAll('.ez-btn--prevented').forEach(function (btn) {
+        return btn.addEventListener('click', function (event) {
+          return event.preventDefault();
+        }, false);
+      });
+      $('#version-draft-conflict-modal').modal('show').on('shown.bs.modal', function () {
+        return eZ.helpers.tooltips.parse();
+      });
+    };
+
+    var showModal = function showModal(modalHtml) {
+      var wrapper = doc.querySelector('.ez-modal-wrapper');
+      wrapper.innerHTML = modalHtml;
+      attachModalListeners(wrapper);
+    };
+
+    var checkEditPermissionLink = Routing.generate('ezplatform.content.check_edit_permission', {
+      contentId: contentId,
+      languageCode: content.mainLanguageCode
+    });
+    var errorMessage = Translator.trans(
+    /*@Desc("You don't have permission to edit this Content item")*/
+    'content.edit.permission.error', {}, 'content');
+
+    var handleCanEditCheck = function handleCanEditCheck(response) {
+      if (response.canEdit) {
+        return fetch(checkVersionDraftLink, {
+          mode: 'same-origin',
+          credentials: 'same-origin'
+        });
+      }
+
+      throw new Error(errorMessage);
+    };
+
+    fetch(checkEditPermissionLink, {
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    }).then(eZ.helpers.request.getJsonFromResponse).then(handleCanEditCheck).then(function (response) {
+      // Status 409 means that a draft conflict has occurred and the modal must be displayed.
+      // Otherwise we can go to Content Item edit page.
+      if (response.status === 409) {
+        response.text().then(showModal);
+      } else if (response.status === 200) {
+        submitVersionEditForm();
+      }
+    })["catch"](eZ.helpers.notification.showErrorNotification);
+  };
+
+  var generateLink = function generateLink(locationId, contentId) {
+    return Routing.generate('_ez_content_view', {
+      contentId: contentId,
+      locationId: locationId
+    });
+  };
+
+  var setModalTableTitle = function setModalTableTitle(title) {
+    var modalTableTitleNode = doc.querySelector("".concat(SELECTOR_MODAL_BULK_ACTION_FAIL, " .ez-table-header__headline"));
+    modalTableTitleNode.innerHTML = title;
+  };
+
+  var setModalTableBody = function setModalTableBody(failedItemsData) {
+    var modal = doc.querySelector(SELECTOR_MODAL_BULK_ACTION_FAIL);
+    var table = modal.querySelector('.ez-bulk-action-failed-modal__table');
+    var tableBody = table.querySelector('.ez-bulk-action-failed-modal__table-body');
+    var tableRowTemplate = table.dataset.tableRowTemplate;
+    var fragment = doc.createDocumentFragment();
+    failedItemsData.forEach(function (_ref) {
+      var contentName = _ref.contentName,
+          contentTypeName = _ref.contentTypeName;
+      var container = doc.createElement('tbody');
+      var renderedItem = tableRowTemplate.replace('{{ content_name }}', contentName).replace('{{ content_type_name }}', contentTypeName);
+      container.insertAdjacentHTML('beforeend', renderedItem);
+      var tableRowNode = container.querySelector('tr');
+      fragment.append(tableRowNode);
+    });
+    removeNodeChildren(tableBody);
+    tableBody.append(fragment);
+  };
+
+  var removeNodeChildren = function removeNodeChildren(node) {
+    while (node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
+  };
+
+  var showBulkActionFailedModal = function showBulkActionFailedModal(tableTitle, failedItemsData) {
+    setModalTableBody(failedItemsData);
+    setModalTableTitle(tableTitle);
+    $(SELECTOR_MODAL_BULK_ACTION_FAIL).modal('show');
+  };
+
+  var getLocationActiveView = function getLocationActiveView(parentLocationId) {
+    var mediaLocationId = eZ.adminUiConfig.locations.media;
+    var defaultActiveView = parentLocationId === mediaLocationId ? 'grid' : 'table';
+    var activeView = localStorage.getItem("ez-subitems-active-view-location-".concat(parentLocationId));
+    return activeView || defaultActiveView;
+  };
+
+  listContainers.forEach(function (container) {
+    var parentLocationId = parseInt(container.dataset.location, 10);
+    var activeView = getLocationActiveView(parentLocationId);
+    var subItemsList = JSON.parse(container.dataset.items).SubitemsList;
+    var items = subItemsList.SubitemsRow.map(function (item) {
+      return {
+        content: item.Content,
+        location: item.Location
+      };
+    });
+    var contentTypes = JSON.parse(container.dataset.contentTypes).ContentTypeInfoList.ContentType;
+    var contentTypesMap = contentTypes.reduce(function (total, item) {
+      total[item._href] = item;
+      return total;
+    }, {});
+    var udwConfigBulkMoveItems = JSON.parse(container.dataset.udwConfigBulkMoveItems);
+    var udwConfigBulkAddLocation = JSON.parse(container.dataset.udwConfigBulkAddLocation);
+    var mfuContentTypesMap = Object.values(eZ.adminUiConfig.contentTypes).reduce(function (contentTypeDataMap, contentTypeGroup) {
+      var _iterator = _createForOfIteratorHelper(contentTypeGroup),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var contentTypeData = _step.value;
+          contentTypeDataMap[contentTypeData.href] = contentTypeData;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return contentTypeDataMap;
+    }, {});
+    ReactDOM.render(React.createElement(eZ.modules.SubItems, {
+      handleEditItem: handleEditItem,
+      generateLink: generateLink,
+      activeView: activeView,
+      parentLocationId: parentLocationId,
+      sortClauses: _defineProperty({}, sortField, sortOrder),
+      restInfo: {
+        token: token,
+        siteaccess: siteaccess
+      },
+      extraActions: [{
+        component: eZ.modules.MultiFileUpload,
+        attrs: _objectSpread(_objectSpread({}, mfuAttrs), {}, {
+          onPopupClose: function onPopupClose(itemsUploaded) {
+            return itemsUploaded.length && global.location.reload(true);
+          },
+          contentCreatePermissionsConfig: JSON.parse(container.dataset.mfuCreatePermissionsConfig),
+          contentTypesMap: mfuContentTypesMap
+        })
+      }],
+      items: items,
+      contentTypesMap: contentTypesMap,
+      totalCount: subItemsList.ChildrenCount,
+      udwConfigBulkMoveItems: udwConfigBulkMoveItems,
+      udwConfigBulkAddLocation: udwConfigBulkAddLocation,
+      showBulkActionFailedModal: showBulkActionFailedModal
+    }), container);
+  });
+})(window, window.document, window.localStorage, window.jQuery, window.React, window.ReactDOM, window.eZ, window.Routing, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.visibility.js":
+/*!******************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.visibility.js ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, eZ) {
+  var SELECTOR_VISIBILITY_CHECKBOXES = '#ez-tab-location-view-locations .ez-checkbox-icon__checkbox';
+  var SELECTOR_VISIBILITY_FORM = 'form[name="location_update_visibility_data"]';
+  var form = doc.querySelector(SELECTOR_VISIBILITY_FORM);
+  var visibilityCheckboxes = doc.querySelectorAll(SELECTOR_VISIBILITY_CHECKBOXES);
+
+  var refreshContentTree = function refreshContentTree() {
+    doc.body.dispatchEvent(new CustomEvent('ez-content-tree-refresh'));
+  };
+
+  var onVisibilityUpdated = function onVisibilityUpdated(_ref) {
+    var target = _ref.target;
+    var isVisible = target.checked;
+    target.closest('.ez-checkbox-icon').classList.toggle('is-checked', isVisible);
+  };
+
+  var handleUpdateError = eZ.helpers.notification.showErrorNotification;
+
+  var handleUpdateSuccess = function handleUpdateSuccess(event, _ref2) {
+    var message = _ref2.message;
+    onVisibilityUpdated(event);
+    eZ.helpers.notification.showSuccessNotification(message);
+    refreshContentTree();
+  };
+
+  var handleUpdateResponse = function handleUpdateResponse(response) {
+    if (response.status !== 200) {
+      throw new Error(response.statusText);
+    }
+
+    return response.json();
+  };
+
+  var updateVisibility = function updateVisibility(event) {
+    form.querySelector('#location_update_visibility_data_location').value = event.target.value;
+    form.querySelector('#location_update_visibility_data_hidden').checked = !event.target.checked;
+    var request = new Request(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    });
+    fetch(request).then(handleUpdateResponse).then(handleUpdateSuccess.bind(null, event))["catch"](handleUpdateError);
+  };
+
+  visibilityCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener('change', updateVisibility, false);
+  });
+})(window, window.document, window.eZ);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.main.translation.update.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.main.translation.update.js ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var updateMainTranslation = function updateMainTranslation(event) {
+    doc.querySelector('#main_translation_update_language_code').value = event.target.value;
+    doc.querySelector('form[name="main_translation_update"]').submit();
+  };
+
+  var inputs = doc.querySelectorAll('input[name="main_translation_update"]');
+  inputs.forEach(function (input) {
+    return input.addEventListener('change', updateMainTranslation, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.version.edit.conflict.js":
+/*!********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.version.edit.conflict.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, $, eZ, Translator, Routing) {
+  var editVersion = function editVersion(event) {
+    var showErrorNotification = eZ.helpers.notification.showErrorNotification;
+    var contentDraftEditUrl = event.currentTarget.dataset.contentDraftEditUrl;
+    var versionHasConflictUrl = event.currentTarget.dataset.versionHasConflictUrl;
+    var contentId = event.currentTarget.dataset.contentId;
+    var languageCode = event.currentTarget.dataset.languageCode;
+    var checkEditPermissionLink = Routing.generate('ezplatform.content.check_edit_permission', {
+      contentId: contentId,
+      languageCode: languageCode
+    });
+    var errorMessage = Translator.trans(
+    /*@Desc("You don't have permission to edit this Content item")*/
+    'content.edit.permission.error', {}, 'content');
+
+    var handleCanEditCheck = function handleCanEditCheck(response) {
+      if (response.canEdit) {
+        return fetch(versionHasConflictUrl, {
+          mode: 'same-origin',
+          credentials: 'same-origin'
+        });
+      }
+
+      throw new Error(errorMessage);
+    };
+
+    var handleVersionDraftConflict = function handleVersionDraftConflict(response) {
+      // Status 409 means that a draft conflict has occurred and the modal must be displayed.
+      // Otherwise we can go to Content Item edit page.
+      if (response.status === 409) {
+        doc.querySelector('#edit-conflicted-draft').href = contentDraftEditUrl;
+        $('#version-conflict-modal').modal('show');
+      }
+
+      if (response.status === 403) {
+        response.text().then(showErrorNotification);
+      }
+
+      if (response.status === 200) {
+        global.location.href = contentDraftEditUrl;
+      }
+    };
+
+    event.preventDefault();
+    fetch(checkEditPermissionLink, {
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    }).then(eZ.helpers.request.getJsonFromResponse).then(handleCanEditCheck).then(handleVersionDraftConflict)["catch"](showErrorNotification);
+  };
+
+  doc.querySelectorAll('.ez-btn--content-draft-edit').forEach(function (button) {
+    return button.addEventListener('click', editVersion, false);
+  });
+})(window, window.document, window.jQuery, window.eZ, window.Translator, window.Routing);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.content.edit.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.content.edit.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, $, eZ, Translator, Routing) {
+  var FORM_EDIT = 'form.ez-edit-content-form';
+  var showErrorNotification = eZ.helpers.notification.showErrorNotification;
+
+  var editVersion = function editVersion(event) {
+    var versionEditForm = doc.querySelector(FORM_EDIT);
+    var versionEditFormName = versionEditForm.name;
+    var _event$currentTarget$ = event.currentTarget.dataset,
+        contentId = _event$currentTarget$.contentId,
+        versionNo = _event$currentTarget$.versionNo,
+        languageCode = _event$currentTarget$.languageCode;
+    var contentInfoInput = versionEditForm.querySelector("input[name=\"".concat(versionEditFormName, "[content_info]\"]"));
+    var versionInfoContentInfoInput = versionEditForm.querySelector("input[name=\"".concat(versionEditFormName, "[version_info][content_info]\"]"));
+    var versionInfoVersionNoInput = versionEditForm.querySelector("input[name=\"".concat(versionEditFormName, "[version_info][version_no]\"]"));
+    var languageInput = versionEditForm.querySelector("#".concat(versionEditFormName, "_language_").concat(languageCode));
+    var checkVersionDraftLink = Routing.generate('ezplatform.version_draft.has_no_conflict', {
+      contentId: contentId,
+      languageCode: languageCode
+    });
+    var checkEditPermissionLink = Routing.generate('ezplatform.content.check_edit_permission', {
+      contentId: contentId,
+      languageCode: languageCode
+    });
+    var errorMessage = Translator.trans(
+    /*@Desc("You don't have permission to edit this Content item")*/
+    'content.edit.permission.error', {}, 'content');
+
+    var submitVersionEditForm = function submitVersionEditForm() {
+      contentInfoInput.value = contentId;
+      versionInfoContentInfoInput.value = contentId;
+      versionInfoVersionNoInput.value = versionNo !== undefined ? versionNo : null;
+      languageInput.checked = true;
+      versionEditForm.submit();
+    };
+
+    var addDraft = function addDraft() {
+      submitVersionEditForm();
+      $('#version-draft-conflict-modal').modal('hide');
+    };
+
+    var showModal = function showModal(modalHtml) {
+      var wrapper = doc.querySelector('.ez-modal-wrapper');
+      wrapper.innerHTML = modalHtml;
+      var addDraftButton = wrapper.querySelector('.ez-btn--add-draft');
+
+      if (addDraftButton) {
+        addDraftButton.addEventListener('click', addDraft, false);
+      }
+
+      wrapper.querySelectorAll('.ez-btn--prevented').forEach(function (btn) {
+        return btn.addEventListener('click', function (event) {
+          return event.preventDefault();
+        }, false);
+      });
+      $('#version-draft-conflict-modal').modal('show');
+    };
+
+    var handleCanEditCheck = function handleCanEditCheck(response) {
+      if (response.canEdit) {
+        return fetch(checkVersionDraftLink, {
+          mode: 'same-origin',
+          credentials: 'same-origin'
+        });
+      }
+
+      throw new Error(errorMessage);
+    };
+
+    var handleDraftConflict = function handleDraftConflict(response) {
+      // Status 409 means that a draft conflict has occurred and the modal must be displayed.
+      // Otherwise we can go to Content Item edit page.
+      if (response.status === 409) {
+        response.text().then(showModal);
+      } else if (response.status === 403) {
+        response.text().then(showErrorNotification);
+      } else if (response.status === 200) {
+        submitVersionEditForm();
+      }
+    };
+
+    event.preventDefault();
+    fetch(checkEditPermissionLink, {
+      mode: 'same-origin',
+      credentials: 'same-origin'
+    }).then(eZ.helpers.request.getJsonFromResponse).then(handleCanEditCheck).then(handleDraftConflict)["catch"](showErrorNotification);
+  };
+
+  doc.querySelectorAll('.ez-btn--content-edit').forEach(function (button) {
+    return button.addEventListener('click', editVersion, false);
+  });
+})(window, window.document, window.jQuery, window.eZ, window.Translator, window.Routing);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js":
+/*!************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var toggleForms = doc.querySelectorAll('.ez-toggle-btn-state');
+  toggleForms.forEach(function (toggleForm) {
+    var checkboxes = _toConsumableArray(toggleForm.querySelectorAll('.ez-table__cell.ez-table__cell--has-checkbox input[type="checkbox"]'));
+
+    var buttonRemove = doc.querySelector(toggleForm.dataset.toggleButtonId);
+
+    if (!buttonRemove) {
+      return;
+    }
+
+    var toggleButtonState = function toggleButtonState() {
+      var isAnythingSelected = checkboxes.some(function (el) {
+        return el.checked;
+      });
+      buttonRemove.disabled = !isAnythingSelected;
+    };
+
+    toggleButtonState();
+    checkboxes.forEach(function (checkbox) {
+      return checkbox.addEventListener('change', toggleButtonState, false);
+    });
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.edit.js":
+/*!*****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.edit.js ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var editButton = doc.querySelector('.ez-btn--edit');
+  var languageRadioOption = doc.querySelector('.ez-extra-actions--edit.ez-extra-actions--prevent-show [type="radio"]');
+
+  if (!languageRadioOption) {
+    return;
+  }
+
+  editButton.addEventListener('click', function () {
+    languageRadioOption.checked = true;
+    languageRadioOption.dispatchEvent(new CustomEvent('change'));
+  }, false);
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.hide.js":
+/*!*****************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.hide.js ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, $) {
+  var hideButton = doc.querySelector('.ez-btn--hide');
+  var modal = doc.querySelector('#hide-content-modal');
+  var form = doc.querySelector('form[name="content_visibility_update"]');
+  var visiblity = doc.querySelector('#content_visibility_update_visible');
+
+  if (!hideButton) {
+    return;
+  }
+
+  if (modal) {
+    modal.querySelector('.btn-confirm').addEventListener('click', function () {
+      visiblity.value = 0;
+      form.submit();
+    });
+  }
+
+  hideButton.addEventListener('click', function () {
+    if (modal) {
+      $(modal).modal('show');
+    } else {
+      visiblity.value = 0;
+      form.submit();
+    }
+  }, false);
+})(window, window.document, window.jQuery);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.reveal.js":
+/*!*******************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.reveal.js ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var revealButton = doc.querySelector('.ez-btn--reveal');
+  var form = doc.querySelector('form[name="content_visibility_update"]');
+  var visiblity = doc.querySelector('#content_visibility_update_visible');
+
+  if (!revealButton) {
+    return;
+  }
+
+  revealButton.addEventListener('click', function () {
+    visiblity.value = 1;
+    form.submit();
+  }, false);
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.create.js":
+/*!********************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.create.js ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var createActions = doc.querySelector('.ez-extra-actions--create');
+  var btns = createActions.querySelectorAll('.form-check [type="radio"]');
+  var form = createActions.querySelector('form');
+  btns.forEach(function (btn) {
+    return btn.addEventListener('change', function () {
+      return form.submit();
+    }, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.edit.js":
+/*!******************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.edit.js ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc, eZ, $, Routing) {
+  var editActions = doc.querySelector('.ez-extra-actions--edit') || doc.querySelector('.ez-extra-actions--edit-user');
+
+  var btns = _toConsumableArray(editActions.querySelectorAll('.form-check [type="radio"]'));
+
+  var form = editActions.querySelector('form');
+  var contentIdInput = form.querySelector('#content_edit_content_info') || form.querySelector('#user_edit_content_info');
+  var contentId = contentIdInput.value;
+  var locationInput = form.querySelector('#content_edit_location') || form.querySelector('#user_edit_location');
+  var locationId = locationInput.value;
+
+  var resetRadioButtons = function resetRadioButtons() {
+    return btns.forEach(function (btn) {
+      btn.checked = false;
+    });
+  };
+
+  var addDraft = function addDraft() {
+    form.submit();
+    $('#version-draft-conflict-modal').modal('hide');
+  };
+
+  var redirectToUserEdit = function redirectToUserEdit(languageCode) {
+    var versionNo = form.querySelector('#user_edit_version_info_version_no').value;
+    window.location.href = Routing.generate('ezplatform.user.update', {
+      contentId: contentId,
+      versionNo: versionNo,
+      language: languageCode
+    });
+  };
+
+  var onModalHidden = function onModalHidden() {
+    resetRadioButtons();
+    var event = new CustomEvent('ez-draft-conflict-modal-hidden');
+    doc.body.dispatchEvent(event);
+  };
+
+  var attachModalListeners = function attachModalListeners(wrapper) {
+    var addDraftButton = wrapper.querySelector('.ez-btn--add-draft');
+
+    if (addDraftButton) {
+      addDraftButton.addEventListener('click', addDraft, false);
+    }
+
+    wrapper.querySelectorAll('.ez-btn--prevented').forEach(function (btn) {
+      return btn.addEventListener('click', function (event) {
+        return event.preventDefault();
+      }, false);
+    });
+    $('#version-draft-conflict-modal').modal('show').on('hidden.bs.modal', onModalHidden).on('shown.bs.modal', function () {
+      return eZ.helpers.tooltips.parse();
+    });
+  };
+
+  var showModal = function showModal(modalHtml) {
+    var wrapper = doc.querySelector('.ez-modal-wrapper');
+    wrapper.innerHTML = modalHtml;
+    attachModalListeners(wrapper);
+  };
+
+  var changeHandler = function changeHandler(event) {
+    var checkedBtn = event.currentTarget;
+    var languageCode = checkedBtn.value;
+    var checkVersionDraftLink = Routing.generate('ezplatform.version_draft.has_no_conflict', {
+      contentId: contentId,
+      languageCode: languageCode,
+      locationId: locationId
+    });
+    fetch(checkVersionDraftLink, {
+      credentials: 'same-origin'
+    }).then(function (response) {
+      if (response.status === 409) {
+        response.text().then(showModal);
+      } else if (response.status === 200) {
+        if (form.querySelector('#user_edit_version_info')) {
+          redirectToUserEdit(languageCode);
+          return;
+        }
+
+        form.submit();
+      }
+    });
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('change', changeHandler, false);
+  });
+})(window, window.document, window.eZ, window.jQuery, window.Routing);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/user.edit.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/user.edit.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc) {
+  var editButton = doc.querySelector('.ez-btn--edit-user');
+  var languageRadioOption = doc.querySelector('.ez-extra-actions--edit-user.ez-extra-actions--prevent-show [type="radio"]');
+  var editActions = doc.querySelector('.ez-extra-actions--edit-user');
+
+  if (!editActions || !languageRadioOption) {
+    return;
+  }
+
+  editButton.addEventListener('click', function () {
+    languageRadioOption.checked = true;
+    languageRadioOption.dispatchEvent(new CustomEvent('change'));
+  }, false);
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js":
+/*!**************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var CLASS_HIDDEN = 'ez-extra-actions--hidden';
+  var CLASS_EXPANDED = 'ez-context-menu--expanded';
+  var CLASS_ACTIVE_BUTTON = 'ez-btn--active-button';
+  var CLASS_PREVENT_SHOW = 'ez-extra-actions--prevent-show';
+  var ACTIONS_CONTAINER_MARGIN = 8;
+  var RESIZE_AND_SCROLL_TIMEOUT = 50;
+
+  var btns = _toConsumableArray(doc.querySelectorAll('.ez-btn--extra-actions'));
+
+  var menu = doc.querySelector('.ez-context-menu');
+  var footer = doc.querySelector('.ez-footer');
+  var containerHeightTimeout;
+
+  var haveHiddenPart = function haveHiddenPart(element) {
+    return element.classList.contains(CLASS_HIDDEN) && !element.classList.contains(CLASS_PREVENT_SHOW);
+  };
+
+  var setContainerHeight = function setContainerHeight() {
+    var container = doc.querySelector('.ez-extra-actions:not(.ez-extra-actions--hidden)');
+    var bottomPosition = footer ? Math.min(footer.getBoundingClientRect().top, global.innerHeight) : global.innerHeight;
+    var containerHeight = bottomPosition - container.getBoundingClientRect().top - ACTIONS_CONTAINER_MARGIN;
+    container.style.height = "".concat(containerHeight, "px");
+  };
+
+  var setContainerHeightTimeout = function setContainerHeightTimeout() {
+    clearTimeout(containerHeightTimeout);
+    containerHeightTimeout = setTimeout(setContainerHeight, RESIZE_AND_SCROLL_TIMEOUT);
+  };
+
+  var addContainerHeightListeners = function addContainerHeightListeners() {
+    global.addEventListener('scroll', setContainerHeightTimeout, false);
+    global.addEventListener('resize', setContainerHeightTimeout, false);
+  };
+
+  var removeContainerHeightListeners = function removeContainerHeightListeners() {
+    global.removeEventListener('scroll', setContainerHeightTimeout, false);
+    global.removeEventListener('resize', setContainerHeightTimeout, false);
+  };
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var actions = doc.querySelector(".ez-extra-actions[data-actions=\"".concat(btn.dataset.actions, "\"]"));
+
+      if (btn.dataset.validate && !parseInt(btn.dataset.isFormValid, 10)) {
+        return;
+      }
+
+      var isHidden = haveHiddenPart(actions);
+      var methodNameButton = isHidden ? 'add' : 'remove';
+      var methodNameContainer = isHidden ? 'remove' : 'add';
+      var methodNameMenu = isHidden ? 'add' : 'remove';
+      var focusElement = actions.querySelector(btn.dataset.focusElement);
+
+      var detectClickOutside = function detectClickOutside(event) {
+        var isNotButton = !btn.contains(event.target);
+        var shouldCollapseMenu = !btns.includes(event.target);
+        var isNotExtraActions = !event.target.closest('.ez-extra-actions');
+        var isNotCalendar = !event.target.closest('.flatpickr-calendar');
+
+        if (isNotButton && isNotExtraActions && isNotCalendar) {
+          btn.classList.remove(CLASS_ACTIVE_BUTTON);
+          actions.classList.add(CLASS_HIDDEN);
+
+          if (shouldCollapseMenu) {
+            menu.classList.remove(CLASS_EXPANDED);
+          }
+
+          doc.body.removeEventListener('click', detectClickOutside, false);
+          removeContainerHeightListeners();
+        }
+      };
+
+      btn.classList[methodNameButton](CLASS_ACTIVE_BUTTON);
+      actions.classList[methodNameContainer](CLASS_HIDDEN);
+      menu.classList[methodNameMenu](CLASS_EXPANDED);
+
+      if (!actions.classList.contains(CLASS_HIDDEN)) {
+        doc.body.addEventListener('click', detectClickOutside, false);
+        setContainerHeight();
+        addContainerHeightListeners();
+      } else {
+        doc.body.removeEventListener('click', detectClickOutside);
+        removeContainerHeightListeners();
+      }
+
+      if (focusElement) {
+        focusElement.focus();
+      }
+    }, false);
+  });
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/instant.filter.js":
+/*!***************************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/instant.filter.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+(function (global, doc) {
+  var filterTimeout;
+  var SELECTOR_ITEM = '.ez-instant-filter__group-item';
+  var timeout = 200;
+  var filters = doc.querySelectorAll('.ez-instant-filter');
+
+  var toggleGroupNameDisplay = function toggleGroupNameDisplay(group) {
+    var hasVisibleChildren = !!_toConsumableArray(group.querySelectorAll(SELECTOR_ITEM)).filter(function (item) {
+      return !item.hasAttribute('hidden');
+    }).length;
+    var groupName = group.querySelector('.ez-instant-filter__group-name');
+    var methodName = hasVisibleChildren ? 'removeAttribute' : 'setAttribute';
+    groupName[methodName]('hidden', true);
+  };
+
+  var filterItems = function filterItems(itemsMap, groups, event) {
+    window.clearTimeout(filterTimeout);
+    filterTimeout = window.setTimeout(function () {
+      var query = event.target.value.toLowerCase();
+      var results = itemsMap.filter(function (item) {
+        return item.label.includes(query);
+      });
+      itemsMap.forEach(function (item) {
+        return item.element.setAttribute('hidden', true);
+      });
+      results.forEach(function (item) {
+        return item.element.removeAttribute('hidden');
+      });
+      groups.forEach(toggleGroupNameDisplay);
+    }, timeout);
+  };
+
+  var initFilter = function initFilter(filter) {
+    var filterInput = filter.querySelector('.ez-instant-filter__input');
+
+    var groups = _toConsumableArray(filter.querySelectorAll('.ez-instant-filter__group'));
+
+    var items = _toConsumableArray(filter.querySelectorAll(SELECTOR_ITEM));
+
+    var itemsMap = items.reduce(function (total, item) {
+      return [].concat(_toConsumableArray(total), [{
+        label: item.textContent.toLowerCase(),
+        element: item
+      }]);
+    }, []);
+    filterInput.addEventListener('change', filterItems.bind(filter, itemsMap, groups), false);
+    filterInput.addEventListener('blur', filterItems.bind(filter, itemsMap, groups), false);
+    filterInput.addEventListener('keyup', filterItems.bind(filter, itemsMap, groups), false);
+  };
+
+  filters.forEach(initFilter);
+})(window, window.document);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/table.checkbox.js":
+/*!*******************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/table.checkbox.js ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function (global, doc, eZ) {
+  eZ.helpers.table.parseCheckbox('.ez-table__cell .form-check-input, .c-table-view-item .ez-input--checkbox', 'ez-table__row--active');
+})(window, document, window.eZ);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy.js":
+/*!*************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var btns = doc.querySelectorAll('.btn--udw-copy');
+  var form = doc.querySelector('form[name="location_copy"]');
+  var input = form.querySelector('#location_copy_new_parent_location');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(items) {
+    closeUDW();
+    input.value = items[0].id;
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    var title = Translator.trans(
+    /*@Desc("Select Location")*/
+    'copy.title', {}, 'universal_discovery_widget');
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: onCancel,
+      title: title,
+      multiple: false,
+      containersOnly: true
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy_subtree.js":
+/*!*********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy_subtree.js ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var btns = doc.querySelectorAll('.ez-btn--udw-copy-subtree');
+  var form = doc.querySelector('form[name="location_copy_subtree"]');
+  var input = form.querySelector('#location_copy_subtree_new_parent_location');
+  var udwContainer = doc.querySelector('#react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(items) {
+    closeUDW();
+    input.value = items[0].id;
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var title = Translator.trans(
+    /*@Desc("Select Location")*/
+    'subtree.title', {}, 'universal_discovery_widget');
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: onCancel,
+      title: title,
+      multiple: false,
+      containersOnly: true
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/locations.tab.js":
+/*!**********************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/locations.tab.js ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var btns = doc.querySelectorAll('.btn--udw-add');
+  var submitButton = doc.querySelector('#content_location_add_add');
+  var form = doc.querySelector('form[name="content_location_add"]');
+  var input = form.querySelector('#content_location_add_new_locations');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(items) {
+    closeUDW();
+    input.value = items[0].id;
+    submitButton.click();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    var title = Translator.trans(
+    /*@Desc("Select Location")*/
+    'add_location.title', {}, 'universal_discovery_widget');
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: onCancel,
+      containersOnly: true,
+      title: title,
+      multiple: false
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/move.js":
+/*!*************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/move.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var btns = doc.querySelectorAll('.btn--udw-move');
+  var form = doc.querySelector('form[name="location_move"]');
+  var input = form.querySelector('#location_move_new_parent_location');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(items) {
+    closeUDW();
+    input.value = items[0].id;
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    var title = Translator.trans(
+    /*@Desc("Select destination")*/
+    'move.title', {}, 'universal_discovery_widget');
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: onCancel,
+      title: title,
+      multiple: false,
+      containersOnly: true
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ "./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/swap.js":
+/*!*************************************************************************************************!*\
+  !*** ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/swap.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function (global, doc, eZ, React, ReactDOM, Translator) {
+  var btns = doc.querySelectorAll('.btn--udw-swap');
+  var form = doc.querySelector('form[name="location_swap"]');
+  var input = form.querySelector('#location_swap_new_location');
+  var udwContainer = doc.getElementById('react-udw');
+
+  var closeUDW = function closeUDW() {
+    return ReactDOM.unmountComponentAtNode(udwContainer);
+  };
+
+  var onConfirm = function onConfirm(items) {
+    closeUDW();
+    input.value = items[0].id;
+    form.submit();
+  };
+
+  var onCancel = function onCancel() {
+    return closeUDW();
+  };
+
+  var openUDW = function openUDW(event) {
+    event.preventDefault();
+    var config = JSON.parse(event.currentTarget.dataset.udwConfig);
+    var title = Translator.trans(
+    /*@Desc("Select Location to swap with")*/
+    'swap.title', {}, 'universal_discovery_widget');
+    ReactDOM.render(React.createElement(eZ.modules.UniversalDiscovery, _objectSpread({
+      onConfirm: onConfirm,
+      onCancel: onCancel,
+      title: title,
+      multiple: false
+    }, config)), udwContainer);
+  };
+
+  btns.forEach(function (btn) {
+    return btn.addEventListener('click', openUDW, false);
+  });
+})(window, window.document, window.eZ, window.React, window.ReactDOM, window.Translator);
+
+/***/ }),
+
+/***/ 16:
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.content.tree.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.view.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tab.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.adaptive.tabs.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.visibility.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.update.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tooglecontentpreview.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.content.edit.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/move.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/swap.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy_subtree.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/locations.tab.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.edit.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/user.edit.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.create.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/instant.filter.js ./vendor/ezsystems/ezplatform-admin-ui-assets/Resources/public/vendors/leaflet/dist/leaflet.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.load.map.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.edit.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.hide.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.reveal.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.add.custom_url.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.version.edit.conflict.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.bookmark.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.main.translation.update.js ./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/table.checkbox.js ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.change.language.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.content.tree.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.content.tree.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.view.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.view.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tab.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tab.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.adaptive.tabs.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.adaptive.tabs.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.visibility.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.visibility.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.update.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.update.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tooglecontentpreview.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.tooglecontentpreview.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.content.edit.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.content.edit.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/move.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/move.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/swap.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/swap.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy_subtree.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/copy_subtree.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/locations.tab.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/udw/locations.tab.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/extra.actions.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.edit.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.edit.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/user.edit.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/user.edit.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.create.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/location.create.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/instant.filter.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/instant.filter.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui-assets/Resources/public/vendors/leaflet/dist/leaflet.js */"./vendor/ezsystems/ezplatform-admin-ui-assets/Resources/public/vendors/leaflet/dist/leaflet.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.load.map.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.load.map.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.edit.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.edit.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.hide.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.hide.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.reveal.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/sidebar/btn/content.reveal.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.add.custom_url.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.add.custom_url.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/button.state.toggle.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.version.edit.conflict.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.version.edit.conflict.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.bookmark.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.location.bookmark.js");
+__webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.main.translation.update.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/admin.main.translation.update.js");
+module.exports = __webpack_require__(/*! /var/www/html/ibexa/vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/table.checkbox.js */"./vendor/ezsystems/ezplatform-admin-ui/src/bundle/Resources/public/js/scripts/table.checkbox.js");
+
+
+/***/ })
+
+},[[16,"runtime"]]]);

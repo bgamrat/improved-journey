@@ -2,7 +2,7 @@
 {% block content %}
     <header class="page-header row">
         <span class="col-md">
-            <img src="{{ asset("/assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo">
+            <a href="/"><img src="{{ asset("/assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo"></a>
         </span>
         <h1 class="col-md text-right">
             {{ ez_content_name( content ) }}<br>
@@ -23,7 +23,6 @@
                             {{ ez_render_field(content, 'course_title') }}
                         </td>
                     </tr>
-
                     <tr>
                         <td>
                             <span class="font-weight-bold">{{ 'Course Number' | trans }}</span>
@@ -66,34 +65,45 @@
             </table>
         </section>
         <section class="row my-3 py-2 border border-secondary">
-            <h3 class="d-none">{{ 'Prerequisites' | trans }}</h3>
-            {% if not ez_field_is_empty(content,'prerequisites') %}
-                <div class="col">
-                    <h3>{{ 'Prerequisites'|trans }}</h3>
-                    {{ ez_render_field(content, 'prerequisites', { "template": _self }) }}
-                </div>
-            {% endif %}
-            {% if not ez_field_is_empty(content,'corequisites') %}
-                <div class="col">
-                    <h3>{{ 'Corequisites'|trans }}</h3>
-                    {{ ez_render_field(content, 'corequisites') }}
-                </div>
-            {% endif %}
-            {% if not ez_field_is_empty(content,'accuplacer') %}
-                <div class="col">
-                    <h3>{{ 'AccuPlacer'|trans }}</h3>
-                    {{ ez_render_field(content, 'accuplacer') }}
-                </div>
-            {% endif %}
+	    <div class="col">
+                <h3>{{ 'Prerequisites' | trans }}</h3>
+                {% if not ez_field_is_empty(content,'prerequisites') %}
+                    <div class="row">
+	                <div class="col">
+                            <h4>{{ 'Prerequisites'|trans }}</h4>
+                            {{ ez_render_field(content, 'prerequisites', { "template": _self }) }}
+      		        </div>
+                    </div>
+		    <hr>
+                {% endif %}
+                {% if not ez_field_is_empty(content,'corequisites') %}
+                    <div class="row">
+	                <div class="col">
+                            <h4>{{ 'Corequisites'|trans }}</h4>
+                            {{ ez_render_field(content, 'corequisites') }}
+                        </div>
+                    </div>
+                    <hr>
+                {% endif %}
+                {% if not ez_field_is_empty(content,'accuplacer') %}
+                    <div class="row">
+	                <div class="col">
+                          <h4>{{ 'AccuPlacer'|trans }}</h4>
+                          {{ ez_render_field(content, 'accuplacer') }}
+			</div>
+                    </div>
+                    <hr>
+                {% endif %}
+                {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
+                    <div class="row">
+			<div class="col">
+                            <h4>{{ 'Prerequisites / Corequisites'|trans }}</h4>
+                            {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
+			</div>
+                    </div>
+                {% endif %}
+	    </div>
         </section>
-        {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
-            <section class="row my-3 py-2 border border-secondary">
-                <div class="col">
-                    <h3>{{ 'Prerequisites / Corequisites'|trans }}</h3>
-                    {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
-                </div>
-            </section>
-        {% endif %}
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Entrance Skills'|trans }}</h3>

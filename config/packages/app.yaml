@@ -4,8 +4,12 @@ parameters:
 
 ezplatform:
     system:
+        admin_group:
+            languages: [eng-US,eng-GB]
+            content_tree_module:
+                allowed_content_types: '*'
         site:
-            languages: [eng-US]
+            languages: [eng-US,eng-GB]
             image_variations:
                 small:
                     reference: null

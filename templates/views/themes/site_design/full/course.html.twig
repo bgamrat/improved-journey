@@ -120,6 +120,10 @@
             <div class="col">
                 <h3>{{ 'Course Competencies'|trans }}</h3>
                 {{ ez_render_field(content, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
+		{% if not ez_field_is_empty(content,'course_competencies_text') %}
+                    <br>
+                    {{ ez_render_field(content, 'course_competencies_text') }}
+		{% endif %}
             </div>
         </section>
         <section class="row course-outline my-3 py-2 border border-secondary">

@@ -101,6 +101,7 @@ ezpublish:
                             diversityEquityAndInclusionId: 181
                             gradingSchemeId: 85
                             technologyId: 180
+                            bookstoreId: 177
 
 twig:
     globals:

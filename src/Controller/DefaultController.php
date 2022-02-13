@@ -46,7 +46,7 @@ class DefaultController extends Controller {
     }
 
     public function syllabusViewEnhancedAction(ContentView $view,
-            int $availableSupportServicesId, int $collegePoliciesId, int $diversityEquityAndInclusionId, int $gradingSchemeId, int $technologyId) {
+            int $availableSupportServicesId, int $collegePoliciesId, int $diversityEquityAndInclusionId, int $gradingSchemeId, int $technologyId, int $bookstoreId) {
         $location = $view->getLocation();
         $content = $view->getContent();
         $course = $content->getField('course');
@@ -66,6 +66,7 @@ class DefaultController extends Controller {
             'diversityEquityAndInclusion' => $this->contentService->loadContent($diversityEquityAndInclusionId),
             'gradingScheme' => $this->contentService->loadContent($gradingSchemeId),
             'technology' => $this->contentService->loadContent($technologyId),
+            'bookstore' => $this->contentService->loadContent($bookstoreId),
             'courseContentInfo' => $courseContentInfo,
             'course' => $courseContent,
         ];

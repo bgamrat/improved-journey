@@ -6,3 +6,7 @@ pdf:
      controller: App\Controller\PdfController::pdfViewAction
      requirements:
         path: .+
+
+content_object_dump:
+     path: /content_object_dump
+     controller: App\Controller\UtilityController::contentObjectDumpAction

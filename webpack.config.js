@@ -30,8 +30,14 @@ Encore.addEntry('content', [
 ]);
 
 Encore.addEntry('app', [
-    path.resolve(__dirname, './assets/css/app.css'),
+    path.resolve(__dirname, './assets/app.js'),
 ]);
+
+Encore.addEntry('utility', [
+    path.resolve(__dirname, './assets/utility.js'),
+]);
+
+Encore.enableStimulusBridge('./assets/controllers.json');
 
 // uncomment the two lines below, if you added a new entry (by Encore.addEntry() or Encore.addStyleEntry() method) to your own Encore configuration for your project
 const projectConfig = Encore.getWebpackConfig();

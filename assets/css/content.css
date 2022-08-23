@@ -18,18 +18,19 @@ h2.policies {
     padding: 0;
     margin: 0;
 }
-table.with-borders {
-    width: 100%;
+table.with-borders,
+.ezrichtext-field table {
+    width: 100% !important;
     margin: 15px 0;
 }
-table.with-borders tr {
+table.with-borders tr,
+.ezrichtext-field table tbody tr {
     border: 1px solid;
 }
 table.with-borders th,
-table.with-borders td {
+table.with-borders td,
+.ezrichtext-field table tbody tr th,
+.ezrichtext-field table tbody tr td {
     border: 1px solid;
     padding: 3px;
-}
-.ezrichtext-field table tbody tr td {
-    padding-left: 1rem;
 }

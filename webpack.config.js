@@ -23,10 +23,8 @@ Encore.addEntry('welcome_page', [
 ]);
 
 
-Encore.addEntry('content', [
-    path.resolve(__dirname, './assets/css/app.css'),
-    path.resolve(__dirname, './assets/css/content.css'),
-    path.resolve(__dirname, './assets/css/print.css')
+Encore.addEntry('document', [
+    path.resolve(__dirname, './assets/document.js'),
 ]);
 
 Encore.addEntry('app', [

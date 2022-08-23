@@ -45,6 +45,8 @@ ezpublish:
             pagelayout: '@ezdesign/pagelayout.html.twig'
         site_group:
             design: site_design
+            user:
+                login_template: '@ezdesign/Security/login.html.twig'
             content_view:
                 line:
                     article:

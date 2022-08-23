@@ -16,16 +16,10 @@
         text-decoration: none !important;
         color: #000;
     }
-    .course-competencies,
     .course-outline,
     .course-calendar {
         break-before: always !important;
         page-break-before: always !important;
-    }
-    .course-outline {
-        font-size: 8pt;
-        break-after: always !important;
-        page-break-after: always !important;
     }
     section {
         break-inside: avoid !important;

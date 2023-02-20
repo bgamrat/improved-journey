@@ -12,10 +12,6 @@
     body { 
 
     }
-    a {
-        text-decoration: none !important;
-        color: #000;
-    }
     .course-outline,
     .course-calendar {
         break-before: always !important;

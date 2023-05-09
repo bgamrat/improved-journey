@@ -12,11 +12,6 @@
     body { 
 
     }
-    .course-outline,
-    .course-calendar {
-        break-before: always !important;
-        page-break-before: always !important;
-    }
     section {
         break-inside: avoid !important;
         page-break-inside: avoid !important;

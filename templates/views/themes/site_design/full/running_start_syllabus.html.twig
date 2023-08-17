@@ -15,9 +15,6 @@
                                 <small>{{ ez_render_field(course, 'course_title') }}</small><br>
                             </h1>
 			</th>
-			<th class="align-middle text-center">
-                            {{ termAndYear }}
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +22,7 @@
                         <th scope="row">
                             {{ 'Department' | trans }}
                         </th>
-                        <td colspan="2">
+                        <td class="text-center">
                             {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
                         </td>
                     </tr>
@@ -33,57 +30,16 @@
                         <th scope="row">
                             {{ 'Instructor' | trans }}
                         </th>
-                        <td colspan="2">
+                        <td class="text-center">
                             {{ ez_render_field(content, 'instructor') }}
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'NCC Email' | trans }}
+			<th scope="row">
+                            {{ 'Term and Year' | trans }}
                         </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'email') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'Telephone Number' | trans }}
+			<td class="text-center">
+                            {{ termAndYear }}
                         </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'phone') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'Office Hours' | trans }}
-                        </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'office_hours') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'Office Location' | trans }}
-                        </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'office_location') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'Class Days/Meeting Time' | trans }}
-                        </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'class_days_meeting_time') }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            {{ 'Class Location' | trans }}
-                        </th>
-                        <td colspan="2">
-                            {{ ez_render_field(content, 'class_location') }}
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -114,11 +70,11 @@
         </section>
         <section class="row my-3">
             <div class="col">
-                <h2>{{ 'Required Materials' | trans }}</h2>
-                {{ ez_render_field(content, 'required_materials') }}
-                {{ ez_render_field(bookstore, 'body') }}
-                <h2>{{  'Technology' | trans }}</h2>
-                {{ ez_render_field(technology, 'body') }}
+                <h2>{{ 'Required Materials:' | trans }}</h2>
+                <h3>{{ 'Textbook(s):' | trans }}</h3>
+                {{ ez_render_field(content, 'textbooks') }}
+                <h3>{{  'Other:' | trans }}</h3>
+                {{ ez_render_field(content, 'other_required_materials') }}
                 {% if not ez_field_is_empty(content,'supplemental_materials') %}
                     <h2>{{ 'Supplemental Materials' | trans }}</h2>
                     {{ ez_render_field(content, 'supplemental_materials') }}
@@ -144,13 +100,6 @@
                 {{ ez_render_field(availableSupportServices, 'body') }}
             </div>
         </section>
-
-        <section class="row my-3">
-            <div class="col">
-                <h2 class="policies">{{ 'Department Policies' | trans }}</h2>
-                {{ ez_render_field(departmentPolicies, 'body') }}
-            </div>
-        </section>
         <section class="row my-3">
             <div class="col">
                 <h2 class="policies">{{ 'College Policies' | trans }}</h2>
@@ -160,11 +109,9 @@
         <section class="course-calendar row my-3">
             <div class="col">
                 <h2 class="text-center" style="text-decoration:underline;">
-                    {{ 'Course Calendar' | trans }}<br>
-                    {{ ez_render_field(course, 'course_number') }}&nbsp;{{ ez_render_field(content, 'section') }}&nbsp;
-                    {{ ez_render_field(course, 'course_title') }}&nbsp;{{ termAndYear }}
+                    {{ 'Course Outline' | trans }}
                 </h2>
-                {{ ez_render_field(content, 'course_calendar', { 'attr': { 'class': 'with-borders'}}) }}
+                {{ ez_render_field(content, 'course_outline', { 'attr': { 'class': 'with-borders'}}) }}
                 <p>* {{ 'Targeted competencies refer to the established course competencies listed above.' | trans }}</p>
                 <p class="text-center font-weight-bold header-color" style="text-decoration:underline">{{ 'This schedule is subject to change' | trans }}</p>
             </div>

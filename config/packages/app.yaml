@@ -1,6 +1,6 @@
 parameters:
     # PDF of content available
-    pdf_available: [ 13, 17 ]
+    pdf_available: [ 13, 17, 20 ]
 
 ezplatform:
     system:
@@ -99,6 +99,18 @@ ezpublish:
                             Identifier\ContentType: [syllabus]
                         params:
                             availableSupportServicesId: 70
+                            collegePoliciesId: 249
+                            diversityEquityAndInclusionId: 181
+                            gradingSchemeId: 85
+                            technologyId: 180
+                            bookstoreId: 177
+                    running_start_syllabus:
+                        controller: App\Controller\DefaultController::runningStartSyllabusViewEnhancedAction
+                        template: '@ezdesign/full/running_start_syllabus.html.twig'
+                        match:
+                            Identifier\ContentType: [running_start_syllabus]
+                        params:
+                            availableSupportServicesId: 252
                             collegePoliciesId: 52
                             diversityEquityAndInclusionId: 181
                             gradingSchemeId: 85

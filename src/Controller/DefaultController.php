@@ -76,6 +76,33 @@ class DefaultController extends Controller {
         return $view;
     }
 
+    public function runningStartSyllabusViewEnhancedAction(ContentView $view,
+            int $availableSupportServicesId, int $collegePoliciesId, int $diversityEquityAndInclusionId, int $gradingSchemeId, int $technologyId, int $bookstoreId) {
+        $location = $view->getLocation();
+        $content = $view->getContent();
+        $course = $content->getField('course');
+        $courseContent = $this->contentService->loadContent($course->value->destinationContentId);
+        $courseContentInfo = $courseContent->getVersionInfo()->getContentInfo();
+        $courseLocation = $this->locationService->loadLocation($courseContentInfo->mainLocationId);
+        $this->pdfUrl = $this->router->generate(
+                UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
+                ['locationId' => $location->id]
+        );
+        $parameters = $this->_getRelated($courseLocation);
+        $parameters = $parameters + [
+            'termAndYear' => $this->_getTermAndYear($location),
+            'availableSupportServices' => $this->contentService->loadContent($availableSupportServicesId),
+            'collegePolicies' => $this->contentService->loadContent($collegePoliciesId),
+            'gradingScheme' => $this->contentService->loadContent($gradingSchemeId),
+            'courseContentInfo' => $courseContentInfo,
+            'course' => $courseContent,
+        ];
+        $view->addParameters($parameters);
+
+        $this->_makePdf($view);
+        return $view;
+    }
+
     private function _getTermAndYear(Location $location) {
         $node = $this->locationService->loadLocation($location->parentLocationId);
         $contentId = $node->getContent()->id;

@@ -154,13 +154,11 @@ class DefaultController extends Controller {
 
     private function _makePdf(ContentView $view) {
         $pdfFilename = $this->baseDir . $this->pdfUrl . '.pdf';
-        if (!is_file($pdfFilename)) {
-            $html = $this->render($view->getTemplateIdentifier(), $view->getParameters());
-            $this->knpSnappyPdf->generateFromHtml(
-                    $html->getContent(),
-                    $pdfFilename
-            );
-        }
+        $html = $this->render($view->getTemplateIdentifier(), $view->getParameters());
+        $this->knpSnappyPdf->generateFromHtml(
+                $html->getContent(),
+                $pdfFilename
+        );
     }
 
 }

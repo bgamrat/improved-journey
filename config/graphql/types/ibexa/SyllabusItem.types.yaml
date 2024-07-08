@@ -1,0 +1,94 @@
+SyllabusItem:
+    type: object
+    inherits:
+        - AbstractItem
+    config:
+        interfaces:
+            - Item
+            - Node
+        fields:
+            courseNumber:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "course_number", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            course:
+                type: CourseItem
+                resolve: '@=resolver("RelationFieldValue", [resolver("ItemFieldValue", [value, "course", args]), false])'
+                args:
+                    language: { type: RepositoryLanguage }
+            section:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "section", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            instructor:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "instructor", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            email:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "email", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            phone:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "phone", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            officeHours:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "office_hours", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            officeLocation:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "office_location", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            classDaysMeetingTime:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "class_days_meeting_time", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            classLocation:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "class_location", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            rationale:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "rationale", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            essentialQuestions:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "essential_questions", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            requiredMaterials:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "required_materials", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            supplementalMaterials:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "supplemental_materials", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseExpectations:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "course_expectations", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            grading:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "grading", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseCalendar:
+                type: '[SyllabusCourseCalendarRow]'
+                resolve: '@=resolver("MatrixFieldValue", [value, "course_calendar"])'
+                args:
+                    language: { type: RepositoryLanguage }

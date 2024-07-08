@@ -1,0 +1,69 @@
+RunningStartSyllabusItem:
+    type: object
+    inherits:
+        - AbstractItem
+    config:
+        interfaces:
+            - Item
+            - Node
+        fields:
+            courseNumber:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "course_number", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            course:
+                type: CourseItem
+                resolve: '@=resolver("RelationFieldValue", [resolver("ItemFieldValue", [value, "course", args]), false])'
+                args:
+                    language: { type: RepositoryLanguage }
+            section:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "section", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            instructor:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "instructor", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            rationale:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "rationale", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            essentialQuestions:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "essential_questions", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            textbooks:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "textbooks", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            otherRequiredMaterials:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "other_required_materials", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            supplementalMaterials:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "supplemental_materials", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseExpectations:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "course_expectations", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            grading:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "grading", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseOutline:
+                type: '[RunningStartSyllabusCourseOutlineRow]'
+                resolve: '@=resolver("MatrixFieldValue", [value, "course_outline"])'
+                args:
+                    language: { type: RepositoryLanguage }

@@ -1,0 +1,9 @@
+DepartmentItemConnection:
+    type: relay-connection
+    config:
+        nodeType: DepartmentItem
+        connectionFields:
+            sliceSize:
+                type: Int!
+            orderBy:
+                type: String

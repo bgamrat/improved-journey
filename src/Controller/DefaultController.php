@@ -12,7 +12,7 @@ use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\Core\MVC\Symfony\View\ContentView;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use Knp\Snappy\Pdf as KnpSnappyPdf;
-use eZ\Bundle\EzPublishCoreBundle\Routing\UrlAliasRouter;
+use Ibexa\Bundle\Core\Routing\UrlAliasRouter;
 
 class DefaultController extends Controller {
 
@@ -154,7 +154,9 @@ class DefaultController extends Controller {
 
     private function _makePdf(ContentView $view) {
         $pdfFilename = $this->baseDir . $this->pdfUrl . '.pdf';
-        unlink($pdfFilename);
+        if (file_exists($pdfFilename)) {
+            unlink($pdfFilename);
+        }
         $html = $this->render($view->getTemplateIdentifier(), $view->getParameters());
         $this->knpSnappyPdf->generateFromHtml(
                 $html->getContent(),

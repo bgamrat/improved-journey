@@ -1,0 +1,20 @@
+SignpaneItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("title")'
+            subtitle:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("subtitle")'
+            body:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("body")'
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'

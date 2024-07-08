@@ -1,0 +1,13 @@
+SyllabusCourseCalendarRow:
+    type: object
+    config:
+        fields:
+            week:
+                type: String
+                description: Week
+            topic:
+                type: String
+                description: Topic
+            target_competencies:
+                type: String
+                description: 'Target Competencies'

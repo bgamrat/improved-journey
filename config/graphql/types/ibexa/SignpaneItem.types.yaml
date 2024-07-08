@@ -1,0 +1,21 @@
+SignpaneItem:
+    type: object
+    inherits:
+        - AbstractItem
+    config:
+        interfaces:
+            - Item
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "title", args])'
+            subtitle:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "subtitle", args])'
+            body:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "body", args])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "image", args])'

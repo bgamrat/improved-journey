@@ -1,12 +1,12 @@
-{% extends "@ezdesign/document.html.twig" %}
+{% extends "@ibexadesign/document.html.twig" %}
 {% block content %}
     <header class="page-header row">
         <span class="col-md">
             <a href="/"><img src="{{ asset("/assets/images/logo.jpg") }}" class="img-fluid" alt="NCC logo"></a>
         </span>
         <h1 class="col-md text-right">
-            {{ ez_content_name( content ) }}<br>
-            <small>{{ ez_render_field(content, 'course_title') }}</small>
+            {{ ibexa_content_name( content ) }}<br>
+            <small>{{ ibexa_render_field(content, 'course_title') }}</small>
         </h1>
     </header>
     <article class="container" id="main-content">
@@ -20,25 +20,25 @@
                             <strong>{{ 'Course Title' | trans }}</strong>
                         </td>
                         <td colspan="3">
-                            {{ ez_render_field(content, 'course_title') }}
+                            {{ ibexa_render_field(content, 'course_title') }}
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <span class="font-weight-bold">{{ 'Course Number' | trans }}</span>
-                            {{ ez_render_field(content, 'course_number') }}
+                            {{ ibexa_render_field(content, 'course_number') }}
                         </td>
                         <td>
                             <span class="font-weight-bold">{{ 'Lecture Hours'|trans }}</span>
-                            {{ ez_render_field(content, 'lecture_hours') }}
+                            {{ ibexa_render_field(content, 'lecture_hours') }}
                         </td>
                         <td>
                             <span class="font-weight-bold">{{ 'Lab Hours'|trans }}</span>
-                            {{ ez_render_field(content, 'lab_hours') }}
+                            {{ ibexa_render_field(content, 'lab_hours') }}
                         </td>
                         <td>
                             <span class="font-weight-bold">{{ 'Credit'|trans }}</span>
-                            {{ ez_render_field(content, 'credit_hours') }}
+                            {{ ibexa_render_field(content, 'credit_hours') }}
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +48,7 @@
                             </span>
                         </td>
                         <td colspan="3">
-                            {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
+                            {{ render_esi(controller('ibexa_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                             </span>
                         </td>
                         <td colspan="3">
-                            {{ render_esi(controller('ez_content:viewAction', {locationId: programId, viewType: 'line'} )) }}
+                            {{ render_esi(controller('ibexa_content:viewAction', {locationId: programId, viewType: 'line'} )) }}
                         </td>
                     </tr>
                 </tbody>
@@ -67,38 +67,38 @@
         <section class="row my-3 py-2 border border-secondary">
 	    <div class="col">
                 <h3>{{ 'Prerequisites' | trans }}</h3>
-                {% if not ez_field_is_empty(content,'prerequisites') %}
+                {% if not ibexa_field_is_empty(content,'prerequisites') %}
                     <div class="row">
 	                <div class="col">
                             <h4>{{ 'Prerequisites'|trans }}</h4>
-                            {{ ez_render_field(content, 'prerequisites', { "template": _self }) }}
+                            {{ ibexa_render_field(content, 'prerequisites', { "template": _self }) }}
       		        </div>
                     </div>
 		    <hr>
                 {% endif %}
-                {% if not ez_field_is_empty(content,'corequisites') %}
+                {% if not ibexa_field_is_empty(content,'corequisites') %}
                     <div class="row">
 	                <div class="col">
                             <h4>{{ 'Corequisites'|trans }}</h4>
-                            {{ ez_render_field(content, 'corequisites') }}
+                            {{ ibexa_render_field(content, 'corequisites') }}
                         </div>
                     </div>
                     <hr>
                 {% endif %}
-                {% if not ez_field_is_empty(content,'accuplacer') %}
+                {% if not ibexa_field_is_empty(content,'accuplacer') %}
                     <div class="row">
 	                <div class="col">
                           <h4>{{ 'AccuPlacer'|trans }}</h4>
-                          {{ ez_render_field(content, 'accuplacer') }}
+                          {{ ibexa_render_field(content, 'accuplacer') }}
 			</div>
                     </div>
                     <hr>
                 {% endif %}
-                {% if not ez_field_is_empty(content,'prerequisites_corequisites_text') %}
+                {% if not ibexa_field_is_empty(content,'prerequisites_corequisites_text') %}
                     <div class="row">
 			<div class="col">
                             <h4>{{ 'Prerequisites / Corequisites'|trans }}</h4>
-                            {{ ez_render_field(content, 'prerequisites_corequisites_text') }}
+                            {{ ibexa_render_field(content, 'prerequisites_corequisites_text') }}
 			</div>
                     </div>
                 {% endif %}
@@ -107,53 +107,53 @@
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Entrance Skills'|trans }}</h3>
-                {{ ez_render_field(content, 'entrance_skills') }}
+                {{ ibexa_render_field(content, 'entrance_skills') }}
             </div>
         </section>
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Catalog Description'|trans }}</h3>
-                {{ ez_render_field(content, 'catalog_description') }}
+                {{ ibexa_render_field(content, 'catalog_description') }}
             </div>
         </section>
         <section class="row course-competencies my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Course Competencies'|trans }}</h3>
-                {{ ez_render_field(content, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
-		{% if not ez_field_is_empty(content,'course_competencies_text') %}
+                {{ ibexa_render_field(content, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
+		{% if not ibexa_field_is_empty(content,'course_competencies_text') %}
                     <br>
-                    {{ ez_render_field(content, 'course_competencies_text') }}
+                    {{ ibexa_render_field(content, 'course_competencies_text') }}
 		{% endif %}
             </div>
         </section>
         <section class="row course-outline my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Course Outline'|trans }}</h3>
-                {{ ez_render_field(content, 'course_outline') }}
+                {{ ibexa_render_field(content, 'course_outline') }}
             </div>
         </section>
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Performance Evaluation'|trans }}</h3>
-                {{ ez_render_field(content, 'performance_evaluation') }}
+                {{ ibexa_render_field(content, 'performance_evaluation') }}
             </div>
         </section>
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Method of Instruction'|trans }}</h3>
-                {{ ez_render_field(content, 'method_of_instruction') }}
+                {{ ibexa_render_field(content, 'method_of_instruction') }}
             </div>
         </section>
         <section class="row my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Instructional Facilities'|trans }}</h3>
-                {{ ez_render_field(content, 'instructional_facilities') }}
+                {{ ibexa_render_field(content, 'instructional_facilities') }}
             </div>
         </section>
         <section class="row revision-history my-3 py-2 border border-secondary">
             <div class="col">
                 <h3>{{ 'Revision History'|trans }}</h3>
-                {{ ez_render_field(content, 'revision_history', { 'attr': { 'class': 'with-borders'}}) }}
+                {{ ibexa_render_field(content, 'revision_history', { 'attr': { 'class': 'with-borders'}}) }}
             </div>
         </section>
     </article>
@@ -161,11 +161,11 @@
     </footer>
 {% endblock %}
 
-{% block ezobjectrelationlist_field %}
+{% block ibexaobjectrelationlist_field %}
     {% if field.value.destinationContentIds|length() > 0 %}
         <ul class="list-unstyled">
             {% for courseLocationId in field.value.destinationContentIds %}
-                <li class="d-inline">{{ render_esi(controller('ez_content:viewAction', {contentId: courseLocationId, viewType: 'embed-inline'} )) }}</li>
+                <li class="d-inline">{{ render_esi(controller('ibexa_content:viewAction', {contentId: courseLocationId, viewType: 'embed-inline'} )) }}</li>
                 {% endfor %}
         </ul>
     {% endif %}

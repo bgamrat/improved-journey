@@ -1,27 +1,27 @@
 const Encore = require('@symfony/webpack-encore');
 const path = require('path');
-const getEzConfig = require('./ez.webpack.config.js');
-const eZConfigManager = require('./ez.webpack.config.manager.js');
-const eZConfig = getEzConfig(Encore);
-const customConfigs = require('./ez.webpack.custom.configs.js');
+const getIbexaConfig = require('./ibexa.webpack.config.js');
+const ibexaConfig = getIbexaConfig(Encore);
+const customConfigs = require('./ibexa.webpack.custom.configs.js');
 
 Encore.reset();
-Encore.setOutputPath('public/build')
+Encore.setOutputPath('public/build/')
     .setPublicPath('/build')
+    .enableStimulusBridge('./assets/controllers.json')
     .enableSassLoader()
     .enableReactPreset()
     .enableSingleRuntimeChunk()
     .copyFiles({
         from: './assets/images',
         to: 'images/[path][name].[ext]',
-        pattern: /\.(png|svg)$/
+        pattern: /\.(png|svg)$/,
+    })
+
+    // enables @babel/preset-env polyfills
+    .configureBabelPresetEnv((config) => {
+        config.useBuiltIns = 'usage';
+        config.corejs = 3;
     });
-
-// Welcome page stylesheets
-Encore.addEntry('welcome_page', [
-    path.resolve(__dirname, './assets/scss/welcome-page.scss'),
-]);
-
 
 Encore.addEntry('document', [
     path.resolve(__dirname, './assets/document.js'),
@@ -37,7 +37,8 @@ Encore.addEntry('utility', [
 
 Encore.enableStimulusBridge('./assets/controllers.json');
 
-// uncomment the two lines below, if you added a new entry (by Encore.addEntry() or Encore.addStyleEntry() method) to your own Encore configuration for your project
 const projectConfig = Encore.getWebpackConfig();
-module.exports = [ eZConfig, ...customConfigs, projectConfig ];
 
+projectConfig.name = 'app';
+
+module.exports = [ibexaConfig, ...customConfigs, projectConfig];

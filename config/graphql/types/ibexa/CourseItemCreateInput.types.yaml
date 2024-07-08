@@ -1,0 +1,44 @@
+CourseItemCreateInput:
+    type: input-object
+    config:
+        fields:
+            courseNumber:
+                type: String!
+            courseTitle:
+                type: String!
+            lectureHours:
+                type: Int!
+            labHours:
+                type: Int!
+            creditHours:
+                type: Int!
+            prerequisites:
+                type: '[Int]'
+                description: 'Must be completed before enrolling'
+            corequisites:
+                type: '[Int]'
+                description: 'May be completed before enrolling or taken concurrently'
+            accuplacer:
+                type: String
+            prerequisitesCorequisitesText:
+                type: RichTextFieldInput
+            entranceSkills:
+                type: String
+            catalogDescription:
+                type: String!
+            courseCompetencies:
+                type: '[CourseCourseCompetenciesRowInput]!'
+            courseCompetenciesText:
+                type: RichTextFieldInput
+            courseOutline:
+                type: RichTextFieldInput
+            performanceEvaluation:
+                type: RichTextFieldInput
+            methodOfInstruction:
+                type: String
+            instructionalFacilities:
+                type: String
+            revisionHistory:
+                type: '[CourseRevisionHistoryRowInput]'
+            onlineOutline:
+                type: Int

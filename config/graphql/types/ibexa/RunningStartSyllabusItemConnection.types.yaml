@@ -1,0 +1,9 @@
+RunningStartSyllabusItemConnection:
+    type: relay-connection
+    config:
+        nodeType: RunningStartSyllabusItem
+        connectionFields:
+            sliceSize:
+                type: Int!
+            orderBy:
+                type: String

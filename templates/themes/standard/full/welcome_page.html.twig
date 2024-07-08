@@ -1,4 +1,4 @@
-{% extends '@ezdesign/pagelayout.html.twig' %}
+{% extends '@ibexadesign/pagelayout.html.twig' %}
 
 {% trans_default_domain 'ibexa_platform_welcome_page' %}
 
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="py-4">
-                     <img src="{{ asset('bundles/ezplatformadminui/img/ibexa-logo.svg') }}" alt="Ibexa" class="logo">
+                     <img src="{{ asset('bundles/ibexaplatformadminui/img/ibexa-logo.svg') }}" alt="Ibexa" class="logo">
                 </div>
             </div>
         </div>
@@ -25,14 +25,14 @@
         <div class="container h-100 text-center text-white d-flex flex-column align-items-center justify-content-center">
             <h1>
                 {{ 'ibexa_platform_welcome_page.welcome_to'|trans|desc('Welcome to') }}<br>
-                {{ ez_render_field(content, 'name') }}
+                {{ ibexa_render_field(content, 'name') }}
                 {{ constant('EzSystems\\EzPlatformCoreBundle\\EzPlatformCoreBundle::VERSION') }}
             </h1>
             <div class="pt-5">
-                {{ ez_render_field(content, 'short_description') }}
+                {{ ibexa_render_field(content, 'short_description') }}
                 <p class="mb-0">{{ 'ibexa_platform_welcome_page.navigate_to'|trans({'%target%': project_dir})|desc('Navigate to: %target%') }}</p>
 
-                {% set admin_url = url('ezplatform.dashboard', { 'siteaccess': 'admin' }) %}
+                {% set admin_url = url('ibexaplatform.dashboard', { 'siteaccess': 'admin' }) %}
                 <p class="mb-0">
                     {{ 'ibexa_platform_welcome_page.create_new_content_at'|trans({'%target%': '<a href="' ~ admin_url ~ '" class="text-white"><u>' ~ admin_url ~ '</u></a>' })
                     |desc('Create new content at %target%')|raw }}
@@ -46,7 +46,7 @@
         <div class="row py-3">
             <div class="col-12 py-3">
                 <div class="container text-center description">
-                    {{ ez_render_field(content, 'description') }}
+                    {{ ibexa_render_field(content, 'description') }}
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                                 </a>
                             </li>
                             <li class="references-list-item">
-                                <a href="https://doc.ibexa.co/en/latest/tutorials/platform_beginner/building_a_bicycle_route_tracker_in_ez_platform" class="references-list-item__link" target="_blank">
+                                <a href="https://doc.ibexa.co/en/latest/tutorials/platform_beginner/building_a_bicycle_route_tracker_in_ibexa_platform" class="references-list-item__link" target="_blank">
                                     {{ 'ibexa_platform_welcome_page.tutorials'|trans|desc('Tutorials') }}
                                 </a>
                             </li>
@@ -129,7 +129,7 @@
                                 </a>
                             </li>
                             <li class="references-list-item">
-                                <a href="https://ez-community-on-slack.herokuapp.com/" class="references-list-item__link" target="_blank">
+                                <a href="https://ibexa-community-on-slack.herokuapp.com/" class="references-list-item__link" target="_blank">
                                     {{ 'ibexa_platform_welcome_page.community_slack_channel'|trans|desc('Community Slack channel') }}
                                 </a>
                             </li>

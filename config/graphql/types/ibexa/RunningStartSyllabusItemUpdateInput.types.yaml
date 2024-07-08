@@ -1,0 +1,28 @@
+RunningStartSyllabusItemUpdateInput:
+    type: input-object
+    config:
+        fields:
+            courseNumber:
+                type: String
+            course:
+                type: Int
+            section:
+                type: String
+            instructor:
+                type: String
+            rationale:
+                type: String
+            essentialQuestions:
+                type: String
+            textbooks:
+                type: RichTextFieldInput
+            otherRequiredMaterials:
+                type: RichTextFieldInput
+            supplementalMaterials:
+                type: String
+            courseExpectations:
+                type: RichTextFieldInput
+            grading:
+                type: RichTextFieldInput
+            courseOutline:
+                type: '[RunningStartSyllabusCourseOutlineRowInput]'

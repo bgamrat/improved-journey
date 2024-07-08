@@ -1,0 +1,30 @@
+ContentTypeIdentifier:
+    type: enum
+    config:
+        values:
+            running_start_syllabus:
+                description: 'No description available'
+            syllabus:
+                description: 'No description available'
+            article:
+                description: 'No description available'
+            course:
+                description: 'No description available'
+            course_prefix:
+                description: 'No description available'
+            department:
+                description: 'No description available'
+            folder:
+                description: 'No description available'
+            program:
+                description: 'No description available'
+            signpane:
+                description: 'No description available'
+            user:
+                description: 'No description available'
+            user_group:
+                description: 'No description available'
+            file:
+                description: 'No description available'
+            image:
+                description: 'No description available'

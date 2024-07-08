@@ -1,0 +1,16 @@
+RunningStartSyllabusCourseOutlineRowInput:
+    type: input-object
+    config:
+        fields:
+            sequence:
+                type: String
+                description: 'Unit or Module'
+            topic:
+                type: String
+                description: Topic
+            summative_assessments:
+                type: String
+                description: 'Summative Assessments'
+            target_competencies:
+                type: String
+                description: 'Target Competencies*'

@@ -1,4 +1,4 @@
-{% extends "@ezdesign/document.html.twig" %}
+{% extends "@ibexadesign/document.html.twig" %}
 {% block content %}
     <article class="container">
         <section class="syllabus-header">
@@ -11,8 +11,8 @@
                         </th>
                         <th class="align-middle text-center">
                             <h1>
-                                {{ ez_render_field(course, 'course_number') }} {{ ez_render_field(content, 'section') }}<br>
-                                <small>{{ ez_render_field(course, 'course_title') }}</small><br>
+                                {{ ibexa_render_field(course, 'course_number') }} {{ ibexa_render_field(content, 'section') }}<br>
+                                <small>{{ ibexa_render_field(course, 'course_title') }}</small><br>
                             </h1>
 			</th>
                     </tr>
@@ -23,7 +23,7 @@
                             {{ 'Department' | trans }}
                         </th>
                         <td class="text-center">
-                            {{ render_esi(controller('ez_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
+                            {{ render_esi(controller('ibexa_content:viewAction', {locationId: departmentId, viewType: 'line'} )) }}
                         </td>
                     </tr>
                     <tr>
@@ -31,7 +31,7 @@
                             {{ 'Instructor' | trans }}
                         </th>
                         <td class="text-center">
-                            {{ ez_render_field(content, 'instructor') }}
+                            {{ ibexa_render_field(content, 'instructor') }}
                         </td>
                     </tr>
 			<th scope="row">
@@ -47,63 +47,63 @@
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Rationale' | trans }}</h2>
-                {{ ez_render_field(content, 'rationale') }}
+                {{ ibexa_render_field(content, 'rationale') }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Course Description' | trans }}</h2>
-                {{ ez_render_field(course, 'catalog_description') }}
+                {{ ibexa_render_field(course, 'catalog_description') }}
             </div>
         </section>
         <section class="course-competencies row my-3">
             <div class="col">
                 <h2>{{ 'Course Competencies' | trans }}</h2>
-                {{ ez_render_field(course, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
+                {{ ibexa_render_field(course, 'course_competencies', { 'attr': { 'class': 'with-borders'}}) }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Essential Questions' | trans }}</h2>
-                {{ ez_render_field(content, 'essential_questions') }}
+                {{ ibexa_render_field(content, 'essential_questions') }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Required Materials:' | trans }}</h2>
                 <h3>{{ 'Textbook(s):' | trans }}</h3>
-                {{ ez_render_field(content, 'textbooks') }}
+                {{ ibexa_render_field(content, 'textbooks') }}
                 <h3>{{  'Other:' | trans }}</h3>
-                {{ ez_render_field(content, 'other_required_materials') }}
-                {% if not ez_field_is_empty(content,'supplemental_materials') %}
+                {{ ibexa_render_field(content, 'other_required_materials') }}
+                {% if not ibexa_field_is_empty(content,'supplemental_materials') %}
                     <h2>{{ 'Supplemental Materials' | trans }}</h2>
-                    {{ ez_render_field(content, 'supplemental_materials') }}
+                    {{ ibexa_render_field(content, 'supplemental_materials') }}
                 {% endif %}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Course Expectations' | trans }}</h2>
-                {{ ez_render_field(content, 'course_expectations') }}
+                {{ ibexa_render_field(content, 'course_expectations') }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2>{{ 'Grading' | trans }}</h2>
-                {{ ez_render_field(content, 'grading') }}
-                {{ ez_render_field(gradingScheme, 'body') }}
+                {{ ibexa_render_field(content, 'grading') }}
+                {{ ibexa_render_field(gradingScheme, 'body') }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2 class="policies">{{ 'Available Support Services' | trans }}</h2>
-                {{ ez_render_field(availableSupportServices, 'body') }}
+                {{ ibexa_render_field(availableSupportServices, 'body') }}
             </div>
         </section>
         <section class="row my-3">
             <div class="col">
                 <h2 class="policies">{{ 'College Policies' | trans }}</h2>
-                {{ ez_render_field(collegePolicies, 'body') }}
+                {{ ibexa_render_field(collegePolicies, 'body') }}
             </div>
         </section>
         <section class="course-calendar row my-3">
@@ -111,7 +111,7 @@
                 <h2 class="text-center" style="text-decoration:underline;">
                     {{ 'Course Outline' | trans }}
                 </h2>
-                {{ ez_render_field(content, 'course_outline', { 'attr': { 'class': 'with-borders'}}) }}
+                {{ ibexa_render_field(content, 'course_outline', { 'attr': { 'class': 'with-borders'}}) }}
                 <p>* {{ 'Targeted competencies refer to the established course competencies listed above.' | trans }}</p>
                 <p class="text-center font-weight-bold header-color" style="text-decoration:underline">{{ 'This schedule is subject to change' | trans }}</p>
             </div>

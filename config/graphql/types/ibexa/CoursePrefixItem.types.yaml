@@ -1,0 +1,12 @@
+CoursePrefixItem:
+    type: object
+    inherits:
+        - AbstractItem
+    config:
+        interfaces:
+            - Item
+            - Node
+        fields:
+            prefix:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "prefix", args])'

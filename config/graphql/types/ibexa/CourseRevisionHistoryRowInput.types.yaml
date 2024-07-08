@@ -1,0 +1,13 @@
+CourseRevisionHistoryRowInput:
+    type: input-object
+    config:
+        fields:
+            date:
+                type: String
+                description: Date
+            change:
+                type: String
+                description: Change
+            author:
+                type: String
+                description: Author

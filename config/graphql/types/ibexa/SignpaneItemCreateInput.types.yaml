@@ -1,0 +1,12 @@
+SignpaneItemCreateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String!
+            subtitle:
+                type: String
+            body:
+                type: RichTextFieldInput
+            image:
+                type: ImageFieldInput

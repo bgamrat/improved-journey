@@ -1,0 +1,11 @@
+CoursePrefixItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            prefix:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("prefix")'

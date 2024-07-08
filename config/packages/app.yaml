@@ -2,7 +2,7 @@ parameters:
     # PDF of content available
     pdf_available: [ 13, 17, 20 ]
 
-ezplatform:
+ibexa:
     system:
         admin_group:
             languages: [eng-US,eng-GB]
@@ -27,38 +27,24 @@ ezplatform:
                     reference: null
                     filters:
                         - { name: geometry/scalewidth, params: [770] }
-
-
-ezdesign:
-    design_list:
-        site_design: [site_design]
-    templates_theme_paths:
-        site_design:
-            - '%kernel.project_dir%/templates/views/themes/site_design'
-    templates_override_paths:
-        - '%kernel.project_dir%/templates'
-        - '%kernel.project_dir%/templates/views/themes/site_design'
-
-ezpublish:
-    system:
         default:
-            pagelayout: '@ezdesign/pagelayout.html.twig'
+            pagelayout: '@ibexadesign/pagelayout.html.twig'
         site_group:
             design: site_design
             user:
-                login_template: '@ezdesign/Security/login.html.twig'
+                login_template: '@ibexadesign/Security/login.html.twig'
             content_view:
                 line:
                     article:
-                        template: '@ezdesign/line/article.html.twig'
+                        template: '@ibexadesign/line/article.html.twig'
                         match:
                             Identifier\ContentType: [article]
                 full:
                     sign:
-                        template: '@ezdesign/full/sign.html.twig'
+                        template: '@ibexadesign/full/sign.html.twig'
                         match:
                             Id\Content: 61
-                        controller: ez_query:locationQueryAction
+                        controller: ibexa_query:locationQueryAction
                         params:
                             query:
                                 query_type: LocationChildren
@@ -67,14 +53,14 @@ ezpublish:
                                 assign_results_to: items
                     course:
                         controller: App\Controller\DefaultController::courseViewEnhancedAction
-                        template: '@ezdesign/full/course.html.twig'
+                        template: '@ibexadesign/full/course.html.twig'
                         match:
                             Identifier\ContentType: [course]
                     department:
-                        template: '@ezdesign/full/department.html.twig'
+                        template: '@ibexadesign/full/department.html.twig'
                         match:
                             Identifier\ContentType: [department,program]
-                        controller: ez_query:locationQueryAction
+                        controller: ibexa_query:locationQueryAction
                         params:
                             query:
                                 query_type: LocationChildren
@@ -82,10 +68,10 @@ ezpublish:
                                     parentLocationId: '@=location.id'
                                 assign_results_to: items
                     folder:
-                        template: '@ezdesign/full/folder.html.twig'
+                        template: '@ibexadesign/full/folder.html.twig'
                         match:
                             Identifier\ContentType: [folder]
-                        controller: ez_query:locationQueryAction
+                        controller: ibexa_query:locationQueryAction
                         params:
                             query:
                                 query_type: LocationChildren
@@ -94,7 +80,7 @@ ezpublish:
                                 assign_results_to: items
                     syllabus:
                         controller: App\Controller\DefaultController::syllabusViewEnhancedAction
-                        template: '@ezdesign/full/syllabus.html.twig'
+                        template: '@ibexadesign/full/syllabus.html.twig'
                         match:
                             Identifier\ContentType: [syllabus]
                         params:
@@ -106,7 +92,7 @@ ezpublish:
                             bookstoreId: 177
                     running_start_syllabus:
                         controller: App\Controller\DefaultController::runningStartSyllabusViewEnhancedAction
-                        template: '@ezdesign/full/running_start_syllabus.html.twig'
+                        template: '@ibexadesign/full/running_start_syllabus.html.twig'
                         match:
                             Identifier\ContentType: [running_start_syllabus]
                         params:
@@ -117,8 +103,17 @@ ezpublish:
                             technologyId: 180
                             bookstoreId: 177
 
+ibexa_design_engine:
+    design_list:
+        site_design: [site_design]
+    templates_theme_paths:
+        site_design:
+            - '%kernel.project_dir%/templates/views/themes/site_design'
+    templates_override_paths:
+        - '%kernel.project_dir%/templates'
+        - '%kernel.project_dir%/templates/views/themes/site_design'
+
 twig:
     globals:
         pdf_dir: /pdf
         pdf_available: '%pdf_available%'
-

@@ -1,0 +1,31 @@
+ItemGroupContentTypes:
+    type: object
+    config:
+        fields:
+            runningStartSyllabus:
+                type: RunningStartSyllabusItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "running_start_syllabus"}])'
+            syllabus:
+                type: SyllabusItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "syllabus"}])'
+            article:
+                type: ArticleItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "article"}])'
+            course:
+                type: CourseItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "course"}])'
+            coursePrefix:
+                type: CoursePrefixItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "course_prefix"}])'
+            department:
+                type: DepartmentItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "department"}])'
+            folder:
+                type: FolderItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "folder"}])'
+            program:
+                type: ProgramItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "program"}])'
+            signpane:
+                type: SignpaneItemType
+                resolve: '@=resolver("ContentType", [{"identifier": "signpane"}])'

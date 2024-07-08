@@ -1,0 +1,11 @@
+DepartmentItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("name")'

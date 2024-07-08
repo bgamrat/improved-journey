@@ -1,0 +1,104 @@
+CourseItem:
+    type: object
+    inherits:
+        - AbstractItem
+    config:
+        interfaces:
+            - Item
+            - Node
+        fields:
+            courseNumber:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "course_number", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseTitle:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "course_title", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            lectureHours:
+                type: Int
+                resolve: '@=resolver("ItemFieldValue", [value, "lecture_hours", args]) !== null ? resolver("ItemFieldValue", [value, "lecture_hours", args]).value : null'
+                args:
+                    language: { type: RepositoryLanguage }
+            labHours:
+                type: Int
+                resolve: '@=resolver("ItemFieldValue", [value, "lab_hours", args]) !== null ? resolver("ItemFieldValue", [value, "lab_hours", args]).value : null'
+                args:
+                    language: { type: RepositoryLanguage }
+            creditHours:
+                type: Int
+                resolve: '@=resolver("ItemFieldValue", [value, "credit_hours", args]) !== null ? resolver("ItemFieldValue", [value, "credit_hours", args]).value : null'
+                args:
+                    language: { type: RepositoryLanguage }
+            prerequisites:
+                type: '[CourseItem]'
+                resolve: '@=resolver("RelationFieldValue", [resolver("ItemFieldValue", [value, "prerequisites", args]), true])'
+                args:
+                    language: { type: RepositoryLanguage }
+            corequisites:
+                type: '[Item]'
+                resolve: '@=resolver("RelationFieldValue", [resolver("ItemFieldValue", [value, "corequisites", args]), true])'
+                args:
+                    language: { type: RepositoryLanguage }
+            accuplacer:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "accuplacer", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            prerequisitesCorequisitesText:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "prerequisites_corequisites_text", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            entranceSkills:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "entrance_skills", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            catalogDescription:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "catalog_description", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseCompetencies:
+                type: '[CourseCourseCompetenciesRow]'
+                resolve: '@=resolver("MatrixFieldValue", [value, "course_competencies"])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseCompetenciesText:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "course_competencies_text", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            courseOutline:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "course_outline", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            performanceEvaluation:
+                type: RichTextFieldValue
+                resolve: '@=resolver("ItemFieldValue", [value, "performance_evaluation", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            methodOfInstruction:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "method_of_instruction", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            instructionalFacilities:
+                type: String
+                resolve: '@=resolver("ItemFieldValue", [value, "instructional_facilities", args])'
+                args:
+                    language: { type: RepositoryLanguage }
+            revisionHistory:
+                type: '[CourseRevisionHistoryRow]'
+                resolve: '@=resolver("MatrixFieldValue", [value, "revision_history"])'
+                args:
+                    language: { type: RepositoryLanguage }
+            onlineOutline:
+                type: Item
+                resolve: '@=resolver("RelationFieldValue", [resolver("ItemFieldValue", [value, "online_outline", args]), false])'
+                args:
+                    language: { type: RepositoryLanguage }

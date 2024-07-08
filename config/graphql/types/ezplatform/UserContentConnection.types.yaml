@@ -1,6 +1,0 @@
-UserContentConnection:
-    type: relay-connection
-    inherits:
-        - DomainContentByIdentifierConnection
-    config:
-        nodeType: UserContent

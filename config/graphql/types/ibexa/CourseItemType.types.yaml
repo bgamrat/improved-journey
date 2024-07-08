@@ -1,0 +1,65 @@
+CourseItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            courseNumber:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_number")'
+            courseTitle:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_title")'
+            lectureHours:
+                type: IntegerFieldDefinition
+                resolve: '@=value.getFieldDefinition("lecture_hours")'
+            labHours:
+                type: IntegerFieldDefinition
+                resolve: '@=value.getFieldDefinition("lab_hours")'
+            creditHours:
+                type: IntegerFieldDefinition
+                resolve: '@=value.getFieldDefinition("credit_hours")'
+            prerequisites:
+                type: RelationListFieldDefinition
+                resolve: '@=value.getFieldDefinition("prerequisites")'
+            corequisites:
+                type: RelationListFieldDefinition
+                resolve: '@=value.getFieldDefinition("corequisites")'
+            accuplacer:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("accuplacer")'
+            prerequisitesCorequisitesText:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("prerequisites_corequisites_text")'
+            entranceSkills:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("entrance_skills")'
+            catalogDescription:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("catalog_description")'
+            courseCompetencies:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_competencies")'
+            courseCompetenciesText:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_competencies_text")'
+            courseOutline:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_outline")'
+            performanceEvaluation:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("performance_evaluation")'
+            methodOfInstruction:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("method_of_instruction")'
+            instructionalFacilities:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("instructional_facilities")'
+            revisionHistory:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("revision_history")'
+            onlineOutline:
+                type: RelationFieldDefinition
+                resolve: '@=value.getFieldDefinition("online_outline")'

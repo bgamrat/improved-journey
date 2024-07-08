@@ -1,0 +1,171 @@
+ItemGroupContent:
+    type: object
+    inherits:
+        - DomainContentTypeGroup
+    config:
+        fields:
+            _types:
+                type: ItemGroupContentTypes
+                resolve: {  }
+            runningStartSyllabi:
+                type: RunningStartSyllabusItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["running_start_syllabus", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            runningStartSyllabus:
+                type: RunningStartSyllabusItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "running_start_syllabus"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the running_start_syllabus' }
+                    remoteId: { type: String, description: 'Content remote ID of the running_start_syllabus' }
+                    locationId: { type: Int, description: 'Location ID of the running_start_syllabus' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the running_start_syllabus' }
+                    urlAlias: { type: String, description: 'URL alias of the running_start_syllabus' }
+            syllabi:
+                type: SyllabusItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["syllabus", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            syllabus:
+                type: SyllabusItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "syllabus"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the syllabus' }
+                    remoteId: { type: String, description: 'Content remote ID of the syllabus' }
+                    locationId: { type: Int, description: 'Location ID of the syllabus' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the syllabus' }
+                    urlAlias: { type: String, description: 'URL alias of the syllabus' }
+            articles:
+                type: ArticleItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["article", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            article:
+                type: ArticleItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "article"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the article' }
+                    remoteId: { type: String, description: 'Content remote ID of the article' }
+                    locationId: { type: Int, description: 'Location ID of the article' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the article' }
+                    urlAlias: { type: String, description: 'URL alias of the article' }
+            courses:
+                type: CourseItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["course", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            course:
+                type: CourseItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "course"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the course' }
+                    remoteId: { type: String, description: 'Content remote ID of the course' }
+                    locationId: { type: Int, description: 'Location ID of the course' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the course' }
+                    urlAlias: { type: String, description: 'URL alias of the course' }
+            coursePrefixes:
+                type: CoursePrefixItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["course_prefix", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            coursePrefix:
+                type: CoursePrefixItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "course_prefix"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the course_prefix' }
+                    remoteId: { type: String, description: 'Content remote ID of the course_prefix' }
+                    locationId: { type: Int, description: 'Location ID of the course_prefix' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the course_prefix' }
+                    urlAlias: { type: String, description: 'URL alias of the course_prefix' }
+            departments:
+                type: DepartmentItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["department", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            department:
+                type: DepartmentItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "department"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the department' }
+                    remoteId: { type: String, description: 'Content remote ID of the department' }
+                    locationId: { type: Int, description: 'Location ID of the department' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the department' }
+                    urlAlias: { type: String, description: 'URL alias of the department' }
+            folders:
+                type: FolderItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["folder", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            folder:
+                type: FolderItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "folder"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the folder' }
+                    remoteId: { type: String, description: 'Content remote ID of the folder' }
+                    locationId: { type: Int, description: 'Location ID of the folder' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the folder' }
+                    urlAlias: { type: String, description: 'URL alias of the folder' }
+            programs:
+                type: ProgramItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["program", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            program:
+                type: ProgramItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "program"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the program' }
+                    remoteId: { type: String, description: 'Content remote ID of the program' }
+                    locationId: { type: Int, description: 'Location ID of the program' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the program' }
+                    urlAlias: { type: String, description: 'URL alias of the program' }
+            signpanes:
+                type: SignpaneItemConnection
+                description: 'No description available'
+                resolve: '@=resolver("ItemsOfTypeAsConnection", ["signpane", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            signpane:
+                type: SignpaneItem
+                description: 'No description available'
+                resolve: '@=resolver("ItemOfType", [args, "signpane"])'
+                args:
+                    contentId: { type: Int, description: 'Content ID of the signpane' }
+                    remoteId: { type: String, description: 'Content remote ID of the signpane' }
+                    locationId: { type: Int, description: 'Location ID of the signpane' }
+                    locationRemoteId: { type: String, description: 'Location remote ID of the signpane' }
+                    urlAlias: { type: String, description: 'URL alias of the signpane' }

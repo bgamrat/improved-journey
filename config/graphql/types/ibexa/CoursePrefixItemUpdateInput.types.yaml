@@ -1,0 +1,6 @@
+CoursePrefixItemUpdateInput:
+    type: input-object
+    config:
+        fields:
+            prefix:
+                type: String

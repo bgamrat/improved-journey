@@ -1,0 +1,9 @@
+CourseItemConnection:
+    type: relay-connection
+    config:
+        nodeType: CourseItem
+        connectionFields:
+            sliceSize:
+                type: Int!
+            orderBy:
+                type: String

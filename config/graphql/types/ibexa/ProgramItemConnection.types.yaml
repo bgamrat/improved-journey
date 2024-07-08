@@ -1,0 +1,9 @@
+ProgramItemConnection:
+    type: relay-connection
+    config:
+        nodeType: ProgramItem
+        connectionFields:
+            sliceSize:
+                type: Int!
+            orderBy:
+                type: String

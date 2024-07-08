@@ -2,12 +2,15 @@
 
 Uses wkhtmltopdf and knp-snappy to generate PDFs of course documents 
 
+Upgraded from eZ 3.something or other - open source / community edition
+
 Useful commands
 
 ```
 composer install
 bin/console cache:clear
 bin/console ibexa:encore:compile
+bin/console ibexa:graphql:generate-schema -u admin --siteaccess site
 rm -rf public/pdf/*
 ```
 

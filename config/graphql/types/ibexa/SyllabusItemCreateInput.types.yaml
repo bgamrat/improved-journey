@@ -1,0 +1,38 @@
+SyllabusItemCreateInput:
+    type: input-object
+    config:
+        fields:
+            courseNumber:
+                type: String
+            course:
+                type: Int
+            section:
+                type: String
+            instructor:
+                type: String
+            email:
+                type: String
+            phone:
+                type: String
+            officeHours:
+                type: String
+            officeLocation:
+                type: String
+            classDaysMeetingTime:
+                type: String
+            classLocation:
+                type: String
+            rationale:
+                type: String
+            essentialQuestions:
+                type: String
+            requiredMaterials:
+                type: RichTextFieldInput
+            supplementalMaterials:
+                type: String
+            courseExpectations:
+                type: RichTextFieldInput
+            grading:
+                type: RichTextFieldInput
+            courseCalendar:
+                type: '[SyllabusCourseCalendarRowInput]'

@@ -1,0 +1,59 @@
+SyllabusItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            courseNumber:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_number")'
+            course:
+                type: RelationFieldDefinition
+                resolve: '@=value.getFieldDefinition("course")'
+            section:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("section")'
+            instructor:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("instructor")'
+            email:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("email")'
+            phone:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("phone")'
+            officeHours:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("office_hours")'
+            officeLocation:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("office_location")'
+            classDaysMeetingTime:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("class_days_meeting_time")'
+            classLocation:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("class_location")'
+            rationale:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("rationale")'
+            essentialQuestions:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("essential_questions")'
+            requiredMaterials:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("required_materials")'
+            supplementalMaterials:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("supplemental_materials")'
+            courseExpectations:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_expectations")'
+            grading:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("grading")'
+            courseCalendar:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_calendar")'

@@ -1,0 +1,10 @@
+CourseCourseCompetenciesRow:
+    type: object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Competency (Knowledge and Skills)'
+            objective:
+                type: String
+                description: 'Critical Thinking Level'

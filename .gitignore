@@ -33,3 +33,14 @@ yarn-error.log
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+###> ibexa ###
+/public/assets/ibexa/build/
+/public/assets/richtext/build/
+/public/assets/translations/
+/config/graphql/types/
+###< ibexa ###
+
+/improved-journey/nbproject/private/
+/nbproject/private/
+/public/pdf/

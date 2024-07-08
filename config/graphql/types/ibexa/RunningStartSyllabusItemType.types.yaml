@@ -1,0 +1,44 @@
+RunningStartSyllabusItemType:
+    type: object
+    inherits:
+        - BaseItemType
+    config:
+        interfaces:
+            - ItemType
+        fields:
+            courseNumber:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_number")'
+            course:
+                type: RelationFieldDefinition
+                resolve: '@=value.getFieldDefinition("course")'
+            section:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("section")'
+            instructor:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("instructor")'
+            rationale:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("rationale")'
+            essentialQuestions:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("essential_questions")'
+            textbooks:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("textbooks")'
+            otherRequiredMaterials:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("other_required_materials")'
+            supplementalMaterials:
+                type: TextBlockFieldDefinition
+                resolve: '@=value.getFieldDefinition("supplemental_materials")'
+            courseExpectations:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_expectations")'
+            grading:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("grading")'
+            courseOutline:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("course_outline")'

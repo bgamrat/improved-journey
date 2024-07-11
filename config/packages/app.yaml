@@ -39,6 +39,10 @@ ibexa:
                         template: '@ibexadesign/line/article.html.twig'
                         match:
                             Identifier\ContentType: [article]
+                    name_only:
+                        template: '@ibexadesign/line/name_only.html.twig'
+                        match:
+                            Identifier\ContentType: [department,program]
                 full:
                     sign:
                         template: '@ibexadesign/full/sign.html.twig'

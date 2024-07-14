@@ -72,9 +72,17 @@
             <div class="col">
                 <h2>{{ 'Required Materials:' | trans }}</h2>
                 <h3>{{ 'Textbook(s):' | trans }}</h3>
-                {{ ibexa_render_field(content, 'textbooks') }}
+                {% if not ibexa_field_is_empty(content,'textbooks') %}
+                    {{ ibexa_render_field(content, 'textbooks') }}
+                {% else %}
+                    {{ 'None' | trans }}
+                {% endif %}
                 <h3>{{  'Other:' | trans }}</h3>
-                {{ ibexa_render_field(content, 'other_required_materials') }}
+                {% if not ibexa_field_is_empty(content, 'other_required_materials') %}
+                    {{ ibexa_render_field(content, 'other_required_materials') }}
+                {% else %}
+                    {{ 'None' | trans }}
+                {% endif %}
                 {% if not ibexa_field_is_empty(content,'supplemental_materials') %}
                     <h2>{{ 'Supplemental Materials' | trans }}</h2>
                     {{ ibexa_render_field(content, 'supplemental_materials') }}
@@ -111,7 +119,12 @@
                 <h2 class="text-center" style="text-decoration:underline;">
                     {{ 'Course Outline' | trans }}
                 </h2>
-                {{ ibexa_render_field(content, 'course_outline', { 'attr': { 'class': 'with-borders'}}) }}
+                {% if not ibexa_field_is_empty(content,'course_outline_matrix') %}
+                    {{ ibexa_render_field(content, 'course_outline_matrix', { 'attr': { 'class': 'with-borders'}}) }}
+                {% endif %}
+                {% if not ibexa_field_is_empty(content,'course_outline_text') %}
+                    {{ ibexa_render_field(content, 'course_outline_text', { 'attr': { 'class': 'with-borders'}}) }}
+                {% endif %}
                 <p>* {{ 'Targeted competencies refer to the established course competencies listed above.' | trans }}</p>
                 <p class="text-center font-weight-bold header-color" style="text-decoration:underline">{{ 'This schedule is subject to change' | trans }}</p>
             </div>

@@ -26,7 +26,7 @@ class PublishListener {
         $contentInfo = $data->contentDraft->versionInfo->contentInfo;
         $locationId = $contentInfo->mainLocationId;
 
-        if (in_array($contentInfo->contentTypeId, $this->pdfOnPublish)) {
+        if ($locationId !== null && in_array($contentInfo->contentTypeId, $this->pdfOnPublish)) {
             $location = $this->locationService->loadLocation($locationId);
             $url = preg_replace('#^/admin#', '', $this->router->generate(UrlAliasRouter::URL_ALIAS_ROUTE_NAME,
                             ['locationId' => $location->id]));

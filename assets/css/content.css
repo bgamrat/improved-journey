@@ -33,3 +33,6 @@ table.with-borders td,
     border: 1px solid;
     padding: 3px;
 }
+.syllabus .course-competencies table tr :nth-child(n+2) {
+    display: none;
+}
